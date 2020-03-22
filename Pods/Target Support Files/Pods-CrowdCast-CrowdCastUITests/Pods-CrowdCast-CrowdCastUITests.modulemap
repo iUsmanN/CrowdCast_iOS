@@ -1,0 +1,6 @@
+framework module Pods_CrowdCast_CrowdCastUITests {
+  umbrella header "Pods-CrowdCast-CrowdCastUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
