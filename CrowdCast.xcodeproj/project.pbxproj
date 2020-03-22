@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		19BD2E55803CD5FC8922B86D /* Pods_CrowdCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */; };
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
 		6707B85EA492079AD4852897 /* Pods_CrowdCast_CrowdCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */; };
+		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55124277A1A001BEBBC /* AppDelegate.swift */; };
 		B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 		9358F1E9AA70777512033489 /* Pods-CrowdCast-CrowdCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast-CrowdCastUITests/Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99B716AB8F4B132E23E78760 /* Pods-CrowdCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCastTests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCastTests/Pods-CrowdCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED097A4257B79B19ABF3F69 /* Pods-CrowdCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast/Pods-CrowdCast.debug.xcconfig"; sourceTree = "<group>"; };
+		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6D7F54E24277A1A001BEBBC /* CrowdCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7F55124277A1A001BEBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +115,6 @@
 				99B716AB8F4B132E23E78760 /* Pods-CrowdCastTests.debug.xcconfig */,
 				9126246316D1D9808F81142C /* Pods-CrowdCastTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -225,6 +226,7 @@
 		B6D7F58824277AA7001BEBBC /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				B66164442427E0BB002C068A /* CCSignUpVC.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -476,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
