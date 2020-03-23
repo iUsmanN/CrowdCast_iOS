@@ -2106,6 +2106,10 @@ More information at <a href="http://landonf.org/2009/02/index.html">Landon
 Fuller's blog</a>
 
 
+## TwilioVideo
+
+Copyright 2011-2020 Twilio, Inc. All rights reserved. Use of this software is subject to the terms and conditions of the Twilio Terms of Service located at http://www.twilio.com/legal/tos
+
 ## nanopb
 
 Copyright (c) 2011 Petteri Aimonen <jpa at nanopb.mail.kapsi.fi>
