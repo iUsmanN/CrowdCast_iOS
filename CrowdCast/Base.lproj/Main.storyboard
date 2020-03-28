@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="876.81159420289862" y="112.5"/>
         </scene>
-        <!--View Controller-->
+        <!--RoomVC-->
         <scene sceneID="RAy-Zv-Pg0">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="CWH-S9-KZY" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="CWH-S9-KZY" customClass="CCRoomVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Cv-Qo-XRD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,6 +87,9 @@
                                 <rect key="frame" x="171" y="72" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Join Room"/>
+                                <connections>
+                                    <action selector="joinRoomPressed:" destination="CWH-S9-KZY" eventType="touchUpInside" id="5eq-0k-Vw0"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMn-Ts-Z9z">
                                 <rect key="frame" x="87" y="178" width="240" height="272"/>
@@ -97,12 +100,24 @@
                                 <rect key="frame" x="163" y="110" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Room"/>
+                                <connections>
+                                    <action selector="createRoomPressed:" destination="CWH-S9-KZY" eventType="touchUpInside" id="IVc-ls-cev"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J6M-ip-td5">
+                                <rect key="frame" x="87" y="458" width="240" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="7t0-Mj-reS"/>
                     </view>
                     <navigationItem key="navigationItem" id="ReM-7F-Xq5"/>
+                    <connections>
+                        <outlet property="myview" destination="rMn-Ts-Z9z" id="20b-JS-hom"/>
+                        <outlet property="otherview" destination="J6M-ip-td5" id="Pp4-5b-2Fv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DZ-Ul-yWQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
