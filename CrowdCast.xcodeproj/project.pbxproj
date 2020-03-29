@@ -18,6 +18,12 @@
 		B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
+		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
+		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
+		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
+		B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FF24310D5D002B26BC /* CCSignUpVM.swift */; };
+		B693E302243112FF002B26BC /* Fireworks.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E301243112FF002B26BC /* Fireworks.png */; };
+		B693E304243113B4002B26BC /* Reading.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E303243113B4002B26BC /* Reading.png */; };
 		B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55124277A1A001BEBBC /* AppDelegate.swift */; };
 		B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */; };
 		B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7F55724277A1A001BEBBC /* Main.storyboard */; };
@@ -61,6 +67,12 @@
 		B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
+		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
+		B693E2FF24310D5D002B26BC /* CCSignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVM.swift; sourceTree = "<group>"; };
+		B693E301243112FF002B26BC /* Fireworks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fireworks.png; sourceTree = "<group>"; };
+		B693E303243113B4002B26BC /* Reading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reading.png; sourceTree = "<group>"; };
 		B6D7F54E24277A1A001BEBBC /* CrowdCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7F55124277A1A001BEBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +162,11 @@
 		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
 			isa = PBXGroup;
 			children = (
+				B693E303243113B4002B26BC /* Reading.png */,
+				B693E301243112FF002B26BC /* Fireworks.png */,
 				B61ADC1A2430B53B00ECD1D2 /* Celebration.png */,
+				B693E2F92430F11D002B26BC /* Sitting.png */,
+				B693E2FB2430F832002B26BC /* profile.png */,
 			);
 			path = Illustrations;
 			sourceTree = "<group>";
@@ -285,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D7F58A24277AD7001BEBBC /* CCLoginVC.swift */,
+				B693E2FD24310D4F002B26BC /* CCLoginVM.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -293,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B66164442427E0BB002C068A /* CCSignUpVC.swift */,
+				B693E2FF24310D5D002B26BC /* CCSignUpVM.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -413,6 +431,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B693E302243112FF002B26BC /* Fireworks.png in Resources */,
+				B693E304243113B4002B26BC /* Reading.png in Resources */,
 				B6D7F55E24277A1B001BEBBC /* LaunchScreen.storyboard in Resources */,
 				B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */,
 				B6754140242791340010B917 /* GoogleService-Info.plist in Resources */,
@@ -421,6 +441,8 @@
 				B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */,
 				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
 				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
+				B693E2FC2430F832002B26BC /* profile.png in Resources */,
+				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +571,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */,
+				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
