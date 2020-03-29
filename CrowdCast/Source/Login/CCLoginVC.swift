@@ -11,18 +11,36 @@ import FirebaseAuth
 
 class CCLoginVC: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    @IBOutlet weak var IllustrationBottomGap: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         signIn_Email(email: "usman@usman.com", password: "Passsssss")
     }
     
-    @IBAction func signIn(_ sender: Any) {
-        signIn_Email(email: "usman@usman.com", password: "Passsssss")
+    @IBAction func joinPressed(_ sender: Any) {
+        
     }
     
-    @IBAction func signUp(_ sender: Any) {
-        print("move to sign up")
+    @IBAction func loginPressed(_ sender: Any) {
+        
     }
+    
+    @IBAction func joinWithGooglePressed(_ sender: Any) {
+        
+    }
+    
+    func setupView(){
+        emailTextField.text = "usman@usman.com"
+        passwordTextField.text = "Passsssss"
+        
+    }
+    
 }
 
 extension CCLoginVC {

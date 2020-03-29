@@ -17,6 +17,7 @@ class CCButton : UIButton {
             case 0: //main
                 backgroundColor = UIColor(named: "Main Accent")
                 setTitleColor(UIColor(named: "Background"), for: .normal)
+                layer.cornerRadius = 8
             case 1: //secondary
                 backgroundColor = UIColor(named: "Background")
                 setTitleColor(UIColor(named: "Main Accent"), for: .normal)
