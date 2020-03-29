@@ -10,6 +10,12 @@
 		19BD2E55803CD5FC8922B86D /* Pods_CrowdCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */; };
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
 		6707B85EA492079AD4852897 /* Pods_CrowdCast_CrowdCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */; };
+		B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */; };
+		B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */; };
+		B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */; };
+		B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC1A2430B53B00ECD1D2 /* Celebration.png */; };
+		B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADC1D2430B67600ECD1D2 /* CCButton.swift */; };
+		B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55124277A1A001BEBBC /* AppDelegate.swift */; };
@@ -47,6 +53,12 @@
 		9358F1E9AA70777512033489 /* Pods-CrowdCast-CrowdCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast-CrowdCastUITests/Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99B716AB8F4B132E23E78760 /* Pods-CrowdCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCastTests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCastTests/Pods-CrowdCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED097A4257B79B19ABF3F69 /* Pods-CrowdCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast/Pods-CrowdCast.debug.xcconfig"; sourceTree = "<group>"; };
+		B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Regular.otf"; sourceTree = "<group>"; };
+		B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Bold.otf"; sourceTree = "<group>"; };
+		B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B61ADC1A2430B53B00ECD1D2 /* Celebration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Celebration.png; sourceTree = "<group>"; };
+		B61ADC1D2430B67600ECD1D2 /* CCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCButton.swift; sourceTree = "<group>"; };
+		B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6D7F54E24277A1A001BEBBC /* CrowdCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +130,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B61ADC0E2430AF3800ECD1D2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC0F2430B00000ECD1D2 /* Cinzel */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B61ADC0F2430B00000ECD1D2 /* Cinzel */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */,
+				B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */,
+			);
+			path = Cinzel;
+			sourceTree = "<group>";
+		};
+		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC1A2430B53B00ECD1D2 /* Celebration.png */,
+			);
+			path = Illustrations;
+			sourceTree = "<group>";
+		};
+		B61ADC172430B3C800ECD1D2 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		B61ADC1C2430B66000ECD1D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC1D2430B67600ECD1D2 /* CCButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B61ADC1F2430BB4A00ECD1D2 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		B6D7F54524277A1A001BEBBC = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +204,11 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B61ADC1F2430BB4A00ECD1D2 /* Icons */,
+				B61ADC1C2430B66000ECD1D2 /* Extensions */,
+				B61ADC172430B3C800ECD1D2 /* Colors */,
+				B61ADC142430B2D200ECD1D2 /* Illustrations */,
+				B61ADC0E2430AF3800ECD1D2 /* Fonts */,
 				B675413F242791340010B917 /* GoogleService-Info.plist */,
 				B6D7F55724277A1A001BEBBC /* Main.storyboard */,
 				B6D7F55C24277A1B001BEBBC /* LaunchScreen.storyboard */,
@@ -348,8 +414,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D7F55E24277A1B001BEBBC /* LaunchScreen.storyboard in Resources */,
+				B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */,
 				B6754140242791340010B917 /* GoogleService-Info.plist in Resources */,
 				B6D7F55B24277A1B001BEBBC /* Assets.xcassets in Resources */,
+				B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */,
+				B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */,
+				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
+				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
 				B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +552,7 @@
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
+				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
