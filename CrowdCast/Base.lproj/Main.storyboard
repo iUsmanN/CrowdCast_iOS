@@ -291,9 +291,9 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-Ml-p54" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
-                                <rect key="frame" x="137" y="787" width="140" height="50"/>
+                                <rect key="frame" x="134.5" y="787" width="145" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="Omv-o6-dcX"/>
+                                    <constraint firstAttribute="width" constant="145" id="Omv-o6-dcX"/>
                                     <constraint firstAttribute="height" constant="50" id="TDH-DT-7uJ"/>
                                 </constraints>
                                 <state key="normal" title="Join Free"/>
@@ -302,6 +302,9 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Cga-4w-klV" kind="show" id="eXa-cD-z1P"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GSR-LR-0PZ">
                                 <rect key="frame" x="30" y="532" width="354" height="58.5"/>
@@ -352,6 +355,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3c-Sy-iHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1306" y="113"/>
+        </scene>
+        <!--Setup ProfileVC-->
+        <scene sceneID="PsN-7w-rdi">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Cga-4w-klV" customClass="CCSetupProfileVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r2L-1J-LGS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Adil!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhG-HA-gux">
+                                <rect key="frame" x="30" y="84" width="204.5" height="41"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <color key="textColor" name="Main Accent"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's set up your profile." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUF-eu-xTy">
+                                <rect key="frame" x="30" y="125" width="151" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adil.png" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-9f-UXc">
+                                <rect key="frame" x="92" y="194.5" width="230" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="I3X-CP-O02"/>
+                                    <constraint firstAttribute="height" constant="230" id="Ly1-LW-2fQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to select an image." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLi-4H-UPf">
+                                <rect key="frame" x="134.5" y="434.5" width="145" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyj-EN-tGx" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="134.5" y="712" width="145" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="Ixu-9q-mVH"/>
+                                    <constraint firstAttribute="height" constant="50" id="nBp-Zo-2B9"/>
+                                </constraints>
+                                <state key="normal" title="Continue"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xv1-aj-uo8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="134.5" y="782" width="145" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="8cK-K5-ZGc"/>
+                                    <constraint firstAttribute="height" constant="50" id="wTi-jo-Lyz"/>
+                                </constraints>
+                                <state key="normal" title="Not now"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nhG-HA-gux" firstAttribute="leading" secondItem="r2L-1J-LGS" secondAttribute="leading" constant="30" id="GoW-vc-gLn"/>
+                            <constraint firstItem="CLi-4H-UPf" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="NXn-yU-bgC"/>
+                            <constraint firstItem="Xv1-aj-uo8" firstAttribute="top" secondItem="Yyj-EN-tGx" secondAttribute="bottom" constant="20" id="X6S-tw-yf0"/>
+                            <constraint firstItem="CLi-4H-UPf" firstAttribute="top" secondItem="aXo-9f-UXc" secondAttribute="bottom" constant="10" id="aPX-aW-E6n"/>
+                            <constraint firstItem="2G2-4F-YSp" firstAttribute="bottom" secondItem="Xv1-aj-uo8" secondAttribute="bottom" constant="30" id="cnk-bD-QjG"/>
+                            <constraint firstItem="aXo-9f-UXc" firstAttribute="top" secondItem="yUF-eu-xTy" secondAttribute="bottom" constant="50" id="dvs-iV-ygi"/>
+                            <constraint firstItem="Yyj-EN-tGx" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="hCW-ed-9a9"/>
+                            <constraint firstItem="nhG-HA-gux" firstAttribute="top" secondItem="2G2-4F-YSp" secondAttribute="top" constant="40" id="lMh-gL-geR"/>
+                            <constraint firstItem="yUF-eu-xTy" firstAttribute="leading" secondItem="nhG-HA-gux" secondAttribute="leading" id="oea-kK-xPw"/>
+                            <constraint firstItem="Xv1-aj-uo8" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="pAx-Jr-Yad"/>
+                            <constraint firstItem="aXo-9f-UXc" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="rax-VV-clh"/>
+                            <constraint firstItem="yUF-eu-xTy" firstAttribute="top" secondItem="nhG-HA-gux" secondAttribute="bottom" id="ung-eP-72Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2G2-4F-YSp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QQq-UT-1Nz"/>
+                    <connections>
+                        <outlet property="profileImage" destination="aXo-9f-UXc" id="W9n-97-cK7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kus-cX-N60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2271" y="114"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="LQi-yl-si1">
@@ -427,6 +516,7 @@
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
         <image name="Reading.png" width="1020" height="734"/>
+        <image name="adil.png" width="667" height="660"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
