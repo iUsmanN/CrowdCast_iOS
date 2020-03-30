@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -132,11 +132,12 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="azJ-lw-Fp4">
-                                <rect key="frame" x="217" y="594" width="167" height="30"/>
+                                <rect key="frame" x="217" y="594" width="167" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pu1-PG-Sy0" userLabel="Join" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="GuZ-y6-6UH"/>
                                             <constraint firstAttribute="width" constant="85" id="vFk-ha-Mgy"/>
                                         </constraints>
                                         <state key="normal" title="Join Free"/>
@@ -151,7 +152,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p52-eg-Ydz" userLabel="Login" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
-                                        <rect key="frame" x="102" y="0.0" width="65" height="30"/>
+                                        <rect key="frame" x="102" y="0.0" width="65" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="cNN-fi-0s9"/>
                                         </constraints>
@@ -194,6 +195,7 @@
                     </view>
                     <connections>
                         <outlet property="IllustrationBottomGap" destination="1Zg-uw-wZ1" id="FlS-hq-oTB"/>
+                        <outlet property="IllustrationTopGap" destination="ebE-WK-91C" id="Lgf-Am-A4e"/>
                         <outlet property="emailIcon" destination="9uf-sV-buO" id="qJa-96-cxL"/>
                         <outlet property="emailTextField" destination="toB-oc-0dX" id="YXX-K0-34U"/>
                         <outlet property="passwordIcon" destination="3gf-zZ-mjt" id="rQF-h8-agA"/>
@@ -376,7 +378,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adil.png" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-9f-UXc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-9f-UXc">
                                 <rect key="frame" x="92" y="194.5" width="230" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="I3X-CP-O02"/>
@@ -401,6 +403,9 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="uploadImage:" destination="Cga-4w-klV" eventType="touchUpInside" id="UQe-hr-jdW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xv1-aj-uo8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="134.5" y="782" width="145" height="50"/>
@@ -414,6 +419,9 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="notNowPressed:" destination="Cga-4w-klV" eventType="touchUpInside" id="JqZ-CR-PzI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -511,17 +519,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Avatar.png" width="676" height="676"/>
         <image name="Celebration.png" width="950" height="662"/>
         <image name="Email" width="50" height="50"/>
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
         <image name="Reading.png" width="1020" height="734"/>
-        <image name="adil.png" width="667" height="660"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.38039215686274508" green="0.42352941176470588" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36344030500000002" green="0.4103129506" blue="0.94323629139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

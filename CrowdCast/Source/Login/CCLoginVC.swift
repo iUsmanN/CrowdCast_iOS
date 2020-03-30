@@ -20,6 +20,7 @@ class CCLoginVC: UIViewController {
     
     
     
+    @IBOutlet weak var IllustrationTopGap: NSLayoutConstraint!
     @IBOutlet weak var IllustrationBottomGap: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -49,6 +50,7 @@ class CCLoginVC: UIViewController {
         passwordTextField.text = "Passsssss"
         
         IllustrationBottomGap.constant = Device.size() > Size.screen4_7Inch ? 75 : 10
+        IllustrationTopGap.constant = Device.size() > Size.screen4_7Inch ? 60 : 20
     }
     
 }

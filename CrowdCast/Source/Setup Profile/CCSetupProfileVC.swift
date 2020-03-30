@@ -23,14 +23,20 @@ class CCSetupProfileVC: UIViewController {
         profileImage.layer.borderColor = UIColor(named: "Main Accent")?.cgColor
         profileImage.layer.borderWidth = 2
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func uploadImage(_ sender: Any) {
+        moveToOnboarding()
     }
-    */
+    
+    @IBAction func notNowPressed(_ sender: Any) {
+        moveToOnboarding()
+    }
+    
+}
 
+extension CCSetupProfileVC {
+    
+    func moveToOnboarding(){
+        present(Constants.Storyboards.Onboarding.instantiateViewController(withIdentifier: "CCOnboardingVC"), animated: true, completion: nil)
+    }
 }
