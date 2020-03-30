@@ -8,6 +8,7 @@ target 'CrowdCast' do
   # Pods for CrowdCast
   pod 'Firebase/Auth'
   pod 'TwilioVideo', '~> 3.2'
+  pod "Device", '~> 3.2.1'
   
 
   target 'CrowdCastTests' do

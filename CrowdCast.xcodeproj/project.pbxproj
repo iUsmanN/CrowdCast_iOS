@@ -10,8 +10,30 @@
 		19BD2E55803CD5FC8922B86D /* Pods_CrowdCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */; };
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
 		6707B85EA492079AD4852897 /* Pods_CrowdCast_CrowdCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */; };
+		B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */; };
+		B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */; };
+		B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */; };
+		B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC1A2430B53B00ECD1D2 /* Celebration.png */; };
+		B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADC1D2430B67600ECD1D2 /* CCButton.swift */; };
+		B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
+		B67962032432476100C2A13C /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B67962022432476000C2A13C /* Avatar.png */; };
+		B679620624324E6000C2A13C /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B679620524324E6000C2A13C /* Onboarding.storyboard */; };
+		B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679620824324EAF00C2A13C /* CCOnboardingVC.swift */; };
+		B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679620A2432509300C2A13C /* CCConstantsManager.swift */; };
+		B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679620F2432565D00C2A13C /* CCOverviewVC.swift */; };
+		B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67962112432566D00C2A13C /* CCChannelsVC.swift */; };
+		B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67962132432567A00C2A13C /* CCCrowdsVC.swift */; };
+		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
+		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
+		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
+		B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FF24310D5D002B26BC /* CCSignUpVM.swift */; };
+		B693E302243112FF002B26BC /* Fireworks.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E301243112FF002B26BC /* Fireworks.png */; };
+		B693E304243113B4002B26BC /* Reading.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E303243113B4002B26BC /* Reading.png */; };
+		B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E30624311A37002B26BC /* CCSetupProfileVC.swift */; };
+		B693E30B24311DF1002B26BC /* adil.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E30A24311DF1002B26BC /* adil.png */; };
+		B693E30D24312C7B002B26BC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693E30C24312C7B002B26BC /* Home.storyboard */; };
 		B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55124277A1A001BEBBC /* AppDelegate.swift */; };
 		B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */; };
 		B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7F55724277A1A001BEBBC /* Main.storyboard */; };
@@ -47,8 +69,30 @@
 		9358F1E9AA70777512033489 /* Pods-CrowdCast-CrowdCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast-CrowdCastUITests/Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99B716AB8F4B132E23E78760 /* Pods-CrowdCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCastTests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCastTests/Pods-CrowdCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED097A4257B79B19ABF3F69 /* Pods-CrowdCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast/Pods-CrowdCast.debug.xcconfig"; sourceTree = "<group>"; };
+		B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Regular.otf"; sourceTree = "<group>"; };
+		B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Bold.otf"; sourceTree = "<group>"; };
+		B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B61ADC1A2430B53B00ECD1D2 /* Celebration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Celebration.png; sourceTree = "<group>"; };
+		B61ADC1D2430B67600ECD1D2 /* CCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCButton.swift; sourceTree = "<group>"; };
+		B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B67962022432476000C2A13C /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
+		B679620524324E6000C2A13C /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		B679620824324EAF00C2A13C /* CCOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCOnboardingVC.swift; sourceTree = "<group>"; };
+		B679620A2432509300C2A13C /* CCConstantsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCConstantsManager.swift; path = CrowdCast/Source/Onboarding/CCConstantsManager.swift; sourceTree = SOURCE_ROOT; };
+		B679620F2432565D00C2A13C /* CCOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCOverviewVC.swift; sourceTree = "<group>"; };
+		B67962112432566D00C2A13C /* CCChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVC.swift; sourceTree = "<group>"; };
+		B67962132432567A00C2A13C /* CCCrowdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdsVC.swift; sourceTree = "<group>"; };
+		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
+		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
+		B693E2FF24310D5D002B26BC /* CCSignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVM.swift; sourceTree = "<group>"; };
+		B693E301243112FF002B26BC /* Fireworks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fireworks.png; sourceTree = "<group>"; };
+		B693E303243113B4002B26BC /* Reading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reading.png; sourceTree = "<group>"; };
+		B693E30624311A37002B26BC /* CCSetupProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetupProfileVC.swift; sourceTree = "<group>"; };
+		B693E30A24311DF1002B26BC /* adil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adil.png; sourceTree = "<group>"; };
+		B693E30C24312C7B002B26BC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B6D7F54E24277A1A001BEBBC /* CrowdCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7F55124277A1A001BEBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +162,112 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B61ADC0E2430AF3800ECD1D2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC0F2430B00000ECD1D2 /* Cinzel */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B61ADC0F2430B00000ECD1D2 /* Cinzel */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */,
+				B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */,
+			);
+			path = Cinzel;
+			sourceTree = "<group>";
+		};
+		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
+			isa = PBXGroup;
+			children = (
+				B67962022432476000C2A13C /* Avatar.png */,
+				B693E30A24311DF1002B26BC /* adil.png */,
+				B693E303243113B4002B26BC /* Reading.png */,
+				B693E301243112FF002B26BC /* Fireworks.png */,
+				B61ADC1A2430B53B00ECD1D2 /* Celebration.png */,
+				B693E2F92430F11D002B26BC /* Sitting.png */,
+				B693E2FB2430F832002B26BC /* profile.png */,
+			);
+			path = Illustrations;
+			sourceTree = "<group>";
+		};
+		B61ADC172430B3C800ECD1D2 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		B61ADC1C2430B66000ECD1D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC1D2430B67600ECD1D2 /* CCButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B61ADC1F2430BB4A00ECD1D2 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		B67962042432495500C2A13C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7F55724277A1A001BEBBC /* Main.storyboard */,
+				B6D7F55C24277A1B001BEBBC /* LaunchScreen.storyboard */,
+				B693E30C24312C7B002B26BC /* Home.storyboard */,
+				B679620524324E6000C2A13C /* Onboarding.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B679620724324E8D00C2A13C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B679620824324EAF00C2A13C /* CCOnboardingVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B679620C2432562600C2A13C /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				B679620F2432565D00C2A13C /* CCOverviewVC.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		B679620D2432563600C2A13C /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				B67962112432566D00C2A13C /* CCChannelsVC.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		B679620E2432564000C2A13C /* Crowds */ = {
+			isa = PBXGroup;
+			children = (
+				B67962132432567A00C2A13C /* CCCrowdsVC.swift */,
+			);
+			path = Crowds;
+			sourceTree = "<group>";
+		};
+		B693E30524311A1C002B26BC /* Setup Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B693E30624311A37002B26BC /* CCSetupProfileVC.swift */,
+			);
+			path = "Setup Profile";
+			sourceTree = "<group>";
+		};
 		B6D7F54524277A1A001BEBBC = {
 			isa = PBXGroup;
 			children = (
@@ -143,12 +293,15 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B61ADC1F2430BB4A00ECD1D2 /* Icons */,
+				B61ADC1C2430B66000ECD1D2 /* Extensions */,
+				B61ADC172430B3C800ECD1D2 /* Colors */,
+				B61ADC142430B2D200ECD1D2 /* Illustrations */,
+				B61ADC0E2430AF3800ECD1D2 /* Fonts */,
 				B675413F242791340010B917 /* GoogleService-Info.plist */,
-				B6D7F55724277A1A001BEBBC /* Main.storyboard */,
-				B6D7F55C24277A1B001BEBBC /* LaunchScreen.storyboard */,
+				B67962042432495500C2A13C /* Storyboards */,
 				B6D7F58624277A74001BEBBC /* Source */,
 				B6D7F58524277A6D001BEBBC /* Delegates */,
-				B6D7F58424277A5C001BEBBC /* Storyboards */,
 				B6D7F58324277A52001BEBBC /* Assets */,
 				B6D7F58124277A40001BEBBC /* Managers */,
 				B6D7F55F24277A1B001BEBBC /* Info.plist */,
@@ -177,6 +330,7 @@
 		B6D7F58124277A40001BEBBC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B679620A2432509300C2A13C /* CCConstantsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -187,13 +341,6 @@
 				B6D7F55A24277A1B001BEBBC /* Assets.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		B6D7F58424277A5C001BEBBC /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		B6D7F58524277A6D001BEBBC /* Delegates */ = {
@@ -208,6 +355,11 @@
 		B6D7F58624277A74001BEBBC /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B679620E2432564000C2A13C /* Crowds */,
+				B679620D2432563600C2A13C /* Channels */,
+				B679620C2432562600C2A13C /* Overview */,
+				B679620724324E8D00C2A13C /* Onboarding */,
+				B693E30524311A1C002B26BC /* Setup Profile */,
 				B6D7F58924277AB2001BEBBC /* Splash */,
 				B6D7F58824277AA7001BEBBC /* SignUp */,
 				B6D7F58724277AA0001BEBBC /* Login */,
@@ -219,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D7F58A24277AD7001BEBBC /* CCLoginVC.swift */,
+				B693E2FD24310D4F002B26BC /* CCLoginVM.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -227,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				B66164442427E0BB002C068A /* CCSignUpVC.swift */,
+				B693E2FF24310D5D002B26BC /* CCSignUpVM.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -347,9 +501,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B693E302243112FF002B26BC /* Fireworks.png in Resources */,
+				B693E304243113B4002B26BC /* Reading.png in Resources */,
 				B6D7F55E24277A1B001BEBBC /* LaunchScreen.storyboard in Resources */,
+				B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */,
 				B6754140242791340010B917 /* GoogleService-Info.plist in Resources */,
 				B6D7F55B24277A1B001BEBBC /* Assets.xcassets in Resources */,
+				B693E30D24312C7B002B26BC /* Home.storyboard in Resources */,
+				B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */,
+				B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */,
+				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
+				B679620624324E6000C2A13C /* Onboarding.storyboard in Resources */,
+				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
+				B693E2FC2430F832002B26BC /* profile.png in Resources */,
+				B67962032432476100C2A13C /* Avatar.png in Resources */,
+				B693E30B24311DF1002B26BC /* adil.png in Resources */,
+				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,10 +645,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */,
+				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
+				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
+				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
+				B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */,
+				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
+				B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */,
+				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
+				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

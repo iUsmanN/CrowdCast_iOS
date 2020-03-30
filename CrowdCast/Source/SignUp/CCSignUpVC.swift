@@ -8,16 +8,24 @@
 
 import UIKit
 import FirebaseAuth
+import Device
 
 class CCSignUpVC: UIViewController {
 
+    @IBOutlet weak var IllustrationTopConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
         // Do any additional setup after loading the view.
     }
     @IBAction func signUpPressed(_ sender: Any) {
         signUp_Email(email: "abc@abc.com", password: "abcabc")
+    }
+    
+    func setupView(){
+        IllustrationTopConstraint.constant = Device.size() > .screen4_7Inch ? 70 : 20
+        
     }
 }
 
