@@ -10,20 +10,31 @@ import UIKit
 
 class CCOverviewVC: UIViewController {
 
+    @IBOutlet weak var greetingView: CCNavBar!
+    @IBOutlet weak var greetingHeight: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
+        
     }
+
+    func setupView(){
+        showGreeting()
+    }
+}
+
+extension CCOverviewVC {
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
+    func showGreeting(){
+        UIView.animate(withDuration: 1, delay: 2, options: .beginFromCurrentState, animations: {
+            self.greetingView.alpha = 0
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.75) {
+                self.greetingHeight.constant = 0
+                self.view.layoutIfNeeded()
+            }
+        })
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
-    }
-
 }

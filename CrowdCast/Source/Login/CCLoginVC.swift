@@ -33,7 +33,7 @@ class CCLoginVC: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
-        signIn_Email(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
     }
     
     @IBAction func joinWithGooglePressed(_ sender: Any) {

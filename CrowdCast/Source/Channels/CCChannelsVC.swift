@@ -10,19 +10,23 @@ import UIKit
 
 class CCChannelsVC: UIViewController {
 
+    @IBOutlet weak var greetingView: UIVisualEffectView!
+    @IBOutlet weak var greetingViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
+        
+        
+        UIView.animate(withDuration: 0.25, delay: 2, options: .beginFromCurrentState, animations: {
+            
+            self.greetingView.alpha = 0
+            
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.25) {
+                
+                self.greetingViewHeight.constant = 0
+                self.view.layoutIfNeeded()
+            }
+        })
     }
 }
