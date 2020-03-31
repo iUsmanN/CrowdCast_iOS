@@ -142,9 +142,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wc3-Pa-Da3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WwA-eN-Pbp">
-                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="Nsj-Df-U32"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="WwA-eN-Pbp"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="greetingHeight" destination="K8K-AS-r0p" id="3BF-qK-xU6"/>
                         <outlet property="greetingView" destination="gOr-RG-Zwy" id="y4c-N8-Wu1"/>

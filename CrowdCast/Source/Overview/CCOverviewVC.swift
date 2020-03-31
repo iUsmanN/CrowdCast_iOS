@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Device
 
 class CCOverviewVC: UIViewController {
 
@@ -20,7 +21,18 @@ class CCOverviewVC: UIViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+    }
+    
     func setupView(){
+        
         showGreeting()
     }
 }
@@ -28,13 +40,9 @@ class CCOverviewVC: UIViewController {
 extension CCOverviewVC {
     
     func showGreeting(){
-        UIView.animate(withDuration: 1, delay: 2, options: .beginFromCurrentState, animations: {
-            self.greetingView.alpha = 0
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.75) {
-                self.greetingHeight.constant = 0
-                self.view.layoutIfNeeded()
-            }
-        })
+        UIView.animate(withDuration: 0.75, delay: 2, options: .beginFromCurrentState, animations: {
+            self.greetingHeight.constant = Device.size() > Size.screen4_7Inch ? 88 : 64
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 }
