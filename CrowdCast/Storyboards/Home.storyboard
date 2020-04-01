@@ -126,11 +126,11 @@
             </objects>
             <point key="canvasLocation" x="493" y="-451"/>
         </scene>
-        <!--Overview-->
+        <!--Navigation Controller-->
         <scene sceneID="63U-Fe-MaT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82U-I8-qHf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Overview" image="Groups" id="nYy-Ul-OR0"/>
+                    <tabBarItem key="tabBarItem" title="" image="Feed" id="nYy-Ul-OR0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wK-jo-ifF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -145,11 +145,11 @@
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="-1310.4910714285713"/>
         </scene>
-        <!--Groups-->
+        <!--Navigation Controller-->
         <scene sceneID="Q3Y-gd-vNZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fzL-Je-TWu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Groups" image="Groups" id="xiX-yP-NF0"/>
+                    <tabBarItem key="tabBarItem" title="" image="Groups" id="xiX-yP-NF0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EvX-Wl-Lzg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -164,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="-451.33928571428567"/>
         </scene>
-        <!--Channels-->
+        <!--Navigation Controller-->
         <scene sceneID="OvT-y0-uYT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eip-5k-rjz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Channels" image="Groups" id="TEF-Ay-OSz"/>
+                    <tabBarItem key="tabBarItem" title="" image="Channels" id="TEF-Ay-OSz"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N7x-Al-ayV">
@@ -189,7 +189,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Groups" width="32" height="32"/>
+        <image name="Channels" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Feed" width="30" height="30"/>
+        <image name="Groups" width="50" height="50"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
