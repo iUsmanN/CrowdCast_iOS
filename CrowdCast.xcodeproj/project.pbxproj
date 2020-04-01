@@ -46,6 +46,8 @@
 		B6D7F56924277A1B001BEBBC /* CrowdCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F56824277A1B001BEBBC /* CrowdCastTests.swift */; };
 		B6D7F57424277A1B001BEBBC /* CrowdCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F57324277A1B001BEBBC /* CrowdCastUITests.swift */; };
 		B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F58A24277AD7001BEBBC /* CCLoginVC.swift */; };
+		B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3675A2434F25000B511A0 /* CCCardTVCTableViewCell.swift */; };
+		B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E3675B2434F25000B511A0 /* CCCardTVCTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		B6D7F57324277A1B001BEBBC /* CrowdCastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdCastUITests.swift; sourceTree = "<group>"; };
 		B6D7F57524277A1B001BEBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6D7F58A24277AD7001BEBBC /* CCLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVC.swift; sourceTree = "<group>"; };
+		B6E3675A2434F25000B511A0 /* CCCardTVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardTVCTableViewCell.swift; sourceTree = "<group>"; };
+		B6E3675B2434F25000B511A0 /* CCCardTVCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCardTVCTableViewCell.xib; sourceTree = "<group>"; };
 		BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCastTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -173,6 +177,7 @@
 		B60A29C824338EA100B7F76F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				B6E367592434F21D00B511A0 /* ChannelCard */,
 				B60A29C924338EA900B7F76F /* Navbar */,
 			);
 			path = Nibs;
@@ -428,6 +433,15 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		B6E367592434F21D00B511A0 /* ChannelCard */ = {
+			isa = PBXGroup;
+			children = (
+				B6E3675A2434F25000B511A0 /* CCCardTVCTableViewCell.swift */,
+				B6E3675B2434F25000B511A0 /* CCCardTVCTableViewCell.xib */,
+			);
+			path = ChannelCard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -553,6 +567,7 @@
 				B693E2FC2430F832002B26BC /* profile.png in Resources */,
 				B67962032432476100C2A13C /* Avatar.png in Resources */,
 				B693E30B24311DF1002B26BC /* adil.png in Resources */,
+				B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */,
 				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */,
 			);
@@ -687,6 +702,7 @@
 				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
 				B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */,
+				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
