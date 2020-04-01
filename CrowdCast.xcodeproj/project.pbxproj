@@ -10,12 +10,16 @@
 		19BD2E55803CD5FC8922B86D /* Pods_CrowdCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */; };
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
 		6707B85EA492079AD4852897 /* Pods_CrowdCast_CrowdCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */; };
+		B60A29CB24338ED700B7F76F /* CCNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A29CA24338ED700B7F76F /* CCNavBar.swift */; };
+		B60A29CD24338EEA00B7F76F /* CCNavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A29CC24338EEA00B7F76F /* CCNavBar.xib */; };
+		B60A29D62434828400B7F76F /* CCNavbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A29D52434828400B7F76F /* CCNavbarProtocol.swift */; };
 		B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */; };
 		B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */; };
 		B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */; };
 		B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC1A2430B53B00ECD1D2 /* Celebration.png */; };
 		B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADC1D2430B67600ECD1D2 /* CCButton.swift */; };
 		B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */; };
+		B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C716F2434ADD00090901C /* CCTabBarController.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B67962032432476100C2A13C /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B67962022432476000C2A13C /* Avatar.png */; };
@@ -69,12 +73,16 @@
 		9358F1E9AA70777512033489 /* Pods-CrowdCast-CrowdCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast-CrowdCastUITests/Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99B716AB8F4B132E23E78760 /* Pods-CrowdCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCastTests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCastTests/Pods-CrowdCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED097A4257B79B19ABF3F69 /* Pods-CrowdCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast/Pods-CrowdCast.debug.xcconfig"; sourceTree = "<group>"; };
+		B60A29CA24338ED700B7F76F /* CCNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCNavBar.swift; sourceTree = "<group>"; };
+		B60A29CC24338EEA00B7F76F /* CCNavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCNavBar.xib; sourceTree = "<group>"; };
+		B60A29D52434828400B7F76F /* CCNavbarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCNavbarProtocol.swift; sourceTree = "<group>"; };
 		B61ADC102430B03100ECD1D2 /* Cinzel-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Regular.otf"; sourceTree = "<group>"; };
 		B61ADC112430B03100ECD1D2 /* Cinzel-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Bold.otf"; sourceTree = "<group>"; };
 		B61ADC182430B3DD00ECD1D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B61ADC1A2430B53B00ECD1D2 /* Celebration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Celebration.png; sourceTree = "<group>"; };
 		B61ADC1D2430B67600ECD1D2 /* CCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCButton.swift; sourceTree = "<group>"; };
 		B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		B62C716F2434ADD00090901C /* CCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTabBarController.swift; sourceTree = "<group>"; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B67962022432476000C2A13C /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
@@ -162,6 +170,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B60A29C824338EA100B7F76F /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				B60A29C924338EA900B7F76F /* Navbar */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		B60A29C924338EA900B7F76F /* Navbar */ = {
+			isa = PBXGroup;
+			children = (
+				B60A29CA24338ED700B7F76F /* CCNavBar.swift */,
+				B60A29CC24338EEA00B7F76F /* CCNavBar.xib */,
+			);
+			path = Navbar;
+			sourceTree = "<group>";
+		};
+		B60A29D42434826900B7F76F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B60A29D52434828400B7F76F /* CCNavbarProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		B61ADC0E2430AF3800ECD1D2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				B61ADC1D2430B67600ECD1D2 /* CCButton.swift */,
+				B62C716F2434ADD00090901C /* CCTabBarController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +327,7 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B60A29D42434826900B7F76F /* Protocols */,
 				B61ADC1F2430BB4A00ECD1D2 /* Icons */,
 				B61ADC1C2430B66000ECD1D2 /* Extensions */,
 				B61ADC172430B3C800ECD1D2 /* Colors */,
@@ -355,6 +390,7 @@
 		B6D7F58624277A74001BEBBC /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B60A29C824338EA100B7F76F /* Nibs */,
 				B679620E2432564000C2A13C /* Crowds */,
 				B679620D2432563600C2A13C /* Channels */,
 				B679620C2432562600C2A13C /* Overview */,
@@ -502,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B693E302243112FF002B26BC /* Fireworks.png in Resources */,
+				B60A29CD24338EEA00B7F76F /* CCNavBar.xib in Resources */,
 				B693E304243113B4002B26BC /* Reading.png in Resources */,
 				B6D7F55E24277A1B001BEBBC /* LaunchScreen.storyboard in Resources */,
 				B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */,
@@ -654,10 +691,13 @@
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
+				B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */,
 				B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */,
+				B60A29D62434828400B7F76F /* CCNavbarProtocol.swift in Sources */,
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
 				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
+				B60A29CB24338ED700B7F76F /* CCNavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

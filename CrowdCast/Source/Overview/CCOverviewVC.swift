@@ -7,23 +7,31 @@
 //
 
 import UIKit
+import Device
 
 class CCOverviewVC: UIViewController {
 
+    @IBOutlet weak var greetingView: CCNavBar!
+    @IBOutlet weak var greetingHeight: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
+    func setupView(){
+        setupNavBar(navigationItem: navigationItem, title: "Overview", profileAction: #selector(openSettings))
     }
+}
 
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
+extension CCOverviewVC : CCNavbarProtocol {
+    
+}
+
+extension CCOverviewVC {
+    
+    @objc func openSettings(){
+        print("Open Settings")
     }
-
 }

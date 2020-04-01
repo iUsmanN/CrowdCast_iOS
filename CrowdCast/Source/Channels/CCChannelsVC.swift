@@ -12,17 +12,20 @@ class CCChannelsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
+}
+
+extension CCChannelsVC : CCNavbarProtocol {
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
+    func setupView(){
+        setupNavBar(navigationItem: navigationItem, title: "Channels", profileAction: #selector(openSettings))
     }
+}
 
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
+extension CCChannelsVC {
+    
+    @objc func openSettings(){
+        print("Open Settings")
     }
 }

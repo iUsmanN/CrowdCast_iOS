@@ -12,17 +12,21 @@ class CCCrowdsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         // Do any additional setup after loading the view.
     }
+}
+
+extension CCCrowdsVC : CCNavbarProtocol {
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
+    func setupView(){
+        setupNavBar(navigationItem: navigationItem, title: "Crowds", profileAction: #selector(openSettings))
     }
+}
 
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
+extension CCCrowdsVC {
+    
+    @objc func openSettings(){
+        print("Open Settings")
     }
-
 }
