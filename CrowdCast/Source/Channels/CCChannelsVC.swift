@@ -10,23 +10,15 @@ import UIKit
 
 class CCChannelsVC: UIViewController {
 
-    @IBOutlet weak var greetingView: UIVisualEffectView!
-    @IBOutlet weak var greetingViewHeight: NSLayoutConstraint!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        UIView.animate(withDuration: 0.25, delay: 2, options: .beginFromCurrentState, animations: {
-            
-            self.greetingView.alpha = 0
-            
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.25) {
-                
-                self.greetingViewHeight.constant = 0
-                self.view.layoutIfNeeded()
-            }
-        })
+        setupView()
+    }
+}
+
+extension CCChannelsVC : CCNavbarProtocol {
+    
+    func setupView(){
+        setupNavBar(navigationItem: navigationItem, navigationController: navigationController, title: "Channels")
     }
 }

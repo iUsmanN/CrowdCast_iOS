@@ -31,7 +31,7 @@ class CCOverviewVC: UIViewController {
 extension CCOverviewVC : CCNavbarProtocol {
     
     func showGreeting(){
-        UIView.animate(withDuration: 0.75, delay: 2, options: .beginFromCurrentState, animations: {
+        UIView.animate(withDuration: 0.75, delay: 0.75, options: .beginFromCurrentState, animations: {
             self.greetingHeight.constant = Device.size() > Size.screen4_7Inch ? 88 : 64
             self.view.layoutIfNeeded()
         }, completion: nil)

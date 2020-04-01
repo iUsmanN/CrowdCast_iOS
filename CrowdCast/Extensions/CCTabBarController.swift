@@ -1,25 +1,22 @@
 //
-//  CCCrowdsVC.swift
+//  CCTabBarController.swift
 //  CrowdCast
 //
-//  Created by Usman on 30/03/2020.
+//  Created by Usman on 01/04/2020.
 //  Copyright © 2020 Usman Nazir. All rights reserved.
 //
 
 import UIKit
 
-class CCCrowdsVC: UIViewController {
+class CCTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         // Do any additional setup after loading the view.
     }
-}
-
-extension CCCrowdsVC : CCNavbarProtocol {
     
     func setupView(){
-        setupNavBar(navigationItem: navigationItem, navigationController: navigationController, title: "Crowds")
+        tabBar.tintColor = UIColor(named: "Main Accent")
     }
 }
