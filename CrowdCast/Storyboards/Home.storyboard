@@ -40,20 +40,8 @@
                                     <segue destination="Q54-s0-CML" kind="show" id="t0Y-S4-ZeJ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6f7-RK-jqv" customClass="CCNavBar" customModule="CrowdCast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="5oC-xw-bwE"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="6f7-RK-jqv" firstAttribute="leading" secondItem="UR2-e9-xxc" secondAttribute="leading" id="gMu-Sm-MwI"/>
-                            <constraint firstItem="6f7-RK-jqv" firstAttribute="top" secondItem="iQL-EC-EG8" secondAttribute="top" id="ygi-0L-XII"/>
-                            <constraint firstItem="UR2-e9-xxc" firstAttribute="trailing" secondItem="6f7-RK-jqv" secondAttribute="trailing" id="zeZ-RH-NFd"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UR2-e9-xxc"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NaN-WE-Pqg"/>
