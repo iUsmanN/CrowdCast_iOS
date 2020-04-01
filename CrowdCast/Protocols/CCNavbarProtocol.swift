@@ -13,13 +13,13 @@ protocol CCNavbarProtocol {}
 
 extension CCNavbarProtocol {
     
-    func setupNavBar(navigationItem: UINavigationItem, navigationController: UINavigationController?, title: String?){
+    func setupNavBar(navigationItem: UINavigationItem, title: String?, profileAction: Selector?){
         navigationItem.title = title
         
         let leftButton = getLogoButton()
-        //let searchButton = getSearchButton()
-        let profileButton = getProfileButton()
+        let profileButton = getProfileButton(action: profileAction)
         
+        profileButton.action = profileAction
         navigationItem.leftBarButtonItem = leftButton
         navigationItem.setRightBarButtonItems([profileButton], animated: true)
     }
@@ -46,13 +46,14 @@ extension CCNavbarProtocol {
         return searchButton
     }
     
-    private func getProfileButton() -> UIBarButtonItem {
+    private func getProfileButton(action: Selector?) -> UIBarButtonItem {
         let profileView = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         profileView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         profileView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        profileView.setImage(#imageLiteral(resourceName: "Google"), for: .normal)
+        profileView.setImage(#imageLiteral(resourceName: "Avatar.png"), for: .normal)
+        guard let action = action else { return UIBarButtonItem() }
+        profileView.addTarget(self, action: action, for: .primaryActionTriggered)
         let profileButton = UIBarButtonItem(customView: profileView)
         return profileButton
     }
 }
-

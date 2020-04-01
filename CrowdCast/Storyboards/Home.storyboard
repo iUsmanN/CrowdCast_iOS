@@ -15,7 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="S04-io-sqW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Background"/>
                         <viewLayoutGuide key="safeArea" id="IXg-Qa-1gI"/>
                     </view>
                     <navigationItem key="navigationItem" title="title" id="DYT-GZ-yEQ"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="6f7-RK-jqv" firstAttribute="leading" secondItem="UR2-e9-xxc" secondAttribute="leading" id="gMu-Sm-MwI"/>
                             <constraint firstItem="6f7-RK-jqv" firstAttribute="top" secondItem="iQL-EC-EG8" secondAttribute="top" id="ygi-0L-XII"/>

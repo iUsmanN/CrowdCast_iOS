@@ -18,13 +18,11 @@ class CCOverviewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
     }
     
     func setupView(){
-        
-        setupNavBar(navigationItem: navigationItem, navigationController: navigationController, title: "Overview")
-        showGreeting()
+        setupNavBar(navigationItem: navigationItem, title: "Overview", profileAction: #selector(openSettings))
+        //showGreeting()
     }
 }
 
@@ -35,5 +33,12 @@ extension CCOverviewVC : CCNavbarProtocol {
             self.greetingHeight.constant = Device.size() > Size.screen4_7Inch ? 88 : 64
             self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+}
+
+extension CCOverviewVC {
+    
+    @objc func openSettings(){
+        print("Open Settings")
     }
 }
