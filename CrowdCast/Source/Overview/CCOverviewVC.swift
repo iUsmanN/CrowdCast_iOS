@@ -41,6 +41,7 @@ extension CCOverviewVC {
     
     @objc func openSettings(){
         print("Open Settings")
+        navigationController?.pushViewController(Constants.Storyboards.Others.instantiateViewController(withIdentifier: "CCSettingsVC"), animated: true)
     }
 }
 
@@ -56,13 +57,11 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CCCardTVCTableViewCell", for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell()}
-        
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 125
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

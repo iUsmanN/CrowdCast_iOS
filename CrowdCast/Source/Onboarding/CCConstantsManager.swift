@@ -11,7 +11,8 @@ import UIKit
 
 struct Constants {
      struct Storyboards{
-        static let Home = UIStoryboard(name: "Home", bundle: nil)
-        static let Onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
+        static let Home         = UIStoryboard(name: "Home", bundle: nil)
+        static let Onboarding   = UIStoryboard(name: "Onboarding", bundle: nil)
+        static let Others       = UIStoryboard(name: "Others", bundle: nil)
     }
 }

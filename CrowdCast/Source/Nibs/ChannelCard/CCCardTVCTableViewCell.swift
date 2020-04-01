@@ -28,8 +28,9 @@ class CCCardTVCTableViewCell: UITableViewCell {
     func setupLayers(){
         cardBackgroundView.layer.cornerRadius = 10
         cardBackgroundView.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-        cardBackgroundView.layer.borderWidth = 1
+        cardBackgroundView.layer.borderWidth = 0.5
         cardBackgroundView.layer.shadowOpacity = 0.1
         cardBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        selectionStyle = .none
     }
 }
