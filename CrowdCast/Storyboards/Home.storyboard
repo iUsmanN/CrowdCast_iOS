@@ -118,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-RG-Zwy" customClass="CCNavBar" customModule="CrowdCast" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-RG-Zwy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -143,7 +143,6 @@
                         <viewLayoutGuide key="safeArea" id="wc3-Pa-Da3"/>
                     </view>
                     <navigationItem key="navigationItem" id="WwA-eN-Pbp"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="greetingHeight" destination="K8K-AS-r0p" id="3BF-qK-xU6"/>
                         <outlet property="greetingView" destination="gOr-RG-Zwy" id="y4c-N8-Wu1"/>

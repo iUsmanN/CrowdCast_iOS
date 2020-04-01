@@ -20,24 +20,15 @@ class CCOverviewVC: UIViewController {
         setupView()
         
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
-    }
     
     func setupView(){
         
+        setupNavBar(navigationItem: navigationItem, navigationController: navigationController, title: "Overview")
         showGreeting()
     }
 }
 
-extension CCOverviewVC {
+extension CCOverviewVC : CCNavbarProtocol {
     
     func showGreeting(){
         UIView.animate(withDuration: 0.75, delay: 2, options: .beginFromCurrentState, animations: {
