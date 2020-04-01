@@ -22,7 +22,7 @@ class CCOverviewVC: UIViewController {
     
     func setupView(){
         setupNavBar(navigationItem: navigationItem, title: "Overview", profileAction: #selector(openSettings))
-        //showGreeting()
+        showGreeting()
     }
 }
 
