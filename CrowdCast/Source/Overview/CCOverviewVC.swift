@@ -22,7 +22,10 @@ class CCOverviewVC: UIViewController {
     }
     
     func setupView(){
-        setupNavBar(navigationItem: navigationItem, title: "Overview", profileAction: #selector(viewSettings))
+        setupNavBar(navigationBar   : navigationController?.navigationBar,
+                    navigationItem  : navigationItem,
+                    title           : "Overview",
+                    profileAction   : #selector(viewSettings))
         setupTableView()
     }
 }
@@ -30,10 +33,11 @@ class CCOverviewVC: UIViewController {
 extension CCOverviewVC : CCNavbarProtocol {
     
     func setupTableView(){
-        tableView.delegate = self
-        tableView.dataSource = self
-        let cardNib = UINib(nibName: "CCCardTVCTableViewCell", bundle: nil)
-        let sectionHeaderNib = UINib(nibName: "CCSectionHeader", bundle: nil)
+        tableView.delegate      = self
+        tableView.dataSource    = self
+        let cardNib             = UINib(nibName: "CCCardTVCTableViewCell", bundle: nil)
+        let sectionHeaderNib    = UINib(nibName: "CCSectionHeader", bundle: nil)
+        
         tableView.register(cardNib, forCellReuseIdentifier: "CCCardTVCTableViewCell")
         tableView.register(sectionHeaderNib, forHeaderFooterViewReuseIdentifier: "CCSectionHeader")
     }
@@ -67,7 +71,8 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = Bundle.main.loadNibNamed("CCSectionHeader", owner: self, options: nil)?.first as? CCSectionHeader else { return UIView() }
+        guard let headerView = Bundle.main.loadNibNamed("CCSectionHeader", owner: self, options: nil)?.first
+            as? CCSectionHeader else { return UIView() }
         
         return headerView
     }

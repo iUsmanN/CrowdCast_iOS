@@ -13,13 +13,13 @@ protocol CCNavbarProtocol : CCOpensSettings {}
 
 extension CCNavbarProtocol {
     
-    func setupNavBar(navigationItem: UINavigationItem, title: String?, profileAction: Selector?){
-        navigationItem.title = title
-        let leftButton = getLogoButton()
-        let profileButton = getProfileButton(action: profileAction)
+    func setupNavBar(navigationBar: UINavigationBar?,navigationItem: UINavigationItem, title: String?, profileAction: Selector?){
+        navigationItem.title                = title
+        let leftButton                      = getLogoButton()
+        let profileButton                   = getProfileButton(action: profileAction)
         
-        profileButton.action = profileAction
-        navigationItem.leftBarButtonItem = leftButton
+        profileButton.action                = profileAction
+        navigationItem.leftBarButtonItem    = leftButton
         navigationItem.setRightBarButtonItems([profileButton], animated: true)
     }
 }

@@ -30,8 +30,8 @@
             filePath = "CrowdCast/Source/Overview/CCOverviewVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "setupTableView()"
             landmarkType = "7">
          </BreakpointContent>
