@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0DC3EF94-2E32-46C1-8F3B-BB9091C3F13D"
+            uuid = "8AC763EA-E599-4006-8F52-694896D4D6FA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrowdCast/Source/Overview/CCOverviewVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "openSettings()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "setupTableView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

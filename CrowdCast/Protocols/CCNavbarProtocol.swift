@@ -9,13 +9,12 @@
 import Foundation
 import UIKit
 
-protocol CCNavbarProtocol {}
+protocol CCNavbarProtocol : CCOpensSettings {}
 
 extension CCNavbarProtocol {
     
     func setupNavBar(navigationItem: UINavigationItem, title: String?, profileAction: Selector?){
         navigationItem.title = title
-        
         let leftButton = getLogoButton()
         let profileButton = getProfileButton(action: profileAction)
         

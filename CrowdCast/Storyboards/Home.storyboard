@@ -73,14 +73,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-Xg-DY5">
-                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-RG-Zwy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="K8K-AS-r0p"/>
+                                    <constraint firstAttribute="height" id="K8K-AS-r0p"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -88,11 +88,11 @@
                         <constraints>
                             <constraint firstItem="gOr-RG-Zwy" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="VAY-tV-j5M"/>
                             <constraint firstAttribute="bottom" secondItem="aH1-Xg-DY5" secondAttribute="bottom" id="bqb-5g-jV5"/>
-                            <constraint firstItem="aH1-Xg-DY5" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" constant="20" id="eoX-gd-3mm"/>
+                            <constraint firstItem="aH1-Xg-DY5" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="eoX-gd-3mm"/>
                             <constraint firstItem="gOr-RG-Zwy" firstAttribute="top" secondItem="TLT-u1-Y2p" secondAttribute="top" id="f8A-l7-JG5"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="fTM-dJ-r0L"/>
                             <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="gOr-RG-Zwy" secondAttribute="trailing" id="gze-GA-Bgr"/>
-                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="aH1-Xg-DY5" secondAttribute="trailing" constant="20" id="qJR-ZG-5AV"/>
+                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="aH1-Xg-DY5" secondAttribute="trailing" id="qJR-ZG-5AV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wc3-Pa-Da3"/>
                     </view>

@@ -12,10 +12,19 @@ class CCSettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         // Do any additional setup after loading the view.
     }
     
-
+    func setupView(){
+        setupNavBar()
+    }
+    
+    func setupNavBar(){
+        navigationController?.navigationBar.tintColor = UIColor(named: "Main Accent")
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationItem.title = "Settings"
+    }
     /*
     // MARK: - Navigation
 

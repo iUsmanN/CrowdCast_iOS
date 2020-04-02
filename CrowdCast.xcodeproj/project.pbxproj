@@ -51,6 +51,9 @@
 		B6E3675F24352A5F00B511A0 /* Others.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E3675E24352A5F00B511A0 /* Others.storyboard */; };
 		B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3676124352AEE00B511A0 /* CCSettingsVC.swift */; };
 		B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3676324352AFB00B511A0 /* CCSettingsVM.swift */; };
+		B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3676E2436450400B511A0 /* CCSectionHeader.swift */; };
+		B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E3676F2436450400B511A0 /* CCSectionHeader.xib */; };
+		B6E367732436634700B511A0 /* CCOpensSettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E367722436634700B511A0 /* CCOpensSettingProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		B6E3675E24352A5F00B511A0 /* Others.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Others.storyboard; sourceTree = "<group>"; };
 		B6E3676124352AEE00B511A0 /* CCSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSettingsVC.swift; sourceTree = "<group>"; };
 		B6E3676324352AFB00B511A0 /* CCSettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSettingsVM.swift; sourceTree = "<group>"; };
+		B6E3676E2436450400B511A0 /* CCSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSectionHeader.swift; sourceTree = "<group>"; };
+		B6E3676F2436450400B511A0 /* CCSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCSectionHeader.xib; sourceTree = "<group>"; };
+		B6E367722436634700B511A0 /* CCOpensSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCOpensSettingProtocol.swift; sourceTree = "<group>"; };
 		BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCastTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,6 +189,7 @@
 		B60A29C824338EA100B7F76F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				B6E36765243631FA00B511A0 /* SectionHeader */,
 				B6E367592434F21D00B511A0 /* ChannelCard */,
 				B60A29C924338EA900B7F76F /* Navbar */,
 			);
@@ -202,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				B60A29D52434828400B7F76F /* CCNavbarProtocol.swift */,
+				B6E367722436634700B511A0 /* CCOpensSettingProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -459,6 +467,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		B6E36765243631FA00B511A0 /* SectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				B6E3676E2436450400B511A0 /* CCSectionHeader.swift */,
+				B6E3676F2436450400B511A0 /* CCSectionHeader.xib */,
+			);
+			path = SectionHeader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -585,6 +602,7 @@
 				B67962032432476100C2A13C /* Avatar.png in Resources */,
 				B693E30B24311DF1002B26BC /* adil.png in Resources */,
 				B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */,
+				B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */,
 				B6E3675F24352A5F00B511A0 /* Others.storyboard in Resources */,
 				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */,
@@ -715,11 +733,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */,
 				B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */,
 				B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
 				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
 				B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */,
+				B6E367732436634700B511A0 /* CCOpensSettingProtocol.swift in Sources */,
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
 				B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */,
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
