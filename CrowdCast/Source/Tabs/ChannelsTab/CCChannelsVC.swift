@@ -16,16 +16,16 @@ class CCChannelsVC: UIViewController {
     }
 }
 
-extension CCChannelsVC : CCNavbarProtocol {
+extension CCChannelsVC : CCSetsNavbar {
     
-    func setupView(){
+    private func setupView(){
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Channels",
                     profileAction   : #selector(viewSettings))
     }
 
-    @objc func viewSettings(){
+    @objc private func viewSettings(){
         opensSettings()
     }
 }

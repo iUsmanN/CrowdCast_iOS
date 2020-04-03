@@ -17,16 +17,16 @@ class CCCrowdsVC: UIViewController {
     }
 }
 
-extension CCCrowdsVC : CCNavbarProtocol {
+extension CCCrowdsVC : CCSetsNavbar {
     
-    func setupView(){
+    private func setupView(){
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Crowds",
                     profileAction   : #selector(viewSettings))
     }
 
-    @objc func viewSettings(){
+    @objc private func viewSettings(){
         opensSettings()
     }
 }

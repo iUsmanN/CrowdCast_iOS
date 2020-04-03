@@ -14,5 +14,11 @@ struct Constants {
         static let Home         = UIStoryboard(name: "Home", bundle: nil)
         static let Onboarding   = UIStoryboard(name: "Onboarding", bundle: nil)
         static let Others       = UIStoryboard(name: "Others", bundle: nil)
+        static let Channels     = UIStoryboard(name: "Channels", bundle: nil)
+    }
+    
+    struct CardList{
+        static let rowHeight    : CGFloat = 113
+        static let headerHeight : CGFloat = 50
     }
 }

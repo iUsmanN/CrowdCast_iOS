@@ -11,17 +11,16 @@ import Device
 
 class CCOverviewVC: UIViewController {
 
-    @IBOutlet weak var greetingView: CCNavBar!
-    @IBOutlet weak var greetingHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    var viewModel = CCOverviewVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
-    func setupView(){
+    private func setupView(){
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Overview",
@@ -30,9 +29,9 @@ class CCOverviewVC: UIViewController {
     }
 }
 
-extension CCOverviewVC : CCNavbarProtocol {
+extension CCOverviewVC : CCSetsNavbar {
     
-    func setupTableView(){
+    private func setupTableView(){
         tableView.delegate      = self
         tableView.dataSource    = self
         let cardNib             = UINib(nibName: "CCCardTVCTableViewCell", bundle: nil)
@@ -42,12 +41,12 @@ extension CCOverviewVC : CCNavbarProtocol {
         tableView.register(sectionHeaderNib, forHeaderFooterViewReuseIdentifier: "CCSectionHeader")
     }
     
-    @objc func viewSettings(){
+    @objc private func viewSettings(){
         opensSettings()
     }
 }
 
-extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate {
+extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -63,7 +62,7 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 113
+        return Constants.CardList.rowHeight
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -71,10 +70,7 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = Bundle.main.loadNibNamed("CCSectionHeader", owner: self, options: nil)?.first
-            as? CCSectionHeader else { return UIView() }
-        
-        return headerView
+        return cardHeader(data: viewModel.sectionHeader(section: section), parentNavigationController: self.navigationController)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

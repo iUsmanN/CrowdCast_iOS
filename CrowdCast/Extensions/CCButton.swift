@@ -15,15 +15,16 @@ class CCButton : UIButton {
         didSet {
             switch type {
             case 0: //main
-                backgroundColor = UIColor(named: "Main Accent")
+                backgroundColor     = UIColor(named: "Main Accent")
+                layer.cornerRadius  = 10
                 setTitleColor(UIColor(named: "Background"), for: .normal)
-                layer.cornerRadius = 10
+                
             case 1: //secondary
-                backgroundColor = UIColor(named: "Background")
+                backgroundColor     = UIColor(named: "Background")
+                layer.cornerRadius  = 8
+                layer.borderColor   = UIColor(named: "Main Accent")?.cgColor
+                layer.borderWidth   = 1
                 setTitleColor(UIColor(named: "Main Accent"), for: .normal)
-                layer.cornerRadius = 8
-                layer.borderColor = UIColor(named: "Main Accent")?.cgColor
-                layer.borderWidth = 1
             default: //error
                 print("")
             }
