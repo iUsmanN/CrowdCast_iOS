@@ -39,11 +39,7 @@ extension CCChannelsVC {
     private func setupTableView(){
         tableView.delegate      = self
         tableView.dataSource    = self
-        let cardNib             = UINib(nibName: "CCCardTVCTableViewCell", bundle: nil)
-        let sectionHeaderNib    = UINib(nibName: "CCSectionHeader", bundle: nil)
-        
-        tableView.register(cardNib, forCellReuseIdentifier: "CCCardTVCTableViewCell")
-        tableView.register(sectionHeaderNib, forHeaderFooterViewReuseIdentifier: "CCSectionHeader")
+        tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
     }
 }
 
@@ -58,7 +54,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CCCardTVCTableViewCell", for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell()}
         return cell
     }
     

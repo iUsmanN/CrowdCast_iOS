@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Constants {
-     struct Storyboards{
+     struct Storyboards {
         static let Home         = UIStoryboard(name: "Home", bundle: nil)
         static let Onboarding   = UIStoryboard(name: "Onboarding", bundle: nil)
         static let Others       = UIStoryboard(name: "Others", bundle: nil)
@@ -18,7 +18,7 @@ struct Constants {
     }
     
     struct CardList{
-        static let rowHeight    : CGFloat = 113
+        static let rowHeight    : CGFloat = 130
         static let headerHeight : CGFloat = 45
     }
 }
