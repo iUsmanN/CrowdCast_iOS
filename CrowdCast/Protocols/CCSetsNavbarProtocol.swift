@@ -9,24 +9,22 @@
 import Foundation
 import UIKit
 
-protocol CCNavbarProtocol {}
+protocol CCSetsNavbar : CCOpensSettings {}
 
-extension CCNavbarProtocol {
+extension CCSetsNavbar {
     
-    func setupNavBar(navigationItem: UINavigationItem, title: String?, profileAction: Selector?){
-        navigationItem.title = title
-        
-        let leftButton = getLogoButton()
-        let profileButton = getProfileButton(action: profileAction)
-        
-        profileButton.action = profileAction
-        navigationItem.leftBarButtonItem = leftButton
+    func setupNavBar(navigationBar: UINavigationBar?,navigationItem: UINavigationItem, title: String?, profileAction: Selector?){
+        navigationItem.title                = title
+        let leftButton                      = getLogoButton()
+        let profileButton                   = getProfileButton(action: profileAction)
+        profileButton.action                = profileAction
+        navigationItem.leftBarButtonItem    = leftButton
         navigationItem.setRightBarButtonItems([profileButton], animated: true)
     }
 }
 
 
-extension CCNavbarProtocol {
+extension CCSetsNavbar {
     
     private func getLogoButton() -> UIBarButtonItem {
         let leftButton = UIBarButtonItem(title: "CROWD CAST", style: .plain, target: self, action: nil)

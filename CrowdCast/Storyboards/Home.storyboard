@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83a-pw-sTL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83a-pw-sTL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -31,10 +31,13 @@
                         <viewLayoutGuide key="safeArea" id="IXg-Qa-1gI"/>
                     </view>
                     <navigationItem key="navigationItem" id="DYT-GZ-yEQ"/>
+                    <connections>
+                        <outlet property="tableView" destination="83a-pw-sTL" id="khO-ZC-1yy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lz3-AP-C97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328.985507246377" y="404.46428571428572"/>
+            <point key="canvasLocation" x="493" y="1129"/>
         </scene>
         <!--CrowdsVC-->
         <scene sceneID="ibI-2H-GfI">
@@ -44,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-gZ-xne">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-gZ-xne">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -62,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvQ-XY-LCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328.985507246377" y="-451.33928571428567"/>
+            <point key="canvasLocation" x="1367" y="1128"/>
         </scene>
         <!--OverviewVC-->
         <scene sceneID="asP-qH-Q4P">
@@ -72,39 +75,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-Xg-DY5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-Xg-DY5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-RG-Zwy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="K8K-AS-r0p"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="gOr-RG-Zwy" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="VAY-tV-j5M"/>
                             <constraint firstAttribute="bottom" secondItem="aH1-Xg-DY5" secondAttribute="bottom" id="bqb-5g-jV5"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="eoX-gd-3mm"/>
-                            <constraint firstItem="gOr-RG-Zwy" firstAttribute="top" secondItem="TLT-u1-Y2p" secondAttribute="top" id="f8A-l7-JG5"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="fTM-dJ-r0L"/>
-                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="gOr-RG-Zwy" secondAttribute="trailing" id="gze-GA-Bgr"/>
                             <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="aH1-Xg-DY5" secondAttribute="trailing" id="qJR-ZG-5AV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wc3-Pa-Da3"/>
                     </view>
                     <navigationItem key="navigationItem" id="WwA-eN-Pbp"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="greetingHeight" destination="K8K-AS-r0p" id="3BF-qK-xU6"/>
-                        <outlet property="greetingView" destination="gOr-RG-Zwy" id="y4c-N8-Wu1"/>
+                        <outlet property="tableView" destination="aH1-Xg-DY5" id="NhB-Vs-9TH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikb-Lc-lZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328.985507246377" y="-1310.4910714285713"/>
+            <point key="canvasLocation" x="-384" y="1128"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2o6-LQ-rSX">
@@ -129,7 +122,7 @@
         <!--Navigation Controller-->
         <scene sceneID="63U-Fe-MaT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82U-I8-qHf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82U-I8-qHf" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Feed" id="nYy-Ul-OR0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wK-jo-ifF">
@@ -143,12 +136,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfn-rL-VBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418.840579710145" y="-1310.4910714285713"/>
+            <point key="canvasLocation" x="-384" y="386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q3Y-gd-vNZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fzL-Je-TWu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fzL-Je-TWu" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Groups" id="xiX-yP-NF0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EvX-Wl-Lzg">
@@ -162,12 +155,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dj-fH-rBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418.840579710145" y="-451.33928571428567"/>
+            <point key="canvasLocation" x="1368" y="386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvT-y0-uYT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eip-5k-rjz" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eip-5k-rjz" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Channels" id="TEF-Ay-OSz"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -185,13 +178,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaN-Hc-51n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418.840579710145" y="404.46428571428572"/>
+            <point key="canvasLocation" x="493" y="387"/>
         </scene>
     </scenes>
     <resources>
         <image name="Channels" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Feed" width="30" height="30"/>
-        <image name="Groups" width="50" height="50"/>
+        <image name="Groups" width="33.333332061767578" height="33.333332061767578"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

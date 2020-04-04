@@ -63,7 +63,7 @@
     <resources>
         <image name="Fireworks.png" width="1144" height="743"/>
         <namedColor name="Main Accent">
-            <color red="0.36344030500000002" green="0.4103129506" blue="0.94323629139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36300000548362732" green="0.40999999642372131" blue="0.94300001859664917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

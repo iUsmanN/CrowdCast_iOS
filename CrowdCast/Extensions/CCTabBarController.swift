@@ -13,10 +13,9 @@ class CCTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        // Do any additional setup after loading the view.
     }
     
-    func setupView(){
+    private func setupView(){
         tabBar.tintColor = UIColor(named: "Main Accent")
     }
 }
