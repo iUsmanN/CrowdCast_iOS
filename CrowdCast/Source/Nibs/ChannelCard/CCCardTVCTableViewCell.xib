@@ -29,8 +29,12 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:30am - 11:30am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6l-JE-j9J">
-                                        <rect key="frame" x="0.0" y="16.5" width="104" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6l-JE-j9J" customClass="CCCardTimeLabel" customModule="CrowdCast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="16.5" width="150" height="16.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="osv-oB-Rc8"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                         <color key="textColor" name="CellGreen"/>
                                         <nil key="highlightedColor"/>
@@ -92,6 +96,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cardBackgroundView" destination="yOU-O8-gfa" id="NAf-Ay-jHt"/>
+                <outlet property="ownerLabel" destination="wrJ-95-rr3" id="hCN-8v-37i"/>
+                <outlet property="timeLabel" destination="I6l-JE-j9J" id="ZUc-Uv-Aay"/>
+                <outlet property="titleLabel" destination="UWa-cv-h8M" id="n6a-GB-uGM"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="181.13839285714286"/>
         </tableViewCell>
