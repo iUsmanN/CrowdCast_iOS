@@ -49,7 +49,7 @@ extension CCOverviewVC : CCSetsNavbar {
 extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,6 +74,10 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return Constants.CardList.headerHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
 }

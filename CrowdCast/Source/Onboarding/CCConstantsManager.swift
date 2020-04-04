@@ -19,6 +19,6 @@ struct Constants {
     
     struct CardList{
         static let rowHeight    : CGFloat = 113
-        static let headerHeight : CGFloat = 50
+        static let headerHeight : CGFloat = 45
     }
 }

@@ -18,6 +18,7 @@
 		B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADC1D2430B67600ECD1D2 /* CCButton.swift */; };
 		B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */; };
 		B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C716F2434ADD00090901C /* CCTabBarController.swift */; };
+		B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CEA2438750C0011715A /* CCChannelsVM.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B67962032432476100C2A13C /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B67962022432476000C2A13C /* Avatar.png */; };
@@ -95,6 +96,7 @@
 		B61ADC1D2430B67600ECD1D2 /* CCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCButton.swift; sourceTree = "<group>"; };
 		B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		B62C716F2434ADD00090901C /* CCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTabBarController.swift; sourceTree = "<group>"; };
+		B64E4CEA2438750C0011715A /* CCChannelsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVM.swift; sourceTree = "<group>"; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B67962022432476000C2A13C /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B67962112432566D00C2A13C /* CCChannelsVC.swift */,
+				B64E4CEA2438750C0011715A /* CCChannelsVM.swift */,
 			);
 			path = ChannelsTab;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
 				B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */,
+				B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */,
 				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

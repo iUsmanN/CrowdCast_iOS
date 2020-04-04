@@ -1,23 +1,23 @@
 //
-//  CCOverviewVM.swift
+//  CCChannelsVM.swift
 //  CrowdCast
 //
-//  Created by Usman on 03/04/2020.
+//  Created by Usman on 04/04/2020.
 //  Copyright © 2020 Usman Nazir. All rights reserved.
 //
 
 import Foundation
 
-struct CCOverviewVM {
+struct CCChannelsVM {
     
     var sectionHeaderData : [CCSectionHeaderData] = [
-        CCSectionHeaderData(title: "Upcoming", rightButtonTitle: "View all", rightButtonAction: .viewAll),
-        CCSectionHeaderData(title: "Hot Right Now", rightButtonTitle: nil, rightButtonAction: nil)
+        CCSectionHeaderData(title: "Your Channels", rightButtonTitle: "Create New", rightButtonAction: .newChannel),
+        CCSectionHeaderData(title: "Joined Channels", rightButtonTitle: "Join Channel", rightButtonAction: .joinChannel)
     ]
 
 }
 
-extension CCOverviewVM {
+extension CCChannelsVM {
     
     func sectionHeader(section: Int) -> CCSectionHeaderData {
         return sectionHeaderData[section]

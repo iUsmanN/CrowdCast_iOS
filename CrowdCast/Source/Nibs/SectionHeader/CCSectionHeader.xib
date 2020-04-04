@@ -18,16 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgJ-nz-9bt">
-                        <rect key="frame" x="20" y="10" width="285" height="34"/>
+                        <rect key="frame" x="20" y="10" width="280" height="34"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY5-1X-m0o">
-                                <rect key="frame" x="0.0" y="0.0" width="228" height="34"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="193" height="34"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fru-F1-yHC">
-                                <rect key="frame" x="228" y="0.0" width="57" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fru-F1-yHC">
+                                <rect key="frame" x="193" y="0.0" width="87" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" name="Main Accent"/>
                                 </state>
@@ -37,14 +38,14 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="fru-F1-yHC" firstAttribute="width" secondItem="bY5-1X-m0o" secondAttribute="width" multiplier="0.25" id="ymn-5R-sF1"/>
+                            <constraint firstItem="fru-F1-yHC" firstAttribute="width" secondItem="bY5-1X-m0o" secondAttribute="width" multiplier="0.45" id="ymn-5R-sF1"/>
                         </constraints>
                     </stackView>
                 </subviews>
                 <color key="backgroundColor" name="Background"/>
                 <constraints>
                     <constraint firstItem="ZgJ-nz-9bt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="HC4-Mj-uFS"/>
-                    <constraint firstAttribute="trailing" secondItem="ZgJ-nz-9bt" secondAttribute="trailing" constant="15" id="N0C-E1-3OH"/>
+                    <constraint firstAttribute="trailing" secondItem="ZgJ-nz-9bt" secondAttribute="trailing" constant="20" id="N0C-E1-3OH"/>
                     <constraint firstItem="ZgJ-nz-9bt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hKh-aF-Zwh"/>
                     <constraint firstAttribute="bottom" secondItem="ZgJ-nz-9bt" secondAttribute="bottom" id="v6b-6t-kv9"/>
                 </constraints>
