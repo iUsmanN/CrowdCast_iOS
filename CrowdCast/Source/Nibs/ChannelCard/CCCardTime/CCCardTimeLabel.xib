@@ -14,12 +14,12 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:30am - 11:30pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z52-jc-0gq">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="16.5"/>
+            <rect key="frame" x="0.0" y="0.0" width="269" height="17"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
             <color key="textColor" name="CellGreen"/>
             <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="128.98550724637681" y="96.763392857142847"/>
+            <point key="canvasLocation" x="42.753623188405797" y="96.595982142857139"/>
         </label>
     </objects>
     <resources>

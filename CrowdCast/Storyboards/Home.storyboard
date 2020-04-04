@@ -122,7 +122,7 @@
         <!--Navigation Controller-->
         <scene sceneID="63U-Fe-MaT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82U-I8-qHf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82U-I8-qHf" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Feed" id="nYy-Ul-OR0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wK-jo-ifF">
@@ -141,7 +141,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Q3Y-gd-vNZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fzL-Je-TWu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fzL-Je-TWu" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Groups" id="xiX-yP-NF0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EvX-Wl-Lzg">
@@ -160,7 +160,7 @@
         <!--Navigation Controller-->
         <scene sceneID="OvT-y0-uYT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eip-5k-rjz" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eip-5k-rjz" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Channels" id="TEF-Ay-OSz"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

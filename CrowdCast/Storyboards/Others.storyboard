@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="CCSettingsVC" modalPresentationStyle="overFullScreen" hidesBottomBarWhenPushed="YES" id="KAu-Pm-j8j" customClass="CCSettingsVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gue-PP-zPG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reading.png" translatesAutoresizingMaskIntoConstraints="NO" id="UYA-cU-sB0">
-                                <rect key="frame" x="30" y="81" width="354" height="734"/>
+                                <rect key="frame" x="30" y="37" width="354" height="734"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoT-Qv-IUg">
                                 <rect key="frame" x="184" y="144" width="46" height="30"/>
@@ -37,6 +37,7 @@
                         <viewLayoutGuide key="safeArea" id="8Ak-hd-8oR"/>
                     </view>
                     <navigationItem key="navigationItem" id="Hzs-tU-Zvm"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gi5-d8-gs6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +48,7 @@
             <objects>
                 <viewController title="Yo" modalPresentationStyle="fullScreen" id="PEo-wc-7fM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ecF-DD-rUI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OaZ-r9-84f"/>

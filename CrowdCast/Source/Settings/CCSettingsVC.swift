@@ -21,7 +21,6 @@ class CCSettingsVC: UIViewController {
     }
     
     func setupNavBar(){
-        navigationController?.navigationBar.tintColor = UIColor(named: "Main Accent")
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationItem.title = "Settings"
     }
