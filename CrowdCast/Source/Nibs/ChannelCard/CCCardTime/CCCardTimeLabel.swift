@@ -28,5 +28,9 @@ class CCCardTimeLabel: UILabel {
         timeLabel.frame = self.bounds
         timeLabel.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
+    
+    func setView(inputColor: UIColor?) {
+        timeLabel.textColor = inputColor
+    }
 
 }
