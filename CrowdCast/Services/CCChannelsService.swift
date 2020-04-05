@@ -9,23 +9,12 @@
 import Foundation
 import FirebaseFirestore
 
-struct paginatedData<T>{
-    var data : [T]?
-    var next : CollectionReference?
-}
-
-protocol CCChannelsService : CCNetworkEngine {}
+protocol CCChannelsService : CCNetworkEngine, CCQueryEngine {}
 
 extension CCChannelsService {
     
     func getChannels(UID: String, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
-        let db = Firestore.firestore()
-        var output : [CCChannel]?
-        
-        let query = db.collection("develop/data/channels")
-            .order(by: FirebaseFirestore.FieldPath.documentID())
-            .whereField("owners", arrayContains: UID) //query till here
-        
+        let query = makeQuery(.getChannels, in: "owners", contains: UID)
         fetchData(query: query, completion: completion)
     }
 }

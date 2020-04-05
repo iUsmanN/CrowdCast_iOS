@@ -33,7 +33,9 @@
 		B64E4D162439F4E70011715A /* CCChannelOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D152439F4E70011715A /* CCChannelOwner.swift */; };
 		B64E4D182439F6020011715A /* CCContainsCrowds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D172439F6020011715A /* CCContainsCrowds.swift */; };
 		B64E4D1B243A2E920011715A /* CCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1A243A2E920011715A /* CCError.swift */; };
-		B64E4D1D243A334F0011715A /* CCQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1C243A334E0011715A /* CCQueries.swift */; };
+		B64E4D1D243A334F0011715A /* CCQueryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1C243A334E0011715A /* CCQueryEngine.swift */; };
+		B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */; };
+		B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D20243A41520011715A /* CCPaginatedData.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B67962032432476100C2A13C /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B67962022432476000C2A13C /* Avatar.png */; };
@@ -126,7 +128,9 @@
 		B64E4D152439F4E70011715A /* CCChannelOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelOwner.swift; sourceTree = "<group>"; };
 		B64E4D172439F6020011715A /* CCContainsCrowds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCContainsCrowds.swift; sourceTree = "<group>"; };
 		B64E4D1A243A2E920011715A /* CCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCError.swift; sourceTree = "<group>"; };
-		B64E4D1C243A334E0011715A /* CCQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueries.swift; sourceTree = "<group>"; };
+		B64E4D1C243A334E0011715A /* CCQueryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryEngine.swift; sourceTree = "<group>"; };
+		B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryPaths.swift; sourceTree = "<group>"; };
+		B64E4D20243A41520011715A /* CCPaginatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPaginatedData.swift; sourceTree = "<group>"; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B67962022432476000C2A13C /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
@@ -328,7 +332,8 @@
 			isa = PBXGroup;
 			children = (
 				B64E4CFF2439DD170011715A /* CCNetworkEngine.swift */,
-				B64E4D1C243A334E0011715A /* CCQueries.swift */,
+				B64E4D1C243A334E0011715A /* CCQueryEngine.swift */,
+				B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */,
 			);
 			path = "Network Engine";
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				B64E4D042439E7A40011715A /* CCIndividual.swift */,
 				B64E4D062439E8370011715A /* CCCrowd.swift */,
 				B64E4D152439F4E70011715A /* CCChannelOwner.swift */,
+				B64E4D20243A41520011715A /* CCPaginatedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -892,7 +898,8 @@
 				B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */,
 				B64E4D0C2439EF470011715A /* CCContainsMembers.swift in Sources */,
 				B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */,
-				B64E4D1D243A334F0011715A /* CCQueries.swift in Sources */,
+				B64E4D1D243A334F0011715A /* CCQueryEngine.swift in Sources */,
+				B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
 				B64E4D182439F6020011715A /* CCContainsCrowds.swift in Sources */,
 				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
@@ -925,6 +932,7 @@
 				B64E4CF82438A1D50011715A /* CCCardTimeLabel.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
 				B64E4D072439E8370011715A /* CCCrowd.swift in Sources */,
+				B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */,
 				B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */,
 				B64E4CFA2438A7710011715A /* CCNavigationController.swift in Sources */,
 				B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 struct CCIndividual     : Codable {
-    var name        : String?
+    var name            : String?
     var firstName       : String?
     var lastName        : String?
     var email           : String?

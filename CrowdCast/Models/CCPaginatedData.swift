@@ -1,5 +1,5 @@
 //
-//  CCQueries.swift
+//  CCPaginatedData.swift
 //  CrowdCast
 //
 //  Created by Usman on 05/04/2020.
@@ -8,3 +8,7 @@
 
 import Foundation
 
+struct paginatedData<T>{
+    var data : [T]?
+    var next : CollectionReference?
+}
