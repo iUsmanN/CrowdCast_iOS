@@ -25,10 +25,12 @@
 		B64E4CFA2438A7710011715A /* CCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CF92438A7710011715A /* CCNavigationController.swift */; };
 		B64E4CFD2439DCFE0011715A /* CCChannelsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CFC2439DCFE0011715A /* CCChannelsService.swift */; };
 		B64E4D002439DD170011715A /* CCNetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CFF2439DD170011715A /* CCNetworkEngine.swift */; };
-		B64E4D032439E70E0011715A /* CCChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D022439E70E0011715A /* CCChannelModel.swift */; };
+		B64E4D032439E70E0011715A /* CCChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D022439E70E0011715A /* CCChannel.swift */; };
 		B64E4D052439E7A40011715A /* CCIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D042439E7A40011715A /* CCIndividual.swift */; };
 		B64E4D072439E8370011715A /* CCCrowd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D062439E8370011715A /* CCCrowd.swift */; };
-		B64E4D092439E9400011715A /* CCChannedOwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D082439E9400011715A /* CCChannedOwnerModel.swift */; };
+		B64E4D092439E9400011715A /* CCOwnsChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D082439E9400011715A /* CCOwnsChannels.swift */; };
+		B64E4D0C2439EF470011715A /* CCContainsMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D0B2439EF470011715A /* CCContainsMembers.swift */; };
+		B64E4D0E2439EF8E0011715A /* CCContainsChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D0D2439EF8E0011715A /* CCContainsChannels.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B67962032432476100C2A13C /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B67962022432476000C2A13C /* Avatar.png */; };
@@ -113,10 +115,12 @@
 		B64E4CF92438A7710011715A /* CCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCNavigationController.swift; sourceTree = "<group>"; };
 		B64E4CFC2439DCFE0011715A /* CCChannelsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsService.swift; sourceTree = "<group>"; };
 		B64E4CFF2439DD170011715A /* CCNetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCNetworkEngine.swift; sourceTree = "<group>"; };
-		B64E4D022439E70E0011715A /* CCChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelModel.swift; sourceTree = "<group>"; };
+		B64E4D022439E70E0011715A /* CCChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannel.swift; sourceTree = "<group>"; };
 		B64E4D042439E7A40011715A /* CCIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCIndividual.swift; sourceTree = "<group>"; };
 		B64E4D062439E8370011715A /* CCCrowd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowd.swift; sourceTree = "<group>"; };
-		B64E4D082439E9400011715A /* CCChannedOwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannedOwnerModel.swift; sourceTree = "<group>"; };
+		B64E4D082439E9400011715A /* CCOwnsChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCOwnsChannels.swift; sourceTree = "<group>"; };
+		B64E4D0B2439EF470011715A /* CCContainsMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCContainsMembers.swift; sourceTree = "<group>"; };
+		B64E4D0D2439EF8E0011715A /* CCContainsChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCContainsChannels.swift; sourceTree = "<group>"; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B67962022432476000C2A13C /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
@@ -325,12 +329,22 @@
 		B64E4D012439E6FC0011715A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B64E4D022439E70E0011715A /* CCChannelModel.swift */,
+				B64E4D0A2439EF210011715A /* Protocols */,
+				B64E4D022439E70E0011715A /* CCChannel.swift */,
 				B64E4D042439E7A40011715A /* CCIndividual.swift */,
 				B64E4D062439E8370011715A /* CCCrowd.swift */,
-				B64E4D082439E9400011715A /* CCChannedOwnerModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B64E4D0A2439EF210011715A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B64E4D082439E9400011715A /* CCOwnsChannels.swift */,
+				B64E4D0B2439EF470011715A /* CCContainsMembers.swift */,
+				B64E4D0D2439EF8E0011715A /* CCContainsChannels.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		B67962042432495500C2A13C /* Storyboards */ = {
@@ -859,6 +873,7 @@
 			files = (
 				B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */,
 				B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */,
+				B64E4D0C2439EF470011715A /* CCContainsMembers.swift in Sources */,
 				B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
 				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
@@ -876,11 +891,11 @@
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
 				B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */,
-				B64E4D032439E70E0011715A /* CCChannelModel.swift in Sources */,
+				B64E4D032439E70E0011715A /* CCChannel.swift in Sources */,
 				B64E4D002439DD170011715A /* CCNetworkEngine.swift in Sources */,
 				B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */,
 				B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */,
-				B64E4D092439E9400011715A /* CCChannedOwnerModel.swift in Sources */,
+				B64E4D092439E9400011715A /* CCOwnsChannels.swift in Sources */,
 				B64E4CFD2439DCFE0011715A /* CCChannelsService.swift in Sources */,
 				B6BD90D32437130B00F50848 /* CCSectionHeaderData.swift in Sources */,
 				B60A29D62434828400B7F76F /* CCSetsNavbarProtocol.swift in Sources */,
@@ -893,6 +908,7 @@
 				B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */,
 				B64E4CFA2438A7710011715A /* CCNavigationController.swift in Sources */,
 				B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */,
+				B64E4D0E2439EF8E0011715A /* CCContainsChannels.swift in Sources */,
 				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

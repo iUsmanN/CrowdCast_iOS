@@ -1,5 +1,5 @@
 //
-//  CCChannedOwnerModel.swift
+//  CCContainsMembers.swift
 //  CrowdCast
 //
 //  Created by Usman on 05/04/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct CCChannelOwnerModel : Codable {
-    var ownedChannels : [CCChannelModel?]?
+protocol CCContainsMembers {
+    var members : [CCIndividual?]? { get set }
 }

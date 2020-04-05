@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CCChannelModel : Codable {
+struct CCChannel        : Codable {
     var name            : String?
     var description     : String?
     var isGroupChannel  : Bool?
