@@ -25,17 +25,7 @@ extension CCChannelsService {
         let query = db.collection("develop/data/channels")
             .order(by: FirebaseFirestore.FieldPath.documentID())
             .whereField("owners", arrayContains: UID) //query till here
-            .getDocuments { (documents, error) in
-                guard error == nil, let data = documents else { prints("[ERROR]"); return }
-
-                do {
-                    output = try data.documents.compactMap({
-                        try $0.data(as: CCChannel.self)
-                    })
-                    completion(.success(paginatedData<CCChannel>(data: output, next: nil)))
-                } catch {
-                    completion(.failure(CCError.channelFetchFailure))
-                }
-        }
+        
+        fetchData(query: query, completion: completion)
     }
 }

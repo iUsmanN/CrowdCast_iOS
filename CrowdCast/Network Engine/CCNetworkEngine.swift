@@ -13,13 +13,20 @@ protocol CCNetworkEngine {}
 
 extension CCNetworkEngine {
     
-    func fetchData<T: Codable>(query: Query, completion: @escaping (Result<T, Error>) -> ()){
-//        query.getDocuments { (response, error) in
-//            guard error == nil, let data = response else {
-//                guard let error = error else { return }
-//                completion(.failure(error)); return }
-//            completion(.success(data))
-//        }
+    func fetchData<T: Codable>(query: Query, completion: @escaping (Result<paginatedData<T>, Error>) -> ()){
+        
+        query.getDocuments { (documents, error) in
+            guard error == nil, let data = documents else {
+                completion(.failure(CCError.channelFetchFailure))
+                return
+            }
+            do {
+                let output = try data.documents.compactMap({ try $0.data(as: T.self) })
+                completion(.success(paginatedData<T>(data: output, next: nil)))
+            } catch {
+                completion(.failure(CCError.networkEngineFailure))
+            }
+        }
     }
     
 }
