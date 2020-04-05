@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct CCCrowd : Codable, CCOwnsChannels {
-    var UID: String?
-    var Name: String?
-    var description: String?
-    var owners: [CCIndividual]
-    var ownedChannels: [CCChannel?]?
+struct CCCrowd          : Codable {
+    var Name            : String?
+    var description     : String?
+    var owners          : [CCIndividual?]?
+    var members         : [CCIndividual?]?
+    var channels        : [CCChannel]?
 }

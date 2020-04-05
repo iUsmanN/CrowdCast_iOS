@@ -7,13 +7,19 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol CCNetworkEngine {}
 
 extension CCNetworkEngine {
     
-    func fetchData(){
-        
+    func fetchData<T: Codable>(query: Query, completion: @escaping (Result<T, Error>) -> ()){
+//        query.getDocuments { (response, error) in
+//            guard error == nil, let data = response else {
+//                guard let error = error else { return }
+//                completion(.failure(error)); return }
+//            completion(.success(data))
+//        }
     }
     
 }

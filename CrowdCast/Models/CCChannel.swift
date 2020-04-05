@@ -8,8 +8,10 @@
 
 import Foundation
 
-struct CCChannel        : Codable {
-    var name            : String?
-    var description     : String?
-    var isGroupChannel  : Bool?
+struct CCChannel    : Codable {
+    var name                    : String?
+    var description             : String?
+    var owners                  : [String?]?
+    var members                 : [String?]?
+    var colorAccent             : String?
 }

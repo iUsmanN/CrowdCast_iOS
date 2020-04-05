@@ -1,5 +1,5 @@
 //
-//  CCContainsMembers.swift
+//  CCContainsCrowds.swift
 //  CrowdCast
 //
 //  Created by Usman on 05/04/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CCContainsMembers : Codable {
-    var members : [CCIndividual?]? { get set }
+protocol CCContainsCrowds : Codable {
+    var crowds : [CCCrowd?]? { get set }
 }

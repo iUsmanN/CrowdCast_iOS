@@ -1,5 +1,5 @@
 //
-//  CCChannedOwnerModel.swift
+//  CCQueries.swift
 //  CrowdCast
 //
 //  Created by Usman on 05/04/2020.
@@ -8,6 +8,3 @@
 
 import Foundation
 
-protocol CCOwnsChannels {
-    var ownedChannels : [CCChannel?]? { get set }
-}

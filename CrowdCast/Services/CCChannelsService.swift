@@ -9,27 +9,33 @@
 import Foundation
 import FirebaseFirestore
 
-enum channelType {
-    case individual, group
+struct paginatedData<T>{
+    var data : [T]?
+    var next : CollectionReference?
 }
 
 protocol CCChannelsService : CCNetworkEngine {}
 
 extension CCChannelsService {
     
-    func getChannels(for: channelType, UID: String) {
+    func getChannels(UID: String, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
         let db = Firestore.firestore()
+        var output : [CCChannel]?
         
-        //        db.collection("develop").document("data").collection("channels").getDocuments { (documents, error) in
-        //            guard error == nil, let data = documents else { prints("[ERROR] \(error?.localizedDescription ?? "")"); return }
-        //
-        //            prints("[DATA] : \(dump(data.documents.first?.data()) ?? "")")
-        //        }
-        
-        db.collection("develop").document("data").collection("channels").order(by: FirebaseFirestore.FieldPath.documentID()).whereField("owners", arrayContains: UID).getDocuments { (documents, error) in
-            guard error == nil, let data = documents else { prints("[ERROR] \(error?.localizedDescription ?? "")"); return }
-            
-            prints("[DATA] : \(dump(data.documents.first?.data()))")
+        let query = db.collection("develop/data/channels")
+            .order(by: FirebaseFirestore.FieldPath.documentID())
+            .whereField("owners", arrayContains: UID) //query till here
+            .getDocuments { (documents, error) in
+                guard error == nil, let data = documents else { prints("[ERROR]"); return }
+
+                do {
+                    output = try data.documents.compactMap({
+                        try $0.data(as: CCChannel.self)
+                    })
+                    completion(.success(paginatedData<CCChannel>(data: output, next: nil)))
+                } catch {
+                    completion(.failure(CCError.channelFetchFailure))
+                }
         }
     }
 }
