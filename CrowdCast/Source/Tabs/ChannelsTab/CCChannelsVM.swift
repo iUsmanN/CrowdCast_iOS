@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct CCChannelsVM {
     
@@ -14,7 +16,10 @@ struct CCChannelsVM {
         CCSectionHeaderData(title: "Your Channels", rightButtonTitle: "Create New", rightButtonAction: .newChannel),
         CCSectionHeaderData(title: "Joined Channels", rightButtonTitle: "Join Channel", rightButtonAction: .joinChannel)
     ]
-
+    
+    init() {
+        getData()
+    }
 }
 
 extension CCChannelsVM {
@@ -25,5 +30,12 @@ extension CCChannelsVM {
     
     func numberOfSections() -> Int {
         return sectionHeaderData.count
+    }
+}
+
+extension CCChannelsVM : CCChannelsService {
+    
+    func getData() {
+        getChannels(for: .individual, UID: "zQ8dOTcBUaxx4FquPHyV")
     }
 }

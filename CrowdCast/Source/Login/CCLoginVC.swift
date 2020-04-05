@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 import Device
 
 class CCLoginVC: UIViewController {
