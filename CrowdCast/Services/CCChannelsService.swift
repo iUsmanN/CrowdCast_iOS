@@ -17,4 +17,9 @@ extension CCChannelsService {
         let query = makeQuery(.getChannels, in: "owners", contains: UID)
         fetchData(query: query, completion: completion)
     }
+//
+//    func getJoinedChannels(UID: String, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
+//        let query = makeQuery(.getJoinedChannels, in: "owners", contains: UID)
+//        fetchData(query: query, completion: completion)
+//    }
 }

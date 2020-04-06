@@ -17,7 +17,8 @@ class CCChannelsVM {
         CCSectionHeaderData(title: "Joined Channels", rightButtonTitle: "Join Channel", rightButtonAction: .joinChannel)
     ]
     
-    var data : paginatedData<CCChannel>?
+    var myChannels = paginatedData<CCChannel>()
+    
     init() {
         getData()
     }
@@ -37,10 +38,11 @@ extension CCChannelsVM {
 extension CCChannelsVM : CCChannelsService {
     
      func getData() {
-        getChannels(UID: "Q5F4FAwyMMjQHMqXkxEa") { (result) in
+        getChannels(UID: "Q5F4FAwyMMjQHMqXkxEa") { [weak self] (result) in
             switch result {
             case .success(let fetchedData):
-                self.data = fetchedData
+                self?.myChannels.updateData(input: fetchedData)
+                self?.getData()
             case .failure(let error):
                 prints("[Error] \(error)")
             }
