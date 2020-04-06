@@ -20,4 +20,11 @@ extension CCQueryEngine {
                  .order(by: FirebaseFirestore.FieldPath.documentID())
                  .whereField(which ?? "", arrayContains: contains ?? "")
     }
+    
+    func makeQuery(_ type : CCQueryPath, in which : String?, equals: String?) -> Query {
+        let db = Firestore.firestore()
+        let env = "develop"
+        return db.collection("\(env)\(type.rawValue)")
+                 .whereField(which ?? "", isEqualTo: equals)
+    }
 }

@@ -11,4 +11,5 @@ import Foundation
 enum CCError : Error {
     case channelFetchFailure
     case networkEngineFailure
+    case firebaseFailure
 }

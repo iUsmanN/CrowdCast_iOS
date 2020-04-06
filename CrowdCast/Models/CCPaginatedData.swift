@@ -14,7 +14,6 @@ struct paginatedData<T>{
     var next : CollectionReference?
     
     mutating func updateData(input: paginatedData<T>){
-        //if data == nil { data = [T]()}
         self.data.append(contentsOf: input.data)
     }
 }

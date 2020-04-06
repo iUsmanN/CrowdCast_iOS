@@ -54,6 +54,9 @@
 		B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E30624311A37002B26BC /* CCSetupProfileVC.swift */; };
 		B693E30B24311DF1002B26BC /* adil.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E30A24311DF1002B26BC /* adil.png */; };
 		B693E30D24312C7B002B26BC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693E30C24312C7B002B26BC /* Home.storyboard */; };
+		B6974880243B96E800AE95C0 /* CCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697487F243B96E800AE95C0 /* CCUser.swift */; };
+		B6974882243B977400AE95C0 /* CCUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974881243B977400AE95C0 /* CCUserService.swift */; };
+		B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCUserManager.swift */; };
 		B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */; };
 		B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */; };
 		B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CF243703F600F50848 /* CCPrint.swift */; };
@@ -149,6 +152,9 @@
 		B693E30624311A37002B26BC /* CCSetupProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetupProfileVC.swift; sourceTree = "<group>"; };
 		B693E30A24311DF1002B26BC /* adil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adil.png; sourceTree = "<group>"; };
 		B693E30C24312C7B002B26BC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B697487F243B96E800AE95C0 /* CCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUser.swift; sourceTree = "<group>"; };
+		B6974881243B977400AE95C0 /* CCUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserService.swift; sourceTree = "<group>"; };
+		B6974883243B987600AE95C0 /* CCUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUserManager.swift; path = CrowdCast/Services/CCUserManager.swift; sourceTree = SOURCE_ROOT; };
 		B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCShowsCardHeaderProtocol.swift; sourceTree = "<group>"; };
 		B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardHeaderAction.swift; sourceTree = "<group>"; };
 		B6BD90CF243703F600F50848 /* CCPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPrint.swift; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				B64E4CFC2439DCFE0011715A /* CCChannelsService.swift */,
+				B6974881243B977400AE95C0 /* CCUserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,6 +354,7 @@
 				B64E4D062439E8370011715A /* CCCrowd.swift */,
 				B64E4D152439F4E70011715A /* CCChannelOwner.swift */,
 				B64E4D20243A41520011715A /* CCPaginatedData.swift */,
+				B697487F243B96E800AE95C0 /* CCUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 			children = (
 				B679620A2432509300C2A13C /* CCConstantsManager.swift */,
 				B64E4CF0243890510011715A /* CCNibManager.swift */,
+				B6974883243B987600AE95C0 /* CCUserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -912,6 +921,7 @@
 				B64E4CF1243890510011715A /* CCNibManager.swift in Sources */,
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
+				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
@@ -929,7 +939,9 @@
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
 				B64E4D142439F4850011715A /* CCContainsOwners.swift in Sources */,
 				B64E4D052439E7A40011715A /* CCIndividual.swift in Sources */,
+				B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */,
 				B64E4CF82438A1D50011715A /* CCCardTimeLabel.swift in Sources */,
+				B6974880243B96E800AE95C0 /* CCUser.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
 				B64E4D072439E8370011715A /* CCCrowd.swift in Sources */,
 				B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */,

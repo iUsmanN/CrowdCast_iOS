@@ -13,16 +13,15 @@ protocol CCNetworkEngine {}
 
 extension CCNetworkEngine {
     
-    func fetchData<T: Codable>(query: Query, completion: @escaping (Result<paginatedData<T>, Error>) -> ()){
-        
+    func fetchPaginatedData<T: Codable>(query: Query, completion: @escaping (Result<[T], Error>) -> ()){
         query.getDocuments { (documents, error) in
             guard error == nil, let data = documents else {
-                completion(.failure(CCError.channelFetchFailure))
+                completion(.failure(CCError.firebaseFailure))
                 return
             }
             do {
                 let output = try data.documents.compactMap({ try $0.data(as: T.self) })
-                completion(.success(paginatedData<T>(data: output, next: nil)))
+                completion(.success(output))
             } catch {
                 completion(.failure(CCError.networkEngineFailure))
             }

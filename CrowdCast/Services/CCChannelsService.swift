@@ -15,11 +15,13 @@ extension CCChannelsService {
     
     func getChannels(UID: String, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
         let query = makeQuery(.getChannels, in: "owners", contains: UID)
-        fetchData(query: query, completion: completion)
+        fetchPaginatedData(query: query) { (result: Result<[CCChannel], Error>) in
+            switch result {
+            case .success(let channels):
+                completion(.success(paginatedData(data: channels, next: nil)))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
-//
-//    func getJoinedChannels(UID: String, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
-//        let query = makeQuery(.getJoinedChannels, in: "owners", contains: UID)
-//        fetchData(query: query, completion: completion)
-//    }
 }
