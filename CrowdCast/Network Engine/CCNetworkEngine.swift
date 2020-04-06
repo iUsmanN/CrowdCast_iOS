@@ -13,7 +13,7 @@ protocol CCNetworkEngine {}
 
 extension CCNetworkEngine {
     
-    func fetchPaginatedData<T: Codable>(query: Query, completion: @escaping (Result<[T], Error>) -> ()){
+    func fetchData<T: Codable>(query: Query, completion: @escaping (Result<[T], Error>) -> ()){
         query.getDocuments { (documents, error) in
             guard error == nil, let data = documents else {
                 completion(.failure(CCError.firebaseFailure))

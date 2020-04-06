@@ -42,7 +42,7 @@ extension CCChannelsVM : CCChannelsService {
             switch result {
             case .success(let fetchedData):
                 self?.myChannels.updateData(input: fetchedData)
-                self?.getData()
+                //self?.getData()
             case .failure(let error):
                 prints("[Error] \(error)")
             }

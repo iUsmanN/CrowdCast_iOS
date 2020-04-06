@@ -13,8 +13,13 @@ protocol CCUserService : CCNetworkEngine, CCQueryEngine {}
 
 extension CCUserService {
     
-    func fetchUserProfile(email: String, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
-        let query = makeQuery(.getUserProfile, in: "email", equals: "usman@usman.com")
-        //fetchPaginatedData(query: query, completion: completion)
+    func fetchUserProfile(email: String, completion: @escaping (Result<CCUser, Error>) -> ()) {
+        let query = makeQuery(.getUserProfile, in: "email", equals: email)
+        fetchData(query: query) { (result: Result<[CCUser], Error>) in
+            switch result {
+            case .success(let users): completion(.success(users.first!))
+            case .failure(let error): completion(.failure(error))
+            }
+        }
     }
 }
