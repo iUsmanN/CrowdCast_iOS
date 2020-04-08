@@ -16,7 +16,7 @@ extension CCQueryEngine {
     func addUser() -> CollectionReference {
         let db = Firestore.firestore()
         let env = "develop"
-        return db.collection("\(env)\(CCQueryPath.userProfileData)")
+        return db.collection("\(env)\(CCQueryPath.userProfileData.rawValue)")
     }
     
     func make(_ type : CCQueryPath, in which : String?, contains: [String]) -> Query {

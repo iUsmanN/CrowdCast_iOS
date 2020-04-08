@@ -73,6 +73,7 @@ extension CCSignUpVC {
     
     func signUpSuccess(){
         print("signed up successfully.")
+        CCUserManager.sharedInstance
     }
     
     func fieldsIncorrect(){
