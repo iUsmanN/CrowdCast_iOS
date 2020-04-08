@@ -20,7 +20,7 @@ class CCChannelsVM {
     var myChannels = paginatedData<CCChannel>()
     
     init() {
-        //getData()
+        getData()
     }
 }
 
@@ -48,14 +48,14 @@ extension CCChannelsVM {
 
 extension CCChannelsVM : CCChannelsService {
     
-//    func getData() {
-//        getChannels(ids: CCUserManager.sharedInstance.getJoinedChannelIDs()) { [weak self] (result) in
-//            switch result {
-//            case .success(let fetchedData):
-//                self?.myChannels.updateData(input: fetchedData)
-//            case .failure(let error):
-//                prints("[Error] \(error)")
-//            }
-//        }
-//    }
+    func getData() {
+        getChannels(ids: CCUserManager.sharedInstance.getJoinedChannelIDs()) { [weak self] (result) in
+            switch result {
+            case .success(let fetchedData):
+                self?.myChannels.updateData(input: fetchedData)
+            case .failure(let error):
+                prints("[Error] \(error)")
+            }
+        }
+    }
 }

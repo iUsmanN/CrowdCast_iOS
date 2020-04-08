@@ -13,8 +13,8 @@ protocol CCUserService : CCNetworkEngine, CCQueryEngine {}
 
 extension CCUserService {
     
-    func fetchUserProfile(email: String, completion: @escaping (Result<CCUser, Error>) -> ()) {
-        let query = make(.userProfileData, in: "email", equals: email)
+    func fetchUserProfile(uid: String, completion: @escaping (Result<CCUser, Error>) -> ()) {
+        let query = make(.userProfileData, in: "id", equals: uid)
         fetchData(query: query) { (result: Result<[CCUser], Error>) in
             switch result {
             case .success(let users): completion(.success(users.first!))
@@ -34,6 +34,15 @@ extension CCUserService {
         } catch {
             completion(.failure(CCError.firebaseFailure))
         }
-        
+    }
+    
+    func fetchChannelIDs(uid: String?, completion: @escaping (Result<[String]?, Error>) -> ()) {
+        let query = make(.channelsData, in: "owners", contains: [uid])
+        fetchData(query: query) { (result: Result<[String], Error>) in
+            switch result {
+            case .success(let channels) : completion(.success(channels))
+            case .failure(let error)    : completion(.failure(error))
+            }
+        }
     }
 }

@@ -13,4 +13,8 @@ struct CCUser           : Codable {
     var firstName       : String?
     var lastName        : String?
     var email           : String?
+    
+    //Local only
+    var joinedChannels  : [String?]?
+    var myChannels      : [String?]?
 }

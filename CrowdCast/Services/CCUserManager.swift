@@ -10,7 +10,11 @@ import Foundation
 
 class CCUserManager {
     static let sharedInstance = CCUserManager()
-    private var profile : CCUser?
+    private var profile : CCUser? {
+        didSet {
+            refreshChannels()
+        }
+    }
     
     private init(){
         fetchProfile()
@@ -23,18 +27,22 @@ extension CCUserManager {
         return profile
     }
     
-//    func getJoinedChannelIDs() -> [String]{
-//        return profile?.joinedChannels?.compactMap({ $0 }) ?? [String]()
-//    }
+    func getJoinedChannelIDs() -> [String]{
+        return profile?.joinedChannels?.compactMap({ $0 }) ?? [String]()
+    }
 }
 extension CCUserManager : CCUserService {
     
     private func fetchProfile(){
-        fetchUserProfile(email: "usmannzr@lmao.com") { [weak self] (result) in
+        fetchUserProfile(uid: "nFj6zLz8Zyc3mRlg8ey4") { [weak self] (result) in
             switch result {
             case .failure(let error)        : prints("\(error)")
             case .success(let fetchedUser)  : self?.profile = fetchedUser
             }
         }
+    }
+    
+    private func refreshChannels(){
+        
     }
 }

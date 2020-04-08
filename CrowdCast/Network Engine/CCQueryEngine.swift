@@ -19,12 +19,14 @@ extension CCQueryEngine {
         return db.collection("\(env)\(CCQueryPath.userProfileData.rawValue)")
     }
     
-    func make(_ type : CCQueryPath, in which : String?, contains: [String]) -> Query {
+    func make(_ type : CCQueryPath, in which : String?, contains: [String?]) -> Query {
         let db = Firestore.firestore()
         let env = "develop"
         return db.collection("\(env)\(type.rawValue)")
                  .order(by: FirebaseFirestore.FieldPath.documentID())
-                 .whereField(which ?? "", in: contains)
+            .whereField("owners", arrayContainsAny: contains)
+                 //.whereField(which ?? "", in: contains)
+        
     }
     
     func make(_ type : CCQueryPath, in which : String?, equals: String?) -> Query {
