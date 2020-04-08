@@ -13,5 +13,5 @@ struct CCChannel                : Codable {
     var description             : String?
     var owners                  : [String?]?
     var members                 : [String?]?
-    var colorAccent             : String?
+    var color                   : String?
 }

@@ -9,12 +9,8 @@
 import Foundation
 
 struct CCUser           : Codable {
-    var name            : String?
+    var id              : String?
     var firstName       : String?
     var lastName        : String?
     var email           : String?
-    var joinedGroups    : [String?]?
-    var joinedChannels  : [String?]?
-    var myGroups        : [String?]?
-    var myChannels      : [String?]?
 }

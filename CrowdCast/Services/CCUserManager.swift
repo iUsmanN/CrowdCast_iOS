@@ -23,9 +23,9 @@ extension CCUserManager {
         return profile
     }
     
-    func getJoinedChannelIDs() -> [String]{
-        return profile?.joinedChannels?.compactMap({ $0 }) ?? [String]()
-    }
+//    func getJoinedChannelIDs() -> [String]{
+//        return profile?.joinedChannels?.compactMap({ $0 }) ?? [String]()
+//    }
 }
 extension CCUserManager : CCUserService {
     

@@ -305,6 +305,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="joinFreePressed:" destination="CdW-Q5-KaS" eventType="touchUpInside" id="hXm-HN-AHY"/>
                                     <segue destination="Cga-4w-klV" kind="show" id="eXa-cD-z1P"/>
                                 </connections>
                             </button>
@@ -352,6 +353,10 @@
                     <navigationItem key="navigationItem" id="SDh-Mt-x2H"/>
                     <connections>
                         <outlet property="IllustrationTopConstraint" destination="45P-zz-DZW" id="WOs-AK-Yzh"/>
+                        <outlet property="emailInput" destination="K7M-KN-PVe" id="GZr-nK-mbQ"/>
+                        <outlet property="firstNameInput" destination="lHd-Cl-6Cd" id="Yeq-Sn-z3R"/>
+                        <outlet property="lastNameInput" destination="07T-aq-CDT" id="2Af-rM-qN2"/>
+                        <outlet property="passwordInput" destination="7up-z8-Hqp" id="eUe-Rg-Fhj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3c-Sy-iHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -529,7 +534,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.36344030500000002" green="0.4103129506" blue="0.94323629139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36300000548362732" green="0.40999999642372131" blue="0.94300001859664917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -30,7 +30,7 @@ class CCLoginVC: UIViewController {
     }
     
     @IBAction func joinPressed(_ sender: Any) {
-        
+        //CCUserManager.sharedInstance
     }
     
     @IBAction func loginPressed(_ sender: Any) {

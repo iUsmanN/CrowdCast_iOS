@@ -13,15 +13,21 @@ protocol CCQueryEngine {}
 
 extension CCQueryEngine {
     
-    func makeQuery(_ type : CCQueryPath, in which : String?, contains: String?) -> Query {
+    func addUser() -> CollectionReference {
+        let db = Firestore.firestore()
+        let env = "develop"
+        return db.collection("\(env)\(CCQueryPath.userProfileData)")
+    }
+    
+    func make(_ type : CCQueryPath, in which : String?, contains: [String]) -> Query {
         let db = Firestore.firestore()
         let env = "develop"
         return db.collection("\(env)\(type.rawValue)")
                  .order(by: FirebaseFirestore.FieldPath.documentID())
-                 .whereField(which ?? "", arrayContains: contains ?? "")
+                 .whereField(which ?? "", in: contains)
     }
     
-    func makeQuery(_ type : CCQueryPath, in which : String?, equals: String?) -> Query {
+    func make(_ type : CCQueryPath, in which : String?, equals: String?) -> Query {
         let db = Firestore.firestore()
         let env = "develop"
         return db.collection("\(env)\(type.rawValue)")

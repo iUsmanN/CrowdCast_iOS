@@ -13,12 +13,12 @@ protocol CCChannelsService : CCNetworkEngine, CCQueryEngine {}
 
 extension CCChannelsService {
     
-    func getChannels(UID: String, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
-        let query = makeQuery(.getChannels, in: "owners", contains: UID)
+    func getChannels(ids: [String], completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
+        let query = make(.channelsData, in: "id", contains: ids)
         fetchData(query: query) { (result: Result<[CCChannel], Error>) in
             switch result {
-            case .success(let channels): completion(.success(paginatedData(data: channels, next: nil)))
-            case .failure(let error): completion(.failure(error))
+            case .success(let channels) : completion(.success(paginatedData(data: channels, next: nil)))
+            case .failure(let error)    : completion(.failure(error))
             }
         }
     }

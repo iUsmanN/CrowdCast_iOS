@@ -18,7 +18,6 @@ class CCOverviewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        CCUserManager.sharedInstance
     }
     
     private func setupView(){
