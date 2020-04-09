@@ -36,8 +36,8 @@ extension CCUserService {
         }
     }
     
-    func fetchChannelIDs(uid: String?, completion: @escaping (Result<[String]?, Error>) -> ()) {
-        let query = make(.channelsData, in: "owners", contains: [uid])
+    func fetchMyChannelIDs(uid: String?, completion: @escaping (Result<[String]?, Error>) -> ()) {
+        let query = make(.channelsData, in: "owners", contains: uid ?? "")
         fetchData(query: query) { (result: Result<[String], Error>) in
             switch result {
             case .success(let channels) : completion(.success(channels))

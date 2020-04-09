@@ -57,7 +57,7 @@ extension CCSignUpVC : CCUserService {
         addNewUser(uid: uid, email: emailInput.text, firstName: firstNameInput.text, lastName: lastNameInput.text) { [weak self](result) in
             switch result {
             case .success(_):
-                self?.signUpSuccess()
+                self?.signUpSuccess(uid: uid)
             case .failure(let error):
                 self?.signUpFailed(error: error)
             }
@@ -71,9 +71,10 @@ extension CCSignUpVC {
         print("sign up failed.")
     }
     
-    func signUpSuccess(){
+    func signUpSuccess(uid: String?){
+        guard let uid = uid else { return }
         print("signed up successfully.")
-        CCUserManager.sharedInstance
+        CCUserManager.sharedInstance.syncData(uid: uid)
     }
     
     func fieldsIncorrect(){
