@@ -215,15 +215,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8E8A7DFD-6736-463E-AC17-B11EAA81684F"
+            uuid = "4FC6FB9C-BD58-4286-849B-F3AC503412AE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,97 +231,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0D2F526D-2C30-42B6-B4BF-968D95AA2840"
+            uuid = "87CEB013-8665-4080-A9A9-E5105FD0F511"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "getData()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "04A8066C-E6DD-4787-8B41-74596DCD6714"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Services/CCChannelsService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "getJoinedChannels(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9B9D243F-0D89-40D1-8F57-69481B263B52"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Services/CCChannelsService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "getJoinedChannels(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "809D1CDA-EE09-46C2-B90B-16A088AD25EE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Services/CCChannelsService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "getJoinedChannels(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "809D1CDA-EE09-46C2-B90B-16A088AD25EE - a4ca55fba63f3956"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;CrowdCast.CCChannel&gt;, Swift.Error&gt;) -&gt; () in (extension in CrowdCast):CrowdCast.CCChannelsService.getJoinedChannels(completion: (Swift.Result&lt;CrowdCast.paginatedData&lt;CrowdCast.CCChannel&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "CrowdCast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Services/CCChannelsService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "196">
-               </Location>
-               <Location
-                  uuid = "809D1CDA-EE09-46C2-B90B-16A088AD25EE - a4ca55fba63f3956"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;CrowdCast.CCChannel&gt;, Swift.Error&gt;) -&gt; () in (extension in CrowdCast):CrowdCast.CCChannelsService.getJoinedChannels(completion: (Swift.Result&lt;CrowdCast.paginatedData&lt;CrowdCast.CCChannel&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "CrowdCast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Services/CCChannelsService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "216">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

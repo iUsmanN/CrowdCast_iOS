@@ -43,6 +43,18 @@ extension CCChannelsVC {
     }
 }
 
+extension CCChannelsVC {
+    
+    func insertRows(at indexPath: [IndexPath]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.beginUpdates()
+            self?.tableView.insertRows(at: indexPath, with: .automatic)
+            self?.tableView.endUpdates()
+        }
+    }
+    
+}
+
 extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
     
     func numberOfSections(in tableView: UITableView) -> Int {

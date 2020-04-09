@@ -34,27 +34,51 @@ extension CCChannelsVM {
     func numberOfSections() -> Int {
         return sectionHeaderData.count
     }
+    
+    func numberOfRows(section: Int) -> Int {
+        switch section {
+        case 0:
+            return myChannels.data.count
+        case 1:
+            return joinedChannels.data.count
+        default:
+            return 0
+        }
+    }
+    
+    func dataForCellAt(indexPath: IndexPath) -> CCChannel {
+        switch indexPath.section {
+        case 0:
+            return myChannels.data[indexPath.row]
+        case 1:
+            return joinedChannels.data[indexPath.row]
+        default:
+            return CCChannel()
+        }
+    }
 }
 
-extension CCChannelsVM : CCChannelsService {
+extension CCChannelsVM : CCChannelsService, CCDispatch {
     
     func getData() {
-        
-        getMyChannels() { [weak self] (result) in
-            switch result {
-            case .success(let fetchedData):
-                self?.myChannels.updateData(input: fetchedData)
-            case .failure(let error):
-                prints("[Error] \(error)")
+        dispatchPriorityItem(.concurrent) {[weak self] in
+            self?.getChannels(type: .owned) { [weak self] (result) in
+                switch result {
+                case .success(let fetchedData):
+                    self?.myChannels.updateData(input: fetchedData)
+                case .failure(let error):
+                    prints("[Error] \(error)")
+                }
             }
         }
-        
-        getJoinedChannels() { [weak self] (result) in
-            switch result {
-            case .success(let fetchedData):
-                self?.joinedChannels.updateData(input: fetchedData)
-            case .failure(let error):
-                prints("[Error] \(error)")
+        dispatchPriorityItem(.concurrent) {[weak self] in
+            self?.getChannels(type: .joined) { [weak self] (result) in
+                switch result {
+                case .success(let fetchedData):
+                    self?.myChannels.updateData(input: fetchedData)
+                case .failure(let error):
+                    prints("[Error] \(error)")
+                }
             }
         }
     }

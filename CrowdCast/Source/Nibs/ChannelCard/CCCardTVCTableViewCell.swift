@@ -18,15 +18,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setupLayers()
-        setupView()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     private func setupLayers(){
@@ -37,8 +29,11 @@ class CCCardTVCTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    func setupView(){
-        setColors(color: "CellBlue")
+    func setupCell(channelData: CCChannel){
+        titleLabel.text = channelData.name ?? ""
+        ownerLabel.text = channelData.owners.flatMap({$0})?.joined(separator: ", ")
+        timeLabel.text  = "01:00pm"
+        setColors(color: channelData.color ?? "Main Accent")
     }
 }
 

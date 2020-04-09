@@ -57,6 +57,8 @@
 		B6974880243B96E800AE95C0 /* CCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697487F243B96E800AE95C0 /* CCUser.swift */; };
 		B6974882243B977400AE95C0 /* CCUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974881243B977400AE95C0 /* CCUserService.swift */; };
 		B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCUserManager.swift */; };
+		B6ACD06B243F50F700405838 /* CCDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatch.swift */; };
+		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
 		B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */; };
 		B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */; };
 		B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CF243703F600F50848 /* CCPrint.swift */; };
@@ -155,6 +157,8 @@
 		B697487F243B96E800AE95C0 /* CCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUser.swift; sourceTree = "<group>"; };
 		B6974881243B977400AE95C0 /* CCUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserService.swift; sourceTree = "<group>"; };
 		B6974883243B987600AE95C0 /* CCUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUserManager.swift; path = CrowdCast/Services/CCUserManager.swift; sourceTree = SOURCE_ROOT; };
+		B6ACD06A243F50F700405838 /* CCDispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatch.swift; sourceTree = "<group>"; };
+		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
 		B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCShowsCardHeaderProtocol.swift; sourceTree = "<group>"; };
 		B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardHeaderAction.swift; sourceTree = "<group>"; };
 		B6BD90CF243703F600F50848 /* CCPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPrint.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 		B60A29D42434826900B7F76F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				B6ACD06A243F50F700405838 /* CCDispatch.swift */,
 				B60A29D52434828400B7F76F /* CCSetsNavbarProtocol.swift */,
 				B6E367722436634700B511A0 /* CCScreenProtocols.swift */,
 				B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */,
@@ -436,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */,
+				B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -936,7 +942,9 @@
 				B6BD90D32437130B00F50848 /* CCSectionHeaderData.swift in Sources */,
 				B60A29D62434828400B7F76F /* CCSetsNavbarProtocol.swift in Sources */,
 				B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */,
+				B6ACD06B243F50F700405838 /* CCDispatch.swift in Sources */,
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
+				B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */,
 				B64E4D142439F4850011715A /* CCContainsOwners.swift in Sources */,
 				B64E4D052439E7A40011715A /* CCIndividual.swift in Sources */,
 				B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */,
