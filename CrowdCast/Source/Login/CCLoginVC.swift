@@ -34,7 +34,12 @@ class CCLoginVC: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
-        UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            signInFailed(error: CCError.emptyFields)
+            return
+        }
+        signIn_Email(email: email, password: password)
+        //UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
     }
     
     @IBAction func joinWithGooglePressed(_ sender: Any) {
@@ -47,8 +52,8 @@ class CCLoginVC: UIViewController {
         emailIcon.alpha = 0.7
         passwordIcon.alpha = 0.7
         
-        emailTextField.text = "usman@usman.com"
-        passwordTextField.text = "Passsssss"
+        emailTextField.text = "abdul@gmail.com"
+        passwordTextField.text = "abdulsami"
         
         IllustrationBottomGap.constant = Device.size() > Size.screen4_7Inch ? 75 : 10
         IllustrationTopGap.constant = Device.size() > Size.screen4_7Inch ? 60 : 20
@@ -73,6 +78,24 @@ extension CCLoginVC {
     }
     
     func signInSuccessFul(result: AuthDataResult?){
+        guard let uid = result?.user.uid else { return }
         print("Signed in.")
+        syncUserData(uid: uid)
+    }
+}
+
+extension CCLoginVC {
+    
+    func syncUserData(uid: String){
+        CCUserManager.sharedInstance.syncData(uid: uid){ [weak self] callbackResult in
+            switch callbackResult {
+            case .success(_)            : self?.moveToHome()
+            case .failure(let error)    : self?.signInFailed(error: error)
+            }
+        }
+    }
+    
+    func moveToHome(){
+        UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
     }
 }

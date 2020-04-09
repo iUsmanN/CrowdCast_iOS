@@ -14,8 +14,16 @@ class CCUserManager {
     
     private init(){}
     
-    func syncData(uid: String){
-        fetchProfile(uid: uid)
+    func syncData(uid: String, result: @escaping (Result<Any?, CCError>) -> ()){
+        fetchProfile(uid: uid) { [weak self] callbackResult in
+            switch callbackResult {
+            case .success(let fetchedUser):
+                self?.profile = fetchedUser
+                result(.success(nil))
+            case .failure(let error):
+                result(.failure(error))
+            }
+        }
     }
 }
 
@@ -25,28 +33,18 @@ extension CCUserManager {
         return profile
     }
     
-    func getJoinedChannelIDs() -> [String]{
-        return profile?.joinedChannels?.compactMap({ $0 }) ?? [String]()
+    func getUID() -> String {
+        guard let uid = profile?.id else { return String() }
+        return uid
     }
 }
 extension CCUserManager : CCUserService {
     
-    private func fetchProfile(uid: String){
-        fetchUserProfile(uid: uid) { [weak self] (result) in
-            switch result {
+    private func fetchProfile(uid: String, result: @escaping (Result<CCUser, CCError>) -> ()){
+        fetchUserProfile(uid: uid) { [weak self] (callbackResult) in
+            switch callbackResult {
             case .failure(let error)        : prints("\(error)")
-            case .success(let fetchedUser)  : self?.profile = fetchedUser
-            }
-        }
-    }
-    
-    //private func syncChannels
-    
-    private func refreshChannels(){
-        fetchMyChannelIDs(uid: profile?.id) { [weak self] result in
-            switch result {
-            case .failure(let error)        : prints(error)
-            case .success(let fetchedIds)   : self?.profile?.myChannels = fetchedIds
+            case .success(let fetchedUser)  : result(.success(fetchedUser))
             }
         }
     }

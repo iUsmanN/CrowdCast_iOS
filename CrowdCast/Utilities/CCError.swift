@@ -12,4 +12,6 @@ enum CCError : Error {
     case channelFetchFailure
     case networkEngineFailure
     case firebaseFailure
+    case emptyFields
+    case CodableError
 }
