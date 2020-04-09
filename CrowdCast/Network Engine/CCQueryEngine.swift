@@ -33,7 +33,7 @@ extension CCQueryEngine {
         let env = "develop"
         return db.collection("\(env)\(type.rawValue)")
                  .order(by: FirebaseFirestore.FieldPath.documentID())
-                 .whereField("owners", arrayContains: contains)
+                 .whereField(which ?? "", arrayContains: contains)
         
     }
     

@@ -22,4 +22,14 @@ extension CCChannelsService {
             }
         }
     }
+    
+    func getJoinedChannels(completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
+        let query = make(.channelsData, in: "members", contains: CCUserManager.sharedInstance.getUID())
+        fetchData(query: query) { (result: Result<[CCChannel], Error>) in
+            switch result {
+            case .success(let channels) : completion(.success(paginatedData(data: channels, next: nil)))
+            case .failure(let error)    : completion(.failure(error))
+            }
+        }
+    }
 }

@@ -19,8 +19,6 @@ class CCLoginVC: UIViewController {
     @IBOutlet weak var emailIcon: UIImageView!
     @IBOutlet weak var passwordIcon: UIImageView!
     
-    
-    
     @IBOutlet weak var IllustrationTopGap: NSLayoutConstraint!
     @IBOutlet weak var IllustrationBottomGap: NSLayoutConstraint!
     
