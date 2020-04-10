@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Combine
 
 class CCChannelsVC: UIViewController {
 
-    let viewModel = CCChannelsVM()
+     let viewModel = CCChannelsVM()
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        viewModel.tableViewUpdate = {input in
+            self.insertRows(at: input)
+        }
     }
 }
 
@@ -66,7 +70,8 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell() }
+        cell.setupCell(channelData: CCChannel())
         return cell
     }
     
