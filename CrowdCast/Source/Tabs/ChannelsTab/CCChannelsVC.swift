@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Combine
 
-class CCChannelsVC: UIViewController {
+class CCChannelsVC: CCUIViewController {
 
-    let viewModel = CCChannelsVM()
+    
+    var viewModel : CCChannelsVM?
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = CCChannelsVM()
         setupView()
+        bindVM()
     }
 }
 
@@ -45,24 +49,29 @@ extension CCChannelsVC {
 
 extension CCChannelsVC {
     
-    func insertRows(at indexPath: [IndexPath]) {
+    func bindVM(){
+        viewModel?.channelsPublisher.sink(receiveValue: { [weak self] (indexPathsInput) in
+            self?.insertRows(at: indexPathsInput)
+            }).store(in: &combineCancellable)
+    }
+    
+    func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPath, with: .automatic)
+            self?.tableView.insertRows(at: indexPaths, with: .top)
             self?.tableView.endUpdates()
         }
     }
-    
 }
 
 extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections()
+        return viewModel?.numberOfSections() ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel?.numberOfRows(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,7 +88,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return cardHeader(data: viewModel.sectionHeader(section: section), parentNavigationController: self.navigationController)
+        return cardHeader(data: viewModel?.sectionHeader(section: section), parentNavigationController: self.navigationController)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

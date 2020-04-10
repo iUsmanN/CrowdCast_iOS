@@ -215,32 +215,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4FC6FB9C-BD58-4286-849B-F3AC503412AE"
+            uuid = "97EB0F51-196A-486D-A3BD-CE051AF4EBBC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVM.swift"
+            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "getData()"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "setupCell(channelData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "87CEB013-8665-4080-A9A9-E5105FD0F511"
+            uuid = "E586A5E8-716C-4FE0-B309-F106B46532A4"
             shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "setColors(color:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F13C9EF6-6861-4302-A13B-297C58EE95CC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "setupCell(channelData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC883161-FF45-41DC-86C7-BD615437EA34"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "getData()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27365F0D-41BA-4990-B6E0-37BA57D42607"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "bindVM()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7B8DD4A-C8F3-481D-8A9B-A9EF62428CE0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "insertRows(at:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D7B8DD4A-C8F3-481D-8A9B-A9EF62428CE0 - fd9f5dcc75707b6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CrowdCast.CCChannelsVC.insertRows(at: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  moduleName = "CrowdCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "D7B8DD4A-C8F3-481D-8A9B-A9EF62428CE0 - 65893f5dcb395f01"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in CrowdCast.CCChannelsVC.insertRows(at: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  moduleName = "CrowdCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Tabs/ChannelsTab/CCChannelsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22468541-CF4B-40E1-AEAE-A568BE0E391B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Protocols/CCAddsRowsToTable.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getIndexPaths(previousDataCount:newDataCount:section:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

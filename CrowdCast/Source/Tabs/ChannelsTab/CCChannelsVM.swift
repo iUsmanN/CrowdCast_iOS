@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+
+extension Notification.Name {
+    static let newBlogPost = Notification.Name("new_blog_post")
+}
 
 class CCChannelsVM {
     
@@ -16,6 +21,8 @@ class CCChannelsVM {
         CCSectionHeaderData(title: "Your Channels"  , rightButtonTitle: "Create New"    , rightButtonAction: .newChannel),
         CCSectionHeaderData(title: "Joined Channels", rightButtonTitle: "Join Channel"  , rightButtonAction: .joinChannel)
     ]
+    
+    let channelsPublisher = PassthroughSubject<[IndexPath], Never>()
     
     var myChannels      = paginatedData<CCChannel>()
     var joinedChannels  = paginatedData<CCChannel>()
@@ -58,7 +65,7 @@ extension CCChannelsVM {
     }
 }
 
-extension CCChannelsVM : CCChannelsService, CCDispatch {
+extension CCChannelsVM : CCChannelsService, CCDispatch, CCAddsRowsToTable {
     
     func getData() {
         dispatchPriorityItem(.concurrent) {[weak self] in
@@ -66,6 +73,9 @@ extension CCChannelsVM : CCChannelsService, CCDispatch {
                 switch result {
                 case .success(let fetchedData):
                     self?.myChannels.updateData(input: fetchedData)
+                    self?.channelsPublisher.send(self?.getIndexPaths(previousDataCount: self?.myChannels.data.count,
+                                                                     newDataCount: fetchedData.data.count,
+                                                                     section: 0) ?? [IndexPath]())
                 case .failure(let error):
                     prints("[Error] \(error)")
                 }
@@ -75,7 +85,11 @@ extension CCChannelsVM : CCChannelsService, CCDispatch {
             self?.getChannels(type: .joined) { [weak self] (result) in
                 switch result {
                 case .success(let fetchedData):
-                    self?.myChannels.updateData(input: fetchedData)
+                    prints("OK")
+                    //self?.joinedChannels.updateData(input: fetchedData)
+//                    self?.channelsPublisher.send(self?.getIndexPaths(previousDataCount: self?.joinedChannels.data.count,
+//                                                                     newDataCount: fetchedData.data.count,
+//                                                                     section: 1) ?? [IndexPath]())
                 case .failure(let error):
                     prints("[Error] \(error)")
                 }
