@@ -65,35 +65,57 @@ extension CCChannelsVM {
     }
 }
 
-extension CCChannelsVM : CCChannelsService, CCDispatch, CCAddsRowsToTable {
+extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
     
     func getData() {
+        
+        let dg = DispatchGroup()
+        
+        var newMyChannels      = 0
+        var newJoinedChannels  = 0
+        
+        dg.enter()
         dispatchPriorityItem(.concurrent) {[weak self] in
             self?.getChannels(type: .owned) { [weak self] (result) in
                 switch result {
                 case .success(let fetchedData):
                     self?.myChannels.updateData(input: fetchedData)
-                    self?.channelsPublisher.send(self?.getIndexPaths(previousDataCount: self?.myChannels.data.count,
-                                                                     newDataCount: fetchedData.data.count,
-                                                                     section: 0) ?? [IndexPath]())
+                    prints("Data 1")
+                    newMyChannels = fetchedData.data.count
+                    dg.leave()
+//                    self?.channelsPublisher.send(self?.getIndexPaths(previousDataCount: self?.myChannels.data.count,
+//                                                                     newDataCount: fetchedData.data.count,
+//                                                                     section: 0) ?? [IndexPath]())
                 case .failure(let error):
                     prints("[Error] \(error)")
+                    dg.leave()
                 }
             }
         }
+        
+        dg.enter()
         dispatchPriorityItem(.concurrent) {[weak self] in
             self?.getChannels(type: .joined) { [weak self] (result) in
                 switch result {
                 case .success(let fetchedData):
-                    prints("OK")
+                    prints("OK \(fetchedData)")
+                    newJoinedChannels = fetchedData.data.count
+                    prints("Data 2")
+                    dg.leave()
                     //self?.joinedChannels.updateData(input: fetchedData)
 //                    self?.channelsPublisher.send(self?.getIndexPaths(previousDataCount: self?.joinedChannels.data.count,
 //                                                                     newDataCount: fetchedData.data.count,
 //                                                                     section: 1) ?? [IndexPath]())
                 case .failure(let error):
                     prints("[Error] \(error)")
+                    dg.leave()
                 }
             }
+        }
+        
+        dg.notify(queue: .global()) { [weak self] in
+            prints("Make index paths")
+            //self?.channelsPublisher.send(self?.getIndexPaths(oldMyChannelCount: self?.myChannels.data.count, newMyChannelCount: <#T##Int?#>, oldJoinedChannelCount: <#T##Int?#>, newJoinedChannelCount: <#T##Int?#>) ?? [IndexPath]())
         }
     }
 }
