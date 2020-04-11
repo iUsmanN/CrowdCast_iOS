@@ -24,6 +24,7 @@ class CCOverviewVC: UIViewController {
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Overview",
+                    largeTitles     : true,
                     profileAction   : #selector(viewSettings))
         setupTableView()
     }

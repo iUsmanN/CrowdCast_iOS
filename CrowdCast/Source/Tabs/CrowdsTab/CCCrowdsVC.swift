@@ -23,6 +23,7 @@ extension CCCrowdsVC : CCSetsNavbar {
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Crowds",
+                    largeTitles     : true,
                     profileAction   : #selector(viewSettings))
     }
 

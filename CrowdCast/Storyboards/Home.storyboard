@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UR2-e9-xxc"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NaN-WE-Pqg"/>
+                    <navigationItem key="navigationItem" id="NaN-WE-Pqg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvQ-XY-LCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

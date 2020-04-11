@@ -17,10 +17,12 @@ class CCCallScreenVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
+        //navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnSwipe = false
+        //navigationController?.navigationBar.tintColor = UIColor(named: "Main Accent")
     }
 }

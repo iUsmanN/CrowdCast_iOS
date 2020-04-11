@@ -28,6 +28,7 @@ extension CCChannelsVC : CCSetsNavbar {
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Channels",
+                    largeTitles     : true,
                     profileAction   : #selector(viewSettings))
         setupTableView()
     }
