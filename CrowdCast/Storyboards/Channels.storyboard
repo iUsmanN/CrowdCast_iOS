@@ -80,7 +80,7 @@
         <!--Call-->
         <scene sceneID="4JX-gk-xZS">
             <objects>
-                <viewController title="Call" id="cuo-Of-ZbW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCCallScreenVC" title="Call" id="cuo-Of-ZbW" customClass="CCCallScreenVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Bo-xN-RJz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
