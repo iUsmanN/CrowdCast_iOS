@@ -248,14 +248,18 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - ReachabilitySwift (5.0.0)
   - TwilioVideo (3.2.2)
+  - Whisper (6.0.2)
 
 DEPENDENCIES:
   - Device (~> 3.2.1)
   - Firebase/Auth
   - Firebase/Firestore
   - FirebaseFirestoreSwift
+  - ReachabilitySwift
   - TwilioVideo (~> 3.2)
+  - Whisper
 
 SPEC REPOS:
   trunk:
@@ -278,7 +282,9 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - ReachabilitySwift
     - TwilioVideo
+    - Whisper
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -300,8 +306,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   TwilioVideo: 996f6c2b06f7d3d49f5d4e7cd80a19b0d07f4625
+  Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
 
-PODFILE CHECKSUM: a708577cc25694959393dd7558e5a0fb02b1b7fa
+PODFILE CHECKSUM: 82968a7351f91c37518e0b7f506e4edd5f66f7a0
 
 COCOAPODS: 1.9.1
