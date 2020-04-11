@@ -27,7 +27,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8Ak-hd-8oR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="Hzs-tU-Zvm"/>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="Hzs-tU-Zvm"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gi5-d8-gs6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

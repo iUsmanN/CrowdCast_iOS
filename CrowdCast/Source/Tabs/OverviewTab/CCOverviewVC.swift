@@ -13,7 +13,8 @@ class CCOverviewVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel = CCOverviewVM()
+    var viewModel       = CCOverviewVM()
+    var reachability    = CCReachibility()
     
     override func viewDidLoad() {
         super.viewDidLoad()

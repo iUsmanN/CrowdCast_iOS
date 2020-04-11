@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 class CCSettingsVC: UIViewController {
 
@@ -22,5 +23,9 @@ class CCSettingsVC: UIViewController {
     
     func setupNavBar(){
         navigationController?.navigationBar.isTranslucent = false
+        let message = Message(title: "Enter your message here.", backgroundColor: .red)
+
+        // Show and hide a message after delay
+        Whisper.show(whisper: message, to: self.navigationController ?? UINavigationController(), action: .show)
     }
 }

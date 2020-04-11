@@ -21,6 +21,7 @@
 		B61C90F32441DCE100F6B8A9 /* CCCallScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C90F22441DCE100F6B8A9 /* CCCallScreenVC.swift */; };
 		B61C90F52441DCF000F6B8A9 /* CCCallScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */; };
 		B61C90F72441E98E00F6B8A9 /* boys.png in Resources */ = {isa = PBXBuildFile; fileRef = B61C90F62441E98E00F6B8A9 /* boys.png */; };
+		B61E79112442420900D773E0 /* CCReachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E79102442420900D773E0 /* CCReachibility.swift */; };
 		B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C716F2434ADD00090901C /* CCTabBarController.swift */; };
 		B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CEA2438750C0011715A /* CCChannelsVM.swift */; };
 		B64E4CF1243890510011715A /* CCNibManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CF0243890510011715A /* CCNibManager.swift */; };
@@ -132,6 +133,7 @@
 		B61C90F22441DCE100F6B8A9 /* CCCallScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenVC.swift; sourceTree = "<group>"; };
 		B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenVM.swift; sourceTree = "<group>"; };
 		B61C90F62441E98E00F6B8A9 /* boys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boys.png; sourceTree = "<group>"; };
+		B61E79102442420900D773E0 /* CCReachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReachibility.swift; sourceTree = "<group>"; };
 		B62C716F2434ADD00090901C /* CCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTabBarController.swift; sourceTree = "<group>"; };
 		B64E4CEA2438750C0011715A /* CCChannelsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVM.swift; sourceTree = "<group>"; };
 		B64E4CF0243890510011715A /* CCNibManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCNibManager.swift; path = CrowdCast/Source/Tabs/ChannelsTab/CCNibManager.swift; sourceTree = SOURCE_ROOT; };
@@ -360,6 +362,14 @@
 			path = "Call Screen";
 			sourceTree = "<group>";
 		};
+		B61E790F244241F100D773E0 /* Reachibility */ = {
+			isa = PBXGroup;
+			children = (
+				B61E79102442420900D773E0 /* CCReachibility.swift */,
+			);
+			path = Reachibility;
+			sourceTree = "<group>";
+		};
 		B64E4CF224389D410011715A /* CCCardTime */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +573,7 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B61E790F244241F100D773E0 /* Reachibility */,
 				B64E4D19243A2E7E0011715A /* Utilities */,
 				B64E4D012439E6FC0011715A /* Models */,
 				B64E4CFE2439DD050011715A /* Network Engine */,
@@ -987,6 +998,7 @@
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
+				B61E79112442420900D773E0 /* CCReachibility.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
 				B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */,
