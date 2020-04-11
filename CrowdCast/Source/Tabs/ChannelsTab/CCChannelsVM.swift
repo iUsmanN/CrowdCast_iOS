@@ -11,10 +11,6 @@ import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-extension Notification.Name {
-    static let newBlogPost = Notification.Name("new_blog_post")
-}
-
 class CCChannelsVM {
     
     var sectionHeaderData : [CCSectionHeaderData] = [

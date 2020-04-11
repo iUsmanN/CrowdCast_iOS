@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 
-class CCChannelDetailsVC: UIViewController {
+class CCChannelDetailsVC: CCUIViewController {
 
     @IBOutlet weak var tempLabel: UILabel!
     
@@ -17,7 +17,7 @@ class CCChannelDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bindVM()
         // Do any additional setup after loading the view.
     }
     
@@ -28,7 +28,12 @@ class CCChannelDetailsVC: UIViewController {
 
 extension CCChannelDetailsVC {
     
+    
     func bindVM(){
-        
+        tempLabel.text = viewModel?.data.debugDescription()
+        navigationItem.title = viewModel?.data.name
+        viewModel?.titlePublisher.sink(receiveValue: { [weak self] (title) in
+            self?.navigationItem.title = title
+        }).store(in: &combineCancellable)
     }
 }
