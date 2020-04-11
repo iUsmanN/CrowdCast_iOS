@@ -82,7 +82,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let channelData = (viewModel?.dataForCellAt(indexPath: indexPath)) else { return }
         let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
-        vc.setupView(inputData: channelData)
+        vc.setupViewModel(inputData: channelData)
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     

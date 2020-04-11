@@ -9,19 +9,25 @@
 import Foundation
 import UIKit
 
-protocol CCOpensSettings : UIViewController {}
+protocol CCOpensSettings : UIViewController, CCGetsViewController {}
 extension CCOpensSettings {
     
     func opensSettings(){
-        navigationController?.pushViewController(Constants.Storyboards.Others.instantiateViewController(withIdentifier: "CCSettingsVC"), animated: true)
+        navigationController?.pushViewController(instantiateViewController(storyboard: .Others,
+                                                                           viewController: .CCSettingsVC,
+                                                                           as: CCSettingsVC()),
+                                                                           animated: true)
     }
 }
 
-protocol CCAddChannel : CCSectionHeader {}
+protocol CCAddChannel : CCSectionHeader, CCGetsViewController {}
 extension CCAddChannel {
     
     func addChannel(){
-        parentNavigationController?.pushViewController(Constants.Storyboards.Channels.instantiateViewController(withIdentifier: "CCAddChannelVC"), animated: true)
+        parentNavigationController?.pushViewController(instantiateViewController(storyboard: .Channels,
+                                                                                 viewController: .CCAddChannelVC,
+                                                                                 as: CCAddChannelVC()),
+                                                                                 animated: true)
     }
 }
 
@@ -29,6 +35,9 @@ protocol CCJoinChannel : CCSectionHeader {}
 extension CCJoinChannel {
     
     func joinChannel(){
-        parentNavigationController?.pushViewController(Constants.Storyboards.Channels.instantiateViewController(withIdentifier: "CCJoinChannelVC"), animated: true)
+        parentNavigationController?.pushViewController(instantiateViewController(storyboard: .Channels,
+                                                                                 viewController: .CCJoinChannelVC,
+                                                                                 as: CCJoinChannelVC()),
+                                                                                 animated: true)
     }
 }

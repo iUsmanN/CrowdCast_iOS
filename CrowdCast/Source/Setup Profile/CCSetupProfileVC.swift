@@ -34,9 +34,12 @@ class CCSetupProfileVC: UIViewController {
     
 }
 
-extension CCSetupProfileVC {
+extension CCSetupProfileVC : CCGetsViewController {
     
     func moveToOnboarding(){
-        present(Constants.Storyboards.Onboarding.instantiateViewController(withIdentifier: "CCOnboardingVC"), animated: true, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(self?.instantiateViewController(storyboard: .Onboarding, viewController: .CCOnboardingVC, as: CCOnboardingVC()) ?? UIViewController(), animated: true, completion: nil)
+        }
+//        present(Constants.Storyboards.Onboarding.instantiateViewController(withIdentifier: "CCOnboardingVC"), animated: true, completion: nil)
     }
 }

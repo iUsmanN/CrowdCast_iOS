@@ -7,33 +7,24 @@
 //
 
 import UIKit
-import Combine
 
-class CCChannelDetailsVC: CCUIViewController {
+class CCChannelDetailsVC: UIViewController {
 
-    @IBOutlet weak var tempLabel: UILabel!
-    
     var viewModel : CCChannelDetailsVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindVM()
-        // Do any additional setup after loading the view.
-    }
-    
-    func setupView(inputData: CCChannel){
-        viewModel = CCChannelDetailsVM(channelData: inputData)
+        setupView()
     }
 }
 
 extension CCChannelDetailsVC {
     
+    func setupViewModel(inputData: CCChannel){
+        viewModel = CCChannelDetailsVM(channelData: inputData)
+    }
     
-    func bindVM(){
-        tempLabel.text = viewModel?.data.debugDescription()
+    func setupView(){
         navigationItem.title = viewModel?.data.name
-        viewModel?.titlePublisher.sink(receiveValue: { [weak self] (title) in
-            self?.navigationItem.title = title
-        }).store(in: &combineCancellable)
     }
 }

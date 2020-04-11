@@ -82,7 +82,7 @@ extension CCLoginVC {
     }
 }
 
-extension CCLoginVC {
+extension CCLoginVC : CCGetsViewController{
     
     func syncUserData(uid: String){
         CCUserManager.sharedInstance.syncData(uid: uid){ [weak self] callbackResult in
@@ -94,6 +94,9 @@ extension CCLoginVC {
     }
     
     func moveToHome(){
-        UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
+        UIApplication.shared.windows.first?.rootViewController =
+        instantiateViewController(storyboard: .Home, viewController: .CCTabBar, as: CCTabBarController())
+        
+//        UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
     }
 }

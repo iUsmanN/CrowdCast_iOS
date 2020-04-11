@@ -17,5 +17,4 @@ extension CCGetsViewController {
         guard let vc = UIStoryboard(name: storyboard.rawValue, bundle: nil).instantiateViewController(identifier: viewController.rawValue) as? T else { return T() }
         return vc
     }
-    
 }
