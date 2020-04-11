@@ -17,6 +17,7 @@
 		B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC1A2430B53B00ECD1D2 /* Celebration.png */; };
 		B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADC1D2430B67600ECD1D2 /* CCButton.swift */; };
 		B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */; };
+		B61C90F02441CFE000F6B8A9 /* CCGetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */; };
 		B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C716F2434ADD00090901C /* CCTabBarController.swift */; };
 		B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CEA2438750C0011715A /* CCChannelsVM.swift */; };
 		B64E4CF1243890510011715A /* CCNibManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CF0243890510011715A /* CCNibManager.swift */; };
@@ -124,6 +125,7 @@
 		B61ADC1A2430B53B00ECD1D2 /* Celebration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Celebration.png; sourceTree = "<group>"; };
 		B61ADC1D2430B67600ECD1D2 /* CCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCButton.swift; sourceTree = "<group>"; };
 		B61ADC202430BB5D00ECD1D2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGetsViewController.swift; sourceTree = "<group>"; };
 		B62C716F2434ADD00090901C /* CCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTabBarController.swift; sourceTree = "<group>"; };
 		B64E4CEA2438750C0011715A /* CCChannelsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVM.swift; sourceTree = "<group>"; };
 		B64E4CF0243890510011715A /* CCNibManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCNibManager.swift; path = CrowdCast/Source/Tabs/ChannelsTab/CCNibManager.swift; sourceTree = SOURCE_ROOT; };
@@ -275,6 +277,7 @@
 				B6E367722436634700B511A0 /* CCScreenProtocols.swift */,
 				B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */,
 				B6ACD07A2440667400405838 /* CCAddsRowsToTable.swift */,
+				B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -992,6 +995,7 @@
 				B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */,
 				B64E4CFA2438A7710011715A /* CCNavigationController.swift in Sources */,
 				B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */,
+				B61C90F02441CFE000F6B8A9 /* CCGetsViewController.swift in Sources */,
 				B64E4D162439F4E70011715A /* CCChannelOwner.swift in Sources */,
 				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
 			);

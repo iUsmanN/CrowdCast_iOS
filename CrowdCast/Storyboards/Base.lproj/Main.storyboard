@@ -397,7 +397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyj-EN-tGx" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
-                                <rect key="frame" x="134.5" y="712" width="145" height="50"/>
+                                <rect key="frame" x="134.5" y="717" width="145" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="Ixu-9q-mVH"/>
                                     <constraint firstAttribute="height" constant="50" id="nBp-Zo-2B9"/>
@@ -413,7 +413,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xv1-aj-uo8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
-                                <rect key="frame" x="134.5" y="782" width="145" height="50"/>
+                                <rect key="frame" x="134.5" y="787" width="145" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="8cK-K5-ZGc"/>
                                     <constraint firstAttribute="height" constant="50" id="wTi-jo-Lyz"/>
@@ -435,7 +435,7 @@
                             <constraint firstItem="CLi-4H-UPf" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="NXn-yU-bgC"/>
                             <constraint firstItem="Xv1-aj-uo8" firstAttribute="top" secondItem="Yyj-EN-tGx" secondAttribute="bottom" constant="20" id="X6S-tw-yf0"/>
                             <constraint firstItem="CLi-4H-UPf" firstAttribute="top" secondItem="aXo-9f-UXc" secondAttribute="bottom" constant="10" id="aPX-aW-E6n"/>
-                            <constraint firstItem="2G2-4F-YSp" firstAttribute="bottom" secondItem="Xv1-aj-uo8" secondAttribute="bottom" constant="30" id="cnk-bD-QjG"/>
+                            <constraint firstItem="2G2-4F-YSp" firstAttribute="bottom" secondItem="Xv1-aj-uo8" secondAttribute="bottom" constant="25" id="cnk-bD-QjG"/>
                             <constraint firstItem="aXo-9f-UXc" firstAttribute="top" secondItem="yUF-eu-xTy" secondAttribute="bottom" constant="50" id="dvs-iV-ygi"/>
                             <constraint firstItem="Yyj-EN-tGx" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="hCW-ed-9a9"/>
                             <constraint firstItem="nhG-HA-gux" firstAttribute="top" secondItem="2G2-4F-YSp" secondAttribute="top" constant="40" id="lMh-gL-geR"/>

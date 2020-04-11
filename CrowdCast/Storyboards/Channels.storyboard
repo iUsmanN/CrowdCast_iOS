@@ -27,13 +27,48 @@
         <!--Channel Details-->
         <scene sceneID="RgH-Sk-HWj">
             <objects>
-                <viewController title="Channel Details" id="xz1-XL-Rpa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCChannelDetailsVC" title="Channel Details" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="xz1-XL-Rpa" customClass="CCChannelDetailsVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w6y-r0-eeq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eG4-I5-SUE" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="134.5" y="699" width="145" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="V8W-pD-Pdr"/>
+                                    <constraint firstAttribute="width" constant="145" id="u7x-my-6xm"/>
+                                </constraints>
+                                <state key="normal" title="JOIN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNO-PB-6d6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="fcN-2Q-14p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vNO-PB-6d6" firstAttribute="top" secondItem="tsB-et-LPh" secondAttribute="top" id="CJy-lf-E1e"/>
+                            <constraint firstItem="tsB-et-LPh" firstAttribute="trailing" secondItem="vNO-PB-6d6" secondAttribute="trailing" id="eoF-Yx-x9W"/>
+                            <constraint firstItem="tsB-et-LPh" firstAttribute="bottom" secondItem="eG4-I5-SUE" secondAttribute="bottom" constant="25" id="fQv-So-3op"/>
+                            <constraint firstItem="eG4-I5-SUE" firstAttribute="centerX" secondItem="w6y-r0-eeq" secondAttribute="centerX" id="mkr-y4-3rm"/>
+                            <constraint firstItem="vNO-PB-6d6" firstAttribute="leading" secondItem="tsB-et-LPh" secondAttribute="leading" id="yDm-mw-fXI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tsB-et-LPh"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tempLabel" destination="vNO-PB-6d6" id="r9o-BQ-XC5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTR-ZJ-pU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

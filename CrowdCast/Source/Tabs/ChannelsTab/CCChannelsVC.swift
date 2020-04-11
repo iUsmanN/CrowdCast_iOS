@@ -64,7 +64,7 @@ extension CCChannelsVC {
     }
 }
 
-extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
+extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.numberOfSections() ?? 0
@@ -78,6 +78,13 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell()}
         cell.data = viewModel?.dataForCellAt(indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let channelData = (viewModel?.dataForCellAt(indexPath: indexPath)) else { return }
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
+        vc.setupView(inputData: channelData)
+        DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

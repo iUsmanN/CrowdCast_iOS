@@ -13,6 +13,7 @@ class CCButton : UIButton {
     
     @IBInspectable var type : Int = 0 {
         didSet {
+            titleLabel?.font = UIFont(name: "Avenir", size: 15)
             switch type {
             case 0: //main
                 backgroundColor     = UIColor(named: "Main Accent")
