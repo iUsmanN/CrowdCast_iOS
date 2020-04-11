@@ -13,10 +13,13 @@ protocol ShowsCardHeader {}
 
 extension ShowsCardHeader {
     
-    func cardHeader(data: CCSectionHeaderData, parentNavigationController: UINavigationController?) -> UIView {
+    func cardHeader(data: CCSectionHeaderData?, parentNavigationController: UINavigationController?) -> UIView {
         guard let header = Bundle.main.loadNibNamed("CCSectionHeader", owner: self, options: nil)?.first
-        as? CCSectionHeader else { return UIView() }
+        as? CCSectionHeader, let data = data else { return UIView() }
         header.setValues(data: data, navigationController: parentNavigationController)
-        return header
+        header.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let returnView = UIView(frame: header.frame)
+        returnView.addSubview(header)
+        return returnView
     }
 }

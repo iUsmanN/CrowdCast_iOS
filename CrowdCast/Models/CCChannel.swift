@@ -14,4 +14,8 @@ struct CCChannel                : Codable {
     var owners                  : [String]?
     var members                 : [String?]?
     var color                   : String?
+    
+    func debugDescription() -> String {
+        return "\(name)\n\(description)\n\(owners)\n\(members)\n\(color)"
+    }
 }

@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Combine
 
-class CCChannelsVC: UIViewController {
-
-    let viewModel = CCChannelsVM()
+class CCChannelsVC: CCUIViewController {
+    
+    var viewModel : CCChannelsVM?
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = CCChannelsVM()
         setupView()
+        bindVM()
     }
 }
 
@@ -45,29 +48,42 @@ extension CCChannelsVC {
 
 extension CCChannelsVC {
     
-    func insertRows(at indexPath: [IndexPath]) {
+    func bindVM(){
+        viewModel?.channelsPublisher.sink(receiveValue: { [weak self] (indexPathsInput) in
+            self?.insertRows(at: indexPathsInput)
+            }).store(in: &combineCancellable)
+    }
+    
+    func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPath, with: .automatic)
+            self?.tableView.insertRows(at: indexPaths, with: .top)
             self?.tableView.endUpdates()
         }
     }
-    
 }
 
-extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
+extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections()
+        return viewModel?.numberOfSections() ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel?.numberOfRows(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell()}
+        cell.data = viewModel?.dataForCellAt(indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let channelData = (viewModel?.dataForCellAt(indexPath: indexPath)) else { return }
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
+        vc.setupView(inputData: channelData)
+        DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,7 +95,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return cardHeader(data: viewModel.sectionHeader(section: section), parentNavigationController: self.navigationController)
+        return cardHeader(data: viewModel?.sectionHeader(section: section), parentNavigationController: self.navigationController)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

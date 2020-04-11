@@ -3,39 +3,129 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add ChannelVC-->
+        <!--Add Channel-->
         <scene sceneID="8Xs-jm-Z2w">
             <objects>
-                <viewController storyboardIdentifier="CCAddChannelVC" hidesBottomBarWhenPushed="YES" id="lRM-aD-OiV" customClass="CCAddChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCAddChannelVC" title="Add Channel" hidesBottomBarWhenPushed="YES" id="lRM-aD-OiV" customClass="CCAddChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UR9-h4-9nc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Background"/>
                         <viewLayoutGuide key="safeArea" id="wuA-Pc-e78"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxa-mX-HST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="112"/>
+            <point key="canvasLocation" x="-154" y="112"/>
         </scene>
-        <!--Join ChannelVC-->
-        <scene sceneID="x2S-uR-rRQ">
+        <!--Channel Details-->
+        <scene sceneID="RgH-Sk-HWj">
             <objects>
-                <viewController storyboardIdentifier="CCJoinChannelVC" id="as6-gm-bVv" customClass="CCJoinChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WFQ-bF-BeA">
+                <viewController storyboardIdentifier="CCChannelDetailsVC" title="Channel Details" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="xz1-XL-Rpa" customClass="CCChannelDetailsVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w6y-r0-eeq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eG4-I5-SUE" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="134.5" y="699" width="145" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="V8W-pD-Pdr"/>
+                                    <constraint firstAttribute="width" constant="145" id="u7x-my-6xm"/>
+                                </constraints>
+                                <state key="normal" title="JOIN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="cuo-Of-ZbW" kind="show" id="uuL-ty-1bz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNO-PB-6d6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="fcN-2Q-14p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vNO-PB-6d6" firstAttribute="top" secondItem="tsB-et-LPh" secondAttribute="top" id="CJy-lf-E1e"/>
+                            <constraint firstItem="tsB-et-LPh" firstAttribute="trailing" secondItem="vNO-PB-6d6" secondAttribute="trailing" id="eoF-Yx-x9W"/>
+                            <constraint firstItem="tsB-et-LPh" firstAttribute="bottom" secondItem="eG4-I5-SUE" secondAttribute="bottom" constant="25" id="fQv-So-3op"/>
+                            <constraint firstItem="eG4-I5-SUE" firstAttribute="centerX" secondItem="w6y-r0-eeq" secondAttribute="centerX" id="mkr-y4-3rm"/>
+                            <constraint firstItem="vNO-PB-6d6" firstAttribute="leading" secondItem="tsB-et-LPh" secondAttribute="leading" id="yDm-mw-fXI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tsB-et-LPh"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tempLabel" destination="vNO-PB-6d6" id="r9o-BQ-XC5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTR-ZJ-pU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159" y="884"/>
+        </scene>
+        <!--Call-->
+        <scene sceneID="4JX-gk-xZS">
+            <objects>
+                <viewController title="Call" id="cuo-Of-ZbW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Bo-xN-RJz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="H6s-6U-wsA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="H6s-6U-wsA" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" id="4w6-Nv-qIt"/>
+                            <constraint firstItem="H6s-6U-wsA" firstAttribute="top" secondItem="5Bo-xN-RJz" secondAttribute="top" id="CdF-1S-fgT"/>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="H6s-6U-wsA" secondAttribute="trailing" id="vwr-D0-TEw"/>
+                            <constraint firstAttribute="bottom" secondItem="H6s-6U-wsA" secondAttribute="bottom" id="y3X-AE-5cu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nIZ-7p-Mmo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="apd-zv-Rn3"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CWh-vO-Xrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744" y="887"/>
+        </scene>
+        <!--Join Channel-->
+        <scene sceneID="x2S-uR-rRQ">
+            <objects>
+                <viewController storyboardIdentifier="CCJoinChannelVC" title="Join Channel" id="as6-gm-bVv" customClass="CCJoinChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WFQ-bF-BeA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Background"/>
                         <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFw-kd-qSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="906" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Avatar.png" width="676" height="676"/>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

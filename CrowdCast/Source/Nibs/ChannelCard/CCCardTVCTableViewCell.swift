@@ -9,16 +9,25 @@
 import UIKit
 
 class CCCardTVCTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var cardBackgroundView       : UIView!
     @IBOutlet weak var titleLabel               : UILabel!
     @IBOutlet weak var timeLabel                : CCCardTimeLabel!
     @IBOutlet weak var ownerLabel               : UILabel!
     @IBOutlet weak var membersCollectionView    : UICollectionView!
     
+    var data : CCChannel? {
+        didSet{
+            titleLabel.text = data?.name
+            ownerLabel.text = data?.owners?.first
+            setColors(color: data?.color ?? "red")
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupLayers()
+        setColors(color: "blue")
     }
     
     private func setupLayers(){

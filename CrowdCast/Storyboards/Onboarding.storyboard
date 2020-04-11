@@ -20,10 +20,10 @@
                                 <rect key="frame" x="30" y="76.5" width="354" height="743"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epN-P2-QL6" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
-                                <rect key="frame" x="132" y="792" width="150" height="40"/>
+                                <rect key="frame" x="134.5" y="787" width="145" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Pg9-fJ-sKr"/>
-                                    <constraint firstAttribute="width" constant="150" id="tad-06-keY"/>
+                                    <constraint firstAttribute="height" constant="50" id="Pg9-fJ-sKr"/>
+                                    <constraint firstAttribute="width" constant="145" id="tad-06-keY"/>
                                 </constraints>
                                 <state key="normal" title="Finish"/>
                                 <userDefinedRuntimeAttributes>
@@ -48,7 +48,7 @@
                             <constraint firstItem="7hD-Ux-eZV" firstAttribute="top" secondItem="mCV-xD-8Sb" secondAttribute="top" constant="50" id="ECc-rM-uJT"/>
                             <constraint firstItem="j71-Ne-9dA" firstAttribute="leading" secondItem="mCV-xD-8Sb" secondAttribute="leading" constant="30" id="dg1-VV-TY3"/>
                             <constraint firstItem="j71-Ne-9dA" firstAttribute="centerY" secondItem="bjV-jg-Z8y" secondAttribute="centerY" id="iBI-P1-Plm"/>
-                            <constraint firstItem="mCV-xD-8Sb" firstAttribute="bottom" secondItem="epN-P2-QL6" secondAttribute="bottom" constant="30" id="key-ev-itS"/>
+                            <constraint firstItem="mCV-xD-8Sb" firstAttribute="bottom" secondItem="epN-P2-QL6" secondAttribute="bottom" constant="25" id="key-ev-itS"/>
                             <constraint firstItem="mCV-xD-8Sb" firstAttribute="trailing" secondItem="j71-Ne-9dA" secondAttribute="trailing" constant="30" id="obs-en-tMO"/>
                             <constraint firstItem="epN-P2-QL6" firstAttribute="centerX" secondItem="bjV-jg-Z8y" secondAttribute="centerX" id="uEu-cD-ynk"/>
                         </constraints>

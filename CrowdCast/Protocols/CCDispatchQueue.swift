@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol CCDispatch {}
+protocol CCDispatchQueue {}
 
-extension CCDispatch {
+extension CCDispatchQueue {
     
     func dispatchPriorityItem(_ type: DispatchQueue.Attributes, code: @escaping ()->()){
         let queue = DispatchQueue(label: "com.CrowdCast.HighPriority", qos: .utility, attributes: type)

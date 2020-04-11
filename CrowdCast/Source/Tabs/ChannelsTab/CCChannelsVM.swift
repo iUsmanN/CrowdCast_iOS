@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -16,6 +17,8 @@ class CCChannelsVM {
         CCSectionHeaderData(title: "Your Channels"  , rightButtonTitle: "Create New"    , rightButtonAction: .newChannel),
         CCSectionHeaderData(title: "Joined Channels", rightButtonTitle: "Join Channel"  , rightButtonAction: .joinChannel)
     ]
+    
+    let channelsPublisher = PassthroughSubject<[IndexPath], Never>()
     
     var myChannels      = paginatedData<CCChannel>()
     var joinedChannels  = paginatedData<CCChannel>()
@@ -58,28 +61,51 @@ extension CCChannelsVM {
     }
 }
 
-extension CCChannelsVM : CCChannelsService, CCDispatch {
+extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
     
     func getData() {
+        
+        let dg = DispatchGroup()
+        
+        var fetchedCounts = (0, 0)
+        var newMyChannels      = 0
+        var newJoinedChannels  = 0
+        
+        dg.enter()
         dispatchPriorityItem(.concurrent) {[weak self] in
             self?.getChannels(type: .owned) { [weak self] (result) in
                 switch result {
                 case .success(let fetchedData):
                     self?.myChannels.updateData(input: fetchedData)
+                    fetchedCounts = (fetchedData.data.count, fetchedCounts.1)
+                    newMyChannels = fetchedData.data.count
+                    dg.leave()
                 case .failure(let error):
                     prints("[Error] \(error)")
+                    dg.leave()
                 }
             }
         }
+        
+        dg.enter()
         dispatchPriorityItem(.concurrent) {[weak self] in
             self?.getChannels(type: .joined) { [weak self] (result) in
                 switch result {
                 case .success(let fetchedData):
-                    self?.myChannels.updateData(input: fetchedData)
+                    self?.joinedChannels.updateData(input: fetchedData)
+                    fetchedCounts = (fetchedCounts.0, fetchedData.data.count)
+                    newJoinedChannels = fetchedData.data.count
+                    dg.leave()
                 case .failure(let error):
                     prints("[Error] \(error)")
+                    dg.leave()
                 }
             }
+        }
+        
+        dg.notify(queue: .global()) { [weak self] in
+            prints("Make index paths")
+            self?.channelsPublisher.send(self?.getIndexPaths(oldMyChannelCount: self?.myChannels.data.count, newMyChannelCount: newMyChannels, oldJoinedChannelCount: self?.joinedChannels.data.count, newJoinedChannelCount: newJoinedChannels, countTuple: fetchedCounts) ?? [IndexPath]())
         }
     }
 }
