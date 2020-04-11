@@ -3,39 +3,62 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add ChannelVC-->
+        <!--Add Channel-->
         <scene sceneID="8Xs-jm-Z2w">
             <objects>
-                <viewController storyboardIdentifier="CCAddChannelVC" hidesBottomBarWhenPushed="YES" id="lRM-aD-OiV" customClass="CCAddChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCAddChannelVC" title="Add Channel" hidesBottomBarWhenPushed="YES" id="lRM-aD-OiV" customClass="CCAddChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UR9-h4-9nc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Background"/>
                         <viewLayoutGuide key="safeArea" id="wuA-Pc-e78"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxa-mX-HST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="112"/>
+            <point key="canvasLocation" x="-154" y="112"/>
         </scene>
-        <!--Join ChannelVC-->
-        <scene sceneID="x2S-uR-rRQ">
+        <!--Channel Details-->
+        <scene sceneID="RgH-Sk-HWj">
             <objects>
-                <viewController storyboardIdentifier="CCJoinChannelVC" id="as6-gm-bVv" customClass="CCJoinChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WFQ-bF-BeA">
+                <viewController title="Channel Details" id="xz1-XL-Rpa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w6y-r0-eeq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tsB-et-LPh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTR-ZJ-pU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159" y="884"/>
+        </scene>
+        <!--Join Channel-->
+        <scene sceneID="x2S-uR-rRQ">
+            <objects>
+                <viewController storyboardIdentifier="CCJoinChannelVC" title="Join Channel" id="as6-gm-bVv" customClass="CCJoinChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WFQ-bF-BeA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Background"/>
                         <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFw-kd-qSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="906" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

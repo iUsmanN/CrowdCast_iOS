@@ -71,6 +71,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
         
         let dg = DispatchGroup()
         
+        var fetchedCounts = (0, 0)
         var newMyChannels      = 0
         var newJoinedChannels  = 0
         
@@ -80,12 +81,9 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
                 switch result {
                 case .success(let fetchedData):
                     self?.myChannels.updateData(input: fetchedData)
-                    prints("Data 1")
+                    fetchedCounts = (fetchedData.data.count, fetchedCounts.1)
                     newMyChannels = fetchedData.data.count
                     dg.leave()
-//                    self?.channelsPublisher.send(self?.getIndexPaths(previousDataCount: self?.myChannels.data.count,
-//                                                                     newDataCount: fetchedData.data.count,
-//                                                                     section: 0) ?? [IndexPath]())
                 case .failure(let error):
                     prints("[Error] \(error)")
                     dg.leave()
@@ -98,14 +96,10 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
             self?.getChannels(type: .joined) { [weak self] (result) in
                 switch result {
                 case .success(let fetchedData):
-                    prints("OK \(fetchedData)")
+                    self?.joinedChannels.updateData(input: fetchedData)
+                    fetchedCounts = (fetchedCounts.0, fetchedData.data.count)
                     newJoinedChannels = fetchedData.data.count
-                    prints("Data 2")
                     dg.leave()
-                    //self?.joinedChannels.updateData(input: fetchedData)
-//                    self?.channelsPublisher.send(self?.getIndexPaths(previousDataCount: self?.joinedChannels.data.count,
-//                                                                     newDataCount: fetchedData.data.count,
-//                                                                     section: 1) ?? [IndexPath]())
                 case .failure(let error):
                     prints("[Error] \(error)")
                     dg.leave()
@@ -115,7 +109,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
         
         dg.notify(queue: .global()) { [weak self] in
             prints("Make index paths")
-            //self?.channelsPublisher.send(self?.getIndexPaths(oldMyChannelCount: self?.myChannels.data.count, newMyChannelCount: <#T##Int?#>, oldJoinedChannelCount: <#T##Int?#>, newJoinedChannelCount: <#T##Int?#>) ?? [IndexPath]())
+            self?.channelsPublisher.send(self?.getIndexPaths(oldMyChannelCount: self?.myChannels.data.count, newMyChannelCount: newMyChannels, oldJoinedChannelCount: self?.joinedChannels.data.count, newJoinedChannelCount: newJoinedChannels, countTuple: fetchedCounts) ?? [IndexPath]())
         }
     }
 }

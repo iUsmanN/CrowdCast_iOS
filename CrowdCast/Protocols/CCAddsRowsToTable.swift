@@ -15,7 +15,8 @@ extension CCAddsRowsToTable {
     func getIndexPaths(oldMyChannelCount: Int?,
                        newMyChannelCount: Int?,
                        oldJoinedChannelCount: Int?,
-                       newJoinedChannelCount: Int?) -> [IndexPath] {
+                       newJoinedChannelCount: Int?,
+                       countTuple: (Int, Int)) -> [IndexPath] {
         
         var indexPaths = [IndexPath]()
         
@@ -26,19 +27,13 @@ extension CCAddsRowsToTable {
             }
         }
         
-        if (newMyChannelCount ?? 0 > 0){
+        if (newJoinedChannelCount ?? 0 > 0){
             guard let newJoinedChannelCount = newJoinedChannelCount else { return indexPaths }
             for index in 1...newJoinedChannelCount {
-                indexPaths.append(IndexPath(row: (oldJoinedChannelCount ?? 1) - index, section: 0))
+                indexPaths.append(IndexPath(row: (oldJoinedChannelCount ?? 1) - index, section: 1))
             }
         }
         
-//        
-//        for index in 1...newDataCount{
-//            indexPaths.append(IndexPath(row: (previousDataCount ?? 1) - index, section: 0))
-//        }
-        
         return indexPaths
-        //return [IndexPath(row: (previousDataCount ?? 1) - 1, section: 0), IndexPath(row: (previousDataCount ?? 1) - 2, section: 0)]
     }
 }

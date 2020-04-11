@@ -17,6 +17,9 @@ extension ShowsCardHeader {
         guard let header = Bundle.main.loadNibNamed("CCSectionHeader", owner: self, options: nil)?.first
         as? CCSectionHeader, let data = data else { return UIView() }
         header.setValues(data: data, navigationController: parentNavigationController)
-        return header.contentView
+        header.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let returnView = UIView(frame: header.frame)
+        returnView.addSubview(header)
+        return returnView
     }
 }
