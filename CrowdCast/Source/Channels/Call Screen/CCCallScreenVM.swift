@@ -31,6 +31,14 @@ class CCCallScreenVM: NSObject {
 
 extension CCCallScreenVM {
     
+    func numberOfCells() -> Int {
+        3
+    }
+}
+
+
+extension CCCallScreenVM {
+    
     func joinChannel(identity: String?, channelID: String?, result: ((Result<Room, CCError>)->())?){
         guard let identity = identity, let channelID = channelID else { result?(.failure(.twilioCredentialsError)); return }
         

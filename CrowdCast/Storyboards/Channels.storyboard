@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,15 +97,47 @@
                     <view key="view" contentMode="scaleToFill" id="5Bo-xN-RJz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hiN-t4-C1E">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="1" minimumInteritemSpacing="1" id="fPT-Q1-D6G">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="callMemberCell" id="cwK-rw-6Cw">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pzf-Is-jxL">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="green"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="hiN-t4-C1E" secondAttribute="trailing" id="2Q6-ct-cU4"/>
+                            <constraint firstItem="hiN-t4-C1E" firstAttribute="top" secondItem="5Bo-xN-RJz" secondAttribute="top" id="OMg-nQ-BaI"/>
+                            <constraint firstAttribute="bottom" secondItem="hiN-t4-C1E" secondAttribute="bottom" id="Tnj-vt-0wR"/>
+                            <constraint firstItem="hiN-t4-C1E" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" id="s9a-9w-Fhm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nIZ-7p-Mmo"/>
                     </view>
                     <navigationItem key="navigationItem" id="apd-zv-Rn3"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hiN-t4-C1E" id="f6w-qp-8dl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWh-vO-Xrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653.6231884057972" y="886.60714285714278"/>
+            <point key="canvasLocation" x="855" y="884"/>
         </scene>
         <!--Join Channel-->
         <scene sceneID="x2S-uR-rRQ">
@@ -127,6 +160,9 @@
         <image name="boys.png" width="601" height="366"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green">
+            <color red="0.23000000417232513" green="0.55900001525878906" blue="0.29100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

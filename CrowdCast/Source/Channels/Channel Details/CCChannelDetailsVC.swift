@@ -24,7 +24,7 @@ extension CCChannelDetailsVC : CCGetsViewController {
     @IBAction func joinCall(_ sender: Any) {
         let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
         viewController.setupViewModel(channelData: viewModel?.data)
-        navigationController?.pushViewController(viewController, animated: true)
+        DispatchQueue.main.async {  [weak self] in self?.navigationController?.pushViewController(viewController, animated: true) }
     }
 }
 
