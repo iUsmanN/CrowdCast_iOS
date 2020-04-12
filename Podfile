@@ -12,7 +12,7 @@ target 'CrowdCast' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'ReachabilitySwift'
-  pod 'Whisper'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
   
 
   target 'CrowdCastTests' do

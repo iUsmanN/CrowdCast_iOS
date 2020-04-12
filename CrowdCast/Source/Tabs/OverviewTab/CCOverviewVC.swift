@@ -9,12 +9,11 @@
 import UIKit
 import Device
 
-class CCOverviewVC: UIViewController {
+class CCOverviewVC: CCUIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel       = CCOverviewVM()
-    var reachability    = CCReachibility()
     
     override func viewDidLoad() {
         super.viewDidLoad()

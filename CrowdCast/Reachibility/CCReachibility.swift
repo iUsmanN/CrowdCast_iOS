@@ -8,14 +8,14 @@
 
 import Foundation
 import Reachability
-import Whisper
 
 class CCReachibility {
     
     var result          : ((Result<Reachability.Connection, CCError>)->())?
     let reachability    = try? Reachability()
     
-    init() {
+    init(listener: @escaping ((Result<Reachability.Connection, CCError>)->())) {
+        result = listener
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
             try reachability?.startNotifier()
