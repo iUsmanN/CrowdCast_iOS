@@ -25,6 +25,7 @@ struct Constants {
         case CCOnboardingVC
         case CCAddChannelVC
         case CCJoinChannelVC
+        case CCCallScreenVC
     }
 //    
 //    struct Storyboards {

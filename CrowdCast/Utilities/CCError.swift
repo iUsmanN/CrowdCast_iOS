@@ -15,4 +15,7 @@ enum CCError : Error {
     case emptyFields
     case CodableError
     case internetError
+    
+    case twilioVideoError
+    case twilioCredentialsError
 }

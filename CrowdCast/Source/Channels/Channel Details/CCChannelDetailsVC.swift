@@ -16,6 +16,16 @@ class CCChannelDetailsVC: UIViewController {
         super.viewDidLoad()
         setupView()
     }
+    
+}
+
+extension CCChannelDetailsVC : CCGetsViewController {
+ 
+    @IBAction func joinCall(_ sender: Any) {
+        let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
+        viewController.setupViewModel(channelData: viewModel?.data)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension CCChannelDetailsVC {

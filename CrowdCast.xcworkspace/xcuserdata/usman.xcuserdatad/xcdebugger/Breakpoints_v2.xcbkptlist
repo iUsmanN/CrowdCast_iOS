@@ -64,7 +64,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "196">
+                  offsetFromSymbolStart = "177">
                </Location>
                <Location
                   uuid = "19A10A96-103F-4230-BE90-521D88774841 - 4956f13248a8fc4b"
@@ -79,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "216">
+                  offsetFromSymbolStart = "193">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -128,7 +128,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "372">
+                  offsetFromSymbolStart = "376">
                </Location>
                <Location
                   uuid = "ACFD12FA-1C76-4011-A48F-98DD737679BE - f8f2573bbe2456"
@@ -143,7 +143,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -176,7 +176,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
                   endingLineNumber = "41"
-                  offsetFromSymbolStart = "452">
+                  offsetFromSymbolStart = "502">
                </Location>
                <Location
                   uuid = "FF2F262D-5CE3-4AB6-BE54-102F444DC4AD - 4956f13248a8fc4b"
@@ -191,7 +191,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "196">
+                  offsetFromSymbolStart = "177">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -353,6 +353,54 @@
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "reachabilityChanged(note:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E43325E-2944-4DB0-A210-79C535296F56"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setupViewModel(channelData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C17D6E30-20E6-4A6C-962F-96119D397F57"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "joinCall(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1629AA1-9BA2-4FA1-953F-54E94433CD84"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "SetupVM(inputData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
