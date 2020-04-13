@@ -9,7 +9,7 @@
 import UIKit
 import TwilioVideo
 
-class CCCallScreenVC: UIViewController {
+class CCCallScreenVC: CCUIViewController {
     
     var viewModel = CCCallScreenVM()
     
@@ -18,12 +18,15 @@ class CCCallScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        bindVM()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        //viewModel.joinChannel(result: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,6 +46,13 @@ extension CCCallScreenVC {
     
     func setupViewModel(channelData: CCChannel?){
         viewModel.SetupVM(inputData: channelData)
+    }
+    
+    func bindVM(){
+        viewModel.participantCountPublisher.sink { (participantCount) in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.reloadData()
+        }.store(in: &combineCancellable)
     }
 }
 
@@ -72,15 +82,15 @@ extension CCCallScreenVC : UICollectionViewDelegateFlowLayout {
             if(indexPath.row == viewModel.numberOfCells() - 1){
                 return CGSize(width: view.frame.size.width, height: view.frame.size.height - lowerHeight)
             } else {
-                return CGSize(width: view.frame.size.width/2 - 0.5, height: lowerHeight)
+                return CGSize(width: view.frame.size.width/2 - 0.1, height: lowerHeight)
             }
         } else if (viewModel.numberOfCells() == 4){
-            return CGSize(width: (view.frame.size.width / 2) - 1, height: view.frame.size.height / 2)
+            return CGSize(width: (view.frame.size.width / 2) - 0.5, height: view.frame.size.height / 2)
         } else {
             if(indexPath.row<4){
-                return CGSize(width: (view.frame.size.width / 2) - 1, height: (view.frame.height) * 1.1/3 )
+                return CGSize(width: (view.frame.size.width / 2) - 0.5, height: (view.frame.height) * 1.1/3 )
             } else {
-                return CGSize(width: (view.frame.size.width / CGFloat(viewModel.numberOfCells() - 4)) - 1, height:  (view.frame.height) * 0.8/3 )
+                return CGSize(width: (view.frame.size.width / CGFloat(viewModel.numberOfCells() - 4)) - 0.1, height:  (view.frame.height) * 0.8/3 )
             }
         }
     }
@@ -88,7 +98,7 @@ extension CCCallScreenVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0.5
     }
 }
 

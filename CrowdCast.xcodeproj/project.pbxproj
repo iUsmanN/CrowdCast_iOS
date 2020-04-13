@@ -72,6 +72,7 @@
 		B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */; };
 		B6ACD0862441AE7F00405838 /* CCChannelDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD0852441AE7F00405838 /* CCChannelDetailsVC.swift */; };
 		B6ACD0882441AE8B00405838 /* CCChannelDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD0872441AE8B00405838 /* CCChannelDetailsVM.swift */; };
+		B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */; };
 		B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */; };
 		B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */; };
 		B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CF243703F600F50848 /* CCPrint.swift */; };
@@ -185,6 +186,7 @@
 		B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undraw_abstract_x68e.png; sourceTree = "<group>"; };
 		B6ACD0852441AE7F00405838 /* CCChannelDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelDetailsVC.swift; sourceTree = "<group>"; };
 		B6ACD0872441AE8B00405838 /* CCChannelDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelDetailsVM.swift; sourceTree = "<group>"; };
+		B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMiscellaneousExtensions.swift; sourceTree = "<group>"; };
 		B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCShowsCardHeaderProtocol.swift; sourceTree = "<group>"; };
 		B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardHeaderAction.swift; sourceTree = "<group>"; };
 		B6BD90CF243703F600F50848 /* CCPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPrint.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				B64E4CF92438A7710011715A /* CCNavigationController.swift */,
 				B6BD90CF243703F600F50848 /* CCPrint.swift */,
 				B6ACD07824405CCE00405838 /* CCUIViewController.swift */,
+				B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1001,6 +1004,7 @@
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
+				B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */,
 				B61E79112442420900D773E0 /* CCReachibility.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
