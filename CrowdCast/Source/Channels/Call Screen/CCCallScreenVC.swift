@@ -32,6 +32,8 @@ class CCCallScreenVC: CCUIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnSwipe = false
+        
+        viewModel.room?.disconnect()
     }
     
     
