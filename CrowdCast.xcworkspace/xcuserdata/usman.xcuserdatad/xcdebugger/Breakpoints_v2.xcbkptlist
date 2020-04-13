@@ -322,38 +322,6 @@
             endingLineNumber = "55"
             landmarkName = "joinChannel(result:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "18666466-3186-4243-BDA2-51D5D7307642 - 14664b9557ee8c30"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "CrowdCast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "90">
-               </Location>
-               <Location
-                  uuid = "18666466-3186-4243-BDA2-51D5D7307642 - 4133416cb9a0e835"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.TVIConnectOptionsBuilder) -&gt; () in CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "CrowdCast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "189">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -498,6 +466,54 @@
             endingLineNumber = "53"
             landmarkName = "bindVM()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3CA7C48D-429E-443B-A0F2-F8FB770BAF14"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "joinChannel(result:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3CA7C48D-429E-443B-A0F2-F8FB770BAF14 - 14664b9557ee8c30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "CrowdCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "427">
+               </Location>
+               <Location
+                  uuid = "3CA7C48D-429E-443B-A0F2-F8FB770BAF14 - 4133416cb9a0e835"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.TVIConnectOptionsBuilder) -&gt; () in CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "CrowdCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "189">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

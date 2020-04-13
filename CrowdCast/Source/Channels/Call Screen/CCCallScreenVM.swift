@@ -14,7 +14,7 @@ class CCCallScreenVM: NSObject {
 
     var participantCountPublisher = PassthroughSubject<Int, Never>()
     
-    var participantCount : Int? = 1 {
+    var participantCount : Int? = 0 {
         didSet {
             participantCountPublisher.send(participantCount ?? 1)
         }
@@ -52,7 +52,7 @@ extension CCCallScreenVM {
 extension CCCallScreenVM {
     
     func joinChannel(result: ((Result<Room, CCError>)->())?){
-        let channelID = "channel2"// else { result?(.failure(.twilioCredentialsError)); return }
+        guard let channelID = channelData?.id else { result?(.failure(.twilioCredentialsError)); return }
         
         let connectOptions = ConnectOptions(token: accessToken2) { (connectOptionsBuilder) in
             connectOptionsBuilder.roomName = channelID
