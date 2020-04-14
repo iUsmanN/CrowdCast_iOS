@@ -64,7 +64,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "177">
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
                   uuid = "19A10A96-103F-4230-BE90-521D88774841 - 4956f13248a8fc4b"
@@ -79,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "193">
+                  offsetFromSymbolStart = "216">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -128,7 +128,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "376">
+                  offsetFromSymbolStart = "372">
                </Location>
                <Location
                   uuid = "ACFD12FA-1C76-4011-A48F-98DD737679BE - f8f2573bbe2456"
@@ -143,7 +143,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -176,7 +176,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
                   endingLineNumber = "41"
-                  offsetFromSymbolStart = "502">
+                  offsetFromSymbolStart = "452">
                </Location>
                <Location
                   uuid = "FF2F262D-5CE3-4AB6-BE54-102F444DC4AD - 4956f13248a8fc4b"
@@ -191,7 +191,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "177">
+                  offsetFromSymbolStart = "196">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -320,40 +320,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "joinChannel(result:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "18666466-3186-4243-BDA2-51D5D7307642 - 14664b9557ee8c30"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "CrowdCast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "427">
-               </Location>
-               <Location
-                  uuid = "18666466-3186-4243-BDA2-51D5D7307642 - 4133416cb9a0e835"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.TVIConnectOptionsBuilder) -&gt; () in CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "CrowdCast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "189">
-               </Location>
-            </Locations>
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -368,8 +336,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
-            landmarkName = "roomDidConnect(room:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -384,8 +352,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "roomDidFailToConnect(room:error:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -400,8 +368,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "roomIsReconnecting(room:error:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -416,8 +384,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "participantDidConnect(room:participant:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -432,8 +400,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "participantDidDisconnect(room:participant:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -448,8 +416,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "dominantSpeakerDidChange(room:participant:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -464,8 +432,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "didSubscribeToVideoTrack(videoTrack:publication:participant:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -545,6 +513,22 @@
             startingLineNumber = "87"
             endingLineNumber = "87"
             landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E8EDD10-9A4A-4E2F-A14B-1670DB342D2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Settings/CCSettingsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "setupNavBar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

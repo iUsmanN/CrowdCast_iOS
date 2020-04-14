@@ -22,5 +22,6 @@ class CCSettingsVC: UIViewController {
     
     func setupNavBar(){
         navigationController?.navigationBar.isTranslucent = false
+        //navigationController?.navigationBar.set
     }
 }

@@ -84,11 +84,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tsB-et-LPh"/>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="7kf-j5-rew"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTR-ZJ-pU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159" y="884"/>
+            <point key="canvasLocation" x="750.72463768115949" y="883.92857142857144"/>
         </scene>
         <!--Call-->
         <scene sceneID="4JX-gk-xZS">
@@ -137,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWh-vO-Xrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="884"/>
+            <point key="canvasLocation" x="1763.7681159420292" y="883.92857142857144"/>
         </scene>
         <!--Join Channel-->
         <scene sceneID="x2S-uR-rRQ">

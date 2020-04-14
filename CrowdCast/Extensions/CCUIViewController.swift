@@ -19,5 +19,10 @@ class CCUIViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLargeTitles()
+    }
+    
+    func setupLargeTitles(){
+        navigationController?.view.backgroundColor = UIColor(named: "Background")
     }
 }

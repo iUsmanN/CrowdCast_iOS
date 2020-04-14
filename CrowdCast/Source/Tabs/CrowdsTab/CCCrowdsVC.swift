@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCCrowdsVC: UIViewController {
+class CCCrowdsVC: CCUIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

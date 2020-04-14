@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83a-pw-sTL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -30,7 +30,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IXg-Qa-1gI"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="DYT-GZ-yEQ"/>
+                    <navigationItem key="navigationItem" id="DYT-GZ-yEQ"/>
                     <connections>
                         <outlet property="tableView" destination="83a-pw-sTL" id="khO-ZC-1yy"/>
                     </connections>
@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-gZ-xne">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UR2-e9-xxc"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NaN-WE-Pqg"/>
+                    <navigationItem key="navigationItem" id="NaN-WE-Pqg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvQ-XY-LCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +89,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wc3-Pa-Da3"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="WwA-eN-Pbp"/>
+                    <navigationItem key="navigationItem" id="WwA-eN-Pbp"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="aH1-Xg-DY5" id="NhB-Vs-9TH"/>
@@ -125,9 +125,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82U-I8-qHf" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Feed" id="nYy-Ul-OR0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wK-jo-ifF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6wK-jo-ifF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <color key="barTintColor" name="Background"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -144,9 +146,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fzL-Je-TWu" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Groups" id="xiX-yP-NF0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EvX-Wl-Lzg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="EvX-Wl-Lzg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <color key="barTintColor" name="Background"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -164,12 +168,11 @@
                     <tabBarItem key="tabBarItem" title="" image="Channels" id="TEF-Ay-OSz"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N7x-Al-ayV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="N7x-Al-ayV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
+                        <color key="backgroundColor" name="Background"/>
+                        <color key="barTintColor" name="Background"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
