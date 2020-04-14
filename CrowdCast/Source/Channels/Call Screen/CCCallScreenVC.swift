@@ -25,8 +25,6 @@ class CCCallScreenVC: CCUIViewController {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        //viewModel.joinChannel(result: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,7 +82,7 @@ extension CCCallScreenVC : UICollectionViewDelegateFlowLayout {
             if(indexPath.row == viewModel.numberOfCells() - 1){
                 return CGSize(width: view.frame.size.width, height: view.frame.size.height - lowerHeight)
             } else {
-                return CGSize(width: view.frame.size.width/2 - 0.1, height: lowerHeight)
+                return CGSize(width: view.frame.size.width/2 - 0.5, height: lowerHeight)
             }
         } else if (viewModel.numberOfCells() == 4){
             return CGSize(width: (view.frame.size.width / 2) - 0.5, height: view.frame.size.height / 2)

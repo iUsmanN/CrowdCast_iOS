@@ -50,8 +50,8 @@ class CCLoginVC: UIViewController {
         emailIcon.alpha = 0.7
         passwordIcon.alpha = 0.7
         
-        emailTextField.text = "umer@gmail.com"
-        passwordTextField.text = "umershafique"
+        emailTextField.text = "usmant1@gmail.com"
+        passwordTextField.text = "usmant1"
         
         IllustrationBottomGap.constant = Device.size() > Size.screen4_7Inch ? 75 : 10
         IllustrationTopGap.constant = Device.size() > Size.screen4_7Inch ? 60 : 20
