@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import TwilioVideo
 
 struct CCChannelDetailsVM {
     
-    var data = CCChannel()
+    var data                = CCChannel()
+    var localVideoTrack     : LocalVideoTrack?
     
     init(channelData: CCChannel) {
         data = channelData

@@ -33,8 +33,6 @@ class CCCallScreenVC: CCUIViewController {
         
         viewModel.room?.disconnect()
     }
-    
-    
 }
 
 extension CCCallScreenVC {
@@ -53,6 +51,13 @@ extension CCCallScreenVC {
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.reloadData()
         }.store(in: &combineCancellable)
+    }
+}
+
+extension CCCallScreenVC {
+    
+    func insertCells(){
+        
     }
 }
 

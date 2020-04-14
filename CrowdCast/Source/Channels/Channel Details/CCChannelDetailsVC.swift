@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import TwilioVideo
 
 class CCChannelDetailsVC: UIViewController {
 
+    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cameraViewHeightConstraint: NSLayoutConstraint!
+    
     var viewModel : CCChannelDetailsVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showMe()
     }
     
 }
@@ -37,4 +47,26 @@ extension CCChannelDetailsVC {
     func setupView(){
         navigationItem.title = viewModel?.data.name
     }
+}
+
+extension CCChannelDetailsVC : CameraSourceDelegate, VideoViewDelegate {
+    
+    func showMe(){
+            if let camera = CameraSource(delegate: self) {
+                viewModel?.localVideoTrack = LocalVideoTrack(source: camera)
+                let renderer = VideoView(frame: cameraView.frame)
+                renderer.shouldMirror = true
+                guard let frontCamera = CameraSource.captureDevice(position: .front) else { return }
+                renderer.contentMode = .scaleAspectFill
+                camera.startCapture(device: frontCamera)
+                viewModel?.localVideoTrack?.addRenderer(renderer)
+                self.view.layoutIfNeeded()
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.cameraViewHeightConstraint.constant = self.view.frame.size.width
+                    self.view.layoutIfNeeded()
+                }) { (_) in
+                    self.cameraView.addSubview(renderer)
+                }
+            }
+        }
 }

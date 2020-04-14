@@ -125,8 +125,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82U-I8-qHf" customClass="CCNavigationController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Feed" id="nYy-Ul-OR0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6wK-jo-ifF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wK-jo-ifF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Background"/>
                         <color key="barTintColor" name="Background"/>
