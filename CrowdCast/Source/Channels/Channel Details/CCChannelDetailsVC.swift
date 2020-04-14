@@ -13,7 +13,6 @@ class CCChannelDetailsVC: UIViewController {
 
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var cameraViewHeightConstraint: NSLayoutConstraint!
     
     var viewModel : CCChannelDetailsVM?
     
@@ -60,13 +59,7 @@ extension CCChannelDetailsVC : CameraSourceDelegate, VideoViewDelegate {
                 renderer.contentMode = .scaleAspectFill
                 camera.startCapture(device: frontCamera)
                 viewModel?.localVideoTrack?.addRenderer(renderer)
-                self.view.layoutIfNeeded()
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.cameraViewHeightConstraint.constant = self.view.frame.size.width
-                    self.view.layoutIfNeeded()
-                }) { (_) in
-                    self.cameraView.addSubview(renderer)
-                }
+                self.cameraView.addSubview(renderer)
             }
         }
 }

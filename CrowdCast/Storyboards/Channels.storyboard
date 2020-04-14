@@ -50,20 +50,18 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-yN-Nyl">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
                                 <color key="backgroundColor" name="Background"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="vOv-M3-L9j"/>
-                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7cf-VH-65M">
-                                <rect key="frame" x="0.0" y="300" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="310.5" width="414" height="388.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3ha-yN-Nyl" firstAttribute="leading" secondItem="tsB-et-LPh" secondAttribute="leading" id="4dG-rH-aaS"/>
+                            <constraint firstItem="3ha-yN-Nyl" firstAttribute="height" secondItem="w6y-r0-eeq" secondAttribute="width" multiplier="0.75" id="ACe-ng-rdj"/>
                             <constraint firstItem="7cf-VH-65M" firstAttribute="top" secondItem="3ha-yN-Nyl" secondAttribute="bottom" id="IFU-Io-DIO"/>
                             <constraint firstItem="tsB-et-LPh" firstAttribute="trailing" secondItem="7cf-VH-65M" secondAttribute="trailing" id="JPP-g6-niA"/>
                             <constraint firstItem="eG4-I5-SUE" firstAttribute="top" secondItem="7cf-VH-65M" secondAttribute="bottom" id="Wt8-ay-9gJ"/>
@@ -79,7 +77,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="cameraView" destination="3ha-yN-Nyl" id="aoj-OV-wT5"/>
-                        <outlet property="cameraViewHeightConstraint" destination="vOv-M3-L9j" id="Vup-F6-AID"/>
                         <outlet property="tableView" destination="7cf-VH-65M" id="msY-zm-pad"/>
                     </connections>
                 </viewController>
