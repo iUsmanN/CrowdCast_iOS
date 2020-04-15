@@ -104,11 +104,12 @@ extension CCCallScreenVM : RoomDelegate {
         print("participantDidConnect")
         participant.delegate = self
         callParticipants?.insert(participant, at: 0)
-        participantCountPublisher.send((.insert, [0]))
+        participantCountPublisher.send((.insert, [(callParticipants?.count ?? 2) - 2]))
     }
     
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
         print("participantDidDisconnect")
+        
         //participantCount = (participantCount ?? 1) - 1
     }
     

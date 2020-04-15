@@ -55,11 +55,6 @@ extension CCCallScreenVC {
                 self?.removeCells()
             }
         }.store(in: &combineCancellable)
-        
-//        viewModel.participantCountPublisher.sink { (participantCount) in
-//            self.collectionView.collectionViewLayout.invalidateLayout()
-//            self.collectionView.reloadData()
-//        }.store(in: &combineCancellable)
     }
 }
 

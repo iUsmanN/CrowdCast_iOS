@@ -38,8 +38,10 @@ extension CCGetIndexPaths {
     }
     
     func getIndexPaths(array: [Int]) -> [IndexPath] {
-        var indexPaths = [IndexPath]()
-        indexPaths.append(IndexPath(row: 0, section: 0))
-        return indexPaths
+        var indexPaths : [IndexPath]?
+        indexPaths = array.compactMap { (index) -> IndexPath in
+            return IndexPath(row: index, section: 0)
+        }
+        return indexPaths ?? [IndexPath]()
     }
 }
