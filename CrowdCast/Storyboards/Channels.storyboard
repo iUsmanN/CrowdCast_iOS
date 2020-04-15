@@ -50,18 +50,20 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-yN-Nyl">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                 <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="dwN-Ry-PJP"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7cf-VH-65M">
-                                <rect key="frame" x="0.0" y="310.5" width="414" height="388.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3ha-yN-Nyl" firstAttribute="leading" secondItem="tsB-et-LPh" secondAttribute="leading" id="4dG-rH-aaS"/>
-                            <constraint firstItem="3ha-yN-Nyl" firstAttribute="height" secondItem="w6y-r0-eeq" secondAttribute="width" multiplier="0.75" id="ACe-ng-rdj"/>
                             <constraint firstItem="7cf-VH-65M" firstAttribute="top" secondItem="3ha-yN-Nyl" secondAttribute="bottom" id="IFU-Io-DIO"/>
                             <constraint firstItem="tsB-et-LPh" firstAttribute="trailing" secondItem="7cf-VH-65M" secondAttribute="trailing" id="JPP-g6-niA"/>
                             <constraint firstItem="eG4-I5-SUE" firstAttribute="top" secondItem="7cf-VH-65M" secondAttribute="bottom" id="Wt8-ay-9gJ"/>
@@ -77,12 +79,13 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="cameraView" destination="3ha-yN-Nyl" id="aoj-OV-wT5"/>
+                        <outlet property="cameraViewHeightConstraint" destination="dwN-Ry-PJP" id="jt8-f6-JKK"/>
                         <outlet property="tableView" destination="7cf-VH-65M" id="msY-zm-pad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTR-ZJ-pU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750.72463768115949" y="883.92857142857144"/>
+            <point key="canvasLocation" x="-155" y="884"/>
         </scene>
         <!--Call-->
         <scene sceneID="4JX-gk-xZS">
@@ -131,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWh-vO-Xrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763.7681159420292" y="883.92857142857144"/>
+            <point key="canvasLocation" x="906" y="884"/>
         </scene>
         <!--Join Channel-->
         <scene sceneID="x2S-uR-rRQ">
