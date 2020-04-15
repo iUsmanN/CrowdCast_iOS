@@ -61,7 +61,7 @@ extension CCChannelsVM {
     }
 }
 
-extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
+extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
     
     func getData() {
         
@@ -105,7 +105,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCAddsRowsToTable {
         
         dg.notify(queue: .global()) { [weak self] in
             prints("Make index paths")
-            self?.channelsPublisher.send(self?.getIndexPaths(oldMyChannelCount: self?.myChannels.data.count, newMyChannelCount: newMyChannels, oldJoinedChannelCount: self?.joinedChannels.data.count, newJoinedChannelCount: newJoinedChannels, countTuple: fetchedCounts) ?? [IndexPath]())
+            self?.channelsPublisher.send(self?.getDualIndexPaths(oldMyChannelCount: self?.myChannels.data.count, newMyChannelCount: newMyChannels, oldJoinedChannelCount: self?.joinedChannels.data.count, newJoinedChannelCount: newJoinedChannels, countTuple: fetchedCounts) ?? [IndexPath]())
         }
     }
 }

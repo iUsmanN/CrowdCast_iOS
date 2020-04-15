@@ -15,3 +15,14 @@ extension UIColor {
     var blueValue: CGFloat{ return CIColor(color: self).blue }
     var alphaValue: CGFloat{ return CIColor(color: self).alpha }
 }
+
+extension Array {
+    
+    func addedRows() -> [Int] {
+        var arr = [Int]()
+        for i in 0..<count {
+            arr.append(i)
+        }
+        return arr
+    }
+}

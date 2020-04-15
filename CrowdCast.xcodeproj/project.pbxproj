@@ -66,7 +66,7 @@
 		B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */; };
 		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
 		B6ACD07924405CCE00405838 /* CCUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07824405CCE00405838 /* CCUIViewController.swift */; };
-		B6ACD07B2440667400405838 /* CCAddsRowsToTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07A2440667400405838 /* CCAddsRowsToTable.swift */; };
+		B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */; };
 		B6ACD07F2441058900405838 /* Cabin.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD07E2441058900405838 /* Cabin.png */; };
 		B6ACD08124410AE700405838 /* Walk.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD08024410AE700405838 /* Walk.png */; };
 		B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */; };
@@ -180,7 +180,7 @@
 		B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatchQueue.swift; sourceTree = "<group>"; };
 		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
 		B6ACD07824405CCE00405838 /* CCUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUIViewController.swift; sourceTree = "<group>"; };
-		B6ACD07A2440667400405838 /* CCAddsRowsToTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddsRowsToTable.swift; sourceTree = "<group>"; };
+		B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGetIndexPaths.swift; sourceTree = "<group>"; };
 		B6ACD07E2441058900405838 /* Cabin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cabin.png; sourceTree = "<group>"; };
 		B6ACD08024410AE700405838 /* Walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Walk.png; sourceTree = "<group>"; };
 		B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undraw_abstract_x68e.png; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 				B60A29D52434828400B7F76F /* CCSetsNavbarProtocol.swift */,
 				B6E367722436634700B511A0 /* CCScreenProtocols.swift */,
 				B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */,
-				B6ACD07A2440667400405838 /* CCAddsRowsToTable.swift */,
+				B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */,
 				B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */,
 			);
 			path = Protocols;
@@ -998,7 +998,7 @@
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
 				B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */,
 				B64E4CF1243890510011715A /* CCNibManager.swift in Sources */,
-				B6ACD07B2440667400405838 /* CCAddsRowsToTable.swift in Sources */,
+				B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */,
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,

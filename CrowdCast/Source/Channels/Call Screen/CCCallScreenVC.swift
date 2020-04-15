@@ -47,16 +47,29 @@ extension CCCallScreenVC {
     }
     
     func bindVM(){
-        viewModel.participantCountPublisher.sink { (participantCount) in
-            self.collectionView.collectionViewLayout.invalidateLayout()
-            self.collectionView.reloadData()
+        viewModel.participantCountPublisher.sink { [weak self] (action, indexes) in
+            switch action {
+            case .insert:
+                self?.insertCells(addedIndexes: indexes)
+            case .remove:
+                self?.removeCells()
+            }
         }.store(in: &combineCancellable)
+        
+//        viewModel.participantCountPublisher.sink { (participantCount) in
+//            self.collectionView.collectionViewLayout.invalidateLayout()
+//            self.collectionView.reloadData()
+//        }.store(in: &combineCancellable)
     }
 }
 
-extension CCCallScreenVC {
+extension CCCallScreenVC : CCGetIndexPaths {
     
-    func insertCells(){
+    func insertCells(addedIndexes: [Int]){
+        self.collectionView.insertItems(at: getIndexPaths(array: addedIndexes))
+    }
+    
+    func removeCells(){
         
     }
 }
