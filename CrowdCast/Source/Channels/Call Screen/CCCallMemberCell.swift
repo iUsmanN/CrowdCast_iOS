@@ -16,7 +16,9 @@ class CCCallMemberCell: UICollectionViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var participant: Participant?{
+    var remoteVideo : VideoView?
+    
+    var participantData: callParticipantData? {
         didSet {
             setupView()
         }
@@ -24,6 +26,21 @@ class CCCallMemberCell: UICollectionViewCell {
     
     func setupView() {
         prints("Setup Call Cell View")
-        nameLabel.text = participant?.identity
+        nameLabel.text = participantData?.0.identity
+        setVideo(data: participantData?.1)
     }
+    
+    func setVideo(data: RemoteVideoTrack?) {
+        
+        if let participantVideo = VideoView(frame: backView.frame, delegate: self, renderingType: .metal) {
+            data?.addRenderer(participantVideo)
+            participantVideo.contentMode = .scaleAspectFill
+            self.backView.addSubview(participantVideo)
+            self.remoteVideo = participantVideo
+        }
+    }
+}
+
+extension CCCallMemberCell : VideoViewDelegate {
+    
 }

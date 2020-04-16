@@ -78,7 +78,7 @@ extension CCCallScreenVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell, for: indexPath) as? CCCallMemberCell else { return UICollectionViewCell() }
-        cell.participant = viewModel.getParticipant(indexPath: indexPath)
+        cell.participantData = viewModel.getParticipant(indexPath: indexPath)
         return cell
     }
 }
