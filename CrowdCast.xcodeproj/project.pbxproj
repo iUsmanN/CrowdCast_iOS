@@ -73,6 +73,8 @@
 		B6ACD0862441AE7F00405838 /* CCChannelDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD0852441AE7F00405838 /* CCChannelDetailsVC.swift */; };
 		B6ACD0882441AE8B00405838 /* CCChannelDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD0872441AE8B00405838 /* CCChannelDetailsVM.swift */; };
 		B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */; };
+		B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */; };
+		B6B664672448B29F00F6C1DF /* CCCallMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */; };
 		B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */; };
 		B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */; };
 		B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CF243703F600F50848 /* CCPrint.swift */; };
@@ -187,6 +189,8 @@
 		B6ACD0852441AE7F00405838 /* CCChannelDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelDetailsVC.swift; sourceTree = "<group>"; };
 		B6ACD0872441AE8B00405838 /* CCChannelDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelDetailsVM.swift; sourceTree = "<group>"; };
 		B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMiscellaneousExtensions.swift; sourceTree = "<group>"; };
+		B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallMemberCell.swift; sourceTree = "<group>"; };
+		B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCallMemberCell.xib; sourceTree = "<group>"; };
 		B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCShowsCardHeaderProtocol.swift; sourceTree = "<group>"; };
 		B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardHeaderAction.swift; sourceTree = "<group>"; };
 		B6BD90CF243703F600F50848 /* CCPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPrint.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				B61C90F22441DCE100F6B8A9 /* CCCallScreenVC.swift */,
 				B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */,
 				B646CEC42443131900B935CD /* CCRoomVC.swift */,
+				B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */,
+				B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */,
 			);
 			path = "Call Screen";
 			sourceTree = "<group>";
@@ -850,6 +856,7 @@
 				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */,
 				B6BD90D724377E3D00F50848 /* Channels.storyboard in Resources */,
+				B6B664672448B29F00F6C1DF /* CCCallMemberCell.xib in Resources */,
 				B6ACD07F2441058900405838 /* Cabin.png in Resources */,
 				B64E4CF624389E420011715A /* CCCardTimeLabel.xib in Resources */,
 			);
@@ -994,6 +1001,7 @@
 				B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */,
 				B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */,
 				B6BD90D52437137E00F50848 /* CCOverviewVM.swift in Sources */,
+				B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */,
 				B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */,
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
 				B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */,

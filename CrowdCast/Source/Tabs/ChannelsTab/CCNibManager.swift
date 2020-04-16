@@ -19,5 +19,6 @@ struct Nib {
     struct reuseIdentifier {
         static let CCSectionHeader  = "CCSectionHeader"
         static let CCCardTVC        = "CCCardTVCTableViewCell"
+        static let CCCallMemberCell = "CCCallMemberCell"
     }
 }

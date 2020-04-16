@@ -40,6 +40,7 @@ extension CCCallScreenVC {
     func setupView(){
         collectionView.dataSource   = self
         collectionView.delegate     = self
+        collectionView.register(UINib(nibName: Nib.reuseIdentifier.CCCallMemberCell, bundle: nil), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell)
     }
     
     func setupViewModel(channelData: CCChannel?){
@@ -76,8 +77,8 @@ extension CCCallScreenVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "callMemberCell", for: indexPath)
-        cell.backgroundColor = UIColor(named: viewModel.channelData?.color ?? "red")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell, for: indexPath) as? CCCallMemberCell else { return UICollectionViewCell() }
+        cell.participant = viewModel.getParticipant(indexPath: indexPath)
         return cell
     }
 }
