@@ -41,7 +41,7 @@ class CCCallScreenVM: NSObject {
     var accessToken2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcwNTQ3MTYiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzA1ODMxNiwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiYiIsInZpZGVvIjp7fX19.pZXwQ2KDV5yrgyngjzvsRJ1Ald4wit9KKox6M6qe_po"
     
     //ahmer
-    var accessToken3 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODY4NzA1MjAiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4Njg3NDEyMCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiYWhtZXIiLCJ2aWRlbyI6e319fQ.Cwibe2XVC5_Ywe25gDF5YEiakhhSykke97yH6kP5WTs"
+    var accessToken3 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcwNTY1NDgiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzA2MDE0OCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiYyIsInZpZGVvIjp7fX19.5ffaJ-obovVk6mHs_r5WlyW3lN1EuwgX3zkqTMpgU2w"
     
     var channelData : CCChannel?
     
@@ -69,7 +69,7 @@ extension CCCallScreenVM {
     func joinChannel(result: ((Result<Room, CCError>)->())?){
         guard let channelID = channelData?.id else { result?(.failure(.twilioCredentialsError)); return }
         
-        let connectOptions = ConnectOptions(token: accessToken2) { (connectOptionsBuilder) in
+        let connectOptions = ConnectOptions(token: accessToken1) { (connectOptionsBuilder) in
             connectOptionsBuilder.roomName = channelID
             if let audioTrack = self.localAudioTrack {
                 connectOptionsBuilder.audioTracks   = [ audioTrack ]
