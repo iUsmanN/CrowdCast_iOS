@@ -23,7 +23,6 @@
 		B61C90F72441E98E00F6B8A9 /* boys.png in Resources */ = {isa = PBXBuildFile; fileRef = B61C90F62441E98E00F6B8A9 /* boys.png */; };
 		B61E79112442420900D773E0 /* CCReachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E79102442420900D773E0 /* CCReachibility.swift */; };
 		B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C716F2434ADD00090901C /* CCTabBarController.swift */; };
-		B646CEC52443131900B935CD /* CCRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646CEC42443131900B935CD /* CCRoomVC.swift */; };
 		B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CEA2438750C0011715A /* CCChannelsVM.swift */; };
 		B64E4CF1243890510011715A /* CCNibManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CF0243890510011715A /* CCNibManager.swift */; };
 		B64E4CF624389E420011715A /* CCCardTimeLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64E4CF524389E420011715A /* CCCardTimeLabel.xib */; };
@@ -365,11 +364,10 @@
 		B61C90F12441DCC500F6B8A9 /* Call Screen */ = {
 			isa = PBXGroup;
 			children = (
+				B66E2164244A0F9000BC2CFF /* Member Cell */,
 				B61C90F22441DCE100F6B8A9 /* CCCallScreenVC.swift */,
 				B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */,
 				B646CEC42443131900B935CD /* CCRoomVC.swift */,
-				B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */,
-				B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */,
 			);
 			path = "Call Screen";
 			sourceTree = "<group>";
@@ -440,6 +438,15 @@
 				B64E4D1A243A2E920011715A /* CCError.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B66E2164244A0F9000BC2CFF /* Member Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */,
+				B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */,
+			);
+			path = "Member Cell";
 			sourceTree = "<group>";
 		};
 		B67962042432495500C2A13C /* Storyboards */ = {
@@ -1027,7 +1034,6 @@
 				B60A29D62434828400B7F76F /* CCSetsNavbarProtocol.swift in Sources */,
 				B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */,
 				B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */,
-				B646CEC52443131900B935CD /* CCRoomVC.swift in Sources */,
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
 				B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */,
 				B64E4D142439F4850011715A /* CCContainsOwners.swift in Sources */,

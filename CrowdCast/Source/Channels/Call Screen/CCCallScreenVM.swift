@@ -21,11 +21,7 @@ class CCCallScreenVM: NSObject {
     
     var participantCountPublisher = PassthroughSubject<(callViewAction, [Int]), Never>()
     
-    var callParticipants : [callParticipantData]? = [callParticipantData]() {
-        didSet {
-            //participantCountPublisher.send(callParticipants?.count ?? 0)
-        }
-    }
+    var callParticipants : [callParticipantData]? = [callParticipantData]()
     
     var room                : Room?
     
@@ -35,10 +31,10 @@ class CCCallScreenVM: NSObject {
     var localVideoTrack     : LocalVideoTrack?
     
     //t1
-    var accessToken1 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcxMzQ3OTciLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzEzODM5NywiZ3JhbnRzIjp7ImlkZW50aXR5IjoidXNtYW4iLCJ2aWRlbyI6e319fQ.4TNBi3CinYamTb1NuhFiNaXjyl5Q5dQTbf3okWV46eY"
+    var accessToken1 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcxMzk4OTIiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzE0MzQ5MiwiZ3JhbnRzIjp7ImlkZW50aXR5IjoidXNtYW4iLCJ2aWRlbyI6e319fQ.xdlx1QFAR9daL1C7gpgVz6b-s2oxRlt1kOlt7AGhFcs"
     
     //t2
-    var accessToken2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcxMzQ4MjgiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzEzODQyOCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoibWFtYSIsInZpZGVvIjp7fX19.6Rl9SXOp4w3_7RQGbFLAf0P6mHqHtH2XYvhOR9DtIUE"
+    var accessToken2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcxMzk4NzIiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzE0MzQ3MiwiZ3JhbnRzIjp7ImlkZW50aXR5IjoibWFtYSIsInZpZGVvIjp7fX19.ta5e76T1WQ654Cr1sHsQg3ECA1woU7v6o6YlK2NHIyU"
     
     //ahmer
     var accessToken3 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcwNTY1NDgiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzA2MDE0OCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiYyIsInZpZGVvIjp7fX19.5ffaJ-obovVk6mHs_r5WlyW3lN1EuwgX3zkqTMpgU2w"
@@ -69,7 +65,7 @@ extension CCCallScreenVM {
     func joinChannel(result: ((Result<Room, CCError>)->())?){
         guard let channelID = channelData?.id else { result?(.failure(.twilioCredentialsError)); return }
         
-        let connectOptions = ConnectOptions(token: accessToken2) { (connectOptionsBuilder) in
+        let connectOptions = ConnectOptions(token: accessToken1) { (connectOptionsBuilder) in
             connectOptionsBuilder.roomName = channelID
             if let audioTrack = self.localAudioTrack {
                 connectOptionsBuilder.audioTracks   = [ audioTrack ]
