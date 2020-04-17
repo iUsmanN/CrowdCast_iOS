@@ -10,7 +10,6 @@ import UIKit
 import TwilioVideo
 
 class CCCallMemberCell: UICollectionViewCell {
-
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -27,11 +26,13 @@ class CCCallMemberCell: UICollectionViewCell {
     func setupView() {
         prints("Setup Call Cell View")
         nameLabel.text = participantData?.0.identity
+        if (participantData?.0 is LocalParticipant){
+            nameLabel.text = "Local"
+        }
         setVideo(data: participantData?.1)
     }
     
     func setVideo(data: RemoteVideoTrack?) {
-        
         if let participantVideo = VideoView(frame: backView.frame, delegate: self, renderingType: .metal) {
             data?.addRenderer(participantVideo)
             participantVideo.contentMode = .scaleAspectFill
