@@ -60,15 +60,6 @@ extension CCCallScreenVC {
 
 extension CCCallScreenVC : CCGetIndexPaths {
     
-    func allMetalViews(){
-        for i in 0..<viewModel.numberOfCells() {
-            prints("TAG \(i) : \(self.collectionView.viewWithTag(i))")
-            guard let v = self.collectionView.viewWithTag(i) else { return }
-            self.collectionView.willRemoveSubview(v)
-            self.collectionView.reloadData()
-        }
-    }
-    
     func insertCells(addedIndexes: [Int]){
         self.collectionView.insertItems(at: getIndexPaths(array: addedIndexes))
     }
@@ -124,4 +115,3 @@ extension CCCallScreenVC : UICollectionViewDelegateFlowLayout {
         return 0.5
     }
 }
-

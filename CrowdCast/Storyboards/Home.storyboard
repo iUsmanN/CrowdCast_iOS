@@ -103,6 +103,7 @@
         <scene sceneID="2o6-LQ-rSX">
             <objects>
                 <tabBarController storyboardIdentifier="CCTabBar" id="CzG-z7-cV1" customClass="CCTabBarController" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aLa-g4-n7L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
