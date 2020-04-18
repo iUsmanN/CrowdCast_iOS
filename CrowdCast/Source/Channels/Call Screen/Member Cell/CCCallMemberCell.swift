@@ -34,7 +34,7 @@ class CCCallMemberCell: UICollectionViewCell {
         setVideo(data: participantData?.1)
     }
     
-    func setVideo(data: RemoteVideoTrack?) {
+    func setVideo(data: VideoTrack?) {
         
         guard let data = data else { return }
         
@@ -44,6 +44,7 @@ class CCCallMemberCell: UICollectionViewCell {
             participantVideo.tag = 99
             self.backView.addSubview(participantVideo)
             self.remoteVideo = participantVideo
+            prints("Added Remote Video For : \(participantData?.0.identity)")
         }
         
 //        switch participantData?.0 {

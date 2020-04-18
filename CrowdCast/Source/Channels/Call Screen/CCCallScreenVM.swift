@@ -14,7 +14,7 @@ enum callViewAction {
     case insert
     case remove
 }
-typealias callParticipantData = (Participant, RemoteVideoTrack?)
+typealias callParticipantData = (Participant, VideoTrack?)
 
 
 class CCCallScreenVM: NSObject {
@@ -87,7 +87,7 @@ extension CCCallScreenVM : RoomDelegate {
         print("roomDidConnect")
         
         guard let localParticipant          = room.localParticipant.map({ (participant) -> callParticipantData in
-            return (participant, nil)
+            return (participant, localVideoTrack)
         }) else { return }
         
         for i in 0..<room.remoteParticipants.count {
