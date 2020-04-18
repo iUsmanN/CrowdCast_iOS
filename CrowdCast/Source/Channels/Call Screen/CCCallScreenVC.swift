@@ -51,9 +51,8 @@ extension CCCallScreenVC {
             switch action {
             case .insert:
                 self?.insertCells(addedIndexes: indexes)
-                //self?.allMetalViews()
             case .remove:
-                self?.removeCells()
+                self?.removeCells(removedIndexes: indexes)
             }
         }.store(in: &combineCancellable)
     }
@@ -74,8 +73,8 @@ extension CCCallScreenVC : CCGetIndexPaths {
         self.collectionView.insertItems(at: getIndexPaths(array: addedIndexes))
     }
     
-    func removeCells(){
-        
+    func removeCells(removedIndexes: [Int]){
+        self.collectionView.deleteItems(at: getIndexPaths(array: removedIndexes))
     }
 }
 

@@ -14,16 +14,14 @@ enum callViewAction {
     case insert
     case remove
 }
-typealias callParticipantData = (Participant, VideoTrack?)
 
+typealias callParticipantData = (Participant, VideoTrack?)
 
 class CCCallScreenVM: NSObject {
     
-    var participantCountPublisher = PassthroughSubject<(callViewAction, [Int]), Never>()
-    
-    var callParticipants : [callParticipantData]? = [callParticipantData]()
-    
-    var room                : Room?
+    var participantCountPublisher   = PassthroughSubject<(callViewAction, [Int]), Never>()
+    var callParticipants            : [callParticipantData]? = [callParticipantData]()
+    var room                        : Room?
     
     ///Tracks
     var localAudioTrack     = LocalAudioTrack()
@@ -51,7 +49,7 @@ class CCCallScreenVM: NSObject {
 extension CCCallScreenVM {
     
     func numberOfCells() -> Int {
-        return callParticipants?.count ?? 0//participantCount ?? 0
+        return callParticipants?.count ?? 0
     }
     
     func getParticipant(indexPath: IndexPath) -> callParticipantData? {
@@ -84,21 +82,10 @@ extension CCCallScreenVM {
 extension CCCallScreenVM : RoomDelegate {
     
     func roomDidConnect(room: Room) {
-        print("roomDidConnect")
-        
+        for i in 0..<room.remoteParticipants.count { room.remoteParticipants[i].delegate = self }
         guard let localParticipant          = room.localParticipant.map({ (participant) -> callParticipantData in
             return (participant, localVideoTrack)
         }) else { return }
-        
-        for i in 0..<room.remoteParticipants.count {
-            room.remoteParticipants[i].delegate = self
-        }
-        
-//        let remoteParticipants        = room.remoteParticipants.map({ (remoteParticipant) -> callParticipantData in
-//            //remoteParticipant.delegate = self
-//            return (remoteParticipant, remoteParticipant.remoteVideoTracks.first?.remoteTrack)
-//        })
-        
         callParticipants?.append(localParticipant)
         participantCountPublisher.send((.insert, [0]))
     }
@@ -114,17 +101,14 @@ extension CCCallScreenVM : RoomDelegate {
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         print("participantDidConnect")
         participant.delegate = self
-        
-        ///USMAN!!! This might help in publishing the local video track
-        //room.localParticipant?.publishVideoTrack(localVideoTrack)
-//        callParticipants?.insert(participant, at: 0)
-//        participantCountPublisher.send((.insert, [(callParticipants?.count ?? 2) - 2]))
     }
     
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
-        print("participantDidDisconnect")
-        
-        //participantCount = (participantCount ?? 1) - 1
+        guard let index = callParticipants?.firstIndex(where: { (participantData) -> Bool in
+            participantData.0.identity == participant.identity
+        }) else { return }
+        callParticipants?.remove(at: index)
+        participantCountPublisher.send((.remove, [index]))
     }
     
     func dominantSpeakerDidChange(room: Room, participant: RemoteParticipant?) {
@@ -135,7 +119,6 @@ extension CCCallScreenVM : RoomDelegate {
 extension CCCallScreenVM : RemoteParticipantDelegate {
     func didSubscribeToVideoTrack(videoTrack: RemoteVideoTrack, publication: RemoteVideoTrackPublication, participant: RemoteParticipant) {
         print("A")
-        
         callParticipants?.insert((participant, videoTrack), at: 0)
         participantCountPublisher.send((.insert, [(callParticipants?.count ?? 2) - 2]))
         
@@ -143,8 +126,6 @@ extension CCCallScreenVM : RemoteParticipantDelegate {
     
     func didFailToSubscribeToVideoTrack(publication: RemoteVideoTrackPublication, error: Error, participant: RemoteParticipant) {
         print("B")
-        
-        
         callParticipants?.insert((participant, nil), at: 0)
         participantCountPublisher.send((.insert, [(callParticipants?.count ?? 2) - 2]))
     }
