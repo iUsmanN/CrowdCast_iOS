@@ -9,11 +9,11 @@
 import UIKit
 import Device
 
-class CCOverviewVC: UIViewController {
+class CCOverviewVC: CCUIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel = CCOverviewVM()
+    var viewModel       = CCOverviewVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class CCOverviewVC: UIViewController {
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Overview",
+                    largeTitles     : true,
                     profileAction   : #selector(viewSettings))
         setupTableView()
     }
@@ -49,7 +50,7 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

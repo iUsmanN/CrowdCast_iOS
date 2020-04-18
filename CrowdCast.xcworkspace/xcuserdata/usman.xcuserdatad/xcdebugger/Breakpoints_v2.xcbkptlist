@@ -39,22 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3D6C70BC-B409-4E97-A97A-165E8DBBD673"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Protocols/CCScreenProtocols.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "addChannel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "19A10A96-103F-4230-BE90-521D88774841"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -80,7 +64,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "177">
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
                   uuid = "19A10A96-103F-4230-BE90-521D88774841 - 4956f13248a8fc4b"
@@ -95,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "193">
+                  offsetFromSymbolStart = "216">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -144,7 +128,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "376">
+                  offsetFromSymbolStart = "372">
                </Location>
                <Location
                   uuid = "ACFD12FA-1C76-4011-A48F-98DD737679BE - f8f2573bbe2456"
@@ -159,7 +143,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -192,7 +176,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
                   endingLineNumber = "41"
-                  offsetFromSymbolStart = "502">
+                  offsetFromSymbolStart = "452">
                </Location>
                <Location
                   uuid = "FF2F262D-5CE3-4AB6-BE54-102F444DC4AD - 4956f13248a8fc4b"
@@ -207,7 +191,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "177">
+                  offsetFromSymbolStart = "196">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -279,112 +263,192 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "87E35731-7E1A-43EE-8A82-2C1EC3CECB63"
+            uuid = "0BBDB84E-94FB-44FD-B452-6CF68B2A72A5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Nibs/SectionHeader/CCSectionHeader.swift"
+            filePath = "CrowdCast/Reachibility/CCReachibility.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "rightButtonPressed(_:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "reachabilityChanged(note:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "786BE583-AD4F-4DCA-8F2A-32753F4592AC"
+            uuid = "6606CF96-EFFE-4FDD-82DE-EADB1E16AC3D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Nibs/SectionHeader/CCSectionHeader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "rightButtonPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2A87DCDF-DE6C-4932-8E8C-66A93D1A27AD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Nibs/SectionHeader/CCSectionHeader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "rightButtonPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C0291EE8-B252-4E8F-A898-CC69005BA4E6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVC.swift"
+            filePath = "CrowdCast/Reachibility/CCReachibility.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "bindVM()"
+            landmarkName = "reachabilityChanged(note:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D6C3482C-465F-417B-AB46-9D28AF46B235"
+            uuid = "374741A3-A53C-44E2-96B2-BBB89821CBB4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVM.swift"
+            filePath = "CrowdCast/Reachibility/CCReachibility.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "init(channelData:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "reachabilityChanged(note:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "596AFBAE-E437-4D7B-821B-CD0E26B6DB51"
+            uuid = "2E8EDD10-9A4A-4E2F-A14B-1670DB342D2C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVC.swift"
+            filePath = "CrowdCast/Source/Settings/CCSettingsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "setupNavBar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D204BE7B-05F3-4C7D-80A7-1F9801D6BA71"
+            uuid = "F060CAFB-777B-4BBE-A739-6321A86FD0DD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVC.swift"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "setupView(inputData:)"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "participantDidConnect(room:participant:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBD15DAE-7454-4B7A-BF1B-CC811552D9B9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "participantDidDisconnect(room:participant:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D40F1DE3-9281-4BCD-A5F2-BA574FCED003"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallMemberCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "participantData"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D54BC94-76AD-4C98-98B0-CB5D8DE0D66E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/Call Member Cell/CCCallMemberCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "CCCallMemberCell"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6A62415-A06F-4FF2-A12B-36D1B69743C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/Call Member Cell/CCCallMemberCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "CCCallMemberCell"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F848BD4-170F-4CC0-93FE-A793B3DB931E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/Call Member Cell/CCCallMemberCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "CCCallMemberCell"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C96B1D5-0F9D-406C-8258-526BE7F1870F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/Call Member Cell/CCCallMemberCellVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1323ACB2-3839-44A8-8F04-566C2BE43352"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/Call Member Cell/CCCallMemberCellVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCCrowdsVC: UIViewController {
+class CCCrowdsVC: CCUIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ extension CCCrowdsVC : CCSetsNavbar {
         setupNavBar(navigationBar   : navigationController?.navigationBar,
                     navigationItem  : navigationItem,
                     title           : "Crowds",
+                    largeTitles     : true,
                     profileAction   : #selector(viewSettings))
     }
 

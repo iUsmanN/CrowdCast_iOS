@@ -50,8 +50,8 @@ class CCLoginVC: UIViewController {
         emailIcon.alpha = 0.7
         passwordIcon.alpha = 0.7
         
-        emailTextField.text = "asadmahmood@gmail.com"
-        passwordTextField.text = "asadmahmood"
+        emailTextField.text = "usmant1@gmail.com"
+        passwordTextField.text = "usmant1"
         
         IllustrationBottomGap.constant = Device.size() > Size.screen4_7Inch ? 75 : 10
         IllustrationTopGap.constant = Device.size() > Size.screen4_7Inch ? 60 : 20
@@ -82,7 +82,7 @@ extension CCLoginVC {
     }
 }
 
-extension CCLoginVC {
+extension CCLoginVC : CCGetsViewController{
     
     func syncUserData(uid: String){
         CCUserManager.sharedInstance.syncData(uid: uid){ [weak self] callbackResult in
@@ -94,6 +94,7 @@ extension CCLoginVC {
     }
     
     func moveToHome(){
-        UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
+        UIApplication.shared.windows.first?.rootViewController =
+        instantiateViewController(storyboard: .Home, viewController: .CCTabBar, as: CCTabBarController())
     }
 }

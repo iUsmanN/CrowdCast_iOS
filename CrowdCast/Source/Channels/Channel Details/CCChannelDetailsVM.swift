@@ -7,35 +7,14 @@
 //
 
 import Foundation
-import Combine
-
-
-
-extension Notification.Name {
-    static let newBlogPost = Notification.Name("new_blog_post")
-}
-
-
+import TwilioVideo
 
 struct CCChannelDetailsVM {
     
-    
-    
-    var data = CCChannel()
-    
-    var titlePublisher = PassthroughSubject<String?, Never>()
-//    var titlePublisher = NotificationCenter.Publisher(center: .default, name: Notification.Name("title"), object: nil).map { (notification) -> String in
-//        return (notification.object as? String ?? "")
-//    }
+    var data                = CCChannel()
+    var localVideoTrack     : LocalVideoTrack?
     
     init(channelData: CCChannel) {
         data = channelData
-        //NotificationCenter.default.post(name: Notification.Name("title"), object: data.name)
-        titlePublisher.send(data.name)
-        //notifica
-    }
-    
-    func publishData(){
-        
     }
 }

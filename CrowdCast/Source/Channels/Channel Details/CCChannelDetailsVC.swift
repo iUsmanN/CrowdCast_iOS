@@ -7,33 +7,68 @@
 //
 
 import UIKit
-import Combine
+import TwilioVideo
 
-class CCChannelDetailsVC: CCUIViewController {
-
-    @IBOutlet weak var tempLabel: UILabel!
+class CCChannelDetailsVC: UIViewController {
+    
+    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cameraViewHeightConstraint: NSLayoutConstraint!
     
     var viewModel : CCChannelDetailsVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindVM()
-        // Do any additional setup after loading the view.
+        setupView()
+        showMe()
     }
     
-    func setupView(inputData: CCChannel){
-        viewModel = CCChannelDetailsVM(channelData: inputData)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+}
+
+extension CCChannelDetailsVC : CCGetsViewController {
+    
+    @IBAction func joinCall(_ sender: Any) {
+        let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
+        viewController.setupViewModel(channelData: viewModel?.data)
+        DispatchQueue.main.async {  [weak self] in
+            self?.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
 
 extension CCChannelDetailsVC {
     
+    func setupViewModel(inputData: CCChannel){
+        viewModel = CCChannelDetailsVM(channelData: inputData)
+    }
     
-    func bindVM(){
-        tempLabel.text = viewModel?.data.debugDescription()
+    func setupView(){
         navigationItem.title = viewModel?.data.name
-        viewModel?.titlePublisher.sink(receiveValue: { [weak self] (title) in
-            self?.navigationItem.title = title
-        }).store(in: &combineCancellable)
+    }
+}
+
+extension CCChannelDetailsVC : CameraSourceDelegate, VideoViewDelegate {
+    
+    func showMe(){
+        if let camera = CameraSource(delegate: self) {
+            viewModel?.localVideoTrack = LocalVideoTrack(source: camera)
+            let renderer = VideoView(frame: cameraView.frame)
+            renderer.shouldMirror = true
+            guard let frontCamera = CameraSource.captureDevice(position: .front) else { return }
+            renderer.contentMode = .scaleAspectFill
+            camera.startCapture(device: frontCamera)
+            viewModel?.localVideoTrack?.addRenderer(renderer)
+            self.cameraView.addSubview(renderer)
+            Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { (timer) in
+                UIView.animate(withDuration: 0.5) {
+                    self.cameraViewHeightConstraint.constant = 300
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
     }
 }

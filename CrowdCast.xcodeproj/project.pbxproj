@@ -20,6 +20,8 @@
 		B61C90F02441CFE000F6B8A9 /* CCGetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */; };
 		B61C90F32441DCE100F6B8A9 /* CCCallScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C90F22441DCE100F6B8A9 /* CCCallScreenVC.swift */; };
 		B61C90F52441DCF000F6B8A9 /* CCCallScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */; };
+		B61C90F72441E98E00F6B8A9 /* boys.png in Resources */ = {isa = PBXBuildFile; fileRef = B61C90F62441E98E00F6B8A9 /* boys.png */; };
+		B61E79112442420900D773E0 /* CCReachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E79102442420900D773E0 /* CCReachibility.swift */; };
 		B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C716F2434ADD00090901C /* CCTabBarController.swift */; };
 		B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CEA2438750C0011715A /* CCChannelsVM.swift */; };
 		B64E4CF1243890510011715A /* CCNibManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CF0243890510011715A /* CCNibManager.swift */; };
@@ -63,12 +65,15 @@
 		B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */; };
 		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
 		B6ACD07924405CCE00405838 /* CCUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07824405CCE00405838 /* CCUIViewController.swift */; };
-		B6ACD07B2440667400405838 /* CCAddsRowsToTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07A2440667400405838 /* CCAddsRowsToTable.swift */; };
+		B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */; };
 		B6ACD07F2441058900405838 /* Cabin.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD07E2441058900405838 /* Cabin.png */; };
 		B6ACD08124410AE700405838 /* Walk.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD08024410AE700405838 /* Walk.png */; };
 		B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */; };
 		B6ACD0862441AE7F00405838 /* CCChannelDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD0852441AE7F00405838 /* CCChannelDetailsVC.swift */; };
 		B6ACD0882441AE8B00405838 /* CCChannelDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD0872441AE8B00405838 /* CCChannelDetailsVM.swift */; };
+		B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */; };
+		B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */; };
+		B6B664672448B29F00F6C1DF /* CCCallMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */; };
 		B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */; };
 		B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */; };
 		B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90CF243703F600F50848 /* CCPrint.swift */; };
@@ -130,7 +135,10 @@
 		B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGetsViewController.swift; sourceTree = "<group>"; };
 		B61C90F22441DCE100F6B8A9 /* CCCallScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenVC.swift; sourceTree = "<group>"; };
 		B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenVM.swift; sourceTree = "<group>"; };
+		B61C90F62441E98E00F6B8A9 /* boys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boys.png; sourceTree = "<group>"; };
+		B61E79102442420900D773E0 /* CCReachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReachibility.swift; sourceTree = "<group>"; };
 		B62C716F2434ADD00090901C /* CCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTabBarController.swift; sourceTree = "<group>"; };
+		B646CEC42443131900B935CD /* CCRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRoomVC.swift; sourceTree = "<group>"; };
 		B64E4CEA2438750C0011715A /* CCChannelsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVM.swift; sourceTree = "<group>"; };
 		B64E4CF0243890510011715A /* CCNibManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCNibManager.swift; path = CrowdCast/Source/Tabs/ChannelsTab/CCNibManager.swift; sourceTree = SOURCE_ROOT; };
 		B64E4CF524389E420011715A /* CCCardTimeLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCardTimeLabel.xib; sourceTree = "<group>"; };
@@ -173,12 +181,15 @@
 		B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatchQueue.swift; sourceTree = "<group>"; };
 		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
 		B6ACD07824405CCE00405838 /* CCUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUIViewController.swift; sourceTree = "<group>"; };
-		B6ACD07A2440667400405838 /* CCAddsRowsToTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddsRowsToTable.swift; sourceTree = "<group>"; };
+		B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGetIndexPaths.swift; sourceTree = "<group>"; };
 		B6ACD07E2441058900405838 /* Cabin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cabin.png; sourceTree = "<group>"; };
 		B6ACD08024410AE700405838 /* Walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Walk.png; sourceTree = "<group>"; };
 		B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undraw_abstract_x68e.png; sourceTree = "<group>"; };
 		B6ACD0852441AE7F00405838 /* CCChannelDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelDetailsVC.swift; sourceTree = "<group>"; };
 		B6ACD0872441AE8B00405838 /* CCChannelDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelDetailsVM.swift; sourceTree = "<group>"; };
+		B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMiscellaneousExtensions.swift; sourceTree = "<group>"; };
+		B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallMemberCell.swift; sourceTree = "<group>"; };
+		B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCallMemberCell.xib; sourceTree = "<group>"; };
 		B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCShowsCardHeaderProtocol.swift; sourceTree = "<group>"; };
 		B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardHeaderAction.swift; sourceTree = "<group>"; };
 		B6BD90CF243703F600F50848 /* CCPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPrint.swift; sourceTree = "<group>"; };
@@ -280,7 +291,7 @@
 				B60A29D52434828400B7F76F /* CCSetsNavbarProtocol.swift */,
 				B6E367722436634700B511A0 /* CCScreenProtocols.swift */,
 				B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */,
-				B6ACD07A2440667400405838 /* CCAddsRowsToTable.swift */,
+				B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */,
 				B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */,
 			);
 			path = Protocols;
@@ -306,6 +317,7 @@
 		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
 			isa = PBXGroup;
 			children = (
+				B61C90F62441E98E00F6B8A9 /* boys.png */,
 				B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */,
 				B6ACD08024410AE700405838 /* Walk.png */,
 				B6ACD07E2441058900405838 /* Cabin.png */,
@@ -336,6 +348,7 @@
 				B64E4CF92438A7710011715A /* CCNavigationController.swift */,
 				B6BD90CF243703F600F50848 /* CCPrint.swift */,
 				B6ACD07824405CCE00405838 /* CCUIViewController.swift */,
+				B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,10 +364,20 @@
 		B61C90F12441DCC500F6B8A9 /* Call Screen */ = {
 			isa = PBXGroup;
 			children = (
+				B66E2164244A0F9000BC2CFF /* Member Cell */,
 				B61C90F22441DCE100F6B8A9 /* CCCallScreenVC.swift */,
 				B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */,
+				B646CEC42443131900B935CD /* CCRoomVC.swift */,
 			);
 			path = "Call Screen";
+			sourceTree = "<group>";
+		};
+		B61E790F244241F100D773E0 /* Reachibility */ = {
+			isa = PBXGroup;
+			children = (
+				B61E79102442420900D773E0 /* CCReachibility.swift */,
+			);
+			path = Reachibility;
 			sourceTree = "<group>";
 		};
 		B64E4CF224389D410011715A /* CCCardTime */ = {
@@ -415,6 +438,15 @@
 				B64E4D1A243A2E920011715A /* CCError.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B66E2164244A0F9000BC2CFF /* Member Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B6B664642448B29F00F6C1DF /* CCCallMemberCell.swift */,
+				B6B664652448B29F00F6C1DF /* CCCallMemberCell.xib */,
+			);
+			path = "Member Cell";
 			sourceTree = "<group>";
 		};
 		B67962042432495500C2A13C /* Storyboards */ = {
@@ -560,6 +592,7 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B61E790F244241F100D773E0 /* Reachibility */,
 				B64E4D19243A2E7E0011715A /* Utilities */,
 				B64E4D012439E6FC0011715A /* Models */,
 				B64E4CFE2439DD050011715A /* Network Engine */,
@@ -814,6 +847,7 @@
 				B6D7F55B24277A1B001BEBBC /* Assets.xcassets in Resources */,
 				B693E30D24312C7B002B26BC /* Home.storyboard in Resources */,
 				B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */,
+				B61C90F72441E98E00F6B8A9 /* boys.png in Resources */,
 				B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */,
 				B6ACD08124410AE700405838 /* Walk.png in Resources */,
 				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
@@ -829,6 +863,7 @@
 				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */,
 				B6BD90D724377E3D00F50848 /* Channels.storyboard in Resources */,
+				B6B664672448B29F00F6C1DF /* CCCallMemberCell.xib in Resources */,
 				B6ACD07F2441058900405838 /* Cabin.png in Resources */,
 				B64E4CF624389E420011715A /* CCCardTimeLabel.xib in Resources */,
 			);
@@ -973,16 +1008,19 @@
 				B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */,
 				B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */,
 				B6BD90D52437137E00F50848 /* CCOverviewVM.swift in Sources */,
+				B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */,
 				B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */,
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
 				B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */,
 				B64E4CF1243890510011715A /* CCNibManager.swift in Sources */,
-				B6ACD07B2440667400405838 /* CCAddsRowsToTable.swift in Sources */,
+				B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */,
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
+				B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */,
+				B61E79112442420900D773E0 /* CCReachibility.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
 				B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */,

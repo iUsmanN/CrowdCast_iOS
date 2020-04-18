@@ -13,8 +13,9 @@ protocol CCSetsNavbar : CCOpensSettings {}
 
 extension CCSetsNavbar {
     
-    func setupNavBar(navigationBar: UINavigationBar?,navigationItem: UINavigationItem, title: String?, profileAction: Selector?){
+    func setupNavBar(navigationBar: UINavigationBar?,navigationItem: UINavigationItem, title: String?, largeTitles: Bool, profileAction: Selector?){
         navigationItem.title                = title
+        navigationBar?.prefersLargeTitles   = largeTitles
         let leftButton                      = getLogoButton()
         let profileButton                   = getProfileButton(action: profileAction)
         profileButton.action                = profileAction

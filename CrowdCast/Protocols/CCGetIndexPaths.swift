@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol CCAddsRowsToTable {}
+protocol CCGetIndexPaths {}
 
-extension CCAddsRowsToTable {
+extension CCGetIndexPaths {
     
-    func getIndexPaths(oldMyChannelCount: Int?,
+    func getDualIndexPaths(oldMyChannelCount: Int?,
                        newMyChannelCount: Int?,
                        oldJoinedChannelCount: Int?,
                        newJoinedChannelCount: Int?,
@@ -35,5 +35,13 @@ extension CCAddsRowsToTable {
         }
         
         return indexPaths
+    }
+    
+    func getIndexPaths(array: [Int]) -> [IndexPath] {
+        var indexPaths : [IndexPath]?
+        indexPaths = array.compactMap { (index) -> IndexPath in
+            return IndexPath(row: index, section: 0)
+        }
+        return indexPaths ?? [IndexPath]()
     }
 }

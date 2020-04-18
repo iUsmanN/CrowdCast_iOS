@@ -14,4 +14,8 @@ enum CCError : Error {
     case firebaseFailure
     case emptyFields
     case CodableError
+    case internetError
+    
+    case twilioVideoError
+    case twilioCredentialsError
 }

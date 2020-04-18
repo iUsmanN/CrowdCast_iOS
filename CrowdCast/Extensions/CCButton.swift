@@ -24,7 +24,7 @@ class CCButton : UIButton {
                 backgroundColor     = UIColor(named: "Background")
                 layer.cornerRadius  = 8
                 layer.borderColor   = UIColor(named: "Main Accent")?.cgColor
-                layer.borderWidth   = 1
+                layer.borderWidth   = 0.5
                 setTitleColor(UIColor(named: "Main Accent"), for: .normal)
             default: //error
                 print("")

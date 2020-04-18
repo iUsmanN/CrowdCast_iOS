@@ -11,6 +11,8 @@ target 'CrowdCast' do
   pod "Device", '~> 3.2.1'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'ReachabilitySwift'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
   
 
   target 'CrowdCastTests' do

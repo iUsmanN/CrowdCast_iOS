@@ -8,18 +8,21 @@
 
 import UIKit
 import Combine
+import Reachability
+import NotificationBannerSwift
 
 class CCUIViewController: UIViewController {
-
-    var combineCancellable = Set<AnyCancellable>()
+    
+    var combineCancellable  = Set<AnyCancellable>()
+    static var reachibility : CCReachibility?
+    var reachibilityBanner  : StatusBarNotificationBanner?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupLargeTitles()
     }
     
-//    func addCombineBinder(observes: PassthroughSubject<>, code: ()->()){
-//        
-//    }
+    func setupLargeTitles(){
+        navigationController?.view.backgroundColor = UIColor(named: "Background")
+    }
 }
