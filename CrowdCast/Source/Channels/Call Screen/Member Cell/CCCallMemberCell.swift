@@ -38,16 +38,16 @@ class CCCallMemberCell: UICollectionViewCell {
         switch participantData?.0 {
         case is LocalParticipant:
             prints("local")
-            if let camera = CameraSource(delegate: self) {
-                localVideoTrack = LocalVideoTrack(source: camera)
-                let renderer = VideoView(frame: backView.frame)
-                renderer.shouldMirror = true
-                guard let frontCamera = CameraSource.captureDevice(position: .front) else { return }
-                renderer.contentMode = .scaleAspectFill
-                camera.startCapture(device: frontCamera)
-                localVideoTrack?.addRenderer(renderer)
-                self.backView.addSubview(renderer)
-            }
+//            if let camera = CameraSource(delegate: self) {
+//                localVideoTrack = LocalVideoTrack(source: camera)
+//                let renderer = VideoView(frame: backView.frame)
+//                renderer.shouldMirror = true
+//                guard let frontCamera = CameraSource.captureDevice(position: .front) else { return }
+//                renderer.contentMode = .scaleAspectFill
+//                camera.startCapture(device: frontCamera)
+//                localVideoTrack?.addRenderer(renderer)
+//                self.backView.addSubview(renderer)
+//            }
         default:
             if let participantVideo = VideoView(frame: backView.frame, delegate: self, renderingType: .metal) {
                 data?.addRenderer(participantVideo)

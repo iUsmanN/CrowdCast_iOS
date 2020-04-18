@@ -51,7 +51,8 @@ extension CCCallScreenVC {
         viewModel.participantCountPublisher.sink { [weak self] (action, indexes) in
             switch action {
             case .insert:
-                self?.insertCells(addedIndexes: indexes)
+                //self?.insertCells(addedIndexes: indexes)
+                self?.collectionView.reloadData()
             case .remove:
                 self?.removeCells()
             }
