@@ -30,7 +30,6 @@ class CCCallScreenVC: CCUIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnSwipe = false
-        
         viewModel.room?.disconnect()
     }
 }
@@ -52,6 +51,7 @@ extension CCCallScreenVC {
             switch action {
             case .insert:
                 self?.insertCells(addedIndexes: indexes)
+                //self?.allMetalViews()
             case .remove:
                 self?.removeCells()
             }
@@ -60,6 +60,15 @@ extension CCCallScreenVC {
 }
 
 extension CCCallScreenVC : CCGetIndexPaths {
+    
+    func allMetalViews(){
+        for i in 0..<viewModel.numberOfCells() {
+            prints("TAG \(i) : \(self.collectionView.viewWithTag(i))")
+            guard let v = self.collectionView.viewWithTag(i) else { return }
+            self.collectionView.willRemoveSubview(v)
+            self.collectionView.reloadData()
+        }
+    }
     
     func insertCells(addedIndexes: [Int]){
         self.collectionView.insertItems(at: getIndexPaths(array: addedIndexes))
@@ -79,6 +88,7 @@ extension CCCallScreenVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell, for: indexPath) as? CCCallMemberCell else { return UICollectionViewCell() }
         cell.participantData = viewModel.getParticipant(indexPath: indexPath)
+        cell.metalTag = indexPath.row
         return cell
     }
 }
