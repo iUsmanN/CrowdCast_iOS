@@ -17,12 +17,12 @@ class CCButton : UIButton {
             switch type {
             case 0: //main
                 backgroundColor     = UIColor(named: "Main Accent")
-                layer.cornerRadius  = 10
+                layer.cornerRadius  = frame.size.height/2
                 setTitleColor(UIColor(named: "Background"), for: .normal)
                 
             case 1: //secondary
                 backgroundColor     = UIColor(named: "Background")
-                layer.cornerRadius  = 8
+                layer.cornerRadius  = frame.size.height/2
                 layer.borderColor   = UIColor(named: "Main Accent")?.cgColor
                 layer.borderWidth   = 0.5
                 setTitleColor(UIColor(named: "Main Accent"), for: .normal)

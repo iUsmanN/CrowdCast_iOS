@@ -14,6 +14,7 @@ class CCCallScreenVC: CCUIViewController {
     var viewModel = CCCallScreenVM()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var actionBar: UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,11 @@ class CCCallScreenVC: CCUIViewController {
         navigationController?.hidesBarsOnSwipe = false
         viewModel.room?.disconnect()
     }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        viewModel.room?.disconnect()
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension CCCallScreenVC {
@@ -40,6 +46,8 @@ extension CCCallScreenVC {
         collectionView.dataSource   = self
         collectionView.delegate     = self
         collectionView.register(UINib(nibName: Nib.reuseIdentifier.CCCallMemberCell, bundle: nil), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell)
+        actionBar.layer.cornerRadius = actionBar.frame.size.height/2
+        actionBar.layer.masksToBounds = true
     }
     
     func setupViewModel(channelData: CCChannel?){

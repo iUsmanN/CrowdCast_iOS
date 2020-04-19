@@ -105,25 +105,62 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHm-fY-rN2">
+                                <rect key="frame" x="70" y="702" width="274" height="100"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qTa-xD-13n">
+                                    <rect key="frame" x="0.0" y="0.0" width="274" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSW-ln-vga">
+                                            <rect key="frame" x="0.0" y="0.0" width="274" height="100"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-CS-WdF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="100"/>
+                                                    <state key="normal" image="Cancel"/>
+                                                    <connections>
+                                                        <action selector="closeButtonPressed:" destination="cuo-Of-ZbW" eventType="touchUpInside" id="MHi-9a-dwn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="OSW-ln-vga" secondAttribute="trailing" id="4eM-nl-YEU"/>
+                                        <constraint firstAttribute="bottom" secondItem="OSW-ln-vga" secondAttribute="bottom" id="MWC-ea-8Yb"/>
+                                        <constraint firstItem="OSW-ln-vga" firstAttribute="leading" secondItem="qTa-xD-13n" secondAttribute="leading" id="iME-jG-XvC"/>
+                                        <constraint firstItem="OSW-ln-vga" firstAttribute="top" secondItem="qTa-xD-13n" secondAttribute="top" id="qxc-my-Dm3"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Id4-R8-Auf"/>
+                                </constraints>
+                                <vibrancyEffect style="fill">
+                                    <blurEffect style="regular"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="hiN-t4-C1E" secondAttribute="trailing" id="2Q6-ct-cU4"/>
+                            <constraint firstItem="KHm-fY-rN2" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" constant="70" id="81r-CB-P2U"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="top" secondItem="5Bo-xN-RJz" secondAttribute="top" id="OMg-nQ-BaI"/>
                             <constraint firstAttribute="bottom" secondItem="hiN-t4-C1E" secondAttribute="bottom" id="Tnj-vt-0wR"/>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="bottom" secondItem="KHm-fY-rN2" secondAttribute="bottom" constant="60" id="iC2-dL-JEI"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" id="s9a-9w-Fhm"/>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="KHm-fY-rN2" secondAttribute="trailing" constant="70" id="tZ6-JT-U3v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nIZ-7p-Mmo"/>
                     </view>
                     <navigationItem key="navigationItem" id="apd-zv-Rn3"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="actionBar" destination="KHm-fY-rN2" id="wsH-4h-TQC"/>
                         <outlet property="collectionView" destination="hiN-t4-C1E" id="f6w-qp-8dl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWh-vO-Xrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="883.92857142857144"/>
+            <point key="canvasLocation" x="906" y="884"/>
         </scene>
         <!--Join Channel-->
         <scene sceneID="x2S-uR-rRQ">
@@ -143,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cancel" width="72" height="72"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
