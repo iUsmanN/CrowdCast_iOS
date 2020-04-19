@@ -64,7 +64,7 @@ extension CCChannelsVC {
     }
 }
 
-extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController {
+extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController, CCHapticEngine {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.numberOfSections() ?? 0
@@ -84,6 +84,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
         guard let channelData = (viewModel?.dataForCellAt(indexPath: indexPath)) else { return }
         let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
         vc.setupViewModel(inputData: channelData)
+        generateHapticFeedback(.light)
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     

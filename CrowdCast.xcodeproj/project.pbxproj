@@ -41,6 +41,7 @@
 		B64E4D1D243A334F0011715A /* CCQueryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1C243A334E0011715A /* CCQueryEngine.swift */; };
 		B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */; };
 		B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D20243A41520011715A /* CCPaginatedData.swift */; };
+		B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B67962032432476100C2A13C /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B67962022432476000C2A13C /* Avatar.png */; };
@@ -158,6 +159,7 @@
 		B64E4D1C243A334E0011715A /* CCQueryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryEngine.swift; sourceTree = "<group>"; };
 		B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryPaths.swift; sourceTree = "<group>"; };
 		B64E4D20243A41520011715A /* CCPaginatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPaginatedData.swift; sourceTree = "<group>"; };
+		B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCHapticEngine.swift; path = "CrowdCast/Source/Channels/Call Screen/CCHapticEngine.swift"; sourceTree = SOURCE_ROOT; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B67962022432476000C2A13C /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
@@ -644,6 +646,7 @@
 				B679620A2432509300C2A13C /* CCConstantsManager.swift */,
 				B64E4CF0243890510011715A /* CCNibManager.swift */,
 				B6974883243B987600AE95C0 /* CCUserManager.swift */,
+				B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1035,6 +1038,7 @@
 				B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */,
 				B6FE5922244BA2F800121FDD /* CCCallScreenLayout.swift in Sources */,
 				B64E4CFD2439DCFE0011715A /* CCChannelsService.swift in Sources */,
+				B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */,
 				B64E4D1B243A2E920011715A /* CCError.swift in Sources */,
 				B6BD90D32437130B00F50848 /* CCSectionHeaderData.swift in Sources */,
 				B60A29D62434828400B7F76F /* CCSetsNavbarProtocol.swift in Sources */,

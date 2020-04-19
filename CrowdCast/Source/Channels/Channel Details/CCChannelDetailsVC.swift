@@ -29,13 +29,13 @@ class CCChannelDetailsVC: UIViewController {
     
 }
 
-extension CCChannelDetailsVC : CCGetsViewController {
+extension CCChannelDetailsVC : CCGetsViewController, CCHapticEngine {
     
     @IBAction func joinCall(_ sender: Any) {
         let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
         viewController.setupViewModel(channelData: viewModel?.data)
+        generateHapticFeedback(.light)
         DispatchQueue.main.async {  [weak self] in
-            //self?.navigationController?.pushViewController(viewController, animated: true)
             self?.present(viewController, animated: true, completion: nil)
         }
     }

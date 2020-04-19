@@ -28,23 +28,6 @@ class CCLoginVC: UIViewController {
         setupView()
     }
     
-    @IBAction func joinPressed(_ sender: Any) {
-        
-    }
-    
-    @IBAction func loginPressed(_ sender: Any) {
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
-            signInFailed(error: CCError.emptyFields)
-            return
-        }
-        signIn_Email(email: email, password: password)
-        //UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
-    }
-    
-    @IBAction func joinWithGooglePressed(_ sender: Any) {
-        
-    }
-    
     func setupView(){
         emailIcon.image = emailIcon.image?.withRenderingMode(.alwaysTemplate)
         passwordIcon.image = passwordIcon.image?.withRenderingMode(.alwaysTemplate)
@@ -56,10 +39,28 @@ class CCLoginVC: UIViewController {
         
         IllustrationBottomGap.constant = Device.size() > Size.screen4_7Inch ? 75 : 10
         IllustrationTopGap.constant = Device.size() > Size.screen4_7Inch ? 60 : 20
-        
+    }
+}
+
+extension CCLoginVC : CCHapticEngine {
+    
+    @IBAction func joinPressed(_ sender: Any) {
         
     }
     
+    @IBAction func loginPressed(_ sender: Any) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            signInFailed(error: CCError.emptyFields)
+            return
+        }
+        signIn_Email(email: email, password: password)
+        generateHapticFeedback(.soft)
+        //UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
+    }
+    
+    @IBAction func joinWithGooglePressed(_ sender: Any) {
+        generateHapticFeedback(.light)
+    }
 }
 
 extension CCLoginVC {
@@ -81,6 +82,7 @@ extension CCLoginVC {
     func signInSuccessFul(result: AuthDataResult?){
         guard let uid = result?.user.uid else { return }
         print("Signed in.")
+        generateHapticFeedback(.light)
         syncUserData(uid: uid)
     }
 }
