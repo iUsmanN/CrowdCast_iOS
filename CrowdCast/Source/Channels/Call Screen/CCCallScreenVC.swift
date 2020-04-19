@@ -30,7 +30,6 @@ class CCCallScreenVC: CCUIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnSwipe = false
-        
         viewModel.room?.disconnect()
     }
 }
@@ -53,7 +52,7 @@ extension CCCallScreenVC {
             case .insert:
                 self?.insertCells(addedIndexes: indexes)
             case .remove:
-                self?.removeCells()
+                self?.removeCells(removedIndexes: indexes)
             }
         }.store(in: &combineCancellable)
     }
@@ -65,8 +64,8 @@ extension CCCallScreenVC : CCGetIndexPaths {
         self.collectionView.insertItems(at: getIndexPaths(array: addedIndexes))
     }
     
-    func removeCells(){
-        
+    func removeCells(removedIndexes: [Int]){
+        self.collectionView.deleteItems(at: getIndexPaths(array: removedIndexes))
     }
 }
 
@@ -79,6 +78,7 @@ extension CCCallScreenVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell, for: indexPath) as? CCCallMemberCell else { return UICollectionViewCell() }
         cell.participantData = viewModel.getParticipant(indexPath: indexPath)
+        cell.metalTag = indexPath.row
         return cell
     }
 }
@@ -115,4 +115,3 @@ extension CCCallScreenVC : UICollectionViewDelegateFlowLayout {
         return 0.5
     }
 }
-

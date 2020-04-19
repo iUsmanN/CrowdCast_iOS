@@ -14,16 +14,14 @@ enum callViewAction {
     case insert
     case remove
 }
-typealias callParticipantData = (Participant, RemoteVideoTrack?)
 
+typealias callParticipantData = (Participant, VideoTrack?)
 
 class CCCallScreenVM: NSObject {
     
-    var participantCountPublisher = PassthroughSubject<(callViewAction, [Int]), Never>()
-    
-    var callParticipants : [callParticipantData]? = [callParticipantData]()
-    
-    var room                : Room?
+    var participantCountPublisher   = PassthroughSubject<(callViewAction, [Int]), Never>()
+    var callParticipants            : [callParticipantData]? = [callParticipantData]()
+    var room                        : Room?
     
     ///Tracks
     var localAudioTrack     = LocalAudioTrack()
@@ -31,10 +29,10 @@ class CCCallScreenVM: NSObject {
     var localVideoTrack     : LocalVideoTrack?
     
     //t1
-    var accessToken1 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcxMzk4OTIiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzE0MzQ5MiwiZ3JhbnRzIjp7ImlkZW50aXR5IjoidXNtYW4iLCJ2aWRlbyI6e319fQ.xdlx1QFAR9daL1C7gpgVz6b-s2oxRlt1kOlt7AGhFcs"
+    var accessToken1 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcyNDI1MzMiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzI0NjEzMywiZ3JhbnRzIjp7ImlkZW50aXR5IjoidXNtYW4iLCJ2aWRlbyI6e319fQ.IOYIew-uf1FvG4Iqn0g3Pz9Px3ED4LKKKDDgba1VYs4"
     
     //t2
-    var accessToken2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcxMzk4NzIiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzE0MzQ3MiwiZ3JhbnRzIjp7ImlkZW50aXR5IjoibWFtYSIsInZpZGVvIjp7fX19.ta5e76T1WQ654Cr1sHsQg3ECA1woU7v6o6YlK2NHIyU"
+    var accessToken2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcyNDI1ODciLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzI0NjE4NywiZ3JhbnRzIjp7ImlkZW50aXR5IjoibWFtYSIsInZpZGVvIjp7fX19.OvJawRNYrfhw33TEQak1mhmlzwf8tgrVCuvE0EVbBLI"
     
     //ahmer
     var accessToken3 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODcwNTY1NDgiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4NzA2MDE0OCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiYyIsInZpZGVvIjp7fX19.5ffaJ-obovVk6mHs_r5WlyW3lN1EuwgX3zkqTMpgU2w"
@@ -51,7 +49,7 @@ class CCCallScreenVM: NSObject {
 extension CCCallScreenVM {
     
     func numberOfCells() -> Int {
-        return callParticipants?.count ?? 0//participantCount ?? 0
+        return callParticipants?.count ?? 0
     }
     
     func getParticipant(indexPath: IndexPath) -> callParticipantData? {
@@ -65,7 +63,7 @@ extension CCCallScreenVM {
     func joinChannel(result: ((Result<Room, CCError>)->())?){
         guard let channelID = channelData?.id else { result?(.failure(.twilioCredentialsError)); return }
         
-        let connectOptions = ConnectOptions(token: accessToken1) { (connectOptionsBuilder) in
+        let connectOptions = ConnectOptions(token: accessToken2) { (connectOptionsBuilder) in
             connectOptionsBuilder.roomName = channelID
             if let audioTrack = self.localAudioTrack {
                 connectOptionsBuilder.audioTracks   = [ audioTrack ]
@@ -84,27 +82,11 @@ extension CCCallScreenVM {
 extension CCCallScreenVM : RoomDelegate {
     
     func roomDidConnect(room: Room) {
-        print("roomDidConnect")
-        
+        for i in 0..<room.remoteParticipants.count { room.remoteParticipants[i].delegate = self }
         guard let localParticipant          = room.localParticipant.map({ (participant) -> callParticipantData in
-            return (participant, nil)
+            return (participant, localVideoTrack)
         }) else { return }
-        
-        let remoteParticipants        = room.remoteParticipants.map({ (remoteParticipant) -> callParticipantData in
-            remoteParticipant.delegate = self
-            return (remoteParticipant, remoteParticipant.remoteVideoTracks.first?.remoteTrack)
-        })
-        
-        //let remoteParticipants              = room.remoteParticipants
-        //var AllParticipants : [Participant] = remoteParticipants
-        //AllParticipants.append(localParticipant)
-        //callParticipants                    = AllParticipants.map({ (participant) -> callParticipantData in
-          //  return (participant, nil)
-        //})
-        
-        //callParticipants = remoteParticipants
         callParticipants?.append(localParticipant)
-        
         participantCountPublisher.send((.insert, [0]))
     }
     
@@ -119,17 +101,14 @@ extension CCCallScreenVM : RoomDelegate {
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         print("participantDidConnect")
         participant.delegate = self
-        
-        ///USMAN!!! This might help in publishing the local video track
-        //room.localParticipant?.publishVideoTrack(localVideoTrack)
-//        callParticipants?.insert(participant, at: 0)
-//        participantCountPublisher.send((.insert, [(callParticipants?.count ?? 2) - 2]))
     }
     
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
-        print("participantDidDisconnect")
-        
-        //participantCount = (participantCount ?? 1) - 1
+        guard let index = callParticipants?.firstIndex(where: { (participantData) -> Bool in
+            participantData.0.identity == participant.identity
+        }) else { return }
+        callParticipants?.remove(at: index)
+        participantCountPublisher.send((.remove, [index]))
     }
     
     func dominantSpeakerDidChange(room: Room, participant: RemoteParticipant?) {
@@ -140,7 +119,6 @@ extension CCCallScreenVM : RoomDelegate {
 extension CCCallScreenVM : RemoteParticipantDelegate {
     func didSubscribeToVideoTrack(videoTrack: RemoteVideoTrack, publication: RemoteVideoTrackPublication, participant: RemoteParticipant) {
         print("A")
-        
         callParticipants?.insert((participant, videoTrack), at: 0)
         participantCountPublisher.send((.insert, [(callParticipants?.count ?? 2) - 2]))
         
@@ -148,8 +126,6 @@ extension CCCallScreenVM : RemoteParticipantDelegate {
     
     func didFailToSubscribeToVideoTrack(publication: RemoteVideoTrackPublication, error: Error, participant: RemoteParticipant) {
         print("B")
-        
-        
         callParticipants?.insert((participant, nil), at: 0)
         participantCountPublisher.send((.insert, [(callParticipants?.count ?? 2) - 2]))
     }
