@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import Device
+import IQKeyboardManagerSwift
 
 class CCLoginVC: UIViewController {
 
@@ -55,6 +56,8 @@ class CCLoginVC: UIViewController {
         
         IllustrationBottomGap.constant = Device.size() > Size.screen4_7Inch ? 75 : 10
         IllustrationTopGap.constant = Device.size() > Size.screen4_7Inch ? 60 : 20
+        
+        
     }
     
 }

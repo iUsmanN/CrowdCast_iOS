@@ -13,6 +13,7 @@ target 'CrowdCast' do
   pod 'FirebaseFirestoreSwift'
   pod 'ReachabilitySwift'
   pod 'NotificationBannerSwift', '~> 3.0.0'
+  pod 'IQKeyboardManagerSwift'
   
 
   target 'CrowdCastTests' do
