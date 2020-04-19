@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import TweeTextField
 
 class CCAddChannelVC: UIViewController {
 
+    @IBOutlet weak var nameTextField        : TweeActiveTextField!
+    @IBOutlet weak var descriptionTextField : TweeActiveTextField!
+    @IBOutlet weak var ownerTextField       : TweeBorderedTextField!
+    
+    var viewModel = CCAddChannelVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    @IBAction func addChannel(_ sender: Any) {
+        
     }
 }
 
@@ -20,6 +31,7 @@ extension CCAddChannelVC {
     
     func setupView(){
         setupNavigationBar()
+        ownerTextField
     }
     
     func setupNavigationBar(){

@@ -92,6 +92,7 @@
 		B6D7F56924277A1B001BEBBC /* CrowdCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F56824277A1B001BEBBC /* CrowdCastTests.swift */; };
 		B6D7F57424277A1B001BEBBC /* CrowdCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F57324277A1B001BEBBC /* CrowdCastUITests.swift */; };
 		B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F58A24277AD7001BEBBC /* CCLoginVC.swift */; };
+		B6DDB0A4244CB713007B5808 /* CCAddChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DDB0A3244CB713007B5808 /* CCAddChannelVM.swift */; };
 		B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3675A2434F25000B511A0 /* CCCardTVCTableViewCell.swift */; };
 		B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E3675B2434F25000B511A0 /* CCCardTVCTableViewCell.xib */; };
 		B6E3675F24352A5F00B511A0 /* Others.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E3675E24352A5F00B511A0 /* Others.storyboard */; };
@@ -216,6 +217,7 @@
 		B6D7F57324277A1B001BEBBC /* CrowdCastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdCastUITests.swift; sourceTree = "<group>"; };
 		B6D7F57524277A1B001BEBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6D7F58A24277AD7001BEBBC /* CCLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVC.swift; sourceTree = "<group>"; };
+		B6DDB0A3244CB713007B5808 /* CCAddChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddChannelVM.swift; sourceTree = "<group>"; };
 		B6E3675A2434F25000B511A0 /* CCCardTVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardTVCTableViewCell.swift; sourceTree = "<group>"; };
 		B6E3675B2434F25000B511A0 /* CCCardTVCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCardTVCTableViewCell.xib; sourceTree = "<group>"; };
 		B6E3675E24352A5F00B511A0 /* Others.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Others.storyboard; sourceTree = "<group>"; };
@@ -561,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */,
+				B6DDB0A3244CB713007B5808 /* CCAddChannelVM.swift */,
 			);
 			path = "Add Channel";
 			sourceTree = "<group>";
@@ -1025,6 +1028,7 @@
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
+				B6DDB0A4244CB713007B5808 /* CCAddChannelVM.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */,
