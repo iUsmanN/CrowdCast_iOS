@@ -22,8 +22,20 @@ class CCAddChannelVC: UIViewController {
         setupView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        nameTextField.becomeFirstResponder()
+    }
+    
     @IBAction func addChannel(_ sender: Any) {
-        
+        viewModel.addChannel(nameInput: nameTextField.text, descriptionInput: descriptionTextField.text) { [weak self] result in
+            switch result {
+            case .success(let channel):
+                print(channel)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
@@ -31,11 +43,18 @@ extension CCAddChannelVC {
     
     func setupView(){
         setupNavigationBar()
-        ownerTextField
+        ownerTextField.text = viewModel.channelOwner()
+        nameTextField.delegate = self
     }
     
     func setupNavigationBar(){
         navigationItem.title = "Add Channel"
         navigationController?.navigationBar.isTranslucent = false
+    }
+}
+
+extension CCAddChannelVC : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        <#code#>
     }
 }

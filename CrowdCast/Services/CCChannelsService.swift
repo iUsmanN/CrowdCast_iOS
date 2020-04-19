@@ -22,4 +22,18 @@ extension CCChannelsService {
             }
         }
     }
+    
+    func createChannel(channelInput: CCChannel,completion: @escaping (Result<CCChannel, Error>) -> ()) {
+        let query   = add(.channelsData)
+        var channel = channelInput
+        channel.id  = query.documentID
+        do {
+            try query.setData(from: channel, encoder: .init(), completion: { (error) in
+                guard error == nil else { completion(.failure(CCError.channelDataWriteFailure)); return }
+                completion(.success(channel))
+            })
+        } catch {
+            completion(.failure(CCError.channelDataWriteFailure))
+        }
+    }
 }
