@@ -60,6 +60,7 @@ extension CCChannelsVC {
             self?.tableView.beginUpdates()
             self?.tableView.insertRows(at: indexPaths, with: .top)
             self?.tableView.endUpdates()
+            self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .right)
         }
     }
 }
@@ -109,3 +110,8 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
 }
 
+extension CCChannelsVC : CCCreateChannelDelegate {
+    func channelAdded(data: CCChannel) {
+        viewModel?.addCreatedChannel(channel: data)
+    }
+}

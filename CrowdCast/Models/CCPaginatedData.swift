@@ -16,4 +16,8 @@ struct paginatedData<T>{
     mutating func updateData(input: paginatedData<T>){
         self.data.append(contentsOf: input.data)
     }
+    
+    mutating func insertData(input: T){
+        self.data.insert(input, at: 0)
+    }
 }

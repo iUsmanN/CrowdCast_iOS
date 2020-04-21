@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Group 243.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-cancel-144.png",
+      "filename" : "Group 243@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Group 243@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
