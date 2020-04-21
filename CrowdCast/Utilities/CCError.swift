@@ -18,4 +18,6 @@ enum CCError : Error {
     
     case twilioVideoError
     case twilioCredentialsError
+    
+    case channelDataWriteFailure
 }

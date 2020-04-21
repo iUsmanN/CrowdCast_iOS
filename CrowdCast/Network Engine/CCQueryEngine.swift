@@ -20,6 +20,12 @@ extension CCQueryEngine {
         return db.collection("\(env)\(CCQueryPath.userProfileData.rawValue)")
     }
     
+    func add(_ type : CCQueryPath) -> DocumentReference {
+        let db = Firestore.firestore()
+        let env = "develop"
+        return db.collection("\(env)\(type.rawValue)").document()
+    }
+    
     func make(_ type : CCQueryPath, in which : String?, contains: [String?]) -> Query {
         let db = Firestore.firestore()
         let env = "develop"
@@ -44,4 +50,6 @@ extension CCQueryEngine {
         return db.collection("\(env)\(type.rawValue)")
                  .whereField(which ?? "", isEqualTo: equals)
     }
+    
+    
 }

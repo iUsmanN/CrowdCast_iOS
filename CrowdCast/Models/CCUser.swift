@@ -17,4 +17,9 @@ struct CCUser           : Codable {
     //Local only
     var joinedChannels  : [String?]?
     var myChannels      : [String?]?
+    
+    func fullName() -> String {
+        guard let firstName = firstName, let lastName = lastName else { return String() }
+        return "\(firstName) \(lastName)"
+    }
 }

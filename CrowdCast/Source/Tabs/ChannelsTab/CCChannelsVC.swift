@@ -60,11 +60,12 @@ extension CCChannelsVC {
             self?.tableView.beginUpdates()
             self?.tableView.insertRows(at: indexPaths, with: .top)
             self?.tableView.endUpdates()
+            self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
         }
     }
 }
 
-extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController {
+extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController, CCHapticEngine {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.numberOfSections() ?? 0
@@ -84,6 +85,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
         guard let channelData = (viewModel?.dataForCellAt(indexPath: indexPath)) else { return }
         let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
         vc.setupViewModel(inputData: channelData)
+        generateHapticFeedback(.light)
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     
@@ -108,3 +110,8 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
 }
 
+extension CCChannelsVC : CCCreateChannelDelegate {
+    func channelAdded(data: CCChannel) {
+        viewModel?.addCreatedChannel(channel: data)
+    }
+}

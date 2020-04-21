@@ -105,7 +105,22 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
         
         dg.notify(queue: .global()) { [weak self] in
             prints("Make index paths")
-            self?.channelsPublisher.send(self?.getDualIndexPaths(oldMyChannelCount: self?.myChannels.data.count, newMyChannelCount: newMyChannels, oldJoinedChannelCount: self?.joinedChannels.data.count, newJoinedChannelCount: newJoinedChannels, countTuple: fetchedCounts) ?? [IndexPath]())
+            self?.publishChannelUpdates(newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
         }
+    }
+    
+    func publishChannelUpdates(newCreatedChannels: Int, newJoinedChannels: Int){
+        channelsPublisher.send(getDualIndexPaths(oldMyChannelCount: myChannels.data.count,
+                                                             newMyChannelCount: newCreatedChannels,
+                                                             oldJoinedChannelCount: joinedChannels.data.count,
+                                                             newJoinedChannelCount: newJoinedChannels,
+                                                             countTuple: (newCreatedChannels, newJoinedChannels)) ?? [IndexPath]())
+    }
+}
+
+extension CCChannelsVM {
+    func addCreatedChannel(channel: CCChannel){
+        myChannels.insertData(input: channel)
+        publishChannelUpdates(newCreatedChannels: 1, newJoinedChannels: 0)
     }
 }

@@ -8,8 +8,11 @@
 
 import Foundation
 
+
+
 struct CCCrowd          : Codable {
-    var Name            : String?
+    var id              : String?
+    var name            : String?
     var description     : String?
     var owners          : [CCIndividual?]?
     var members         : [CCIndividual?]?

@@ -15,10 +15,140 @@
                     <view key="view" contentMode="scaleToFill" id="UR9-h4-9nc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uon-4e-8lp" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="50" width="364" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Name"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qxx-IC-CvB" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="129" width="364" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Description"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Usman Nazir" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWa-fZ-fg8" customClass="TweeBorderedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="208" width="364" height="29"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Owner"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8p-4i-MFm" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="132" y="679" width="150" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="MrJ-ws-77B"/>
+                                    <constraint firstAttribute="width" constant="150" id="ttH-z0-L3M"/>
+                                </constraints>
+                                <state key="normal" title="CREATE"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addChannel:" destination="lRM-aD-OiV" eventType="touchUpInside" id="mhX-5e-pqg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="sWa-fZ-fg8" firstAttribute="top" secondItem="Qxx-IC-CvB" secondAttribute="bottom" constant="50" id="33P-pX-Aq3"/>
+                            <constraint firstItem="wuA-Pc-e78" firstAttribute="trailing" secondItem="sWa-fZ-fg8" secondAttribute="trailing" constant="25" id="Nk1-fa-UEP"/>
+                            <constraint firstItem="Qxx-IC-CvB" firstAttribute="top" secondItem="Uon-4e-8lp" secondAttribute="bottom" constant="50" id="PwA-Nk-MhP"/>
+                            <constraint firstItem="wuA-Pc-e78" firstAttribute="trailing" secondItem="Uon-4e-8lp" secondAttribute="trailing" constant="25" id="S3K-7A-TrO"/>
+                            <constraint firstItem="Uon-4e-8lp" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="c5B-g6-1Ah"/>
+                            <constraint firstItem="sWa-fZ-fg8" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="cKh-ln-Q16"/>
+                            <constraint firstItem="Qxx-IC-CvB" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="gdu-ty-dyS"/>
+                            <constraint firstItem="wuA-Pc-e78" firstAttribute="trailing" secondItem="Qxx-IC-CvB" secondAttribute="trailing" constant="25" id="iDS-sZ-w02"/>
+                            <constraint firstItem="Uon-4e-8lp" firstAttribute="top" secondItem="wuA-Pc-e78" secondAttribute="top" constant="50" id="kbg-u5-gMI"/>
+                            <constraint firstItem="a8p-4i-MFm" firstAttribute="centerX" secondItem="UR9-h4-9nc" secondAttribute="centerX" id="rBg-dP-LSv"/>
+                            <constraint firstItem="wuA-Pc-e78" firstAttribute="bottom" secondItem="a8p-4i-MFm" secondAttribute="bottom" constant="50" id="xMp-op-aeR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wuA-Pc-e78"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="Qxx-IC-CvB" id="pI8-5x-Hut"/>
+                        <outlet property="nameTextField" destination="Uon-4e-8lp" id="a4X-2V-ysx"/>
+                        <outlet property="ownerTextField" destination="sWa-fZ-fg8" id="Sbu-XY-0TD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxa-mX-HST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,25 +235,62 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHm-fY-rN2">
+                                <rect key="frame" x="70" y="702" width="274" height="100"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qTa-xD-13n">
+                                    <rect key="frame" x="0.0" y="0.0" width="274" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSW-ln-vga">
+                                            <rect key="frame" x="0.0" y="0.0" width="274" height="100"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-CS-WdF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="100"/>
+                                                    <state key="normal" image="Cancel"/>
+                                                    <connections>
+                                                        <action selector="closeButtonPressed:" destination="cuo-Of-ZbW" eventType="touchUpInside" id="MHi-9a-dwn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="OSW-ln-vga" secondAttribute="trailing" id="4eM-nl-YEU"/>
+                                        <constraint firstAttribute="bottom" secondItem="OSW-ln-vga" secondAttribute="bottom" id="MWC-ea-8Yb"/>
+                                        <constraint firstItem="OSW-ln-vga" firstAttribute="leading" secondItem="qTa-xD-13n" secondAttribute="leading" id="iME-jG-XvC"/>
+                                        <constraint firstItem="OSW-ln-vga" firstAttribute="top" secondItem="qTa-xD-13n" secondAttribute="top" id="qxc-my-Dm3"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Id4-R8-Auf"/>
+                                </constraints>
+                                <vibrancyEffect style="fill">
+                                    <blurEffect style="regular"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="hiN-t4-C1E" secondAttribute="trailing" id="2Q6-ct-cU4"/>
+                            <constraint firstItem="KHm-fY-rN2" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" constant="70" id="81r-CB-P2U"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="top" secondItem="5Bo-xN-RJz" secondAttribute="top" id="OMg-nQ-BaI"/>
                             <constraint firstAttribute="bottom" secondItem="hiN-t4-C1E" secondAttribute="bottom" id="Tnj-vt-0wR"/>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="bottom" secondItem="KHm-fY-rN2" secondAttribute="bottom" constant="60" id="iC2-dL-JEI"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" id="s9a-9w-Fhm"/>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="KHm-fY-rN2" secondAttribute="trailing" constant="70" id="tZ6-JT-U3v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nIZ-7p-Mmo"/>
                     </view>
                     <navigationItem key="navigationItem" id="apd-zv-Rn3"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="actionBar" destination="KHm-fY-rN2" id="wsH-4h-TQC"/>
                         <outlet property="collectionView" destination="hiN-t4-C1E" id="f6w-qp-8dl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWh-vO-Xrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="883.92857142857144"/>
+            <point key="canvasLocation" x="906" y="884"/>
         </scene>
         <!--Join Channel-->
         <scene sceneID="x2S-uR-rRQ">
@@ -143,8 +310,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cancel" width="72" height="72"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Main Accent">
+            <color red="0.19200000166893005" green="0.52899998426437378" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -50,7 +50,6 @@ extension CCCardTVCTableViewCell {
     
     func setColors(color: String) {
         let c = UIColor(named: color)
-//        cardBackgroundView.backgroundColor = UIColor(red: c?.redValue ?? 0, green: c?.greenValue ?? 0, blue: c?.blueValue ?? 0, alpha: 0.05)
         cardBackgroundView.layer.borderColor = c?.cgColor
         cardBackgroundView.layer.shadowColor = c?.cgColor
         titleLabel.textColor = c

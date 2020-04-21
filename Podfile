@@ -13,7 +13,8 @@ target 'CrowdCast' do
   pod 'FirebaseFirestoreSwift'
   pod 'ReachabilitySwift'
   pod 'NotificationBannerSwift', '~> 3.0.0'
-  
+  pod 'IQKeyboardManagerSwift'
+  pod 'TweeTextField'
 
   target 'CrowdCastTests' do
     inherit! :search_paths
