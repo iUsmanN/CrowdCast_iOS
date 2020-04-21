@@ -60,7 +60,7 @@ extension CCChannelsVC {
             self?.tableView.beginUpdates()
             self?.tableView.insertRows(at: indexPaths, with: .top)
             self?.tableView.endUpdates()
-            self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .right)
+            self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
         }
     }
 }
