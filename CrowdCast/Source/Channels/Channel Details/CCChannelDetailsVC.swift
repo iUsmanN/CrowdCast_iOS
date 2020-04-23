@@ -10,21 +10,18 @@ import UIKit
 import TwilioVideo
 
 class CCChannelDetailsVC: UIViewController {
-    
-    @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var cameraViewHeightConstraint: NSLayoutConstraint!
-    
-    var viewModel : CCChannelDetailsVM?
+
+    @IBOutlet weak var tableView    : UITableView!
+    var viewModel                   : CCChannelDetailsVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        showMe()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
     }
     
 }
@@ -48,28 +45,23 @@ extension CCChannelDetailsVC {
     }
     
     func setupView(){
+        tableView.dataSource = self
+        tableView.delegate   = self
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel?.data.name
+        tableView.register(Nib.get.CCSwitchTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
     }
 }
 
-extension CCChannelDetailsVC : CameraSourceDelegate, VideoViewDelegate {
+extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
     
-    func showMe(){
-        if let camera = CameraSource(delegate: self) {
-            viewModel?.localVideoTrack = LocalVideoTrack(source: camera)
-            let renderer = VideoView(frame: cameraView.frame)
-            renderer.shouldMirror = true
-            guard let frontCamera = CameraSource.captureDevice(position: .front) else { return }
-            renderer.contentMode = .scaleAspectFill
-            camera.startCapture(device: frontCamera)
-            viewModel?.localVideoTrack?.addRenderer(renderer)
-            self.cameraView.addSubview(renderer)
-            Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { (timer) in
-                UIView.animate(withDuration: 0.5) {
-                    self.cameraViewHeightConstraint.constant = 300
-                    self.view.layoutIfNeeded()
-                }
-            }
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfRows(section: section) ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCSwitchTVC, for: indexPath) as? CCSwitchTVC else { return UITableViewCell() }
+        cell.data = viewModel?.dataForCell(indexPath: indexPath)
+        return cell
     }
 }
