@@ -11,16 +11,12 @@ import TwilioVideo
 
 class CCChannelDetailsVC: UIViewController {
     
-    @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var cameraViewHeightConstraint: NSLayoutConstraint!
-    
-    var viewModel : CCChannelDetailsVM?
+    @IBOutlet weak var tableView    : UITableView!
+    var viewModel                   : CCChannelDetailsVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        showMe()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,28 +44,62 @@ extension CCChannelDetailsVC {
     }
     
     func setupView(){
+        tableView.dataSource = self
+        tableView.delegate   = self
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel?.data.name
+        tableView.register(Nib.get.CCSwitchTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
+        tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
+        tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
+        tableView.register(Nib.get.CCTableViewHeader, forCellReuseIdentifier: Nib.reuseIdentifier.CCTableViewHeader)
     }
 }
 
-extension CCChannelDetailsVC : CameraSourceDelegate, VideoViewDelegate {
+extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
     
-    func showMe(){
-        if let camera = CameraSource(delegate: self) {
-            viewModel?.localVideoTrack = LocalVideoTrack(source: camera)
-            let renderer = VideoView(frame: cameraView.frame)
-            renderer.shouldMirror = true
-            guard let frontCamera = CameraSource.captureDevice(position: .front) else { return }
-            renderer.contentMode = .scaleAspectFill
-            camera.startCapture(device: frontCamera)
-            viewModel?.localVideoTrack?.addRenderer(renderer)
-            self.cameraView.addSubview(renderer)
-            Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { (timer) in
-                UIView.animate(withDuration: 0.5) {
-                    self.cameraViewHeightConstraint.constant = 300
-                    self.view.layoutIfNeeded()
-                }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.numberOfSections() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfRows(section: section) ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0...1:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCSwitchTVC, indexPath: indexPath, type: CCSwitchTVC())
+            default:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCDetailsSegueTVC, indexPath: indexPath, type: CCDetailsSegueTVC())
             }
+        case 1:
+            switch indexPath.row {
+            case (viewModel?.adminRows.count ?? 1) - 1:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCTextCell, indexPath: indexPath, type: CCTextCell())
+            default:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCDetailsSegueTVC, indexPath: indexPath, type: CCDetailsSegueTVC())
+            }
+            
+        default:
+            prints("A")
         }
+        return UITableViewCell()
+    }
+}
+
+extension CCChannelDetailsVC {
+    
+    func dequeueCell<T: CCContainsCellData>(identifier: String, indexPath: IndexPath, type: T) -> UITableViewCell {
+        
+        if var cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? T {
+            cell.data = viewModel?.dataForCell(indexPath: indexPath)
+            guard let cell = cell as? UITableViewCell else { return UITableViewCell() }
+            let bgView = UIView(); bgView.backgroundColor = .clear
+            cell.selectedBackgroundView = bgView
+            return cell
+        }
+        return UITableViewCell()
     }
 }

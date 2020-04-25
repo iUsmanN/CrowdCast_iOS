@@ -164,6 +164,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - BulletinBoard (4.1.0)
   - Device (3.2.1)
   - Firebase/Auth (6.20.0):
     - Firebase/CoreOnly
@@ -259,6 +260,7 @@ PODS:
   - TwilioVideo (3.2.2)
 
 DEPENDENCIES:
+  - BulletinBoard
   - Device (~> 3.2.1)
   - Firebase/Auth
   - Firebase/Firestore
@@ -273,6 +275,7 @@ SPEC REPOS:
   trunk:
     - abseil
     - BoringSSL-GRPC
+    - BulletinBoard
     - Device
     - Firebase
     - FirebaseAuth
@@ -301,6 +304,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  BulletinBoard: c774340545b5cfd05a96a89f63b105ecc95c86f9
   Device: 0738862dd8a30856b4bd9e21cb9b728873d21392
   Firebase: fe7f74012742ab403451dd283e6909b8f1fb348a
   FirebaseAuth: 648892fd0afeb27ef97c1d2e667329855f1004bc
@@ -326,6 +330,6 @@ SPEC CHECKSUMS:
   TweeTextField: 3a5ad7ae7b2a55c6d0e5ae9b5c100d6cd1b9c7a8
   TwilioVideo: 996f6c2b06f7d3d49f5d4e7cd80a19b0d07f4625
 
-PODFILE CHECKSUM: 5e1ed3725cb48d1c67bdf41812451be9f8ff6de6
+PODFILE CHECKSUM: c80bd70806eb1262e72a310007afc0938b295993
 
 COCOAPODS: 1.9.1
