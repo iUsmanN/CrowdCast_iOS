@@ -15,6 +15,7 @@ target 'CrowdCast' do
   pod 'NotificationBannerSwift', '~> 3.0.0'
   pod 'IQKeyboardManagerSwift'
   pod 'TweeTextField'
+  pod 'BulletinBoard'
 
   target 'CrowdCastTests' do
     inherit! :search_paths
