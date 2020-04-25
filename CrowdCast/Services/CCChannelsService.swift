@@ -24,7 +24,7 @@ extension CCChannelsService {
     }
     
     func createChannel(channelInput: CCChannel,completion: @escaping (Result<CCChannel, CCError>) -> ()) {
-        let query   = add(.channelsData)
+        let query   = documentRef(.channelsData)
         var channel = channelInput
         channel.id  = query.documentID
         do {
@@ -35,5 +35,13 @@ extension CCChannelsService {
         } catch {
             completion(.failure(CCError.channelDataWriteFailure))
         }
+    }
+    
+    func deleteChannel(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
+        let query = collectionRef(.channelsData)
+        query.document(channelInput.id ?? "").delete(completion: { (error) in
+            guard error == nil else { completion(.failure(.channelDataWriteFailure)); return }
+            completion(.success(channelInput))
+        })
     }
 }

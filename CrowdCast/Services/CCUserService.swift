@@ -27,7 +27,7 @@ extension CCUserService {
         
         do{
             let user = CCUser(id: uid, firstName: firstName, lastName: lastName, email: email)
-            let _ = try addUser().addDocument(from: user, encoder: .init()) { (error) in
+            let _ = try collectionRef(.userProfileData).addDocument(from: user, encoder: .init()) { (error) in
                 guard error == nil else { completion(.failure(CCError.firebaseFailure)); return }
                 completion(.success(true))
             }

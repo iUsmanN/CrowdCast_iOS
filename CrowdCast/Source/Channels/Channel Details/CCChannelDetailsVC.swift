@@ -87,6 +87,25 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            default:
+                prints("")
+            }
+        case 1:
+            switch indexPath.row {
+            case (viewModel?.adminRows.count ?? 1) - 1:
+                viewModel?.deleteChannel()
+            default:
+                prints("")
+            }
+        default:
+            prints("")
+        }
+    }
 }
 
 extension CCChannelDetailsVC {

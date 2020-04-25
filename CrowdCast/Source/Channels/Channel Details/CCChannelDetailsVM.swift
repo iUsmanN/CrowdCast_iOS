@@ -21,7 +21,7 @@ struct CCChannelDetailsVM {
     var adminRows           : [CCCellData] = [
         CCCellData(title: "Paritcipant Requests"),
         CCCellData(title: "Channel Managers"),
-        CCCellData(title: "Delete", titleColor: #colorLiteral(red: 0.9227048251, green: 0.08703707769, blue: 0.1209332793, alpha: 1))
+        CCCellData(title: "Delete", titleColor: #colorLiteral(red: 1, green: 0, blue: 0.03409014148, alpha: 1))
     ]
     
     var data                = CCChannel()
@@ -59,4 +59,19 @@ extension CCChannelDetailsVM {
             return CCCellData(title: "NONE", switchActions: nil)
         }
     }
+}
+
+extension CCChannelDetailsVM : CCChannelsService {
+    
+    func deleteChannel() {
+        deleteChannel(channelInput: data) { (result) in
+            switch result {
+            case .success(let channel):
+                prints("Channel Deleted")
+            case .failure(let error):
+                prints("Channel Deletion Failure")
+            }
+        }
+    }
+    
 }

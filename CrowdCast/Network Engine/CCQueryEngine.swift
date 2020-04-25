@@ -14,13 +14,13 @@ protocol CCQueryEngine {}
 
 extension CCQueryEngine {
     
-    func addUser() -> CollectionReference {
+    func collectionRef(_ type : CCQueryPath) -> CollectionReference {
         let db = Firestore.firestore()
         let env = "develop"
-        return db.collection("\(env)\(CCQueryPath.userProfileData.rawValue)")
+        return db.collection("\(env)\(type.rawValue)")
     }
     
-    func add(_ type : CCQueryPath) -> DocumentReference {
+    func documentRef(_ type : CCQueryPath) -> DocumentReference {
         let db = Firestore.firestore()
         let env = "develop"
         return db.collection("\(env)\(type.rawValue)").document()
