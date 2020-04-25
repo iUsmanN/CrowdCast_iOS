@@ -10,7 +10,7 @@ import UIKit
 import TwilioVideo
 
 class CCChannelDetailsVC: UIViewController {
-
+    
     @IBOutlet weak var tableView    : UITableView!
     var viewModel                   : CCChannelDetailsVM?
     
@@ -21,7 +21,6 @@ class CCChannelDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
 }
@@ -50,18 +49,47 @@ extension CCChannelDetailsVC {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel?.data.name
         tableView.register(Nib.get.CCSwitchTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
+        tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
     }
 }
 
 extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.numberOfSections() ?? 0
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfRows(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCSwitchTVC, for: indexPath) as? CCSwitchTVC else { return UITableViewCell() }
-        cell.data = viewModel?.dataForCell(indexPath: indexPath)
-        return cell
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0...1:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCSwitchTVC, indexPath: indexPath, type: CCSwitchTVC())
+            default:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCDetailsSegueTVC, indexPath: indexPath, type: CCDetailsSegueTVC())
+            }
+        case 1:
+            return dequeueCell(identifier: Nib.reuseIdentifier.CCSwitchTVC, indexPath: indexPath, type: CCSwitchTVC())
+        default:
+            prints("A")
+        }
+        return UITableViewCell()
+    }
+}
+
+extension CCChannelDetailsVC {
+    
+    func dequeueCell<T: CCContainsCellData>(identifier: String, indexPath: IndexPath, type: T) -> UITableViewCell {
+        
+        if var cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? T {
+            cell.data = viewModel?.dataForCell(indexPath: indexPath)
+            guard let cell = cell as? UITableViewCell else { return UITableViewCell() }
+            return cell
+        }
+        return UITableViewCell()
     }
 }

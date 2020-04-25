@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCSwitchTVC: UITableViewCell {
+class CCSwitchTVC: UITableViewCell, CCContainsCellData {
 
     @IBOutlet weak var titleLabel       : UILabel!
     @IBOutlet weak var toggleSwitch     : UISwitch!

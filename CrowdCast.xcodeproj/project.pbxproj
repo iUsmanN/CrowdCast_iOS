@@ -11,6 +11,7 @@
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
 		6707B85EA492079AD4852897 /* Pods_CrowdCast_CrowdCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */; };
 		B60A29D62434828400B7F76F /* CCSetsNavbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A29D52434828400B7F76F /* CCSetsNavbarProtocol.swift */; };
+		B60DE3E324545432003E491C /* CCContainsCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DE3E224545432003E491C /* CCContainsCellData.swift */; };
 		B61A849C2451F5FB00150188 /* CCDetailsSegueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A849A2451F5FB00150188 /* CCDetailsSegueTVC.swift */; };
 		B61A849D2451F5FB00150188 /* CCDetailsSegueTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61A849B2451F5FB00150188 /* CCDetailsSegueTVC.xib */; };
 		B61A849F2452081F00150188 /* CCCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A849E2452081F00150188 /* CCCellData.swift */; };
@@ -137,6 +138,7 @@
 		99B716AB8F4B132E23E78760 /* Pods-CrowdCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCastTests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCastTests/Pods-CrowdCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED097A4257B79B19ABF3F69 /* Pods-CrowdCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast/Pods-CrowdCast.debug.xcconfig"; sourceTree = "<group>"; };
 		B60A29D52434828400B7F76F /* CCSetsNavbarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetsNavbarProtocol.swift; sourceTree = "<group>"; };
+		B60DE3E224545432003E491C /* CCContainsCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCContainsCellData.swift; sourceTree = "<group>"; };
 		B61A849A2451F5FB00150188 /* CCDetailsSegueTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDetailsSegueTVC.swift; sourceTree = "<group>"; };
 		B61A849B2451F5FB00150188 /* CCDetailsSegueTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCDetailsSegueTVC.xib; sourceTree = "<group>"; };
 		B61A849E2452081F00150188 /* CCCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCellData.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				B6BD90CA2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift */,
 				B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */,
 				B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */,
+				B60DE3E224545432003E491C /* CCContainsCellData.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1081,6 +1084,7 @@
 				B64E4D182439F6020011715A /* CCContainsCrowds.swift in Sources */,
 				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
 				B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */,
+				B60DE3E324545432003E491C /* CCContainsCellData.swift in Sources */,
 				B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */,
 				B6BD90D52437137E00F50848 /* CCOverviewVM.swift in Sources */,
 				B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */,

@@ -13,8 +13,12 @@ struct CCChannelDetailsVM {
     
     var channelRows         : [CCCellData] = [
         CCCellData(title: "Video", switchActions: nil),
-        CCCellData(title: "Audio", switchActions: nil)
+        CCCellData(title: "Audio", switchActions: nil),
+        CCCellData(title: "Description")
+    ]
     
+    var adminRows           : [CCCellData] = [
+        CCCellData(title: "Delete")
     ]
     
     var data                = CCChannel()
@@ -35,6 +39,8 @@ extension CCChannelDetailsVM {
         switch section {
         case 0:
             return channelRows.count
+        case 1:
+            return adminRows.count
         default:
             return 0
         }
@@ -44,6 +50,8 @@ extension CCChannelDetailsVM {
         switch indexPath.section {
         case 0:
             return channelRows[indexPath.row]
+        case 1:
+            return adminRows[indexPath.row]
         default:
             return CCCellData(title: "NONE", switchActions: nil)
         }
