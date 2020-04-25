@@ -92,6 +92,8 @@
 		B6BD90D724377E3D00F50848 /* Channels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD90D624377E3D00F50848 /* Channels.storyboard */; };
 		B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */; };
 		B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */; };
+		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
+		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
 		B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55124277A1A001BEBBC /* AppDelegate.swift */; };
 		B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */; };
 		B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7F55724277A1A001BEBBC /* Main.storyboard */; };
@@ -219,6 +221,8 @@
 		B6BD90D624377E3D00F50848 /* Channels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Channels.storyboard; sourceTree = "<group>"; };
 		B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCAddChannelVC.swift; path = CrowdCast/Storyboards/CCAddChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCJoinChannelVC.swift; path = CrowdCast/Storyboards/CCJoinChannelVC.swift; sourceTree = SOURCE_ROOT; };
+		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
+		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
 		B6D7F54E24277A1A001BEBBC /* CrowdCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7F55124277A1A001BEBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -427,7 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				B61A84992451F5E800150188 /* DetailsSegueCell */,
-				B6244DDD244F891A00E52669 /* TitleCell */,
+				B6244DDD244F891A00E52669 /* TextCell */,
 				B6244DD6244F5E2300E52669 /* SwitchCell */,
 				B61A849E2452081F00150188 /* CCCellData.swift */,
 			);
@@ -443,11 +447,13 @@
 			path = SwitchCell;
 			sourceTree = "<group>";
 		};
-		B6244DDD244F891A00E52669 /* TitleCell */ = {
+		B6244DDD244F891A00E52669 /* TextCell */ = {
 			isa = PBXGroup;
 			children = (
+				B6D04E5524546186005F4E61 /* CCTextCell.swift */,
+				B6D04E5624546186005F4E61 /* CCTextCell.xib */,
 			);
-			path = TitleCell;
+			path = TextCell;
 			sourceTree = "<group>";
 		};
 		B64E4CF224389D410011715A /* CCCardTime */ = {
@@ -935,6 +941,7 @@
 				B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */,
 				B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */,
 				B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */,
+				B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */,
 				B6E3675F24352A5F00B511A0 /* Others.storyboard in Resources */,
 				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6244DDA244F813F00E52669 /* CCSwitchTVC.xib in Resources */,
@@ -1137,6 +1144,7 @@
 				B61A849C2451F5FB00150188 /* CCDetailsSegueTVC.swift in Sources */,
 				B61C90F02441CFE000F6B8A9 /* CCGetsViewController.swift in Sources */,
 				B64E4D162439F4E70011715A /* CCChannelOwner.swift in Sources */,
+				B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */,
 				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

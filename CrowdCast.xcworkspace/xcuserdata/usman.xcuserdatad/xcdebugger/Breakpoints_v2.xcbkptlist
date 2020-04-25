@@ -506,8 +506,8 @@
             filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -522,10 +522,10 @@
             filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "CCChannelDetailsVC"
-            landmarkType = "21">
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "dequeueCell(identifier:indexPath:type:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

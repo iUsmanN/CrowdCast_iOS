@@ -14,11 +14,14 @@ struct CCChannelDetailsVM {
     var channelRows         : [CCCellData] = [
         CCCellData(title: "Video", switchActions: nil),
         CCCellData(title: "Audio", switchActions: nil),
-        CCCellData(title: "Description")
+        CCCellData(title: "Participants"),
+        CCCellData(title: "Accent Color")
     ]
     
     var adminRows           : [CCCellData] = [
-        CCCellData(title: "Delete")
+        CCCellData(title: "Paritcipant Requests"),
+        CCCellData(title: "Channel Managers"),
+        CCCellData(title: "Delete", titleColor: #colorLiteral(red: 0.9227048251, green: 0.08703707769, blue: 0.1209332793, alpha: 1))
     ]
     
     var data                = CCChannel()

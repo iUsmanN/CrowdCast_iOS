@@ -17,5 +17,4 @@ class CCDetailsSegueTVC: UITableViewCell, CCContainsCellData {
             titleLabel.text = data?.title
         }
     }
-    
 }

@@ -50,6 +50,7 @@ extension CCChannelDetailsVC {
         navigationItem.title = viewModel?.data.name
         tableView.register(Nib.get.CCSwitchTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
         tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
+        tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
     }
 }
 
@@ -73,7 +74,13 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
                 return dequeueCell(identifier: Nib.reuseIdentifier.CCDetailsSegueTVC, indexPath: indexPath, type: CCDetailsSegueTVC())
             }
         case 1:
-            return dequeueCell(identifier: Nib.reuseIdentifier.CCSwitchTVC, indexPath: indexPath, type: CCSwitchTVC())
+            switch indexPath.row {
+            case (viewModel?.adminRows.count ?? 1) - 1:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCTextCell, indexPath: indexPath, type: CCTextCell())
+            default:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCDetailsSegueTVC, indexPath: indexPath, type: CCDetailsSegueTVC())
+            }
+            
         default:
             prints("A")
         }
@@ -88,6 +95,8 @@ extension CCChannelDetailsVC {
         if var cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? T {
             cell.data = viewModel?.dataForCell(indexPath: indexPath)
             guard let cell = cell as? UITableViewCell else { return UITableViewCell() }
+            let bgView = UIView(); bgView.backgroundColor = .clear
+            cell.selectedBackgroundView = bgView
             return cell
         }
         return UITableViewCell()
