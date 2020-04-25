@@ -17,6 +17,8 @@ struct Nib {
         static let CCSwitchTVC          = UINib(nibName: "CCSwitchTVC", bundle: nil)
         static let CCDetailsSegueTVC    = UINib(nibName: "CCDetailsSegueTVC", bundle: nil)
         static let CCTextCell           = UINib(nibName: "CCTextCell", bundle: nil)
+        static let CCTableViewHeader    = UINib(nibName: "CCTableViewHeader", bundle: nil)
+        
     }
     
     struct reuseIdentifier {
@@ -26,5 +28,6 @@ struct Nib {
         static let CCSwitchTVC          = "CCSwitchTVC"
         static let CCDetailsSegueTVC    = "CCDetailsSegueTVC"
         static let CCTextCell           = "CCTextCell"
+        static let CCTableViewHeader    = "CCTableViewHeader"
     }
 }

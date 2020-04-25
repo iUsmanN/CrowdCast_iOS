@@ -51,6 +51,7 @@ extension CCChannelDetailsVC {
         tableView.register(Nib.get.CCSwitchTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
         tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
         tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
+        tableView.register(Nib.get.CCTableViewHeader, forCellReuseIdentifier: Nib.reuseIdentifier.CCTableViewHeader)
     }
 }
 
