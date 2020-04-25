@@ -50,7 +50,7 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
