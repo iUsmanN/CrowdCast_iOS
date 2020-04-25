@@ -94,6 +94,7 @@
 		B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */; };
 		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
 		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
+		B6D04E6424547E9F005F4E61 /* CCColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E6324547E9F005F4E61 /* CCColorCell.swift */; };
 		B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55124277A1A001BEBBC /* AppDelegate.swift */; };
 		B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */; };
 		B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7F55724277A1A001BEBBC /* Main.storyboard */; };
@@ -223,6 +224,7 @@
 		B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCJoinChannelVC.swift; path = CrowdCast/Storyboards/CCJoinChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
 		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
+		B6D04E6324547E9F005F4E61 /* CCColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCColorCell.swift; sourceTree = "<group>"; };
 		B6D7F54E24277A1A001BEBBC /* CrowdCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7F55124277A1A001BEBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		B60A29C824338EA100B7F76F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				B6D04E6224547E84005F4E61 /* ColorCell */,
 				B6244DD5244F5E1300E52669 /* ChannelDetailCells */,
 				B6E36765243631FA00B511A0 /* SectionHeader */,
 				B6E367592434F21D00B511A0 /* ChannelCard */,
@@ -643,6 +646,14 @@
 				B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */,
 			);
 			path = "Join Channel";
+			sourceTree = "<group>";
+		};
+		B6D04E6224547E84005F4E61 /* ColorCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6D04E6324547E9F005F4E61 /* CCColorCell.swift */,
+			);
+			path = ColorCell;
 			sourceTree = "<group>";
 		};
 		B6D7F54524277A1A001BEBBC = {
@@ -1102,6 +1113,7 @@
 				B64E4CF1243890510011715A /* CCNibManager.swift in Sources */,
 				B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */,
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
+				B6D04E6424547E9F005F4E61 /* CCColorCell.swift in Sources */,
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B6DDB0A4244CB713007B5808 /* CCAddChannelVM.swift in Sources */,

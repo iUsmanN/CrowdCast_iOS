@@ -23,7 +23,7 @@ extension CCChannelsService {
         }
     }
     
-    func createChannel(channelInput: CCChannel,completion: @escaping (Result<CCChannel, Error>) -> ()) {
+    func createChannel(channelInput: CCChannel,completion: @escaping (Result<CCChannel, CCError>) -> ()) {
         let query   = add(.channelsData)
         var channel = channelInput
         channel.id  = query.documentID

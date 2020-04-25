@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +27,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Name"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
                                         <real key="value" value="0.20000000000000001"/>
@@ -126,15 +127,51 @@
                                     <action selector="addChannel:" destination="lRM-aD-OiV" eventType="touchUpInside" id="mhX-5e-pqg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Accent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfO-2s-wQt">
+                                <rect key="frame" x="25" y="272" width="88" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" name="Main Accent"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V1t-eh-RwT">
+                                <rect key="frame" x="25" y="302.5" width="364" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="V3E-Mm-7N6"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HJm-YI-arS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CCColorCell" id="Ziq-Dd-Rsc" customClass="CCColorCell" customModule="CrowdCast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12.5" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UfU-76-kny">
+                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="blue"/>
+                                        <size key="customSize" width="25" height="25"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="sWa-fZ-fg8" firstAttribute="top" secondItem="Qxx-IC-CvB" secondAttribute="bottom" constant="50" id="33P-pX-Aq3"/>
+                            <constraint firstItem="wuA-Pc-e78" firstAttribute="trailing" secondItem="V1t-eh-RwT" secondAttribute="trailing" constant="25" id="LdK-ob-ZoZ"/>
                             <constraint firstItem="wuA-Pc-e78" firstAttribute="trailing" secondItem="sWa-fZ-fg8" secondAttribute="trailing" constant="25" id="Nk1-fa-UEP"/>
+                            <constraint firstItem="gfO-2s-wQt" firstAttribute="top" secondItem="sWa-fZ-fg8" secondAttribute="bottom" constant="35" id="O3q-s0-9Fb"/>
                             <constraint firstItem="Qxx-IC-CvB" firstAttribute="top" secondItem="Uon-4e-8lp" secondAttribute="bottom" constant="50" id="PwA-Nk-MhP"/>
                             <constraint firstItem="wuA-Pc-e78" firstAttribute="trailing" secondItem="Uon-4e-8lp" secondAttribute="trailing" constant="25" id="S3K-7A-TrO"/>
+                            <constraint firstItem="V1t-eh-RwT" firstAttribute="top" secondItem="gfO-2s-wQt" secondAttribute="bottom" constant="10" id="SNz-wW-kEW"/>
                             <constraint firstItem="Uon-4e-8lp" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="c5B-g6-1Ah"/>
                             <constraint firstItem="sWa-fZ-fg8" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="cKh-ln-Q16"/>
+                            <constraint firstItem="V1t-eh-RwT" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="e3U-Pz-5Z7"/>
+                            <constraint firstItem="gfO-2s-wQt" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="fdG-Oe-Siv"/>
                             <constraint firstItem="Qxx-IC-CvB" firstAttribute="leading" secondItem="wuA-Pc-e78" secondAttribute="leading" constant="25" id="gdu-ty-dyS"/>
                             <constraint firstItem="wuA-Pc-e78" firstAttribute="trailing" secondItem="Qxx-IC-CvB" secondAttribute="trailing" constant="25" id="iDS-sZ-w02"/>
                             <constraint firstItem="Uon-4e-8lp" firstAttribute="top" secondItem="wuA-Pc-e78" secondAttribute="top" constant="50" id="kbg-u5-gMI"/>
@@ -145,6 +182,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="colorCollectionView" destination="V1t-eh-RwT" id="vs5-tt-zkg"/>
                         <outlet property="descriptionTextField" destination="Qxx-IC-CvB" id="pI8-5x-Hut"/>
                         <outlet property="nameTextField" destination="Uon-4e-8lp" id="a4X-2V-ysx"/>
                         <outlet property="ownerTextField" destination="sWa-fZ-fg8" id="Sbu-XY-0TD"/>
@@ -304,6 +342,9 @@
         </namedColor>
         <namedColor name="Main Accent">
             <color red="0.004999999888241291" green="0.41499999165534973" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="blue">
+            <color red="0.0045052426869999999" green="0.41469460730000002" blue="0.95178395510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
