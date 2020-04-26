@@ -17,5 +17,8 @@ class CCNavigationController: UINavigationController {
     
     func setupNavigationBar() {
         navigationBar.tintColor = UIColor(named: "Main Accent")
+        navigationBar.backgroundColor = .clear
+        navigationBar.barTintColor = .clear
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
 }

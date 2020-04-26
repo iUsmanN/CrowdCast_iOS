@@ -15,7 +15,8 @@ struct CCChannelDetailsVM {
         CCCellData(title: "Video", switchActions: nil),
         CCCellData(title: "Audio", switchActions: nil),
         CCCellData(title: "Participants"),
-        CCCellData(title: "Accent Color")
+        CCCellData(title: "Accent Color"),
+        CCCellData(title: "Leave", titleColor: #colorLiteral(red: 1, green: 0.01136767322, blue: 0, alpha: 1))
     ]
     
     var adminRows           : [CCCellData] = [
