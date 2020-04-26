@@ -49,7 +49,7 @@ extension CCSetsNavbar {
         let profileView = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         profileView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         profileView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        profileView.setImage(#imageLiteral(resourceName: "Avatar.png"), for: .normal)
+        profileView.setImage(#imageLiteral(resourceName: "profile2.png"), for: .normal)
         guard let action = action else { return UIBarButtonItem() }
         profileView.addTarget(self, action: action, for: .primaryActionTriggered)
         let profileButton = UIBarButtonItem(customView: profileView)

@@ -22,7 +22,7 @@ class CCTabBarController: UITabBarController {
     
     private func addBlur(){
         tabBar.backgroundImage = UIImage()
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .systemChromeMaterial))
         blur.frame = tabBar.bounds
         blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tabBar.insertSubview(blur, at: 0)
