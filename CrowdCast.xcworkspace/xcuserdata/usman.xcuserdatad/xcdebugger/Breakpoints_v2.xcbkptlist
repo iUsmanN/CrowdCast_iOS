@@ -318,8 +318,8 @@
             filePath = "CrowdCast/Source/Settings/CCSettingsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "setupNavBar()"
             landmarkType = "7">
          </BreakpointContent>

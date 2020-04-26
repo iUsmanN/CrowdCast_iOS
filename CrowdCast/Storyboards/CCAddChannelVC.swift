@@ -35,7 +35,7 @@ class CCAddChannelVC: UIViewController {
             case .success(let channel):
                 guard let parentVC = self?.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
                 parentVC.channelAdded(data: channel)
-                self?.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
                 print(error)
             }
