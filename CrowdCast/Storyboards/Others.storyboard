@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile2.png" translatesAutoresizingMaskIntoConstraints="NO" id="N2P-Ws-CiU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me2.png" translatesAutoresizingMaskIntoConstraints="NO" id="N2P-Ws-CiU">
                                 <rect key="frame" x="124" y="20" width="166" height="165.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N2P-Ws-CiU" secondAttribute="height" id="7gN-2K-iiG"/>
@@ -89,6 +89,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profile2.png" width="698" height="698"/>
+        <image name="me2.png" width="189" height="259"/>
     </resources>
 </document>

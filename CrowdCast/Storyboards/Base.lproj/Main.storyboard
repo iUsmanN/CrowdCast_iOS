@@ -16,9 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trans low.png" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trans.png" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-x0-TcT">
+                                <rect key="frame" x="0.0" y="434" width="414" height="462"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QnM-Hu-Z8e">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="462"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crowd Cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-Ch-YEz">
                                 <rect key="frame" x="30" y="84" width="156.5" height="41"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
@@ -176,7 +184,9 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="Pf9-QT-SMy" firstAttribute="top" secondItem="umP-du-28C" secondAttribute="bottom" constant="10" id="1Zg-uw-wZ1"/>
+                            <constraint firstAttribute="bottom" secondItem="Uue-x0-TcT" secondAttribute="bottom" id="2kR-zm-k9N"/>
                             <constraint firstItem="WeM-2j-rX2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6oA-6I-RlJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uue-x0-TcT" secondAttribute="trailing" id="804-Rr-av7"/>
                             <constraint firstItem="Pf9-QT-SMy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Zt-dM-sbG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XiU-ka-iwX" secondAttribute="bottom" constant="10" id="CtF-ij-pth"/>
                             <constraint firstItem="Nsi-Ch-YEz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="GQp-mj-TR9"/>
@@ -185,6 +195,7 @@
                             <constraint firstItem="aEA-RK-TZ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UmZ-oi-qJB"/>
                             <constraint firstItem="XiU-ka-iwX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X4t-Hd-t8i"/>
                             <constraint firstItem="WeM-2j-rX2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="azJ-lw-Fp4" secondAttribute="bottom" constant="30" id="b55-8E-4aT"/>
+                            <constraint firstItem="Uue-x0-TcT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cR2-yF-ZN8"/>
                             <constraint firstItem="umP-du-28C" firstAttribute="top" secondItem="Nsi-Ch-YEz" secondAttribute="bottom" constant="60" id="ebE-WK-91C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pf9-QT-SMy" secondAttribute="trailing" constant="30" id="iUm-Or-H1Z"/>
                             <constraint firstItem="umP-du-28C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="idK-Wr-maB"/>
@@ -194,6 +205,7 @@
                             <constraint firstItem="azJ-lw-Fp4" firstAttribute="trailing" secondItem="Pf9-QT-SMy" secondAttribute="trailing" id="q7r-Nm-Efx"/>
                             <constraint firstAttribute="trailing" secondItem="aEA-RK-TZ4" secondAttribute="trailing" id="spR-sX-Txu"/>
                             <constraint firstAttribute="bottom" secondItem="aEA-RK-TZ4" secondAttribute="bottom" id="tNU-bv-fIq"/>
+                            <constraint firstItem="Uue-x0-TcT" firstAttribute="top" secondItem="umP-du-28C" secondAttribute="bottom" id="xmg-zW-8Fv"/>
                             <constraint firstItem="azJ-lw-Fp4" firstAttribute="top" secondItem="Pf9-QT-SMy" secondAttribute="bottom" constant="10" id="yeD-ml-i1S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -543,6 +555,7 @@
         <image name="Walk.png" width="888" height="677"/>
         <image name="profile2.png" width="698" height="698"/>
         <image name="trans low.png" width="591" height="1280"/>
+        <image name="trans.png" width="591" height="1280"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
