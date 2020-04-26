@@ -56,11 +56,7 @@ extension CCChannelsVC {
                 self?.insertRows(at: indexPathsInput.1)
             case .remove:
                 self?.removeRows(at: indexPathsInput.1)
-                prints("remove at \(indexPathsInput.1)")
-                
-            }
-            
-            }).store(in: &combineCancellable)
+            }}).store(in: &combineCancellable)
     }
     
     func insertRows(at indexPaths: [IndexPath]) {
@@ -68,7 +64,8 @@ extension CCChannelsVC {
             self?.tableView.beginUpdates()
             self?.tableView.insertRows(at: indexPaths, with: .top)
             self?.tableView.endUpdates()
-            self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .bottom)
+            //self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
         }
     }
     
