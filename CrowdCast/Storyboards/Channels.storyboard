@@ -290,9 +290,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Id4-R8-Auf"/>
                                 </constraints>
-                                <vibrancyEffect style="fill">
-                                    <blurEffect style="regular"/>
-                                </vibrancyEffect>
+                                <blurEffect style="regular"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -344,7 +342,7 @@
             <color red="0.004999999888241291" green="0.41499999165534973" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="blue">
-            <color red="0.0045052426869999999" green="0.41469460730000002" blue="0.95178395510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.42745098039215684" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
