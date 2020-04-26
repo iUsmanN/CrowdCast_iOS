@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trans.png" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trans low.png" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-x0-TcT">
-                                <rect key="frame" x="0.0" y="434" width="414" height="462"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QnM-Hu-Z8e">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="462"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="regular"/>
@@ -33,7 +33,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walk.png" translatesAutoresizingMaskIntoConstraints="NO" id="umP-du-28C">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_imagination_ok71.png" translatesAutoresizingMaskIntoConstraints="NO" id="umP-du-28C">
                                 <rect key="frame" x="30" y="185" width="354" height="249"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="umP-du-28C" secondAttribute="height" multiplier="374:263" id="Svr-dU-tsa"/>
@@ -205,7 +205,7 @@
                             <constraint firstItem="azJ-lw-Fp4" firstAttribute="trailing" secondItem="Pf9-QT-SMy" secondAttribute="trailing" id="q7r-Nm-Efx"/>
                             <constraint firstAttribute="trailing" secondItem="aEA-RK-TZ4" secondAttribute="trailing" id="spR-sX-Txu"/>
                             <constraint firstAttribute="bottom" secondItem="aEA-RK-TZ4" secondAttribute="bottom" id="tNU-bv-fIq"/>
-                            <constraint firstItem="Uue-x0-TcT" firstAttribute="top" secondItem="umP-du-28C" secondAttribute="bottom" id="xmg-zW-8Fv"/>
+                            <constraint firstItem="Uue-x0-TcT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xmg-zW-8Fv"/>
                             <constraint firstItem="azJ-lw-Fp4" firstAttribute="top" secondItem="Pf9-QT-SMy" secondAttribute="bottom" constant="10" id="yeD-ml-i1S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -552,15 +552,14 @@
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
         <image name="Reading.png" width="1020" height="734"/>
-        <image name="Walk.png" width="888" height="677"/>
         <image name="profile2.png" width="698" height="698"/>
         <image name="trans low.png" width="591" height="1280"/>
-        <image name="trans.png" width="591" height="1280"/>
+        <image name="undraw_imagination_ok71.png" width="978" height="782"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.004999999888241291" green="0.41499999165534973" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0039215686274509803" green="0.41568627450980389" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
