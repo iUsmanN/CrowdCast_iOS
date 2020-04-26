@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CCUser           : Codable {
+struct CCUser           : Codable, CCContainsID {
     var id              : String?
     var firstName       : String?
     var lastName        : String?

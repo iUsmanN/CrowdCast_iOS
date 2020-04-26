@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import TwilioVideo
 
-enum callViewAction {
+enum dataAction {
     case insert
     case remove
 }
@@ -19,7 +19,7 @@ typealias callParticipantData = (Participant, VideoTrack?)
 
 class CCCallScreenVM: NSObject {
     
-    var participantCountPublisher   = PassthroughSubject<(callViewAction, [Int]), Never>()
+    var participantCountPublisher   = PassthroughSubject<(dataAction, [Int]), Never>()
     var callParticipants            : [callParticipantData]? = [callParticipantData]()
     var room                        : Room?
     

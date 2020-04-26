@@ -98,7 +98,7 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
         case 1:
             switch indexPath.row {
             case (viewModel?.adminRows.count ?? 1) - 1:
-                viewModel?.deleteChannel()
+                delete()
             default:
                 prints("")
             }
@@ -111,7 +111,6 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
 extension CCChannelDetailsVC {
     
     func dequeueCell<T: CCContainsCellData>(identifier: String, indexPath: IndexPath, type: T) -> UITableViewCell {
-        
         if var cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? T {
             cell.data = viewModel?.dataForCell(indexPath: indexPath)
             guard let cell = cell as? UITableViewCell else { return UITableViewCell() }
@@ -120,5 +119,23 @@ extension CCChannelDetailsVC {
             return cell
         }
         return UITableViewCell()
+    }
+}
+
+extension CCChannelDetailsVC {
+    
+    func delete(){
+        viewModel?.deleteChannel(completion: { (result) in
+            switch result {
+            case .success(let channel):
+                guard let parentVC = self.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
+                parentVC.channelRemoved(data: channel)
+                DispatchQueue.main.async { [weak self] in
+                    self?.navigationController?.popViewController(animated: true)
+                }
+            case .failure(let error):
+                prints("Error: \(error)")
+            }
+        })
     }
 }

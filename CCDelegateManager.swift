@@ -10,6 +10,7 @@ import Foundation
 
 protocol CCCreateChannelDelegate{
     func channelAdded(data: CCChannel)
+    func channelRemoved(data: CCChannel)
 }
 
 protocol CCJoinChannelDelegate{

@@ -63,15 +63,9 @@ extension CCChannelDetailsVM {
 
 extension CCChannelDetailsVM : CCChannelsService {
     
-    func deleteChannel() {
+    func deleteChannel(completion: ((Result<CCChannel, CCError>)->())?) {
         deleteChannel(channelInput: data) { (result) in
-            switch result {
-            case .success(let channel):
-                prints("Channel Deleted")
-            case .failure(let error):
-                prints("Channel Deletion Failure")
-            }
+            completion?(result)
         }
     }
-    
 }
