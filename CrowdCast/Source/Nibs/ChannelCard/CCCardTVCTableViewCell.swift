@@ -15,6 +15,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel                : CCCardTimeLabel!
     @IBOutlet weak var ownerLabel               : UILabel!
     @IBOutlet weak var membersCollectionView    : UICollectionView!
+    @IBOutlet weak var pingButton               : UIButton!
     
     var data : CCChannel? {
         didSet{
@@ -53,16 +54,25 @@ class CCCardTVCTableViewCell: UITableViewCell {
 
 extension CCCardTVCTableViewCell {
     
+    @IBAction func pinged(_ sender: Any) {
+        prints("Pinged")
+    }
+}
+
+extension CCCardTVCTableViewCell {
+    
     func setColors(color: String) {
         let c = UIColor(named: color)
         cardBackgroundView.layer.borderColor = c?.cgColor
         cardBackgroundView.layer.shadowColor = c?.cgColor
         titleLabel.textColor = c
         timeLabel.setView(inputColor: c)
+        pingButton.setImage(#imageLiteral(resourceName: "Bell").withRenderingMode(.alwaysTemplate), for: .normal)
+        pingButton.tintColor = c
     }
 }
 
-extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate {
+extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate, CCHapticEngine {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (data?.members?.count ?? 0) + (data?.owners?.count ?? 0)
@@ -70,5 +80,9 @@ extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        generateHapticFeedback(.light)
     }
 }

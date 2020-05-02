@@ -16,8 +16,9 @@ class CCCardMemberCell: UICollectionViewCell {
     }
 
     private func setupLayers(){
-        layer.cornerRadius  = frame.size.width/2
-        layer.borderWidth   = 2
-        layer.borderColor   = UIColor(named: "Inverted")?.cgColor
+        layer.cornerRadius  = 17
+        layer.borderWidth   = 0
+        layer.borderColor   = UIColor(named: "Foreground")?.cgColor
+        layoutIfNeeded()
     }
 }
