@@ -11,6 +11,11 @@ import UIKit
 class CCCardTimeLabel: UILabel {
     
     @IBOutlet var timeLabel: UILabel!
+    override var text: String? {
+        didSet {
+            timeLabel.text = text
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

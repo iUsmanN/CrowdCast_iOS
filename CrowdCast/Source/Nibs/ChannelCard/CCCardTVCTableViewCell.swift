@@ -21,6 +21,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
             titleLabel.text = data?.name
             ownerLabel.text = data?.owners?.first
             setColors(color: data?.color ?? "red")
+            timeLabel.text  = nil
         }
     }
     
@@ -36,13 +37,6 @@ class CCCardTVCTableViewCell: UITableViewCell {
         cardBackgroundView.layer.shadowOpacity  = 0.2
         cardBackgroundView.layer.shadowOffset   = CGSize(width: 0, height: 3)
         selectionStyle = .none
-    }
-    
-    func setupCell(channelData: CCChannel){
-        titleLabel.text = channelData.name ?? ""
-        ownerLabel.text = channelData.owners.flatMap({$0})?.joined(separator: ", ")
-        timeLabel.text  = "01:00pm"
-        setColors(color: channelData.color ?? "Main Accent")
     }
 }
 
