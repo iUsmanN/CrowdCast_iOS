@@ -24,6 +24,18 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QnM-Hu-Z8e">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvw-Zp-kyT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                            <color key="backgroundColor" name="Main Accent"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fvw-Zp-kyT" firstAttribute="leading" secondItem="QnM-Hu-Z8e" secondAttribute="leading" id="8LN-Mm-ZGQ"/>
+                                        <constraint firstItem="fvw-Zp-kyT" firstAttribute="top" secondItem="QnM-Hu-Z8e" secondAttribute="top" id="Vr5-xZ-4OK"/>
+                                        <constraint firstAttribute="bottom" secondItem="fvw-Zp-kyT" secondAttribute="bottom" id="a6q-P1-gzA"/>
+                                        <constraint firstAttribute="trailing" secondItem="fvw-Zp-kyT" secondAttribute="trailing" id="ecl-lP-YvY"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>

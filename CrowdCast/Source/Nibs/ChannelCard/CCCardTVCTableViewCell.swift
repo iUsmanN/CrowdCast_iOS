@@ -22,13 +22,19 @@ class CCCardTVCTableViewCell: UITableViewCell {
             ownerLabel.text = data?.owners?.first
             setColors(color: data?.color ?? "red")
             timeLabel.text  = nil
+            setupCollectionView()
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupLayers()
+        setupView()
         setColors(color: "blue")
+    }
+    
+    private func setupView() {
+        membersCollectionView.register(Nib.nibFor(Nib.reuseIdentifier.CCCardMemberCell), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell)
     }
     
     private func setupLayers(){
@@ -37,6 +43,11 @@ class CCCardTVCTableViewCell: UITableViewCell {
         cardBackgroundView.layer.shadowOpacity  = 0.2
         cardBackgroundView.layer.shadowOffset   = CGSize(width: 0, height: 3)
         selectionStyle = .none
+    }
+    
+    private func setupCollectionView(){
+        membersCollectionView.dataSource = self
+        membersCollectionView.delegate   = self
     }
 }
 
@@ -48,5 +59,16 @@ extension CCCardTVCTableViewCell {
         cardBackgroundView.layer.shadowColor = c?.cgColor
         titleLabel.textColor = c
         timeLabel.setView(inputColor: c)
+    }
+}
+
+extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (data?.members?.count ?? 0) + (data?.owners?.count ?? 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath)
     }
 }

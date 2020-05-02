@@ -64,7 +64,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "177">
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
                   uuid = "19A10A96-103F-4230-BE90-521D88774841 - 4956f13248a8fc4b"
@@ -79,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "193">
+                  offsetFromSymbolStart = "216">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -128,7 +128,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "376">
+                  offsetFromSymbolStart = "372">
                </Location>
                <Location
                   uuid = "ACFD12FA-1C76-4011-A48F-98DD737679BE - f8f2573bbe2456"
@@ -143,7 +143,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -176,7 +176,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
                   endingLineNumber = "41"
-                  offsetFromSymbolStart = "502">
+                  offsetFromSymbolStart = "452">
                </Location>
                <Location
                   uuid = "FF2F262D-5CE3-4AB6-BE54-102F444DC4AD - 4956f13248a8fc4b"
@@ -191,7 +191,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "177">
+                  offsetFromSymbolStart = "196">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -480,7 +480,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "128"
                   endingLineNumber = "128"
-                  offsetFromSymbolStart = "70">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   uuid = "8A26943F-6A77-41B0-87E7-5EE31EDF1797 - 208030c8553e0ada"
@@ -495,7 +495,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
                   endingLineNumber = "130"
-                  offsetFromSymbolStart = "212">
+                  offsetFromSymbolStart = "236">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -578,22 +578,6 @@
             endingLineNumber = "129"
             landmarkName = "removeCreatedChannel(channel:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CD73DB2C-39F6-448C-BBE7-DAC550972905"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardTime/CCCardTimeLabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "text"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
