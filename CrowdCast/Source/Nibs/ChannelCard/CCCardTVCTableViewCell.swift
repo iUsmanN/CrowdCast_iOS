@@ -22,8 +22,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
             titleLabel.text = data?.name
             CCUsersManager.sharedInstance.getUserNames(ids: data?.owners, completion: { (ownerNames) in
                 guard let name = ownerNames.first else { return }
-                self.ownerLabel.text = name
-            }) //data?.owners?.first
+                DispatchQueue.main.async { [weak self] in self?.ownerLabel.text = name } })
             setColors(color: data?.color ?? "red")
             timeLabel.text  = nil
             setupCollectionView()

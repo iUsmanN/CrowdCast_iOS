@@ -503,22 +503,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED00378E-EC1B-4E65-92CB-41B5BFF56E16"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "data"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "85FE9D90-7D99-4685-8ABE-BA16964530C5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -647,47 +631,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7643A5B9-48F1-40C5-AD50-8630C8784E6C"
+            uuid = "2B3563B0-A487-4E4B-B253-572494BF6F57"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift"
+            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "getUserNames(ids:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "data"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "7643A5B9-48F1-40C5-AD50-8630C8784E6C - 5a133c2334223e0c"
+                  uuid = "2B3563B0-A487-4E4B-B253-572494BF6F57 - f93841ac46d5ff06"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;CrowdCast.CCUser, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in CrowdCast.CCUsersManager.getUserNames(ids: Swift.Optional&lt;Swift.Array&lt;Swift.String&gt;&gt;, completion: (Swift.Array&lt;Swift.Optional&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "CrowdCast.CCCardTVCTableViewCell.data.didset : Swift.Optional&lt;CrowdCast.CCChannel&gt;"
                   moduleName = "CrowdCast"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "281">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "674">
                </Location>
                <Location
-                  uuid = "7643A5B9-48F1-40C5-AD50-8630C8784E6C - 5a133c2334223e0c"
+                  uuid = "2B3563B0-A487-4E4B-B253-572494BF6F57 - 231544cf75f3483a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;CrowdCast.CCUser, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in CrowdCast.CCUsersManager.getUserNames(ids: Swift.Optional&lt;Swift.Array&lt;Swift.String&gt;&gt;, completion: (Swift.Array&lt;Swift.Optional&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Optional&lt;Swift.String&gt;&gt;) -&gt; () in CrowdCast.CCCardTVCTableViewCell.data.didset : Swift.Optional&lt;CrowdCast.CCChannel&gt;"
                   moduleName = "CrowdCast"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "313">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "107">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -695,15 +679,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "61431E90-7B42-4F87-B108-66E255BD85C0"
+            uuid = "167FF279-0952-4DD5-AB5D-5DBF56655D62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardTVCTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "data"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6086FBF-F18F-4C79-AF09-33A40DC5C69D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getUserNames(ids:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8AC2430-06B4-430D-B320-9C98E6516C02"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "getUserNames(ids:completion:)"
             landmarkType = "7">
          </BreakpointContent>

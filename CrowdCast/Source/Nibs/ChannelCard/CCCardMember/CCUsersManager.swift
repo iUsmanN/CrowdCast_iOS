@@ -43,7 +43,7 @@ extension CCUsersManager : CCDispatchQueue {
                 self.fetchUserProfile(uid: id ?? "") { (result) in
                     switch result {
                     case .success(let user):
-                        CCUserDefaults.shared.users?.set(user, forKey: id ?? "")
+                        //CCUserDefaults.shared.users?.set(user, forKey: id ?? "")
                         presentUsers.append(user)
                         dispatchGroup.leave()
                     case .failure(_):
@@ -52,7 +52,7 @@ extension CCUsersManager : CCDispatchQueue {
                 }
             }
         }
-        dispatchGroup.notify(queue: .global(), work: DispatchWorkItem(qos: .userInteractive, flags: .init(), block: {
+        dispatchGroup.notify(queue: .global(), work: DispatchWorkItem(qos: .userInitiated, flags: .init(), block: {
             completion(presentUsers.map { (user) -> String? in
                 return user?.fullName()
             })
