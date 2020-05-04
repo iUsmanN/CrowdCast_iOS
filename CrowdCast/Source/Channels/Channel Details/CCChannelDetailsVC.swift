@@ -31,9 +31,7 @@ extension CCChannelDetailsVC : CCGetsViewController, CCHapticEngine {
         let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
         viewController.setupViewModel(channelData: viewModel?.data)
         generateHapticFeedback(.light)
-        DispatchQueue.main.async {  [weak self] in
-            self?.present(viewController, animated: true, completion: nil)
-        }
+        DispatchQueue.main.async {  [weak self] in self?.present(viewController, animated: true, completion: nil) }
     }
 }
 
@@ -46,12 +44,12 @@ extension CCChannelDetailsVC {
     func setupView(){
         tableView.dataSource = self
         tableView.delegate   = self
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel?.data.name
-        tableView.register(Nib.get.CCSwitchTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
-        tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
-        tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
-        tableView.register(Nib.get.CCTableViewHeader, forCellReuseIdentifier: Nib.reuseIdentifier.CCTableViewHeader)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(Nib.get.CCSwitchTVC,         forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
+        tableView.register(Nib.get.CCDetailsSegueTVC,   forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
+        tableView.register(Nib.get.CCTextCell,          forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
+        tableView.register(Nib.get.CCTableViewHeader,   forCellReuseIdentifier: Nib.reuseIdentifier.CCTableViewHeader)
     }
 }
 
@@ -130,9 +128,7 @@ extension CCChannelDetailsVC {
             case .success(let channel):
                 guard let parentVC = self.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
                 parentVC.channelRemoved(data: channel)
-                DispatchQueue.main.async { [weak self] in
-                    self?.navigationController?.popViewController(animated: true)
-                }
+                DispatchQueue.main.async { [weak self] in self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
                 prints("Error: \(error)")
             }

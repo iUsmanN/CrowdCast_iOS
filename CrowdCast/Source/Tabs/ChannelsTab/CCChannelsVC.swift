@@ -81,11 +81,11 @@ extension CCChannelsVC {
 extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController, CCHapticEngine {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.numberOfSections() ?? 0
+        1//return viewModel?.numberOfSections() ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfRows(section: section) ?? 0
+        1//return viewModel?.numberOfRows(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

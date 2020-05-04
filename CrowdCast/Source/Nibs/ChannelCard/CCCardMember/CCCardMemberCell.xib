@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me3.png" translatesAutoresizingMaskIntoConstraints="NO" id="io9-w2-kYk">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile2.png" translatesAutoresizingMaskIntoConstraints="NO" id="io9-w2-kYk">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
@@ -33,6 +33,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="me3.png" width="226" height="227"/>
+        <image name="profile2.png" width="698" height="698"/>
     </resources>
 </document>

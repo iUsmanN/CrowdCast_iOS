@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct CCIndividual     : Codable {
+struct CCIndividual     : Codable, CCContainsID {
+    var id              : String? 
     var firstName       : String?
     var lastName        : String?
     var email           : String?
+    
+    func fullName() -> String {
+        guard let firstName = firstName, let lastName = lastName else { return String() }
+        return "\(firstName) \(lastName)"
+    }
 }

@@ -22,7 +22,7 @@ struct CCAddChannelVM {
 extension CCAddChannelVM {
     
     func channelOwner() -> String {
-        return "\(CCUserManager.sharedInstance.getProfile()?.fullName() ?? String()) (You)"
+        return "\(CCProfileManager.sharedInstance.getProfile()?.fullName() ?? String()) (You)"
     }
     
     func numberOfColors() -> Int {
@@ -40,7 +40,7 @@ extension CCAddChannelVM : CCChannelsService {
         let channel = CCChannel(id: nil,
                                 name: nameInput,
                                 description: descriptionInput,
-                                owners: [CCUserManager.sharedInstance.getUID()],
+                                owners: [CCProfileManager.sharedInstance.getUID()],
                                 members: nil,
                                 color: colors[selectedColor])
         createChannel(channelInput: channel, completion: completion)

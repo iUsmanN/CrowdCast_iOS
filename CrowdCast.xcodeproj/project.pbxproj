@@ -64,6 +64,8 @@
 		B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67962132432567A00C2A13C /* CCCrowdsVC.swift */; };
 		B67E8C56245DF237002FAD55 /* CCCardMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C54245DF237002FAD55 /* CCCardMemberCell.swift */; };
 		B67E8C57245DF237002FAD55 /* CCCardMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67E8C55245DF237002FAD55 /* CCCardMemberCell.xib */; };
+		B67E8C5924609FE0002FAD55 /* CCUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */; };
+		B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */; };
 		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
 		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
 		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
@@ -75,7 +77,7 @@
 		B693E30D24312C7B002B26BC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693E30C24312C7B002B26BC /* Home.storyboard */; };
 		B6974880243B96E800AE95C0 /* CCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697487F243B96E800AE95C0 /* CCUser.swift */; };
 		B6974882243B977400AE95C0 /* CCUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974881243B977400AE95C0 /* CCUserService.swift */; };
-		B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCUserManager.swift */; };
+		B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCProfileManager.swift */; };
 		B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */; };
 		B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */; };
 		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
@@ -210,6 +212,8 @@
 		B67962132432567A00C2A13C /* CCCrowdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdsVC.swift; sourceTree = "<group>"; };
 		B67E8C54245DF237002FAD55 /* CCCardMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardMemberCell.swift; sourceTree = "<group>"; };
 		B67E8C55245DF237002FAD55 /* CCCardMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCardMemberCell.xib; sourceTree = "<group>"; };
+		B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUsersManager.swift; path = CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift; sourceTree = SOURCE_ROOT; };
+		B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserDefaults.swift; sourceTree = "<group>"; };
 		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
 		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
@@ -221,7 +225,7 @@
 		B693E30C24312C7B002B26BC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B697487F243B96E800AE95C0 /* CCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUser.swift; sourceTree = "<group>"; };
 		B6974881243B977400AE95C0 /* CCUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserService.swift; sourceTree = "<group>"; };
-		B6974883243B987600AE95C0 /* CCUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUserManager.swift; path = CrowdCast/Services/CCUserManager.swift; sourceTree = SOURCE_ROOT; };
+		B6974883243B987600AE95C0 /* CCProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCProfileManager.swift; path = CrowdCast/Services/CCProfileManager.swift; sourceTree = SOURCE_ROOT; };
 		B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_celebration_0jvk (1).png"; sourceTree = "<group>"; };
 		B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatchQueue.swift; sourceTree = "<group>"; };
 		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 				B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */,
 				B6244DDB244F82B900E52669 /* CCTypeAliases.swift */,
 				B6D04E752455D70D005F4E61 /* CCRoundButton.swift */,
+				B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -791,9 +796,10 @@
 			children = (
 				B679620A2432509300C2A13C /* CCConstantsManager.swift */,
 				B64E4CF0243890510011715A /* CCNibManager.swift */,
-				B6974883243B987600AE95C0 /* CCUserManager.swift */,
+				B6974883243B987600AE95C0 /* CCProfileManager.swift */,
 				B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */,
 				B65A70E0244F109E004BB001 /* CCDelegateManager.swift */,
+				B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1184,6 +1190,7 @@
 				B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */,
 				B6BD90D52437137E00F50848 /* CCOverviewVM.swift in Sources */,
 				B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */,
+				B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */,
 				B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */,
 				B6244DD9244F813F00E52669 /* CCSwitchTVC.swift in Sources */,
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
@@ -1195,6 +1202,7 @@
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B6DDB0A4244CB713007B5808 /* CCAddChannelVM.swift in Sources */,
+				B67E8C5924609FE0002FAD55 /* CCUsersManager.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */,
@@ -1220,7 +1228,7 @@
 				B67E8C56245DF237002FAD55 /* CCCardMemberCell.swift in Sources */,
 				B64E4D142439F4850011715A /* CCContainsOwners.swift in Sources */,
 				B64E4D052439E7A40011715A /* CCIndividual.swift in Sources */,
-				B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */,
+				B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */,
 				B64E4CF82438A1D50011715A /* CCCardTimeLabel.swift in Sources */,
 				B6974880243B96E800AE95C0 /* CCUser.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,

@@ -20,7 +20,10 @@ class CCCardTVCTableViewCell: UITableViewCell {
     var data : CCChannel? {
         didSet{
             titleLabel.text = data?.name
-            ownerLabel.text = data?.owners?.first
+            CCUsersManager.sharedInstance.getUserNames(ids: data?.owners, completion: { (ownerNames) in
+                guard let name = ownerNames.first else { return }
+                self.ownerLabel.text = name
+            }) //data?.owners?.first
             setColors(color: data?.color ?? "red")
             timeLabel.text  = nil
             setupCollectionView()
@@ -32,6 +35,10 @@ class CCCardTVCTableViewCell: UITableViewCell {
         setupLayers()
         setupView()
         setColors(color: "blue")
+    }
+    
+    override func prepareForReuse() {
+        membersCollectionView.reloadData()
     }
     
     private func setupView() {
@@ -55,7 +62,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
 extension CCCardTVCTableViewCell {
     
     @IBAction func pinged(_ sender: Any) {
-        prints("Pinged")
+        generateHapticFeedback(.rigid)
     }
 }
 

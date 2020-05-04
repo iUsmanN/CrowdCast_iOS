@@ -40,8 +40,8 @@ class CCSettingsVC: UIViewController {
     func setupProfileInfo(){
         profileImage.layer.borderColor = UIColor(named: "Main Accent")?.cgColor
         profileImage.layer.borderWidth = 1.5
-        nameLabel.text = CCUserManager.sharedInstance.getProfile()?.fullName()
-        emailLabel.text = CCUserManager.sharedInstance.getProfile()?.email
+        nameLabel.text = CCProfileManager.sharedInstance.getProfile()?.fullName()
+        emailLabel.text = CCProfileManager.sharedInstance.getProfile()?.email
     }
 }
 

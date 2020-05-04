@@ -11,6 +11,8 @@ import TwilioVideo
 
 struct CCChannelDetailsVM {
     
+    var sectionTitles       : [String] = ["JOIN CHANNEL", "CHANNEL ACTIONS", "ADMIN ACTIONS"]
+    
     var channelRows         : [CCCellData] = [
         CCCellData(title: "Video", switchActions: nil),
         CCCellData(title: "Audio", switchActions: nil),
@@ -36,7 +38,7 @@ struct CCChannelDetailsVM {
 extension CCChannelDetailsVM {
     
     func numberOfSections() -> Int {
-        return 2
+        return sectionTitles.count
     }
     
     func numberOfRows(section: Int) -> Int {

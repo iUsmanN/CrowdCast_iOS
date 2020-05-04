@@ -90,7 +90,7 @@ extension CCLoginVC {
 extension CCLoginVC : CCGetsViewController{
     
     func syncUserData(uid: String){
-        CCUserManager.sharedInstance.syncData(uid: uid){ [weak self] callbackResult in
+        CCProfileManager.sharedInstance.syncData(uid: uid){ [weak self] callbackResult in
             switch callbackResult {
             case .success(_)            : self?.moveToHome()
             case .failure(let error)    : self?.signInFailed(error: error)
