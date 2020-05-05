@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D914FA2F03C860D5133BA2DB87C594A"
-               BuildableName = "DynamicBlurView.framework"
-               BlueprintName = "DynamicBlurView"
+               BlueprintIdentifier = "23E7C4A52360C026F97E4A96D91B03CE"
+               BuildableName = "FirebaseStorage.framework"
+               BlueprintName = "FirebaseStorage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
