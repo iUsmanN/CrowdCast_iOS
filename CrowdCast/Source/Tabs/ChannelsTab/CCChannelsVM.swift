@@ -19,7 +19,6 @@ class CCChannelsVM {
     ]
     
     let channelsPublisher = PassthroughSubject<(dataAction, [IndexPath]), Never>()
-    
     var myChannels      = paginatedData<CCChannel>()
     var joinedChannels  = paginatedData<CCChannel>()
     
@@ -115,6 +114,12 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
                                                                      oldJoinedChannelCount: joinedChannels.data.count,
                                                                      newJoinedChannelCount: newJoinedChannels,
                                                                      countTuple: (newCreatedChannels, newJoinedChannels)) ))
+    }
+    
+    func reloadData() {
+        myChannels.clearData()
+        joinedChannels.clearData()
+        getData()
     }
 }
 

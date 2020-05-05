@@ -28,4 +28,9 @@ struct paginatedData<T:CCContainsID>{
         data.remove(at: index)
         return index
     }
+    
+    mutating func clearData(){
+        data = [T]()
+        next = nil
+    }
 }
