@@ -18,8 +18,7 @@ class CCChannelsVM {
         CCSectionHeaderData(title: "Joined Channels", rightButtonTitle: "Join Channel"  , rightButtonAction: .joinChannel)
     ]
     
-    let channelsPublisher = PassthroughSubject<[IndexPath], Never>()
-    
+    let channelsPublisher = PassthroughSubject<(dataAction, [IndexPath]), Never>()
     var myChannels      = paginatedData<CCChannel>()
     var joinedChannels  = paginatedData<CCChannel>()
     
@@ -105,22 +104,34 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
         
         dg.notify(queue: .global()) { [weak self] in
             prints("Make index paths")
-            self?.publishChannelUpdates(newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
+            self?.publishChannelUpdates(action: .insert, newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
         }
     }
     
-    func publishChannelUpdates(newCreatedChannels: Int, newJoinedChannels: Int){
-        channelsPublisher.send(getDualIndexPaths(oldMyChannelCount: myChannels.data.count,
-                                                             newMyChannelCount: newCreatedChannels,
-                                                             oldJoinedChannelCount: joinedChannels.data.count,
-                                                             newJoinedChannelCount: newJoinedChannels,
-                                                             countTuple: (newCreatedChannels, newJoinedChannels)) ?? [IndexPath]())
+    func publishChannelUpdates(action: dataAction, newCreatedChannels: Int, newJoinedChannels: Int){
+        channelsPublisher.send((action, getDualIndexPaths(oldMyChannelCount: myChannels.data.count,
+                                                                     newMyChannelCount: newCreatedChannels,
+                                                                     oldJoinedChannelCount: joinedChannels.data.count,
+                                                                     newJoinedChannelCount: newJoinedChannels,
+                                                                     countTuple: (newCreatedChannels, newJoinedChannels)) ))
+    }
+    
+    func reloadData() {
+        myChannels.clearData()
+        joinedChannels.clearData()
+        getData()
     }
 }
 
 extension CCChannelsVM {
     func addCreatedChannel(channel: CCChannel){
         myChannels.insertData(input: channel)
-        publishChannelUpdates(newCreatedChannels: 1, newJoinedChannels: 0)
+        publishChannelUpdates(action: .insert, newCreatedChannels: 1, newJoinedChannels: 0)
+    }
+    
+    func removeCreatedChannel(channel: CCChannel){
+        guard let removalIndex = myChannels.removeData(input: channel) else { return }
+        channelsPublisher.send((dataAction.remove, myChannelsRemovalIndexPath(index: removalIndex)))
+        prints("Removed Data")
     }
 }

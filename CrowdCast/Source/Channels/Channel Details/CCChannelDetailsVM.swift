@@ -11,17 +11,20 @@ import TwilioVideo
 
 struct CCChannelDetailsVM {
     
+    var sectionTitles       : [String] = ["JOIN CHANNEL", "CHANNEL ACTIONS", "ADMIN ACTIONS"]
+    
     var channelRows         : [CCCellData] = [
         CCCellData(title: "Video", switchActions: nil),
         CCCellData(title: "Audio", switchActions: nil),
         CCCellData(title: "Participants"),
-        CCCellData(title: "Accent Color")
+        CCCellData(title: "Accent Color"),
+        CCCellData(title: "Leave", titleColor: #colorLiteral(red: 1, green: 0.01136767322, blue: 0, alpha: 1))
     ]
     
     var adminRows           : [CCCellData] = [
         CCCellData(title: "Paritcipant Requests"),
         CCCellData(title: "Channel Managers"),
-        CCCellData(title: "Delete", titleColor: #colorLiteral(red: 0.9227048251, green: 0.08703707769, blue: 0.1209332793, alpha: 1))
+        CCCellData(title: "Delete", titleColor: #colorLiteral(red: 1, green: 0, blue: 0.03409014148, alpha: 1))
     ]
     
     var data                = CCChannel()
@@ -35,7 +38,7 @@ struct CCChannelDetailsVM {
 extension CCChannelDetailsVM {
     
     func numberOfSections() -> Int {
-        return 2
+        return sectionTitles.count
     }
     
     func numberOfRows(section: Int) -> Int {
@@ -57,6 +60,15 @@ extension CCChannelDetailsVM {
             return adminRows[indexPath.row]
         default:
             return CCCellData(title: "NONE", switchActions: nil)
+        }
+    }
+}
+
+extension CCChannelDetailsVM : CCChannelsService {
+    
+    func deleteChannel(completion: ((Result<CCChannel, CCError>)->())?) {
+        deleteChannel(channelInput: data) { (result) in
+            completion?(result)
         }
     }
 }

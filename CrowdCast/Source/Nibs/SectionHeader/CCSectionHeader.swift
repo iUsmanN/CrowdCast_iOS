@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 class CCSectionHeader: UITableViewCell {
     
+    static var bulletin             = CCBulletinManager()
+    
     @IBOutlet weak var headerLabel  : UILabel!
     @IBOutlet weak var rightButton  : UIButton!
     var rightButtonAction           : CardHeaderAction?
@@ -31,6 +33,7 @@ class CCSectionHeader: UITableViewCell {
     func setValues(data: CCSectionHeaderData, navigationController: UINavigationController?){
         self.data                       = data
         self.parentNavigationController = navigationController
+        CCSectionHeader.bulletin.manager?.backgroundViewStyle = .blurred(style: .regular, isDark: false)
     }
 }
 
@@ -46,7 +49,7 @@ extension CCSectionHeader : CCAddChannel, CCJoinChannel {
             prints("newGroup")
         case .joinChannel:
             prints("joinChannel")
-            joinChannel()
+            joinChannel(CCSectionHeader.bulletin)
         case .joinGroup:
             prints("joinGroup")
         case .viewAll:

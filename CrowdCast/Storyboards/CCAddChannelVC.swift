@@ -14,6 +14,7 @@ class CCAddChannelVC: UIViewController {
     @IBOutlet weak var nameTextField        : TweeActiveTextField!
     @IBOutlet weak var descriptionTextField : TweeActiveTextField!
     @IBOutlet weak var ownerTextField       : TweeBorderedTextField!
+    @IBOutlet weak var colorCollectionView  : UICollectionView!
     
     var viewModel = CCAddChannelVM()
     
@@ -34,7 +35,7 @@ class CCAddChannelVC: UIViewController {
             case .success(let channel):
                 guard let parentVC = self?.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
                 parentVC.channelAdded(data: channel)
-                self?.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
                 print(error)
             }
@@ -45,6 +46,8 @@ class CCAddChannelVC: UIViewController {
 extension CCAddChannelVC {
     
     func setupView(){
+        colorCollectionView.dataSource  = self
+        colorCollectionView.delegate    = self
         setupNavigationBar()
         ownerTextField.text = viewModel.channelOwner()
     }
@@ -52,5 +55,22 @@ extension CCAddChannelVC {
     func setupNavigationBar(){
         navigationItem.title = "Create Channel"
         navigationController?.navigationBar.isTranslucent = false
+    }
+}
+
+extension CCAddChannelVC : UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfColors()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CCColorCell", for: indexPath) as? CCColorCell else { return UICollectionViewCell() }
+        cell.color = viewModel.colorForItemAt(indexPath: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selectedColor = indexPath.row
     }
 }

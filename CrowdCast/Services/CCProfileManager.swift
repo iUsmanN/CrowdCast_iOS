@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CCUserManager {
-    static let sharedInstance = CCUserManager()
+class CCProfileManager {
+    static let sharedInstance = CCProfileManager()
     private var profile : CCUser?
     
     private init(){}
@@ -27,7 +27,7 @@ class CCUserManager {
     }
 }
 
-extension CCUserManager {
+extension CCProfileManager {
     
     func getProfile() -> CCUser? {
         return profile
@@ -38,7 +38,7 @@ extension CCUserManager {
         return uid
     }
 }
-extension CCUserManager : CCUserService {
+extension CCProfileManager : CCUserService {
     
     private func fetchProfile(uid: String, result: @escaping (Result<CCUser, CCError>) -> ()){
         fetchUserProfile(uid: uid) { [weak self] (callbackResult) in

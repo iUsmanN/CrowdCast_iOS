@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct CCSettingsVM {
+    let data = [
+        CCCellData(title: "Logout", titleColor: .red)
+    ]
+}
+
+extension CCSettingsVM {
+    
+    func numberOfRows() -> Int {
+        return data.count
+    }
+    
+    func cellDataFor(indexPath: IndexPath) -> CCCellData {
+        return data[indexPath.row]
+    }
+}

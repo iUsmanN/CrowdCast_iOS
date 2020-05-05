@@ -20,4 +20,6 @@ enum CCError : Error {
     case twilioCredentialsError
     
     case channelDataWriteFailure
+    
+    case RequiredValuesEmpty
 }

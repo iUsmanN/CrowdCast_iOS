@@ -25,6 +25,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>DynamicBlurView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
+		</dict>
 		<key>Firebase.xcscheme</key>
 		<dict>
 			<key>isShown</key>

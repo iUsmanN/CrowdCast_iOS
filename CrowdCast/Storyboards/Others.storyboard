@@ -15,20 +15,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoT-Qv-IUg">
-                                <rect key="frame" x="184" y="144" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="PEo-wc-7fM" kind="show" id="gpS-F3-OFZ"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me3.png" translatesAutoresizingMaskIntoConstraints="NO" id="N2P-Ws-CiU">
+                                <rect key="frame" x="124" y="20" width="166" height="165.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N2P-Ws-CiU" secondAttribute="height" id="7gN-2K-iiG"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X61-EF-tmM">
+                                <rect key="frame" x="25" y="195.5" width="364" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usman Nazir" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yq-KF-8An">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usmannzr@live.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJH-YM-hyH">
+                                        <rect key="frame" x="0.0" y="30.5" width="364" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K7K-2Y-yuR">
+                                <rect key="frame" x="0.0" y="272.5" width="414" height="501.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="N2P-Ws-CiU" firstAttribute="top" secondItem="8Ak-hd-8oR" secondAttribute="top" constant="20" id="3ML-G9-aQQ"/>
+                            <constraint firstItem="N2P-Ws-CiU" firstAttribute="width" secondItem="8Ak-hd-8oR" secondAttribute="width" multiplier="0.4" id="Sst-Hs-hcA"/>
+                            <constraint firstItem="X61-EF-tmM" firstAttribute="leading" secondItem="8Ak-hd-8oR" secondAttribute="leading" constant="25" id="UTx-mC-EJc"/>
+                            <constraint firstItem="8Ak-hd-8oR" firstAttribute="bottom" secondItem="K7K-2Y-yuR" secondAttribute="bottom" id="eNk-cB-Bwe"/>
+                            <constraint firstItem="N2P-Ws-CiU" firstAttribute="centerX" secondItem="Gue-PP-zPG" secondAttribute="centerX" id="eVi-PQ-DVd"/>
+                            <constraint firstItem="8Ak-hd-8oR" firstAttribute="trailing" secondItem="K7K-2Y-yuR" secondAttribute="trailing" id="ld9-w2-EVZ"/>
+                            <constraint firstItem="K7K-2Y-yuR" firstAttribute="top" secondItem="X61-EF-tmM" secondAttribute="bottom" constant="30" id="o2M-q7-vzw"/>
+                            <constraint firstItem="K7K-2Y-yuR" firstAttribute="leading" secondItem="8Ak-hd-8oR" secondAttribute="leading" id="ovh-lG-gFK"/>
+                            <constraint firstItem="8Ak-hd-8oR" firstAttribute="trailing" secondItem="X61-EF-tmM" secondAttribute="trailing" constant="25" id="t8H-1H-A4A"/>
+                            <constraint firstItem="X61-EF-tmM" firstAttribute="top" secondItem="N2P-Ws-CiU" secondAttribute="bottom" constant="10" id="thE-qk-ucF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ak-hd-8oR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="Hzs-tU-Zvm"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="WJH-YM-hyH" id="gEw-2E-cfW"/>
+                        <outlet property="nameLabel" destination="2Yq-KF-8An" id="vG7-SZ-yGf"/>
+                        <outlet property="profileImage" destination="N2P-Ws-CiU" id="34v-yW-FPV"/>
+                        <outlet property="tableView" destination="K7K-2Y-yuR" id="k0z-yH-Tfc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gi5-d8-gs6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +76,7 @@
             <objects>
                 <viewController title="Yo" modalPresentationStyle="fullScreen" id="PEo-wc-7fM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ecF-DD-rUI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OaZ-r9-84f"/>
@@ -51,4 +88,7 @@
             <point key="canvasLocation" x="2573.913043478261" y="44.866071428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="me3.png" width="226" height="227"/>
+    </resources>
 </document>

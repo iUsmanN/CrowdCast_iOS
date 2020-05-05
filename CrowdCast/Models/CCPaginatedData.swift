@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-struct paginatedData<T>{
+struct paginatedData<T:CCContainsID>{
     var data = [T]()
     var next : CollectionReference?
     
@@ -19,5 +19,18 @@ struct paginatedData<T>{
     
     mutating func insertData(input: T){
         self.data.insert(input, at: 0)
+    }
+    
+    mutating func removeData(input: T) -> Int? {
+        guard let index = data.firstIndex(where: { (object) -> Bool in
+            object.id == input.id
+        }) else { return nil }
+        data.remove(at: index)
+        return index
+    }
+    
+    mutating func clearData(){
+        data = [T]()
+        next = nil
     }
 }

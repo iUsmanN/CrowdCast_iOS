@@ -24,20 +24,20 @@ protocol CCAddChannel : CCSectionHeader, CCGetsViewController {}
 extension CCAddChannel {
     
     func addChannel(){
-        parentNavigationController?.pushViewController(instantiateViewController(storyboard: .Channels,
-                                                                                 viewController: .CCAddChannelVC,
-                                                                                 as: CCAddChannelVC()),
-                                                                                 animated: true)
+        guard let nc = (window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController else { return }
+        nc.pushViewController(instantiateViewController(storyboard: .Channels,
+                                                        viewController: .CCAddChannelVC,
+                                                        as: CCAddChannelVC()),
+                                                        animated: true)
     }
 }
 
 protocol CCJoinChannel : CCSectionHeader {}
 extension CCJoinChannel {
     
-    func joinChannel(){
-        parentNavigationController?.pushViewController(instantiateViewController(storyboard: .Channels,
-                                                                                 viewController: .CCJoinChannelVC,
-                                                                                 as: CCJoinChannelVC()),
-                                                                                 animated: true)
+    func joinChannel(_ bulletinManager: CCBulletinManager){
+        bulletinManager.setItem(item: CCBulletinManager.joinChannel())
+        guard let nc = ((window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController)?.topViewController else { return }
+        bulletinManager.manager?.showBulletin(above: nc)
     }
 }

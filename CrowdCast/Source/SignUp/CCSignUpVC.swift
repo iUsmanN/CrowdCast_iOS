@@ -74,7 +74,7 @@ extension CCSignUpVC {
     func signUpSuccess(uid: String?){
         guard let uid = uid else { return }
         print("signed up successfully.")
-        CCUserManager.sharedInstance.syncData(uid: uid){ callbackResult in
+        CCProfileManager.sharedInstance.syncData(uid: uid){ callbackResult in
             
         }
     }

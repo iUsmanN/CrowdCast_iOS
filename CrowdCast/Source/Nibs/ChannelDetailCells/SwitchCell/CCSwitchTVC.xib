@@ -20,6 +20,7 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaU-n7-VoG">
                         <rect key="frame" x="246" y="6.5" width="51" height="31"/>
                         <color key="onTintColor" name="Main Accent"/>
+                        <color key="thumbTintColor" name="Foreground"/>
                         <connections>
                             <action selector="switchPressed:" destination="KGk-i7-Jjw" eventType="valueChanged" id="VSQ-76-cJv"/>
                         </connections>
@@ -51,8 +52,11 @@
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Foreground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.004999999888241291" green="0.41499999165534973" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0040000001899898052" green="0.41600000858306885" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

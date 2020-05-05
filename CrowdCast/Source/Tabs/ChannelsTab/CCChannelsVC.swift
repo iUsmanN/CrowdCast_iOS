@@ -51,8 +51,12 @@ extension CCChannelsVC {
     
     func bindVM(){
         viewModel?.channelsPublisher.sink(receiveValue: { [weak self] (indexPathsInput) in
-            self?.insertRows(at: indexPathsInput)
-            }).store(in: &combineCancellable)
+            switch indexPathsInput.0 {
+            case .insert:
+                self?.insertRows(at: indexPathsInput.1)
+            case .remove:
+                self?.removeRows(at: indexPathsInput.1)
+            }}).store(in: &combineCancellable)
     }
     
     func insertRows(at indexPaths: [IndexPath]) {
@@ -60,7 +64,16 @@ extension CCChannelsVC {
             self?.tableView.beginUpdates()
             self?.tableView.insertRows(at: indexPaths, with: .top)
             self?.tableView.endUpdates()
-            self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .bottom)
+            //self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
+        }
+    }
+    
+    func removeRows(at indexPath: [IndexPath]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.beginUpdates()
+            self?.tableView.deleteRows(at: indexPath, with: .right)
+            self?.tableView.endUpdates()
         }
     }
 }
@@ -113,5 +126,9 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
 extension CCChannelsVC : CCCreateChannelDelegate {
     func channelAdded(data: CCChannel) {
         viewModel?.addCreatedChannel(channel: data)
+    }
+    
+    func channelRemoved(data: CCChannel) {
+        viewModel?.removeCreatedChannel(channel: data)
     }
 }

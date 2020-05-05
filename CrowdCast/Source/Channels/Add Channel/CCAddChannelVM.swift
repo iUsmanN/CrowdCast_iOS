@@ -7,26 +7,42 @@
 //
 
 import Foundation
+import UIKit
 
 struct CCAddChannelVM {
-    
+    var selectedColor = 0
+    let colors : [String] = [
+        "Main Accent",
+        "red",
+        "green",
+        "yellow"
+    ]
 }
 
 extension CCAddChannelVM {
     
     func channelOwner() -> String {
-        return "\(CCUserManager.sharedInstance.getProfile()?.fullName() ?? String()) (You)"
+        return "\(CCProfileManager.sharedInstance.getProfile()?.fullName() ?? String()) (You)"
+    }
+    
+    func numberOfColors() -> Int {
+        return colors.count
+    }
+    
+    func colorForItemAt(indexPath: IndexPath) -> UIColor? {
+        return UIColor(named: colors[indexPath.row])
     }
 }
 
 extension CCAddChannelVM : CCChannelsService {
-    func addChannel(nameInput: String?, descriptionInput: String?, completion: @escaping ((Result<CCChannel, Error>)->())){
+    func addChannel(nameInput: String?, descriptionInput: String?, completion: @escaping ((Result<CCChannel, CCError>)->())){
+        guard nameInput != nil else { completion(.failure(.RequiredValuesEmpty)); return }
         let channel = CCChannel(id: nil,
                                 name: nameInput,
                                 description: descriptionInput,
-                                owners: [CCUserManager.sharedInstance.getUID()],
+                                owners: [CCProfileManager.sharedInstance.getUID()],
                                 members: nil,
-                                color: "red")
+                                color: colors[selectedColor])
         createChannel(channelInput: channel, completion: completion)
     }
 }

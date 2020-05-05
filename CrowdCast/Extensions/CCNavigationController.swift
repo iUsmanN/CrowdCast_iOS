@@ -17,5 +17,9 @@ class CCNavigationController: UINavigationController {
     
     func setupNavigationBar() {
         navigationBar.tintColor = UIColor(named: "Main Accent")
+        navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.red,
+            NSAttributedString.Key.font : UIFont(name: "Avenir", size: 20)
+        ]
     }
 }

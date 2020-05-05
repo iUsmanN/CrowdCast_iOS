@@ -26,6 +26,9 @@
 		B61C90F52441DCF000F6B8A9 /* CCCallScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */; };
 		B61C90F72441E98E00F6B8A9 /* boys.png in Resources */ = {isa = PBXBuildFile; fileRef = B61C90F62441E98E00F6B8A9 /* boys.png */; };
 		B61E79112442420900D773E0 /* CCReachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E79102442420900D773E0 /* CCReachibility.swift */; };
+		B61F3E49245872FB000FF940 /* lines only.png in Resources */ = {isa = PBXBuildFile; fileRef = B61F3E47245872FA000FF940 /* lines only.png */; };
+		B61F3E4A245872FB000FF940 /* 3 lines.png in Resources */ = {isa = PBXBuildFile; fileRef = B61F3E48245872FB000FF940 /* 3 lines.png */; };
+		B61F3E4D24587C04000FF940 /* CCBulletinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F3E4C24587C04000FF940 /* CCBulletinManager.swift */; };
 		B6244DD9244F813F00E52669 /* CCSwitchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6244DD7244F813F00E52669 /* CCSwitchTVC.swift */; };
 		B6244DDA244F813F00E52669 /* CCSwitchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6244DD8244F813F00E52669 /* CCSwitchTVC.xib */; };
 		B6244DDC244F82B900E52669 /* CCTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6244DDB244F82B900E52669 /* CCTypeAliases.swift */; };
@@ -59,6 +62,10 @@
 		B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679620F2432565D00C2A13C /* CCOverviewVC.swift */; };
 		B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67962112432566D00C2A13C /* CCChannelsVC.swift */; };
 		B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67962132432567A00C2A13C /* CCCrowdsVC.swift */; };
+		B67E8C56245DF237002FAD55 /* CCCardMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C54245DF237002FAD55 /* CCCardMemberCell.swift */; };
+		B67E8C57245DF237002FAD55 /* CCCardMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67E8C55245DF237002FAD55 /* CCCardMemberCell.xib */; };
+		B67E8C5924609FE0002FAD55 /* CCUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */; };
+		B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */; };
 		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
 		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
 		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
@@ -70,7 +77,7 @@
 		B693E30D24312C7B002B26BC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693E30C24312C7B002B26BC /* Home.storyboard */; };
 		B6974880243B96E800AE95C0 /* CCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697487F243B96E800AE95C0 /* CCUser.swift */; };
 		B6974882243B977400AE95C0 /* CCUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974881243B977400AE95C0 /* CCUserService.swift */; };
-		B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCUserManager.swift */; };
+		B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCProfileManager.swift */; };
 		B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */; };
 		B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */; };
 		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
@@ -94,6 +101,18 @@
 		B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */; };
 		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
 		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
+		B6D04E6424547E9F005F4E61 /* CCColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E6324547E9F005F4E61 /* CCColorCell.swift */; };
+		B6D04E68245493AE005F4E61 /* back transparent.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E65245493AD005F4E61 /* back transparent.jpeg */; };
+		B6D04E69245493AE005F4E61 /* bottom.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E66245493AE005F4E61 /* bottom.jpeg */; };
+		B6D04E6A245493AE005F4E61 /* back.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E67245493AE005F4E61 /* back.jpeg */; };
+		B6D04E6C24558851005F4E61 /* trans.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E6B24558851005F4E61 /* trans.png */; };
+		B6D04E6E24558946005F4E61 /* trans low.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E6D24558946005F4E61 /* trans low.png */; };
+		B6D04E7024558DD4005F4E61 /* CCContainsID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E6F24558DD4005F4E61 /* CCContainsID.swift */; };
+		B6D04E722455AAA7005F4E61 /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E712455AAA7005F4E61 /* profile2.png */; };
+		B6D04E742455AFD3005F4E61 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E732455AFD3005F4E61 /* me.png */; };
+		B6D04E762455D70D005F4E61 /* CCRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E752455D70D005F4E61 /* CCRoundButton.swift */; };
+		B6D04E7A2455DF92005F4E61 /* me3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E792455DF92005F4E61 /* me3.png */; };
+		B6D04E802455EC67005F4E61 /* undraw_imagination_ok71.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E7F2455EC66005F4E61 /* undraw_imagination_ok71.png */; };
 		B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55124277A1A001BEBBC /* AppDelegate.swift */; };
 		B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */; };
 		B6D7F55924277A1A001BEBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7F55724277A1A001BEBBC /* Main.storyboard */; };
@@ -155,6 +174,9 @@
 		B61C90F42441DCF000F6B8A9 /* CCCallScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenVM.swift; sourceTree = "<group>"; };
 		B61C90F62441E98E00F6B8A9 /* boys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boys.png; sourceTree = "<group>"; };
 		B61E79102442420900D773E0 /* CCReachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReachibility.swift; sourceTree = "<group>"; };
+		B61F3E47245872FA000FF940 /* lines only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lines only.png"; sourceTree = "<group>"; };
+		B61F3E48245872FB000FF940 /* 3 lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3 lines.png"; sourceTree = "<group>"; };
+		B61F3E4C24587C04000FF940 /* CCBulletinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCBulletinManager.swift; sourceTree = "<group>"; };
 		B6244DD7244F813F00E52669 /* CCSwitchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSwitchTVC.swift; sourceTree = "<group>"; };
 		B6244DD8244F813F00E52669 /* CCSwitchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCSwitchTVC.xib; sourceTree = "<group>"; };
 		B6244DDB244F82B900E52669 /* CCTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTypeAliases.swift; sourceTree = "<group>"; };
@@ -188,6 +210,10 @@
 		B679620F2432565D00C2A13C /* CCOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCOverviewVC.swift; sourceTree = "<group>"; };
 		B67962112432566D00C2A13C /* CCChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVC.swift; sourceTree = "<group>"; };
 		B67962132432567A00C2A13C /* CCCrowdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdsVC.swift; sourceTree = "<group>"; };
+		B67E8C54245DF237002FAD55 /* CCCardMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCardMemberCell.swift; sourceTree = "<group>"; };
+		B67E8C55245DF237002FAD55 /* CCCardMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCardMemberCell.xib; sourceTree = "<group>"; };
+		B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUsersManager.swift; path = CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift; sourceTree = SOURCE_ROOT; };
+		B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserDefaults.swift; sourceTree = "<group>"; };
 		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
 		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
@@ -199,7 +225,7 @@
 		B693E30C24312C7B002B26BC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B697487F243B96E800AE95C0 /* CCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUser.swift; sourceTree = "<group>"; };
 		B6974881243B977400AE95C0 /* CCUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserService.swift; sourceTree = "<group>"; };
-		B6974883243B987600AE95C0 /* CCUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUserManager.swift; path = CrowdCast/Services/CCUserManager.swift; sourceTree = SOURCE_ROOT; };
+		B6974883243B987600AE95C0 /* CCProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCProfileManager.swift; path = CrowdCast/Services/CCProfileManager.swift; sourceTree = SOURCE_ROOT; };
 		B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_celebration_0jvk (1).png"; sourceTree = "<group>"; };
 		B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatchQueue.swift; sourceTree = "<group>"; };
 		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
@@ -223,6 +249,18 @@
 		B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCJoinChannelVC.swift; path = CrowdCast/Storyboards/CCJoinChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
 		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
+		B6D04E6324547E9F005F4E61 /* CCColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCColorCell.swift; sourceTree = "<group>"; };
+		B6D04E65245493AD005F4E61 /* back transparent.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "back transparent.jpeg"; sourceTree = "<group>"; };
+		B6D04E66245493AE005F4E61 /* bottom.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bottom.jpeg; sourceTree = "<group>"; };
+		B6D04E67245493AE005F4E61 /* back.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpeg; sourceTree = "<group>"; };
+		B6D04E6B24558851005F4E61 /* trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trans.png; sourceTree = "<group>"; };
+		B6D04E6D24558946005F4E61 /* trans low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trans low.png"; sourceTree = "<group>"; };
+		B6D04E6F24558DD4005F4E61 /* CCContainsID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCContainsID.swift; sourceTree = "<group>"; };
+		B6D04E712455AAA7005F4E61 /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile2.png; sourceTree = "<group>"; };
+		B6D04E732455AFD3005F4E61 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
+		B6D04E752455D70D005F4E61 /* CCRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRoundButton.swift; sourceTree = "<group>"; };
+		B6D04E792455DF92005F4E61 /* me3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me3.png; sourceTree = "<group>"; };
+		B6D04E7F2455EC66005F4E61 /* undraw_imagination_ok71.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undraw_imagination_ok71.png; sourceTree = "<group>"; };
 		B6D7F54E24277A1A001BEBBC /* CrowdCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7F55124277A1A001BEBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D7F55324277A1A001BEBBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +343,7 @@
 		B60A29C824338EA100B7F76F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				B6D04E6224547E84005F4E61 /* ColorCell */,
 				B6244DD5244F5E1300E52669 /* ChannelDetailCells */,
 				B6E36765243631FA00B511A0 /* SectionHeader */,
 				B6E367592434F21D00B511A0 /* ChannelCard */,
@@ -322,6 +361,7 @@
 				B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */,
 				B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */,
 				B60DE3E224545432003E491C /* CCContainsCellData.swift */,
+				B6D04E6F24558DD4005F4E61 /* CCContainsID.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -355,6 +395,17 @@
 		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
 			isa = PBXGroup;
 			children = (
+				B61F3E48245872FB000FF940 /* 3 lines.png */,
+				B61F3E47245872FA000FF940 /* lines only.png */,
+				B6D04E7F2455EC66005F4E61 /* undraw_imagination_ok71.png */,
+				B6D04E792455DF92005F4E61 /* me3.png */,
+				B6D04E732455AFD3005F4E61 /* me.png */,
+				B6D04E712455AAA7005F4E61 /* profile2.png */,
+				B6D04E6D24558946005F4E61 /* trans low.png */,
+				B6D04E6B24558851005F4E61 /* trans.png */,
+				B6D04E65245493AD005F4E61 /* back transparent.jpeg */,
+				B6D04E67245493AE005F4E61 /* back.jpeg */,
+				B6D04E66245493AE005F4E61 /* bottom.jpeg */,
 				B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */,
 				B61C90F62441E98E00F6B8A9 /* boys.png */,
 				B6ACD08224410D7200405838 /* undraw_abstract_x68e.png */,
@@ -389,6 +440,8 @@
 				B6ACD07824405CCE00405838 /* CCUIViewController.swift */,
 				B6AD11322444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift */,
 				B6244DDB244F82B900E52669 /* CCTypeAliases.swift */,
+				B6D04E752455D70D005F4E61 /* CCRoundButton.swift */,
+				B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +471,14 @@
 				B61E79102442420900D773E0 /* CCReachibility.swift */,
 			);
 			path = Reachibility;
+			sourceTree = "<group>";
+		};
+		B61F3E4B24587BBB000FF940 /* Bulletin */ = {
+			isa = PBXGroup;
+			children = (
+				B61F3E4C24587C04000FF940 /* CCBulletinManager.swift */,
+			);
+			path = Bulletin;
 			sourceTree = "<group>";
 		};
 		B6244DD4244F5E0600E52669 /* Nibs */ = {
@@ -572,6 +633,15 @@
 			path = CrowdsTab;
 			sourceTree = "<group>";
 		};
+		B67E8C53245DF217002FAD55 /* CCCardMember */ = {
+			isa = PBXGroup;
+			children = (
+				B67E8C54245DF237002FAD55 /* CCCardMemberCell.swift */,
+				B67E8C55245DF237002FAD55 /* CCCardMemberCell.xib */,
+			);
+			path = CCCardMember;
+			sourceTree = "<group>";
+		};
 		B693E30524311A1C002B26BC /* Setup Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +715,14 @@
 			path = "Join Channel";
 			sourceTree = "<group>";
 		};
+		B6D04E6224547E84005F4E61 /* ColorCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6D04E6324547E9F005F4E61 /* CCColorCell.swift */,
+			);
+			path = ColorCell;
+			sourceTree = "<group>";
+		};
 		B6D7F54524277A1A001BEBBC = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +748,7 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B61F3E4B24587BBB000FF940 /* Bulletin */,
 				B61E790F244241F100D773E0 /* Reachibility */,
 				B64E4D19243A2E7E0011715A /* Utilities */,
 				B64E4D012439E6FC0011715A /* Models */,
@@ -717,9 +796,10 @@
 			children = (
 				B679620A2432509300C2A13C /* CCConstantsManager.swift */,
 				B64E4CF0243890510011715A /* CCNibManager.swift */,
-				B6974883243B987600AE95C0 /* CCUserManager.swift */,
+				B6974883243B987600AE95C0 /* CCProfileManager.swift */,
 				B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */,
 				B65A70E0244F109E004BB001 /* CCDelegateManager.swift */,
+				B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -785,6 +865,7 @@
 		B6E367592434F21D00B511A0 /* ChannelCard */ = {
 			isa = PBXGroup;
 			children = (
+				B67E8C53245DF217002FAD55 /* CCCardMember */,
 				B64E4CF224389D410011715A /* CCCardTime */,
 				B6E3675A2434F25000B511A0 /* CCCardTVCTableViewCell.swift */,
 				B6E3675B2434F25000B511A0 /* CCCardTVCTableViewCell.xib */,
@@ -920,6 +1001,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B693E302243112FF002B26BC /* Fireworks.png in Resources */,
+				B6D04E6C24558851005F4E61 /* trans.png in Resources */,
+				B67E8C57245DF237002FAD55 /* CCCardMemberCell.xib in Resources */,
 				B693E304243113B4002B26BC /* Reading.png in Resources */,
 				B6D7F55E24277A1B001BEBBC /* LaunchScreen.storyboard in Resources */,
 				B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */,
@@ -929,10 +1012,17 @@
 				B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */,
 				B61C90F72441E98E00F6B8A9 /* boys.png in Resources */,
 				B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */,
+				B6D04E742455AFD3005F4E61 /* me.png in Resources */,
+				B6D04E69245493AE005F4E61 /* bottom.jpeg in Resources */,
 				B6ACD08124410AE700405838 /* Walk.png in Resources */,
+				B6D04E7A2455DF92005F4E61 /* me3.png in Resources */,
 				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
+				B6D04E68245493AE005F4E61 /* back transparent.jpeg in Resources */,
+				B6D04E722455AAA7005F4E61 /* profile2.png in Resources */,
+				B61F3E4A245872FB000FF940 /* 3 lines.png in Resources */,
 				B61A849D2451F5FB00150188 /* CCDetailsSegueTVC.xib in Resources */,
 				B679620624324E6000C2A13C /* Onboarding.storyboard in Resources */,
+				B6D04E6A245493AE005F4E61 /* back.jpeg in Resources */,
 				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
 				B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */,
 				B693E2FC2430F832002B26BC /* profile.png in Resources */,
@@ -949,7 +1039,10 @@
 				B6BD90D724377E3D00F50848 /* Channels.storyboard in Resources */,
 				B6B664672448B29F00F6C1DF /* CCCallMemberCell.xib in Resources */,
 				B6ACD07F2441058900405838 /* Cabin.png in Resources */,
+				B6D04E6E24558946005F4E61 /* trans low.png in Resources */,
 				B64E4CF624389E420011715A /* CCCardTimeLabel.xib in Resources */,
+				B61F3E49245872FB000FF940 /* lines only.png in Resources */,
+				B6D04E802455EC67005F4E61 /* undraw_imagination_ok71.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1077,6 +1170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D04E762455D70D005F4E61 /* CCRoundButton.swift in Sources */,
 				B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */,
 				B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */,
 				B6ACD07924405CCE00405838 /* CCUIViewController.swift in Sources */,
@@ -1084,6 +1178,7 @@
 				B64E4D0C2439EF470011715A /* CCContainsMembers.swift in Sources */,
 				B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */,
 				B64E4D1D243A334F0011715A /* CCQueryEngine.swift in Sources */,
+				B6D04E7024558DD4005F4E61 /* CCContainsID.swift in Sources */,
 				B6ACD0882441AE8B00405838 /* CCChannelDetailsVM.swift in Sources */,
 				B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
@@ -1095,6 +1190,7 @@
 				B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */,
 				B6BD90D52437137E00F50848 /* CCOverviewVM.swift in Sources */,
 				B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */,
+				B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */,
 				B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */,
 				B6244DD9244F813F00E52669 /* CCSwitchTVC.swift in Sources */,
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
@@ -1102,9 +1198,11 @@
 				B64E4CF1243890510011715A /* CCNibManager.swift in Sources */,
 				B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */,
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
+				B6D04E6424547E9F005F4E61 /* CCColorCell.swift in Sources */,
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B6DDB0A4244CB713007B5808 /* CCAddChannelVM.swift in Sources */,
+				B67E8C5924609FE0002FAD55 /* CCUsersManager.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */,
@@ -1127,9 +1225,10 @@
 				B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */,
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
 				B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */,
+				B67E8C56245DF237002FAD55 /* CCCardMemberCell.swift in Sources */,
 				B64E4D142439F4850011715A /* CCContainsOwners.swift in Sources */,
 				B64E4D052439E7A40011715A /* CCIndividual.swift in Sources */,
-				B6974884243B987600AE95C0 /* CCUserManager.swift in Sources */,
+				B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */,
 				B64E4CF82438A1D50011715A /* CCCardTimeLabel.swift in Sources */,
 				B6974880243B96E800AE95C0 /* CCUser.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
@@ -1144,6 +1243,7 @@
 				B61A849C2451F5FB00150188 /* CCDetailsSegueTVC.swift in Sources */,
 				B61C90F02441CFE000F6B8A9 /* CCGetsViewController.swift in Sources */,
 				B64E4D162439F4E70011715A /* CCChannelOwner.swift in Sources */,
+				B61F3E4D24587C04000FF940 /* CCBulletinManager.swift in Sources */,
 				B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */,
 				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
 			);

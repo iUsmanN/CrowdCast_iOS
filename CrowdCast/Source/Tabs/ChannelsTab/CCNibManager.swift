@@ -29,5 +29,10 @@ struct Nib {
         static let CCDetailsSegueTVC    = "CCDetailsSegueTVC"
         static let CCTextCell           = "CCTextCell"
         static let CCTableViewHeader    = "CCTableViewHeader"
+        static let CCCardMemberCell     = "CCCardMemberCell"
+    }
+    
+    static func nibFor(_ reuseIdentifier: String) -> UINib {
+        return UINib(nibName: "\(reuseIdentifier)", bundle: nil)
     }
 }

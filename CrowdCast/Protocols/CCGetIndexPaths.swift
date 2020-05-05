@@ -44,4 +44,10 @@ extension CCGetIndexPaths {
         }
         return indexPaths ?? [IndexPath]()
     }
+    
+    func myChannelsRemovalIndexPath(index: Int) -> [IndexPath] {
+        var indexPaths = [IndexPath]()
+        indexPaths.append(IndexPath(row: index, section: 0))
+        return indexPaths
+    }
 }

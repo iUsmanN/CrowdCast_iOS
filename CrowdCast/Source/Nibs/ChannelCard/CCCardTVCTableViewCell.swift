@@ -15,19 +15,33 @@ class CCCardTVCTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel                : CCCardTimeLabel!
     @IBOutlet weak var ownerLabel               : UILabel!
     @IBOutlet weak var membersCollectionView    : UICollectionView!
+    @IBOutlet weak var pingButton               : UIButton!
     
     var data : CCChannel? {
         didSet{
             titleLabel.text = data?.name
-            ownerLabel.text = data?.owners?.first
+            CCUsersManager.sharedInstance.getUserNames(ids: data?.owners, completion: { (ownerNames) in
+                guard let name = ownerNames.first else { return }
+                DispatchQueue.main.async { [weak self] in self?.ownerLabel.text = name } })
             setColors(color: data?.color ?? "red")
+            timeLabel.text  = nil
+            setupCollectionView()
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupLayers()
+        setupView()
         setColors(color: "blue")
+    }
+    
+    override func prepareForReuse() {
+        membersCollectionView.reloadData()
+    }
+    
+    private func setupView() {
+        membersCollectionView.register(Nib.nibFor(Nib.reuseIdentifier.CCCardMemberCell), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell)
     }
     
     private func setupLayers(){
@@ -38,11 +52,16 @@ class CCCardTVCTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    func setupCell(channelData: CCChannel){
-        titleLabel.text = channelData.name ?? ""
-        ownerLabel.text = channelData.owners.flatMap({$0})?.joined(separator: ", ")
-        timeLabel.text  = "01:00pm"
-        setColors(color: channelData.color ?? "Main Accent")
+    private func setupCollectionView(){
+        membersCollectionView.dataSource = self
+        membersCollectionView.delegate   = self
+    }
+}
+
+extension CCCardTVCTableViewCell {
+    
+    @IBAction func pinged(_ sender: Any) {
+        generateHapticFeedback(.rigid)
     }
 }
 
@@ -54,5 +73,22 @@ extension CCCardTVCTableViewCell {
         cardBackgroundView.layer.shadowColor = c?.cgColor
         titleLabel.textColor = c
         timeLabel.setView(inputColor: c)
+        pingButton.setImage(#imageLiteral(resourceName: "Bell").withRenderingMode(.alwaysTemplate), for: .normal)
+        pingButton.tintColor = c
+    }
+}
+
+extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate, CCHapticEngine {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (data?.members?.count ?? 0) + (data?.owners?.count ?? 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        generateHapticFeedback(.light)
     }
 }
