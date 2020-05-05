@@ -24,7 +24,7 @@ extension CCUsersManager : CCDispatchQueue {
         for id in ids {
             if id == CCProfileManager.sharedInstance.getUID() {
                 presentUsers.append(CCProfileManager.sharedInstance.getProfile())
-            } else if let user = CCUserDefaults.shared.users?.value(forKey: id) as? CCUser {
+            } else if let user = CCUserDefaults.shared.retrieveCodableData(key: id, userDefaults: CCUserDefaults.shared.users, type: CCUser()) as? CCUser {
                 presentUsers.append(user)
             } else {
                 newUserIds.append(id)
@@ -43,7 +43,7 @@ extension CCUsersManager : CCDispatchQueue {
                 self.fetchUserProfile(uid: id ?? "") { (result) in
                     switch result {
                     case .success(let user):
-                        //CCUserDefaults.shared.users?.set(user, forKey: id ?? "")
+                        CCUserDefaults.shared.saveCodableData(key: id ?? "", data: user, userDefaults: CCUserDefaults.shared.users)
                         presentUsers.append(user)
                         dispatchGroup.leave()
                     case .failure(_):
@@ -57,5 +57,13 @@ extension CCUsersManager : CCDispatchQueue {
                 return user?.fullName()
             })
         }))
+    }
+    
+    private func saveUser(user: CCUser) {
+        
+    }
+    
+    private func retrieveUser(id: String) -> CCUser? {
+        return nil
     }
 }
