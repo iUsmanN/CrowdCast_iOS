@@ -40,8 +40,4 @@ class CCCardMemberCell: UICollectionViewCell {
         layer.borderColor   = UIColor(named: "Foreground")?.cgColor
         layoutIfNeeded()
     }
-    
-    override func prepareForReuse() {
-        imageView.image = nil
-    }
 }
