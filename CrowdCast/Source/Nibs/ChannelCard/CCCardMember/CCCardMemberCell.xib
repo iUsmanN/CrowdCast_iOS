@@ -29,6 +29,9 @@
                 <constraint firstAttribute="trailing" secondItem="io9-w2-kYk" secondAttribute="trailing" id="hTu-bQ-KQE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imageView" destination="io9-w2-kYk" id="mPb-qu-lTh"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="150"/>
         </collectionViewCell>
     </objects>
