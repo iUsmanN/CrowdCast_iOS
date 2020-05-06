@@ -10,6 +10,22 @@ import UIKit
 
 class CCCardMemberCell: UICollectionViewCell {
 
+    var storage = CCStoragerManager()
+    var memberID : String? {
+        didSet {
+            //get url
+            storage.imageUrl(id: memberID ?? "") { (result) in
+                switch result{
+                case .success(let url):
+                    //get image with kingfisher
+                    prints("get image for \(url)")
+                case .failure(let err):
+                    prints(err)
+                }
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupLayers()

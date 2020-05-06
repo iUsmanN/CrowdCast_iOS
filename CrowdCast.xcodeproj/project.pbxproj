@@ -99,6 +99,7 @@
 		B6BD90D724377E3D00F50848 /* Channels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD90D624377E3D00F50848 /* Channels.storyboard */; };
 		B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */; };
 		B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */; };
+		B6BF45B52461F96B00DAF383 /* CCStoragerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF45B42461F96B00DAF383 /* CCStoragerManager.swift */; };
 		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
 		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
 		B6D04E6424547E9F005F4E61 /* CCColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E6324547E9F005F4E61 /* CCColorCell.swift */; };
@@ -247,6 +248,7 @@
 		B6BD90D624377E3D00F50848 /* Channels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Channels.storyboard; sourceTree = "<group>"; };
 		B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCAddChannelVC.swift; path = CrowdCast/Storyboards/CCAddChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCJoinChannelVC.swift; path = CrowdCast/Storyboards/CCJoinChannelVC.swift; sourceTree = SOURCE_ROOT; };
+		B6BF45B42461F96B00DAF383 /* CCStoragerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCStoragerManager.swift; path = CrowdCast/Extensions/CCStoragerManager.swift; sourceTree = SOURCE_ROOT; };
 		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
 		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
 		B6D04E6324547E9F005F4E61 /* CCColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCColorCell.swift; sourceTree = "<group>"; };
@@ -800,6 +802,7 @@
 				B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */,
 				B65A70E0244F109E004BB001 /* CCDelegateManager.swift */,
 				B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */,
+				B6BF45B42461F96B00DAF383 /* CCStoragerManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1215,6 +1218,7 @@
 				B64E4D002439DD170011715A /* CCNetworkEngine.swift in Sources */,
 				B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */,
 				B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */,
+				B6BF45B52461F96B00DAF383 /* CCStoragerManager.swift in Sources */,
 				B6FE5922244BA2F800121FDD /* CCCallScreenLayout.swift in Sources */,
 				B64E4CFD2439DCFE0011715A /* CCChannelsService.swift in Sources */,
 				B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */,
