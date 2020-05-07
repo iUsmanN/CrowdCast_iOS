@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import FirebaseStorage
 
 struct CCStoragerManager {
@@ -15,10 +16,18 @@ struct CCStoragerManager {
 
 extension CCStoragerManager {
     
-    func imageUrl(id: String?, result: @escaping (Result<URL?, Error>) -> ()) {
+    func getProfileImageUrl(id: String?, result: @escaping (Result<URL?, Error>) -> ()) {
         storage.child("displays").child("\(id ?? "").png").downloadURL { (url, error) in
             guard error == nil else { result(.success(nil)); return }
             result(.success(url))
+        }
+    }
+    
+    func uploadProfileImage(image: UIImage, result: @escaping (Result<UIImage?, Error>) -> ()) {
+        guard let uploadData = image.jpegData(compressionQuality: 0.5) else { result(.failure(CCError.ImageUploadFailure)); return }
+        storage.child("displays").child("\(CCProfileManager.sharedInstance.getUID()).png").putData(uploadData, metadata: nil) { (_, error) in
+            if let error = error { result(.failure(error)) }
+            result(.success(image))
         }
     }
 }

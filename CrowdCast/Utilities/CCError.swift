@@ -27,4 +27,5 @@ enum CCError : Error {
     
     //IMAGE PICKING
     case ImageSelectionFailure
+    case ImageUploadFailure
 }

@@ -21,7 +21,7 @@ class CCCardMemberCell: UICollectionViewCell {
             if let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/displays%2F\(memberID ?? "").png"){
                 imageView.kf.setImage(with: url)
             }
-            storage.imageUrl(id: memberID ?? "") {[weak self] (result) in
+            storage.getProfileImageUrl(id: memberID ?? "") {[weak self] (result) in
                 switch result{
                 case .success(let url):
                     guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }

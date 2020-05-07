@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 120
+        ImageCache.default.diskStorage.config.expiration = .seconds(100)
         return true
     }
 
