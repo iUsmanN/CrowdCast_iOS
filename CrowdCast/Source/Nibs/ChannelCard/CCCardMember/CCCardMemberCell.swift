@@ -16,11 +16,16 @@ class CCCardMemberCell: UICollectionViewCell {
     var storage = CCStoragerManager()
     var memberID : String? {
         didSet {
+
+            imageView.kf.indicatorType = .activity
+            if let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/displays%2F\(memberID ?? "").png"){
+                imageView.kf.setImage(with: url)
+            }
             storage.imageUrl(id: memberID ?? "") {[weak self] (result) in
                 switch result{
                 case .success(let url):
-                    guard let url = url else { return }
-                    self?.imageView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: url.getQueryLessURL()?.absoluteString))
+                    guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }
+                    self?.imageView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: key))
                 case .failure(let err):
                     prints(err)
                 }

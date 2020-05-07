@@ -54,10 +54,8 @@ extension CCSettingsVC : CCImagePickedDelegate {
     
     func imageSelected(result: Result<UIImage, CCError>) {
         switch result {
-        case .success(let image):
-            profileImage.image = image
-        case .failure(let error):
-            prints(error)
+        case .success(let image): profileImage.image = image
+        case .failure(let error): prints(error)
         }
     }
 }
