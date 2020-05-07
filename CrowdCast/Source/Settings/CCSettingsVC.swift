@@ -8,12 +8,11 @@
 
 import UIKit
 
-class CCSettingsVC: UIViewController {
+class CCSettingsVC: CCImagePickingVC {
 
     @IBOutlet weak var profileImage : UIImageView!
     @IBOutlet weak var nameLabel    : UILabel!
     @IBOutlet weak var emailLabel   : UILabel!
-    
     @IBOutlet weak var tableView    : UITableView!
     
     var viewModel                   : CCSettingsVM?
@@ -39,9 +38,27 @@ class CCSettingsVC: UIViewController {
     
     func setupProfileInfo(){
         profileImage.layer.borderColor = UIColor(named: "Main Accent")?.cgColor
-        profileImage.layer.borderWidth = 1.5
+        profileImage.layer.borderWidth = 0.5
         nameLabel.text = CCProfileManager.sharedInstance.getProfile()?.fullName()
         emailLabel.text = CCProfileManager.sharedInstance.getProfile()?.email
+    }
+}
+
+//Profile Image Change Action
+extension CCSettingsVC : CCImagePickedDelegate {
+    
+    @IBAction func changeImagePressed(_ sender: Any) {
+        imagePickerDelegate = self
+        pickImage()
+    }
+    
+    func imageSelected(result: Result<UIImage, CCError>) {
+        switch result {
+        case .success(let image):
+            profileImage.image = image
+        case .failure(let error):
+            prints(error)
+        }
     }
 }
 

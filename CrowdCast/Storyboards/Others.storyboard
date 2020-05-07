@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +22,20 @@
                                     <constraint firstAttribute="width" secondItem="N2P-Ws-CiU" secondAttribute="height" id="7gN-2K-iiG"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HY7-Yz-sAf">
+                                <rect key="frame" x="124" y="165.5" width="166" height="20"/>
+                                <color key="backgroundColor" name="Foreground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="oxZ-ME-4JF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                <state key="normal" title="CHANGE">
+                                    <color key="titleColor" name="Inverted"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeImagePressed:" destination="KAu-Pm-j8j" eventType="touchUpInside" id="Wx8-95-e3M"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X61-EF-tmM">
                                 <rect key="frame" x="25" y="195.5" width="364" height="47"/>
                                 <subviews>
@@ -45,7 +60,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="HY7-Yz-sAf" firstAttribute="bottom" secondItem="N2P-Ws-CiU" secondAttribute="bottom" id="2cE-bg-Ajc"/>
                             <constraint firstItem="N2P-Ws-CiU" firstAttribute="top" secondItem="8Ak-hd-8oR" secondAttribute="top" constant="20" id="3ML-G9-aQQ"/>
+                            <constraint firstItem="HY7-Yz-sAf" firstAttribute="leading" secondItem="N2P-Ws-CiU" secondAttribute="leading" id="Bp6-q6-DS4"/>
+                            <constraint firstItem="HY7-Yz-sAf" firstAttribute="trailing" secondItem="N2P-Ws-CiU" secondAttribute="trailing" id="Nz9-QM-BcS"/>
                             <constraint firstItem="N2P-Ws-CiU" firstAttribute="width" secondItem="8Ak-hd-8oR" secondAttribute="width" multiplier="0.4" id="Sst-Hs-hcA"/>
                             <constraint firstItem="X61-EF-tmM" firstAttribute="leading" secondItem="8Ak-hd-8oR" secondAttribute="leading" constant="25" id="UTx-mC-EJc"/>
                             <constraint firstItem="8Ak-hd-8oR" firstAttribute="bottom" secondItem="K7K-2Y-yuR" secondAttribute="bottom" id="eNk-cB-Bwe"/>
@@ -90,5 +108,11 @@
     </scenes>
     <resources>
         <image name="me3.png" width="226" height="227"/>
+        <namedColor name="Foreground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Inverted">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
