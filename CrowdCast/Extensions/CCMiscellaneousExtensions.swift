@@ -26,3 +26,11 @@ extension Array {
         return arr
     }
 }
+
+extension URL {
+    func getQueryLessURL() -> URL? {
+        var components = URLComponents(url: self, resolvingAgainstBaseURL: false)
+        components?.queryItems = nil
+        return components?.url
+    }
+}

@@ -16,12 +16,11 @@ class CCCardMemberCell: UICollectionViewCell {
     var storage = CCStoragerManager()
     var memberID : String? {
         didSet {
-            //get url
             storage.imageUrl(id: memberID ?? "") {[weak self] (result) in
                 switch result{
                 case .success(let url):
-                    guard url != nil else { return }
-                    self?.imageView.kf.setImage(with: url)
+                    guard let url = url else { return }
+                    self?.imageView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: url.getQueryLessURL()?.absoluteString))
                 case .failure(let err):
                     prints(err)
                 }
@@ -36,8 +35,8 @@ class CCCardMemberCell: UICollectionViewCell {
     
     private func setupLayers(){
         layer.cornerRadius  = 17
-        layer.borderWidth   = 0
-        layer.borderColor   = UIColor(named: "Foreground")?.cgColor
+        layer.borderWidth   = 0.5
+        layer.borderColor   = UIColor.darkGray.cgColor
         layoutIfNeeded()
     }
 }
