@@ -10,11 +10,16 @@ import Foundation
 import UIKit
 import FirebaseStorage
 
-protocol CCStoragerManager {
-    //private var storage = Storage.storage().reference()
-}
+protocol CCImageStorage {}
 
-extension CCStoragerManager {
+extension CCImageStorage {
+    
+    func imageCacheURL(id: String?) -> URL? {
+        guard let id = id, let url = URL(string: Constants.imageCacheString(id: id)) else {
+            return nil
+        }
+        return url
+    }
     
     func getProfileImageUrl(id: String?, result: @escaping (Result<URL?, Error>) -> ()) {
         Storage.storage().reference().child("displays").child("\(id ?? "").png").downloadURL { (url, error) in
@@ -30,12 +35,4 @@ extension CCStoragerManager {
             result(.success(image))
         }
     }
-}
-
-protocol CCProfileImageData {
-    var storage : Storage { get set }
-}
-
-extension CCProfileImageData {
-    
 }

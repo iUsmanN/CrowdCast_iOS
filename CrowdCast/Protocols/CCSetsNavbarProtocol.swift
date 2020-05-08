@@ -52,9 +52,8 @@ extension CCSetsNavbar {
         profileView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         profileView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         profileView.contentMode = .scaleAspectFill
-        profileView.setImage(#imageLiteral(resourceName: "avatarMale"), for: .normal)
-        if let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/displays%2F\(CCProfileManager.sharedInstance.getUID()).png"){
-            profileView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: url.getQueryLessURL()?.absoluteString), for: .normal)
+        if let url = URL(string: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID())){
+            profileView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: url.getQueryLessURL()?.absoluteString), for: .normal, placeholder: #imageLiteral(resourceName: "avatarMale"))
         }
         guard let action = action else { return UIBarButtonItem() }
         profileView.addTarget(self, action: action, for: .primaryActionTriggered)

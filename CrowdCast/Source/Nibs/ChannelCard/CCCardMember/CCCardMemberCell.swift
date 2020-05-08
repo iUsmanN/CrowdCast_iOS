@@ -14,15 +14,14 @@ class CCCardMemberCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     var memberID : String? {
         didSet {
-            imageView.kf.indicatorType = .activity
-            if let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/displays%2F\(memberID ?? "").png"){
-                imageView.kf.setImage(with: url)
+            if let url = imageCacheURL(id: memberID) {
+                imageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "avatarMale"))
             }
             getProfileImageUrl(id: memberID ?? "") {[weak self] (result) in
                 switch result{
                 case .success(let url):
                     guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }
-                    self?.imageView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: key))
+                    self?.imageView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: key), placeholder: #imageLiteral(resourceName: "avatarMale"))
                 case .failure(let err):
                     prints(err)
                 }
@@ -43,4 +42,4 @@ class CCCardMemberCell: UICollectionViewCell {
     }
 }
 
-extension CCCardMemberCell : CCStoragerManager {}
+extension CCCardMemberCell : CCImageStorage {}

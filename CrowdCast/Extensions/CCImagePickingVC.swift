@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CCImagePickingVC: UIViewController {
 
@@ -32,6 +33,7 @@ extension CCImagePickingVC : UINavigationControllerDelegate, UIImagePickerContro
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true) { [weak self] in
             guard let image = info[.originalImage] as? UIImage else { self?.imagePickerDelegate?.imageSelected(result: .failure(.ImageSelectionFailure)); return }
+            ImageCache.default.store(KFCrossPlatformImage(data: image.pngData()!)!, forKey: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID()))
             self?.imagePickerDelegate?.imageSelected(result: .success(image))
         }
     }
