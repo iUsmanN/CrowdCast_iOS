@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCSettingsVC: CCImagePickingVC {
+class CCSettingsVC: CCImagePickingVC, CCImageStorage {
 
     @IBOutlet weak var profileImage : UIImageView!
     @IBOutlet weak var nameLabel    : UILabel!
@@ -30,6 +30,14 @@ class CCSettingsVC: CCImagePickingVC {
         profileImage.layer.cornerRadius = 15
         tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
         tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
+        setImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
+            switch result {
+            case .success(let imageResource):
+                self?.profileImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"))
+            case .failure(let error):
+                prints(error)
+            }
+        }
     }
     
     func setupNavBar(){
@@ -38,7 +46,7 @@ class CCSettingsVC: CCImagePickingVC {
     
     func setupProfileInfo(){
         profileImage.layer.borderColor = UIColor(named: "Main Accent")?.cgColor
-        profileImage.layer.borderWidth = 0.5
+        profileImage.layer.borderWidth = 0.25
         nameLabel.text = CCProfileManager.sharedInstance.getProfile()?.fullName()
         emailLabel.text = CCProfileManager.sharedInstance.getProfile()?.email
     }
