@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 import FirebaseStorage
 
 protocol CCImageStorage {}
@@ -33,6 +34,24 @@ extension CCImageStorage {
         Storage.storage().reference().child("displays").child("\(CCProfileManager.sharedInstance.getUID()).png").putData(uploadData, metadata: nil) { (_, error) in
             if let error = error { result(.failure(error)) }
             result(.success(image))
+        }
+    }
+}
+
+extension CCImageStorage {
+    
+    func setImage(memberID: String?, result: @escaping (Result<ImageResource, Error>)->()) {
+        if let url = imageCacheURL(id: memberID) {
+            result(.success(ImageResource(downloadURL: url, cacheKey: url.getQueryLessURL()?.absoluteString)))
+        }
+        getProfileImageUrl(id: memberID) { (response) in
+            switch response {
+            case .success(let url):
+                guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }
+                result(.success(ImageResource(downloadURL: url, cacheKey: key)))
+            case .failure(let error):
+                result(.failure(error))
+            }
         }
     }
 }

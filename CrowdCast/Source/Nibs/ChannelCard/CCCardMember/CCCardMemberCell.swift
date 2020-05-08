@@ -14,16 +14,12 @@ class CCCardMemberCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     var memberID : String? {
         didSet {
-            if let url = imageCacheURL(id: memberID) {
-                imageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "avatarMale"))
-            }
-            getProfileImageUrl(id: memberID ?? "") {[weak self] (result) in
-                switch result{
-                case .success(let url):
-                    guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }
-                    self?.imageView.kf.setImage(with: ImageResource(downloadURL: url, cacheKey: key), placeholder: #imageLiteral(resourceName: "avatarMale"))
-                case .failure(let err):
-                    prints(err)
+            setImage(memberID: memberID) { [weak self] (result) in
+                switch result {
+                case .success(let imageResource):
+                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"))
+                case .failure(let error):
+                    prints(error)
                 }
             }
         }
