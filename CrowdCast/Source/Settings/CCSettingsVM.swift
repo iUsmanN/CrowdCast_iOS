@@ -13,7 +13,7 @@ struct CCSettingsVM {
     let data = [
         CCCellData(title: "Logout", titleColor: .red)
     ]
-    var storage = CCStoragerManager()
+    //var storage = CCStoragerManager()
 }
 
 extension CCSettingsVM {
@@ -27,9 +27,9 @@ extension CCSettingsVM {
     }
 }
 
-extension CCSettingsVM {
+extension CCSettingsVM : CCStoragerManager {
     
     func updateProfilePicture(image: UIImage, result: @escaping (Result<UIImage?, Error>)->()) {
-        storage.uploadProfileImage(image: image, result: result)
+        uploadProfileImage(image: image, result: result)
     }
 }

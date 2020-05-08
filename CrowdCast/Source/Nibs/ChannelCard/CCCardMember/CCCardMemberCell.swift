@@ -12,16 +12,13 @@ import Kingfisher
 class CCCardMemberCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    
-    var storage = CCStoragerManager()
     var memberID : String? {
         didSet {
-
             imageView.kf.indicatorType = .activity
             if let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/displays%2F\(memberID ?? "").png"){
                 imageView.kf.setImage(with: url)
             }
-            storage.getProfileImageUrl(id: memberID ?? "") {[weak self] (result) in
+            getProfileImageUrl(id: memberID ?? "") {[weak self] (result) in
                 switch result{
                 case .success(let url):
                     guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }
@@ -45,3 +42,5 @@ class CCCardMemberCell: UICollectionViewCell {
         layoutIfNeeded()
     }
 }
+
+extension CCCardMemberCell : CCStoragerManager {}
