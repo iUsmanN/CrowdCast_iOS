@@ -10,7 +10,7 @@ import Foundation
 
 enum CCError : Error {
     
-    //FIREBASE
+    //MARK: FIREBASE
     case channelFetchFailure
     case networkEngineFailure
     case firebaseFailure
@@ -18,14 +18,16 @@ enum CCError : Error {
     case CodableError
     case internetError
     
-    //TWILIO
+    //MARK: TWILIO
     case twilioVideoError
     case twilioCredentialsError
     case channelDataWriteFailure
     
+    //MARK: UI
     case RequiredValuesEmpty
     
-    //IMAGE PICKING
+    //MARK: IMAGE PICKING
     case ImageSelectionFailure
     case ImageUploadFailure
+    case ImageCacheFailure
 }

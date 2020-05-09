@@ -261,6 +261,12 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CROWD CAST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40H-FD-EXQ">
+                                <rect key="frame" x="322.5" y="848" width="66.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                <color key="textColor" name="Main Accent"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHm-fY-rN2">
                                 <rect key="frame" x="70" y="702" width="274" height="100"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qTa-xD-13n">
@@ -297,8 +303,10 @@
                         <constraints>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="hiN-t4-C1E" secondAttribute="trailing" id="2Q6-ct-cU4"/>
                             <constraint firstItem="KHm-fY-rN2" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" constant="70" id="81r-CB-P2U"/>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="bottom" secondItem="40H-FD-EXQ" secondAttribute="bottom" id="KmY-2n-Hdu"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="top" secondItem="5Bo-xN-RJz" secondAttribute="top" id="OMg-nQ-BaI"/>
                             <constraint firstAttribute="bottom" secondItem="hiN-t4-C1E" secondAttribute="bottom" id="Tnj-vt-0wR"/>
+                            <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="40H-FD-EXQ" secondAttribute="trailing" constant="25" id="Ygx-xm-rMl"/>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="bottom" secondItem="KHm-fY-rN2" secondAttribute="bottom" constant="60" id="iC2-dL-JEI"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" id="s9a-9w-Fhm"/>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="KHm-fY-rN2" secondAttribute="trailing" constant="70" id="tZ6-JT-U3v"/>

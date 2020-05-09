@@ -28,7 +28,7 @@ extension CCSettingsVM {
 
 extension CCSettingsVM : CCImageStorage {
     
-    func updateProfilePicture(image: UIImage, result: @escaping (Result<UIImage?, Error>)->()) {
+    func updateProfilePicture(image: UIImage, result: @escaping (Result<UIImage?, CCError>)->()) {
         uploadProfileImage(image: image, result: result)
     }
 }

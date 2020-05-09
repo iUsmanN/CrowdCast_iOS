@@ -464,10 +464,19 @@
                                     <action selector="notNowPressed:" destination="Cga-4w-klV" eventType="touchUpInside" id="JqZ-CR-PzI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-bI-TTa">
+                                <rect key="frame" x="92" y="194.5" width="230" height="230"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="Cga-4w-klV" eventType="touchUpInside" id="oFy-50-Bqv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="1DX-bI-TTa" firstAttribute="trailing" secondItem="aXo-9f-UXc" secondAttribute="trailing" id="4S3-Mo-zU0"/>
+                            <constraint firstItem="1DX-bI-TTa" firstAttribute="top" secondItem="aXo-9f-UXc" secondAttribute="top" id="DYm-zr-3mP"/>
                             <constraint firstItem="nhG-HA-gux" firstAttribute="leading" secondItem="r2L-1J-LGS" secondAttribute="leading" constant="30" id="GoW-vc-gLn"/>
+                            <constraint firstItem="1DX-bI-TTa" firstAttribute="bottom" secondItem="aXo-9f-UXc" secondAttribute="bottom" id="L6R-88-kwY"/>
                             <constraint firstItem="CLi-4H-UPf" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="NXn-yU-bgC"/>
                             <constraint firstItem="Xv1-aj-uo8" firstAttribute="top" secondItem="Yyj-EN-tGx" secondAttribute="bottom" constant="20" id="X6S-tw-yf0"/>
                             <constraint firstItem="CLi-4H-UPf" firstAttribute="top" secondItem="aXo-9f-UXc" secondAttribute="bottom" constant="10" id="aPX-aW-E6n"/>
@@ -478,6 +487,7 @@
                             <constraint firstItem="yUF-eu-xTy" firstAttribute="leading" secondItem="nhG-HA-gux" secondAttribute="leading" id="oea-kK-xPw"/>
                             <constraint firstItem="Xv1-aj-uo8" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="pAx-Jr-Yad"/>
                             <constraint firstItem="aXo-9f-UXc" firstAttribute="centerX" secondItem="r2L-1J-LGS" secondAttribute="centerX" id="rax-VV-clh"/>
+                            <constraint firstItem="1DX-bI-TTa" firstAttribute="leading" secondItem="aXo-9f-UXc" secondAttribute="leading" id="tfJ-5P-L0q"/>
                             <constraint firstItem="yUF-eu-xTy" firstAttribute="top" secondItem="nhG-HA-gux" secondAttribute="bottom" id="ung-eP-72Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2G2-4F-YSp"/>

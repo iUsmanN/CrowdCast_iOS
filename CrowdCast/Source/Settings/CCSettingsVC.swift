@@ -33,7 +33,7 @@ class CCSettingsVC: CCImagePickingVC, CCImageStorage {
         setImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
             switch result {
             case .success(let imageResource):
-                self?.profileImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"))
+                self?.profileImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "lines only.png"))
             case .failure(let error):
                 prints(error)
             }
@@ -63,7 +63,7 @@ extension CCSettingsVC : CCImagePickedDelegate {
     func imageSelected(result: Result<UIImage, CCError>) {
         switch result {
         case .success(let image):
-            profileImage.alpha = 0.6
+            profileImage.alpha = 0.05
             viewModel?.updateProfilePicture(image: image, result: { [weak self] (result) in
                 switch result {
                 case .success(let image): self?.profileImage.image = image; self?.profileImage.alpha = 1

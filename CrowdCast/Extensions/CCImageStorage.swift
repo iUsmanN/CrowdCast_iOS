@@ -43,10 +43,13 @@ extension CCImageStorage {
     ///   - image: new profile image
     ///   - result: completion handler
     /// - Returns: nil
-    func uploadProfileImage(image: UIImage, result: @escaping (Result<UIImage?, Error>) -> ()) {
+    func uploadProfileImage(image: UIImage, result: @escaping (Result<UIImage?, CCError>) -> ()) {
         guard let uploadData = image.jpegData(compressionQuality: 0.5) else { result(.failure(CCError.ImageUploadFailure)); return }
         Storage.storage().reference().child("displays").child("\(CCProfileManager.sharedInstance.getUID()).png").putData(uploadData, metadata: nil) { (_, error) in
-            if let error = error { result(.failure(error)) }
+            if error != nil { result(.failure(.ImageUploadFailure)) }
+            guard let imageData = image.pngData(),
+                  let KFImage = KFCrossPlatformImage(data: imageData) else { result(.failure(.ImageCacheFailure)); return }
+            ImageCache.default.store(KFImage, forKey: self.imageCacheURL(id: CCProfileManager.sharedInstance.getUID())?.absoluteString ?? "")
             result(.success(image))
         }
     }

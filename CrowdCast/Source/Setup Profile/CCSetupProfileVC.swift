@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CCSetupProfileVC: UIViewController {
+class CCSetupProfileVC: CCImagePickingVC {
 
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage     : UIImageView!
     
+    var viewModel                       = CCSetupProfileVM()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -25,13 +26,17 @@ class CCSetupProfileVC: UIViewController {
     }
     
     @IBAction func uploadImage(_ sender: Any) {
-        moveToOnboarding()
+        uploadImage()
     }
     
     @IBAction func notNowPressed(_ sender: Any) {
         moveToOnboarding()
     }
     
+    @IBAction func selectImage(_ sender: Any) {
+        imagePickerDelegate = self
+        pickImage()
+    }
 }
 
 extension CCSetupProfileVC : CCGetsViewController {
@@ -40,6 +45,29 @@ extension CCSetupProfileVC : CCGetsViewController {
         DispatchQueue.main.async { [weak self] in
             self?.present(self?.instantiateViewController(storyboard: .Onboarding, viewController: .CCOnboardingVC, as: CCOnboardingVC()) ?? UIViewController(), animated: true, completion: nil)
         }
-//        present(Constants.Storyboards.Onboarding.instantiateViewController(withIdentifier: "CCOnboardingVC"), animated: true, completion: nil)
+    }
+}
+
+extension CCSetupProfileVC : CCImagePickedDelegate {
+    
+    func imageSelected(result: Result<UIImage, CCError>) {
+        switch result {
+        case .success(let image):
+            profileImage.image = image
+        case .failure(let error):
+            prints(error)
+        }
+    }
+    
+    func uploadImage() {
+        guard let image = profileImage.image else { return }
+        viewModel.uploadProfileImage(image: image) { [weak self](result) in
+            switch result {
+            case .success(_):
+                self?.moveToOnboarding()
+            case .failure(let error):
+                prints(error)
+            }
+        }
     }
 }

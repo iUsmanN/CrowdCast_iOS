@@ -52,6 +52,7 @@
 		B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */; };
 		B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D20243A41520011715A /* CCPaginatedData.swift */; };
 		B65A70E1244F109E004BB001 /* CCDelegateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A70E0244F109E004BB001 /* CCDelegateManager.swift */; };
+		B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */; };
 		B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
@@ -202,6 +203,7 @@
 		B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryPaths.swift; sourceTree = "<group>"; };
 		B64E4D20243A41520011715A /* CCPaginatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPaginatedData.swift; sourceTree = "<group>"; };
 		B65A70E0244F109E004BB001 /* CCDelegateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDelegateManager.swift; sourceTree = SOURCE_ROOT; };
+		B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetupProfileVM.swift; sourceTree = "<group>"; };
 		B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCHapticEngine.swift; path = "CrowdCast/Source/Channels/Call Screen/CCHapticEngine.swift"; sourceTree = SOURCE_ROOT; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 		B64E4D012439E6FC0011715A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B6BD90D22437130B00F50848 /* CCSectionHeaderData.swift */,
 				B64E4D0A2439EF210011715A /* Protocols */,
 				B64E4D022439E70E0011715A /* CCChannel.swift */,
 				B64E4D042439E7A40011715A /* CCIndividual.swift */,
@@ -651,6 +654,7 @@
 			isa = PBXGroup;
 			children = (
 				B693E30624311A37002B26BC /* CCSetupProfileVC.swift */,
+				B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */,
 			);
 			path = "Setup Profile";
 			sourceTree = "<group>";
@@ -672,14 +676,6 @@
 				B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */,
 			);
 			path = Enums;
-			sourceTree = "<group>";
-		};
-		B6BD90D1243712E500F50848 /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				B6BD90D22437130B00F50848 /* CCSectionHeaderData.swift */,
-			);
-			path = Structs;
 			sourceTree = "<group>";
 		};
 		B6BD90D824377E7300F50848 /* Tabs */ = {
@@ -759,7 +755,6 @@
 				B64E4D012439E6FC0011715A /* Models */,
 				B64E4CFE2439DD050011715A /* Network Engine */,
 				B64E4CFB2439DCB60011715A /* Services */,
-				B6BD90D1243712E500F50848 /* Structs */,
 				B6BD90CC2436FF2E00F50848 /* Enums */,
 				B60A29D42434826900B7F76F /* Protocols */,
 				B61ADC1F2430BB4A00ECD1D2 /* Icons */,
@@ -1187,6 +1182,7 @@
 				B6D04E7024558DD4005F4E61 /* CCContainsID.swift in Sources */,
 				B6ACD0882441AE8B00405838 /* CCChannelDetailsVM.swift in Sources */,
 				B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */,
+				B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
 				B61C90F32441DCE100F6B8A9 /* CCCallScreenVC.swift in Sources */,
 				B64E4D182439F6020011715A /* CCContainsCrowds.swift in Sources */,
