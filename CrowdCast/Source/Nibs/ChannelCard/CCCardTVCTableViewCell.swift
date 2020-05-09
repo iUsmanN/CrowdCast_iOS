@@ -85,7 +85,9 @@ extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath)
+        guard let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath) as? CCCardMemberCell else { return UICollectionViewCell() }
+        cell.memberID   = ((data?.members ?? []) + (data?.owners ?? []))[indexPath.row]
+        return cell
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

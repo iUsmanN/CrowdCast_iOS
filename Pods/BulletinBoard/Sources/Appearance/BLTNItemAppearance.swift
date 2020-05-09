@@ -133,7 +133,6 @@ extension BLTNItemAppearance {
 
     @objc public func makeTitleFont() -> UIFont {
 
-        return UIFont(name: "Avenir", size: titleFontSize) ?? UIFont.systemFont(ofSize: titleFontSize)
         if let titleFontDescriptor = self.titleFontDescriptor {
             return UIFont(descriptor: titleFontDescriptor, size: titleFontSize)
         } else {

@@ -22,7 +22,6 @@ class CCChannelDetailsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
 }
 
 extension CCChannelDetailsVC : CCGetsViewController, CCHapticEngine {
@@ -81,7 +80,7 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
             }
             
         default:
-            prints("A")
+            prints("Unhandled Section: \(indexPath.section) in \(#function)")
         }
         return UITableViewCell()
     }
@@ -91,17 +90,17 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
         case 0:
             switch indexPath.row {
             default:
-                prints("")
+                prints("Unhandled Row: \(indexPath.row) in \(#function)")
             }
         case 1:
             switch indexPath.row {
             case (viewModel?.adminRows.count ?? 1) - 1:
                 delete()
             default:
-                prints("")
+                prints("Unhandled Row: \(indexPath.row) in \(#function)")
             }
         default:
-            prints("")
+            prints("Unhandled Section: \(indexPath.section) in \(#function)")
         }
     }
 }

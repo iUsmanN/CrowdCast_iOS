@@ -7,12 +7,21 @@
 //
 
 import Foundation
+import Kingfisher
+import FirebaseStorage
 import UIKit
 
 protocol CCSetsNavbar : CCOpensSettings {}
 
 extension CCSetsNavbar {
     
+    /// Sets up navigation bar
+    /// - Parameters:
+    ///   - navigationBar: View Controller's navigation bar
+    ///   - navigationItem: View Controller's navigation controller
+    ///   - title: View Controller's title
+    ///   - largeTitles: should prefer large titles
+    ///   - profileAction: profile button action
     func setupNavBar(navigationBar: UINavigationBar?,navigationItem: UINavigationItem, title: String?, largeTitles: Bool, profileAction: Selector?){
         navigationItem.title                = title
         navigationBar?.prefersLargeTitles   = largeTitles
@@ -50,7 +59,12 @@ extension CCSetsNavbar {
         profileView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         profileView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         profileView.contentMode = .scaleAspectFill
-        profileView.setImage(#imageLiteral(resourceName: "me3.png"), for: .normal)
+        if let url = URL(string: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID())){
+            profileView.kf.setImage(with: ImageResource(downloadURL: url,
+                                    cacheKey: url.getQueryLessURL()?.absoluteString),
+                                    for: .normal,
+                                    placeholder: #imageLiteral(resourceName: "avatarMale"))
+        }
         guard let action = action else { return UIBarButtonItem() }
         profileView.addTarget(self, action: action, for: .primaryActionTriggered)
         let profileButton = UIBarButtonItem(customView: profileView)

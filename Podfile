@@ -6,7 +6,10 @@ target 'CrowdCast' do
   use_frameworks!
 
   # Pods for CrowdCast
+
+  pod 'Kingfisher', '~> 5.0'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'TwilioVideo', '~> 3.2'
   pod "Device", '~> 3.2.1'
   pod 'Firebase/Firestore'

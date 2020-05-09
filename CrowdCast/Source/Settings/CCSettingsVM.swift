@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CCSettingsVM {
     let data = [
@@ -22,5 +23,12 @@ extension CCSettingsVM {
     
     func cellDataFor(indexPath: IndexPath) -> CCCellData {
         return data[indexPath.row]
+    }
+}
+
+extension CCSettingsVM : CCImageStorage {
+    
+    func updateProfilePicture(image: UIImage, result: @escaping (Result<UIImage?, CCError>)->()) {
+        uploadProfileImage(image: image, result: result)
     }
 }

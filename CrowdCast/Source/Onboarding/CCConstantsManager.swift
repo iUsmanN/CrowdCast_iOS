@@ -27,13 +27,10 @@ struct Constants {
         case CCJoinChannelVC
         case CCCallScreenVC
     }
-//    
-//    struct Storyboards {
-//        static let Home         = UIStoryboard(name: "Home", bundle: nil)
-//        static let Onboarding   = UIStoryboard(name: "Onboarding", bundle: nil)
-//        static let Others       = UIStoryboard(name: "Others", bundle: nil)
-//        static let Channels     = UIStoryboard(name: "Channels", bundle: nil)
-//    }
+    
+    static func imageCacheString(id: String?) -> String {
+        return "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/displays%2F\(id ?? "ID_MISSING").png"
+    }
     
     struct CardList {
         static let rowHeight    : CGFloat = 130

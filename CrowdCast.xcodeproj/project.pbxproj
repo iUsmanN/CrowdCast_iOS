@@ -52,6 +52,8 @@
 		B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */; };
 		B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D20243A41520011715A /* CCPaginatedData.swift */; };
 		B65A70E1244F109E004BB001 /* CCDelegateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A70E0244F109E004BB001 /* CCDelegateManager.swift */; };
+		B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */; };
+		B65C33482466D2DA0055DA53 /* CCNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33472466D2DA0055DA53 /* CCNotificationManager.swift */; };
 		B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
@@ -66,6 +68,7 @@
 		B67E8C57245DF237002FAD55 /* CCCardMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67E8C55245DF237002FAD55 /* CCCardMemberCell.xib */; };
 		B67E8C5924609FE0002FAD55 /* CCUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */; };
 		B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */; };
+		B687A91E2464671100F28922 /* CCImagePickingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687A91D2464671100F28922 /* CCImagePickingVC.swift */; };
 		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
 		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
 		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
@@ -99,6 +102,7 @@
 		B6BD90D724377E3D00F50848 /* Channels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD90D624377E3D00F50848 /* Channels.storyboard */; };
 		B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */; };
 		B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */; };
+		B6BF45B52461F96B00DAF383 /* CCImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */; };
 		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
 		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
 		B6D04E6424547E9F005F4E61 /* CCColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E6324547E9F005F4E61 /* CCColorCell.swift */; };
@@ -200,6 +204,8 @@
 		B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryPaths.swift; sourceTree = "<group>"; };
 		B64E4D20243A41520011715A /* CCPaginatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPaginatedData.swift; sourceTree = "<group>"; };
 		B65A70E0244F109E004BB001 /* CCDelegateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDelegateManager.swift; sourceTree = SOURCE_ROOT; };
+		B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetupProfileVM.swift; sourceTree = "<group>"; };
+		B65C33472466D2DA0055DA53 /* CCNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCNotificationManager.swift; path = "CrowdCast/Source/Setup Profile/CCNotificationManager.swift"; sourceTree = SOURCE_ROOT; };
 		B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCHapticEngine.swift; path = "CrowdCast/Source/Channels/Call Screen/CCHapticEngine.swift"; sourceTree = SOURCE_ROOT; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 		B67E8C55245DF237002FAD55 /* CCCardMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCardMemberCell.xib; sourceTree = "<group>"; };
 		B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUsersManager.swift; path = CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift; sourceTree = SOURCE_ROOT; };
 		B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserDefaults.swift; sourceTree = "<group>"; };
+		B687A91D2464671100F28922 /* CCImagePickingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCImagePickingVC.swift; sourceTree = "<group>"; };
 		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
 		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
@@ -247,6 +254,7 @@
 		B6BD90D624377E3D00F50848 /* Channels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Channels.storyboard; sourceTree = "<group>"; };
 		B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCAddChannelVC.swift; path = CrowdCast/Storyboards/CCAddChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCJoinChannelVC.swift; path = CrowdCast/Storyboards/CCJoinChannelVC.swift; sourceTree = SOURCE_ROOT; };
+		B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCImageStorage.swift; path = CrowdCast/Extensions/CCImageStorage.swift; sourceTree = SOURCE_ROOT; };
 		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
 		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
 		B6D04E6324547E9F005F4E61 /* CCColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCColorCell.swift; sourceTree = "<group>"; };
@@ -442,6 +450,7 @@
 				B6244DDB244F82B900E52669 /* CCTypeAliases.swift */,
 				B6D04E752455D70D005F4E61 /* CCRoundButton.swift */,
 				B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */,
+				B687A91D2464671100F28922 /* CCImagePickingVC.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,6 +557,7 @@
 		B64E4D012439E6FC0011715A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B6BD90D22437130B00F50848 /* CCSectionHeaderData.swift */,
 				B64E4D0A2439EF210011715A /* Protocols */,
 				B64E4D022439E70E0011715A /* CCChannel.swift */,
 				B64E4D042439E7A40011715A /* CCIndividual.swift */,
@@ -646,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				B693E30624311A37002B26BC /* CCSetupProfileVC.swift */,
+				B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */,
 			);
 			path = "Setup Profile";
 			sourceTree = "<group>";
@@ -667,14 +678,6 @@
 				B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */,
 			);
 			path = Enums;
-			sourceTree = "<group>";
-		};
-		B6BD90D1243712E500F50848 /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				B6BD90D22437130B00F50848 /* CCSectionHeaderData.swift */,
-			);
-			path = Structs;
 			sourceTree = "<group>";
 		};
 		B6BD90D824377E7300F50848 /* Tabs */ = {
@@ -754,7 +757,6 @@
 				B64E4D012439E6FC0011715A /* Models */,
 				B64E4CFE2439DD050011715A /* Network Engine */,
 				B64E4CFB2439DCB60011715A /* Services */,
-				B6BD90D1243712E500F50848 /* Structs */,
 				B6BD90CC2436FF2E00F50848 /* Enums */,
 				B60A29D42434826900B7F76F /* Protocols */,
 				B61ADC1F2430BB4A00ECD1D2 /* Icons */,
@@ -800,6 +802,8 @@
 				B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */,
 				B65A70E0244F109E004BB001 /* CCDelegateManager.swift */,
 				B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */,
+				B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */,
+				B65C33472466D2DA0055DA53 /* CCNotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1181,6 +1185,7 @@
 				B6D04E7024558DD4005F4E61 /* CCContainsID.swift in Sources */,
 				B6ACD0882441AE8B00405838 /* CCChannelDetailsVM.swift in Sources */,
 				B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */,
+				B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
 				B61C90F32441DCE100F6B8A9 /* CCCallScreenVC.swift in Sources */,
 				B64E4D182439F6020011715A /* CCContainsCrowds.swift in Sources */,
@@ -1196,8 +1201,10 @@
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
 				B67962122432566D00C2A13C /* CCChannelsVC.swift in Sources */,
 				B64E4CF1243890510011715A /* CCNibManager.swift in Sources */,
+				B687A91E2464671100F28922 /* CCImagePickingVC.swift in Sources */,
 				B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */,
 				B6E3675C2434F25000B511A0 /* CCCardTVCTableViewCell.swift in Sources */,
+				B65C33482466D2DA0055DA53 /* CCNotificationManager.swift in Sources */,
 				B6D04E6424547E9F005F4E61 /* CCColorCell.swift in Sources */,
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
@@ -1215,6 +1222,7 @@
 				B64E4D002439DD170011715A /* CCNetworkEngine.swift in Sources */,
 				B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */,
 				B6BD90CE2436FF4C00F50848 /* CCCardHeaderAction.swift in Sources */,
+				B6BF45B52461F96B00DAF383 /* CCImageStorage.swift in Sources */,
 				B6FE5922244BA2F800121FDD /* CCCallScreenLayout.swift in Sources */,
 				B64E4CFD2439DCFE0011715A /* CCChannelsService.swift in Sources */,
 				B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */,

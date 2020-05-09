@@ -31,6 +31,7 @@ extension CCChannelsVC : CCSetsNavbar {
                     largeTitles     : true,
                     profileAction   : #selector(viewSettings))
         setupTableView()
+        addObservers()
     }
 
     @objc private func viewSettings(){
@@ -62,9 +63,9 @@ extension CCChannelsVC {
     func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPaths, with: .top)
+            self?.tableView.insertRows(at: indexPaths, with: .right)
             self?.tableView.endUpdates()
-            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .bottom)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .left)
             //self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
         }
     }
@@ -131,4 +132,19 @@ extension CCChannelsVC : CCCreateChannelDelegate {
     func channelRemoved(data: CCChannel) {
         viewModel?.removeCreatedChannel(channel: data)
     }
+}
+
+extension CCChannelsVC {
+    
+    func addObservers(){
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: .profilePictureChanged,
+                                               object: nil)
+    }
+    
+    @objc func reloadData(){
+        tableView.reloadData()
+    }
+    
 }

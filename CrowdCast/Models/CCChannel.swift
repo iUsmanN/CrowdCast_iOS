@@ -13,7 +13,7 @@ struct CCChannel                : Codable, CCContainsID {
     var name                    : String?
     var description             : String?
     var owners                  : [String]?
-    var members                 : [String?]?
+    var members                 : [String]?
     var color                   : String?
     
     func debugDescription() -> String {

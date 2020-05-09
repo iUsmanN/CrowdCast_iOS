@@ -11,6 +11,7 @@ import UIKit
 
 
 ///UNUSED (Will be used in future)
+//This is an alternate Call Screen Layout with 3 Columns
 class CCCallScreenLayout : NSObject {
     
     var numberOfCells   = 0
