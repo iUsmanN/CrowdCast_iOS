@@ -31,6 +31,7 @@ extension CCChannelsVC : CCSetsNavbar {
                     largeTitles     : true,
                     profileAction   : #selector(viewSettings))
         setupTableView()
+        addObservers()
     }
 
     @objc private func viewSettings(){
@@ -131,4 +132,19 @@ extension CCChannelsVC : CCCreateChannelDelegate {
     func channelRemoved(data: CCChannel) {
         viewModel?.removeCreatedChannel(channel: data)
     }
+}
+
+extension CCChannelsVC {
+    
+    func addObservers(){
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadData),
+                                               name: .profilePictureChanged,
+                                               object: nil)
+    }
+    
+    @objc func reloadData(){
+        tableView.reloadData()
+    }
+    
 }
