@@ -63,7 +63,7 @@ extension CCSettingsVC : CCImagePickedDelegate {
     func imageSelected(result: Result<UIImage, CCError>) {
         switch result {
         case .success(let image):
-            profileImage.alpha = 0.05
+            profileImage.alpha = 0.2
             viewModel?.updateProfilePicture(image: image, result: { [weak self] (result) in
                 switch result {
                 case .success(let image): self?.profileImage.image = image; self?.profileImage.alpha = 1
