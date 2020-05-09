@@ -327,22 +327,35 @@
         <!--Join Channel-->
         <scene sceneID="x2S-uR-rRQ">
             <objects>
-                <viewController storyboardIdentifier="CCJoinChannelVC" title="Join Channel" id="as6-gm-bVv" customClass="CCJoinChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCJoinChannelVC" title="Join Channel" hidesBottomBarWhenPushed="YES" id="as6-gm-bVv" customClass="CCJoinChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WFQ-bF-BeA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" name="green"/>
                         <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationItem key="navigationItem" id="6r3-4R-ksK">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="info.circle" catalog="system" id="PFF-cW-v3g">
+                                <color key="tintColor" name="Main Accent"/>
+                                <connections>
+                                    <action selector="channelDetailsPressed:" destination="as6-gm-bVv" id="cUM-PM-kaG"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="arrowshape.turn.up.right.circle" catalog="system" id="ocR-gx-xyu"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFw-kd-qSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="112"/>
+            <point key="canvasLocation" x="758" y="112"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cancel" width="72" height="72"/>
+        <image name="arrowshape.turn.up.right.circle" catalog="system" width="128" height="121"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -351,6 +364,9 @@
         </namedColor>
         <namedColor name="blue">
             <color red="0.0" green="0.42699998617172241" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green">
+            <color red="0.096000000834465027" green="0.65100002288818359" blue="0.19799999892711639" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

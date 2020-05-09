@@ -36,14 +36,14 @@ extension CCChannelDetailsVC : CCGetsViewController, CCHapticEngine {
 
 extension CCChannelDetailsVC {
     
-    func setupViewModel(inputData: CCChannel){
+    func setupViewModel(inputData: CCChannel?){
         viewModel = CCChannelDetailsVM(channelData: inputData)
     }
     
     func setupView(){
         tableView.dataSource = self
         tableView.delegate   = self
-        navigationItem.title = viewModel?.data.name
+        navigationItem.title = "Details"
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(Nib.get.CCSwitchTVC,         forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
         tableView.register(Nib.get.CCDetailsSegueTVC,   forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)

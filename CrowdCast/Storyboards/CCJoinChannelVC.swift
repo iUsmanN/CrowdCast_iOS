@@ -10,10 +10,22 @@ import UIKit
 
 class CCJoinChannelVC: UIViewController {
 
+    var viewModel : CCJoinChannelVM?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         // Do any additional setup after loading the view.
+    }
+}
+
+extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
+    
+    @IBAction func channelDetailsPressed(_ sender: Any) {
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
+        vc.setupViewModel(inputData: viewModel?.getData())
+        generateHapticFeedback(.light)
+        DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
 }
 
@@ -23,8 +35,13 @@ extension CCJoinChannelVC {
         setupNavigationBar()
     }
     
+    func setupViewModel(inputData: CCChannel){
+        viewModel = CCJoinChannelVM(channel: inputData)
+    }
+    
     func setupNavigationBar(){
-        navigationItem.title = "Join Channel"
-        navigationController?.navigationBar.isTranslucent = false
+        navigationItem.title = viewModel?.channelName() ?? ""
+        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.barTintColor = .clear
     }
 }

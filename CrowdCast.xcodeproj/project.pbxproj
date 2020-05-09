@@ -53,6 +53,7 @@
 		B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D20243A41520011715A /* CCPaginatedData.swift */; };
 		B65A70E1244F109E004BB001 /* CCDelegateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A70E0244F109E004BB001 /* CCDelegateManager.swift */; };
 		B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */; };
+		B65C334A2466FC430055DA53 /* CCJoinChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */; };
 		B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
@@ -204,6 +205,7 @@
 		B64E4D20243A41520011715A /* CCPaginatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPaginatedData.swift; sourceTree = "<group>"; };
 		B65A70E0244F109E004BB001 /* CCDelegateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDelegateManager.swift; sourceTree = SOURCE_ROOT; };
 		B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetupProfileVM.swift; sourceTree = "<group>"; };
+		B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCJoinChannelVM.swift; sourceTree = "<group>"; };
 		B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCHapticEngine.swift; path = "CrowdCast/Source/Channels/Call Screen/CCHapticEngine.swift"; sourceTree = SOURCE_ROOT; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 			isa = PBXGroup;
 			children = (
 				B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */,
+				B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */,
 			);
 			path = "Join Channel";
 			sourceTree = "<group>";
@@ -1237,6 +1240,7 @@
 				B6974880243B96E800AE95C0 /* CCUser.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
 				B64E4D072439E8370011715A /* CCCrowd.swift in Sources */,
+				B65C334A2466FC430055DA53 /* CCJoinChannelVM.swift in Sources */,
 				B6ACD0862441AE7F00405838 /* CCChannelDetailsVC.swift in Sources */,
 				B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */,
 				B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */,

@@ -30,7 +30,8 @@ struct CCChannelDetailsVM {
     var data                = CCChannel()
     var localVideoTrack     : LocalVideoTrack?
     
-    init(channelData: CCChannel) {
+    init(channelData: CCChannel?) {
+        guard let channelData = channelData else { return }
         data = channelData
     }
 }
