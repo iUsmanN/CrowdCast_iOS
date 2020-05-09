@@ -34,3 +34,7 @@ extension URL {
         return components?.url
     }
 }
+
+extension Notification.Name {
+    static let profilePictureChanged = Notification.Name("profilePictureChanged")
+}

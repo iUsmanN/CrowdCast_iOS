@@ -50,6 +50,7 @@ extension CCImageStorage {
             guard let imageData = image.pngData(),
                   let KFImage = KFCrossPlatformImage(data: imageData) else { result(.failure(.ImageCacheFailure)); return }
             ImageCache.default.store(KFImage, forKey: self.imageCacheURL(id: CCProfileManager.sharedInstance.getUID())?.absoluteString ?? "")
+            NotificationCenter.default.post(name: .profilePictureChanged, object: nil)
             result(.success(image))
         }
     }
