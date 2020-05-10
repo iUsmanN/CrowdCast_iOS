@@ -20,17 +20,17 @@ class CCJoinChannelVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        cameraView.startCapture()
+        navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
+        toggleCameraView(enable: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        cameraView.stopCapture()
+        toggleCameraView(enable: false)
     }
 }
 
@@ -53,6 +53,21 @@ extension CCJoinChannelVC : CCImageStorage {
         cameraView.setupCameraView()
         setupNavigationBar()
     }
+    
+    func toggleCameraView(enable: Bool){
+        if enable {
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
+                UIView.animate(withDuration: 0.5) {
+                    self.cameraView.alpha = 1
+                }
+            }
+            cameraView.startCapture()
+        } else {
+            cameraView.alpha = 0
+            cameraView.stopCapture()
+        }
+    }
+    
     
     func setupLayers() {
         profileView.layer.cornerRadius = profileView.frame.size.width / 2

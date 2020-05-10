@@ -337,13 +337,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-NA-Rfv">
-                                <rect key="frame" x="94.5" y="310.5" width="225" height="225"/>
+                                <rect key="frame" x="112" y="328" width="190" height="190"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="Aqo-hX-jmh"/>
-                                    <constraint firstAttribute="width" constant="225" id="gXr-gn-u4Q"/>
+                                    <constraint firstAttribute="height" constant="190" id="Aqo-hX-jmh"/>
+                                    <constraint firstAttribute="width" constant="190" id="gXr-gn-u4Q"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGV-9y-JAX" customClass="CCCameraView" customModule="CrowdCast" customModuleProvider="target">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGV-9y-JAX" customClass="CCCameraView" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
