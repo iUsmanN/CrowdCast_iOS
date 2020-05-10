@@ -13,6 +13,7 @@ class CCJoinChannelVC: UIViewController {
 
     @IBOutlet weak var profileView  : UIImageView!
     @IBOutlet weak var cameraView   : CCCameraView!
+    @IBOutlet weak var gradientView : UIImageView!
     
     var viewModel : CCJoinChannelVM?
     
@@ -27,8 +28,8 @@ class CCJoinChannelVC: UIViewController {
         cameraView.startCapture()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         cameraView.stopCapture()
     }
 }
@@ -65,5 +66,6 @@ extension CCJoinChannelVC : CCImageStorage {
         navigationItem.title = viewModel?.channelName() ?? ""
         navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.navigationBar.barTintColor = .clear
+        gradientView.image = UIImage(named: "BW Gradient")?.withRenderingMode(.alwaysTemplate)
     }
 }

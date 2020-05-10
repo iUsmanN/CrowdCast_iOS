@@ -347,6 +347,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BW Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-xp-9JW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <color key="tintColor" name="Foreground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="R1y-OZ-VVd"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-9M-mn8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="132" y="762" width="150" height="50"/>
                                 <constraints>
@@ -363,11 +370,14 @@
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="gmx-xp-9JW" firstAttribute="top" secondItem="WFQ-bF-BeA" secondAttribute="top" id="0EH-ed-dHe"/>
                             <constraint firstItem="iqn-h8-zxp" firstAttribute="bottom" secondItem="2Z2-9M-mn8" secondAttribute="bottom" constant="50" id="3hH-qo-cF7"/>
                             <constraint firstItem="2Z2-9M-mn8" firstAttribute="centerX" secondItem="WFQ-bF-BeA" secondAttribute="centerX" id="AXE-al-aiV"/>
                             <constraint firstAttribute="bottom" secondItem="yGV-9y-JAX" secondAttribute="bottom" id="Gl3-4a-Usk"/>
+                            <constraint firstItem="gmx-xp-9JW" firstAttribute="leading" secondItem="WFQ-bF-BeA" secondAttribute="leading" id="StD-xQ-Hnl"/>
                             <constraint firstItem="fkh-9s-3JB" firstAttribute="leading" secondItem="iqn-h8-zxp" secondAttribute="leading" id="XIq-9Y-OX3"/>
                             <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerX" secondItem="WFQ-bF-BeA" secondAttribute="centerX" id="aqK-8U-QFz"/>
+                            <constraint firstAttribute="trailing" secondItem="gmx-xp-9JW" secondAttribute="trailing" id="cQb-xv-VLy"/>
                             <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerY" secondItem="WFQ-bF-BeA" secondAttribute="centerY" constant="-25" id="gfw-57-gVF"/>
                             <constraint firstItem="iqn-h8-zxp" firstAttribute="trailing" secondItem="yGV-9y-JAX" secondAttribute="trailing" id="hvO-bR-jOE"/>
                             <constraint firstItem="yGV-9y-JAX" firstAttribute="leading" secondItem="iqn-h8-zxp" secondAttribute="leading" id="mtG-a7-6P3"/>
@@ -380,18 +390,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="6r3-4R-ksK">
                         <rightBarButtonItems>
-                            <barButtonItem title="Details" id="PFF-cW-v3g">
-                                <color key="tintColor" name="Main Accent"/>
+                            <barButtonItem title="Details" image="info.circle" catalog="system" id="PFF-cW-v3g">
+                                <color key="tintColor" name="Inverted"/>
                                 <connections>
                                     <action selector="channelDetailsPressed:" destination="as6-gm-bVv" id="cUM-PM-kaG"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Share" id="ocR-gx-xyu"/>
+                            <barButtonItem title="Share" image="qrcode" catalog="system" id="ocR-gx-xyu">
+                                <color key="tintColor" name="Inverted"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cameraView" destination="yGV-9y-JAX" id="DTs-GJ-Nkg"/>
+                        <outlet property="gradientView" destination="gmx-xp-9JW" id="KKX-K6-a3i"/>
                         <outlet property="profileView" destination="0Yj-NA-Rfv" id="UcA-v8-tv3"/>
                     </connections>
                 </viewController>
@@ -401,9 +414,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BW Gradient" width="256" height="94"/>
         <image name="Cancel" width="72" height="72"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Foreground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Inverted">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
             <color red="0.0040000001899898052" green="0.41600000858306885" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
