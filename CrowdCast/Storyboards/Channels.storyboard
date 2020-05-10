@@ -343,6 +343,10 @@
                                     <constraint firstAttribute="width" constant="225" id="gXr-gn-u4Q"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGV-9y-JAX" customClass="CCCameraView" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-9M-mn8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="132" y="762" width="150" height="50"/>
                                 <constraints>
@@ -361,12 +365,16 @@
                         <constraints>
                             <constraint firstItem="iqn-h8-zxp" firstAttribute="bottom" secondItem="2Z2-9M-mn8" secondAttribute="bottom" constant="50" id="3hH-qo-cF7"/>
                             <constraint firstItem="2Z2-9M-mn8" firstAttribute="centerX" secondItem="WFQ-bF-BeA" secondAttribute="centerX" id="AXE-al-aiV"/>
+                            <constraint firstAttribute="bottom" secondItem="yGV-9y-JAX" secondAttribute="bottom" id="Gl3-4a-Usk"/>
                             <constraint firstItem="fkh-9s-3JB" firstAttribute="leading" secondItem="iqn-h8-zxp" secondAttribute="leading" id="XIq-9Y-OX3"/>
                             <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerX" secondItem="WFQ-bF-BeA" secondAttribute="centerX" id="aqK-8U-QFz"/>
                             <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerY" secondItem="WFQ-bF-BeA" secondAttribute="centerY" constant="-25" id="gfw-57-gVF"/>
+                            <constraint firstItem="iqn-h8-zxp" firstAttribute="trailing" secondItem="yGV-9y-JAX" secondAttribute="trailing" id="hvO-bR-jOE"/>
+                            <constraint firstItem="yGV-9y-JAX" firstAttribute="leading" secondItem="iqn-h8-zxp" secondAttribute="leading" id="mtG-a7-6P3"/>
                             <constraint firstItem="iqn-h8-zxp" firstAttribute="trailing" secondItem="fkh-9s-3JB" secondAttribute="trailing" id="pMt-3h-ioR"/>
                             <constraint firstItem="fkh-9s-3JB" firstAttribute="top" secondItem="WFQ-bF-BeA" secondAttribute="top" id="uCa-JQ-lt9"/>
                             <constraint firstAttribute="bottom" secondItem="fkh-9s-3JB" secondAttribute="bottom" id="xi6-BG-fiK"/>
+                            <constraint firstItem="yGV-9y-JAX" firstAttribute="top" secondItem="WFQ-bF-BeA" secondAttribute="top" id="yFy-p7-BXQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                     </view>
@@ -383,6 +391,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="cameraView" destination="yGV-9y-JAX" id="DTs-GJ-Nkg"/>
                         <outlet property="profileView" destination="0Yj-NA-Rfv" id="UcA-v8-tv3"/>
                     </connections>
                 </viewController>

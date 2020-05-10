@@ -11,7 +11,8 @@ import Kingfisher
 
 class CCJoinChannelVC: UIViewController {
 
-    @IBOutlet weak var profileView: UIImageView!
+    @IBOutlet weak var profileView  : UIImageView!
+    @IBOutlet weak var cameraView   : CCCameraView!
     
     var viewModel : CCJoinChannelVM?
     
@@ -19,6 +20,11 @@ class CCJoinChannelVC: UIViewController {
         super.viewDidLoad()
         setupView()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraView.startCapture()
     }
 }
 
