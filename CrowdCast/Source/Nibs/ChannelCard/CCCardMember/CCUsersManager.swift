@@ -24,7 +24,7 @@ extension CCUsersManager : CCDispatchQueue {
         for id in ids {
             if id == CCProfileManager.sharedInstance.getUID() {
                 presentUsers.append(CCProfileManager.sharedInstance.getProfile())
-            } else if let user = CCUserDefaults.shared.retrieveCodableData(key: id, userDefaults: CCUserDefaults.shared.users, type: CCUser()) as? CCUser {
+            } else if let user = CCUserDefaults.shared.retrieveCodableData(key: id, userDefaults: CCUserDefaults.shared.users, type: CCUser()) {
                 presentUsers.append(user)
             } else {
                 newUserIds.append(id)

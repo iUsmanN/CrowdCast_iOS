@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CCJoinChannelVC: UIViewController {
 
+    @IBOutlet weak var profileView: UIImageView!
+    
     var viewModel : CCJoinChannelVM?
     
     override func viewDidLoad() {
@@ -29,10 +32,17 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
     }
 }
 
-extension CCJoinChannelVC {
+extension CCJoinChannelVC : CCImageStorage {
     
     func setupView(){
+        guard let url = imageCacheURL(id: CCProfileManager.sharedInstance.getUID()) else { return }
+        profileView.kf.setImage(with: ImageResource(downloadURL: url))
+        setupLayers()
         setupNavigationBar()
+    }
+    
+    func setupLayers() {
+        profileView.layer.cornerRadius = profileView.frame.size.width / 2
     }
     
     func setupViewModel(inputData: CCChannel){

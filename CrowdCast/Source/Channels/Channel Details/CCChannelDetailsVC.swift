@@ -127,7 +127,10 @@ extension CCChannelDetailsVC {
             case .success(let channel):
                 guard let parentVC = self.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
                 parentVC.channelRemoved(data: channel)
-                DispatchQueue.main.async { [weak self] in self?.navigationController?.popViewController(animated: true) }
+                DispatchQueue.main.async { [weak self] in
+                    self?.navigationController?.popViewController(animated: true)
+                    self?.navigationController?.popViewController(animated: true)
+                }
             case .failure(let error):
                 prints("Error: \(error)")
             }

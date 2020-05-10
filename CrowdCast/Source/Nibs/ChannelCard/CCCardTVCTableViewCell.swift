@@ -86,7 +86,7 @@ extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath) as? CCCardMemberCell else { return UICollectionViewCell() }
-        cell.memberID   = ((data?.members ?? []) + (data?.owners ?? []))[indexPath.row]
+        cell.memberID   = ((data?.members ?? []) + (data?.owners ?? [])).sorted()[indexPath.row]
         return cell
     }
     

@@ -331,21 +331,60 @@
                     <view key="view" contentMode="scaleToFill" id="WFQ-bF-BeA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="green"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-9s-3JB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-NA-Rfv">
+                                <rect key="frame" x="94.5" y="310.5" width="225" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="Aqo-hX-jmh"/>
+                                    <constraint firstAttribute="width" constant="225" id="gXr-gn-u4Q"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-9M-mn8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="132" y="762" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="MfG-T0-n0w"/>
+                                    <constraint firstAttribute="height" constant="50" id="dk0-iB-qNB"/>
+                                </constraints>
+                                <state key="normal" title="JOIN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="iqn-h8-zxp" firstAttribute="bottom" secondItem="2Z2-9M-mn8" secondAttribute="bottom" constant="50" id="3hH-qo-cF7"/>
+                            <constraint firstItem="2Z2-9M-mn8" firstAttribute="centerX" secondItem="WFQ-bF-BeA" secondAttribute="centerX" id="AXE-al-aiV"/>
+                            <constraint firstItem="fkh-9s-3JB" firstAttribute="leading" secondItem="iqn-h8-zxp" secondAttribute="leading" id="XIq-9Y-OX3"/>
+                            <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerX" secondItem="WFQ-bF-BeA" secondAttribute="centerX" id="aqK-8U-QFz"/>
+                            <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerY" secondItem="WFQ-bF-BeA" secondAttribute="centerY" constant="-25" id="gfw-57-gVF"/>
+                            <constraint firstItem="iqn-h8-zxp" firstAttribute="trailing" secondItem="fkh-9s-3JB" secondAttribute="trailing" id="pMt-3h-ioR"/>
+                            <constraint firstItem="fkh-9s-3JB" firstAttribute="top" secondItem="WFQ-bF-BeA" secondAttribute="top" id="uCa-JQ-lt9"/>
+                            <constraint firstAttribute="bottom" secondItem="fkh-9s-3JB" secondAttribute="bottom" id="xi6-BG-fiK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                     </view>
                     <navigationItem key="navigationItem" id="6r3-4R-ksK">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="info.circle" catalog="system" id="PFF-cW-v3g">
+                            <barButtonItem title="Details" id="PFF-cW-v3g">
                                 <color key="tintColor" name="Main Accent"/>
                                 <connections>
                                     <action selector="channelDetailsPressed:" destination="as6-gm-bVv" id="cUM-PM-kaG"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="arrowshape.turn.up.right.circle" catalog="system" id="ocR-gx-xyu"/>
+                            <barButtonItem title="Share" id="ocR-gx-xyu"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="profileView" destination="0Yj-NA-Rfv" id="UcA-v8-tv3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFw-kd-qSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,8 +393,6 @@
     </scenes>
     <resources>
         <image name="Cancel" width="72" height="72"/>
-        <image name="arrowshape.turn.up.right.circle" catalog="system" width="128" height="121"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -364,9 +401,6 @@
         </namedColor>
         <namedColor name="blue">
             <color red="0.0" green="0.42699998617172241" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="green">
-            <color red="0.096000000834465027" green="0.65100002288818359" blue="0.19799999892711639" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
