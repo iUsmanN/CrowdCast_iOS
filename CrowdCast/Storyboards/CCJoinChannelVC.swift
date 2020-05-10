@@ -26,6 +26,11 @@ class CCJoinChannelVC: UIViewController {
         super.viewWillAppear(animated)
         cameraView.startCapture()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cameraView.stopCapture()
+    }
 }
 
 extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
@@ -44,6 +49,7 @@ extension CCJoinChannelVC : CCImageStorage {
         guard let url = imageCacheURL(id: CCProfileManager.sharedInstance.getUID()) else { return }
         profileView.kf.setImage(with: ImageResource(downloadURL: url))
         setupLayers()
+        cameraView.setupCameraView()
         setupNavigationBar()
     }
     

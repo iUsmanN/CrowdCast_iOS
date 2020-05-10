@@ -16,8 +16,16 @@ class CCCameraView          : UIView {
     var videoPreviewLayer               : AVCaptureVideoPreviewLayer?
     var capturePhotoOutput              = AVCapturePhotoOutput()
     
-    func startCapture() {
+    func setupCameraView() {
         initUI(.front)
+    }
+    
+    func startCapture() {
+        captureSession.startRunning()
+    }
+    
+    func  stopCapture() {
+        captureSession.stopRunning()
     }
     
     func initUI(_ position: AVCaptureDevice.Position) {
@@ -31,7 +39,6 @@ class CCCameraView          : UIView {
                 self?.videoPreviewLayer?.frame = self!.frame
                 self?.layer.addSublayer(self!.videoPreviewLayer!)
                 self?.captureSession.commitConfiguration()
-                self?.captureSession.startRunning()
             }
         } catch {
             print("Error")
