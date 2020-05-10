@@ -63,6 +63,18 @@ extension CCCardTVCTableViewCell : CCHapticEngine {
     
     @IBAction func pinged(_ sender: Any) {
         generateHapticFeedback(.rigid)
+        waveAnimation()
+    }
+    
+    func waveAnimation() {
+        UIView.animate(withDuration: 0.3) {
+            self.cardBackgroundView.backgroundColor = UIColor(named: self.data?.color ?? "red")
+        }
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (_) in
+            UIView.animate(withDuration: 0.5) {
+                self.cardBackgroundView.backgroundColor = UIColor(named: "Foreground")
+            }
+        }
     }
 }
 

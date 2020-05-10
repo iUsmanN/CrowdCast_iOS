@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class CCJoinChannelVC: UIViewController {
-
+    
     @IBOutlet weak var profileView  : UIImageView!
     @IBOutlet weak var cameraView   : CCCameraView!
     @IBOutlet weak var gradientView : UIImageView!
@@ -32,9 +32,18 @@ class CCJoinChannelVC: UIViewController {
         super.viewDidDisappear(animated)
         toggleCameraView(enable: false)
     }
+    
+    
 }
 
 extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
+    
+    @IBAction func joinCall(_ sender: Any) {
+        let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
+        viewController.setupViewModel(channelData: viewModel?.getData())
+        generateHapticFeedback(.light)
+        DispatchQueue.main.async {  [weak self] in self?.present(viewController, animated: true, completion: nil) }
+    }
     
     @IBAction func channelDetailsPressed(_ sender: Any) {
         let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
