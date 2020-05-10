@@ -15,4 +15,6 @@ struct CCChannel                : Codable, CCContainsID {
     var owners                  : [String]?
     var members                 : [String]?
     var color                   : String?
+    
+    lazy var allMembers         = ((members ?? []) + (owners ?? [])).sorted()
 }

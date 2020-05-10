@@ -21,8 +21,9 @@ class CCCardTVCTableViewCell: UITableViewCell {
         didSet{
             titleLabel.text = data?.name
             CCUsersManager.sharedInstance.getUserNames(ids: data?.owners, completion: { (ownerNames) in
-                guard let name = ownerNames.first else { return }
-                DispatchQueue.main.async { [weak self] in self?.ownerLabel.text = name } })
+                DispatchQueue.main.async { [weak self] in
+                    self?.ownerLabel.text = ownerNames.compactMap({$0}).joined(separator: ", ")
+                }})
             setColors(color: data?.color ?? "red")
             timeLabel.text  = nil
             setupCollectionView()
@@ -58,7 +59,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
     }
 }
 
-extension CCCardTVCTableViewCell {
+extension CCCardTVCTableViewCell : CCHapticEngine {
     
     @IBAction func pinged(_ sender: Any) {
         generateHapticFeedback(.rigid)
@@ -78,7 +79,7 @@ extension CCCardTVCTableViewCell {
     }
 }
 
-extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate, CCHapticEngine {
+extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (data?.members?.count ?? 0) + (data?.owners?.count ?? 0)
@@ -86,11 +87,7 @@ extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath) as? CCCardMemberCell else { return UICollectionViewCell() }
-        cell.memberID   = ((data?.members ?? []) + (data?.owners ?? [])).sorted()[indexPath.row]
+        cell.memberID   = data?.allMembers[indexPath.row]
         return cell
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        generateHapticFeedback(.light)
     }
 }
