@@ -83,7 +83,7 @@ extension CCCardTVCTableViewCell {
     func setColors(color: String) {
         let c = UIColor(named: color)
         cardBackgroundView.layer.borderColor = c?.cgColor
-        cardBackgroundView.layer.shadowColor = c?.cgColor
+        cardBackgroundView.layer.shadowColor = UIColor.black.cgColor//c?.cgColor
         titleLabel.textColor = c
         timeLabel.setView(inputColor: c)
         pingButton.setImage(#imageLiteral(resourceName: "Bell").withRenderingMode(.alwaysTemplate), for: .normal)
