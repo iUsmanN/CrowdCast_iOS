@@ -136,6 +136,7 @@
 		B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E367722436634700B511A0 /* CCScreenProtocols.swift */; };
 		B6E722702468089E00526E4C /* CCCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7226F2468089E00526E4C /* CCCameraView.swift */; };
 		B6FE5922244BA2F800121FDD /* CCCallScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE5921244BA2F800121FDD /* CCCallScreenLayout.swift */; };
+		B6FEAA0E246C538500D194C3 /* CCCrowdsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAA0D246C538500D194C3 /* CCCrowdsVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +296,7 @@
 		B6E367722436634700B511A0 /* CCScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCScreenProtocols.swift; sourceTree = "<group>"; };
 		B6E7226F2468089E00526E4C /* CCCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCameraView.swift; sourceTree = "<group>"; };
 		B6FE5921244BA2F800121FDD /* CCCallScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenLayout.swift; sourceTree = "<group>"; };
+		B6FEAA0D246C538500D194C3 /* CCCrowdsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdsVM.swift; sourceTree = "<group>"; };
 		BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCastTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -642,6 +644,7 @@
 			isa = PBXGroup;
 			children = (
 				B67962132432567A00C2A13C /* CCCrowdsVC.swift */,
+				B6FEAA0D246C538500D194C3 /* CCCrowdsVM.swift */,
 			);
 			path = CrowdsTab;
 			sourceTree = "<group>";
@@ -1247,6 +1250,7 @@
 				B6ACD0862441AE7F00405838 /* CCChannelDetailsVC.swift in Sources */,
 				B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */,
 				B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */,
+				B6FEAA0E246C538500D194C3 /* CCCrowdsVM.swift in Sources */,
 				B64E4CFA2438A7710011715A /* CCNavigationController.swift in Sources */,
 				B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */,
 				B61C90F52441DCF000F6B8A9 /* CCCallScreenVM.swift in Sources */,

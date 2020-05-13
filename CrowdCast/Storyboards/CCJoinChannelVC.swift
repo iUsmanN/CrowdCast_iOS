@@ -15,6 +15,9 @@ class CCJoinChannelVC: UIViewController {
     @IBOutlet weak var cameraView   : CCCameraView!
     @IBOutlet weak var gradientView : UIImageView!
     
+    @IBOutlet weak var cameraButton : CCButton!
+    @IBOutlet weak var micButton    : CCButton!
+    
     var viewModel : CCJoinChannelVM?
     
     override func viewDidLoad() {
@@ -32,8 +35,6 @@ class CCJoinChannelVC: UIViewController {
         super.viewDidDisappear(animated)
         toggleCameraView(enable: false)
     }
-    
-    
 }
 
 extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
@@ -50,6 +51,21 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
         vc.setupViewModel(inputData: viewModel?.getData())
         generateHapticFeedback(.light)
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
+    }
+    
+    @IBAction func cameraToggle(_ sender: Any) {
+        let cameraOn = !(viewModel?.cameraOn ?? false)
+        viewModel?.cameraOn = cameraOn
+        cameraButton.setImage(cameraOn ? UIImage(systemName: "video.fill") : UIImage(systemName: "video.slash.fill"), for: .normal)
+        cameraOn ? cameraButton.greenBorder() : cameraButton.redBorder()
+        toggleCameraView(enable: cameraOn)
+    }
+    
+    @IBAction func micToggle(_ sender: Any) {
+        let micOn = !(viewModel?.micOn ?? false)
+        viewModel?.micOn = micOn
+        micButton.setImage(micOn ? UIImage(systemName: "mic.fill") : UIImage(systemName: "mic.slash.fill"), for: .normal)
+        micOn ? micButton.greenBorder() : micButton.redBorder()
     }
 }
 

@@ -26,10 +26,28 @@ class CCButton : UIButton {
                 layer.borderColor   = UIColor(named: "Main Accent")?.cgColor
                 layer.borderWidth   = 0.5
                 setTitleColor(UIColor(named: "Main Accent"), for: .normal)
-            default: //error
+                
+            case 2:
+                backgroundColor     = UIColor(named: "Inverted")
+                layer.borderColor   = UIColor(named: "green")?.cgColor
+                layer.cornerRadius  = 10
+                layer.borderWidth   = 1
+                backgroundColor     = UIColor(red: backgroundColor?.redValue ?? 0,
+                                              green: backgroundColor?.greenValue ?? 0,
+                                              blue: backgroundColor?.blueValue ?? 0,
+                                              alpha: 0.3)
+            default:
                 print("")
             }
         }
+    }
+    
+    func redBorder() {
+        layer.borderColor   = UIColor(named: "red")?.cgColor
+    }
+    
+    func greenBorder() {
+        layer.borderColor   = UIColor(named: "green")?.cgColor
     }
     
 }
