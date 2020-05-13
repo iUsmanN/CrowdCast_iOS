@@ -54,7 +54,6 @@ extension CCAddChannelVC {
     
     func setupNavigationBar(){
         navigationItem.title = "Create Channel"
-        navigationController?.navigationBar.isTranslucent = false
     }
 }
 

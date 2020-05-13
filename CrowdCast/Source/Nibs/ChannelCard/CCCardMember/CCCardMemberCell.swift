@@ -37,7 +37,11 @@ extension CCCardMemberCell : CCImageStorage {
         setImage(memberID: memberID) { [weak self] (result) in
             switch result {
             case .success(let imageResource):
-                self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"))
+                if(self?.memberID == CCProfileManager.sharedInstance.getUID()) {
+                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.never)])
+                } else {
+                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.seconds(30))])
+                }
             case .failure(let error):
                 prints(error)
             }

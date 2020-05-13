@@ -21,8 +21,9 @@ class CCCardTVCTableViewCell: UITableViewCell {
         didSet{
             titleLabel.text = data?.name
             CCUsersManager.sharedInstance.getUserNames(ids: data?.owners, completion: { (ownerNames) in
-                guard let name = ownerNames.first else { return }
-                DispatchQueue.main.async { [weak self] in self?.ownerLabel.text = name } })
+                DispatchQueue.main.async { [weak self] in
+                    self?.ownerLabel.text = ownerNames.compactMap({$0}).joined(separator: ", ")
+                }})
             setColors(color: data?.color ?? "red")
             timeLabel.text  = nil
             setupCollectionView()
@@ -58,10 +59,22 @@ class CCCardTVCTableViewCell: UITableViewCell {
     }
 }
 
-extension CCCardTVCTableViewCell {
+extension CCCardTVCTableViewCell : CCHapticEngine {
     
     @IBAction func pinged(_ sender: Any) {
         generateHapticFeedback(.rigid)
+        waveAnimation()
+    }
+    
+    func waveAnimation() {
+        UIView.animate(withDuration: 0.3) {
+            self.cardBackgroundView.backgroundColor = UIColor(named: self.data?.color ?? "red")
+        }
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (_) in
+            UIView.animate(withDuration: 0.5) {
+                self.cardBackgroundView.backgroundColor = UIColor(named: "Foreground")
+            }
+        }
     }
 }
 
@@ -70,7 +83,7 @@ extension CCCardTVCTableViewCell {
     func setColors(color: String) {
         let c = UIColor(named: color)
         cardBackgroundView.layer.borderColor = c?.cgColor
-        cardBackgroundView.layer.shadowColor = c?.cgColor
+        cardBackgroundView.layer.shadowColor = UIColor.black.cgColor//c?.cgColor
         titleLabel.textColor = c
         timeLabel.setView(inputColor: c)
         pingButton.setImage(#imageLiteral(resourceName: "Bell").withRenderingMode(.alwaysTemplate), for: .normal)
@@ -78,7 +91,7 @@ extension CCCardTVCTableViewCell {
     }
 }
 
-extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate, CCHapticEngine {
+extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (data?.members?.count ?? 0) + (data?.owners?.count ?? 0)
@@ -86,11 +99,7 @@ extension CCCardTVCTableViewCell : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCardMemberCell, for: indexPath) as? CCCardMemberCell else { return UICollectionViewCell() }
-        cell.memberID   = ((data?.members ?? []) + (data?.owners ?? []))[indexPath.row]
+        cell.memberID   = data?.allMembers[indexPath.row]
         return cell
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        generateHapticFeedback(.light)
     }
 }

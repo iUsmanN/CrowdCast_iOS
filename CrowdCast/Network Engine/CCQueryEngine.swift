@@ -31,7 +31,7 @@ extension CCQueryEngine {
         let env = "develop"
         return db.collection("\(env)\(type.rawValue)")
                  .order(by: FirebaseFirestore.FieldPath.documentID())
-                 .whereField(which ?? "", arrayContainsAny: contains)
+            .whereField(which ?? "", arrayContainsAny: contains as [Any])
         
     }
     
@@ -48,7 +48,7 @@ extension CCQueryEngine {
         let db = Firestore.firestore()
         let env = "develop"
         return db.collection("\(env)\(type.rawValue)")
-                 .whereField(which ?? "", isEqualTo: equals)
+            .whereField(which ?? "", isEqualTo: equals as Any)
     }
     
     

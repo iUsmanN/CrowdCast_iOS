@@ -21,29 +21,27 @@ class CCChannelDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = UIColor(named: "Main Accent")
     }
 }
 
 extension CCChannelDetailsVC : CCGetsViewController, CCHapticEngine {
     
     @IBAction func joinCall(_ sender: Any) {
-        let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
-        viewController.setupViewModel(channelData: viewModel?.data)
-        generateHapticFeedback(.light)
-        DispatchQueue.main.async {  [weak self] in self?.present(viewController, animated: true, completion: nil) }
+        
     }
 }
 
 extension CCChannelDetailsVC {
     
-    func setupViewModel(inputData: CCChannel){
+    func setupViewModel(inputData: CCChannel?){
         viewModel = CCChannelDetailsVM(channelData: inputData)
     }
     
     func setupView(){
         tableView.dataSource = self
         tableView.delegate   = self
-        navigationItem.title = viewModel?.data.name
+        navigationItem.title = "Details"
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(Nib.get.CCSwitchTVC,         forCellReuseIdentifier: Nib.reuseIdentifier.CCSwitchTVC)
         tableView.register(Nib.get.CCDetailsSegueTVC,   forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
@@ -127,7 +125,10 @@ extension CCChannelDetailsVC {
             case .success(let channel):
                 guard let parentVC = self.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
                 parentVC.channelRemoved(data: channel)
-                DispatchQueue.main.async { [weak self] in self?.navigationController?.popViewController(animated: true) }
+                DispatchQueue.main.async { [weak self] in
+                    self?.navigationController?.popViewController(animated: true)
+                    self?.navigationController?.popViewController(animated: true)
+                }
             case .failure(let error):
                 prints("Error: \(error)")
             }

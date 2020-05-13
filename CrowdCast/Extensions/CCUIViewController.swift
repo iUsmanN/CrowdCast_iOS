@@ -24,6 +24,11 @@ class CCUIViewController: UIViewController {
         addNotificationObservers()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = UIColor(named: "Main Accent")
+    }
+    
     func setupLargeTitles(){
         navigationController?.view.backgroundColor = UIColor(named: "Background")
     }

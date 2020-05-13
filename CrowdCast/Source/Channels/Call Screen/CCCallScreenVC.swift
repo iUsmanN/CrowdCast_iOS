@@ -46,7 +46,7 @@ extension CCCallScreenVC {
         collectionView.dataSource   = self
         collectionView.delegate     = self
         collectionView.register(UINib(nibName: Nib.reuseIdentifier.CCCallMemberCell, bundle: nil), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell)
-        actionBar.layer.cornerRadius = actionBar.frame.size.height/2
+        actionBar.layer.cornerRadius = 10
         actionBar.layer.masksToBounds = true
     }
     

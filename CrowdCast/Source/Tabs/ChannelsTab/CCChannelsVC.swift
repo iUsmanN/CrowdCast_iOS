@@ -97,15 +97,15 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let channelData = (viewModel?.dataForCellAt(indexPath: indexPath)) else { return }
-        let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .CCJoinChannelVC, as: CCJoinChannelVC())
         vc.setupViewModel(inputData: channelData)
         generateHapticFeedback(.light)
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Constants.CardList.rowHeight
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return Constants.CardList.rowHeight
+//    }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()

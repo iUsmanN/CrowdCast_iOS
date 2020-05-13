@@ -17,9 +17,14 @@ class CCNavigationController: UINavigationController {
     
     func setupNavigationBar() {
         navigationBar.tintColor = UIColor(named: "Main Accent")
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor.red,
-            NSAttributedString.Key.font : UIFont(name: "Avenir", size: 20)
+            NSAttributedString.Key.foregroundColor  : UIColor(named: "Inverted") as Any,
+            NSAttributedString.Key.font             : UIFont(name: "Avenir", size: 20) as Any
+        ]
+        navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor  : UIColor(named: "Inverted") as Any,
+            NSAttributedString.Key.font             : UIFont(name: "Avenir-Heavy", size: 30) as Any
         ]
     }
 }

@@ -29,7 +29,7 @@ class CCCallScreenVM: NSObject {
     var localVideoTrack     : LocalVideoTrack?
     
     //t1
-    var accessToken1 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODg5NzIzMTIiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4ODk3NTkxMiwiZ3JhbnRzIjp7ImlkZW50aXR5IjoidXNtYW4iLCJ2aWRlbyI6e319fQ.KZ18p-84vpEqyL4d2kcTqwzkUnGKEBQZGwkBGblIq5k"
+    var accessToken1 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODkxMzc2MTEiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4OTE0MTIxMSwiZ3JhbnRzIjp7ImlkZW50aXR5IjoidXNtYW4iLCJ2aWRlbyI6e319fQ.228n6jemLq7r-iDvFI3wzxLzgGKMjlNuidoGvvcx3G0"
     
     //t2
     var accessToken2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODg5NzIzMzkiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4ODk3NTkzOSwiZ3JhbnRzIjp7ImlkZW50aXR5IjoibWFtYSIsInZpZGVvIjp7fX19.walEt6U7dKhrYYvS2NnOkQCSD0HvV2hjWa2N7FyyTio"
@@ -63,7 +63,7 @@ extension CCCallScreenVM {
     func joinChannel(result: ((Result<Room, CCError>)->())?){
         guard let channelID = channelData?.id else { result?(.failure(.twilioCredentialsError)); return }
         
-        let connectOptions = ConnectOptions(token: accessToken2) { (connectOptionsBuilder) in
+        let connectOptions = ConnectOptions(token: accessToken1) { (connectOptionsBuilder) in
             connectOptionsBuilder.roomName = channelID
             if let audioTrack = self.localAudioTrack {
                 connectOptionsBuilder.audioTracks   = [ audioTrack ]

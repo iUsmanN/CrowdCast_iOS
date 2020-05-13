@@ -41,7 +41,7 @@ class CCSettingsVC: CCImagePickingVC, CCImageStorage {
     }
     
     func setupNavBar(){
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     func setupProfileInfo(){

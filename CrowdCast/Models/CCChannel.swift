@@ -16,7 +16,5 @@ struct CCChannel                : Codable, CCContainsID {
     var members                 : [String]?
     var color                   : String?
     
-    func debugDescription() -> String {
-        return "\(name)\n\(description)\n\(owners)\n\(members)\n\(color)"
-    }
+    lazy var allMembers         = ((members ?? []) + (owners ?? [])).sorted()
 }

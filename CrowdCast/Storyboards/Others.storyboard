@@ -89,22 +89,6 @@
             </objects>
             <point key="canvasLocation" x="1876.8115942028987" y="44.866071428571423"/>
         </scene>
-        <!--Yo-->
-        <scene sceneID="5e1-NO-JcN">
-            <objects>
-                <viewController title="Yo" modalPresentationStyle="fullScreen" id="PEo-wc-7fM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ecF-DD-rUI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="OaZ-r9-84f"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="WcY-71-FMz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eD1-EG-gbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2573.913043478261" y="44.866071428571423"/>
-        </scene>
     </scenes>
     <resources>
         <image name="me3.png" width="226" height="227"/>
