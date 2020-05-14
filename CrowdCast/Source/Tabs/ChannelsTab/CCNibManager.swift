@@ -18,6 +18,7 @@ struct Nib {
         static let CCDetailsSegueTVC    = UINib(nibName: "CCDetailsSegueTVC", bundle: nil)
         static let CCTextCell           = UINib(nibName: "CCTextCell", bundle: nil)
         static let CCTableViewHeader    = UINib(nibName: "CCTableViewHeader", bundle: nil)
+        static let CCCrowdCell          = UINib(nibName: "CCCrowdCell", bundle: nil)
         
     }
     
@@ -30,6 +31,7 @@ struct Nib {
         static let CCTextCell           = "CCTextCell"
         static let CCTableViewHeader    = "CCTableViewHeader"
         static let CCCardMemberCell     = "CCCardMemberCell"
+        static let CCCrowdCell          = "CCCrowdCell"
     }
     
     static func nibFor(_ reuseIdentifier: String) -> UINib {
