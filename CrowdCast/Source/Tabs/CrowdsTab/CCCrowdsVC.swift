@@ -50,6 +50,6 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 12) / 2, height: 225)
+        return CGSize(width: (collectionView.frame.size.width - 12) / 2, height: 200)
     }
 }

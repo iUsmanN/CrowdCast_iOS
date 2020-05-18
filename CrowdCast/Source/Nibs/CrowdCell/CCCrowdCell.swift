@@ -19,7 +19,6 @@ class CCCrowdCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
-        // Initialization code
     }
     
     func setupView(){
@@ -28,6 +27,8 @@ class CCCrowdCell: UICollectionViewCell {
         cardBackgroundView.layer.borderColor    = UIColor.white.cgColor
         cardBackgroundView.layer.shadowOpacity  = 0.3
         cardBackgroundView.layer.shadowOffset   = CGSize(width: 0, height: 2)
+        cardImage.layer.cornerRadius   = 10
+        cardImage.layer.borderWidth    = 0.5
+        cardImage.layer.borderColor    = UIColor.white.cgColor
     }
-
 }

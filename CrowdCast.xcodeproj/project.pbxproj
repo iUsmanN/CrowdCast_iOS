@@ -56,6 +56,9 @@
 		B65C334A2466FC430055DA53 /* CCJoinChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */; };
 		B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
+		B66824592471DCD900651166 /* CCDetailsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66824572471DCD900651166 /* CCDetailsSectionHeader.swift */; };
+		B668245A2471DCD900651166 /* CCDetailsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66824582471DCD900651166 /* CCDetailsSectionHeader.xib */; };
+		B668245C2472EAEF00651166 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B668245B2472EAEF00651166 /* logo.png */; };
 		B6754140242791340010B917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B675413F242791340010B917 /* GoogleService-Info.plist */; };
 		B67962032432476100C2A13C /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B67962022432476000C2A13C /* Avatar.png */; };
 		B679620624324E6000C2A13C /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B679620524324E6000C2A13C /* Onboarding.storyboard */; };
@@ -69,6 +72,8 @@
 		B67E8C5924609FE0002FAD55 /* CCUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */; };
 		B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */; };
 		B687A91E2464671100F28922 /* CCImagePickingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687A91D2464671100F28922 /* CCImagePickingVC.swift */; };
+		B6888A5624730914002E3EB5 /* CCTwilioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6888A5524730914002E3EB5 /* CCTwilioService.swift */; };
+		B6888A58247309D5002E3EB5 /* CCTwilioTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */; };
 		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
 		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
 		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
@@ -135,6 +140,8 @@
 		B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E3676F2436450400B511A0 /* CCSectionHeader.xib */; };
 		B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E367722436634700B511A0 /* CCScreenProtocols.swift */; };
 		B6E722702468089E00526E4C /* CCCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7226F2468089E00526E4C /* CCCameraView.swift */; };
+		B6F869012473052800B33655 /* CCEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F869002473052800B33655 /* CCEndpoint.swift */; };
+		B6F869042473054C00B33655 /* CCTwilioTokenEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F869032473054C00B33655 /* CCTwilioTokenEP.swift */; };
 		B6FE5922244BA2F800121FDD /* CCCallScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE5921244BA2F800121FDD /* CCCallScreenLayout.swift */; };
 		B6FEAA0E246C538500D194C3 /* CCCrowdsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAA0D246C538500D194C3 /* CCCrowdsVM.swift */; };
 		B6FEAA12246C7C6800D194C3 /* CCCrowdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAA10246C7C6800D194C3 /* CCCrowdCell.swift */; };
@@ -212,6 +219,9 @@
 		B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCJoinChannelVM.swift; sourceTree = "<group>"; };
 		B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCHapticEngine.swift; path = "CrowdCast/Source/Channels/Call Screen/CCHapticEngine.swift"; sourceTree = SOURCE_ROOT; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
+		B66824572471DCD900651166 /* CCDetailsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDetailsSectionHeader.swift; sourceTree = "<group>"; };
+		B66824582471DCD900651166 /* CCDetailsSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCDetailsSectionHeader.xib; sourceTree = "<group>"; };
+		B668245B2472EAEF00651166 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		B675413F242791340010B917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B67962022432476000C2A13C /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
 		B679620524324E6000C2A13C /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -225,6 +235,8 @@
 		B67E8C5824609FE0002FAD55 /* CCUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCUsersManager.swift; path = CrowdCast/Source/Nibs/ChannelCard/CCCardMember/CCUsersManager.swift; sourceTree = SOURCE_ROOT; };
 		B67E8C5A2460AA53002FAD55 /* CCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserDefaults.swift; sourceTree = "<group>"; };
 		B687A91D2464671100F28922 /* CCImagePickingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCImagePickingVC.swift; sourceTree = "<group>"; };
+		B6888A5524730914002E3EB5 /* CCTwilioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTwilioService.swift; sourceTree = "<group>"; };
+		B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTwilioTokenModel.swift; sourceTree = "<group>"; };
 		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
 		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
@@ -297,6 +309,8 @@
 		B6E3676F2436450400B511A0 /* CCSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCSectionHeader.xib; sourceTree = "<group>"; };
 		B6E367722436634700B511A0 /* CCScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCScreenProtocols.swift; sourceTree = "<group>"; };
 		B6E7226F2468089E00526E4C /* CCCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCameraView.swift; sourceTree = "<group>"; };
+		B6F869002473052800B33655 /* CCEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEndpoint.swift; sourceTree = "<group>"; };
+		B6F869032473054C00B33655 /* CCTwilioTokenEP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTwilioTokenEP.swift; sourceTree = "<group>"; };
 		B6FE5921244BA2F800121FDD /* CCCallScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenLayout.swift; sourceTree = "<group>"; };
 		B6FEAA0D246C538500D194C3 /* CCCrowdsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdsVM.swift; sourceTree = "<group>"; };
 		B6FEAA10246C7C6800D194C3 /* CCCrowdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdCell.swift; sourceTree = "<group>"; };
@@ -359,6 +373,7 @@
 		B60A29C824338EA100B7F76F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				B66824562471DC9E00651166 /* Details Section Header */,
 				B6FEAA0F246C7C4700D194C3 /* CrowdCell */,
 				B6D04E6224547E84005F4E61 /* ColorCell */,
 				B6244DD5244F5E1300E52669 /* ChannelDetailCells */,
@@ -412,6 +427,7 @@
 		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
 			isa = PBXGroup;
 			children = (
+				B668245B2472EAEF00651166 /* logo.png */,
 				B61F3E48245872FB000FF940 /* 3 lines.png */,
 				B61F3E47245872FA000FF940 /* lines only.png */,
 				B6D04E7F2455EC66005F4E61 /* undraw_imagination_ok71.png */,
@@ -550,6 +566,7 @@
 			children = (
 				B64E4CFC2439DCFE0011715A /* CCChannelsService.swift */,
 				B6974881243B977400AE95C0 /* CCUserService.swift */,
+				B6888A5524730914002E3EB5 /* CCTwilioService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -567,14 +584,15 @@
 		B64E4D012439E6FC0011715A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B6BD90D22437130B00F50848 /* CCSectionHeaderData.swift */,
 				B64E4D0A2439EF210011715A /* Protocols */,
+				B6BD90D22437130B00F50848 /* CCSectionHeaderData.swift */,
 				B64E4D022439E70E0011715A /* CCChannel.swift */,
 				B64E4D042439E7A40011715A /* CCIndividual.swift */,
 				B64E4D062439E8370011715A /* CCCrowd.swift */,
 				B64E4D152439F4E70011715A /* CCChannelOwner.swift */,
 				B64E4D20243A41520011715A /* CCPaginatedData.swift */,
 				B697487F243B96E800AE95C0 /* CCUser.swift */,
+				B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -595,6 +613,15 @@
 				B64E4D1A243A2E920011715A /* CCError.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B66824562471DC9E00651166 /* Details Section Header */ = {
+			isa = PBXGroup;
+			children = (
+				B66824572471DCD900651166 /* CCDetailsSectionHeader.swift */,
+				B66824582471DCD900651166 /* CCDetailsSectionHeader.xib */,
+			);
+			path = "Details Section Header";
 			sourceTree = "<group>";
 		};
 		B66E2164244A0F9000BC2CFF /* Member Cell */ = {
@@ -763,11 +790,11 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B6F868FD247304F600B33655 /* Networking */,
 				B61F3E4B24587BBB000FF940 /* Bulletin */,
 				B61E790F244241F100D773E0 /* Reachibility */,
 				B64E4D19243A2E7E0011715A /* Utilities */,
 				B64E4D012439E6FC0011715A /* Models */,
-				B64E4CFE2439DD050011715A /* Network Engine */,
 				B64E4CFB2439DCB60011715A /* Services */,
 				B6BD90CC2436FF2E00F50848 /* Enums */,
 				B60A29D42434826900B7F76F /* Protocols */,
@@ -904,6 +931,40 @@
 				B6E3676F2436450400B511A0 /* CCSectionHeader.xib */,
 			);
 			path = SectionHeader;
+			sourceTree = "<group>";
+		};
+		B6F868FD247304F600B33655 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B64E4CFE2439DD050011715A /* Network Engine */,
+				B6F869022473053D00B33655 /* Endpoints */,
+				B6F868FE247304FE00B33655 /* Templates */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B6F868FE247304FE00B33655 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				B6F868FF2473051200B33655 /* Endpoint */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		B6F868FF2473051200B33655 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				B6F869002473052800B33655 /* CCEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		B6F869022473053D00B33655 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				B6F869032473054C00B33655 /* CCTwilioTokenEP.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 		B6FEAA0F246C7C4700D194C3 /* CrowdCell */ = {
@@ -1048,6 +1109,7 @@
 				B679620624324E6000C2A13C /* Onboarding.storyboard in Resources */,
 				B6D04E6A245493AE005F4E61 /* back.jpeg in Resources */,
 				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
+				B668245C2472EAEF00651166 /* logo.png in Resources */,
 				B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */,
 				B6FEAA13246C7C6800D194C3 /* CCCrowdCell.xib in Resources */,
 				B693E2FC2430F832002B26BC /* profile.png in Resources */,
@@ -1057,6 +1119,7 @@
 				B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */,
 				B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */,
 				B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */,
+				B668245A2471DCD900651166 /* CCDetailsSectionHeader.xib in Resources */,
 				B6E3675F24352A5F00B511A0 /* Others.storyboard in Resources */,
 				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6244DDA244F813F00E52669 /* CCSwitchTVC.xib in Resources */,
@@ -1198,6 +1261,7 @@
 				B6D04E762455D70D005F4E61 /* CCRoundButton.swift in Sources */,
 				B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */,
 				B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */,
+				B6888A58247309D5002E3EB5 /* CCTwilioTokenModel.swift in Sources */,
 				B6ACD07924405CCE00405838 /* CCUIViewController.swift in Sources */,
 				B61A849F2452081F00150188 /* CCCellData.swift in Sources */,
 				B64E4D0C2439EF470011715A /* CCContainsMembers.swift in Sources */,
@@ -1217,7 +1281,9 @@
 				B6FEAA12246C7C6800D194C3 /* CCCrowdCell.swift in Sources */,
 				B6BD90D52437137E00F50848 /* CCOverviewVM.swift in Sources */,
 				B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */,
+				B6888A5624730914002E3EB5 /* CCTwilioService.swift in Sources */,
 				B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */,
+				B6F869012473052800B33655 /* CCEndpoint.swift in Sources */,
 				B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */,
 				B6244DD9244F813F00E52669 /* CCSwitchTVC.swift in Sources */,
 				B679620924324EAF00C2A13C /* CCOnboardingVC.swift in Sources */,
@@ -1248,6 +1314,7 @@
 				B64E4CFD2439DCFE0011715A /* CCChannelsService.swift in Sources */,
 				B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */,
 				B64E4D1B243A2E920011715A /* CCError.swift in Sources */,
+				B6F869042473054C00B33655 /* CCTwilioTokenEP.swift in Sources */,
 				B6BD90D32437130B00F50848 /* CCSectionHeaderData.swift in Sources */,
 				B60A29D62434828400B7F76F /* CCSetsNavbarProtocol.swift in Sources */,
 				B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */,
@@ -1272,6 +1339,7 @@
 				B61C90F52441DCF000F6B8A9 /* CCCallScreenVM.swift in Sources */,
 				B6244DDC244F82B900E52669 /* CCTypeAliases.swift in Sources */,
 				B61A849C2451F5FB00150188 /* CCDetailsSegueTVC.swift in Sources */,
+				B66824592471DCD900651166 /* CCDetailsSectionHeader.swift in Sources */,
 				B61C90F02441CFE000F6B8A9 /* CCGetsViewController.swift in Sources */,
 				B64E4D162439F4E70011715A /* CCChannelOwner.swift in Sources */,
 				B61F3E4D24587C04000FF940 /* CCBulletinManager.swift in Sources */,

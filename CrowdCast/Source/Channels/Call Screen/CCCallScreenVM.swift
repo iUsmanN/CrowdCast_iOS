@@ -29,7 +29,7 @@ class CCCallScreenVM: NSObject {
     var localVideoTrack     : LocalVideoTrack?
     
     //t1
-    var accessToken1 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODkxMzc2MTEiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4OTE0MTIxMSwiZ3JhbnRzIjp7ImlkZW50aXR5IjoidXNtYW4iLCJ2aWRlbyI6e319fQ.228n6jemLq7r-iDvFI3wzxLzgGKMjlNuidoGvvcx3G0"
+    var accessToken1 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzgxYzBhNzNhYjFkN2M4YmI4OGUwNDFjNWU0ZjNiZmQ3LTE1ODk0ODIwNzkiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJ1c21hbiIsInZpZGVvIjp7fX0sImlhdCI6MTU4OTQ4MjA3OSwiZXhwIjoxNTg5NDg1Njc5LCJpc3MiOiJTSzgxYzBhNzNhYjFkN2M4YmI4OGUwNDFjNWU0ZjNiZmQ3Iiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCJ9.gNp-pO448JVO8VnFG5xEzPgWxdGNJZCItPCp-hPMQoA"
     
     //t2
     var accessToken2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlLTE1ODg5NzIzMzkiLCJpc3MiOiJTSzcwNmE1YjVmMmM2NTlhYzA5ZWZhMmM1N2QyMTI1NTRlIiwic3ViIjoiQUM4OTRhZWJhMTZkZjllY2Q4OGYyMzg4NDg0MWU0NTk2ZCIsImV4cCI6MTU4ODk3NTkzOSwiZ3JhbnRzIjp7ImlkZW50aXR5IjoibWFtYSIsInZpZGVvIjp7fX19.walEt6U7dKhrYYvS2NnOkQCSD0HvV2hjWa2N7FyyTio"
@@ -58,24 +58,30 @@ extension CCCallScreenVM {
 }
 
 
-extension CCCallScreenVM {
+extension CCCallScreenVM : CCTwilioService {
     
     func joinChannel(result: ((Result<Room, CCError>)->())?){
         guard let channelID = channelData?.id else { result?(.failure(.twilioCredentialsError)); return }
-        
-        let connectOptions = ConnectOptions(token: accessToken1) { (connectOptionsBuilder) in
-            connectOptionsBuilder.roomName = channelID
-            if let audioTrack = self.localAudioTrack {
-                connectOptionsBuilder.audioTracks   = [ audioTrack ]
-            }
-            if let dataTrack = self.localDataTrack {
-                connectOptionsBuilder.dataTracks    = [ dataTrack ]
-            }
-            if let videoTrack = self.localVideoTrack {
-                connectOptionsBuilder.videoTracks   = [ videoTrack ]
+        refreshAccessToken { [weak self](tokenResult) in
+            switch tokenResult {
+            case .success(let token):
+                let connectOptions = ConnectOptions(token: token.token ?? "") { (connectOptionsBuilder) in
+                    connectOptionsBuilder.roomName = channelID
+                    if let audioTrack = self?.localAudioTrack {
+                        connectOptionsBuilder.audioTracks   = [ audioTrack ]
+                    }
+                    if let dataTrack = self?.localDataTrack {
+                        connectOptionsBuilder.dataTracks    = [ dataTrack ]
+                    }
+                    if let videoTrack = self?.localVideoTrack {
+                        connectOptionsBuilder.videoTracks   = [ videoTrack ]
+                    }
+                }
+                self?.room = TwilioVideoSDK.connect(options: connectOptions, delegate: self)
+            case .failure(let error):
+                result?(.failure(error))
             }
         }
-        room = TwilioVideoSDK.connect(options: connectOptions, delegate: self)
     }
 }
 

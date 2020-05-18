@@ -47,6 +47,7 @@ extension CCChannelDetailsVC {
         tableView.register(Nib.get.CCDetailsSegueTVC,   forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
         tableView.register(Nib.get.CCTextCell,          forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
         tableView.register(Nib.get.CCTableViewHeader,   forCellReuseIdentifier: Nib.reuseIdentifier.CCTableViewHeader)
+        tableView.register(Nib.get.CCDetailsSectionHeader, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSectionHeader)
     }
 }
 
@@ -54,6 +55,16 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.numberOfSections() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCDetailsSectionHeader) as? CCDetailsSectionHeader else { return UITableViewCell() }
+        cell.title = viewModel?.sectionTitle(section: section)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,8 +75,8 @@ extension CCChannelDetailsVC : UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             switch indexPath.row {
-            case 0...1:
-                return dequeueCell(identifier: Nib.reuseIdentifier.CCSwitchTVC, indexPath: indexPath, type: CCSwitchTVC())
+                case (viewModel?.channelRows.count ?? 1) - 1:
+                return dequeueCell(identifier: Nib.reuseIdentifier.CCTextCell, indexPath: indexPath, type: CCTextCell())
             default:
                 return dequeueCell(identifier: Nib.reuseIdentifier.CCDetailsSegueTVC, indexPath: indexPath, type: CCDetailsSegueTVC())
             }

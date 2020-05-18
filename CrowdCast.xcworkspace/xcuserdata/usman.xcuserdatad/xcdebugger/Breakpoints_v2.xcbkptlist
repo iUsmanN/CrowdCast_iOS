@@ -350,8 +350,8 @@
             filePath = "CrowdCast/Source/Channels/Channel Details/CCChannelDetailsVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "deleteChannel(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +366,8 @@
             filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "roomDidConnect(room:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -401,6 +401,70 @@
             startingLineNumber = "345"
             endingLineNumber = "345"
             landmarkName = "setPinchGesture()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FB2AB65-64A7-42C7-B4AA-D34A6AFD532D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "joinChannel(result:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2FB2AB65-64A7-42C7-B4AA-D34A6AFD532D - 54058598d93a2324"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;CrowdCast.CCTwilioTokenModel, CrowdCast.CCError&gt;) -&gt; () in CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "CrowdCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "2FB2AB65-64A7-42C7-B4AA-D34A6AFD532D - 60f3543f0e2f3952"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.TVIConnectOptionsBuilder) -&gt; () in closure #1 (Swift.Result&lt;CrowdCast.CCTwilioTokenModel, CrowdCast.CCError&gt;) -&gt; () in CrowdCast.CCCallScreenVM.joinChannel(result: Swift.Optional&lt;(Swift.Result&lt;__C.TVIRoom, CrowdCast.CCError&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "CrowdCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FE60410-C03C-4194-94D0-068B916B244E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "joinChannel(result:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
