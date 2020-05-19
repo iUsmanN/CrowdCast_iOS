@@ -9,7 +9,7 @@
 import UIKit
 
 class CCCrowdsVC: CCUIViewController {
-
+    
     @IBOutlet weak var collectionView   : UICollectionView!
     
     var viewMdoel                       : CCCrowdsVM?
@@ -30,18 +30,20 @@ extension CCCrowdsVC : CCSetsNavbar {
                     profileAction   : #selector(viewSettings))
         collectionView.dataSource   = self
         collectionView.delegate     = self
+        let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.sectionHeadersPinToVisibleBounds = true
         collectionView.register(Nib.nibFor(Nib.reuseIdentifier.CCCrowdCell), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCrowdCell)
     }
-
+    
     @objc private func viewSettings(){
         opensSettings()
     }
 }
 
-extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ShowsCardHeader {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        7
+        3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,5 +53,19 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.size.width - 12) / 2, height: 200)
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CCCrowdHeader", for: indexPath)
+        header.backgroundColor = indexPath.section > 0 ? UIColor.red : .blue
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.collectionView.frame.size.width, height: Constants.CardList.headerHeight)
     }
 }
