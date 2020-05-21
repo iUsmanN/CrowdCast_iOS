@@ -16,7 +16,7 @@ extension CCOpensSettings {
         navigationController?.pushViewController(instantiateViewController(storyboard: .Others,
                                                                            viewController: .CCSettingsVC,
                                                                            as: CCSettingsVC()),
-                                                                           animated: true)
+                                                 animated: true)
     }
 }
 
@@ -28,7 +28,7 @@ extension CCAddChannel {
         nc.pushViewController(instantiateViewController(storyboard: .Channels,
                                                         viewController: .CCAddChannelVC,
                                                         as: CCAddChannelVC()),
-                                                        animated: true)
+                              animated: true)
     }
 }
 
@@ -39,5 +39,17 @@ extension CCJoinChannel {
         bulletinManager.setItem(item: CCBulletinManager.joinChannel())
         guard let nc = ((window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController)?.topViewController else { return }
         bulletinManager.manager?.showBulletin(above: nc)
+    }
+}
+
+protocol CCAddGroup : CCCollectionSectionHeader, CCGetsViewController {}
+extension CCAddGroup {
+    
+    func addGroup(){
+        guard let nc = (window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController else { return }
+        nc.pushViewController(instantiateViewController(storyboard: .Groups,
+                                                        viewController: .CCAddGroupVC,
+                                                        as: CCAddGroupVC()),
+                                                        animated: true)
     }
 }

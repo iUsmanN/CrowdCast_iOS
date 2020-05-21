@@ -12,15 +12,20 @@ class CCCrowdsVC: CCUIViewController {
     
     @IBOutlet weak var collectionView   : UICollectionView!
     
-    var viewMdoel                       : CCCrowdsVM?
+    var viewModel                       : CCCrowdsVM?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupVM()
         // Do any additional setup after loading the view.
     }
 }
 
 extension CCCrowdsVC : CCSetsNavbar {
+    
+    private func setupVM(){
+        viewModel = CCCrowdsVM()
+    }
     
     private func setupView(){
         setupNavBar(navigationBar   : navigationController?.navigationBar,
@@ -52,7 +57,7 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 12) / 2, height: 200)
+        return CGSize(width: (collectionView.frame.size.width - 11) / 2, height: 200)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -60,8 +65,8 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CCCrowdHeader", for: indexPath)
-        header.backgroundColor = indexPath.section > 0 ? UIColor.red : .blue
+        guard let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CCCrowdHeader", for: indexPath) as? CCCollectionSectionHeader else { return UICollectionReusableView()}
+        header.data = viewModel?.titleForSection(section: indexPath.section)
         return header
     }
     

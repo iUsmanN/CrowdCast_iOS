@@ -40,7 +40,7 @@ extension CCCardMemberCell : CCImageStorage {
                 if(self?.memberID == CCProfileManager.sharedInstance.getUID()) {
                     self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.never)])
                 } else {
-                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.seconds(30))])
+                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.seconds(172800))])
                 }
             case .failure(let error):
                 prints(error)

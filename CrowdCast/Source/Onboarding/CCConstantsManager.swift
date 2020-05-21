@@ -16,6 +16,7 @@ struct Constants {
         case Onboarding
         case Others
         case Channels
+        case Groups
     }
     
     enum ViewControllers    : String {
@@ -26,6 +27,7 @@ struct Constants {
         case CCAddChannelVC
         case CCJoinChannelVC
         case CCCallScreenVC
+        case CCAddGroupVC
     }
     
     static func imageCacheString(id: String?) -> String {

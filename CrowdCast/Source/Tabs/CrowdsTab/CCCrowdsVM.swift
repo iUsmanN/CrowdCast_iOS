@@ -10,4 +10,17 @@ import Foundation
 
 struct CCCrowdsVM {
     
+    var sectionHeaderData : [CCSectionHeaderData] = [
+        CCSectionHeaderData(title: "Your Crowds"  , rightButtonTitle: "Create New"      , rightButtonAction: .newGroup),
+        CCSectionHeaderData(title: "Joined Crowds", rightButtonTitle: "Join Crowd"      , rightButtonAction: .joinGroup)
+    ]
+
+    
+}
+
+extension CCCrowdsVM {
+    
+    func titleForSection(section: Int) -> CCSectionHeaderData {
+        return sectionHeaderData[section]
+    }
 }

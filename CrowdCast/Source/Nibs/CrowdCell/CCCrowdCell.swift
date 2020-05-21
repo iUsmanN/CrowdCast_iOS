@@ -13,6 +13,8 @@ class CCCrowdCell: UICollectionViewCell {
     @IBOutlet weak var cardBackgroundView   : UIView!
     @IBOutlet weak var cardTitle            : UILabel!
     @IBOutlet weak var cardImage            : UIImageView!
+    @IBOutlet weak var bgImage              : UIImageView!
+    @IBOutlet weak var bgBlur               : UIVisualEffectView!
     
     
     
@@ -23,12 +25,13 @@ class CCCrowdCell: UICollectionViewCell {
     
     func setupView(){
         cardBackgroundView.layer.cornerRadius   = 10
+        bgImage.layer.cornerRadius              = 10
+        bgBlur.layer.cornerRadius               = 10
         cardBackgroundView.layer.borderWidth    = 0.5
         cardBackgroundView.layer.borderColor    = UIColor.white.cgColor
         cardBackgroundView.layer.shadowOpacity  = 0.3
         cardBackgroundView.layer.shadowOffset   = CGSize(width: 0, height: 2)
+        
         cardImage.layer.cornerRadius   = 10
-        cardImage.layer.borderWidth    = 0.5
-        cardImage.layer.borderColor    = UIColor.white.cgColor
     }
 }

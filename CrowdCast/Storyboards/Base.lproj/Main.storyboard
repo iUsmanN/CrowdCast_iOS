@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lines only.png" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_celebration_0jvk (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-x0-TcT">
@@ -575,8 +575,8 @@
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
         <image name="Reading.png" width="1020" height="734"/>
-        <image name="lines only.png" width="540" height="1169.280029296875"/>
         <image name="profile2.png" width="698" height="698"/>
+        <image name="undraw_celebration_0jvk (1).png" width="950" height="662"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

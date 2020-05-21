@@ -74,6 +74,8 @@
 		B687A91E2464671100F28922 /* CCImagePickingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687A91D2464671100F28922 /* CCImagePickingVC.swift */; };
 		B6888A5624730914002E3EB5 /* CCTwilioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6888A5524730914002E3EB5 /* CCTwilioService.swift */; };
 		B6888A58247309D5002E3EB5 /* CCTwilioTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */; };
+		B6888A5C24747CD5002E3EB5 /* CCCollectionSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6888A5A24747CD4002E3EB5 /* CCCollectionSectionHeader.swift */; };
+		B6888A5D24747CD5002E3EB5 /* CCCollectionSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6888A5B24747CD4002E3EB5 /* CCCollectionSectionHeader.xib */; };
 		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
 		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
 		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
@@ -86,6 +88,9 @@
 		B6974880243B96E800AE95C0 /* CCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697487F243B96E800AE95C0 /* CCUser.swift */; };
 		B6974882243B977400AE95C0 /* CCUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974881243B977400AE95C0 /* CCUserService.swift */; };
 		B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCProfileManager.swift */; };
+		B6A4C7FF2475BC0D007B7FB3 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6A4C7FE2475BC0D007B7FB3 /* Groups.storyboard */; };
+		B6A4C8032475BC58007B7FB3 /* CCAddGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4C8022475BC58007B7FB3 /* CCAddGroupVC.swift */; };
+		B6A4C8052475BC63007B7FB3 /* CCAddGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4C8042475BC63007B7FB3 /* CCAddGroupVM.swift */; };
 		B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */; };
 		B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */; };
 		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
@@ -237,6 +242,8 @@
 		B687A91D2464671100F28922 /* CCImagePickingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCImagePickingVC.swift; sourceTree = "<group>"; };
 		B6888A5524730914002E3EB5 /* CCTwilioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTwilioService.swift; sourceTree = "<group>"; };
 		B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTwilioTokenModel.swift; sourceTree = "<group>"; };
+		B6888A5A24747CD4002E3EB5 /* CCCollectionSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCollectionSectionHeader.swift; sourceTree = "<group>"; };
+		B6888A5B24747CD4002E3EB5 /* CCCollectionSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCollectionSectionHeader.xib; sourceTree = "<group>"; };
 		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
 		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
@@ -249,6 +256,9 @@
 		B697487F243B96E800AE95C0 /* CCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUser.swift; sourceTree = "<group>"; };
 		B6974881243B977400AE95C0 /* CCUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserService.swift; sourceTree = "<group>"; };
 		B6974883243B987600AE95C0 /* CCProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCProfileManager.swift; path = CrowdCast/Services/CCProfileManager.swift; sourceTree = SOURCE_ROOT; };
+		B6A4C7FE2475BC0D007B7FB3 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		B6A4C8022475BC58007B7FB3 /* CCAddGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddGroupVC.swift; sourceTree = "<group>"; };
+		B6A4C8042475BC63007B7FB3 /* CCAddGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddGroupVM.swift; sourceTree = "<group>"; };
 		B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_celebration_0jvk (1).png"; sourceTree = "<group>"; };
 		B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatchQueue.swift; sourceTree = "<group>"; };
 		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
@@ -373,6 +383,7 @@
 		B60A29C824338EA100B7F76F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				B6888A5924747C83002E3EB5 /* Collection Section Header */,
 				B66824562471DC9E00651166 /* Details Section Header */,
 				B6FEAA0F246C7C4700D194C3 /* CrowdCell */,
 				B6D04E6224547E84005F4E61 /* ColorCell */,
@@ -642,6 +653,7 @@
 				B679620524324E6000C2A13C /* Onboarding.storyboard */,
 				B6E3675E24352A5F00B511A0 /* Others.storyboard */,
 				B6BD90D624377E3D00F50848 /* Channels.storyboard */,
+				B6A4C7FE2475BC0D007B7FB3 /* Groups.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -690,6 +702,15 @@
 			path = CCCardMember;
 			sourceTree = "<group>";
 		};
+		B6888A5924747C83002E3EB5 /* Collection Section Header */ = {
+			isa = PBXGroup;
+			children = (
+				B6888A5A24747CD4002E3EB5 /* CCCollectionSectionHeader.swift */,
+				B6888A5B24747CD4002E3EB5 /* CCCollectionSectionHeader.xib */,
+			);
+			path = "Collection Section Header";
+			sourceTree = "<group>";
+		};
 		B693E30524311A1C002B26BC /* Setup Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,6 +718,23 @@
 				B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */,
 			);
 			path = "Setup Profile";
+			sourceTree = "<group>";
+		};
+		B6A4C8002475BC2C007B7FB3 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				B6A4C8012475BC33007B7FB3 /* Create Group */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		B6A4C8012475BC33007B7FB3 /* Create Group */ = {
+			isa = PBXGroup;
+			children = (
+				B6A4C8022475BC58007B7FB3 /* CCAddGroupVC.swift */,
+				B6A4C8042475BC63007B7FB3 /* CCAddGroupVM.swift */,
+			);
+			path = "Create Group";
 			sourceTree = "<group>";
 		};
 		B6ACD0842441AE6700405838 /* Channel Details */ = {
@@ -866,6 +904,7 @@
 		B6D7F58624277A74001BEBBC /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B6A4C8002475BC2C007B7FB3 /* Groups */,
 				B6BD90D924377EB800F50848 /* Channels */,
 				B6BD90D824377E7300F50848 /* Tabs */,
 				B6E3676024352ACF00B511A0 /* Settings */,
@@ -1093,6 +1132,7 @@
 				B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */,
 				B6754140242791340010B917 /* GoogleService-Info.plist in Resources */,
 				B6D7F55B24277A1B001BEBBC /* Assets.xcassets in Resources */,
+				B6A4C7FF2475BC0D007B7FB3 /* Groups.storyboard in Resources */,
 				B693E30D24312C7B002B26BC /* Home.storyboard in Resources */,
 				B61ADC132430B03100ECD1D2 /* Cinzel-Bold.otf in Resources */,
 				B61C90F72441E98E00F6B8A9 /* boys.png in Resources */,
@@ -1118,6 +1158,7 @@
 				B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */,
 				B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */,
 				B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */,
+				B6888A5D24747CD5002E3EB5 /* CCCollectionSectionHeader.xib in Resources */,
 				B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */,
 				B668245A2471DCD900651166 /* CCDetailsSectionHeader.xib in Resources */,
 				B6E3675F24352A5F00B511A0 /* Others.storyboard in Resources */,
@@ -1258,6 +1299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A4C8052475BC63007B7FB3 /* CCAddGroupVM.swift in Sources */,
 				B6D04E762455D70D005F4E61 /* CCRoundButton.swift in Sources */,
 				B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */,
 				B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */,
@@ -1272,6 +1314,7 @@
 				B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */,
 				B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
+				B6A4C8032475BC58007B7FB3 /* CCAddGroupVC.swift in Sources */,
 				B61C90F32441DCE100F6B8A9 /* CCCallScreenVC.swift in Sources */,
 				B64E4D182439F6020011715A /* CCContainsCrowds.swift in Sources */,
 				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
@@ -1301,6 +1344,7 @@
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
 				B6AD11332444A6DD00AD7C7A /* CCMiscellaneousExtensions.swift in Sources */,
 				B61E79112442420900D773E0 /* CCReachibility.swift in Sources */,
+				B6888A5C24747CD5002E3EB5 /* CCCollectionSectionHeader.swift in Sources */,
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
 				B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */,
