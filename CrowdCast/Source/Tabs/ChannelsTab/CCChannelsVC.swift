@@ -103,10 +103,6 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return Constants.CardList.rowHeight
-//    }
-    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
@@ -124,7 +120,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
 }
 
-extension CCChannelsVC : CCCreateChannelDelegate {
+extension CCChannelsVC : CCChannelActionDelegate {
     func channelAdded(data: CCChannel) {
         viewModel?.addCreatedChannel(channel: data)
     }

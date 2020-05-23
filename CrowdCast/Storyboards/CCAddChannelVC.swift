@@ -33,7 +33,7 @@ class CCAddChannelVC: UIViewController {
         viewModel.addChannel(nameInput: nameTextField.text, descriptionInput: descriptionTextField.text) { [weak self] result in
             switch result {
             case .success(let channel):
-                guard let parentVC = self?.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
+                guard let parentVC = self?.navigationController?.viewControllers.first as? CCChannelActionDelegate else { return }
                 parentVC.channelAdded(data: channel)
                 DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):

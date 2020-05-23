@@ -14,7 +14,7 @@ struct CCCrowd          : Codable, CCContainsID {
     var id              : String?
     var name            : String?
     var description     : String?
-    var owners          : [CCIndividual?]?
-    var members         : [CCIndividual?]?
-    var channels        : [CCChannel]?
+    var owners          : [String]?
+    var members         : [String]?
+    var channels        : [String]?
 }

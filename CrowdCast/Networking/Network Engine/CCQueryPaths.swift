@@ -11,8 +11,11 @@ import Foundation
 enum CCQueryPath : String {
     
     //Profile
-    case userProfileData = "/data/users"
+    case userProfileData    = "/data/users"
     
     //Channels
-    case channelsData = "/data/channels"
+    case channelsData       = "/data/channels"
+    
+    //Crowds
+    case crowdData          = "/data/groups"
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 class CCCrowdsVC: CCUIViewController {
     
@@ -17,7 +18,33 @@ class CCCrowdsVC: CCUIViewController {
         super.viewDidLoad()
         setupView()
         setupVM()
-        // Do any additional setup after loading the view.
+        bindVM()
+    }
+}
+
+extension CCCrowdsVC {
+    
+    func bindVM(){
+        viewModel?.crowdsPublisher.sink(receiveValue: { [weak self] (indexPathsInput) in
+            switch indexPathsInput.0 {
+            case .insert:
+                self?.insertRows(at: indexPathsInput.1)
+            case .remove:
+                self?.removeRows(at: indexPathsInput.1)
+            }}).store(in: &combineCancellable)
+    }
+    
+    func insertRows(at indexPaths: [IndexPath]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.insertItems(at: indexPaths)
+            //self?.collectionView.reloadSections(IndexSet(arrayLiteral: 0))
+        }
+    }
+    
+    func removeRows(at indexPath: [IndexPath]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.deleteItems(at: indexPath)
+        }
     }
 }
 
@@ -48,12 +75,13 @@ extension CCCrowdsVC : CCSetsNavbar {
 extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ShowsCardHeader {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        return viewModel?.numberOfRows(section: section) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCrowdCell, for: indexPath)
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCrowdCell, for: indexPath) as? CCCrowdCell else { return UICollectionViewCell() }
+        cell.data = viewModel?.dataForItem(indexPath: indexPath)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -61,7 +89,7 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UIC
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

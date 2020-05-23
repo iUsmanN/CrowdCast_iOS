@@ -49,7 +49,7 @@ extension CCAddGroup {
         guard let nc = (window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController else { return }
         nc.pushViewController(instantiateViewController(storyboard: .Groups,
                                                         viewController: .CCAddGroupVC,
-                                                        as: CCAddGroupVC()),
+                                                        as: CCAddCrowdVC()),
                                                         animated: true)
     }
 }

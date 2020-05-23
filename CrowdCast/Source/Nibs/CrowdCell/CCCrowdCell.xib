@@ -91,6 +91,7 @@
                 <outlet property="bgImage" destination="NYB-8q-E8X" id="smR-VE-Fkh"/>
                 <outlet property="cardBackgroundView" destination="Wfk-oW-bBh" id="94p-ew-0gN"/>
                 <outlet property="cardImage" destination="Hnx-Rq-g4W" id="1vx-bd-gAw"/>
+                <outlet property="cardTitle" destination="J3Q-sM-AU9" id="ZYJ-bs-cQX"/>
             </connections>
             <point key="canvasLocation" x="-0.7246376811594204" y="16.40625"/>
         </collectionViewCell>

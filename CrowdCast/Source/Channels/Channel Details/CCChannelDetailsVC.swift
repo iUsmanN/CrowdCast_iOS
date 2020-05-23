@@ -134,7 +134,7 @@ extension CCChannelDetailsVC {
         viewModel?.deleteChannel(completion: { (result) in
             switch result {
             case .success(let channel):
-                guard let parentVC = self.navigationController?.viewControllers.first as? CCCreateChannelDelegate else { return }
+                guard let parentVC = self.navigationController?.viewControllers.first as? CCChannelActionDelegate else { return }
                 parentVC.channelRemoved(data: channel)
                 DispatchQueue.main.async { [weak self] in
                     self?.navigationController?.popViewController(animated: true)

@@ -16,7 +16,11 @@ class CCCrowdCell: UICollectionViewCell {
     @IBOutlet weak var bgImage              : UIImageView!
     @IBOutlet weak var bgBlur               : UIVisualEffectView!
     
-    
+    var data                                : CCCrowd? {
+        didSet {
+            cardTitle.text = data?.name
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

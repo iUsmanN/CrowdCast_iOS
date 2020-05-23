@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add GroupVC-->
+        <!--Add CrowdVC-->
         <scene sceneID="chA-uL-oA0">
             <objects>
-                <viewController storyboardIdentifier="CCAddGroupVC" hidesBottomBarWhenPushed="YES" id="r3h-EF-Dj3" customClass="CCAddGroupVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCAddGroupVC" hidesBottomBarWhenPushed="YES" id="r3h-EF-Dj3" customClass="CCAddCrowdVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cu1-Xk-Gx3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +143,9 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createChannel:" destination="r3h-EF-Dj3" eventType="touchUpInside" id="ktu-mV-8cN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
@@ -207,7 +210,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.0040000001899898052" green="0.41600000858306885" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.043999999761581421" green="0.5" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

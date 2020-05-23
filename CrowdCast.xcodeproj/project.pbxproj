@@ -89,8 +89,8 @@
 		B6974882243B977400AE95C0 /* CCUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974881243B977400AE95C0 /* CCUserService.swift */; };
 		B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCProfileManager.swift */; };
 		B6A4C7FF2475BC0D007B7FB3 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6A4C7FE2475BC0D007B7FB3 /* Groups.storyboard */; };
-		B6A4C8032475BC58007B7FB3 /* CCAddGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4C8022475BC58007B7FB3 /* CCAddGroupVC.swift */; };
-		B6A4C8052475BC63007B7FB3 /* CCAddGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4C8042475BC63007B7FB3 /* CCAddGroupVM.swift */; };
+		B6A4C8032475BC58007B7FB3 /* CCAddCrowdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4C8022475BC58007B7FB3 /* CCAddCrowdVC.swift */; };
+		B6A4C8052475BC63007B7FB3 /* CCAddCrowdVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4C8042475BC63007B7FB3 /* CCAddCrowdVM.swift */; };
 		B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */; };
 		B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */; };
 		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
@@ -112,6 +112,7 @@
 		B6BD90D724377E3D00F50848 /* Channels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD90D624377E3D00F50848 /* Channels.storyboard */; };
 		B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */; };
 		B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */; };
+		B6BEBF472479829600461C12 /* CCGroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BEBF462479829600461C12 /* CCGroupsService.swift */; };
 		B6BF45B52461F96B00DAF383 /* CCImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */; };
 		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
 		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
@@ -257,8 +258,8 @@
 		B6974881243B977400AE95C0 /* CCUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserService.swift; sourceTree = "<group>"; };
 		B6974883243B987600AE95C0 /* CCProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCProfileManager.swift; path = CrowdCast/Services/CCProfileManager.swift; sourceTree = SOURCE_ROOT; };
 		B6A4C7FE2475BC0D007B7FB3 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
-		B6A4C8022475BC58007B7FB3 /* CCAddGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddGroupVC.swift; sourceTree = "<group>"; };
-		B6A4C8042475BC63007B7FB3 /* CCAddGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddGroupVM.swift; sourceTree = "<group>"; };
+		B6A4C8022475BC58007B7FB3 /* CCAddCrowdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddCrowdVC.swift; sourceTree = "<group>"; };
+		B6A4C8042475BC63007B7FB3 /* CCAddCrowdVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddCrowdVM.swift; sourceTree = "<group>"; };
 		B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_celebration_0jvk (1).png"; sourceTree = "<group>"; };
 		B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatchQueue.swift; sourceTree = "<group>"; };
 		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
@@ -280,6 +281,7 @@
 		B6BD90D624377E3D00F50848 /* Channels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Channels.storyboard; sourceTree = "<group>"; };
 		B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCAddChannelVC.swift; path = CrowdCast/Storyboards/CCAddChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCJoinChannelVC.swift; path = CrowdCast/Storyboards/CCJoinChannelVC.swift; sourceTree = SOURCE_ROOT; };
+		B6BEBF462479829600461C12 /* CCGroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGroupsService.swift; sourceTree = "<group>"; };
 		B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCImageStorage.swift; path = CrowdCast/Extensions/CCImageStorage.swift; sourceTree = SOURCE_ROOT; };
 		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
 		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				B64E4CFC2439DCFE0011715A /* CCChannelsService.swift */,
 				B6974881243B977400AE95C0 /* CCUserService.swift */,
 				B6888A5524730914002E3EB5 /* CCTwilioService.swift */,
+				B6BEBF462479829600461C12 /* CCGroupsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -731,8 +734,8 @@
 		B6A4C8012475BC33007B7FB3 /* Create Group */ = {
 			isa = PBXGroup;
 			children = (
-				B6A4C8022475BC58007B7FB3 /* CCAddGroupVC.swift */,
-				B6A4C8042475BC63007B7FB3 /* CCAddGroupVM.swift */,
+				B6A4C8022475BC58007B7FB3 /* CCAddCrowdVC.swift */,
+				B6A4C8042475BC63007B7FB3 /* CCAddCrowdVM.swift */,
 			);
 			path = "Create Group";
 			sourceTree = "<group>";
@@ -1299,7 +1302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A4C8052475BC63007B7FB3 /* CCAddGroupVM.swift in Sources */,
+				B6A4C8052475BC63007B7FB3 /* CCAddCrowdVM.swift in Sources */,
 				B6D04E762455D70D005F4E61 /* CCRoundButton.swift in Sources */,
 				B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */,
 				B6E3676424352AFB00B511A0 /* CCSettingsVM.swift in Sources */,
@@ -1314,10 +1317,11 @@
 				B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */,
 				B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */,
 				B67962102432565E00C2A13C /* CCOverviewVC.swift in Sources */,
-				B6A4C8032475BC58007B7FB3 /* CCAddGroupVC.swift in Sources */,
+				B6A4C8032475BC58007B7FB3 /* CCAddCrowdVC.swift in Sources */,
 				B61C90F32441DCE100F6B8A9 /* CCCallScreenVC.swift in Sources */,
 				B64E4D182439F6020011715A /* CCContainsCrowds.swift in Sources */,
 				B693E30024310D5D002B26BC /* CCSignUpVM.swift in Sources */,
+				B6BEBF472479829600461C12 /* CCGroupsService.swift in Sources */,
 				B6BD90CB2436FEA400F50848 /* CCShowsCardHeaderProtocol.swift in Sources */,
 				B60DE3E324545432003E491C /* CCContainsCellData.swift in Sources */,
 				B6E3676224352AEE00B511A0 /* CCSettingsVC.swift in Sources */,

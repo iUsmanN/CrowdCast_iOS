@@ -8,11 +8,16 @@
 
 import Foundation
 
-protocol CCCreateChannelDelegate{
+protocol CCChannelActionDelegate{
     func channelAdded(data: CCChannel)
     func channelRemoved(data: CCChannel)
 }
 
 protocol CCJoinChannelDelegate{
     func channelJoined(data: CCChannel)
+}
+
+protocol CCCrowdActionDelegate{
+    func crowdAdded(data: CCCrowd)
+    func crowdRemoved(data: CCCrowd)
 }
