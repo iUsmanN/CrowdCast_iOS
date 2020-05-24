@@ -46,9 +46,9 @@ extension CCCrowdsVM {
     func dataForItem(indexPath: IndexPath) -> CCCrowd {
         switch indexPath.section {
         case 0:
-            return myCrowds.data[indexPath.section]
+            return myCrowds.data[indexPath.row]
         case 1:
-            return joinedCrowds.data[indexPath.section]
+            return joinedCrowds.data[indexPath.row]
         default:
             prints("Unhandled Sectionn Data")
             return CCCrowd()
@@ -56,20 +56,49 @@ extension CCCrowdsVM {
     }
 }
 
-extension CCCrowdsVM : CCGroupsService {
+extension CCCrowdsVM : CCGroupsService, CCDispatchQueue {
     
-    func fetchFreshData(){
-        getGroups(type: .owned) { [weak self](result) in
-            switch result {
-            case .success(let groupData):
-                self?.myCrowds.updateData(input: groupData)
-                self?.publishCrowdsUpdates(action: .insert, newCreatedCrowds: groupData.data.count, newJoinedCrowds: 0)
-            case .failure(let error):
-                prints(error)
+    func fetchFreshData() {
+        
+        let dg = DispatchGroup()
+        var newMyCrowds      = 0
+        var newJoinedCrowds  = 0
+        
+        dg.enter()
+        dispatchPriorityItem(.concurrent) {[weak self] in
+            self?.getGroups(type: .owned) { [weak self](result) in
+                switch result {
+                case .success(let groupData):
+                    self?.myCrowds.updateData(input: groupData)
+                    newMyCrowds = groupData.data.count
+                    dg.leave()
+                case .failure(let error):
+                    prints(error)
+                    dg.leave()
+                }
             }
         }
+        
+        dg.enter()
+        dispatchPriorityItem(.concurrent) {[weak self] in
+            self?.getGroups(type: .member) { [weak self](result) in
+                switch result {
+                case .success(let groupData):
+                    self?.joinedCrowds.updateData(input: groupData)
+                    newJoinedCrowds = groupData.data.count
+                    dg.leave()
+                case .failure(let error):
+                    prints(error)
+                    dg.leave()
+                }
+            }
+        }
+        
+        dg.notify(queue: .global()) { [weak self] in
+            prints("Make index paths")
+            self?.publishCrowdsUpdates(action: .insert, newCreatedCrowds: newMyCrowds, newJoinedCrowds: newJoinedCrowds)
+        }
     }
-    
 }
 
 

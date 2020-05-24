@@ -12,6 +12,7 @@ protocol CCGroupsService : CCNetworkEngine, CCQueryEngine {}
 
 extension CCGroupsService {
     
+    //MARK: TO DO: ADD ENTRY IN USER-GROUPS
     func createGroup(groupInput: CCCrowd, result: @escaping (Result<CCCrowd, CCError>)->()){
         let query   = documentRef(.crowdData)
         var group   = groupInput
