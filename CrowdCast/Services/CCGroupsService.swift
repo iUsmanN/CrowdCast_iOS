@@ -25,4 +25,21 @@ extension CCGroupsService {
             result(.failure(.groupCreationFailure))
         }
     }
+    
+    func getGroups(type: CCCrowdRelation,completion: @escaping (Result<paginatedData<CCCrowd>, Error>) -> ()) {
+        let query = userGroups()
+        fetchData(query: query) { (result: Result<[CCUserCrowd], Error>) in
+            switch result {
+            case .success(let channels) :
+                let q = self.groups(ids: type == CCCrowdRelation.owned ? channels.first?.owned : channels.first?.member)
+                self.fetchData(query: q) { (result2: Result<[CCCrowd], Error>) in
+                    switch result2 {
+                    case .success(let crowds)   : completion(.success(paginatedData(data: crowds, next: nil)))
+                    case .failure(let error)    : completion(.failure(error))
+                    }
+                }
+            case .failure(let error)    : completion(.failure(error))
+            }
+        }
+    }
 }

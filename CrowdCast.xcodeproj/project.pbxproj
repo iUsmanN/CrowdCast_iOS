@@ -113,6 +113,7 @@
 		B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */; };
 		B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */; };
 		B6BEBF472479829600461C12 /* CCGroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BEBF462479829600461C12 /* CCGroupsService.swift */; };
+		B6BEBF4B247A653A00461C12 /* CCUserCrowd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BEBF4A247A653A00461C12 /* CCUserCrowd.swift */; };
 		B6BF45B52461F96B00DAF383 /* CCImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */; };
 		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
 		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
@@ -282,6 +283,7 @@
 		B6BD90DE24378CE100F50848 /* CCAddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCAddChannelVC.swift; path = CrowdCast/Storyboards/CCAddChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6BD90E024378E4F00F50848 /* CCJoinChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCJoinChannelVC.swift; path = CrowdCast/Storyboards/CCJoinChannelVC.swift; sourceTree = SOURCE_ROOT; };
 		B6BEBF462479829600461C12 /* CCGroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGroupsService.swift; sourceTree = "<group>"; };
+		B6BEBF4A247A653A00461C12 /* CCUserCrowd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserCrowd.swift; sourceTree = "<group>"; };
 		B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCImageStorage.swift; path = CrowdCast/Extensions/CCImageStorage.swift; sourceTree = SOURCE_ROOT; };
 		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
 		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 				B64E4D20243A41520011715A /* CCPaginatedData.swift */,
 				B697487F243B96E800AE95C0 /* CCUser.swift */,
 				B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */,
+				B6BEBF4A247A653A00461C12 /* CCUserCrowd.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1384,6 +1387,7 @@
 				B6FEAA0E246C538500D194C3 /* CCCrowdsVM.swift in Sources */,
 				B64E4CFA2438A7710011715A /* CCNavigationController.swift in Sources */,
 				B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */,
+				B6BEBF4B247A653A00461C12 /* CCUserCrowd.swift in Sources */,
 				B61C90F52441DCF000F6B8A9 /* CCCallScreenVM.swift in Sources */,
 				B6244DDC244F82B900E52669 /* CCTypeAliases.swift in Sources */,
 				B61A849C2451F5FB00150188 /* CCDetailsSegueTVC.swift in Sources */,

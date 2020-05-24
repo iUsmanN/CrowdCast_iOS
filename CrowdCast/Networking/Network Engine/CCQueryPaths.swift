@@ -18,4 +18,7 @@ enum CCQueryPath : String {
     
     //Crowds
     case crowdData          = "/data/groups"
+    
+    //User-Crowds
+    case userCrowds         = "/data/user-groups"
 }

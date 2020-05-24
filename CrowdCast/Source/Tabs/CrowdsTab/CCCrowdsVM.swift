@@ -19,6 +19,10 @@ class CCCrowdsVM {
     let crowdsPublisher = PassthroughSubject<(dataAction, [IndexPath]), Never>()
     var myCrowds        = paginatedData<CCCrowd>()
     var joinedCrowds    = paginatedData<CCCrowd>()
+    
+    init() {
+        fetchFreshData()
+    }
 }
 
 extension CCCrowdsVM {
@@ -50,6 +54,22 @@ extension CCCrowdsVM {
             return CCCrowd()
         }
     }
+}
+
+extension CCCrowdsVM : CCGroupsService {
+    
+    func fetchFreshData(){
+        getGroups(type: .owned) { [weak self](result) in
+            switch result {
+            case .success(let groupData):
+                self?.myCrowds.updateData(input: groupData)
+                self?.publishCrowdsUpdates(action: .insert, newCreatedCrowds: groupData.data.count, newJoinedCrowds: 0)
+            case .failure(let error):
+                prints(error)
+            }
+        }
+    }
+    
 }
 
 

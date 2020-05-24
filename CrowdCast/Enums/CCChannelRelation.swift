@@ -12,3 +12,8 @@ enum CCChannelRelation  : String {
     case owned          = "owners"
     case joined         = "members"
 }
+
+enum CCCrowdRelation    : String {
+    case owned          = "owned"
+    case member         = "member"
+}
