@@ -11,6 +11,11 @@ import UIKit
 import Kingfisher
 import FirebaseStorage
 
+enum imageCacheDirectory : String {
+    case displays
+    case groups
+}
+
 protocol CCImageStorage {}
 
 extension CCImageStorage {
@@ -19,8 +24,8 @@ extension CCImageStorage {
     /// Gets image cache URL
     /// - Parameter id: user ID
     /// - Returns: completion handler
-    func imageCacheURL(id: String?) -> URL? {
-        guard let id = id, let url = URL(string: Constants.imageCacheString(id: id)) else {
+    func imageCacheURL(id: String?, directory: imageCacheDirectory = .displays) -> URL? {
+        guard let id = id, let url = URL(string: Constants.imageCacheString(id: id, directory: directory)) else {
             return nil
         }
         return url
@@ -48,7 +53,7 @@ extension CCImageStorage {
         Storage.storage().reference().child("displays").child("\(CCProfileManager.sharedInstance.getUID()).png").putData(uploadData, metadata: nil) { (_, error) in
             if error != nil { result(.failure(.ImageUploadFailure)) }
             guard let imageData = image.pngData(),
-                  let KFImage = KFCrossPlatformImage(data: imageData) else { result(.failure(.ImageCacheFailure)); return }
+                let KFImage = KFCrossPlatformImage(data: imageData) else { result(.failure(.ImageCacheFailure)); return }
             ImageCache.default.store(KFImage, forKey: self.imageCacheURL(id: CCProfileManager.sharedInstance.getUID())?.absoluteString ?? "")
             NotificationCenter.default.post(name: .profilePictureChanged, object: nil)
             result(.success(image))
@@ -64,10 +69,8 @@ extension CCImageStorage {
         guard let uploadData = image.jpegData(compressionQuality: 0.5) else { result(.failure(CCError.ImageUploadFailure)); return }
         Storage.storage().reference().child("groups").child("\(groupID).png").putData(uploadData, metadata: nil) { (_, error) in
             if error != nil { result(.failure(.ImageUploadFailure)) }
-            //guard let imageData = image.pngData(),
-            //      let KFImage = KFCrossPlatformImage(data: imageData) else { result(.failure(.ImageCacheFailure)); return }
-            //ImageCache.default.store(KFImage, forKey: self.imageCacheURL(id: CCProfileManager.sharedInstance.getUID())?.absoluteString ?? "")
-            //NotificationCenter.default.post(name: .profilePictureChanged, object: nil)
+            guard let KFImage = KFCrossPlatformImage(data: uploadData) else { result(.failure(.ImageCacheFailure)); return }
+            ImageCache.default.store(KFImage, forKey: self.imageCacheURL(id: groupID, directory: .groups)?.absoluteString ?? "")
             result(.success(image))
         }
     }
@@ -80,8 +83,8 @@ extension CCImageStorage {
     ///   - memberID: member ID
     ///   - result: completion Handler
     /// - Returns: nil
-    func setImage(memberID: String?, result: @escaping (Result<ImageResource, Error>)->()) {
-        if let url = imageCacheURL(id: memberID) {
+    func setImage(memberID: String?, directory: imageCacheDirectory = .displays, result: @escaping (Result<ImageResource, Error>)->()) {
+        if let url = imageCacheURL(id: memberID, directory: directory) {
             result(.success(ImageResource(downloadURL: url, cacheKey: url.getQueryLessURL()?.absoluteString)))
         }
         getProfileImageUrl(id: memberID) { (response) in

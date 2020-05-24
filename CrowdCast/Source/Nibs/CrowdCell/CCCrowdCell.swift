@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCCrowdCell: UICollectionViewCell {
+class CCCrowdCell: UICollectionViewCell, CCImageStorage {
 
     @IBOutlet weak var cardBackgroundView   : UIView!
     @IBOutlet weak var cardTitle            : UILabel!
@@ -19,6 +19,7 @@ class CCCrowdCell: UICollectionViewCell {
     var data                                : CCCrowd? {
         didSet {
             cardTitle.text = data?.name
+            setGroupImage(id: data?.id)
         }
     }
     
@@ -35,7 +36,18 @@ class CCCrowdCell: UICollectionViewCell {
         cardBackgroundView.layer.borderColor    = UIColor.white.cgColor
         cardBackgroundView.layer.shadowOpacity  = 0.3
         cardBackgroundView.layer.shadowOffset   = CGSize(width: 0, height: 2)
-        
-        cardImage.layer.cornerRadius   = 10
+        cardImage.layer.cornerRadius            = 10
+    }
+    
+    func setGroupImage(id: String?) {
+        setImage(memberID: id ?? "", directory: .groups) { [weak self](result) in
+            switch result {
+            case .success(let imageResource):
+                self?.cardImage.kf.setImage(with: imageResource)
+                self?.bgImage.kf.setImage(with: imageResource)
+            case .failure(let error):
+                prints(error)
+            }
+        }
     }
 }

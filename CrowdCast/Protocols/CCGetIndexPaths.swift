@@ -33,7 +33,6 @@ extension CCGetIndexPaths {
                 indexPaths.append(IndexPath(row: (oldJoinedChannelCount ?? 1) - index, section: 1))
             }
         }
-        
         return indexPaths
     }
     

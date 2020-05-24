@@ -62,7 +62,8 @@ extension CCAddCrowdVC : CCImagePickedDelegate, CCImageStorage {
         switch result {
         case .success(let image):
             groupPicture.image = image
-        case .failure(let error): prints(error)
+        case .failure(let error):
+            prints(error)
         }
     }
 }
