@@ -37,6 +37,7 @@ class CCCrowdCell: UICollectionViewCell, CCImageStorage {
         cardBackgroundView.layer.shadowOpacity  = 0.3
         cardBackgroundView.layer.shadowOffset   = CGSize(width: 0, height: 2)
         cardImage.layer.cornerRadius            = 10
+        bgImage.clipsToBounds                   = true
     }
     
     func setGroupImage(id: String?) {

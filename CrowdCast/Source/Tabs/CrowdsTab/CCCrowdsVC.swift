@@ -37,7 +37,7 @@ extension CCCrowdsVC {
     func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.insertItems(at: indexPaths)
-            //self?.collectionView.reloadSections(IndexSet(arrayLiteral: 0))
+            self?.collectionView.reloadData()
         }
     }
     
@@ -72,7 +72,7 @@ extension CCCrowdsVC : CCSetsNavbar {
     }
 }
 
-extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ShowsCardHeader {
+extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, CCGetsViewController, UICollectionViewDelegateFlowLayout, ShowsCardHeader {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfRows(section: section) ?? 0
@@ -100,5 +100,11 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.collectionView.frame.size.width, height: Constants.CardList.headerHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = instantiateViewController(storyboard: .Groups, viewController: .CCCrowdChannelsVC, as: CCCrowdChannelsVC())
+        viewController.setupViewModel(crowdData: viewModel?.dataForItem(indexPath: indexPath))
+        DispatchQueue.main.async {[weak self] in self?.navigationController?.pushViewController(viewController, animated: true) }
     }
 }
