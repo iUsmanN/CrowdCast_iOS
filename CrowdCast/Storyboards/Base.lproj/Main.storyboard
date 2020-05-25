@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Google" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="holi_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-RK-TZ4">
+                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-x0-TcT">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -44,7 +44,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Google" translatesAutoresizingMaskIntoConstraints="NO" id="umP-du-28C">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_friendship_mni7 (3).png" translatesAutoresizingMaskIntoConstraints="NO" id="umP-du-28C">
                                 <rect key="frame" x="40" y="185" width="334" height="235"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="umP-du-28C" secondAttribute="height" multiplier="374:263" id="Svr-dU-tsa"/>
@@ -212,7 +212,7 @@
                             <constraint firstItem="umP-du-28C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="idK-Wr-maB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="umP-du-28C" secondAttribute="trailing" constant="40" id="mQD-0s-ypU"/>
                             <constraint firstItem="Nsi-Ch-YEz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="mbK-DM-Wpz"/>
-                            <constraint firstItem="aEA-RK-TZ4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pRv-NJ-3FA"/>
+                            <constraint firstItem="aEA-RK-TZ4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="pRv-NJ-3FA"/>
                             <constraint firstItem="azJ-lw-Fp4" firstAttribute="trailing" secondItem="Pf9-QT-SMy" secondAttribute="trailing" id="q7r-Nm-Efx"/>
                             <constraint firstAttribute="trailing" secondItem="aEA-RK-TZ4" secondAttribute="trailing" id="spR-sX-Txu"/>
                             <constraint firstAttribute="bottom" secondItem="aEA-RK-TZ4" secondAttribute="bottom" id="tNU-bv-fIq"/>
@@ -251,7 +251,7 @@
                                 <color key="textColor" name="Main Accent"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reading.png" translatesAutoresizingMaskIntoConstraints="NO" id="mKs-v0-uF0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_reading_0re1 (2).png" translatesAutoresizingMaskIntoConstraints="NO" id="mKs-v0-uF0">
                                 <rect key="frame" x="-303" y="145" width="1020" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="xNu-4O-6B9"/>
@@ -573,8 +573,10 @@
         <image name="Email" width="50" height="50"/>
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
-        <image name="Reading.png" width="1020" height="734"/>
+        <image name="holi_blue.png" width="2049" height="1215"/>
         <image name="profile2.png" width="698" height="698"/>
+        <image name="undraw_friendship_mni7 (3).png" width="1142" height="781"/>
+        <image name="undraw_reading_0re1 (2).png" width="1020" height="734"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

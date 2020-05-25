@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-protocol CCUserService : CCNetworkEngine, CCQueryEngine {}
+protocol CCUserService : CCNetworkEngine, CCQueryEngine, CCDispatchQueue {}
 
 extension CCUserService {
     
@@ -28,8 +28,15 @@ extension CCUserService {
         do{
             let user = CCUser(id: uid, firstName: firstName, lastName: lastName, email: email)
             let _ = try collectionRef(.userProfileData).addDocument(from: user, encoder: .init()) { (error) in
-                guard error == nil else { completion(.failure(CCError.firebaseFailure)); return }
-                completion(.success(true))
+                guard error == nil else {
+                    completion(.failure(CCError.firebaseFailure)); return }
+                
+                let dg = DispatchGroup()
+                
+                dg.enter()
+                self.dispatchPriorityItem(.concurrent, code: {self.addUserGroupsEntry(dg: dg, uuid: uid, completion: completion)})
+                
+                dg.notify(queue: .global(), execute: { completion(.success(true)) })
             }
         } catch {
             completion(.failure(CCError.firebaseFailure))
@@ -44,5 +51,16 @@ extension CCUserService {
             case .failure(let error)    : completion(.failure(error))
             }
         }
+    }
+}
+
+extension CCUserService {
+    
+    func addUserGroupsEntry(dg: DispatchGroup, uuid: String?, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let uuid = uuid else { completion(.failure(CCError.RequiredValuesEmpty)); dg.suspend(); return }
+        collectionRef(.userCrowds).addDocument(data: ["id":"\(uuid)", "owned": [], "member": []], completion: { (error) in
+            guard error == nil else { completion(.failure(CCError.firebaseFailure)); dg.suspend(); return}
+            dg.leave()
+        })
     }
 }

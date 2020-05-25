@@ -29,7 +29,8 @@ extension CCCrowdChannelsVC {
         tableView.register(Nib.get.CCSectionHeader, forCellReuseIdentifier: Nib.reuseIdentifier.CCSectionHeader)
         tableView.dataSource    = self
         tableView.delegate      = self
-        title                   = viewModel?.crowdData?.name ?? "L"
+        title                   = viewModel?.crowdData?.name ?? ""
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupViewModel(crowdData: CCCrowd?){
@@ -45,6 +46,7 @@ extension CCCrowdChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsC
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell() }
+        cell.isCrowdChannel = true
         return cell
     }
     

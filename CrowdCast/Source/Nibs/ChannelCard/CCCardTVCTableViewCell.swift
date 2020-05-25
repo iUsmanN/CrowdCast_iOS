@@ -16,6 +16,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
     @IBOutlet weak var ownerLabel               : UILabel!
     @IBOutlet weak var membersCollectionView    : UICollectionView!
     @IBOutlet weak var pingButton               : UIButton!
+    @IBOutlet weak var membersViewHeight        : NSLayoutConstraint!
     
     var data : CCChannel? {
         didSet{
@@ -27,6 +28,12 @@ class CCCardTVCTableViewCell: UITableViewCell {
             setColors(color: data?.color ?? "red")
             timeLabel.text  = nil
             setupCollectionView()
+        }
+    }
+    
+    var isCrowdChannel : Bool? {
+        didSet {
+            membersViewHeight.constant = (isCrowdChannel ?? false) ? 0 : 51
         }
     }
     

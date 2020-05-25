@@ -108,6 +108,7 @@
             <connections>
                 <outlet property="cardBackgroundView" destination="yOU-O8-gfa" id="NAf-Ay-jHt"/>
                 <outlet property="membersCollectionView" destination="0lm-wU-OMG" id="huh-i9-uVb"/>
+                <outlet property="membersViewHeight" destination="4Na-0v-tmE" id="Kd0-eP-Rra"/>
                 <outlet property="ownerLabel" destination="wrJ-95-rr3" id="hCN-8v-37i"/>
                 <outlet property="pingButton" destination="hUy-du-l4l" id="qqq-HN-hjO"/>
                 <outlet property="timeLabel" destination="I6l-JE-j9J" id="ZUc-Uv-Aay"/>
