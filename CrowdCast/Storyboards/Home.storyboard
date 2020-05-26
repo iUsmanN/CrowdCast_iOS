@@ -130,20 +130,24 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WIP.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="IId-vA-55P">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کام جاری ہے" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-x0-PjS">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                            </imageView>
+                                <color key="backgroundColor" name="Background"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="IId-vA-55P" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="8q8-Vt-uNs"/>
-                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="IId-vA-55P" secondAttribute="trailing" id="W6M-HP-TmV"/>
+                            <constraint firstItem="1zZ-x0-PjS" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="6rU-B2-cIa"/>
+                            <constraint firstItem="1zZ-x0-PjS" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="8Xc-fR-HeJ"/>
+                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="bottom" secondItem="1zZ-x0-PjS" secondAttribute="bottom" id="WYV-ct-JyA"/>
+                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="1zZ-x0-PjS" secondAttribute="trailing" id="XWZ-qP-5cs"/>
                             <constraint firstAttribute="bottom" secondItem="aH1-Xg-DY5" secondAttribute="bottom" id="bqb-5g-jV5"/>
-                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="bottom" secondItem="IId-vA-55P" secondAttribute="bottom" id="eAX-7y-7Rq"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="eoX-gd-3mm"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="fTM-dJ-r0L"/>
                             <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="aH1-Xg-DY5" secondAttribute="trailing" id="qJR-ZG-5AV"/>
-                            <constraint firstItem="IId-vA-55P" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="rUM-ai-iqg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wc3-Pa-Da3"/>
                     </view>
@@ -244,7 +248,6 @@
         <image name="Channels" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Feed" width="30" height="30"/>
         <image name="Groups" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="WIP.JPG" width="750" height="1334"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -13,6 +13,11 @@ protocol CCChannelsService : CCNetworkEngine, CCQueryEngine {}
 
 extension CCChannelsService {
     
+    /// Gets users channels
+    /// - Parameters:
+    ///   - type: channel type
+    ///   - completion: completion handler
+    /// - Returns: nil
     func getChannels(type: CCChannelRelation,completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
         let query = make(.channelsData, in: "\(type.rawValue)", contains: CCProfileManager.sharedInstance.getUID())
         fetchData(query: query) { (result: Result<[CCChannel], Error>) in
@@ -23,6 +28,11 @@ extension CCChannelsService {
         }
     }
     
+    /// Creates a new channel
+    /// - Parameters:
+    ///   - channelInput: channel data
+    ///   - completion: completion handler
+    /// - Returns: nil
     func createChannel(channelInput: CCChannel,completion: @escaping (Result<CCChannel, CCError>) -> ()) {
         let query   = documentRef(.channelsData)
         var channel = channelInput
@@ -37,6 +47,11 @@ extension CCChannelsService {
         }
     }
     
+    /// Delete channel
+    /// - Parameters:
+    ///   - channelInput: channel data
+    ///   - completion: completion handler
+    /// - Returns: nil
     func deleteChannel(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
         let query = collectionRef(.channelsData)
         query.document(channelInput.id ?? "").delete(completion: { (error) in
