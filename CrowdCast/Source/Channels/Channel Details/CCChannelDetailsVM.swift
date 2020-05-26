@@ -11,11 +11,9 @@ import TwilioVideo
 
 struct CCChannelDetailsVM {
     
-    var sectionTitles       : [String] = ["JOIN CHANNEL", "CHANNEL ACTIONS", "ADMIN ACTIONS"]
+    private var sectionTitles       : [String] = ["CHANNEL ACTIONS", "ADMIN ACTIONS"]
     
     var channelRows         : [CCCellData] = [
-        CCCellData(title: "Video", switchActions: nil),
-        CCCellData(title: "Audio", switchActions: nil),
         CCCellData(title: "Participants"),
         CCCellData(title: "Accent Color"),
         CCCellData(title: "Leave", titleColor: #colorLiteral(red: 1, green: 0.01136767322, blue: 0, alpha: 1))
@@ -40,6 +38,10 @@ extension CCChannelDetailsVM {
     
     func numberOfSections() -> Int {
         return sectionTitles.count
+    }
+    
+    func sectionTitle(section: Int) -> String? {
+        return sectionTitles[section]
     }
     
     func numberOfRows(section: Int) -> Int {

@@ -233,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hiN-t4-C1E">
-                                <rect key="frame" x="0.0" y="0.0" width="338" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fPT-Q1-D6G">
                                     <size key="itemSize" width="264" height="366"/>
@@ -244,32 +244,32 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CROWD CAST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40H-FD-EXQ">
-                                <rect key="frame" x="136" y="828" width="66.5" height="14"/>
+                                <rect key="frame" x="174" y="828" width="66.5" height="14"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
                                 <color key="textColor" name="Main Accent"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHm-fY-rN2">
-                                <rect key="frame" x="25" y="712" width="288" height="90"/>
+                                <rect key="frame" x="25" y="712" width="364" height="90"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qTa-xD-13n">
-                                    <rect key="frame" x="0.0" y="0.0" width="288" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="364" height="90"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSW-ln-vga">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="90"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3I-CX-uQn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="90"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="90"/>
                                                     <color key="tintColor" name="Inverted"/>
                                                     <state key="normal" image="camera.rotate" catalog="system"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-H5-8ar">
-                                                    <rect key="frame" x="54" y="0.0" width="54" height="90"/>
+                                                    <rect key="frame" x="68.5" y="0.0" width="68" height="90"/>
                                                     <color key="tintColor" name="Inverted"/>
                                                     <state key="normal" image="video" catalog="system"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-CS-WdF">
-                                                    <rect key="frame" x="108" y="0.0" width="72" height="90"/>
+                                                    <rect key="frame" x="136.5" y="0.0" width="91" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hFD-CS-WdF" secondAttribute="height" id="PRg-Wu-X3V"/>
                                                     </constraints>
@@ -279,12 +279,12 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-jg-RG4">
-                                                    <rect key="frame" x="180" y="0.0" width="54" height="90"/>
+                                                    <rect key="frame" x="227.5" y="0.0" width="68.5" height="90"/>
                                                     <color key="tintColor" name="Inverted"/>
                                                     <state key="normal" image="mic" catalog="system"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae3-yU-jpb">
-                                                    <rect key="frame" x="234" y="0.0" width="54" height="90"/>
+                                                    <rect key="frame" x="296" y="0.0" width="68" height="90"/>
                                                     <color key="tintColor" name="Inverted"/>
                                                     <state key="normal" image="text.bubble" catalog="system"/>
                                                 </button>
@@ -491,7 +491,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.0040000001899898052" green="0.41600000858306885" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blue">
             <color red="0.0" green="0.42699998617172241" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

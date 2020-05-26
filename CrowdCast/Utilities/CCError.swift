@@ -30,4 +30,9 @@ enum CCError : Error {
     case ImageSelectionFailure
     case ImageUploadFailure
     case ImageCacheFailure
+    
+    //MARK: FIRESTORE
+    case groupCreationFailure
+    case addUserGroupEntryFailure
+    
 }

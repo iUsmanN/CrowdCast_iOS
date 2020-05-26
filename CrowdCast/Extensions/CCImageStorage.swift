@@ -11,6 +11,11 @@ import UIKit
 import Kingfisher
 import FirebaseStorage
 
+enum ImageCacheDirectory : String {
+    case displays
+    case groups
+}
+
 protocol CCImageStorage {}
 
 extension CCImageStorage {
@@ -19,8 +24,8 @@ extension CCImageStorage {
     /// Gets image cache URL
     /// - Parameter id: user ID
     /// - Returns: completion handler
-    func imageCacheURL(id: String?) -> URL? {
-        guard let id = id, let url = URL(string: Constants.imageCacheString(id: id)) else {
+    func imageCacheURL(id: String?, directory: ImageCacheDirectory = .displays) -> URL? {
+        guard let id = id, let url = URL(string: Constants.imageCacheString(id: id, directory: directory)) else {
             return nil
         }
         return url
@@ -38,19 +43,46 @@ extension CCImageStorage {
         }
     }
     
+    /// Gets Group Image URL
+    /// - Parameters:
+    ///   - id: group ID
+    ///   - result: completion handler
+    /// - Returns: nil
+    private func getImageUrl(cacheDirectory: ImageCacheDirectory, id: String?, result: @escaping (Result<URL?, Error>) -> ()) {
+        Storage.storage().reference().child(cacheDirectory.rawValue).child("\(id ?? "").png").downloadURL { (url, error) in
+            guard error == nil else { result(.success(nil)); return }
+            result(.success(url))
+        }
+    }
+    
     /// Uploads profile image
     /// - Parameters:
     ///   - image: new profile image
     ///   - result: completion handler
     /// - Returns: nil
     func uploadProfileImage(image: UIImage, result: @escaping (Result<UIImage?, CCError>) -> ()) {
-        guard let uploadData = image.jpegData(compressionQuality: 0.5) else { result(.failure(CCError.ImageUploadFailure)); return }
+        guard let uploadData = image.jpegData(compressionQuality: 1) else { result(.failure(CCError.ImageUploadFailure)); return }
         Storage.storage().reference().child("displays").child("\(CCProfileManager.sharedInstance.getUID()).png").putData(uploadData, metadata: nil) { (_, error) in
             if error != nil { result(.failure(.ImageUploadFailure)) }
             guard let imageData = image.pngData(),
-                  let KFImage = KFCrossPlatformImage(data: imageData) else { result(.failure(.ImageCacheFailure)); return }
+                let KFImage = KFCrossPlatformImage(data: imageData) else { result(.failure(.ImageCacheFailure)); return }
             ImageCache.default.store(KFImage, forKey: self.imageCacheURL(id: CCProfileManager.sharedInstance.getUID())?.absoluteString ?? "")
             NotificationCenter.default.post(name: .profilePictureChanged, object: nil)
+            result(.success(image))
+        }
+    }
+    
+    /// Uploads group image
+    /// - Parameters:
+    ///   - image: new profile image
+    ///   - result: completion handler
+    /// - Returns: nil
+    func uploadGroupImage(groupID: String, image: UIImage, result: @escaping (Result<UIImage?, CCError>) -> ()) {
+        guard let uploadData = image.jpegData(compressionQuality: 1) else { result(.failure(CCError.ImageUploadFailure)); return }
+        Storage.storage().reference().child("groups").child("\(groupID).png").putData(uploadData, metadata: nil) { (_, error) in
+            if error != nil { result(.failure(.ImageUploadFailure)) }
+            guard let KFImage = KFCrossPlatformImage(data: uploadData) else { result(.failure(.ImageCacheFailure)); return }
+            ImageCache.default.store(KFImage, forKey: self.imageCacheURL(id: groupID, directory: .groups)?.absoluteString ?? "")
             result(.success(image))
         }
     }
@@ -63,11 +95,11 @@ extension CCImageStorage {
     ///   - memberID: member ID
     ///   - result: completion Handler
     /// - Returns: nil
-    func setImage(memberID: String?, result: @escaping (Result<ImageResource, Error>)->()) {
-        if let url = imageCacheURL(id: memberID) {
+    func getImage(memberID: String?, directory: ImageCacheDirectory = .displays, result: @escaping (Result<ImageResource, Error>)->()) {
+        if let url = imageCacheURL(id: memberID, directory: directory), ImageCache.default.isCached(forKey: url.getQueryLessURL()?.absoluteString ?? "") {
             result(.success(ImageResource(downloadURL: url, cacheKey: url.getQueryLessURL()?.absoluteString)))
         }
-        getProfileImageUrl(id: memberID) { (response) in
+        getImageUrl(cacheDirectory: directory, id: memberID) { (response) in
             switch response {
             case .success(let url):
                 guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }

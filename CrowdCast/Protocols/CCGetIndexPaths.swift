@@ -33,7 +33,6 @@ extension CCGetIndexPaths {
                 indexPaths.append(IndexPath(row: (oldJoinedChannelCount ?? 1) - index, section: 1))
             }
         }
-        
         return indexPaths
     }
     
@@ -45,7 +44,7 @@ extension CCGetIndexPaths {
         return indexPaths ?? [IndexPath]()
     }
     
-    func myChannelsRemovalIndexPath(index: Int) -> [IndexPath] {
+    func myRemovalIndexPath(index: Int) -> [IndexPath] {
         var indexPaths = [IndexPath]()
         indexPaths.append(IndexPath(row: index, section: 0))
         return indexPaths

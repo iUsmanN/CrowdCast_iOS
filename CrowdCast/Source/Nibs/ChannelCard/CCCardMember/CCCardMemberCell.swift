@@ -34,13 +34,13 @@ class CCCardMemberCell: UICollectionViewCell {
 extension CCCardMemberCell : CCImageStorage {
     
     func setImage(){
-        setImage(memberID: memberID) { [weak self] (result) in
+        getImage(memberID: memberID) { [weak self] (result) in
             switch result {
             case .success(let imageResource):
                 if(self?.memberID == CCProfileManager.sharedInstance.getUID()) {
                     self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.never)])
                 } else {
-                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.seconds(30))])
+                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.seconds(172800))])
                 }
             case .failure(let error):
                 prints(error)

@@ -51,5 +51,31 @@ extension CCQueryEngine {
             .whereField(which ?? "", isEqualTo: equals as Any)
     }
     
+    func userGroups() -> Query {
+        let db = Firestore.firestore()
+        let env = "develop"
+        return db.collection("\(env)\(CCQueryPath.userCrowds.rawValue)").whereField("id", isEqualTo: CCProfileManager.sharedInstance.getUID())
+    }
     
+    func groupData(ids: [String]?) -> Query {
+        let db = Firestore.firestore()
+        let env = "develop"
+        return db.collection("\(env)\(CCQueryPath.crowdData.rawValue)").whereField("id", in: ids ?? [String]())
+    }
+}
+
+
+//MARK: USERS
+extension CCQueryEngine {
+    
+}
+
+//MARK: GROUPS
+extension CCQueryEngine {
+    
+    func userGroupsDocReferrence() -> DocumentReference {
+        let db = Firestore.firestore()
+        let env = "develop"
+        return db.document("\(env)\(CCQueryPath.userCrowds.rawValue)/\(CCProfileManager.sharedInstance.getUID())")
+    }
 }

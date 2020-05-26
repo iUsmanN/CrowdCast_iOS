@@ -131,7 +131,7 @@ extension CCChannelsVM {
     
     func removeCreatedChannel(channel: CCChannel){
         guard let removalIndex = myChannels.removeData(input: channel) else { return }
-        channelsPublisher.send((dataAction.remove, myChannelsRemovalIndexPath(index: removalIndex)))
+        channelsPublisher.send((dataAction.remove, myRemovalIndexPath(index: removalIndex)))
         prints("Removed Data")
     }
 }

@@ -63,10 +63,9 @@ extension CCChannelsVC {
     func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPaths, with: .right)
+            self?.tableView.insertRows(at: indexPaths, with: .bottom)
             self?.tableView.endUpdates()
-            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .left)
-            //self?.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .bottom)
         }
     }
     
@@ -103,10 +102,6 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return Constants.CardList.rowHeight
-//    }
-    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
@@ -124,7 +119,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
 }
 
-extension CCChannelsVC : CCCreateChannelDelegate {
+extension CCChannelsVC : CCChannelActionDelegate {
     func channelAdded(data: CCChannel) {
         viewModel?.addCreatedChannel(channel: data)
     }

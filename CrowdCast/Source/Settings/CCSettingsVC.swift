@@ -30,7 +30,7 @@ class CCSettingsVC: CCImagePickingVC, CCImageStorage {
         profileImage.layer.cornerRadius = 15
         tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
         tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
-        setImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
+        getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
             switch result {
             case .success(let imageResource):
                 self?.profileImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "lines only.png"))

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83a-pw-sTL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83a-pw-sTL">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -47,28 +47,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fLc-qR-PmM">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fLc-qR-PmM">
+                                <rect key="frame" x="17" y="88" width="380" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xnP-vy-HEU">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CCCrowdHeader" id="AEm-xI-Yuj" customClass="CCCollectionSectionHeader" customModule="CrowdCast" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pd-9h-cD7">
+                                            <rect key="frame" x="3" y="10" width="374" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZz-gh-Sbd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="40"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLc-WT-qZR">
+                                                    <rect key="frame" x="258" y="0.0" width="116" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" name="Main Accent"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="rightButtonPressed:" destination="AEm-xI-Yuj" eventType="touchUpInside" id="wfM-BO-f1s"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DLc-WT-qZR" firstAttribute="width" secondItem="xZz-gh-Sbd" secondAttribute="width" multiplier="0.45" id="JKr-Ss-wzS"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="Background"/>
+                                    <constraints>
+                                        <constraint firstItem="3pd-9h-cD7" firstAttribute="top" secondItem="AEm-xI-Yuj" secondAttribute="top" constant="10" id="7Ru-pK-Sdt"/>
+                                        <constraint firstAttribute="trailing" secondItem="3pd-9h-cD7" secondAttribute="trailing" constant="3" id="8YG-9K-aKf"/>
+                                        <constraint firstItem="3pd-9h-cD7" firstAttribute="leading" secondItem="AEm-xI-Yuj" secondAttribute="leading" constant="3" id="cs4-Vn-nmX"/>
+                                        <constraint firstAttribute="bottom" secondItem="3pd-9h-cD7" secondAttribute="bottom" id="pbR-Sn-1OK"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="rightButton" destination="DLc-WT-qZR" id="oYN-cg-hWf"/>
+                                        <outlet property="title" destination="xZz-gh-Sbd" id="7AU-ax-AB7"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="UR2-e9-xxc" firstAttribute="bottom" secondItem="fLc-qR-PmM" secondAttribute="bottom" id="O3v-BS-WGV"/>
-                            <constraint firstItem="UR2-e9-xxc" firstAttribute="trailing" secondItem="fLc-qR-PmM" secondAttribute="trailing" id="U9k-Yv-ILq"/>
-                            <constraint firstItem="fLc-qR-PmM" firstAttribute="leading" secondItem="UR2-e9-xxc" secondAttribute="leading" id="qGx-x4-Fk5"/>
+                            <constraint firstAttribute="bottom" secondItem="fLc-qR-PmM" secondAttribute="bottom" id="O3v-BS-WGV"/>
+                            <constraint firstItem="UR2-e9-xxc" firstAttribute="trailing" secondItem="fLc-qR-PmM" secondAttribute="trailing" constant="17" id="U9k-Yv-ILq"/>
+                            <constraint firstItem="fLc-qR-PmM" firstAttribute="leading" secondItem="UR2-e9-xxc" secondAttribute="leading" constant="17" id="qGx-x4-Fk5"/>
                             <constraint firstItem="fLc-qR-PmM" firstAttribute="top" secondItem="UR2-e9-xxc" secondAttribute="top" id="uKu-6S-uIA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UR2-e9-xxc"/>
                     </view>
                     <navigationItem key="navigationItem" id="NaN-WE-Pqg"/>
+                    <connections>
+                        <outlet property="collectionView" destination="fLc-qR-PmM" id="dzj-c5-dEg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvQ-XY-LCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,9 +130,20 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کام جاری ہے" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-x0-PjS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="1zZ-x0-PjS" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="6rU-B2-cIa"/>
+                            <constraint firstItem="1zZ-x0-PjS" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="8Xc-fR-HeJ"/>
+                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="bottom" secondItem="1zZ-x0-PjS" secondAttribute="bottom" id="WYV-ct-JyA"/>
+                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="1zZ-x0-PjS" secondAttribute="trailing" id="XWZ-qP-5cs"/>
                             <constraint firstAttribute="bottom" secondItem="aH1-Xg-DY5" secondAttribute="bottom" id="bqb-5g-jV5"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="eoX-gd-3mm"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="fTM-dJ-r0L"/>
@@ -197,7 +252,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.0040000001899898052" green="0.41600000858306885" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.043137254901960784" green="0.49803921568627452" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

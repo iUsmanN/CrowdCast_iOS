@@ -16,6 +16,7 @@ struct Constants {
         case Onboarding
         case Others
         case Channels
+        case Groups
     }
     
     enum ViewControllers    : String {
@@ -26,10 +27,12 @@ struct Constants {
         case CCAddChannelVC
         case CCJoinChannelVC
         case CCCallScreenVC
+        case CCAddGroupVC
+        case CCCrowdChannelsVC
     }
     
-    static func imageCacheString(id: String?) -> String {
-        return "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/displays%2F\(id ?? "ID_MISSING").png"
+    static func imageCacheString(id: String?, directory: ImageCacheDirectory = .displays) -> String {
+        return "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/\(directory.rawValue)%2F\(id ?? "ID_MISSING").png"
     }
     
     struct CardList {
