@@ -34,7 +34,7 @@ class CCCardMemberCell: UICollectionViewCell {
 extension CCCardMemberCell : CCImageStorage {
     
     func setImage(){
-        setImage(memberID: memberID) { [weak self] (result) in
+        getImage(memberID: memberID) { [weak self] (result) in
             switch result {
             case .success(let imageResource):
                 if(self?.memberID == CCProfileManager.sharedInstance.getUID()) {

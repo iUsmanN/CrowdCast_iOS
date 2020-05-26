@@ -31,7 +31,7 @@ struct Constants {
         case CCCrowdChannelsVC
     }
     
-    static func imageCacheString(id: String?, directory: imageCacheDirectory = .displays) -> String {
+    static func imageCacheString(id: String?, directory: ImageCacheDirectory = .displays) -> String {
         return "https://firebasestorage.googleapis.com/v0/b/crowdcast-31303.appspot.com/o/\(directory.rawValue)%2F\(id ?? "ID_MISSING").png"
     }
     

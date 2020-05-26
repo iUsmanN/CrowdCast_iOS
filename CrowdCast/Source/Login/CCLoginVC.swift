@@ -29,16 +29,16 @@ class CCLoginVC: UIViewController {
     }
     
     func setupView(){
-        emailIcon.image = emailIcon.image?.withRenderingMode(.alwaysTemplate)
-        passwordIcon.image = passwordIcon.image?.withRenderingMode(.alwaysTemplate)
-        emailIcon.alpha = 0.7
-        passwordIcon.alpha = 0.7
+        emailIcon.image         = emailIcon.image?.withRenderingMode(.alwaysTemplate)
+        passwordIcon.image      = passwordIcon.image?.withRenderingMode(.alwaysTemplate)
+        emailIcon.alpha         = 0.7
+        passwordIcon.alpha      = 0.7
         
-        emailTextField.text = "usmant1@gmail.com"
-        passwordTextField.text = "usmant1"
+        emailTextField.text     = "usmant3@gmail.com"
+        passwordTextField.text  = "usmant3"
         
-        IllustrationBottomGap.constant = Device.size() > Size.screen4_7Inch ? 75 : 10
-        IllustrationTopGap.constant = Device.size() > Size.screen4_7Inch ? 60 : 20
+        IllustrationBottomGap.constant  = Device.size() > Size.screen4_7Inch ? 75 : 10
+        IllustrationTopGap.constant     = Device.size() > Size.screen4_7Inch ? 60 : 20
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 class CCCrowdCell: UICollectionViewCell, CCImageStorage {
-
+    
     @IBOutlet weak var cardBackgroundView   : UIView!
     @IBOutlet weak var cardTitle            : UILabel!
     @IBOutlet weak var cardImage            : UIImageView!
@@ -28,6 +28,12 @@ class CCCrowdCell: UICollectionViewCell, CCImageStorage {
         setupView()
     }
     
+    override func prepareForReuse() {
+        bgImage.image   = nil
+        cardImage.image = nil
+        cardTitle.text  = nil
+    }
+    
     func setupView(){
         cardBackgroundView.layer.cornerRadius   = 10
         bgImage.layer.cornerRadius              = 10
@@ -41,7 +47,7 @@ class CCCrowdCell: UICollectionViewCell, CCImageStorage {
     }
     
     func setGroupImage(id: String?) {
-        setImage(memberID: id ?? "", directory: .groups) { [weak self](result) in
+        getImage(memberID: id ?? "", directory: .groups, result: { [weak self](result) in
             switch result {
             case .success(let imageResource):
                 self?.cardImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarFemale"), options: [.diskCacheExpiration(.seconds(604800))])
@@ -49,6 +55,6 @@ class CCCrowdCell: UICollectionViewCell, CCImageStorage {
             case .failure(let error):
                 prints(error)
             }
-        }
+        })
     }
 }

@@ -36,14 +36,13 @@ extension CCCrowdsVC {
     
     func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
-            self?.collectionView.insertItems(at: indexPaths)
-            self?.collectionView.reloadData()
+            self?.collectionView.reloadSections(IndexSet(arrayLiteral: 0))
         }
     }
     
     func removeRows(at indexPath: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
-            self?.collectionView.deleteItems(at: indexPath)
+            self?.collectionView.reloadSections(IndexSet(arrayLiteral: 1))
         }
     }
 }

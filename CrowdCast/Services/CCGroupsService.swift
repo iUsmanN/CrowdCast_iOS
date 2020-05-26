@@ -49,7 +49,7 @@ extension CCGroupsService {
         fetchData(query: query) { (result: Result<[CCUserCrowd], Error>) in
             switch result {
             case .success(let channels) :
-                guard (channels.first?.owned?.count ?? 0) > 0 else { completion(.success(paginatedData(data: [CCCrowd](), next: nil))); return }
+                guard (type == CCCrowdRelation.owned ? (channels.first?.owned?.count ?? 0) : (channels.first?.member?.count ?? 0)) > 0 else { completion(.success(paginatedData(data: [CCCrowd](), next: nil))); return }
                 let q = self.groupData(ids: type == CCCrowdRelation.owned ? channels.first?.owned : channels.first?.member)
                 self.fetchData(query: q) { (result2: Result<[CCCrowd], Error>) in
                     switch result2 {
