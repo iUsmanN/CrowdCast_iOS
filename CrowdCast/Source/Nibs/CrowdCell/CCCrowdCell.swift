@@ -44,8 +44,8 @@ class CCCrowdCell: UICollectionViewCell, CCImageStorage {
         setImage(memberID: id ?? "", directory: .groups) { [weak self](result) in
             switch result {
             case .success(let imageResource):
-                self?.cardImage.kf.setImage(with: imageResource)
-                self?.bgImage.kf.setImage(with: imageResource)
+                self?.cardImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarFemale"), options: [.diskCacheExpiration(.seconds(604800))])
+                self?.bgImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarFemale"), options: [.diskCacheExpiration(.seconds(604800))])
             case .failure(let error):
                 prints(error)
             }

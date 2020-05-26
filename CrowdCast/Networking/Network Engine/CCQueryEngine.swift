@@ -62,10 +62,20 @@ extension CCQueryEngine {
         let env = "develop"
         return db.collection("\(env)\(CCQueryPath.crowdData.rawValue)").whereField("id", in: ids ?? [String]())
     }
+}
+
+
+//MARK: USERS
+extension CCQueryEngine {
     
-    func userGroupsCollection() -> CollectionReference {
+}
+
+//MARK: GROUPS
+extension CCQueryEngine {
+    
+    func userGroupsDocReferrence() -> DocumentReference {
         let db = Firestore.firestore()
         let env = "develop"
-        return db.collection("\(env)\(CCQueryPath.userCrowds.rawValue)")
+        return db.document("\(env)\(CCQueryPath.userCrowds.rawValue)/\(CCProfileManager.sharedInstance.getUID())")
     }
 }

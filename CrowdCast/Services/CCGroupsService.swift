@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Firebase
 
-protocol CCGroupsService : CCNetworkEngine, CCQueryEngine {}
+protocol CCGroupsService : CCNetworkEngine, CCQueryEngine, CCDispatchQueue {}
 
 extension CCGroupsService {
     
@@ -20,7 +21,13 @@ extension CCGroupsService {
         do {
             try query.setData(from: group, encoder: .init(), completion: { (error) in
                 guard error == nil else { result(.failure(.groupCreationFailure)); return }
-                result(.success(group))
+                
+                let dg = DispatchGroup()
+                
+                dg.enter()
+                self.dispatchPriorityItem(.concurrent, code: {self.addUserGroupEntry(dg: dg, groupID: group.id, type: .owned, completion: result)})
+                
+                dg.notify(queue: .global(), execute: {result(.success(group))})
             })
         } catch {
             result(.failure(.groupCreationFailure))
@@ -41,6 +48,25 @@ extension CCGroupsService {
                 }
             case .failure(let error)    : completion(.failure(error))
             }
+        }
+    }
+}
+
+extension CCGroupsService {
+    
+    func addEntries(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()) {
+        
+    }
+    
+    func addGroupChannelsEntry(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()){
+        
+    }
+    
+    func addUserGroupEntry(dg: DispatchGroup, groupID: String?, type: CCCrowdRelation, completion: @escaping (Result<CCCrowd, CCError>)->()) {
+        guard let groupID = groupID else { dg.suspend(); completion(.failure(.addUserGroupEntryFailure)); return }
+        userGroupsDocReferrence().updateData(["\(type.rawValue)": FieldValue.arrayUnion(["\(groupID)"])]) { (error) in
+            guard error == nil else { dg.suspend(); completion(.failure(.addUserGroupEntryFailure)); return }
+            dg.leave()
         }
     }
 }
