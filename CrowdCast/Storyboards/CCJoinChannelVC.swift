@@ -47,7 +47,7 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
     }
     
     @IBAction func channelDetailsPressed(_ sender: Any) {
-        let vc = instantiateViewController(storyboard: .Channels, viewController: .ChannelDetails, as: CCChannelDetailsVC())
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .CCChannelDetailsVC, as: CCChannelDetailsVC())
         vc.setupViewModel(inputData: viewModel?.getData())
         generateHapticFeedback(.light)
         DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }

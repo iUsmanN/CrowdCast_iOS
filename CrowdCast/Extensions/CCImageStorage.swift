@@ -61,7 +61,7 @@ extension CCImageStorage {
     ///   - result: completion handler
     /// - Returns: nil
     func uploadProfileImage(image: UIImage, result: @escaping (Result<UIImage?, CCError>) -> ()) {
-        guard let uploadData = image.jpegData(compressionQuality: 1) else { result(.failure(CCError.ImageUploadFailure)); return }
+        guard let uploadData = image.jpegData(compressionQuality: 0.1) else { result(.failure(CCError.ImageUploadFailure)); return }
         Storage.storage().reference().child("displays").child("\(CCProfileManager.sharedInstance.getUID()).png").putData(uploadData, metadata: nil) { (_, error) in
             if error != nil { result(.failure(.ImageUploadFailure)) }
             guard let imageData = image.pngData(),
@@ -78,7 +78,7 @@ extension CCImageStorage {
     ///   - result: completion handler
     /// - Returns: nil
     func uploadGroupImage(groupID: String, image: UIImage, result: @escaping (Result<UIImage?, CCError>) -> ()) {
-        guard let uploadData = image.jpegData(compressionQuality: 1) else { result(.failure(CCError.ImageUploadFailure)); return }
+        guard let uploadData = image.jpegData(compressionQuality: 0.1) else { result(.failure(CCError.ImageUploadFailure)); return }
         Storage.storage().reference().child("groups").child("\(groupID).png").putData(uploadData, metadata: nil) { (_, error) in
             if error != nil { result(.failure(.ImageUploadFailure)) }
             guard let KFImage = KFCrossPlatformImage(data: uploadData) else { result(.failure(.ImageCacheFailure)); return }

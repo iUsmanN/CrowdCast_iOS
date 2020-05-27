@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 import UIKit
 
 struct CCSettingsVM {
@@ -24,11 +25,32 @@ extension CCSettingsVM {
     func cellDataFor(indexPath: IndexPath) -> CCCellData {
         return data[indexPath.row]
     }
+    
+    func rowSelected(indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            signOut()
+        default:
+            prints("Unhandled Row Selection")
+        }
+    }
 }
 
 extension CCSettingsVM : CCImageStorage {
     
     func updateProfilePicture(image: UIImage, result: @escaping (Result<UIImage?, CCError>)->()) {
         uploadProfileImage(image: image, result: result)
+    }
+}
+
+extension CCSettingsVM : CCSyncUserData {
+    
+    func signOut(){
+        do {
+            try Auth.auth().signOut()
+            moveToLogin()
+        } catch {
+            prints("Error while Signing Out")
+        }
     }
 }

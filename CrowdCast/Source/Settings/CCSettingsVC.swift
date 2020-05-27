@@ -87,4 +87,8 @@ extension CCSettingsVC : UITableViewDataSource, UITableViewDelegate {
         cell.selectedBackgroundView = UIView()
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.rowSelected(indexPath: indexPath)
+    }
 }

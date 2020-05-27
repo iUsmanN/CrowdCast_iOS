@@ -131,6 +131,9 @@
 		B6BEBF6D247C362A00461C12 /* undraw_celebration_0jvk (2).png in Resources */ = {isa = PBXBuildFile; fileRef = B6BEBF67247C362900461C12 /* undraw_celebration_0jvk (2).png */; };
 		B6BEBF6F247C362A00461C12 /* undraw_reading_0re1 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = B6BEBF69247C362900461C12 /* undraw_reading_0re1 (2).png */; };
 		B6BEBF70247C362A00461C12 /* undraw_taking_selfie_lbo7 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B6BEBF6A247C362A00461C12 /* undraw_taking_selfie_lbo7 (1).png */; };
+		B6BEBF72247E3DF900461C12 /* CCSyncUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BEBF71247E3DF900461C12 /* CCSyncUserData.swift */; };
+		B6BEBF74247E473700461C12 /* CCSplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BEBF73247E473700461C12 /* CCSplashVC.swift */; };
+		B6BEBF76247E474300461C12 /* CCSplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BEBF75247E474300461C12 /* CCSplashVM.swift */; };
 		B6BF45B52461F96B00DAF383 /* CCImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */; };
 		B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D04E5524546186005F4E61 /* CCTextCell.swift */; };
 		B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D04E5624546186005F4E61 /* CCTextCell.xib */; };
@@ -318,6 +321,9 @@
 		B6BEBF67247C362900461C12 /* undraw_celebration_0jvk (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_celebration_0jvk (2).png"; sourceTree = "<group>"; };
 		B6BEBF69247C362900461C12 /* undraw_reading_0re1 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_reading_0re1 (2).png"; sourceTree = "<group>"; };
 		B6BEBF6A247C362A00461C12 /* undraw_taking_selfie_lbo7 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_taking_selfie_lbo7 (1).png"; sourceTree = "<group>"; };
+		B6BEBF71247E3DF900461C12 /* CCSyncUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSyncUserData.swift; sourceTree = "<group>"; };
+		B6BEBF73247E473700461C12 /* CCSplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCSplashVC.swift; path = CrowdCast/Protocols/CCSplashVC.swift; sourceTree = SOURCE_ROOT; };
+		B6BEBF75247E474300461C12 /* CCSplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCSplashVM.swift; path = CrowdCast/Protocols/CCSplashVM.swift; sourceTree = SOURCE_ROOT; };
 		B6BF45B42461F96B00DAF383 /* CCImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCImageStorage.swift; path = CrowdCast/Extensions/CCImageStorage.swift; sourceTree = SOURCE_ROOT; };
 		B6D04E5524546186005F4E61 /* CCTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTextCell.swift; sourceTree = "<group>"; };
 		B6D04E5624546186005F4E61 /* CCTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCTextCell.xib; sourceTree = "<group>"; };
@@ -443,6 +449,7 @@
 				B61C90EF2441CFE000F6B8A9 /* CCGetsViewController.swift */,
 				B60DE3E224545432003E491C /* CCContainsCellData.swift */,
 				B6D04E6F24558DD4005F4E61 /* CCContainsID.swift */,
+				B6BEBF71247E3DF900461C12 /* CCSyncUserData.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1004,6 +1011,8 @@
 		B6D7F58924277AB2001BEBBC /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				B6BEBF73247E473700461C12 /* CCSplashVC.swift */,
+				B6BEBF75247E474300461C12 /* CCSplashVM.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -1386,10 +1395,12 @@
 				B6888A58247309D5002E3EB5 /* CCTwilioTokenModel.swift in Sources */,
 				B6ACD07924405CCE00405838 /* CCUIViewController.swift in Sources */,
 				B61A849F2452081F00150188 /* CCCellData.swift in Sources */,
+				B6BEBF76247E474300461C12 /* CCSplashVM.swift in Sources */,
 				B64E4D0C2439EF470011715A /* CCContainsMembers.swift in Sources */,
 				B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */,
 				B64E4D1D243A334F0011715A /* CCQueryEngine.swift in Sources */,
 				B6D04E7024558DD4005F4E61 /* CCContainsID.swift in Sources */,
+				B6BEBF72247E3DF900461C12 /* CCSyncUserData.swift in Sources */,
 				B6ACD0882441AE8B00405838 /* CCChannelDetailsVM.swift in Sources */,
 				B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */,
 				B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */,
@@ -1452,6 +1463,7 @@
 				B64E4D052439E7A40011715A /* CCIndividual.swift in Sources */,
 				B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */,
 				B64E4CF82438A1D50011715A /* CCCardTimeLabel.swift in Sources */,
+				B6BEBF74247E473700461C12 /* CCSplashVC.swift in Sources */,
 				B6974880243B96E800AE95C0 /* CCUser.swift in Sources */,
 				B6D7F55424277A1A001BEBBC /* SceneDelegate.swift in Sources */,
 				B64E4D072439E8370011715A /* CCCrowd.swift in Sources */,
