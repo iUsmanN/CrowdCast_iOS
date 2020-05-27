@@ -45,6 +45,7 @@ extension CCSettingsVM : CCImageStorage {
 
 extension CCSettingsVM : CCSyncUserData {
     
+    /// Sign's Out the User
     func signOut(){
         do {
             try Auth.auth().signOut()

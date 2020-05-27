@@ -12,6 +12,7 @@ import UIKit
 protocol CCOpensSettings : UIViewController, CCGetsViewController {}
 extension CCOpensSettings {
     
+    /// Opens Settings Screen
     func opensSettings(){
         navigationController?.pushViewController(instantiateViewController(storyboard: .Others,
                                                                            viewController: .CCSettingsVC,
@@ -23,6 +24,7 @@ extension CCOpensSettings {
 protocol CCAddChannel : CCSectionHeader, CCGetsViewController {}
 extension CCAddChannel {
     
+    /// Opens Add Channel Screen
     func addChannel(){
         guard let nc = (window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController else { return }
         nc.pushViewController(instantiateViewController(storyboard: .Channels,
@@ -35,6 +37,8 @@ extension CCAddChannel {
 protocol CCJoinChannel : CCSectionHeader {}
 extension CCJoinChannel {
     
+    /// Opens Join Channel Alert
+    /// - Parameter bulletinManager: bulletin manager
     func joinChannel(_ bulletinManager: CCBulletinManager){
         bulletinManager.setItem(item: CCBulletinManager.joinChannel())
         guard let nc = ((window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController)?.topViewController else { return }
@@ -45,6 +49,7 @@ extension CCJoinChannel {
 protocol CCAddGroup : CCCollectionSectionHeader, CCGetsViewController {}
 extension CCAddGroup {
     
+    /// Opens Add Group Screen
     func addGroup(){
         guard let nc = (window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController else { return }
         nc.pushViewController(instantiateViewController(storyboard: .Groups,

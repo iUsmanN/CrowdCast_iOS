@@ -12,7 +12,7 @@ import Kingfisher
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CCSyncUserData {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,14 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CCSyncUserData {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 120
         ImageCache.default.diskStorage.config.expiration = .never//seconds(50)
-        if(Auth.auth().currentUser != nil){
-            syncUserData(uid: Auth.auth().currentUser?.uid ?? "") { (result) in
-                switch result {
-                case .success(_)        : DispatchQueue.main.async { self.moveToHome();}
-                case .failure(let error): prints(error)
-                }
-            }
-        }
         return true
     }
 

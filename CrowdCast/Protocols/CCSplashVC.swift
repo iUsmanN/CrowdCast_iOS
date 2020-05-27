@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class CCSplashVC: UIViewController {
-
+class CCSplashVC: UIViewController, CCSyncUserData {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        decideScreen()
     }
+}
+
+extension CCSplashVC {
     
+    /// Decides what screen to present. Depends Upon whether the user is signed In
+    func decideScreen(){
+        if(Auth.auth().currentUser != nil){
+            syncUserData(uid: Auth.auth().currentUser?.uid ?? "") { (result) in
+                switch result {
+                case .success(_)        : DispatchQueue.main.async { self.moveToHome();}
+                case .failure(let error): prints(error)
+                }
+            }
+        } else {
+            moveToLogin()
+        }
+    }
 }

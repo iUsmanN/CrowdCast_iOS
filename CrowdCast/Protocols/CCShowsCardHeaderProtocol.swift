@@ -13,6 +13,11 @@ protocol ShowsCardHeader {}
 
 extension ShowsCardHeader {
     
+    /// Prepares List Card Section Header
+    /// - Parameters:
+    ///   - data: data for header
+    ///   - parentNavigationController: parent controller
+    /// - Returns: Section Header View
     func cardHeader(data: CCSectionHeaderData?, parentNavigationController: UINavigationController?) -> UIView {
         guard let header = Bundle.main.loadNibNamed("CCSectionHeader", owner: self, options: nil)?.first
         as? CCSectionHeader, let data = data else { return UIView() }

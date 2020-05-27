@@ -93,7 +93,7 @@
 		B6A4C8052475BC63007B7FB3 /* CCAddCrowdVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4C8042475BC63007B7FB3 /* CCAddCrowdVM.swift */; };
 		B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */; };
 		B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */; };
-		B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */; };
+		B6ACD06D243FA57E00405838 /* CCRelations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD06C243FA57E00405838 /* CCRelations.swift */; };
 		B6ACD07924405CCE00405838 /* CCUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07824405CCE00405838 /* CCUIViewController.swift */; };
 		B6ACD07B2440667400405838 /* CCGetIndexPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */; };
 		B6ACD07F2441058900405838 /* Cabin.png in Resources */ = {isa = PBXBuildFile; fileRef = B6ACD07E2441058900405838 /* Cabin.png */; };
@@ -283,7 +283,7 @@
 		B6A4C8042475BC63007B7FB3 /* CCAddCrowdVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddCrowdVM.swift; sourceTree = "<group>"; };
 		B6AA24F5244C6C01006EEF29 /* undraw_celebration_0jvk (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undraw_celebration_0jvk (1).png"; sourceTree = "<group>"; };
 		B6ACD06A243F50F700405838 /* CCDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDispatchQueue.swift; sourceTree = "<group>"; };
-		B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelRelation.swift; sourceTree = "<group>"; };
+		B6ACD06C243FA57E00405838 /* CCRelations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRelations.swift; sourceTree = "<group>"; };
 		B6ACD07824405CCE00405838 /* CCUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUIViewController.swift; sourceTree = "<group>"; };
 		B6ACD07A2440667400405838 /* CCGetIndexPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGetIndexPaths.swift; sourceTree = "<group>"; };
 		B6ACD07E2441058900405838 /* Cabin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cabin.png; sourceTree = "<group>"; };
@@ -814,7 +814,7 @@
 			isa = PBXGroup;
 			children = (
 				B6BD90CD2436FF4B00F50848 /* CCCardHeaderAction.swift */,
-				B6ACD06C243FA57E00405838 /* CCChannelRelation.swift */,
+				B6ACD06C243FA57E00405838 /* CCRelations.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1457,7 +1457,7 @@
 				B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */,
 				B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */,
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
-				B6ACD06D243FA57E00405838 /* CCChannelRelation.swift in Sources */,
+				B6ACD06D243FA57E00405838 /* CCRelations.swift in Sources */,
 				B67E8C56245DF237002FAD55 /* CCCardMemberCell.swift in Sources */,
 				B64E4D142439F4850011715A /* CCContainsOwners.swift in Sources */,
 				B64E4D052439E7A40011715A /* CCIndividual.swift in Sources */,
