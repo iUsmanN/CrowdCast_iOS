@@ -11,6 +11,8 @@ import UIKit
 
 struct Constants {
     
+    static let environment  : String = "develop"
+    
     enum StoryBoards    : String {
         case Home
         case Onboarding

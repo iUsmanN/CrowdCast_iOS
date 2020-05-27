@@ -69,7 +69,7 @@ extension CCGroupsService {
         
     }
     
-    func addGroupChannelsEntry(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()){
+    func addGroupChannelsItem(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()){
         
     }
     
