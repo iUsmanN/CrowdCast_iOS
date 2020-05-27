@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import FirebaseFirestore
 
 class CCCrowdsVM {
     
@@ -21,7 +22,7 @@ class CCCrowdsVM {
     var joinedCrowds    = paginatedData<CCCrowd>()
     
     init() {
-        fetchFreshData()
+        setupDataListeners()
     }
 }
 
@@ -63,6 +64,9 @@ extension CCCrowdsVM : CCGroupsService, CCDispatchQueue {
         let dg = DispatchGroup()
         var newMyCrowds      = 0
         var newJoinedCrowds  = 0
+        
+        myCrowds.clearData()
+        joinedCrowds.clearData()
         
         dg.enter()
         dispatchPriorityItem(.concurrent) {[weak self] in
@@ -121,5 +125,14 @@ extension CCCrowdsVM : CCGetIndexPaths, CCCrowdActionDelegate {
                                                         oldJoinedChannelCount: joinedCrowds.data.count,
                                                         newJoinedChannelCount: newJoinedCrowds,
                                                         countTuple: (newCreatedCrowds, newJoinedCrowds)) ))
+    }
+}
+
+extension CCCrowdsVM {
+    
+    func setupDataListeners(){
+        userGroupsDocReferrence().addSnapshotListener { [weak self](snapshot, error) in
+            self?.fetchFreshData()
+        }
     }
 }
