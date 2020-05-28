@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Combine
 
-class CCCrowdChannelsVC: UIViewController {
+class CCCrowdChannelsVC: CCUIViewController {
     
     @IBOutlet weak var tableView    : UITableView!
     
@@ -17,9 +18,8 @@ class CCCrowdChannelsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        bindVM()
     }
-    
-    
 }
 
 extension CCCrowdChannelsVC {
@@ -38,15 +38,40 @@ extension CCCrowdChannelsVC {
     }
 }
 
+extension CCCrowdChannelsVC {
+    
+    func bindVM(){
+        viewModel?.channelsPublisher.sink(receiveValue: { (indexPathsInput) in
+            switch indexPathsInput.0 {
+            case .insert:
+                self.insertRows(indexPaths: indexPathsInput.1)
+            case .remove:
+                self.removeRows(indexPaths: indexPathsInput.1)
+            }
+            }).store(in: &combineCancellable)
+    }
+    
+    func insertRows(indexPaths: [IndexPath]){
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.insertRows(at: indexPaths, with: .right)
+        }
+    }
+    
+    func removeRows(indexPaths: [IndexPath]){
+    
+    }
+}
+
 extension CCCrowdChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        return viewModel?.numberOfRows() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell() }
         cell.isCrowdChannel = true
+        cell.data = viewModel?.dataForRow(indexPath: indexPath)
         return cell
     }
     

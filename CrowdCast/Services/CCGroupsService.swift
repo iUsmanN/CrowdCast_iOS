@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-protocol CCGroupsService : CCNetworkEngine, CCQueryEngine, CCDispatchQueue {}
+protocol CCGroupsService : CCNetworkEngine, CCQueryEngine, CCDispatchQueue, CCChannelsService {}
 
 extension CCGroupsService {
     
@@ -97,6 +97,29 @@ extension CCGroupsService {
         userGroupsDocReferrence().updateData(["\(type.rawValue)": FieldValue.arrayUnion(["\(groupID)"])]) { (error) in
             guard error == nil else { dg.suspend(); completion(.failure(.addUserGroupEntryFailure)); return }
             dg.leave()
+        }
+    }
+}
+
+extension CCGroupsService {
+    
+    func getGroupChannels(groupID: String?, completion: @escaping ((Result<[CCChannel], CCError>)->())){
+        guard let groupID = groupID else { completion(.failure(.getGroupChannelsFailure)); return }
+        let query = groupChannels(id: groupID)
+        fetchData(query: query) { (result: Result<[CCCrowdChannels], Error>) in
+            switch result {
+            case .success(let crowdChannels):
+                prints(crowdChannels)
+                let channelsQuery = self.channelData(ids: crowdChannels.first?.owned)
+                self.fetchData(query: channelsQuery) { (result: Result<[CCChannel], Error>) in
+                    switch result {
+                    case .success(let channels): completion(.success(channels))
+                    case .failure(_): completion(.failure(.getGroupChannelsFailure))
+                    }
+                }
+            case .failure(let error):
+                prints(error)
+            }
         }
     }
 }

@@ -343,22 +343,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B11E5B03-5F05-43F5-9893-D1C5804887C7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Groups/Group Channels/CCCrowdChannelsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "setupView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7EA6C241-B4D3-40D4-A73A-A81171EABDA5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -375,49 +359,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FE125B78-6297-409B-8697-5F657D2C69B5"
+            uuid = "183B40C3-8A26-4B62-B7CB-4A365D865C14"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CrowdCast/Source/Tabs/CrowdsTab/CCCrowdsVC.swift"
+            filePath = "CrowdCast/Source/Groups/Group Channels/CCCrowdChannelsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "insertRows(at:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "insertRows(indexPaths:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FE125B78-6297-409B-8697-5F657D2C69B5 - d77d3403763b8ea7"
+                  uuid = "183B40C3-8A26-4B62-B7CB-4A365D865C14 - 16614da0fd5217ab"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CrowdCast.CCCrowdsVC.insertRows(at: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  symbolName = "CrowdCast.CCCrowdChannelsVC.insertRows(indexPaths: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
                   moduleName = "CrowdCast"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Tabs/CrowdsTab/CCCrowdsVC.swift"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Groups/Group%20Channels/CCCrowdChannelsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
                   offsetFromSymbolStart = "228">
                </Location>
                <Location
-                  uuid = "FE125B78-6297-409B-8697-5F657D2C69B5 - 904a07ec7ad41d32"
+                  uuid = "183B40C3-8A26-4B62-B7CB-4A365D865C14 - 1e2c71d35fd28bb3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in CrowdCast.CCCrowdsVC.insertRows(at: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in CrowdCast.CCCrowdChannelsVC.insertRows(indexPaths: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
                   moduleName = "CrowdCast"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Tabs/CrowdsTab/CCCrowdsVC.swift"
+                  urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Groups/Group%20Channels/CCCrowdChannelsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8892C18-48BE-44FF-901D-757215EDC899"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Groups/Group Channels/CCCrowdChannelsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "bindVM()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4B31170-2DEA-4FEF-80AA-1D99764F0E2F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Source/Groups/Group Channels/CCCrowdChannelsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "bindVM()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

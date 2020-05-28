@@ -13,3 +13,8 @@ struct CCUserCrowd  : Codable, CCContainsID {
     var owned       : [String]?
     var member      : [String]?
 }
+
+struct CCCrowdChannels  : Codable, CCContainsID {
+    var id              : String?
+    var owned           : [String]?
+}

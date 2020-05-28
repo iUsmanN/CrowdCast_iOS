@@ -69,6 +69,12 @@ extension CCQueryEngine {
         let env = Constants.environment
         return db.document("\(env)\(CCQueryPath.userCrowds.rawValue)/\(CCProfileManager.sharedInstance.getUID())")
     }
+    
+    func groupChannels(id: String) -> Query {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.collection("\(env)\(CCQueryPath.groupChannels.rawValue)").whereField("id", isEqualTo: id)
+    }
 }
 
 //MARK: CHANNELS

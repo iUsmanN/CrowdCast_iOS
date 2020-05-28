@@ -36,4 +36,5 @@ enum CCError : Error {
     case addUserGroupEntryFailure
     case addUserChannelEntryFailure
     case addGroupChannelsItemFailure
+    case getGroupChannelsFailure
 }
