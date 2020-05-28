@@ -34,8 +34,8 @@ class CCLoginVC: UIViewController {
         emailIcon.alpha         = 0.7
         passwordIcon.alpha      = 0.7
         
-        emailTextField.text     = "usmant3@gmail.com"
-        passwordTextField.text  = "usmant3"
+        emailTextField.text     = "usmant4@gmail.com"
+        passwordTextField.text  = "usmant4"
         
         IllustrationBottomGap.constant  = Device.size() > Size.screen4_7Inch ? 75 : 10
         IllustrationTopGap.constant     = Device.size() > Size.screen4_7Inch ? 60 : 20
@@ -60,6 +60,7 @@ extension CCLoginVC : CCHapticEngine {
     
     @IBAction func joinWithGooglePressed(_ sender: Any) {
         generateHapticFeedback(.light)
+        moveToHome()
     }
 }
 
@@ -73,7 +74,7 @@ extension CCLoginVC {
     }
 }
 
-extension CCLoginVC {
+extension CCLoginVC : CCSyncUserData {
     
     func signInFailed(error: Error?){
         print("Can't sign in.")
@@ -83,23 +84,11 @@ extension CCLoginVC {
         guard let uid = result?.user.uid else { return }
         print("Signed in.")
         generateHapticFeedback(.light)
-        syncUserData(uid: uid)
-    }
-}
-
-extension CCLoginVC : CCGetsViewController{
-    
-    func syncUserData(uid: String){
-        CCProfileManager.sharedInstance.syncData(uid: uid){ [weak self] callbackResult in
-            switch callbackResult {
+        syncUserData(uid: uid) { [weak self](result) in
+            switch result {
             case .success(_)            : self?.moveToHome()
             case .failure(let error)    : self?.signInFailed(error: error)
             }
         }
-    }
-    
-    func moveToHome(){
-        UIApplication.shared.windows.first?.rootViewController =
-        instantiateViewController(storyboard: .Home, viewController: .CCTabBar, as: CCTabBarController())
     }
 }

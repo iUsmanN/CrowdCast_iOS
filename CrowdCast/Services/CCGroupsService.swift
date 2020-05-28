@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-protocol CCGroupsService : CCNetworkEngine, CCQueryEngine, CCDispatchQueue {}
+protocol CCGroupsService : CCNetworkEngine, CCQueryEngine, CCDispatchQueue, CCChannelsService {}
 
 extension CCGroupsService {
     
@@ -26,13 +26,7 @@ extension CCGroupsService {
         do {
             try query.setData(from: group, encoder: .init(), completion: { (error) in
                 guard error == nil else { result(.failure(.groupCreationFailure)); return }
-                
-                let dg = DispatchGroup()
-                
-                dg.enter()
-                self.dispatchPriorityItem(.concurrent, code: {self.addUserGroupEntry(dg: dg, groupID: group.id, type: .owned, completion: result)})
-                
-                dg.notify(queue: .global(), execute: {result(.success(group))})
+                self.addItemEntries(group: group, completion: result)
             })
         } catch {
             result(.failure(.groupCreationFailure))
@@ -65,12 +59,30 @@ extension CCGroupsService {
 
 extension CCGroupsService {
     
-    func addEntries(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()) {
-        
+    /// Adds relevant Item Entries
+    /// - Parameters:
+    ///   - group: group
+    ///   - completion: completion handler
+    /// - Returns: nil
+    func addItemEntries(group: CCCrowd, completion: @escaping (Result<CCCrowd, CCError>)->()) {
+        let dg = DispatchGroup()
+        dg.enter(); dispatchPriorityItem(.concurrent, code: {self.addGroupChannelsItem(dg: dg, groupID: group.id, completion: completion)})
+        dg.enter(); dispatchPriorityItem(.concurrent, code: {self.addUserGroupEntry(dg: dg, groupID: group.id, type: .owned, completion: completion)})
+        dg.notify(queue: .global(), execute: {completion(.success(group))})
     }
     
-    func addGroupChannelsEntry(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()){
-        
+    /// Add Group-Channels Item
+    /// - Parameters:
+    ///   - dg: dispatch group
+    ///   - groupID: goup id
+    ///   - completion: completion handler
+    /// - Returns: nil
+    func addGroupChannelsItem(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()){
+        guard let groupID = groupID else { dg.suspend(); completion(.failure(.addGroupChannelsItemFailure)); return }
+        collectionRef(.groupChannels).document("\(groupID)").setData(["id":"\(groupID)", "owned": []]) { (error) in
+            guard error == nil else { completion(.failure(CCError.firebaseFailure)); dg.suspend(); return}
+            dg.leave()
+        }
     }
     
     /// Adds created group to user-groups table
@@ -85,6 +97,29 @@ extension CCGroupsService {
         userGroupsDocReferrence().updateData(["\(type.rawValue)": FieldValue.arrayUnion(["\(groupID)"])]) { (error) in
             guard error == nil else { dg.suspend(); completion(.failure(.addUserGroupEntryFailure)); return }
             dg.leave()
+        }
+    }
+}
+
+extension CCGroupsService {
+    
+    func getGroupChannels(groupID: String?, completion: @escaping ((Result<[CCChannel], CCError>)->())){
+        guard let groupID = groupID else { completion(.failure(.getGroupChannelsFailure)); return }
+        let query = groupChannels(id: groupID)
+        fetchData(query: query) { (result: Result<[CCCrowdChannels], Error>) in
+            switch result {
+            case .success(let crowdChannels):
+                prints(crowdChannels)
+                let channelsQuery = self.channelData(ids: crowdChannels.first?.owned)
+                self.fetchData(query: channelsQuery) { (result: Result<[CCChannel], Error>) in
+                    switch result {
+                    case .success(let channels): completion(.success(channels))
+                    case .failure(_): completion(.failure(.getGroupChannelsFailure))
+                    }
+                }
+            case .failure(let error):
+                prints(error)
+            }
         }
     }
 }

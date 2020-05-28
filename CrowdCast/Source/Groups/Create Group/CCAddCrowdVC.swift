@@ -28,7 +28,7 @@ class CCAddCrowdVC: CCImagePickingVC {
             switch result {
             case .success(let crowd):
                 guard let parentVC = self?.navigationController?.viewControllers.first as? CCCrowdsVC else { return }
-                parentVC.viewModel?.crowdAdded(data: crowd)
+                //parentVC.viewModel?.crowdAdded(data: crowd)
                 DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
                 prints(error)

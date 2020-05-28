@@ -11,16 +11,19 @@ import UIKit
 
 struct Constants {
     
+    static let environment  : String = "develop"
+    
     enum StoryBoards    : String {
         case Home
         case Onboarding
         case Others
         case Channels
         case Groups
+        case Main
     }
     
     enum ViewControllers    : String {
-        case ChannelDetails = "CCChannelDetailsVC"
+        case CCChannelDetailsVC = "CCChannelDetailsVC"
         case CCSettingsVC
         case CCTabBar
         case CCOnboardingVC
@@ -29,6 +32,7 @@ struct Constants {
         case CCCallScreenVC
         case CCAddGroupVC
         case CCCrowdChannelsVC
+        case CCLoginVC
     }
     
     static func imageCacheString(id: String?, directory: ImageCacheDirectory = .displays) -> String {

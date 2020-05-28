@@ -37,7 +37,7 @@ extension CCSetsNavbar {
 extension CCSetsNavbar {
     
     private func getLogoButton() -> UIBarButtonItem {
-        let leftButton = UIBarButtonItem(title: "CROWD CAST", style: .plain, target: self, action: nil)
+        let leftButton = UIBarButtonItem(title: "(¬_¬) CROWD CAST", style: .plain, target: self, action: nil)
         leftButton.isEnabled = false
         leftButton.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont(name: "Avenir", size: 12) as Any,
