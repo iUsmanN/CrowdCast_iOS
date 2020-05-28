@@ -26,13 +26,7 @@ extension CCGroupsService {
         do {
             try query.setData(from: group, encoder: .init(), completion: { (error) in
                 guard error == nil else { result(.failure(.groupCreationFailure)); return }
-                
-                let dg = DispatchGroup()
-                
-                dg.enter()
-                self.dispatchPriorityItem(.concurrent, code: {self.addUserGroupEntry(dg: dg, groupID: group.id, type: .owned, completion: result)})
-                
-                dg.notify(queue: .global(), execute: {result(.success(group))})
+                self.addItemEntries(group: group, completion: result)
             })
         } catch {
             result(.failure(.groupCreationFailure))
@@ -65,12 +59,30 @@ extension CCGroupsService {
 
 extension CCGroupsService {
     
-    func addEntries(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()) {
-        
+    /// Adds relevant Item Entries
+    /// - Parameters:
+    ///   - group: group
+    ///   - completion: completion handler
+    /// - Returns: nil
+    func addItemEntries(group: CCCrowd, completion: @escaping (Result<CCCrowd, CCError>)->()) {
+        let dg = DispatchGroup()
+        dg.enter(); dispatchPriorityItem(.concurrent, code: {self.addGroupChannelsItem(dg: dg, groupID: group.id, completion: completion)})
+        dg.enter(); dispatchPriorityItem(.concurrent, code: {self.addUserGroupEntry(dg: dg, groupID: group.id, type: .owned, completion: completion)})
+        dg.notify(queue: .global(), execute: {completion(.success(group))})
     }
     
+    /// Add Group-Channels Item
+    /// - Parameters:
+    ///   - dg: dispatch group
+    ///   - groupID: goup id
+    ///   - completion: completion handler
+    /// - Returns: nil
     func addGroupChannelsItem(dg: DispatchGroup, groupID: String?, completion: @escaping (Result<CCCrowd, CCError>)->()){
-        
+        guard let groupID = groupID else { dg.suspend(); completion(.failure(.addGroupChannelsItemFailure)); return }
+        collectionRef(.groupChannels).document("\(groupID)").setData(["id":"\(groupID)", "owned": []]) { (error) in
+            guard error == nil else { completion(.failure(CCError.firebaseFailure)); dg.suspend(); return}
+            dg.leave()
+        }
     }
     
     /// Adds created group to user-groups table

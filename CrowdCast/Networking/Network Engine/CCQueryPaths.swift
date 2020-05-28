@@ -24,4 +24,7 @@ enum CCQueryPath : String {
     
     //User Channels
     case userChannels       = "/data/user-channels"
+    
+    //Group-Channels
+    case groupChannels       = "/data/group-channels"
 }
