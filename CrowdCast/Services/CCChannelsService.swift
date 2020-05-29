@@ -18,12 +18,34 @@ extension CCChannelsService {
     ///   - type: channel type
     ///   - completion: completion handler
     /// - Returns: nil
-    func getChannels(type: CCChannelRelation,completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
-        let query = make(.channelsData, in: "\(type.rawValue)", contains: CCProfileManager.sharedInstance.getUID())
+    func getChannels(type: CCChannelRelation, ids: [String]?, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
+        //let query = make(.channelsData, in: "\(type.rawValue)", contains: CCProfileManager.sharedInstance.getUID())
+        let query = channelData(ids: ids)
         fetchData(query: query) { (result: Result<[CCChannel], Error>) in
             switch result {
             case .success(let channels) : completion(.success(paginatedData(data: channels, next: nil)))
             case .failure(let error)    : completion(.failure(error))
+            }
+        }
+    }
+    
+    func getUserChannels(type: CCChannelRelation,completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
+        let query = userChannels()
+        fetchData(query: query) { (result: Result<[CCUserChannel], Error>) in
+            switch result {
+            case .success(let userChannels):
+                prints(userChannels)
+                guard type == .joined ? ((userChannels.first?.member?.count ?? 0) > 0) : ((userChannels.first?.owned?.count ?? 0) > 0) else { completion(.failure(CCError.getUserChannelsFailure)); return }
+                self.getChannels(type: type, ids: type == .joined ? userChannels.first?.member : userChannels.first?.owned) { (result) in
+                    switch result {
+                    case .success(let data):
+                        completion(.success(data))
+                    case .failure(let error):
+                        prints(error)
+                    }
+                }
+            case .failure(let error):
+                prints(error)
             }
         }
     }

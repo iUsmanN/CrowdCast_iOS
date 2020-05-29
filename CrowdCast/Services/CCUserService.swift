@@ -19,7 +19,7 @@ extension CCUserService {
     ///   - completion: completion handler
     /// - Returns: nli
     func fetchUserProfile(uid: String, completion: @escaping (Result<CCUser, Error>) -> ()) {
-        let query = make(.userProfileData, in: "id", equals: uid)
+        let query = userProfile(uid: uid)//make(.userProfileData, in: "id", equals: uid)
         fetchData(query: query) { (result: Result<[CCUser], Error>) in
             switch result {
             case .success(let users): completion(.success(users.first!))

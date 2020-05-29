@@ -47,6 +47,11 @@ extension CCQueryEngine {
 //MARK: USERS
 extension CCQueryEngine {
     
+    func userProfile(uid: String?) -> Query {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.collection("\(env)\(CCQueryPath.userProfileData.rawValue)").whereField("id", isEqualTo: uid ?? "")
+    }
 }
 
 //MARK: GROUPS
