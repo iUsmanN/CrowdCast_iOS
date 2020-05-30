@@ -74,9 +74,9 @@ extension CCChannelsVC {
     func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPaths, with: .right)
+            self?.tableView.insertRows(at: indexPaths, with: .left)
             self?.tableView.endUpdates()
-            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .right)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .left)
         }
     }
     

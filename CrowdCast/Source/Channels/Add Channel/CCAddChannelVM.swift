@@ -43,7 +43,8 @@ extension CCAddChannelVM : CCChannelsService {
                                 description: descriptionInput,
                                 owners: [owner],
                                 members: nil,
-                                color: colors[selectedColor])
+                                color: colors[selectedColor],
+                                isGroupChannel: owner == CCProfileManager.sharedInstance.getUID() ? false : true)
         owner == CCProfileManager.sharedInstance.getUID() ? createUserChannel(channelInput: channel, completion: completion) : createGroupChannel(channelInput: channel, completion: completion)
     }
 }

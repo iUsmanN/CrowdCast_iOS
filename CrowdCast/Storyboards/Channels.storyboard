@@ -443,7 +443,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6r3-4R-ksK">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="6r3-4R-ksK">
                         <rightBarButtonItems>
                             <barButtonItem title="Details" image="info.circle" catalog="system" id="PFF-cW-v3g">
                                 <color key="tintColor" name="Inverted"/>

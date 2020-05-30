@@ -24,7 +24,6 @@ extension CCChannelsService {
         fetchData(query: query) { (result: Result<[CCUserChannel], Error>) in
             switch result {
             case .success(let userChannels):
-                prints(userChannels)
                 guard type == .joined ? ((userChannels.first?.member?.count ?? 0) > 0) : ((userChannels.first?.owned?.count ?? 0) > 0) else { completion(.failure(CCError.getUserChannelsFailure)); return }
                 self.getChannels(type: type, ids: type == .joined ? userChannels.first?.member : userChannels.first?.owned) { (result) in
                     switch result {

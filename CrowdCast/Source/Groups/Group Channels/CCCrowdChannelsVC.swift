@@ -62,7 +62,7 @@ extension CCCrowdChannelsVC {
     }
 }
 
-extension CCCrowdChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader {
+extension CCCrowdChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHeader, CCGetsViewController, CCHapticEngine {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfRows() ?? 0
@@ -73,6 +73,18 @@ extension CCCrowdChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsC
         cell.isCrowdChannel = true
         cell.data = viewModel?.dataForRow(indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let channelData = (viewModel?.dataForRow(indexPath: indexPath)) else { return }
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .CCJoinChannelVC, as: CCJoinChannelVC())
+        vc.setupViewModel(inputData: channelData)
+        generateHapticFeedback(.light)
+        DispatchQueue.main.async { self.navigationController?.pushViewController(vc, animated: true) }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 67.5
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

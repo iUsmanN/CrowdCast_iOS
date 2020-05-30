@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-BQ-whk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="holi_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-BQ-whk">
                                 <rect key="frame" x="124" y="79" width="166" height="165.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fnx-BQ-whk" secondAttribute="height" id="u1B-rQ-wmn"/>
@@ -204,11 +204,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rSA-4s-Zwm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="1LD-b2-yZg">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="info.circle" catalog="system" id="kST-n3-rNp"/>
-                            <barButtonItem image="plus" catalog="system" id="s6a-Mx-KjN"/>
-                        </rightBarButtonItems>
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="1LD-b2-yZg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="kST-n3-rNp"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -221,9 +218,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fb" width="162.5" height="162.5"/>
+        <image name="holi_blue.png" width="2049" height="1215"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

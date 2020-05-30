@@ -54,8 +54,8 @@ extension CCCrowdChannelsVM : CCGroupsService, CCGetIndexPaths {
 extension CCCrowdChannelsVM {
     
     func addCreatedChannel(channel: CCChannel){
-//        myChannels.insertData(input: channel)
-//        publishChannelUpdates(action: .insert, newCreatedChannels: 1, newJoinedChannels: 0)
+        channels.insertData(input: channel)
+        channelsPublisher.send((.insert, [IndexPath(row: 0, section: 0)]))
     }
     
     func removeCreatedChannel(channel: CCChannel){
