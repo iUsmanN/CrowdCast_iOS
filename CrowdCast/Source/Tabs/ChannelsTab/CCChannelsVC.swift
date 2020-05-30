@@ -19,6 +19,17 @@ class CCChannelsVC: CCUIViewController {
         viewModel = CCChannelsVM()
         setupView()
         bindVM()
+        viewModel?.enableDataListener()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel?.disableDataListener()
     }
 }
 
@@ -63,9 +74,9 @@ extension CCChannelsVC {
     func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPaths, with: .fade)
+            self?.tableView.insertRows(at: indexPaths, with: .right)
             self?.tableView.endUpdates()
-            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .fade)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .right)
         }
     }
     

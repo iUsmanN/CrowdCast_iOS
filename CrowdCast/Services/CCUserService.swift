@@ -22,7 +22,7 @@ extension CCUserService {
         let query = userProfile(uid: uid)//make(.userProfileData, in: "id", equals: uid)
         fetchData(query: query) { (result: Result<[CCUser], Error>) in
             switch result {
-            case .success(let users): completion(.success(users.first!))
+            case .success(let users): guard users.first != nil else { completion(.failure(CCError.fetchUserProfileFailure)); return }; completion(.success(users.first!))
             case .failure(let error): completion(.failure(error))
             }
         }

@@ -11,7 +11,7 @@ import Combine
 
 class CCCrowdChannelsVM {
     
-    var sectionHeaderData : [CCSectionHeaderData] = [CCSectionHeaderData(title: "Channels", rightButtonTitle: nil, rightButtonAction: nil)]
+    var sectionHeaderData : [CCSectionHeaderData] = [CCSectionHeaderData(title: "Channels", rightButtonTitle: "Create New", rightButtonAction: .newChannel)]
     
     var crowdData : CCCrowd?
     
@@ -20,6 +20,7 @@ class CCCrowdChannelsVM {
     
     init(crowdDataInput: CCCrowd?) {
         crowdData = crowdDataInput
+        sectionHeaderData[0].ownerID = crowdData?.id
         fetchFreshData()
     }
 }
@@ -47,5 +48,19 @@ extension CCCrowdChannelsVM : CCGroupsService, CCGetIndexPaths {
                 prints(error)
             }
         }
+    }
+}
+
+extension CCCrowdChannelsVM {
+    
+    func addCreatedChannel(channel: CCChannel){
+//        myChannels.insertData(input: channel)
+//        publishChannelUpdates(action: .insert, newCreatedChannels: 1, newJoinedChannels: 0)
+    }
+    
+    func removeCreatedChannel(channel: CCChannel){
+//        guard let removalIndex = myChannels.removeData(input: channel) else { return }
+//        channelsPublisher.send((dataAction.remove, myRemovalIndexPath(index: removalIndex)))
+//        prints("Removed Data")
     }
 }

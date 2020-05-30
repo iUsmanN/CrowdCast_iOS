@@ -30,7 +30,7 @@ extension CCCrowdChannelsVC {
         tableView.dataSource    = self
         tableView.delegate      = self
         title                   = viewModel?.crowdData?.name ?? ""
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     func setupViewModel(crowdData: CCCrowd?){
@@ -81,5 +81,16 @@ extension CCCrowdChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsC
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Constants.CardList.headerHeight
+    }
+}
+
+extension CCCrowdChannelsVC : CCChannelActionDelegate {
+    
+    func channelAdded(data: CCChannel) {
+        viewModel?.addCreatedChannel(channel: data)
+    }
+    
+    func channelRemoved(data: CCChannel) {
+        viewModel?.removeCreatedChannel(channel: data)
     }
 }

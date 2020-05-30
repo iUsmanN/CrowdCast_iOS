@@ -109,7 +109,7 @@ extension CCGroupsService {
         fetchData(query: query) { (result: Result<[CCCrowdChannels], Error>) in
             switch result {
             case .success(let crowdChannels):
-                prints(crowdChannels)
+                guard (crowdChannels.first?.owned?.count ?? 0) > 0 else { completion(.success([CCChannel]())); return }
                 let channelsQuery = self.channelData(ids: crowdChannels.first?.owned)
                 self.fetchData(query: channelsQuery) { (result: Result<[CCChannel], Error>) in
                     switch result {

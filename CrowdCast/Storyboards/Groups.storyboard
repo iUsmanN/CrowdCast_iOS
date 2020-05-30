@@ -204,7 +204,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rSA-4s-Zwm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="always" id="1LD-b2-yZg">
+                    <navigationItem key="navigationItem" title="Title" id="1LD-b2-yZg">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="info.circle" catalog="system" id="kST-n3-rNp"/>
                             <barButtonItem image="plus" catalog="system" id="s6a-Mx-KjN"/>

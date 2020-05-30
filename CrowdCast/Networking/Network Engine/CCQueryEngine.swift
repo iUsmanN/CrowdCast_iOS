@@ -102,4 +102,10 @@ extension CCQueryEngine {
         let env = Constants.environment
         return db.document("\(env)\(CCQueryPath.userChannels.rawValue)/\(CCProfileManager.sharedInstance.getUID())")
     }
+    
+    func groupChannelsDocReferrence(groupID: String) -> DocumentReference {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.document("\(env)\(CCQueryPath.groupChannels.rawValue)/\(groupID)")
+    }
 }
