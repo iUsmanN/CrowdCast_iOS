@@ -11,9 +11,6 @@ import Foundation
 struct CCJoinChannelVM {
     private var data : CCChannel?
     
-    var cameraOn    = true
-    var micOn       = true
-    
     init(channel: CCChannel?) {
         data = channel
     }

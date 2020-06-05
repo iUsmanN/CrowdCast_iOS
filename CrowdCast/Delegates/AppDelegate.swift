@@ -12,7 +12,7 @@ import Kingfisher
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CCUniversalCallToggle {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 120
         ImageCache.default.diskStorage.config.expiration = .never//seconds(50)
+        setInitialCallToggles()
         return true
     }
 

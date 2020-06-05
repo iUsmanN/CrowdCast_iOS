@@ -18,7 +18,7 @@ class CCJoinChannelVC: UIViewController {
     @IBOutlet weak var cameraButton : CCButton!
     @IBOutlet weak var micButton    : CCButton!
     
-    var viewModel : CCJoinChannelVM?
+    var viewModel                   : CCJoinChannelVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class CCJoinChannelVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
-        toggleCameraView(enable: true)
+        toggleCameraView(enable: getCallToggles().0)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -54,18 +54,14 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
     }
     
     @IBAction func cameraToggle(_ sender: Any) {
-        let cameraOn = !(viewModel?.cameraOn ?? false)
-        viewModel?.cameraOn = cameraOn
-        cameraButton.setImage(cameraOn ? UIImage(systemName: "video.fill") : UIImage(systemName: "video.slash.fill"), for: .normal)
-        cameraOn ? cameraButton.greenBorder() : cameraButton.redBorder()
-        toggleCameraView(enable: cameraOn)
+        toggleCallVideo()
+        toggleVideoButton(enable: getCallToggles().0)
+        toggleCameraView(enable: getCallToggles().0)
     }
     
     @IBAction func micToggle(_ sender: Any) {
-        let micOn = !(viewModel?.micOn ?? false)
-        viewModel?.micOn = micOn
-        micButton.setImage(micOn ? UIImage(systemName: "mic.fill") : UIImage(systemName: "mic.slash.fill"), for: .normal)
-        micOn ? micButton.greenBorder() : micButton.redBorder()
+        toggleCallAudio()
+        toggleAudioButton(enable: getCallToggles().1)
     }
 }
 
@@ -75,6 +71,8 @@ extension CCJoinChannelVC : CCImageStorage {
         guard let url = imageCacheURL(id: CCProfileManager.sharedInstance.getUID()) else { return }
         profileView.kf.setImage(with: ImageResource(downloadURL: url))
         setupLayers()
+        toggleVideoButton(enable: getCallToggles().0)
+        toggleAudioButton(enable: getCallToggles().1)
         cameraView.setupCameraView()
         setupNavigationBar()
     }
@@ -82,9 +80,7 @@ extension CCJoinChannelVC : CCImageStorage {
     func toggleCameraView(enable: Bool){
         if enable {
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
-                UIView.animate(withDuration: 0.5) {
-                    self.cameraView.alpha = 1
-                }
+                UIView.animate(withDuration: 0.5) { self.cameraView.alpha = 1 }
             }
             cameraView.startCapture()
         } else {
@@ -107,5 +103,18 @@ extension CCJoinChannelVC : CCImageStorage {
         navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.navigationBar.barTintColor = .clear
         gradientView.image = UIImage(named: "BW Gradient")?.withRenderingMode(.alwaysTemplate)
+    }
+}
+
+extension CCJoinChannelVC: CCUniversalCallToggle {
+    
+    func toggleVideoButton(enable: Bool){
+        cameraButton.setImage(enable ? UIImage(systemName: "video.fill") : UIImage(systemName: "video.slash.fill"), for: .normal)
+        enable ? cameraButton.greenBorder() : cameraButton.redBorder()
+    }
+    
+    func toggleAudioButton(enable: Bool){
+        micButton.setImage(enable ? UIImage(systemName: "mic.fill") : UIImage(systemName: "mic.slash.fill"), for: .normal)
+        enable ? micButton.greenBorder() : micButton.redBorder()
     }
 }
