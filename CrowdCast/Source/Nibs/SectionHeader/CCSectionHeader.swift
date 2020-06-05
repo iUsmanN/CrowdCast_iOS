@@ -44,7 +44,7 @@ extension CCSectionHeader : CCAddChannel, CCJoinChannel {
         switch rightButtonAction {
         case .newChannel:
             prints("newChannel")
-            addChannel()
+            addChannel(ownerID: data?.ownerID)
         case .newGroup:
             prints("newGroup")
         case .joinChannel:

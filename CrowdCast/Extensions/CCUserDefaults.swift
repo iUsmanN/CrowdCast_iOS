@@ -31,3 +31,29 @@ struct CCUserDefaults {
         return nil
     }
 }
+
+protocol CCUniversalCallToggle {}
+
+extension CCUniversalCallToggle {
+    
+    func getCallToggles() -> (Bool, Bool) {
+        guard let videoToggle = UserDefaults.standard.value(forKey: "VideoToggle") as? Bool else { return (true, true) }
+        guard let audioToggle = UserDefaults.standard.value(forKey: "AudioToggle") as? Bool else { return (true, true) }
+        return (videoToggle, audioToggle)
+    }
+    
+    func toggleCallVideo() {
+        let callToggles = getCallToggles()
+        UserDefaults.standard.set(!callToggles.0, forKey: "VideoToggle")
+    }
+    
+    func toggleCallAudio() {
+        let callToggles = getCallToggles()
+        UserDefaults.standard.set(!callToggles.1, forKey: "AudioToggle")
+    }
+    
+    func setInitialCallToggles(){
+        UserDefaults.standard.set(true, forKey: "AudioToggle")
+        UserDefaults.standard.set(true, forKey: "VideoToggle")
+    }
+}

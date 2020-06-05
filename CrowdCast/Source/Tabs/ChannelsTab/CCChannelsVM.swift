@@ -18,13 +18,10 @@ class CCChannelsVM {
         CCSectionHeaderData(title: "Joined Channels", rightButtonTitle: "Join Channel"  , rightButtonAction: .joinChannel)
     ]
     
-    let channelsPublisher = PassthroughSubject<(dataAction, [IndexPath]), Never>()
-    var myChannels      = paginatedData<CCChannel>()
-    var joinedChannels  = paginatedData<CCChannel>()
-    
-    init() {
-        getData()
-    }
+    var dataListener        : ListenerRegistration?
+    let channelsPublisher   = PassthroughSubject<(dataAction, [IndexPath]), Never>()
+    var myChannels          = paginatedData<CCChannel>()
+    var joinedChannels      = paginatedData<CCChannel>()
 }
 
 extension CCChannelsVM {
@@ -62,7 +59,7 @@ extension CCChannelsVM {
 
 extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
     
-    func getData() {
+    func fetchFreshData() {
         
         let dg = DispatchGroup()
         
@@ -71,39 +68,38 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
         var newJoinedChannels  = 0
         
         dg.enter()
-        dispatchPriorityItem(.concurrent) {[weak self] in
-            self?.getChannels(type: .owned) { [weak self] (result) in
+        dispatchPriorityItem(.concurrent, code: {
+            self.getUserChannels(type: .owned) { (result) in
                 switch result {
-                case .success(let fetchedData):
-                    self?.myChannels.updateData(input: fetchedData)
-                    fetchedCounts = (fetchedData.data.count, fetchedCounts.1)
-                    newMyChannels = fetchedData.data.count
+                case .success(let inputData):
+                    self.myChannels.updateData(input: inputData)
+                    fetchedCounts = (inputData.data.count, fetchedCounts.1)
+                    newMyChannels = inputData.data.count
                     dg.leave()
                 case .failure(let error):
-                    prints("[Error] \(error)")
+                    prints(error)
                     dg.leave()
                 }
             }
-        }
+        })
         
         dg.enter()
-        dispatchPriorityItem(.concurrent) {[weak self] in
-            self?.getChannels(type: .joined) { [weak self] (result) in
+        dispatchPriorityItem(.concurrent, code: {
+            self.getUserChannels(type: .joined) { (result) in
                 switch result {
-                case .success(let fetchedData):
-                    self?.joinedChannels.updateData(input: fetchedData)
-                    fetchedCounts = (fetchedCounts.0, fetchedData.data.count)
-                    newJoinedChannels = fetchedData.data.count
+                case .success(let inputData):
+                    self.joinedChannels.updateData(input: inputData)
+                    fetchedCounts = (fetchedCounts.0, inputData.data.count)
+                    newJoinedChannels = inputData.data.count
                     dg.leave()
                 case .failure(let error):
-                    prints("[Error] \(error)")
+                    prints(error)
                     dg.leave()
                 }
             }
-        }
+        })
         
         dg.notify(queue: .global()) { [weak self] in
-            prints("Make index paths")
             self?.publishChannelUpdates(action: .insert, newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
         }
     }
@@ -119,7 +115,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
     func reloadData() {
         myChannels.clearData()
         joinedChannels.clearData()
-        getData()
+        fetchFreshData()
     }
 }
 
@@ -133,5 +129,18 @@ extension CCChannelsVM {
         guard let removalIndex = myChannels.removeData(input: channel) else { return }
         channelsPublisher.send((dataAction.remove, myRemovalIndexPath(index: removalIndex)))
         prints("Removed Data")
+    }
+}
+
+extension CCChannelsVM {
+    
+    func enableDataListener(){
+        dataListener = userGroupsDocReferrence().addSnapshotListener { [weak self](snapshot, error) in
+            self?.reloadData()
+        }
+    }
+    
+    func disableDataListener(){
+        dataListener?.remove()
     }
 }

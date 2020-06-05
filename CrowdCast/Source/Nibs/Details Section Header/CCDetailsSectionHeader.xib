@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +17,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFl-EQ-FFw">
+                        <rect key="frame" x="0.0" y="6" width="320" height="1"/>
+                        <color key="backgroundColor" name="Inverted"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="dft-pO-4VO"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eks-zz-728">
                         <rect key="frame" x="10" y="16" width="54.5" height="18"/>
                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="13"/>
@@ -24,8 +32,11 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VFl-EQ-FFw" secondAttribute="trailing" id="4OU-1k-wXv"/>
                     <constraint firstAttribute="bottom" secondItem="eks-zz-728" secondAttribute="bottom" constant="10" id="4St-wG-dLJ"/>
+                    <constraint firstItem="VFl-EQ-FFw" firstAttribute="top" secondItem="eks-zz-728" secondAttribute="top" constant="-10" id="XHU-7R-v0Q"/>
                     <constraint firstItem="eks-zz-728" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cww-Ax-x07"/>
+                    <constraint firstItem="VFl-EQ-FFw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="khH-yl-uoS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -35,4 +46,9 @@
             <point key="canvasLocation" x="139" y="125"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Inverted">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -99,7 +99,6 @@ extension CCCrowdsVM : CCGroupsService, CCDispatchQueue {
         }
         
         dg.notify(queue: .global()) { [weak self] in
-            prints("Make index paths")
             self?.publishCrowdsUpdates(action: .insert, newCreatedCrowds: newMyCrowds, newJoinedCrowds: newJoinedCrowds)
         }
     }

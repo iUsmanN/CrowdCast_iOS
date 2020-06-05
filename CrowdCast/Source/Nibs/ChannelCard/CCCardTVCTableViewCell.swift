@@ -17,23 +17,27 @@ class CCCardTVCTableViewCell: UITableViewCell {
     @IBOutlet weak var membersCollectionView    : UICollectionView!
     @IBOutlet weak var pingButton               : UIButton!
     @IBOutlet weak var membersViewHeight        : NSLayoutConstraint!
+    @IBOutlet weak var ownerViewHeight          : NSLayoutConstraint!
+    @IBOutlet weak var timeViewHeight           : NSLayoutConstraint!
     
     var data : CCChannel? {
         didSet{
             titleLabel.text = data?.name
-            CCUsersManager.sharedInstance.getUserNames(ids: data?.owners, completion: { (ownerNames) in
-                DispatchQueue.main.async { [weak self] in
-                    self?.ownerLabel.text = ownerNames.compactMap({$0}).joined(separator: ", ")
-                }})
             setColors(color: data?.color ?? "red")
             timeLabel.text  = nil
             setupCollectionView()
+            CCUsersManager.sharedInstance.getUserNames(ids: data?.owners, completion: { (ownerNames) in
+            DispatchQueue.main.async { [weak self] in
+                self?.ownerLabel.text = ownerNames.compactMap({$0}).joined(separator: ", ")
+            }})
         }
     }
     
     var isCrowdChannel : Bool? {
         didSet {
             membersViewHeight.constant = (isCrowdChannel ?? false) ? 0 : 51
+            ownerViewHeight.constant   = (isCrowdChannel ?? false) ? 0 : 16.5
+            timeViewHeight.constant    = (isCrowdChannel ?? false) ? 0 : 16.5
         }
     }
     

@@ -11,6 +11,7 @@ import UIKit
 
 struct CCAddChannelVM {
     var selectedColor = 0
+    var owner = CCProfileManager.sharedInstance.getUID()
     let colors : [String] = [
         "Main Accent",
         "red",
@@ -40,9 +41,10 @@ extension CCAddChannelVM : CCChannelsService {
         let channel = CCChannel(id: nil,
                                 name: nameInput,
                                 description: descriptionInput,
-                                owners: [CCProfileManager.sharedInstance.getUID()],
+                                owners: [owner],
                                 members: nil,
-                                color: colors[selectedColor])
-        createChannel(channelInput: channel, completion: completion)
+                                color: colors[selectedColor],
+                                isGroupChannel: owner == CCProfileManager.sharedInstance.getUID() ? false : true)
+        owner == CCProfileManager.sharedInstance.getUID() ? createUserChannel(channelInput: channel, completion: completion) : createGroupChannel(channelInput: channel, completion: completion)
     }
 }

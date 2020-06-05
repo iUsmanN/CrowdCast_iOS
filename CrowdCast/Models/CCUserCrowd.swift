@@ -8,10 +8,16 @@
 
 import Foundation
 
-struct CCUserCrowd  : Codable, CCContainsID {
-    var id          : String?
-    var owned       : [String]?
-    var member      : [String]?
+struct CCUserCrowd      : Codable, CCContainsID {
+    var id              : String?
+    var owned           : [String]?
+    var member          : [String]?
+}
+
+struct CCUserChannel    : Codable, CCContainsID {
+    var id              : String?
+    var owned           : [String]?
+    var member          : [String]?
 }
 
 struct CCCrowdChannels  : Codable, CCContainsID {

@@ -25,12 +25,11 @@ protocol CCAddChannel : CCSectionHeader, CCGetsViewController {}
 extension CCAddChannel {
     
     /// Opens Add Channel Screen
-    func addChannel(){
+    func addChannel(ownerID: String? = CCProfileManager.sharedInstance.getUID()){
         guard let nc = (window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController else { return }
-        nc.pushViewController(instantiateViewController(storyboard: .Channels,
-                                                        viewController: .CCAddChannelVC,
-                                                        as: CCAddChannelVC()),
-                              animated: true)
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .CCAddChannelVC, as: CCAddChannelVC())
+        vc.viewModel.owner = ownerID ?? ""
+        nc.pushViewController(vc, animated: true)
     }
 }
 

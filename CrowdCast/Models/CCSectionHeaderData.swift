@@ -12,4 +12,5 @@ struct CCSectionHeaderData {
     var title               : String
     var rightButtonTitle    : String?
     var rightButtonAction   : CardHeaderAction?
+    var ownerID             : String? = CCProfileManager.sharedInstance.getUID()
 }
