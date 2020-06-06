@@ -11,6 +11,10 @@ import Foundation
 struct CCJoinChannelVM {
     private var data : CCChannel?
     
+    var containsForeignLink: Bool? {
+        return (data?.foreignLink != nil && data?.foreignLink != "")
+    }
+    
     init(channel: CCChannel?) {
         data = channel
     }
@@ -24,5 +28,29 @@ extension CCJoinChannelVM {
     
     func getData() -> CCChannel? {
         return data
+    }
+}
+
+extension CCJoinChannelVM {
+    
+    private func foreignLinkComponents() -> URLComponents? {
+        guard containsForeignLink == true else { return nil }
+        guard let components = URLComponents(string: data?.foreignLink ?? "") else { return nil }
+        return components
+    }
+    
+    func foreignURL() -> URL? {
+        guard containsForeignLink == true else { return nil }
+        return URL(string: data?.foreignLink ?? "")
+    }
+    
+    func foreignLinkText() -> String {
+        if((data?.foreignLink?.contains("meet.google.com")) == true){
+            return "JOIN IN GOOGLE MEET"
+        } else if ((data?.foreignLink?.contains("zoom.us")) == true){
+            return "JOIN IN ZOOM"
+        } else {
+            return "JOIN USING FOREIGN LINK"
+        }
     }
 }

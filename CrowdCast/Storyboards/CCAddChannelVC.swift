@@ -14,6 +14,7 @@ class CCAddChannelVC: UIViewController {
     @IBOutlet weak var nameTextField        : TweeActiveTextField!
     @IBOutlet weak var descriptionTextField : TweeActiveTextField!
     @IBOutlet weak var ownerTextField       : TweeBorderedTextField!
+    @IBOutlet weak var foreignLinkTextField : TweeBorderedTextField!
     @IBOutlet weak var colorCollectionView  : UICollectionView!
     
     var viewModel = CCAddChannelVM()
@@ -30,7 +31,7 @@ class CCAddChannelVC: UIViewController {
     }
     
     @IBAction func addChannel(_ sender: Any) {
-        viewModel.addChannel(nameInput: nameTextField.text, descriptionInput: descriptionTextField.text) { [weak self] result in
+        viewModel.addChannel(nameInput: nameTextField.text, descriptionInput: descriptionTextField.text, foreignLinkInput: foreignLinkTextField.text) { [weak self] result in
             switch result {
             case .success(let channel):
                 guard let parentVC = self?.navigationController?.viewControllers[(self?.navigationController?.viewControllers.count ?? 2) - 2] as? CCChannelActionDelegate else { return }

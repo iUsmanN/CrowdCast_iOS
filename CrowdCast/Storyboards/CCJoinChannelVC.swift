@@ -10,15 +10,17 @@ import UIKit
 import Kingfisher
 
 class CCJoinChannelVC: UIViewController {
+ 
+    @IBOutlet weak var joinBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var profileView              : UIImageView!
+    @IBOutlet weak var cameraView               : CCCameraView!
+    @IBOutlet weak var gradientView             : UIImageView!
     
-    @IBOutlet weak var profileView  : UIImageView!
-    @IBOutlet weak var cameraView   : CCCameraView!
-    @IBOutlet weak var gradientView : UIImageView!
+    @IBOutlet weak var cameraButton             : CCButton!
+    @IBOutlet weak var micButton                : CCButton!
+    @IBOutlet weak var foreignJoinButton        : CCButton!
     
-    @IBOutlet weak var cameraButton : CCButton!
-    @IBOutlet weak var micButton    : CCButton!
-    
-    var viewModel                   : CCJoinChannelVM?
+    var viewModel                               : CCJoinChannelVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class CCJoinChannelVC: UIViewController {
         super.viewDidDisappear(animated)
         toggleCameraView(enable: false)
     }
+    
 }
 
 extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
@@ -63,6 +66,12 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
         toggleCallAudio()
         toggleAudioButton(enable: getCallToggles().1)
     }
+    
+    @IBAction func openForeignLink(_ sender: Any) {
+        guard let url = viewModel?.foreignURL() else { return }
+        //UIApplication.shared.openURL(url)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
 
 extension CCJoinChannelVC : CCImageStorage {
@@ -75,6 +84,17 @@ extension CCJoinChannelVC : CCImageStorage {
         toggleAudioButton(enable: getCallToggles().1)
         cameraView.setupCameraView()
         setupNavigationBar()
+        toggleForeignJoinView(enable: viewModel?.containsForeignLink ?? false)
+    }
+    
+    func toggleForeignJoinView(enable: Bool){
+        if enable {
+            foreignJoinButton.setTitle(viewModel?.foreignLinkText(), for: .normal)
+            UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseInOut, animations: { [weak self] in
+                self?.joinBottomConstraint.constant = 70
+                //self?.view.layoutIfNeeded()
+            }, completion: nil)
+        }
     }
     
     func toggleCameraView(enable: Bool){
