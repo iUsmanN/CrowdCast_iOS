@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 struct CCCrowd          : Codable, CCContainsID {
     var id              : String?
     var name            : String?

@@ -19,6 +19,7 @@ target 'CrowdCast' do
   pod 'IQKeyboardManagerSwift'
   pod 'TweeTextField'
   pod 'BulletinBoard'
+  pod 'Firebase/DynamicLinks'
 
   target 'CrowdCastTests' do
     inherit! :search_paths
