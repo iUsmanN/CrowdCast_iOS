@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 class CCButton : UIButton {
+    
+    var animView = AnimationView()
     
     @IBInspectable var type : Int = 0 {
         didSet {
@@ -17,8 +20,10 @@ class CCButton : UIButton {
             switch type {
             case 0: //main
                 backgroundColor     = UIColor(named: "Main Accent")
-                layer.cornerRadius  = 10//frame.size.height/2
+                layer.cornerRadius  = 10
                 setTitleColor(UIColor(named: "Background"), for: .normal)
+                layer.masksToBounds = true
+                addView()
                 
             case 1: //secondary
                 backgroundColor     = UIColor(named: "Background")
@@ -26,7 +31,7 @@ class CCButton : UIButton {
                                               green: backgroundColor?.greenValue ?? 0,
                                               blue: backgroundColor?.blueValue ?? 0,
                                               alpha: 0.3)
-                layer.cornerRadius  = 10//frame.size.height/2
+                layer.cornerRadius  = 10
                 layer.borderColor   = UIColor(named: "Main Accent")?.cgColor
                 layer.borderWidth   = 0.5
                 setTitleColor(UIColor(named: "Main Accent"), for: .normal)
@@ -54,4 +59,25 @@ class CCButton : UIButton {
         layer.borderColor   = UIColor(named: "green")?.cgColor
     }
     
+    func addView() {
+        animView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        animView.backgroundColor            = backgroundColor
+        animView.animation                  = Animation.named("8682-loading")
+        animView.isHidden                   = true
+        animView.isUserInteractionEnabled   = false
+        animView.animationSpeed             = 3
+        animView.loopMode                   = .loop
+        DispatchQueue.main.async { self.addSubview(self.animView) }
+        bringSubviewToFront(animView)
+    }
+    
+    func showSpinner(){
+        animView.play()
+        animView.isHidden = false
+    }
+    
+    func hideSpinner(){
+        animView.stop()
+        animView.isHidden = true
+    }
 }

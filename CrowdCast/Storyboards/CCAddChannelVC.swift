@@ -30,7 +30,8 @@ class CCAddChannelVC: UIViewController {
         nameTextField.becomeFirstResponder()
     }
     
-    @IBAction func addChannel(_ sender: Any) {
+    @IBAction func addChannel(_ sender: CCButton) {
+        sender.showSpinner()
         viewModel.addChannel(nameInput: nameTextField.text, descriptionInput: descriptionTextField.text, foreignLinkInput: foreignLinkTextField.text) { [weak self] result in
             switch result {
             case .success(let channel):
@@ -39,6 +40,7 @@ class CCAddChannelVC: UIViewController {
                 DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
                 print(error)
+                sender.hideSpinner()
             }
         }
     }

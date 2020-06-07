@@ -13,7 +13,7 @@ import Device
 import IQKeyboardManagerSwift
 
 class CCLoginVC: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -48,14 +48,14 @@ extension CCLoginVC : CCHapticEngine {
         
     }
     
-    @IBAction func loginPressed(_ sender: Any) {
+    @IBAction func loginPressed(_ sender: CCButton) {
+        sender.showSpinner()
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             signInFailed(error: CCError.emptyFields)
             return
         }
         signIn_Email(email: email, password: password)
         generateHapticFeedback(.soft)
-        //UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
     }
     
     @IBAction func joinWithGooglePressed(_ sender: Any) {

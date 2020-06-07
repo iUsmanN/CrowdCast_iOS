@@ -7,6 +7,8 @@ target 'CrowdCast' do
 
   # Pods for CrowdCast
 
+  pod 'lottie-ios'
+  pod 'VisualEffectView'
   pod 'Kingfisher', '~> 5.0'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
