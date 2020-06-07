@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxa-mX-HST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="35"/>
+            <point key="canvasLocation" x="-155" y="40"/>
         </scene>
         <!--Channel Details-->
         <scene sceneID="RgH-Sk-HWj">
@@ -286,6 +286,20 @@
                                 <color key="textColor" name="Main Accent"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl7-f6-Cgh" customClass="AnimationView" customModule="CrowdCast">
+                                <rect key="frame" x="36" y="227" width="342" height="342"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wl7-f6-Cgh" secondAttribute="height" id="mGd-fF-piD"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Arq-hl-Mlq">
+                                <rect key="frame" x="112" y="303" width="190" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="Z31-fA-3rQ"/>
+                                    <constraint firstAttribute="width" constant="190" id="vQt-Sm-8Uo"/>
+                                </constraints>
+                            </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHm-fY-rN2">
                                 <rect key="frame" x="25" y="712" width="364" height="90"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qTa-xD-13n">
@@ -347,13 +361,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="hiN-t4-C1E" secondAttribute="trailing" id="2Q6-ct-cU4"/>
+                            <constraint firstItem="Arq-hl-Mlq" firstAttribute="centerY" secondItem="5Bo-xN-RJz" secondAttribute="centerY" constant="-50" id="3ZS-Jr-wvk"/>
                             <constraint firstItem="KHm-fY-rN2" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" constant="25" id="81r-CB-P2U"/>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="bottom" secondItem="40H-FD-EXQ" secondAttribute="bottom" constant="20" id="KmY-2n-Hdu"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="top" secondItem="5Bo-xN-RJz" secondAttribute="top" id="OMg-nQ-BaI"/>
+                            <constraint firstItem="wl7-f6-Cgh" firstAttribute="centerX" secondItem="Arq-hl-Mlq" secondAttribute="centerX" id="Qod-VA-kXD"/>
+                            <constraint firstItem="wl7-f6-Cgh" firstAttribute="width" secondItem="Arq-hl-Mlq" secondAttribute="width" multiplier="1.8" id="TRO-t4-Lch"/>
                             <constraint firstAttribute="bottom" secondItem="hiN-t4-C1E" secondAttribute="bottom" id="Tnj-vt-0wR"/>
                             <constraint firstItem="40H-FD-EXQ" firstAttribute="centerX" secondItem="5Bo-xN-RJz" secondAttribute="centerX" id="el9-Vz-U3x"/>
+                            <constraint firstItem="wl7-f6-Cgh" firstAttribute="centerY" secondItem="Arq-hl-Mlq" secondAttribute="centerY" id="gbW-nI-T4C"/>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="bottom" secondItem="KHm-fY-rN2" secondAttribute="bottom" constant="60" id="iC2-dL-JEI"/>
                             <constraint firstItem="hiN-t4-C1E" firstAttribute="leading" secondItem="nIZ-7p-Mmo" secondAttribute="leading" id="s9a-9w-Fhm"/>
+                            <constraint firstItem="Arq-hl-Mlq" firstAttribute="centerX" secondItem="5Bo-xN-RJz" secondAttribute="centerX" id="sUI-J9-w7T"/>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="KHm-fY-rN2" secondAttribute="trailing" constant="25" id="tZ6-JT-U3v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nIZ-7p-Mmo"/>
@@ -363,6 +382,8 @@
                     <connections>
                         <outlet property="actionBar" destination="KHm-fY-rN2" id="wsH-4h-TQC"/>
                         <outlet property="collectionView" destination="hiN-t4-C1E" id="f6w-qp-8dl"/>
+                        <outlet property="profileView" destination="Arq-hl-Mlq" id="SDH-h2-XgE"/>
+                        <outlet property="ripple" destination="wl7-f6-Cgh" id="5vn-wl-jEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWh-vO-Xrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -521,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFw-kd-qSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="112"/>
+            <point key="canvasLocation" x="732" y="40"/>
         </scene>
         <!--Edit Channel-->
         <scene sceneID="4LY-Ts-pQs">
@@ -727,7 +748,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.043137254901960784" green="0.49803921568627452" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blue">
             <color red="0.0" green="0.42699998617172241" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

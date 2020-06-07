@@ -36,6 +36,7 @@
 		B631D2EF248D45400030BC28 /* spinner A.json in Resources */ = {isa = PBXBuildFile; fileRef = B631D2EE248D45400030BC28 /* spinner A.json */; };
 		B631D2F1248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = B631D2F0248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json */; };
 		B631D2F3248D528F0030BC28 /* 8682-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B631D2F2248D528F0030BC28 /* 8682-loading.json */; };
+		B631D2F5248D5F4A0030BC28 /* lf30_editor_wz3lcT.json in Resources */ = {isa = PBXBuildFile; fileRef = B631D2F4248D5F4A0030BC28 /* lf30_editor_wz3lcT.json */; };
 		B6400681248CC5A40097E7C0 /* CCEditChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6400680248CC5A40097E7C0 /* CCEditChannelVC.swift */; };
 		B6400683248CC5B50097E7C0 /* CCEditChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6400682248CC5B50097E7C0 /* CCEditChannelVM.swift */; };
 		B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CEA2438750C0011715A /* CCChannelsVM.swift */; };
@@ -231,6 +232,7 @@
 		B631D2EE248D45400030BC28 /* spinner A.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "spinner A.json"; sourceTree = "<group>"; };
 		B631D2F0248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9904-bouncy-cartoon-ball-loader.json"; sourceTree = "<group>"; };
 		B631D2F2248D528F0030BC28 /* 8682-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8682-loading.json"; sourceTree = "<group>"; };
+		B631D2F4248D5F4A0030BC28 /* lf30_editor_wz3lcT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_wz3lcT.json; sourceTree = "<group>"; };
 		B6400680248CC5A40097E7C0 /* CCEditChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEditChannelVC.swift; sourceTree = "<group>"; };
 		B6400682248CC5B50097E7C0 /* CCEditChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEditChannelVM.swift; sourceTree = "<group>"; };
 		B64E4CEA2438750C0011715A /* CCChannelsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVM.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 		B631D2ED248D451D0030BC28 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				B631D2F4248D5F4A0030BC28 /* lf30_editor_wz3lcT.json */,
 				B631D2F2248D528F0030BC28 /* 8682-loading.json */,
 				B631D2F0248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json */,
 				B631D2EE248D45400030BC28 /* spinner A.json */,
@@ -1295,6 +1298,7 @@
 				B61F3E49245872FB000FF940 /* lines only.png in Resources */,
 				B6D04E802455EC67005F4E61 /* undraw_imagination_ok71.png in Resources */,
 				B6BEBF57247BDC1300461C12 /* abs2.png in Resources */,
+				B631D2F5248D5F4A0030BC28 /* lf30_editor_wz3lcT.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Lottie
 import TwilioVideo
 
 class CCCallScreenVC: CCUIViewController {
     
     var viewModel = CCCallScreenVM()
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var actionBar: UIVisualEffectView!
+    @IBOutlet weak var ripple           : AnimationView!
+    @IBOutlet weak var profileView      : UIImageView!
+    @IBOutlet weak var collectionView   : UICollectionView!
+    @IBOutlet weak var actionBar        : UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLayers()
         setupView()
         bindVM()
     }
@@ -40,7 +44,7 @@ class CCCallScreenVC: CCUIViewController {
     }
 }
 
-extension CCCallScreenVC {
+extension CCCallScreenVC : CCImageStorage {
     
     func setupView(){
         collectionView.dataSource   = self
@@ -48,6 +52,20 @@ extension CCCallScreenVC {
         collectionView.register(UINib(nibName: Nib.reuseIdentifier.CCCallMemberCell, bundle: nil), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell)
         actionBar.layer.cornerRadius = 10
         actionBar.layer.masksToBounds = true
+        ripple.play()
+        ripple.loopMode = .loop
+        getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
+            switch result {
+            case .success(let imageResource):
+                self?.profileView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "lines only.png"))
+            case .failure(let error):
+                prints(error)
+            }
+        }
+    }
+    
+    func setupLayers(){
+        profileView.layer.cornerRadius = profileView.frame.size.width / 2
     }
     
     func setupViewModel(channelData: CCChannel?){
@@ -58,6 +76,8 @@ extension CCCallScreenVC {
         viewModel.participantCountPublisher.sink { [weak self] (action, indexes) in
             switch action {
             case .insert:
+                self?.ripple.isHidden = true
+                self?.profileView.isHidden = true
                 self?.insertCells(addedIndexes: indexes)
             case .remove:
                 self?.removeCells(removedIndexes: indexes)

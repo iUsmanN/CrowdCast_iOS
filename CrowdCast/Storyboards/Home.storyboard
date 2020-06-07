@@ -130,20 +130,9 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کام جاری ہے" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-x0-PjS">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" name="Background"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="41"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="1zZ-x0-PjS" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="6rU-B2-cIa"/>
-                            <constraint firstItem="1zZ-x0-PjS" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="8Xc-fR-HeJ"/>
-                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="bottom" secondItem="1zZ-x0-PjS" secondAttribute="bottom" id="WYV-ct-JyA"/>
-                            <constraint firstItem="wc3-Pa-Da3" firstAttribute="trailing" secondItem="1zZ-x0-PjS" secondAttribute="trailing" id="XWZ-qP-5cs"/>
                             <constraint firstAttribute="bottom" secondItem="aH1-Xg-DY5" secondAttribute="bottom" id="bqb-5g-jV5"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="leading" secondItem="wc3-Pa-Da3" secondAttribute="leading" id="eoX-gd-3mm"/>
                             <constraint firstItem="aH1-Xg-DY5" firstAttribute="top" secondItem="wc3-Pa-Da3" secondAttribute="top" id="fTM-dJ-r0L"/>
@@ -252,7 +241,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.043137254901960784" green="0.49803921568627452" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
