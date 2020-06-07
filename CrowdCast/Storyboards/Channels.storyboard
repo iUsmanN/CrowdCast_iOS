@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxa-mX-HST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-154" y="112"/>
+            <point key="canvasLocation" x="41" y="35"/>
         </scene>
         <!--Channel Details-->
         <scene sceneID="RgH-Sk-HWj">
@@ -382,7 +382,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-NA-Rfv">
-                                <rect key="frame" x="112" y="303" width="190" height="190"/>
+                                <rect key="frame" x="112" y="283" width="190" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="Aqo-hX-jmh"/>
                                     <constraint firstAttribute="width" constant="190" id="gXr-gn-u4Q"/>
@@ -402,9 +402,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z1H-CO-wtN">
                                 <rect key="frame" x="97" y="692" width="220" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbx-Hd-Vqa" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                    <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbx-Hd-Vqa" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.6131437059859155" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="video.fill" catalog="system"/>
                                         <userDefinedRuntimeAttributes>
@@ -416,9 +416,9 @@
                                             <action selector="cameraToggle:" destination="as6-gm-bVv" eventType="touchUpInside" id="WF4-lq-coZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRe-DZ-Ita" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                    <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRe-DZ-Ita" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                         <rect key="frame" x="120" y="0.0" width="100" height="50"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.6131437059859155" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="mic.fill" catalog="system"/>
                                         <userDefinedRuntimeAttributes>
@@ -484,7 +484,7 @@
                             <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerX" secondItem="WFQ-bF-BeA" secondAttribute="centerX" id="aqK-8U-QFz"/>
                             <constraint firstAttribute="trailing" secondItem="gmx-xp-9JW" secondAttribute="trailing" id="cQb-xv-VLy"/>
                             <constraint firstItem="iqn-h8-zxp" firstAttribute="bottom" secondItem="5yz-k5-mn8" secondAttribute="bottom" constant="50" id="fUA-lz-6w6"/>
-                            <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerY" secondItem="WFQ-bF-BeA" secondAttribute="centerY" constant="-50" id="gfw-57-gVF"/>
+                            <constraint firstItem="0Yj-NA-Rfv" firstAttribute="centerY" secondItem="WFQ-bF-BeA" secondAttribute="centerY" constant="-70" id="gfw-57-gVF"/>
                             <constraint firstItem="iqn-h8-zxp" firstAttribute="trailing" secondItem="yGV-9y-JAX" secondAttribute="trailing" id="hvO-bR-jOE"/>
                             <constraint firstItem="yGV-9y-JAX" firstAttribute="leading" secondItem="iqn-h8-zxp" secondAttribute="leading" id="mtG-a7-6P3"/>
                             <constraint firstItem="2Z2-9M-mn8" firstAttribute="top" secondItem="z1H-CO-wtN" secondAttribute="bottom" constant="20" id="n3j-nI-iaG"/>
@@ -503,7 +503,7 @@
                                     <action selector="channelDetailsPressed:" destination="as6-gm-bVv" id="cUM-PM-kaG"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Share" image="qrcode" catalog="system" id="ocR-gx-xyu">
+                            <barButtonItem title="Share" image="link" catalog="system" id="ocR-gx-xyu">
                                 <color key="tintColor" name="Inverted"/>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -711,9 +711,9 @@
         <image name="Cancel" width="72" height="72"/>
         <image name="camera.rotate" catalog="system" width="128" height="96"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="link" catalog="system" width="128" height="116"/>
         <image name="mic" catalog="system" width="108" height="128"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
-        <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="video" catalog="system" width="128" height="83"/>
         <image name="video.fill" catalog="system" width="128" height="82"/>
