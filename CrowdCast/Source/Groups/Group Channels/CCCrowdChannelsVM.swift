@@ -15,7 +15,7 @@ class CCCrowdChannelsVM {
     
     var crowdData : CCCrowd?
     
-    let channelsPublisher   = PassthroughSubject<(dataAction, [IndexPath]), Never>()
+    let channelsPublisher   = PassthroughSubject<(dataAction, [IndexPath]?), Never>()
     var channels            = paginatedData<CCChannel>()
     
     init(crowdDataInput: CCCrowd?) {
@@ -39,11 +39,13 @@ extension CCCrowdChannelsVM {
 extension CCCrowdChannelsVM : CCGroupsService, CCGetIndexPaths {
     
     func fetchFreshData(){
-        getGroupChannels(groupID: crowdData?.id) { (result) in
+        getGroupChannels(groupID: crowdData?.id) { [weak self](result) in
             switch result {
             case .success(let fetchedChannels):
-                self.channels.data = fetchedChannels
-                self.channelsPublisher.send((.insert, self.getIndexPaths(array: fetchedChannels.addedRows())))
+                self?.channels.clearData()
+                self?.channels.data = fetchedChannels
+                self?.channelsPublisher.send((CCCrowdChannelsVC.refresh ? .refresh : .insert, self?.getIndexPaths(array: fetchedChannels.addedRows())))
+                CCCrowdChannelsVC.refresh = false
             case .failure(let error):
                 prints(error)
             }

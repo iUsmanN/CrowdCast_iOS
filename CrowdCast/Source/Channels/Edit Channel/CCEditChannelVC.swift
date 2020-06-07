@@ -38,7 +38,7 @@ extension CCEditChannelVC {
                 self?.editChannelDetails(updatedChannelInfo: updatedInfo)
                 self?.editChannelJoin(updatedChannelInfo: updatedInfo)
                 self?.refreshChannelsVC()
-                self?.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
                 prints(error)
             }
@@ -49,17 +49,20 @@ extension CCEditChannelVC {
 extension CCEditChannelVC {
     
     func editChannelDetails(updatedChannelInfo: CCChannel){
-        guard let channelDetailsVC = navigationController?.viewControllers[2] as? CCChannelDetailsVC else { return }
+        guard let channelDetailsVC = navigationController?.viewControllers[(navigationController?.viewControllers.count ?? 2) - 2] as? CCChannelDetailsVC else { return }
         channelDetailsVC.viewModel?.data = updatedChannelInfo
     }
     
     func editChannelJoin(updatedChannelInfo: CCChannel){
-        guard let joinChannelVC = navigationController?.viewControllers[1] as? CCJoinChannelVC else { return }
+        guard let joinChannelVC = navigationController?.viewControllers[(navigationController?.viewControllers.count ?? 2) - 3] as? CCJoinChannelVC else { return }
         joinChannelVC.viewModel?.data = updatedChannelInfo
     }
     
     func refreshChannelsVC() {
-        guard let channelsVC = navigationController?.viewControllers[0] as? CCChannelsVC else { return }
-        CCChannelsVC.refresh = true
+        if navigationController?.viewControllers[(navigationController?.viewControllers.count ?? 2) - 4] is CCChannelsVC {
+            CCChannelsVC.refresh = true
+        } else if navigationController?.viewControllers[(navigationController?.viewControllers.count ?? 2) - 4] is CCCrowdChannelsVC {
+            CCCrowdChannelsVC.refresh = true
+        }
     }
 }

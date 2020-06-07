@@ -31,6 +31,7 @@ class CCJoinChannelVC: UIViewController {
         super.viewWillAppear(animated)
         refreshNavBar()
         toggleCameraView(enable: getCallToggles().0)
+        toggleForeignJoinView(enable: viewModel?.containsForeignLink ?? false)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -83,7 +84,6 @@ extension CCJoinChannelVC : CCImageStorage {
         toggleAudioButton(enable: getCallToggles().1)
         cameraView.setupCameraView()
         setupNavigationBar()
-        toggleForeignJoinView(enable: viewModel?.containsForeignLink ?? false)
     }
     
     func refreshNavBar(){
@@ -94,10 +94,9 @@ extension CCJoinChannelVC : CCImageStorage {
     func toggleForeignJoinView(enable: Bool){
         if enable {
             foreignJoinButton.setTitle(viewModel?.foreignLinkText(), for: .normal)
-            UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseInOut, animations: { [weak self] in
-                self?.joinBottomConstraint.constant = 70
-                //self?.view.layoutIfNeeded()
-            }, completion: nil)
+            joinBottomConstraint.constant = 70
+        } else {
+            joinBottomConstraint.constant = 0
         }
     }
     

@@ -165,7 +165,6 @@ extension CCChannelsVC {
     func refreshData(){
         if(CCChannelsVC.refresh){
             viewModel?.fetchFreshData()
-            //refresh = false
         }
     }
 }

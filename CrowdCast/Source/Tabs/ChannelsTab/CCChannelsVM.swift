@@ -103,6 +103,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
         
         dg.notify(queue: .global()) { [weak self] in
             self?.publishChannelUpdates(action: CCChannelsVC.refresh ? .refresh : .insert, newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
+            CCChannelsVC.refresh = false
         }
     }
     

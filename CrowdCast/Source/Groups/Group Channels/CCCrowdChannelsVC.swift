@@ -12,13 +12,18 @@ import Combine
 class CCCrowdChannelsVC: CCUIViewController {
     
     @IBOutlet weak var tableView    : UITableView!
-    
+    static var refresh              = false
     var viewModel                   : CCCrowdChannelsVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         bindVM()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshData()
     }
 }
 
@@ -30,7 +35,6 @@ extension CCCrowdChannelsVC {
         tableView.dataSource    = self
         tableView.delegate      = self
         title                   = viewModel?.crowdData?.name ?? ""
-        //navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     func setupViewModel(crowdData: CCCrowd?){
@@ -41,14 +45,15 @@ extension CCCrowdChannelsVC {
 extension CCCrowdChannelsVC {
     
     func bindVM(){
-        viewModel?.channelsPublisher.sink(receiveValue: { (indexPathsInput) in
+        viewModel?.channelsPublisher.sink(receiveValue: { [weak self] (indexPathsInput) in
+            guard let indexPaths = indexPathsInput.1 else { return }
             switch indexPathsInput.0 {
             case .insert:
-                self.insertRows(indexPaths: indexPathsInput.1)
+                self?.insertRows(indexPaths: indexPaths)
             case .remove:
-                self.removeRows(indexPaths: indexPathsInput.1)
-            default:
-                prints("Refresh Rows")
+                self?.removeRows(indexPaths: indexPaths)
+            case .refresh:
+                self?.refreshRows()
             }
         }).store(in: &combineCancellable)
     }
@@ -61,6 +66,12 @@ extension CCCrowdChannelsVC {
     
     func removeRows(indexPaths: [IndexPath]){
         
+    }
+    
+    func refreshRows(){
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -106,5 +117,14 @@ extension CCCrowdChannelsVC : CCChannelActionDelegate {
     
     func channelRemoved(data: CCChannel) {
         viewModel?.removeCreatedChannel(channel: data)
+    }
+}
+
+extension CCCrowdChannelsVC {
+    
+    func refreshData(){
+        if(CCCrowdChannelsVC.refresh){
+            viewModel?.fetchFreshData()
+        }
     }
 }
