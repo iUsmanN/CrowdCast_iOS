@@ -31,6 +31,8 @@ extension CCCrowdsVC {
                 self?.insertRows(at: indexPathsInput.1)
             case .remove:
                 self?.removeRows(at: indexPathsInput.1)
+            default:
+                prints("Refresh Rows")
             }}).store(in: &combineCancellable)
     }
     

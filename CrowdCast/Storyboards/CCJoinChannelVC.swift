@@ -10,15 +10,17 @@ import UIKit
 import Kingfisher
 
 class CCJoinChannelVC: UIViewController {
+ 
+    @IBOutlet weak var joinBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var profileView              : UIImageView!
+    @IBOutlet weak var cameraView               : CCCameraView!
+    @IBOutlet weak var gradientView             : UIImageView!
     
-    @IBOutlet weak var profileView  : UIImageView!
-    @IBOutlet weak var cameraView   : CCCameraView!
-    @IBOutlet weak var gradientView : UIImageView!
+    @IBOutlet weak var cameraButton             : CCButton!
+    @IBOutlet weak var micButton                : CCButton!
+    @IBOutlet weak var foreignJoinButton        : CCButton!
     
-    @IBOutlet weak var cameraButton : CCButton!
-    @IBOutlet weak var micButton    : CCButton!
-    
-    var viewModel                   : CCJoinChannelVM?
+    var viewModel                               : CCJoinChannelVM?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +29,16 @@ class CCJoinChannelVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
+        refreshNavBar()
         toggleCameraView(enable: getCallToggles().0)
+        toggleForeignJoinView(enable: viewModel?.containsForeignLink ?? false)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         toggleCameraView(enable: false)
     }
+    
 }
 
 extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
@@ -63,6 +67,11 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
         toggleCallAudio()
         toggleAudioButton(enable: getCallToggles().1)
     }
+    
+    @IBAction func openForeignLink(_ sender: Any) {
+        guard let url = viewModel?.foreignURL() else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
 
 extension CCJoinChannelVC : CCImageStorage {
@@ -75,6 +84,20 @@ extension CCJoinChannelVC : CCImageStorage {
         toggleAudioButton(enable: getCallToggles().1)
         cameraView.setupCameraView()
         setupNavigationBar()
+    }
+    
+    func refreshNavBar(){
+        navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
+        navigationItem.title = viewModel?.channelName() ?? ""
+    }
+    
+    func toggleForeignJoinView(enable: Bool){
+        if enable {
+            foreignJoinButton.setTitle(viewModel?.foreignLinkText(), for: .normal)
+            joinBottomConstraint.constant = 70
+        } else {
+            joinBottomConstraint.constant = 0
+        }
     }
     
     func toggleCameraView(enable: Bool){
@@ -92,6 +115,8 @@ extension CCJoinChannelVC : CCImageStorage {
     
     func setupLayers() {
         profileView.layer.cornerRadius = profileView.frame.size.width / 2
+        profileView.layer.borderWidth = 2
+        profileView.layer.borderColor = UIColor(named: viewModel?.getData()?.color ?? "Main Accent")?.cgColor
     }
     
     func setupViewModel(inputData: CCChannel){

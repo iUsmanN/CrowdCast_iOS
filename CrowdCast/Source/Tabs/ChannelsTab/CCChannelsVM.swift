@@ -72,6 +72,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
             self.getUserChannels(type: .owned) { (result) in
                 switch result {
                 case .success(let inputData):
+                    self.myChannels.clearData()
                     self.myChannels.updateData(input: inputData)
                     fetchedCounts = (inputData.data.count, fetchedCounts.1)
                     newMyChannels = inputData.data.count
@@ -88,6 +89,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
             self.getUserChannels(type: .joined) { (result) in
                 switch result {
                 case .success(let inputData):
+                    self.joinedChannels.clearData()
                     self.joinedChannels.updateData(input: inputData)
                     fetchedCounts = (fetchedCounts.0, inputData.data.count)
                     newJoinedChannels = inputData.data.count
@@ -100,7 +102,8 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
         })
         
         dg.notify(queue: .global()) { [weak self] in
-            self?.publishChannelUpdates(action: .insert, newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
+            self?.publishChannelUpdates(action: CCChannelsVC.refresh ? .refresh : .insert, newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
+            CCChannelsVC.refresh = false
         }
     }
     

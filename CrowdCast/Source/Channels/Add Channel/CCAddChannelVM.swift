@@ -36,7 +36,7 @@ extension CCAddChannelVM {
 }
 
 extension CCAddChannelVM : CCChannelsService {
-    func addChannel(nameInput: String?, descriptionInput: String?, completion: @escaping ((Result<CCChannel, CCError>)->())){
+    func addChannel(nameInput: String?, descriptionInput: String?, foreignLinkInput: String?, completion: @escaping ((Result<CCChannel, CCError>)->())){
         guard nameInput != nil else { completion(.failure(.RequiredValuesEmpty)); return }
         let channel = CCChannel(id: nil,
                                 name: nameInput,
@@ -44,7 +44,8 @@ extension CCAddChannelVM : CCChannelsService {
                                 owners: [owner],
                                 members: nil,
                                 color: colors[selectedColor],
-                                isGroupChannel: owner == CCProfileManager.sharedInstance.getUID() ? false : true)
+                                isGroupChannel: owner == CCProfileManager.sharedInstance.getUID() ? false : true,
+                                foreignLink: foreignLinkInput)
         owner == CCProfileManager.sharedInstance.getUID() ? createUserChannel(channelInput: channel, completion: completion) : createGroupChannel(channelInput: channel, completion: completion)
     }
 }

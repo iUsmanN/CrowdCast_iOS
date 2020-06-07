@@ -22,6 +22,10 @@ class CCButton : UIButton {
                 
             case 1: //secondary
                 backgroundColor     = UIColor(named: "Background")
+                backgroundColor     = UIColor(red: backgroundColor?.redValue ?? 0,
+                                              green: backgroundColor?.greenValue ?? 0,
+                                              blue: backgroundColor?.blueValue ?? 0,
+                                              alpha: 0.3)
                 layer.cornerRadius  = 10//frame.size.height/2
                 layer.borderColor   = UIColor(named: "Main Accent")?.cgColor
                 layer.borderWidth   = 0.5

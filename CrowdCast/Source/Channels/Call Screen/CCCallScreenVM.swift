@@ -13,6 +13,7 @@ import TwilioVideo
 enum dataAction {
     case insert
     case remove
+    case refresh
 }
 
 typealias callParticipantData = (Participant, VideoTrack?)

@@ -12,6 +12,7 @@ import Combine
 class CCChannelsVC: CCUIViewController {
     
     var viewModel : CCChannelsVM?
+    static var refresh   = false
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -22,9 +23,9 @@ class CCChannelsVC: CCUIViewController {
         viewModel?.enableDataListener()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,7 +45,7 @@ extension CCChannelsVC : CCSetsNavbar {
         setupTableView()
         addObservers()
     }
-
+    
     @objc private func viewSettings(){
         opensSettings()
     }
@@ -68,6 +69,8 @@ extension CCChannelsVC {
                 self?.insertRows(at: indexPathsInput.1)
             case .remove:
                 self?.removeRows(at: indexPathsInput.1)
+            case .refresh:
+                self?.refreshRows()
             }}).store(in: &combineCancellable)
     }
     
@@ -85,6 +88,12 @@ extension CCChannelsVC {
             self?.tableView.beginUpdates()
             self?.tableView.deleteRows(at: indexPath, with: .right)
             self?.tableView.endUpdates()
+        }
+    }
+    
+    func refreshRows(){
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
         }
     }
 }
@@ -153,4 +162,9 @@ extension CCChannelsVC {
         tableView.reloadData()
     }
     
+    func refreshData(){
+        if(CCChannelsVC.refresh){
+            viewModel?.fetchFreshData()
+        }
+    }
 }

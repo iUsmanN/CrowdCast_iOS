@@ -25,7 +25,7 @@ extension CCChannelsService {
             switch result {
             case .success(let userChannels):
                 guard type == .joined ? ((userChannels.first?.member?.count ?? 0) > 0) : ((userChannels.first?.owned?.count ?? 0) > 0) else { completion(.failure(CCError.getUserChannelsFailure)); return }
-                self.getChannels(type: type, ids: type == .joined ? userChannels.first?.member : userChannels.first?.owned) { (result) in
+                self.getChannelData(type: type, ids: type == .joined ? userChannels.first?.member : userChannels.first?.owned) { (result) in
                     switch result {
                     case .success(let data):
                         completion(.success(data))
@@ -39,12 +39,12 @@ extension CCChannelsService {
         }
     }
     
-    /// Gets users channels
+    /// Gets users channels Data
     /// - Parameters:
     ///   - type: channel type
     ///   - completion: completion handler
     /// - Returns: nil
-    private func getChannels(type: CCChannelRelation, ids: [String]?, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
+    private func getChannelData(type: CCChannelRelation, ids: [String]?, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
         //let query = make(.channelsData, in: "\(type.rawValue)", contains: CCProfileManager.sharedInstance.getUID())
         let query = channelData(ids: ids)
         fetchData(query: query) { (result: Result<[CCChannel], Error>) in
@@ -60,7 +60,7 @@ extension CCChannelsService {
     ///   - channelInput: channel data
     ///   - completion: completion handler
     /// - Returns: nil
-    func createUserChannel(channelInput: CCChannel,completion: @escaping (Result<CCChannel, CCError>) -> ()) {
+    func createUserChannel(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
         let query   = documentRef(.channelsData)
         var channel = channelInput
         channel.id  = query.documentID
@@ -76,6 +76,23 @@ extension CCChannelsService {
             })
         } catch {
             completion(.failure(CCError.channelDataWriteFailure))
+        }
+    }
+    
+    /// Edits created user channel
+    /// - Parameters:
+    ///   - channelInput: channel data
+    ///   - completion: completion handler
+    /// - Returns: nil
+    func editUserChannel(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
+        let query = userChannel(id: channelInput.id)
+        do {
+            try query.setData(from: channelInput, encoder: .init(), completion: { (error) in
+                guard error == nil else { completion(.failure(.channelEditFailure)); return }
+                completion(.success(channelInput))
+            })
+        } catch {
+            completion(.failure(.channelEditFailure))
         }
     }
     
@@ -109,6 +126,10 @@ extension CCChannelsService {
     ///   - completion: completion handler
     /// - Returns: nil
     func deleteChannel(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
+        
+        //Remove Channel from all Owners and Members
+        
+        //Remove Channel Object
         let query = collectionRef(.channelsData)
         query.document(channelInput.id ?? "").delete(completion: { (error) in
             guard error == nil else { completion(.failure(.channelDataWriteFailure)); return }

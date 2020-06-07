@@ -27,8 +27,10 @@ class CCChannelDetailsVC: UIViewController {
 
 extension CCChannelDetailsVC : CCGetsViewController, CCHapticEngine {
     
-    @IBAction func joinCall(_ sender: Any) {
-        
+    @IBAction func editChannelPressed(_ sender: Any) {
+        let vc = instantiateViewController(storyboard: .Channels, viewController: .CCEditChannelVC, as: CCEditChannelVC())
+        vc.viewModel.data = viewModel?.data
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -61,6 +61,8 @@ extension CCCallScreenVC {
                 self?.insertCells(addedIndexes: indexes)
             case .remove:
                 self?.removeCells(removedIndexes: indexes)
+            default:
+                prints("Refresh Rows")
             }
         }.store(in: &combineCancellable)
     }

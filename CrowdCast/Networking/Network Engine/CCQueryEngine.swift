@@ -80,6 +80,12 @@ extension CCQueryEngine {
         let env = Constants.environment
         return db.collection("\(env)\(CCQueryPath.groupChannels.rawValue)").whereField("id", isEqualTo: id)
     }
+    
+    func groupChannelsDocReferrence(groupID: String) -> DocumentReference {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.document("\(env)\(CCQueryPath.groupChannels.rawValue)/\(groupID)")
+    }
 }
 
 //MARK: CHANNELS
@@ -103,9 +109,9 @@ extension CCQueryEngine {
         return db.document("\(env)\(CCQueryPath.userChannels.rawValue)/\(CCProfileManager.sharedInstance.getUID())")
     }
     
-    func groupChannelsDocReferrence(groupID: String) -> DocumentReference {
+    func userChannel(id: String?) -> DocumentReference {
         let db = Firestore.firestore()
         let env = Constants.environment
-        return db.document("\(env)\(CCQueryPath.groupChannels.rawValue)/\(groupID)")
+        return db.document("\(env)\(CCQueryPath.channelsData.rawValue)/\(id ?? "")")
     }
 }

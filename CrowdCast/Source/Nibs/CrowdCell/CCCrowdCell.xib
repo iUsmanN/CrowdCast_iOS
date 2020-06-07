@@ -34,7 +34,7 @@
                                         </view>
                                         <blurEffect style="prominent"/>
                                     </visualEffectView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blu4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hnx-Rq-g4W">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blu4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hnx-Rq-g4W">
                                         <rect key="frame" x="30" y="20" width="91" height="91"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -42,8 +42,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Developers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-sM-AU9">
-                                        <rect key="frame" x="5" y="111" width="141" height="72"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                        <rect key="frame" x="5" y="0.0" width="141" height="183"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -57,7 +57,7 @@
                                     <constraint firstAttribute="trailing" secondItem="NYB-8q-E8X" secondAttribute="trailing" id="Gfl-Dh-mIb"/>
                                     <constraint firstAttribute="bottom" secondItem="u2G-2K-3MR" secondAttribute="bottom" id="GjF-Ds-1Us"/>
                                     <constraint firstItem="Hnx-Rq-g4W" firstAttribute="centerX" secondItem="Wfk-oW-bBh" secondAttribute="centerX" id="IQp-TB-5mJ"/>
-                                    <constraint firstItem="J3Q-sM-AU9" firstAttribute="top" secondItem="Hnx-Rq-g4W" secondAttribute="bottom" id="McZ-m7-Uev"/>
+                                    <constraint firstItem="J3Q-sM-AU9" firstAttribute="top" secondItem="Wfk-oW-bBh" secondAttribute="top" id="McZ-m7-Uev"/>
                                     <constraint firstItem="u2G-2K-3MR" firstAttribute="top" secondItem="Wfk-oW-bBh" secondAttribute="top" id="Q0w-fA-7bG"/>
                                     <constraint firstAttribute="trailing" secondItem="u2G-2K-3MR" secondAttribute="trailing" id="Th2-9T-qII"/>
                                     <constraint firstAttribute="bottom" secondItem="J3Q-sM-AU9" secondAttribute="bottom" id="WPL-9d-tGU"/>

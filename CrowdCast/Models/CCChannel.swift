@@ -16,6 +16,7 @@ struct CCChannel                : Codable, CCContainsID {
     var members                 : [String]?
     var color                   : String?
     var isGroupChannel          : Bool?
+    var foreignLink             : String?
     
     lazy var allMembers         = ((members ?? []) + (owners ?? [])).sorted()
 }
