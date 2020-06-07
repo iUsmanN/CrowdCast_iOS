@@ -33,6 +33,7 @@ struct Constants {
         case CCAddGroupVC
         case CCCrowdChannelsVC
         case CCLoginVC
+        case CCEditChannelVC
     }
     
     static func imageCacheString(id: String?, directory: ImageCacheDirectory = .displays) -> String {

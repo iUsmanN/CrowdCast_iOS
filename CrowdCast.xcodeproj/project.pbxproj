@@ -33,6 +33,8 @@
 		B6244DDA244F813F00E52669 /* CCSwitchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6244DD8244F813F00E52669 /* CCSwitchTVC.xib */; };
 		B6244DDC244F82B900E52669 /* CCTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6244DDB244F82B900E52669 /* CCTypeAliases.swift */; };
 		B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C716F2434ADD00090901C /* CCTabBarController.swift */; };
+		B6400681248CC5A40097E7C0 /* CCEditChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6400680248CC5A40097E7C0 /* CCEditChannelVC.swift */; };
+		B6400683248CC5B50097E7C0 /* CCEditChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6400682248CC5B50097E7C0 /* CCEditChannelVM.swift */; };
 		B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CEA2438750C0011715A /* CCChannelsVM.swift */; };
 		B64E4CF1243890510011715A /* CCNibManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4CF0243890510011715A /* CCNibManager.swift */; };
 		B64E4CF624389E420011715A /* CCCardTimeLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64E4CF524389E420011715A /* CCCardTimeLabel.xib */; };
@@ -223,6 +225,8 @@
 		B6244DD8244F813F00E52669 /* CCSwitchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCSwitchTVC.xib; sourceTree = "<group>"; };
 		B6244DDB244F82B900E52669 /* CCTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTypeAliases.swift; sourceTree = "<group>"; };
 		B62C716F2434ADD00090901C /* CCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTabBarController.swift; sourceTree = "<group>"; };
+		B6400680248CC5A40097E7C0 /* CCEditChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEditChannelVC.swift; sourceTree = "<group>"; };
+		B6400682248CC5B50097E7C0 /* CCEditChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEditChannelVM.swift; sourceTree = "<group>"; };
 		B64E4CEA2438750C0011715A /* CCChannelsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCChannelsVM.swift; sourceTree = "<group>"; };
 		B64E4CF0243890510011715A /* CCNibManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCNibManager.swift; path = CrowdCast/Source/Tabs/ChannelsTab/CCNibManager.swift; sourceTree = SOURCE_ROOT; };
 		B64E4CF524389E420011715A /* CCCardTimeLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCardTimeLabel.xib; sourceTree = "<group>"; };
@@ -623,6 +627,15 @@
 			path = TextCell;
 			sourceTree = "<group>";
 		};
+		B640067F248CC5900097E7C0 /* Edit Channel */ = {
+			isa = PBXGroup;
+			children = (
+				B6400680248CC5A40097E7C0 /* CCEditChannelVC.swift */,
+				B6400682248CC5B50097E7C0 /* CCEditChannelVM.swift */,
+			);
+			path = "Edit Channel";
+			sourceTree = "<group>";
+		};
 		B64E4CF224389D410011715A /* CCCardTime */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +845,7 @@
 		B6BD90D924377EB800F50848 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
+				B640067F248CC5900097E7C0 /* Edit Channel */,
 				B61C90F12441DCC500F6B8A9 /* Call Screen */,
 				B6ACD0842441AE6700405838 /* Channel Details */,
 				B6BD90DB24377ECD00F50848 /* Join Channel */,
@@ -1431,6 +1445,7 @@
 				B6BD90DF24378CE100F50848 /* CCAddChannelVC.swift in Sources */,
 				B6974882243B977400AE95C0 /* CCUserService.swift in Sources */,
 				B6DDB0A4244CB713007B5808 /* CCAddChannelVM.swift in Sources */,
+				B6400681248CC5A40097E7C0 /* CCEditChannelVC.swift in Sources */,
 				B67E8C5924609FE0002FAD55 /* CCUsersManager.swift in Sources */,
 				B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */,
 				B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */,
@@ -1475,6 +1490,7 @@
 				B64E4CFA2438A7710011715A /* CCNavigationController.swift in Sources */,
 				B64E4CEB2438750C0011715A /* CCChannelsVM.swift in Sources */,
 				B6BEBF4B247A653A00461C12 /* CCUserCrowd.swift in Sources */,
+				B6400683248CC5B50097E7C0 /* CCEditChannelVM.swift in Sources */,
 				B61C90F52441DCF000F6B8A9 /* CCCallScreenVM.swift in Sources */,
 				B6BEBF50247AC92D00461C12 /* CCCrowdChannelsVC.swift in Sources */,
 				B6244DDC244F82B900E52669 /* CCTypeAliases.swift in Sources */,

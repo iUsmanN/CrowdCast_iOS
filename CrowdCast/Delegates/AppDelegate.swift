@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CCUniversalCallToggle {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 120
-        ImageCache.default.diskStorage.config.expiration = .never//seconds(50)
+        ImageCache.default.diskStorage.config.expiration = .never
         setInitialCallToggles()
         return true
     }

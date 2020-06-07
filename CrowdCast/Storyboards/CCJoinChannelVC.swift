@@ -30,6 +30,7 @@ class CCJoinChannelVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
+        navigationItem.title = viewModel?.channelName() ?? ""
         toggleCameraView(enable: getCallToggles().0)
     }
     
@@ -69,7 +70,6 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
     
     @IBAction func openForeignLink(_ sender: Any) {
         guard let url = viewModel?.foreignURL() else { return }
-        //UIApplication.shared.openURL(url)
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

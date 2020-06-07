@@ -47,8 +47,10 @@ extension CCCrowdChannelsVC {
                 self.insertRows(indexPaths: indexPathsInput.1)
             case .remove:
                 self.removeRows(indexPaths: indexPathsInput.1)
+            default:
+                prints("Refresh Rows")
             }
-            }).store(in: &combineCancellable)
+        }).store(in: &combineCancellable)
     }
     
     func insertRows(indexPaths: [IndexPath]){
@@ -58,7 +60,7 @@ extension CCCrowdChannelsVC {
     }
     
     func removeRows(indexPaths: [IndexPath]){
-    
+        
     }
 }
 

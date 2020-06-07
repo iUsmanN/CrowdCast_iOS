@@ -9,7 +9,7 @@
 import Foundation
 
 struct CCJoinChannelVM {
-    private var data : CCChannel?
+    var data : CCChannel?
     
     var containsForeignLink: Bool? {
         return (data?.foreignLink != nil && data?.foreignLink != "")

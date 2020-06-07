@@ -238,8 +238,8 @@
             filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "roomDidConnect(room:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "joinChannel(result:)"
             landmarkType = "7">
             <Locations>
@@ -286,8 +286,8 @@
                   urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
                   offsetFromSymbolStart = "372">
                </Location>
                <Location
@@ -301,8 +301,8 @@
                   urlString = "file:///Users/usman/Desktop/CrowdCast/CrowdCast/Source/Channels/Call%20Screen/CCCallScreenVM.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
                   offsetFromSymbolStart = "220">
                </Location>
             </Locations>
@@ -318,8 +318,8 @@
             filePath = "CrowdCast/Source/Channels/Call Screen/CCCallScreenVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "joinChannel(result:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,10 +350,10 @@
             filePath = "CrowdCast/Source/Groups/Group Channels/CCCrowdChannelsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -245,7 +245,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tsB-et-LPh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7kf-j5-rew"/>
+                    <navigationItem key="navigationItem" id="7kf-j5-rew">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="ADZ-Nb-OAA">
+                            <connections>
+                                <action selector="editChannelPressed:" destination="xz1-XL-Rpa" id="d36-n5-HJx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="3fI-h2-oxV" id="moN-84-XIl"/>
@@ -516,6 +522,188 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFw-kd-qSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="758" y="112"/>
+        </scene>
+        <!--Edit Channel-->
+        <scene sceneID="4LY-Ts-pQs">
+            <objects>
+                <viewController storyboardIdentifier="CCEditChannelVC" title="Edit Channel" hidesBottomBarWhenPushed="YES" id="a9f-2l-znk" customClass="CCEditChannelVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZRM-1G-uWY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l6d-eg-zqU" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="50" width="364" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Name"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FaA-zc-Ju8" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="129" width="364" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Description"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRV-Rt-ylq" customClass="TweeBorderedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="208" width="364" height="29"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Foreign Link (Optional)"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-hk-CED" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="97" y="679" width="220" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="YwE-se-9NH"/>
+                                    <constraint firstAttribute="width" constant="220" id="xMB-yN-caX"/>
+                                </constraints>
+                                <state key="normal" title="SAVE"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="savePressed:" destination="a9f-2l-znk" eventType="touchUpInside" id="fY9-pL-vKS"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Accent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlY-ta-1ok">
+                                <rect key="frame" x="25" y="272" width="88" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" name="Main Accent"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nQd-uq-s5N">
+                                <rect key="frame" x="25" y="302.5" width="364" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JKI-nO-5IR"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yDf-2B-Qtt">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CCColorCell" id="5Nq-VW-QJ5" customClass="CCColorCell" customModule="CrowdCast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12.5" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Hdb-tf-CPu">
+                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="blue"/>
+                                        <size key="customSize" width="25" height="25"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="nQd-uq-s5N" firstAttribute="top" secondItem="qlY-ta-1ok" secondAttribute="bottom" constant="10" id="7Ic-HM-WXM"/>
+                            <constraint firstItem="TeF-RZ-Fuk" firstAttribute="bottom" secondItem="iuR-hk-CED" secondAttribute="bottom" constant="50" id="7ea-dt-SWE"/>
+                            <constraint firstItem="vRV-Rt-ylq" firstAttribute="leading" secondItem="FaA-zc-Ju8" secondAttribute="leading" id="AZs-t6-qiZ"/>
+                            <constraint firstItem="FaA-zc-Ju8" firstAttribute="leading" secondItem="TeF-RZ-Fuk" secondAttribute="leading" constant="25" id="HbM-qE-hpI"/>
+                            <constraint firstItem="TeF-RZ-Fuk" firstAttribute="trailing" secondItem="nQd-uq-s5N" secondAttribute="trailing" constant="25" id="IZv-W9-a4L"/>
+                            <constraint firstItem="l6d-eg-zqU" firstAttribute="leading" secondItem="TeF-RZ-Fuk" secondAttribute="leading" constant="25" id="LwT-Se-fZN"/>
+                            <constraint firstItem="TeF-RZ-Fuk" firstAttribute="trailing" secondItem="l6d-eg-zqU" secondAttribute="trailing" constant="25" id="MZA-s4-SUM"/>
+                            <constraint firstItem="iuR-hk-CED" firstAttribute="centerX" secondItem="ZRM-1G-uWY" secondAttribute="centerX" id="OAB-7U-jEu"/>
+                            <constraint firstItem="FaA-zc-Ju8" firstAttribute="top" secondItem="l6d-eg-zqU" secondAttribute="bottom" constant="50" id="On8-Ic-kvA"/>
+                            <constraint firstItem="qlY-ta-1ok" firstAttribute="top" secondItem="vRV-Rt-ylq" secondAttribute="bottom" constant="35" id="WMi-uC-6Ee"/>
+                            <constraint firstItem="TeF-RZ-Fuk" firstAttribute="trailing" secondItem="FaA-zc-Ju8" secondAttribute="trailing" constant="25" id="bOz-gT-sQU"/>
+                            <constraint firstItem="vRV-Rt-ylq" firstAttribute="top" secondItem="FaA-zc-Ju8" secondAttribute="bottom" constant="50" id="chG-En-7z8"/>
+                            <constraint firstItem="vRV-Rt-ylq" firstAttribute="trailing" secondItem="FaA-zc-Ju8" secondAttribute="trailing" id="otc-97-RXQ"/>
+                            <constraint firstItem="l6d-eg-zqU" firstAttribute="top" secondItem="TeF-RZ-Fuk" secondAttribute="top" constant="50" id="uby-fn-GVm"/>
+                            <constraint firstItem="nQd-uq-s5N" firstAttribute="leading" secondItem="TeF-RZ-Fuk" secondAttribute="leading" constant="25" id="yh7-Bx-nho"/>
+                            <constraint firstItem="qlY-ta-1ok" firstAttribute="leading" secondItem="TeF-RZ-Fuk" secondAttribute="leading" constant="25" id="ynx-HO-VGU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TeF-RZ-Fuk"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="FaA-zc-Ju8" id="g23-Yx-OPN"/>
+                        <outlet property="foreignLinkTextField" destination="vRV-Rt-ylq" id="wLy-UA-HvX"/>
+                        <outlet property="nameTextField" destination="l6d-eg-zqU" id="SPE-Dq-6xL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZlV-v3-NXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-155" y="-674"/>
         </scene>
     </scenes>
     <resources>
