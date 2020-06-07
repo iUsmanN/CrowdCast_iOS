@@ -29,8 +29,7 @@ class CCJoinChannelVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
-        navigationItem.title = viewModel?.channelName() ?? ""
+        refreshNavBar()
         toggleCameraView(enable: getCallToggles().0)
     }
     
@@ -87,6 +86,11 @@ extension CCJoinChannelVC : CCImageStorage {
         toggleForeignJoinView(enable: viewModel?.containsForeignLink ?? false)
     }
     
+    func refreshNavBar(){
+        navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
+        navigationItem.title = viewModel?.channelName() ?? ""
+    }
+    
     func toggleForeignJoinView(enable: Bool){
         if enable {
             foreignJoinButton.setTitle(viewModel?.foreignLinkText(), for: .normal)
@@ -112,6 +116,8 @@ extension CCJoinChannelVC : CCImageStorage {
     
     func setupLayers() {
         profileView.layer.cornerRadius = profileView.frame.size.width / 2
+        profileView.layer.borderWidth = 2
+        profileView.layer.borderColor = UIColor(named: viewModel?.getData()?.color ?? "Main Accent")?.cgColor
     }
     
     func setupViewModel(inputData: CCChannel){
