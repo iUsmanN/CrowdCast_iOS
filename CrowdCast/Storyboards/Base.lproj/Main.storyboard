@@ -66,7 +66,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XiU-ka-iwX" userLabel="Other Options">
-                                <rect key="frame" x="187" y="812" width="40" height="40"/>
+                                <rect key="frame" x="159.5" y="812" width="95" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUs-RP-Q4x">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -79,7 +79,21 @@
                                             <action selector="joinWithGooglePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CSi-FB-SHm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6q-lk-gtW">
+                                        <rect key="frame" x="55" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="G6q-lk-gtW" secondAttribute="height" multiplier="1:1" id="DBp-eO-CNd"/>
+                                            <constraint firstAttribute="width" constant="40" id="kHD-Ry-FDC"/>
+                                        </constraints>
+                                        <state key="normal" image="Apple"/>
+                                        <connections>
+                                            <action selector="joinWithGooglePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Neg-YS-gfO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="G6q-lk-gtW" firstAttribute="width" secondItem="G6q-lk-gtW" secondAttribute="height" multiplier="1:1" id="lhZ-gf-oZx"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or continue with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeM-2j-rX2">
                                 <rect key="frame" x="156.5" y="787.5" width="101" height="19.5"/>
@@ -585,6 +599,7 @@
     </scenes>
     <resources>
         <image name="3 lines.png" width="540" height="1169.280029296875"/>
+        <image name="Apple" width="256" height="256"/>
         <image name="Email" width="50" height="50"/>
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
