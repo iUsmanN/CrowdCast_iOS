@@ -44,4 +44,8 @@ struct Constants {
         static let rowHeight    : CGFloat = 130
         static let headerHeight : CGFloat = 45
     }
+    
+    struct CrowdList {
+        static let headerHeight : CGFloat = 100
+    }
 }
