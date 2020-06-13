@@ -57,6 +57,8 @@
 		B64E4D1D243A334F0011715A /* CCQueryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1C243A334E0011715A /* CCQueryEngine.swift */; };
 		B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */; };
 		B64E4D21243A41520011715A /* CCPaginatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E4D20243A41520011715A /* CCPaginatedData.swift */; };
+		B6516A5C24955A15003B90D0 /* CCEmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6516A5B24955A15003B90D0 /* CCEmptyTableView.swift */; };
+		B6516A5E24955A23003B90D0 /* CCEmptyTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6516A5D24955A23003B90D0 /* CCEmptyTableView.xib */; };
 		B65A70E1244F109E004BB001 /* CCDelegateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A70E0244F109E004BB001 /* CCDelegateManager.swift */; };
 		B65C33462466B6B00055DA53 /* CCSetupProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */; };
 		B65C334A2466FC430055DA53 /* CCJoinChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */; };
@@ -253,6 +255,8 @@
 		B64E4D1C243A334E0011715A /* CCQueryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryEngine.swift; sourceTree = "<group>"; };
 		B64E4D1E243A3C7B0011715A /* CCQueryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCQueryPaths.swift; sourceTree = "<group>"; };
 		B64E4D20243A41520011715A /* CCPaginatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPaginatedData.swift; sourceTree = "<group>"; };
+		B6516A5B24955A15003B90D0 /* CCEmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEmptyTableView.swift; sourceTree = "<group>"; };
+		B6516A5D24955A23003B90D0 /* CCEmptyTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCEmptyTableView.xib; sourceTree = "<group>"; };
 		B65A70E0244F109E004BB001 /* CCDelegateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDelegateManager.swift; sourceTree = SOURCE_ROOT; };
 		B65C33452466B6B00055DA53 /* CCSetupProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetupProfileVM.swift; sourceTree = "<group>"; };
 		B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCJoinChannelVM.swift; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 		B60A29C824338EA100B7F76F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				B6516A5A249559E0003B90D0 /* EmptySectionFooter */,
 				B6888A5924747C83002E3EB5 /* Collection Section Header */,
 				B66824562471DC9E00651166 /* Details Section Header */,
 				B6FEAA0F246C7C4700D194C3 /* CrowdCell */,
@@ -718,6 +723,15 @@
 				B64E4D1A243A2E920011715A /* CCError.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B6516A5A249559E0003B90D0 /* EmptySectionFooter */ = {
+			isa = PBXGroup;
+			children = (
+				B6516A5B24955A15003B90D0 /* CCEmptyTableView.swift */,
+				B6516A5D24955A23003B90D0 /* CCEmptyTableView.xib */,
+			);
+			path = EmptySectionFooter;
 			sourceTree = "<group>";
 		};
 		B66824562471DC9E00651166 /* Details Section Header */ = {
@@ -1281,6 +1295,7 @@
 				B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */,
 				B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */,
 				B6888A5D24747CD5002E3EB5 /* CCCollectionSectionHeader.xib in Resources */,
+				B6516A5E24955A23003B90D0 /* CCEmptyTableView.xib in Resources */,
 				B6BEBF56247BDC1300461C12 /* abs1.png in Resources */,
 				B6BEBF6D247C362A00461C12 /* undraw_celebration_0jvk (2).png in Resources */,
 				B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */,
@@ -1479,6 +1494,7 @@
 				B6D7F55224277A1A001BEBBC /* AppDelegate.swift in Sources */,
 				B6D7F58B24277AD7001BEBBC /* CCLoginVC.swift in Sources */,
 				B62C71702434ADD00090901C /* CCTabBarController.swift in Sources */,
+				B6516A5C24955A15003B90D0 /* CCEmptyTableView.swift in Sources */,
 				B64E4D032439E70E0011715A /* CCChannel.swift in Sources */,
 				B65A70E1244F109E004BB001 /* CCDelegateManager.swift in Sources */,
 				B64E4D002439DD170011715A /* CCNetworkEngine.swift in Sources */,

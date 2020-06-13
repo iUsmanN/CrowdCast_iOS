@@ -57,6 +57,7 @@ extension CCChannelsVC {
         tableView.delegate      = self
         tableView.dataSource    = self
         tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
+        tableView.register(Nib.get.CCEmptyTableView, forHeaderFooterViewReuseIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
     }
 }
 
@@ -123,7 +124,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+        return tableView.dequeueReusableHeaderFooterView(withIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -135,7 +136,14 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+        switch section {
+        case 0:
+            return (viewModel?.myChannels.data.count ?? 0) > 0 ? 0 : 100
+        case 1:
+            return (viewModel?.joinedChannels.data.count ?? 0) > 0 ? 0 : 100
+        default:
+            return 0
+        }
     }
 }
 

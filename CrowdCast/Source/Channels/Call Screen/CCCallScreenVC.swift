@@ -52,8 +52,8 @@ extension CCCallScreenVC : CCImageStorage {
         collectionView.register(UINib(nibName: Nib.reuseIdentifier.CCCallMemberCell, bundle: nil), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell)
         actionBar.layer.cornerRadius = 10
         actionBar.layer.masksToBounds = true
-        ripple.play()
-        ripple.loopMode = .loop
+//        ripple.play()
+//        ripple.loopMode = .loop
         getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
             switch result {
             case .success(let imageResource):
