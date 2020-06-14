@@ -40,4 +40,7 @@ enum CCError : Error {
     case getUserChannelsFailure
     case fetchUserProfileFailure
     case channelEditFailure
+    
+    //MARK: BRANCH
+    case branchLinkError
 }

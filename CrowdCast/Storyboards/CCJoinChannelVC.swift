@@ -11,7 +11,7 @@ import Kingfisher
 
 class CCJoinChannelVC: UIViewController {
  
-    @IBOutlet weak var joinBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var joinBottomConstraint     : NSLayoutConstraint!
     @IBOutlet weak var profileView              : UIImageView!
     @IBOutlet weak var cameraView               : CCCameraView!
     @IBOutlet weak var gradientView             : UIImageView!
@@ -38,10 +38,9 @@ class CCJoinChannelVC: UIViewController {
         super.viewDidDisappear(animated)
         toggleCameraView(enable: false)
     }
-    
 }
 
-extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
+extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine, CCDynamicLinkEngine {
     
     @IBAction func joinCall(_ sender: Any) {
         let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
@@ -71,6 +70,17 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
     @IBAction func openForeignLink(_ sender: Any) {
         guard let url = viewModel?.foreignURL() else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func linkPressed(_ sender: Any) {
+        generateShareLink(input: viewModel?.data) { (result) in
+            switch result {
+            case .success(let string):
+                prints(string)
+            case .failure(let error):
+                prints(error)
+            }
+        }
     }
 }
 
@@ -111,7 +121,6 @@ extension CCJoinChannelVC : CCImageStorage {
             cameraView.stopCapture()
         }
     }
-    
     
     func setupLayers() {
         profileView.layer.cornerRadius = profileView.frame.size.width / 2

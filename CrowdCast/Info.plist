@@ -47,6 +47,23 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>branch_key</key>
+	<string>key_live_jaI3kq5bJu7p8lFqTVWFVodoEvgXjnFU</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>crowdcastr</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>branch_universal_link_domains</key>
+	<array>
+		<string>crowdcastr.app.link</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

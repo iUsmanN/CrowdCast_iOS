@@ -535,6 +535,9 @@
                             </barButtonItem>
                             <barButtonItem title="Share" image="link" catalog="system" id="ocR-gx-xyu">
                                 <color key="tintColor" name="Inverted"/>
+                                <connections>
+                                    <action selector="linkPressed:" destination="as6-gm-bVv" id="eO9-5L-KL3"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

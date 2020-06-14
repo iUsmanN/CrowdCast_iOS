@@ -6,7 +6,8 @@ target 'CrowdCast' do
   use_frameworks!
 
   # Pods for CrowdCast
-
+  
+  pod 'Branch'
   pod 'lottie-ios'
   pod 'VisualEffectView'
   pod 'Kingfisher', '~> 5.0'

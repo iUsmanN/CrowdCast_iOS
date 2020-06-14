@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Branch
 import Firebase
 import Kingfisher
 import IQKeyboardManagerSwift
@@ -21,6 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CCUniversalCallToggle {
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 120
         ImageCache.default.diskStorage.config.expiration = .never
         setInitialCallToggles()
+        
+        Branch.getInstance().resetUserSession()
+        Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
+             // do stuff with deep link data (nav to page, display content, etc)
+            print(params as? [String: AnyObject] ?? {})
+        }
+        
         return true
     }
 
