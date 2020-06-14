@@ -9,5 +9,5 @@
 import Foundation
 
 enum CardHeaderAction {
-    case newChannel, newGroup, joinChannel, joinGroup, viewAll
+    case newChannel, newGroup, joinChannel, joinGroup, viewAll, pinnedChannels
 }

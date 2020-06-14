@@ -14,6 +14,7 @@ import NotificationBannerSwift
 
 class CCUIViewController: UIViewController {
     
+    var activeButton        : CCButton?
     var combineCancellable  = Set<AnyCancellable>()
     static var reachibility : CCReachibility?
     var reachibilityBanner  : StatusBarNotificationBanner?

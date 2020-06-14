@@ -11,7 +11,7 @@ import Foundation
 struct CCOverviewVM {
     
     var sectionHeaderData : [CCSectionHeaderData] = [
-        CCSectionHeaderData(title: "Pinned Channels", rightButtonTitle: nil, rightButtonAction: nil)
+        CCSectionHeaderData(title: "Pinned Channels", rightButtonTitle: "What's this ?", rightButtonAction: .pinnedChannels)
     ]
 
 }

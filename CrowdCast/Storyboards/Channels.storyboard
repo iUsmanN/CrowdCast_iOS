@@ -111,7 +111,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Owner"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-I3-vq8" customClass="TweeBorderedTextField" customModule="TweeTextField">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-I3-vq8" customClass="TweeActiveTextField" customModule="TweeTextField">
                                 <rect key="frame" x="25" y="287" width="364" height="29"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
@@ -136,6 +136,15 @@
                                         <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Foreign Link (Optional)"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8p-4i-MFm" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
@@ -214,7 +223,7 @@
                     <connections>
                         <outlet property="colorCollectionView" destination="V1t-eh-RwT" id="vs5-tt-zkg"/>
                         <outlet property="descriptionTextField" destination="Qxx-IC-CvB" id="pI8-5x-Hut"/>
-                        <outlet property="foreignLinkTextField" destination="iQO-I3-vq8" id="87C-sf-M49"/>
+                        <outlet property="foreignLinkTextField" destination="iQO-I3-vq8" id="2gb-RV-mOJ"/>
                         <outlet property="nameTextField" destination="Uon-4e-8lp" id="a4X-2V-ysx"/>
                         <outlet property="ownerTextField" destination="sWa-fZ-fg8" id="Sbu-XY-0TD"/>
                     </connections>
@@ -748,7 +757,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.043137254901960784" green="0.49803921568627452" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blue">
             <color red="0.0" green="0.42699998617172241" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

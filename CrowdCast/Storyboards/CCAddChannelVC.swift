@@ -14,7 +14,7 @@ class CCAddChannelVC: UIViewController {
     @IBOutlet weak var nameTextField        : TweeActiveTextField!
     @IBOutlet weak var descriptionTextField : TweeActiveTextField!
     @IBOutlet weak var ownerTextField       : TweeBorderedTextField!
-    @IBOutlet weak var foreignLinkTextField : TweeBorderedTextField!
+    @IBOutlet weak var foreignLinkTextField : TweeActiveTextField!
     @IBOutlet weak var colorCollectionView  : UICollectionView!
     
     var viewModel = CCAddChannelVM()

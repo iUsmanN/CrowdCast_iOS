@@ -21,7 +21,7 @@ struct Nib {
         static let CCCrowdCell              = UINib(nibName: "CCCrowdCell", bundle: nil)
         static let CCDetailsSectionHeader   = UINib(nibName: "CCDetailsSectionHeader", bundle: nil)
         static let CCEmptyTableView         = UINib(nibName: "CCEmptyTableView", bundle: nil)
-        
+        static let CCEmptyPinnedChannels    = UINib(nibName: "CCEmptyPinnedChannels", bundle: nil)
     }
     
     struct reuseIdentifier {
@@ -36,6 +36,7 @@ struct Nib {
         static let CCCrowdCell              = "CCCrowdCell"
         static let CCDetailsSectionHeader   = "CCDetailsSectionHeader"
         static let CCEmptyTableView         = "CCEmptyTableView"
+        static let CCEmptyPinnedChannels    = "CCEmptyPinnedChannels"
     }
     
     static func nibFor(_ reuseIdentifier: String) -> UINib {

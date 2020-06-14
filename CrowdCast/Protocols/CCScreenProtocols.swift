@@ -57,3 +57,16 @@ extension CCAddGroup {
                                                         animated: true)
     }
 }
+
+
+protocol CCPinnedChannels : CCSectionHeader {}
+extension CCPinnedChannels {
+    
+    /// Opens Pinned Channel Info
+    /// - Parameter bulletinManager: bulletin manager
+    func pinnedChannelInfo(_ bulletinManager: CCBulletinManager){
+        bulletinManager.setItem(item: CCBulletinManager.pinnedChannelInfo())
+        guard let nc = ((window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController)?.topViewController else { return }
+        bulletinManager.manager?.showBulletin(above: nc)
+    }
+}

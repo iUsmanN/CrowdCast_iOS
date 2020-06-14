@@ -76,6 +76,7 @@ extension CCChannelsVC {
     }
     
     func insertRows(at indexPaths: [IndexPath]) {
+        guard indexPaths.count > 0 else { return }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
             self?.tableView.insertRows(at: indexPaths, with: .left)
@@ -85,6 +86,7 @@ extension CCChannelsVC {
     }
     
     func removeRows(at indexPath: [IndexPath]) {
+        guard indexPath.count > 0 else { return }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
             self?.tableView.deleteRows(at: indexPath, with: .right)

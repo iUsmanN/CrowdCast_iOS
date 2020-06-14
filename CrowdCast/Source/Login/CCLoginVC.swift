@@ -12,7 +12,7 @@ import FirebaseFirestore
 import Device
 import IQKeyboardManagerSwift
 
-class CCLoginVC: UIViewController {
+class CCLoginVC: CCUIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -49,7 +49,8 @@ extension CCLoginVC : CCHapticEngine {
     }
     
     @IBAction func loginPressed(_ sender: CCButton) {
-        sender.showSpinner()
+        activeButton = sender
+        activeButton?.showSpinner()
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             signInFailed(error: CCError.emptyFields)
             return
@@ -77,6 +78,7 @@ extension CCLoginVC {
 extension CCLoginVC : CCSyncUserData {
     
     func signInFailed(error: Error?){
+        activeButton?.hideSpinner()
         print("Can't sign in.")
     }
     
