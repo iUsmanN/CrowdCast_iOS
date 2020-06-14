@@ -31,12 +31,14 @@ class CCBulletinManager {
         return page
     }
     
-    static func shareDeepLink(channelName: String, deeplink: String) -> BLTNPageItem {
+    static func shareDeepLink(channelName: String, deeplink: String, viewController: UIViewController?) -> BLTNPageItem {
         let page = CCBLTNPageItem(title: "\(channelName) Dynamic Link")
         page.descriptionText    = deeplink
         page.actionButtonTitle  = "Share"
         page.actionHandler = { item in
+            let vc = UIActivityViewController(activityItems: [deeplink], applicationActivities: [])
             item.manager?.dismissBulletin(animated: true)
+            DispatchQueue.main.async { viewController?.present(vc, animated: true, completion: nil) }
         }
         return page
     }

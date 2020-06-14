@@ -76,8 +76,7 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine, CCDynamicLinkE
         generateShareLink(input: viewModel?.data) { [weak self](result) in
             switch result {
             case .success(let string):
-                prints(string)
-                self?.previewDynamicLink(self?.viewModel?.bulletin, channelName: self?.viewModel?.getData()?.name ?? "", deeplink: string ?? "")
+                self?.previewDynamicLink(self?.viewModel?.bulletin, channelName: self?.viewModel?.getData()?.name ?? "", deeplink: string ?? "", viewController: self)
             case .failure(let error):
                 prints(error)
             }
