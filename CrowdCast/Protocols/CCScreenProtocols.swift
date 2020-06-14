@@ -70,3 +70,15 @@ extension CCPinnedChannels {
         bulletinManager.manager?.showBulletin(above: nc)
     }
 }
+
+protocol CCDynamicLinkPreview : UIViewController {}
+extension CCDynamicLinkPreview {
+    
+    func previewDynamicLink(_ bulletinManager: CCBulletinManager?, channelName: String, deeplink: String){
+        bulletinManager?.setItem(item: CCBulletinManager.shareDeepLink(channelName: channelName, deeplink: deeplink)
+        )
+        guard let nc = ((self.view.window?.rootViewController as? CCTabBarController)?.selectedViewController as? UINavigationController)?.topViewController else { return }
+        bulletinManager?.manager?.showBulletin(above: nc)
+    }
+    
+}

@@ -31,6 +31,16 @@ class CCBulletinManager {
         return page
     }
     
+    static func shareDeepLink(channelName: String, deeplink: String) -> BLTNPageItem {
+        let page = CCBLTNPageItem(title: "\(channelName) Dynamic Link")
+        page.descriptionText    = deeplink
+        page.actionButtonTitle  = "Share"
+        page.actionHandler = { item in
+            item.manager?.dismissBulletin(animated: true)
+        }
+        return page
+    }
+    
     static func pinnedChannelInfo() -> BLTNPageItem {
         let page = CCBLTNPageItem(title: "Pinned Channels")
         page.actionButtonTitle      = "I Understand."

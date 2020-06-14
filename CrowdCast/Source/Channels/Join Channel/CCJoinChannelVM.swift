@@ -9,9 +9,10 @@
 import Foundation
 
 struct CCJoinChannelVM {
-    var data : CCChannel?
+    var data                        : CCChannel?
+    var bulletin                    = CCBulletinManager()
     
-    var containsForeignLink: Bool? {
+    var containsForeignLink         : Bool? {
         return (data?.foreignLink != nil && data?.foreignLink != "")
     }
     
@@ -51,6 +52,21 @@ extension CCJoinChannelVM {
             return "JOIN IN ZOOM"
         } else {
             return "JOIN USING FOREIGN LINK"
+        }
+    }
+}
+
+extension CCJoinChannelVM : CCDynamicLinkEngine {
+    
+    func generateDeeplink(){
+        generateShareLink(input: data) { (result) in
+            switch result {
+            case .success(let string):
+                prints(string)
+                
+            case .failure(let error):
+                prints(error)
+            }
         }
     }
 }

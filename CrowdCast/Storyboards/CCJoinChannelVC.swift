@@ -40,7 +40,7 @@ class CCJoinChannelVC: UIViewController {
     }
 }
 
-extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine, CCDynamicLinkEngine {
+extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine, CCDynamicLinkEngine, CCDynamicLinkPreview {
     
     @IBAction func joinCall(_ sender: Any) {
         let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
@@ -73,10 +73,11 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine, CCDynamicLinkE
     }
     
     @IBAction func linkPressed(_ sender: Any) {
-        generateShareLink(input: viewModel?.data) { (result) in
+        generateShareLink(input: viewModel?.data) { [weak self](result) in
             switch result {
             case .success(let string):
                 prints(string)
+                self?.previewDynamicLink(self?.viewModel?.bulletin, channelName: self?.viewModel?.getData()?.name ?? "", deeplink: string ?? "")
             case .failure(let error):
                 prints(error)
             }

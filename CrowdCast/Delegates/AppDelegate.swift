@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CCUniversalCallToggle {
         
         Branch.getInstance().resetUserSession()
         Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
-             // do stuff with deep link data (nav to page, display content, etc)
             print(params as? [String: AnyObject] ?? {})
         }
         
