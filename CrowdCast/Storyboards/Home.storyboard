@@ -103,13 +103,13 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚆ _ ⚆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8u-ZP-tpJ">
-                                            <rect key="frame" x="163" y="8.5" width="54.5" height="33"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                            <rect key="frame" x="159.5" y="9.5" width="61.5" height="37"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap here to add a Crowd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClO-G7-L83">
-                                            <rect key="frame" x="110.5" y="54.5" width="159.5" height="19.5"/>
+                                            <rect key="frame" x="110.5" y="56.5" width="159.5" height="19.5"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -124,9 +124,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ClO-G7-L83" firstAttribute="centerX" secondItem="4T6-yH-V9t" secondAttribute="centerX" id="BOT-cp-cS2"/>
-                                        <constraint firstItem="W8u-ZP-tpJ" firstAttribute="centerY" secondItem="4T6-yH-V9t" secondAttribute="centerY" constant="-25" id="CNf-5C-wdO"/>
+                                        <constraint firstItem="W8u-ZP-tpJ" firstAttribute="centerY" secondItem="4T6-yH-V9t" secondAttribute="centerY" constant="-22" id="CNf-5C-wdO"/>
                                         <constraint firstItem="7Hn-Qf-ZRL" firstAttribute="top" secondItem="4T6-yH-V9t" secondAttribute="top" id="hkC-AK-SFi"/>
-                                        <constraint firstItem="ClO-G7-L83" firstAttribute="centerY" secondItem="4T6-yH-V9t" secondAttribute="centerY" constant="14" id="rEx-ke-XUD"/>
+                                        <constraint firstItem="ClO-G7-L83" firstAttribute="centerY" secondItem="4T6-yH-V9t" secondAttribute="centerY" constant="16" id="rEx-ke-XUD"/>
                                         <constraint firstItem="W8u-ZP-tpJ" firstAttribute="centerX" secondItem="4T6-yH-V9t" secondAttribute="centerX" id="uOH-4W-cdb"/>
                                         <constraint firstAttribute="trailing" secondItem="7Hn-Qf-ZRL" secondAttribute="trailing" constant="15" id="wRR-1A-y9r"/>
                                     </constraints>

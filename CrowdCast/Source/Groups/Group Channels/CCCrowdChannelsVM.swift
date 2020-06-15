@@ -13,8 +13,8 @@ class CCCrowdChannelsVM {
     
     var sectionHeaderData : [CCSectionHeaderData] = [CCSectionHeaderData(title: "Channels", rightButtonTitle: "Create New", rightButtonAction: .newChannel)]
     
-    var crowdData : CCCrowd?
-    
+    var crowdData           : CCCrowd?
+    var bulletin            = CCBulletinManager()
     let channelsPublisher   = PassthroughSubject<(dataAction, [IndexPath]?), Never>()
     var channels            = paginatedData<CCChannel>()
     

@@ -27,6 +27,20 @@ class CCCrowdChannelsVC: CCUIViewController {
     }
 }
 
+extension CCCrowdChannelsVC : CCDynamicLinkEngine, CCDynamicLinkPreview{
+    
+    @IBAction func shareLinkPressed(_ sender: Any) {
+        generateShareLink(input: viewModel?.crowdData) { [weak self](result) in
+            switch result {
+            case .success(let string):
+                self?.previewDynamicLink(self?.viewModel?.bulletin, channelName: self?.viewModel?.crowdData?.name ?? "", deeplink: string ?? "", viewController: self)
+            case .failure(let error):
+                prints(error)
+            }
+        }
+    }
+}
+
 extension CCCrowdChannelsVC {
     
     func setupView() {

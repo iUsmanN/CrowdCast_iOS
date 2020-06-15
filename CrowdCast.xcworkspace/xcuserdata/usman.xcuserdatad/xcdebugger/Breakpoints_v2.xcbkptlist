@@ -334,8 +334,8 @@
             filePath = "CrowdCast/Source/Groups/Group Channels/CCCrowdChannelsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "refreshData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,8 +398,8 @@
             filePath = "CrowdCast/Source/Groups/Group Channels/CCCrowdChannelsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "refreshRows()"
             landmarkType = "7">
          </BreakpointContent>
@@ -433,6 +433,22 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "generateDeeplink()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81B1E5DA-9219-47F6-9D41-C191BF8A7CBF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CrowdCast/Storyboards/CCJoinChannelVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "refreshNavBar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
