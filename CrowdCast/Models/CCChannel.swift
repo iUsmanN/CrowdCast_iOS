@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CCChannel                : Codable, CCContainsID {
+struct CCChannel                : Codable, CCContainsID, CCSharable {
     var id                      : String?
     var name                    : String?
     var description             : String?

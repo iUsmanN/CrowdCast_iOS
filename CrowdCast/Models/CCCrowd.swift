@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct CCCrowd          : Codable, CCContainsID {
+struct CCCrowd          : Codable, CCContainsID, CCSharable {
     var id              : String?
     var name            : String?
     var description     : String?

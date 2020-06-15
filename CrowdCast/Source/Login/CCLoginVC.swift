@@ -12,8 +12,8 @@ import FirebaseFirestore
 import Device
 import IQKeyboardManagerSwift
 
-class CCLoginVC: UIViewController {
-
+class CCLoginVC: CCUIViewController {
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -48,14 +48,15 @@ extension CCLoginVC : CCHapticEngine {
         
     }
     
-    @IBAction func loginPressed(_ sender: Any) {
+    @IBAction func loginPressed(_ sender: CCButton) {
+        activeButton = sender
+        activeButton?.showSpinner()
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             signInFailed(error: CCError.emptyFields)
             return
         }
         signIn_Email(email: email, password: password)
         generateHapticFeedback(.soft)
-        //UIApplication.shared.windows.first?.rootViewController = Constants.Storyboards.Home.instantiateViewController(withIdentifier: "CCTabBar")
     }
     
     @IBAction func joinWithGooglePressed(_ sender: Any) {
@@ -77,6 +78,7 @@ extension CCLoginVC {
 extension CCLoginVC : CCSyncUserData {
     
     func signInFailed(error: Error?){
+        activeButton?.hideSpinner()
         print("Can't sign in.")
     }
     

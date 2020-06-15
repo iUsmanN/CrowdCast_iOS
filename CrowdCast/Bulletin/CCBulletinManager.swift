@@ -23,7 +23,7 @@ class CCBulletinManager {
     static func joinChannel() -> BLTNPageItem {
         let page = CCBLTNPageItem(title: "Join Channel")
         page.actionButtonTitle      = "Scan QR Code"
-        page.alternativeButtonTitle = "Enter Code"
+        page.alternativeButtonTitle = "Join via Dynamic Link"
         page.alternativeHandler = { item in
             page.next = enterCode()
             item.manager?.displayNextItem()
@@ -31,9 +31,24 @@ class CCBulletinManager {
         return page
     }
     
+    static func pinnedChannelInfo() -> BLTNPageItem {
+        let page = CCBLTNPageItem(title: "Pinned Channels")
+        page.actionButtonTitle      = "I Understand."
+        page.descriptionText        = "You can locally pin Channels on your device for quick access."
+        page.descriptionLabel?.font = UIFont(name: "Avenir", size: 14)
+        page.actionHandler = { item in
+            item.manager?.dismissBulletin(animated: true)
+        }
+        return page
+    }
+    
     static func enterCode() -> BLTNPageItem {
-        let page =  CCBLTNPageItem(title: "Enter Channel Code")
-        page.alternativeButtonTitle = "Enter Code"
+        let page =  CCBLTNPageItem(title: "Join via Dynamic Link")
+        page.descriptionText = "Ask a Participant to share the dynamic Channel link to join."
+        page.actionButtonTitle = "I Understand"
+        page.actionHandler = { item in
+            item.manager?.dismissBulletin(animated: true)
+        }
         return page
     }
 }
@@ -45,8 +60,12 @@ class CCBLTNPageItem : BLTNPageItem {
         appearance.actionButtonColor            = UIColor(named: "Main Accent") ?? UIColor.red
         appearance.alternativeButtonTitleColor  = UIColor(named: "Main Accent") ?? UIColor.red
         appearance.actionButtonTitleColor       = UIColor(named: "Background") ?? UIColor.red
+        appearance.titleFontDescriptor          = UIFontDescriptor(name: "Avenir", size: 14)
+        appearance.descriptionFontDescriptor    = UIFontDescriptor(name: "Avenir", size: 10)
+        appearance.buttonFontDescriptor         = UIFontDescriptor(name: "Avenir", size: 13)
         appearance.titleFontSize                = 20
-        appearance.actionButtonFontSize         = 15
-        appearance.alternativeButtonFontSize    = 13
+        appearance.actionButtonFontSize         = 16
+        appearance.alternativeButtonFontSize    = 15
+        appearance.descriptionFontSize          = 16
     }
 }

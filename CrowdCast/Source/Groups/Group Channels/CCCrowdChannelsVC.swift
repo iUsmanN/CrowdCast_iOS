@@ -32,6 +32,7 @@ extension CCCrowdChannelsVC {
     func setupView() {
         tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
         tableView.register(Nib.get.CCSectionHeader, forCellReuseIdentifier: Nib.reuseIdentifier.CCSectionHeader)
+        tableView.register(Nib.get.CCEmptyTableView, forHeaderFooterViewReuseIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
         tableView.dataSource    = self
         tableView.delegate      = self
         title                   = viewModel?.crowdData?.name ?? ""
@@ -106,6 +107,19 @@ extension CCCrowdChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsC
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Constants.CardList.headerHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return tableView.dequeueReusableHeaderFooterView(withIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return (viewModel?.channels.data.count ?? 0) > 0 ? 0 : 100
+        default:
+            return 0
+        }
     }
 }
 

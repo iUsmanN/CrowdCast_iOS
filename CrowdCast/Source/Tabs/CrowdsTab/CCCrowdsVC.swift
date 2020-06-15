@@ -94,13 +94,29 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, CCG
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CCCrowdHeader", for: indexPath) as? CCCollectionSectionHeader else { return UICollectionReusableView()}
-        header.data = viewModel?.titleForSection(section: indexPath.section)
-        return header
+        
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CCCrowdHeader", for: indexPath) as? CCCollectionSectionHeader else { return UICollectionReusableView()}
+            header.data = viewModel?.titleForSection(section: indexPath.section)
+            return header
+            
+        case UICollectionView.elementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CCEmptyCollectionSection", for: indexPath)
+            
+            return footerView
+            
+        default:
+            assert(false, "Unexpected element kind")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.collectionView.frame.size.width, height: Constants.CardList.headerHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return (viewModel?.numberOfRows(section: section) ?? 0) > 0 ? CGSize.zero : CGSize(width: self.collectionView.frame.size.width, height: Constants.CrowdList.headerHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

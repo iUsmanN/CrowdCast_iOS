@@ -23,14 +23,14 @@ class CCAddCrowdVC: CCImagePickingVC {
         setupView()
     }
     
-    @IBAction func createChannel(_ sender: Any) {
+    @IBAction func createChannel(_ sender: CCButton) {
+        sender.showSpinner()
         viewModel.addGroup(groupName: nameTextField.text, groupDescription: descriptionTextField.text, image: groupPicture.image) { [weak self](result) in
             switch result {
-            case .success(let crowd):
-                guard let parentVC = self?.navigationController?.viewControllers.first as? CCCrowdsVC else { return }
-                //parentVC.viewModel?.crowdAdded(data: crowd)
+            case .success(_):
                 DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
+                sender.hideSpinner()
                 prints(error)
             }
         }

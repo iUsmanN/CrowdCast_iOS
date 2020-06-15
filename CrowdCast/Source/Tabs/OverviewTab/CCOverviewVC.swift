@@ -36,6 +36,7 @@ extension CCOverviewVC : CCSetsNavbar {
         tableView.delegate      = self
         tableView.dataSource    = self
         tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
+        tableView.register(Nib.get.CCEmptyPinnedChannels, forHeaderFooterViewReuseIdentifier: Nib.reuseIdentifier.CCEmptyPinnedChannels)
     }
     
     @objc private func viewSettings(){
@@ -50,7 +51,7 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +60,7 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+        return tableView.dequeueReusableHeaderFooterView(withIdentifier: Nib.reuseIdentifier.CCEmptyPinnedChannels)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -71,6 +72,6 @@ extension CCOverviewVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+        return 100
     }
 }

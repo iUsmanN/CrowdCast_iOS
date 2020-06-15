@@ -37,7 +37,7 @@ class CCSectionHeader: UITableViewCell {
     }
 }
 
-extension CCSectionHeader : CCAddChannel, CCJoinChannel {
+extension CCSectionHeader : CCAddChannel, CCJoinChannel, CCPinnedChannels {
     
     @IBAction func rightButtonPressed(_ sender: Any) {
         
@@ -54,6 +54,8 @@ extension CCSectionHeader : CCAddChannel, CCJoinChannel {
             prints("joinGroup")
         case .viewAll:
             prints("viewAll")
+        case .pinnedChannels:
+            pinnedChannelInfo(CCSectionHeader.bulletin)
         default:
             prints("right button action not set")
         }
