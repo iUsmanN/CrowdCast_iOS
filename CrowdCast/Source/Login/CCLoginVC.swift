@@ -50,6 +50,7 @@ extension CCLoginVC : CCHapticEngine {
     
     @IBAction func loginPressed(_ sender: CCButton) {
         activeButton = sender
+        pauseScreen()
         activeButton?.showSpinner()
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             signInFailed(error: CCError.emptyFields)
@@ -79,6 +80,7 @@ extension CCLoginVC : CCSyncUserData {
     
     func signInFailed(error: Error?){
         activeButton?.hideSpinner()
+        unpauseScreen()
         print("Can't sign in.")
     }
     

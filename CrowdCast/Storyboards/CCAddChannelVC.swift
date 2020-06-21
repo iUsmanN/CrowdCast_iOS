@@ -9,8 +9,8 @@
 import UIKit
 import TweeTextField
 
-class CCAddChannelVC: UIViewController {
-
+class CCAddChannelVC: CCUIViewController {
+    
     @IBOutlet weak var nameTextField        : TweeActiveTextField!
     @IBOutlet weak var descriptionTextField : TweeActiveTextField!
     @IBOutlet weak var ownerTextField       : TweeBorderedTextField!
@@ -32,14 +32,19 @@ class CCAddChannelVC: UIViewController {
     
     @IBAction func addChannel(_ sender: CCButton) {
         sender.showSpinner()
+        pauseScreen()
         viewModel.addChannel(nameInput: nameTextField.text, descriptionInput: descriptionTextField.text, foreignLinkInput: foreignLinkTextField.text) { [weak self] result in
             switch result {
             case .success(let channel):
-                guard let parentVC = self?.navigationController?.viewControllers[(self?.navigationController?.viewControllers.count ?? 2) - 2] as? CCChannelActionDelegate else { return }
-                parentVC.channelAdded(data: channel)
-                DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
+                DispatchQueue.main.async {
+                    guard let parentVC = self?.navigationController?.viewControllers[(self?.navigationController?.viewControllers.count ?? 2) - 2] as? CCChannelActionDelegate else { return }
+                    parentVC.channelAdded(data: channel)
+                    self?.unpauseScreen()
+                    self?.navigationController?.popViewController(animated: true)
+                }
             case .failure(let error):
                 print(error)
+                self?.unpauseScreen()
                 sender.hideSpinner()
             }
         }

@@ -127,14 +127,20 @@ extension CCChannelsService {
     /// - Returns: nil
     func deleteChannel(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
         
-        //Remove Channel from all Owners and Members
-        
         //Remove Channel Object
         let query = collectionRef(.channelsData)
         query.document(channelInput.id ?? "").delete(completion: { (error) in
             guard error == nil else { completion(.failure(.channelDataWriteFailure)); return }
             completion(.success(channelInput))
         })
+//
+//        //Remove Channel from all Owners and Members
+//        let query2 = make(.userChannels, in: "member", contains: channelInput.id ?? "")
+//        query2.
+    }
+    
+    func removeChannelFromAllUsers(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
+        
     }
 }
 
@@ -147,7 +153,11 @@ extension CCChannelsService {
     ///   - completion: completion handler
     /// - Returns: nil
     func addEntries(channelID: String?, completion: @escaping (Result<Any?, CCError>)->()) {
-        addUserChannelsEntry(channelID: channelID, type: .owned, completion: completion)
+        let dg = DispatchGroup()
+        dg.enter()
+        addUserChannelsEntry(dg: dg, channelID: channelID, type: .owned, completion: completion)
+        
+        dg.notify(queue: .global()) { completion(.success(nil)) }
     }
     
     /// Adds created group to user-groups table
@@ -157,11 +167,20 @@ extension CCChannelsService {
     ///   - type: Type of group. Can be *owned* or *member*
     ///   - completion: completion handler
     /// - Returns: nil
-    func addUserChannelsEntry(channelID: String?, type: CCCrowdRelation, completion: @escaping (Result<Any?, CCError>)->()) {
-        guard let channelID = channelID else { completion(.failure(.addUserChannelEntryFailure)); return }
+    func addUserChannelsEntry(dg: DispatchGroup, channelID: String?, type: CCCrowdRelation, completion: @escaping (Result<Any?, CCError>)->()) {
+        guard let channelID = channelID else { dg.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
         userChannelsDocReferrence().updateData(["\(type.rawValue)": FieldValue.arrayUnion(["\(channelID)"])]) { (error) in
-            guard error == nil else { completion(.failure(.addUserChannelEntryFailure)); return }
-            completion(.success(nil))
+            guard error == nil else { dg.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
+            dg.leave()
+        }
+    }
+    
+    //Unused atm
+    func addChannelUserEntry(dg: DispatchGroup, channelID: String?, type: CCCrowdRelation, completion: @escaping (Result<Any?, CCError>)->()) {
+        guard let channelID = channelID else { dg.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
+        channelUsersDocReferrence(id: channelID).updateData(["\(type.rawValue)": FieldValue.arrayUnion(["\(channelID)"])]) { (error) in
+            guard error == nil else { dg.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
+            dg.leave()
         }
     }
 }
