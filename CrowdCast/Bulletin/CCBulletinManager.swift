@@ -22,7 +22,18 @@ class CCBulletinManager {
     
     static func joinChannel() -> BLTNPageItem {
         let page = CCBLTNPageItem(title: "Join Channel")
-        page.actionButtonTitle      = "Scan QR Code"
+        //page.actionButtonTitle      = "Scan QR Code"
+        page.alternativeButtonTitle = "Join via Dynamic Link"
+        page.alternativeHandler = { item in
+            page.next = enterCode()
+            item.manager?.displayNextItem()
+        }
+        return page
+    }
+    
+    static func joinCrowd() -> BLTNPageItem {
+        let page = CCBLTNPageItem(title: "Join Crowd")
+        //page.actionButtonTitle      = "Scan QR Code"
         page.alternativeButtonTitle = "Join via Dynamic Link"
         page.alternativeHandler = { item in
             page.next = enterCode()

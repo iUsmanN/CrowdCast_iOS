@@ -35,12 +35,12 @@ class CCCollectionSectionHeader: UICollectionReusableView {
     }
 }
 
-extension CCCollectionSectionHeader : CCAddGroup {
+extension CCCollectionSectionHeader : CCAddGroup, CCJoinCrowd {
     
     @IBAction func rightButtonPressed(_ sender: Any) {
         switch rightButtonAction {
         case .joinGroup:
-            prints("join group")
+            joinCrowd(CCCollectionSectionHeader.bulletin)
         case .newGroup:
             addGroup()
         default:
