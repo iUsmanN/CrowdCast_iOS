@@ -178,3 +178,6 @@ Frameworks used:
 - Kingfisher
 ```swift
 ```
+
+---------------
+Muhammad Usman Nazir
