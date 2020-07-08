@@ -159,24 +159,105 @@ enum CardHeaderAction {
 Frameworks used:
 
 - Firestore
+
+<img src="https://user-images.githubusercontent.com/15052850/86951580-2aaf1480-c16b-11ea-9657-b474cb6612e3.jpeg" width="150">
+
 ```swift
+//MARK: CHANNELS
+extension CCQueryEngine {
+    .
+    .
+    .
+    func userChannel(id: String?) -> DocumentReference {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.document("\(env)\(CCQueryPath.channelsData.rawValue)/\(id ?? "")")
+    }
+    .
+    .
+    .
+}
+```
+
+```swift
+func fetchData<T: Codable>(query: Query, completion: @escaping (Result<[T], Error>) -> ()){
+        query.getDocuments { (documents, error) in
+            guard error == nil, let data = documents else {
+                completion(.failure(CCError.firebaseFailure))
+                return
+            }
+            do {
+                let output = try data.documents.compactMap({ try $0.data(as: T.self) })
+                completion(.success(output))
+            } catch {
+                completion(.failure(CCError.networkEngineFailure))
+            }
+        }
+    }
+}
 ```
 
 - Twilio Video SDK
-```swift
 
+<img src="https://user-images.githubusercontent.com/15052850/86951835-7eb9f900-c16b-11ea-961b-dd39328e363f.png" width="150">
+
+```swift
+extension CCCallScreenVM : CCTwilioService {
+    
+    ///Joins the Twilio Video Channel
+    func joinChannel(result: ((Result<Room, CCError>)->())?){
+        guard let channelID = channelData?.id else { result?(.failure(.twilioCredentialsError)); return }
+        refreshAccessToken { [weak self](tokenResult) in
+            switch tokenResult {
+            case .success(let token):
+                let connectOptions = ConnectOptions(token: token.token ?? "") { (connectOptionsBuilder) in
+                    connectOptionsBuilder.roomName = channelID
+                    if let audioTrack = self?.localAudioTrack {
+                        connectOptionsBuilder.audioTracks   = [ audioTrack ]
+                    }
+                    if let dataTrack = self?.localDataTrack {
+                        connectOptionsBuilder.dataTracks    = [ dataTrack ]
+                    }
+                    if let videoTrack = self?.localVideoTrack {
+                        connectOptionsBuilder.videoTracks   = [ videoTrack ]
+                    }
+                }
+                self?.room = TwilioVideoSDK.connect(options: connectOptions, delegate: self)
+            case .failure(let error):
+                result?(.failure(error))
+            }
+        }
+    }
+}
 ```
 
 - Branch.io Analytics
+
+<img src="https://user-images.githubusercontent.com/15052850/86951607-2e429b80-c16b-11ea-86b2-4af5927762c5.png" width="150">
+
 ```swift
+
 ```
 
 - Firebase Deeplinking
-```swift
-```
 
-- Kingfisher
+<img src="https://user-images.githubusercontent.com/15052850/86951939-a90bb680-c16b-11ea-8d28-4e2c88cd2138.png" width="150">
+
 ```swift
+protocol CCDynamicLinkEngine {}
+
+extension CCDynamicLinkEngine {
+    
+    func generateShareLink<T: CCContainsID>(input: T?, completion: @escaping (Result<String?, CCError>)->()){
+        let lp = linkProperties()
+        lp.addControlParam("id", withValue: input?.id ?? "")
+        lp.addControlParam("isGroup", withValue: input is CCChannel ? "false" : "true")
+        universalObject().getShortUrl(with: lp) { (string, error) in
+            guard error == nil else { completion(.failure(.branchLinkError)); return }
+            completion(.success(string))
+        }
+    }
+}
 ```
 
 ---------------
