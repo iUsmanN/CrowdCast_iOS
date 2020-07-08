@@ -132,14 +132,75 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
     }
 ```
 
-- Swift Result Types
-
-```swift
-```
 
 - Swift Combine
 
 ```swift
+class CCChannelsVM {
+    .
+    .
+    .
+    let channelsPublisher   = PassthroughSubject<(dataAction, [IndexPath]), Never>()
+    .
+    .
+    .
+    self?.publishChannelUpdates(action: CCChannelsVC.refresh ? .refresh : .insert, newCreatedChannels: newMyChannels, newJoinedChannels: newJoinedChannels)
+    .
+    .
+    .
+}
+```
+
+```swift
+extension CCChannelsVC {
+    
+    func bindVM(){
+        viewModel?.channelsPublisher.sink(receiveValue: { [weak self] (indexPathsInput) in
+            switch indexPathsInput.0 {
+            case .insert:
+                self?.insertRows(at: indexPathsInput.1)
+            case .remove:
+                self?.removeRows(at: indexPathsInput.1)
+            case .refresh:
+                self?.refreshRows()
+            }}).store(in: &combineCancellable)
+    }
+    .
+    .
+    .
+}
+```
+
+- Swift Extensions
+
+```swift
+class CCCameraView          : UIView {
+    
+    var captureSession                  = AVCaptureSession()
+    var videoPreviewLayer               : AVCaptureVideoPreviewLayer?
+    var capturePhotoOutput              = AVCapturePhotoOutput()
+    
+    func setupCameraView() {
+        initUI(.front)
+    }
+    
+    func initUI(_ position: AVCaptureDevice.Position) {
+        guard let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: position) else { return }
+        do {
+            let input = try AVCaptureDeviceInput(device: captureDevice)
+            if captureSession.canAddInput(input) { captureSession.addInput(input) }
+            DispatchQueue.main.async { [weak self] in
+                self?.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self!.captureSession)
+                self?.videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                self?.videoPreviewLayer?.frame = self!.frame
+                self?.layer.addSublayer(self!.videoPreviewLayer!)
+                self?.captureSession.commitConfiguration()
+            }
+        } catch {
+            print("Error")
+        }
+    }
+}
 ```
 
 - Swift Enums
@@ -148,12 +209,6 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
 enum CardHeaderAction {
     case newChannel, newGroup, joinChannel, joinGroup, viewAll, pinnedChannels
 }
-```
-
-- Swift Extensions
-
-```swift
-
 ```
 
 Frameworks used:
@@ -259,6 +314,32 @@ extension CCDynamicLinkEngine {
     }
 }
 ```
+- Bulletin Board
 
+```swift
+class CCBulletinManager {
+    
+    var manager: BLTNItemManager?
+    
+    func setItem(item: BLTNItem) {
+        manager = BLTNItemManager(rootItem: item)
+        manager?.backgroundViewStyle = .dimmed
+    }
+    
+    static func joinChannel() -> BLTNPageItem {
+        let page = CCBLTNPageItem(title: "Join Channel")
+        //page.actionButtonTitle      = "Scan QR Code"
+        page.alternativeButtonTitle = "Join via Dynamic Link"
+        page.alternativeHandler = { item in
+            page.next = enterCode()
+            item.manager?.displayNextItem()
+        }
+        return page
+    }
+    .
+    .
+    .
+}
+```
 ---------------
 Muhammad Usman Nazir
