@@ -6,7 +6,7 @@ With Crowd Cast, there is no need to individually share video call links with pe
 
 Crowd Cast is a side project aimed at showcasing my programming style and some of the technologies that I have worked with over time with Swift in iOS.
 
-The app includes the following programming practices:
+The app includes the following programming practices (Examples attached):
 
 - MVVM
 ```swift
