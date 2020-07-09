@@ -18,7 +18,7 @@ extension CCPauseScreenProtocol {
         unpauseScreen()
         let tagView = UIView(frame: view.frame)
         tagView.tag = 666
-        tagView.backgroundColor = .red
+        tagView.backgroundColor = .clear
         DispatchQueue.main.async { [weak self] in self?.view.addSubview(tagView) }
     }
     
