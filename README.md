@@ -1,8 +1,26 @@
-# Crowd Cast
+<p align="center">
+  <img width="460" src="https://user-images.githubusercontent.com/15052850/87014242-49ea8800-c1e5-11ea-8463-5d15a9996f44.png">
+</p>
+
+
+----------------------
 
 In the current state of affairs, we often have to attend Video Calls with collgues, friends and families. As the medium of video calls becomoes increasingly popular, we often find ourselves sharing links to video calls which everyone can join in. But sharing links again and again to everyone can be tedious and inefficient. Crowd Cast is a project aimed at adding a layer to this need. 
 
 With Crowd Cast, there is no need to individually share video call links with people anymore. Providing an independant video calling platform, Crowd Cast allows you to create and join video call channels seamlessly. Crowds are groups of people that can be created where each member can access each video call channel within the Crowd. The individual channels you create can be shared and join using generated short deeplinks that provide a swift experience to quickly get started.
+
+----------------------
+
+### Some Screens
+
+<p align="center">
+      <img width="150" src="https://user-images.githubusercontent.com/15052850/87017345-49ec8700-c1e9-11ea-8b0f-f6140b2f4915.png">
+      <img width="150" src="https://user-images.githubusercontent.com/15052850/87017715-c5e6cf00-c1e9-11ea-83ed-b2d344e2e989.png">
+      <img width="150" src="https://user-images.githubusercontent.com/15052850/87017305-42c57900-c1e9-11ea-8b40-bfa3b8d3721a.png">
+      <img width="150" src="https://user-images.githubusercontent.com/15052850/87017319-4527d300-c1e9-11ea-9512-edbf7f220f08.png">
+      <img width="150" src="https://user-images.githubusercontent.com/15052850/87017337-48bb5a00-c1e9-11ea-93ea-a5efffe6b6aa.png">
+      <img width="150" src="https://user-images.githubusercontent.com/15052850/87017327-46590000-c1e9-11ea-9487-b050e593f8b2.png">
+</p>
 
 Crowd Cast is a side project aimed at showcasing my programming style and some of the technologies that I have worked with over time with Swift in iOS.
 
@@ -10,6 +28,7 @@ The app includes the following programming practices (Examples attached):
 
 - MVVM
 ```swift
+
 ```
 
 - Protocol Oriented Programming
@@ -210,6 +229,9 @@ enum CardHeaderAction {
     case newChannel, newGroup, joinChannel, joinGroup, viewAll, pinnedChannels
 }
 ```
+
+----------------------
+
 
 Frameworks used:
 
