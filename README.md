@@ -27,9 +27,9 @@ Crowd Cast is a side project aimed at showcasing my programming style and some o
 The app includes the following programming practices (Examples attached):
 
 - MVVM
-```swift
-
-```
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/15052850/87025608-0fd4b280-c1f4-11ea-85b5-f8e65f19edca.png">
+</p>
 
 - Protocol Oriented Programming
 
@@ -57,7 +57,7 @@ extension CCSetsNavbar {
 }
 ```
 
-- Generics
+- Generic Programming
 
 ```swift
 func request<T: Codable>(endpoint: Endpoint, result: @escaping (Result<T, CCError>)->()){
