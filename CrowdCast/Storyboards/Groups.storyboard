@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add CrowdVC-->
+        <scene sceneID="chA-uL-oA0">
+            <objects>
+                <viewController storyboardIdentifier="CCAddGroupVC" hidesBottomBarWhenPushed="YES" id="r3h-EF-Dj3" customClass="CCAddCrowdVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cu1-Xk-Gx3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-BQ-whk">
+                                <rect key="frame" x="124" y="80.5" width="166" height="162.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fnx-BQ-whk" secondAttribute="height" id="u1B-rQ-wmn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G92-bZ-bXf">
+                                <rect key="frame" x="124" y="224.5" width="166" height="20"/>
+                                <color key="backgroundColor" name="Foreground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="13M-TB-IDH"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="xh7-Uc-C4S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                <state key="normal" title="CHANGE">
+                                    <color key="titleColor" name="Inverted"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeGroupPicture:" destination="r3h-EF-Dj3" eventType="touchUpInside" id="J3M-MK-WL0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsK-ei-mAq" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="284.5" width="364" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Name"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABY-yf-FHb" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="363.5" width="364" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Description"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Usman Nazir" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-wp-oBh" customClass="TweeBorderedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="442.5" width="364" height="29"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" name="Main Accent"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Owner"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2g-UN-Rb4" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                                <rect key="frame" x="97" y="767" width="220" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="gqO-02-SZU"/>
+                                    <constraint firstAttribute="height" constant="45" id="nRi-sh-00r"/>
+                                </constraints>
+                                <state key="normal" title="CREATE"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createChannel:" destination="r3h-EF-Dj3" eventType="touchUpInside" id="ktu-mV-8cN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="Fnx-BQ-whk" firstAttribute="centerX" secondItem="cu1-Xk-Gx3" secondAttribute="centerX" id="DXV-Rj-YWX"/>
+                            <constraint firstItem="2c7-EW-Z5A" firstAttribute="trailing" secondItem="b5b-wp-oBh" secondAttribute="trailing" constant="25" id="DnE-j2-rZ6"/>
+                            <constraint firstItem="Fnx-BQ-whk" firstAttribute="top" secondItem="2c7-EW-Z5A" secondAttribute="top" constant="35" id="FYZ-tv-hic"/>
+                            <constraint firstItem="2c7-EW-Z5A" firstAttribute="bottom" secondItem="l2g-UN-Rb4" secondAttribute="bottom" constant="50" id="GnM-py-eDW"/>
+                            <constraint firstItem="G92-bZ-bXf" firstAttribute="trailing" secondItem="Fnx-BQ-whk" secondAttribute="trailing" id="LHP-DA-gje"/>
+                            <constraint firstItem="Fnx-BQ-whk" firstAttribute="width" secondItem="Fnx-BQ-whk" secondAttribute="height" id="MeF-Ya-Aot"/>
+                            <constraint firstItem="Fnx-BQ-whk" firstAttribute="width" secondItem="2c7-EW-Z5A" secondAttribute="width" multiplier="0.4" id="Nod-Pj-8I6"/>
+                            <constraint firstItem="b5b-wp-oBh" firstAttribute="top" secondItem="ABY-yf-FHb" secondAttribute="bottom" constant="50" id="WJn-9l-OuX"/>
+                            <constraint firstItem="2c7-EW-Z5A" firstAttribute="trailing" secondItem="ABY-yf-FHb" secondAttribute="trailing" constant="25" id="XNY-Dj-M47"/>
+                            <constraint firstItem="G92-bZ-bXf" firstAttribute="bottom" secondItem="Fnx-BQ-whk" secondAttribute="bottom" id="ar9-0N-Xed"/>
+                            <constraint firstItem="l2g-UN-Rb4" firstAttribute="centerX" secondItem="cu1-Xk-Gx3" secondAttribute="centerX" id="bTl-XY-Ljr"/>
+                            <constraint firstItem="ABY-yf-FHb" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="doN-2r-lUM"/>
+                            <constraint firstItem="b5b-wp-oBh" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="k3J-Ji-Hu1"/>
+                            <constraint firstItem="ABY-yf-FHb" firstAttribute="top" secondItem="nsK-ei-mAq" secondAttribute="bottom" constant="50" id="kew-vg-aEa"/>
+                            <constraint firstItem="nsK-ei-mAq" firstAttribute="top" secondItem="Fnx-BQ-whk" secondAttribute="bottom" constant="40" id="qee-zz-Jrc"/>
+                            <constraint firstItem="2c7-EW-Z5A" firstAttribute="trailing" secondItem="nsK-ei-mAq" secondAttribute="trailing" constant="25" id="s8S-QA-Tcv"/>
+                            <constraint firstItem="G92-bZ-bXf" firstAttribute="leading" secondItem="Fnx-BQ-whk" secondAttribute="leading" id="y21-lb-oYb"/>
+                            <constraint firstItem="nsK-ei-mAq" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="zPb-UV-rzr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2c7-EW-Z5A"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="ABY-yf-FHb" id="cSp-nS-tTN"/>
+                        <outlet property="groupPicture" destination="Fnx-BQ-whk" id="tck-ea-C9l"/>
+                        <outlet property="nameTextField" destination="nsK-ei-mAq" id="Nlc-NT-qta"/>
+                        <outlet property="ownerTextField" destination="b5b-wp-oBh" id="ay0-lJ-lOI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdj-ea-i5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-983" y="42"/>
+        </scene>
+        <!--Crowd Channels-->
+        <scene sceneID="9p3-iG-yPF">
+            <objects>
+                <viewController storyboardIdentifier="CCCrowdChannelsVC" title="Crowd Channels" hidesBottomBarWhenPushed="YES" id="5Je-PM-BsU" customClass="CCCrowdChannelsVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sZB-er-t2t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3It-6z-nUx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rSA-4s-Zwm" firstAttribute="trailing" secondItem="3It-6z-nUx" secondAttribute="trailing" id="7tC-Ny-acS"/>
+                            <constraint firstAttribute="bottom" secondItem="3It-6z-nUx" secondAttribute="bottom" id="dVw-1i-q7z"/>
+                            <constraint firstItem="3It-6z-nUx" firstAttribute="top" secondItem="rSA-4s-Zwm" secondAttribute="top" id="ev7-bu-D03"/>
+                            <constraint firstItem="3It-6z-nUx" firstAttribute="leading" secondItem="rSA-4s-Zwm" secondAttribute="leading" id="fvL-Jk-x9d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rSA-4s-Zwm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="1LD-b2-yZg">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="info.circle" catalog="system" id="kST-n3-rNp"/>
+                            <barButtonItem title="share" image="link" catalog="system" id="l9C-8T-k0H">
+                                <connections>
+                                    <action selector="shareLinkPressed:" destination="5Je-PM-BsU" id="kLt-5b-993"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="3It-6z-nUx" id="DHp-ZT-8Il"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXM-Ba-hLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-186" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="link" catalog="system" width="128" height="116"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Foreground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Inverted">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Main Accent">
+            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
