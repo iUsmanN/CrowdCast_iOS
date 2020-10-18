@@ -25,12 +25,14 @@ class CCAddCrowdVC: CCImagePickingVC {
     
     @IBAction func createChannel(_ sender: CCButton) {
         sender.showSpinner()
+        pauseScreen()
         viewModel.addGroup(groupName: nameTextField.text, groupDescription: descriptionTextField.text, image: groupPicture.image) { [weak self](result) in
             switch result {
             case .success(_):
                 DispatchQueue.main.async { self?.navigationController?.popViewController(animated: true) }
             case .failure(let error):
                 sender.hideSpinner()
+                self?.unpauseScreen()
                 prints(error)
             }
         }

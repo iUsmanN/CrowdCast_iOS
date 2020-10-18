@@ -11,7 +11,7 @@ import Kingfisher
 
 class CCJoinChannelVC: UIViewController {
  
-    @IBOutlet weak var joinBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var joinBottomConstraint     : NSLayoutConstraint!
     @IBOutlet weak var profileView              : UIImageView!
     @IBOutlet weak var cameraView               : CCCameraView!
     @IBOutlet weak var gradientView             : UIImageView!
@@ -38,10 +38,9 @@ class CCJoinChannelVC: UIViewController {
         super.viewDidDisappear(animated)
         toggleCameraView(enable: false)
     }
-    
 }
 
-extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
+extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine, CCDynamicLinkEngine, CCDynamicLinkPreview {
     
     @IBAction func joinCall(_ sender: Any) {
         let viewController = instantiateViewController(storyboard: .Channels, viewController: .CCCallScreenVC, as: CCCallScreenVC())
@@ -72,6 +71,17 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine {
         guard let url = viewModel?.foreignURL() else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+    
+    @IBAction func linkPressed(_ sender: Any) {
+        generateShareLink(input: viewModel?.data) { [weak self](result) in
+            switch result {
+            case .success(let string):
+                self?.previewDynamicLink(self?.viewModel?.bulletin, channelName: self?.viewModel?.getData()?.name ?? "", deeplink: string ?? "", viewController: self)
+            case .failure(let error):
+                prints(error)
+            }
+        }
+    }
 }
 
 extension CCJoinChannelVC : CCImageStorage {
@@ -89,6 +99,7 @@ extension CCJoinChannelVC : CCImageStorage {
     func refreshNavBar(){
         navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
         navigationItem.title = viewModel?.channelName() ?? ""
+        if viewModel?.data?.isGroupChannel ?? false { navigationItem.rightBarButtonItems?.remove(at: 1) }
     }
     
     func toggleForeignJoinView(enable: Bool){
@@ -111,7 +122,6 @@ extension CCJoinChannelVC : CCImageStorage {
             cameraView.stopCapture()
         }
     }
-    
     
     func setupLayers() {
         profileView.layer.cornerRadius = profileView.frame.size.width / 2

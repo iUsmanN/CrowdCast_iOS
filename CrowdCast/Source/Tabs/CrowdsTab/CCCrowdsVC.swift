@@ -86,7 +86,7 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, CCG
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 11) / 2, height: 200)
+        return CGSize(width: (collectionView.frame.size.width - 10) / 2, height: 200)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -109,6 +109,8 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, CCG
         default:
             assert(false, "Unexpected element kind")
         }
+        
+        return UICollectionReusableView()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

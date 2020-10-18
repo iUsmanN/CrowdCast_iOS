@@ -48,3 +48,5 @@ class CCUIViewController: UIViewController {
         }
     }
 }
+
+extension CCUIViewController : CCPauseScreenProtocol {}

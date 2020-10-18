@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class CCImagePickingVC: UIViewController {
+class CCImagePickingVC: CCUIViewController {
 
     var imagePicker         = UIImagePickerController()
     var imagePickerDelegate : CCImagePickedDelegate?

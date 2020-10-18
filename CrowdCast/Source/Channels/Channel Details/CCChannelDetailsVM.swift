@@ -37,7 +37,7 @@ struct CCChannelDetailsVM {
 extension CCChannelDetailsVM {
     
     func numberOfSections() -> Int {
-        return sectionTitles.count
+        return (data.owners?.contains(CCProfileManager.sharedInstance.getUID()) ?? false) ? sectionTitles.count : sectionTitles.count - 1
     }
     
     func sectionTitle(section: Int) -> String? {

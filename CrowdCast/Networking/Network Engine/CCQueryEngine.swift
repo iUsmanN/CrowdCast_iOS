@@ -109,9 +109,21 @@ extension CCQueryEngine {
         return db.document("\(env)\(CCQueryPath.userChannels.rawValue)/\(CCProfileManager.sharedInstance.getUID())")
     }
     
+    func channelUsersDocReferrence(id: String?) -> DocumentReference {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.document("\(env)\(CCQueryPath.channelUsers.rawValue)/\(id ?? "")")
+    }
+    
     func userChannel(id: String?) -> DocumentReference {
         let db = Firestore.firestore()
         let env = Constants.environment
         return db.document("\(env)\(CCQueryPath.channelsData.rawValue)/\(id ?? "")")
     }
+    
+//    func channelUsers(id: String?) -> CollectionReference {
+//        let db = Firestore.firestore()
+//        let env = Constants.environment
+//        return db.collection("\(env)\(CCQueryPath.userChannels.rawValue)")
+//    }
 }

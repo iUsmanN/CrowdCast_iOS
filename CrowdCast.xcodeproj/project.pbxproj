@@ -68,6 +68,7 @@
 		B65C334A2466FC430055DA53 /* CCJoinChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */; };
 		B65F38A4244CA0C200FA2EDF /* CCHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */; };
 		B66164452427E0BB002C068A /* CCSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66164442427E0BB002C068A /* CCSignUpVC.swift */; };
+		B66451D124988CAA0020B77E /* CCPauseScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66451D024988CAA0020B77E /* CCPauseScreenProtocol.swift */; };
 		B66824592471DCD900651166 /* CCDetailsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66824572471DCD900651166 /* CCDetailsSectionHeader.swift */; };
 		B668245A2471DCD900651166 /* CCDetailsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66824582471DCD900651166 /* CCDetailsSectionHeader.xib */; };
 		B668245C2472EAEF00651166 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B668245B2472EAEF00651166 /* logo.png */; };
@@ -270,6 +271,7 @@
 		B65C33492466FC430055DA53 /* CCJoinChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCJoinChannelVM.swift; sourceTree = "<group>"; };
 		B65F38A3244CA0C200FA2EDF /* CCHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCHapticEngine.swift; path = "CrowdCast/Source/Channels/Call Screen/CCHapticEngine.swift"; sourceTree = SOURCE_ROOT; };
 		B66164442427E0BB002C068A /* CCSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSignUpVC.swift; sourceTree = "<group>"; };
+		B66451D024988CAA0020B77E /* CCPauseScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPauseScreenProtocol.swift; sourceTree = "<group>"; };
 		B66824572471DCD900651166 /* CCDetailsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDetailsSectionHeader.swift; sourceTree = "<group>"; };
 		B66824582471DCD900651166 /* CCDetailsSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCDetailsSectionHeader.xib; sourceTree = "<group>"; };
 		B668245B2472EAEF00651166 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				B60DE3E224545432003E491C /* CCContainsCellData.swift */,
 				B6D04E6F24558DD4005F4E61 /* CCContainsID.swift */,
 				B6BEBF71247E3DF900461C12 /* CCSyncUserData.swift */,
+				B66451D024988CAA0020B77E /* CCPauseScreenProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1563,6 +1566,7 @@
 				B64E4D072439E8370011715A /* CCCrowd.swift in Sources */,
 				B65C334A2466FC430055DA53 /* CCJoinChannelVM.swift in Sources */,
 				B6ACD0862441AE7F00405838 /* CCChannelDetailsVC.swift in Sources */,
+				B66451D124988CAA0020B77E /* CCPauseScreenProtocol.swift in Sources */,
 				B64E4D1F243A3C7B0011715A /* CCQueryPaths.swift in Sources */,
 				B6BD90E124378E4F00F50848 /* CCJoinChannelVC.swift in Sources */,
 				B6FEAA0E246C538500D194C3 /* CCCrowdsVM.swift in Sources */,
@@ -1756,12 +1760,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 524G574595;
 				INFOPLIST_FILE = CrowdCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crowdcast.crowd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1775,12 +1781,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 524G574595;
 				INFOPLIST_FILE = CrowdCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crowdcast.crowd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
