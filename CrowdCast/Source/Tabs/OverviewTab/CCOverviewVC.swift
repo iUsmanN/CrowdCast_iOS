@@ -12,6 +12,7 @@ import Device
 class CCOverviewVC: CCUIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var curtainView: UIView!
     
     var viewModel       = CCOverviewVM()
     
@@ -27,6 +28,9 @@ class CCOverviewVC: CCUIViewController {
                     largeTitles     : true,
                     profileAction   : #selector(viewSettings))
         setupTableView()
+        UIView.animate(withDuration: 0.75) { [weak self] in
+            self?.curtainView.alpha = 0
+        } completion: { (_) in }
     }
 }
 
