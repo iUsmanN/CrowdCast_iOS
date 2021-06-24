@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0409BC4C2685453200A02517 /* Webp.net-resizeimage (3).png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC482685453100A02517 /* Webp.net-resizeimage (3).png */; };
+		0409BC4D2685453200A02517 /* Webp.net-resizeimage (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC492685453100A02517 /* Webp.net-resizeimage (2).png */; };
+		0409BC4E2685453200A02517 /* Webp.net-resizeimage (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC4A2685453200A02517 /* Webp.net-resizeimage (1).png */; };
+		0409BC4F2685453200A02517 /* Webp.net-resizeimage (4).png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC4B2685453200A02517 /* Webp.net-resizeimage (4).png */; };
+		0409BC54268545BD00A02517 /* blue_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC53268545BD00A02517 /* blue_gradient.png */; };
+		0409BC5E2685469700A02517 /* blue_gradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC5D2685469700A02517 /* blue_gradient2.png */; };
 		047078DB2685399A00B1476B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047078DA2685399A00B1476B /* GoogleService-Info.plist */; };
 		19BD2E55803CD5FC8922B86D /* Pods_CrowdCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */; };
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
@@ -206,6 +212,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0409BC482685453100A02517 /* Webp.net-resizeimage (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (3).png"; sourceTree = "<group>"; };
+		0409BC492685453100A02517 /* Webp.net-resizeimage (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (2).png"; sourceTree = "<group>"; };
+		0409BC4A2685453200A02517 /* Webp.net-resizeimage (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (1).png"; sourceTree = "<group>"; };
+		0409BC4B2685453200A02517 /* Webp.net-resizeimage (4).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (4).png"; sourceTree = "<group>"; };
+		0409BC53268545BD00A02517 /* blue_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_gradient.png; sourceTree = "<group>"; };
+		0409BC5D2685469700A02517 /* blue_gradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_gradient2.png; sourceTree = "<group>"; };
 		047078DA2685399A00B1476B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCast_CrowdCastUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F043EA963985C662E1BEE78 /* Pods-CrowdCast-CrowdCastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast-CrowdCastUITests.release.xcconfig"; path = "Target Support Files/Pods-CrowdCast-CrowdCastUITests/Pods-CrowdCast-CrowdCastUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -427,6 +439,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0409BC472685452300A02517 /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				0409BC53268545BD00A02517 /* blue_gradient.png */,
+				0409BC4A2685453200A02517 /* Webp.net-resizeimage (1).png */,
+				0409BC492685453100A02517 /* Webp.net-resizeimage (2).png */,
+				0409BC482685453100A02517 /* Webp.net-resizeimage (3).png */,
+				0409BC4B2685453200A02517 /* Webp.net-resizeimage (4).png */,
+			);
+			path = Logos;
+			sourceTree = "<group>";
+		};
 		26EB2F6320B3F6FE10010C25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1046,6 +1070,8 @@
 		B6D7F58324277A52001BEBBC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0409BC5D2685469700A02517 /* blue_gradient2.png */,
+				0409BC472685452300A02517 /* Logos */,
 				B6D7F55A24277A1B001BEBBC /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -1289,6 +1315,7 @@
 				B6D04E6C24558851005F4E61 /* trans.png in Resources */,
 				B67E8C57245DF237002FAD55 /* CCCardMemberCell.xib in Resources */,
 				B6BEBF64247C31DE00461C12 /* holi_blue.png in Resources */,
+				0409BC5E2685469700A02517 /* blue_gradient2.png in Resources */,
 				B693E304243113B4002B26BC /* Reading.png in Resources */,
 				B6BEBF58247BDC1300461C12 /* abs3.png in Resources */,
 				B6D7F55E24277A1B001BEBBC /* LaunchScreen.storyboard in Resources */,
@@ -1313,12 +1340,14 @@
 				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
 				B6D04E68245493AE005F4E61 /* back transparent.jpeg in Resources */,
 				B6D04E722455AAA7005F4E61 /* profile2.png in Resources */,
+				0409BC4D2685453200A02517 /* Webp.net-resizeimage (2).png in Resources */,
 				B61F3E4A245872FB000FF940 /* 3 lines.png in Resources */,
 				B6BEBF6C247C362A00461C12 /* undraw_friendship_mni7 (3).png in Resources */,
 				B61A849D2451F5FB00150188 /* CCDetailsSegueTVC.xib in Resources */,
 				B679620624324E6000C2A13C /* Onboarding.storyboard in Resources */,
 				B6D04E6A245493AE005F4E61 /* back.jpeg in Resources */,
 				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
+				0409BC4F2685453200A02517 /* Webp.net-resizeimage (4).png in Resources */,
 				B668245C2472EAEF00651166 /* logo.png in Resources */,
 				B6BEBF5C247BDEA600461C12 /* blue.png in Resources */,
 				B6BEBF6B247C362A00461C12 /* undraw_Tree_swing_646s.png in Resources */,
@@ -1330,11 +1359,13 @@
 				B6BEBF60247BE0E500461C12 /* undraw_friendship_mni7.png in Resources */,
 				B6BEBF70247C362A00461C12 /* undraw_taking_selfie_lbo7 (1).png in Resources */,
 				B693E30B24311DF1002B26BC /* adil.png in Resources */,
+				0409BC4E2685453200A02517 /* Webp.net-resizeimage (1).png in Resources */,
 				B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */,
 				B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */,
 				B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */,
 				B6888A5D24747CD5002E3EB5 /* CCCollectionSectionHeader.xib in Resources */,
 				B6516A5E24955A23003B90D0 /* CCEmptyTableView.xib in Resources */,
+				0409BC54268545BD00A02517 /* blue_gradient.png in Resources */,
 				B6BEBF56247BDC1300461C12 /* abs1.png in Resources */,
 				B6BEBF6D247C362A00461C12 /* undraw_celebration_0jvk (2).png in Resources */,
 				B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */,
@@ -1353,6 +1384,7 @@
 				047078DB2685399A00B1476B /* GoogleService-Info.plist in Resources */,
 				B6D04E802455EC67005F4E61 /* undraw_imagination_ok71.png in Resources */,
 				B6BEBF57247BDC1300461C12 /* abs2.png in Resources */,
+				0409BC4C2685453200A02517 /* Webp.net-resizeimage (3).png in Resources */,
 				B631D2F5248D5F4A0030BC28 /* lf30_editor_wz3lcT.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

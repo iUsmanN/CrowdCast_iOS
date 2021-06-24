@@ -24,23 +24,31 @@
                                 <color key="textColor" name="Inverted"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With ♥, Usman Nazir." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-sJ-lEb">
-                                <rect key="frame" x="127.5" y="840" width="159.5" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Usman Nazir 💙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-sJ-lEb">
+                                <rect key="frame" x="139" y="840" width="136" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_gradient2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bzU-KN-FYd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Hg-9N-65f"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="bzU-KN-FYd" firstAttribute="trailing" secondItem="7Hg-9N-65f" secondAttribute="trailing" id="1gA-9Z-ZPz"/>
                             <constraint firstItem="Pm4-BS-sMl" firstAttribute="centerX" secondItem="XS8-lz-cFI" secondAttribute="centerX" id="ECM-WG-cgn"/>
                             <constraint firstItem="gwH-sJ-lEb" firstAttribute="bottom" secondItem="7Hg-9N-65f" secondAttribute="bottom" id="KYt-EW-Rd4"/>
+                            <constraint firstItem="bzU-KN-FYd" firstAttribute="top" secondItem="7Hg-9N-65f" secondAttribute="top" id="MF1-Wb-lsf"/>
                             <constraint firstItem="Pm4-BS-sMl" firstAttribute="centerY" secondItem="XS8-lz-cFI" secondAttribute="centerY" id="MdO-49-IKB"/>
+                            <constraint firstItem="bzU-KN-FYd" firstAttribute="leading" secondItem="7Hg-9N-65f" secondAttribute="leading" id="f2w-SN-BaL"/>
+                            <constraint firstAttribute="bottom" secondItem="bzU-KN-FYd" secondAttribute="bottom" id="jjL-jn-YzP"/>
                             <constraint firstItem="gwH-sJ-lEb" firstAttribute="centerX" secondItem="XS8-lz-cFI" secondAttribute="centerX" id="l70-zN-uQa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundGradient" destination="bzU-KN-FYd" id="Wqm-XB-Ox4"/>
                         <outlet property="crowdCast" destination="Pm4-BS-sMl" id="Ffz-Xz-zhP"/>
                     </connections>
                 </viewController>
@@ -622,6 +630,7 @@
         <image name="Email" width="50" height="50"/>
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
+        <image name="blue_gradient2.png" width="2000" height="1774"/>
         <image name="holi_blue.png" width="2049" height="1215"/>
         <image name="profile2.png" width="698" height="698"/>
         <image name="undraw_friendship_mni7 (3).png" width="1142" height="781"/>
