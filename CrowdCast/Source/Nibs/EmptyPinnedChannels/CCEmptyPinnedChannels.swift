@@ -18,4 +18,8 @@ class CCEmptyPinnedChannels: UITableViewHeaderFooterView {
     }
     */
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        backgroundColor = .yellow
+    }
 }

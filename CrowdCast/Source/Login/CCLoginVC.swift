@@ -23,6 +23,8 @@ class CCLoginVC: CCUIViewController {
     @IBOutlet weak var IllustrationTopGap: NSLayoutConstraint!
     @IBOutlet weak var IllustrationBottomGap: NSLayoutConstraint!
     
+    @IBOutlet weak var curtainView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -39,6 +41,10 @@ class CCLoginVC: CCUIViewController {
         
         IllustrationBottomGap.constant  = Device.size() > Size.screen4_7Inch ? 75 : 10
         IllustrationTopGap.constant     = Device.size() > Size.screen4_7Inch ? 60 : 20
+        
+        UIView.animate(withDuration: 0.75) { [weak self] in
+            self?.curtainView.alpha = 0
+        } completion: { (_) in }
     }
 }
 
@@ -90,7 +96,10 @@ extension CCLoginVC : CCSyncUserData {
         generateHapticFeedback(.light)
         syncUserData(uid: uid) { [weak self](result) in
             switch result {
-            case .success(_)            : self?.moveToHome()
+            case .success(_)            :
+                UIView.animate(withDuration: 0.75) { [weak self] in
+                    self?.curtainView.alpha = 1
+                } completion: { (_) in self?.moveToHome() }
             case .failure(let error)    : self?.signInFailed(error: error)
             }
         }

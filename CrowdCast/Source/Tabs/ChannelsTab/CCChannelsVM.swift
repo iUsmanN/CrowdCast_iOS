@@ -61,6 +61,12 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
     
     func fetchFreshData() {
         
+        self.myChannels.clearData()
+        self.joinedChannels.clearData()
+        
+        //Not moving forward at the moment (Need to do some work)
+        guard false else { return }
+        
         let dg = DispatchGroup()
         
         var fetchedCounts = (0, 0)

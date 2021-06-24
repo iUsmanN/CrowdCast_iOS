@@ -86,7 +86,7 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, CCG
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 10) / 2, height: 200)
+        return CGSize(width: (collectionView.frame.size.width - 20) / 2, height: 200)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

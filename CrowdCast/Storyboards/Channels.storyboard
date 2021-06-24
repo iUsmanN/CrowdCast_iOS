@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +44,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
                                         <real key="value" value="0.20000000000000001"/>
@@ -68,7 +70,7 @@
                                         <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
                                         <color key="value" name="Main Accent"/>
@@ -91,7 +93,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="1"/>
@@ -118,7 +120,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="1"/>
@@ -147,7 +149,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8p-4i-MFm" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8p-4i-MFm" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="97" y="679" width="220" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="MrJ-ws-77B"/>
@@ -171,7 +173,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V1t-eh-RwT">
                                 <rect key="frame" x="25" y="381.5" width="364" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="V3E-Mm-7N6"/>
                                 </constraints>
@@ -195,6 +197,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="wuA-Pc-e78"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="sWa-fZ-fg8" firstAttribute="top" secondItem="Qxx-IC-CvB" secondAttribute="bottom" constant="50" id="33P-pX-Aq3"/>
@@ -217,7 +220,6 @@
                             <constraint firstItem="a8p-4i-MFm" firstAttribute="centerX" secondItem="UR9-h4-9nc" secondAttribute="centerX" id="rBg-dP-LSv"/>
                             <constraint firstItem="wuA-Pc-e78" firstAttribute="bottom" secondItem="a8p-4i-MFm" secondAttribute="bottom" constant="50" id="xMp-op-aeR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wuA-Pc-e78"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
@@ -242,17 +244,17 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3fI-h2-oxV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tsB-et-LPh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3fI-h2-oxV" firstAttribute="leading" secondItem="tsB-et-LPh" secondAttribute="leading" id="Gjd-lV-lvK"/>
                             <constraint firstItem="3fI-h2-oxV" firstAttribute="top" secondItem="tsB-et-LPh" secondAttribute="top" id="IP6-ap-GrC"/>
                             <constraint firstItem="tsB-et-LPh" firstAttribute="bottom" secondItem="3fI-h2-oxV" secondAttribute="bottom" id="hwk-dC-6jL"/>
                             <constraint firstItem="tsB-et-LPh" firstAttribute="trailing" secondItem="3fI-h2-oxV" secondAttribute="trailing" id="wTT-B4-BIb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="tsB-et-LPh"/>
                     </view>
                     <navigationItem key="navigationItem" id="7kf-j5-rew">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="ADZ-Nb-OAA">
@@ -367,7 +369,8 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nIZ-7p-Mmo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="hiN-t4-C1E" secondAttribute="trailing" id="2Q6-ct-cU4"/>
                             <constraint firstItem="Arq-hl-Mlq" firstAttribute="centerY" secondItem="5Bo-xN-RJz" secondAttribute="centerY" constant="-50" id="3ZS-Jr-wvk"/>
@@ -384,7 +387,6 @@
                             <constraint firstItem="Arq-hl-Mlq" firstAttribute="centerX" secondItem="5Bo-xN-RJz" secondAttribute="centerX" id="sUI-J9-w7T"/>
                             <constraint firstItem="nIZ-7p-Mmo" firstAttribute="trailing" secondItem="KHm-fY-rN2" secondAttribute="trailing" constant="25" id="tZ6-JT-U3v"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nIZ-7p-Mmo"/>
                     </view>
                     <navigationItem key="navigationItem" id="apd-zv-Rn3"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -409,7 +411,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-9s-3JB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-NA-Rfv">
                                 <rect key="frame" x="112" y="283" width="190" height="190"/>
@@ -420,7 +422,7 @@
                             </imageView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGV-9y-JAX" customClass="CCCameraView" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BW Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-xp-9JW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -467,7 +469,7 @@
                                     <constraint firstItem="qRe-DZ-Ita" firstAttribute="height" secondItem="vbx-Hd-Vqa" secondAttribute="height" id="why-Uw-Ct5"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yz-k5-mn8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yz-k5-mn8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="97" y="762" width="220" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9sI-JX-qBs"/>
@@ -483,7 +485,7 @@
                                     <action selector="openForeignLink:" destination="as6-gm-bVv" eventType="touchUpInside" id="cqf-jR-43h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-9M-mn8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-9M-mn8" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="97" y="762" width="220" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="9TS-IB-Zs1"/>
@@ -500,6 +502,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="gmx-xp-9JW" firstAttribute="top" secondItem="WFQ-bF-BeA" secondAttribute="top" id="0EH-ed-dHe"/>
@@ -523,7 +526,6 @@
                             <constraint firstAttribute="bottom" secondItem="fkh-9s-3JB" secondAttribute="bottom" id="xi6-BG-fiK"/>
                             <constraint firstItem="yGV-9y-JAX" firstAttribute="top" secondItem="WFQ-bF-BeA" secondAttribute="top" id="yFy-p7-BXQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iqn-h8-zxp"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="6r3-4R-ksK">
                         <rightBarButtonItems>
@@ -589,7 +591,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
                                         <real key="value" value="0.20000000000000001"/>
@@ -615,7 +617,7 @@
                                         <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
                                         <color key="value" name="Main Accent"/>
@@ -638,7 +640,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="1"/>
@@ -658,7 +660,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Foreign Link (Optional)"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-hk-CED" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-hk-CED" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="97" y="679" width="220" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YwE-se-9NH"/>
@@ -682,7 +684,7 @@
                             </label>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nQd-uq-s5N">
                                 <rect key="frame" x="25" y="302.5" width="364" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JKI-nO-5IR"/>
                                 </constraints>
@@ -706,6 +708,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="TeF-RZ-Fuk"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="nQd-uq-s5N" firstAttribute="top" secondItem="qlY-ta-1ok" secondAttribute="bottom" constant="10" id="7Ic-HM-WXM"/>
@@ -725,7 +728,6 @@
                             <constraint firstItem="nQd-uq-s5N" firstAttribute="leading" secondItem="TeF-RZ-Fuk" secondAttribute="leading" constant="25" id="yh7-Bx-nho"/>
                             <constraint firstItem="qlY-ta-1ok" firstAttribute="leading" secondItem="TeF-RZ-Fuk" secondAttribute="leading" constant="25" id="ynx-HO-VGU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="TeF-RZ-Fuk"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
@@ -742,9 +744,9 @@
     <resources>
         <image name="BW Gradient" width="256" height="94"/>
         <image name="Cancel" width="72" height="72"/>
-        <image name="camera.rotate" catalog="system" width="128" height="96"/>
+        <image name="camera.rotate" catalog="system" width="128" height="94"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="link" catalog="system" width="128" height="116"/>
+        <image name="link" catalog="system" width="128" height="122"/>
         <image name="mic" catalog="system" width="108" height="128"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
@@ -765,5 +767,11 @@
         <namedColor name="blue">
             <color red="0.0" green="0.42699998617172241" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tm2-oq-thJ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                    <color key="backgroundColor" name="Background"/>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YZG-Kx-CFl">
                     <rect key="frame" x="113" y="10" width="188.5" height="70.5"/>
                     <subviews>
@@ -31,13 +37,26 @@
                     </subviews>
                 </stackView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="green"/>
             <constraints>
                 <constraint firstItem="YZG-Kx-CFl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-5" id="5yQ-qH-vph"/>
+                <constraint firstItem="Tm2-oq-thJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="68n-Gj-M9q"/>
+                <constraint firstItem="Tm2-oq-thJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="EMt-ZG-5ED"/>
+                <constraint firstItem="Tm2-oq-thJ" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="LuL-lx-4kO"/>
                 <constraint firstItem="YZG-Kx-CFl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pDF-VN-da7"/>
+                <constraint firstItem="Tm2-oq-thJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uEE-dG-oV7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="-153.01339285714286"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green">
+            <color red="0.096000000834465027" green="0.65100002288818359" blue="0.19799999892711639" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
