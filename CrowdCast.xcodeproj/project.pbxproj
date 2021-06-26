@@ -13,7 +13,13 @@
 		0409BC4F2685453200A02517 /* Webp.net-resizeimage (4).png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC4B2685453200A02517 /* Webp.net-resizeimage (4).png */; };
 		0409BC54268545BD00A02517 /* blue_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC53268545BD00A02517 /* blue_gradient.png */; };
 		0409BC5E2685469700A02517 /* blue_gradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0409BC5D2685469700A02517 /* blue_gradient2.png */; };
+		043DDE5826862A5D00322A97 /* Webp.net-resizeimage (5).png in Resources */ = {isa = PBXBuildFile; fileRef = 043DDE5626862A5C00322A97 /* Webp.net-resizeimage (5).png */; };
+		043DDE5926862A5D00322A97 /* Webp.net-resizeimage (6).png in Resources */ = {isa = PBXBuildFile; fileRef = 043DDE5726862A5D00322A97 /* Webp.net-resizeimage (6).png */; };
+		043DDE5F2686341300322A97 /* Webp.net-resizeimage (7).png in Resources */ = {isa = PBXBuildFile; fileRef = 043DDE5D2686341300322A97 /* Webp.net-resizeimage (7).png */; };
+		043DDE602686341300322A97 /* Webp.net-resizeimage (8).png in Resources */ = {isa = PBXBuildFile; fileRef = 043DDE5E2686341300322A97 /* Webp.net-resizeimage (8).png */; };
 		047078DB2685399A00B1476B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047078DA2685399A00B1476B /* GoogleService-Info.plist */; };
+		0471741926878EB80061F3DF /* 10989-gradient-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0471741826878EB80061F3DF /* 10989-gradient-1.json */; };
+		0471741E26878F400061F3DF /* grad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0471741D26878F400061F3DF /* grad.png */; };
 		19BD2E55803CD5FC8922B86D /* Pods_CrowdCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */; };
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
 		6707B85EA492079AD4852897 /* Pods_CrowdCast_CrowdCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */; };
@@ -218,7 +224,13 @@
 		0409BC4B2685453200A02517 /* Webp.net-resizeimage (4).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (4).png"; sourceTree = "<group>"; };
 		0409BC53268545BD00A02517 /* blue_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_gradient.png; sourceTree = "<group>"; };
 		0409BC5D2685469700A02517 /* blue_gradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_gradient2.png; sourceTree = "<group>"; };
+		043DDE5626862A5C00322A97 /* Webp.net-resizeimage (5).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (5).png"; sourceTree = "<group>"; };
+		043DDE5726862A5D00322A97 /* Webp.net-resizeimage (6).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (6).png"; sourceTree = "<group>"; };
+		043DDE5D2686341300322A97 /* Webp.net-resizeimage (7).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (7).png"; sourceTree = "<group>"; };
+		043DDE5E2686341300322A97 /* Webp.net-resizeimage (8).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage (8).png"; sourceTree = "<group>"; };
 		047078DA2685399A00B1476B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0471741826878EB80061F3DF /* 10989-gradient-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10989-gradient-1.json"; sourceTree = "<group>"; };
+		0471741D26878F400061F3DF /* grad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grad.png; sourceTree = "<group>"; };
 		3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdCast_CrowdCastUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F043EA963985C662E1BEE78 /* Pods-CrowdCast-CrowdCastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast-CrowdCastUITests.release.xcconfig"; path = "Target Support Files/Pods-CrowdCast-CrowdCastUITests/Pods-CrowdCast-CrowdCastUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F817045FDFF90F3895A6FB8 /* Pods-CrowdCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast.release.xcconfig"; path = "Target Support Files/Pods-CrowdCast/Pods-CrowdCast.release.xcconfig"; sourceTree = "<group>"; };
@@ -442,6 +454,10 @@
 		0409BC472685452300A02517 /* Logos */ = {
 			isa = PBXGroup;
 			children = (
+				043DDE5D2686341300322A97 /* Webp.net-resizeimage (7).png */,
+				043DDE5E2686341300322A97 /* Webp.net-resizeimage (8).png */,
+				043DDE5626862A5C00322A97 /* Webp.net-resizeimage (5).png */,
+				043DDE5726862A5D00322A97 /* Webp.net-resizeimage (6).png */,
 				0409BC53268545BD00A02517 /* blue_gradient.png */,
 				0409BC4A2685453200A02517 /* Webp.net-resizeimage (1).png */,
 				0409BC492685453100A02517 /* Webp.net-resizeimage (2).png */,
@@ -679,6 +695,8 @@
 		B631D2ED248D451D0030BC28 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				0471741D26878F400061F3DF /* grad.png */,
+				0471741826878EB80061F3DF /* 10989-gradient-1.json */,
 				B631D2F4248D5F4A0030BC28 /* lf30_editor_wz3lcT.json */,
 				B631D2F2248D528F0030BC28 /* 8682-loading.json */,
 				B631D2F0248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json */,
@@ -1313,10 +1331,12 @@
 			files = (
 				B693E302243112FF002B26BC /* Fireworks.png in Resources */,
 				B6D04E6C24558851005F4E61 /* trans.png in Resources */,
+				0471741E26878F400061F3DF /* grad.png in Resources */,
 				B67E8C57245DF237002FAD55 /* CCCardMemberCell.xib in Resources */,
 				B6BEBF64247C31DE00461C12 /* holi_blue.png in Resources */,
 				0409BC5E2685469700A02517 /* blue_gradient2.png in Resources */,
 				B693E304243113B4002B26BC /* Reading.png in Resources */,
+				043DDE5826862A5D00322A97 /* Webp.net-resizeimage (5).png in Resources */,
 				B6BEBF58247BDC1300461C12 /* abs3.png in Resources */,
 				B6D7F55E24277A1B001BEBBC /* LaunchScreen.storyboard in Resources */,
 				B61ADC212430BB5D00ECD1D2 /* Icons.xcassets in Resources */,
@@ -1327,12 +1347,14 @@
 				B61C90F72441E98E00F6B8A9 /* boys.png in Resources */,
 				B6BEBF4D247A8EAB00461C12 /* WIP.JPG in Resources */,
 				B61ADC192430B3DD00ECD1D2 /* Colors.xcassets in Resources */,
+				0471741926878EB80061F3DF /* 10989-gradient-1.json in Resources */,
 				B6D04E742455AFD3005F4E61 /* me.png in Resources */,
 				B6BEBF5E247BDF8D00461C12 /* blu4.png in Resources */,
 				B64436E72496225F00C37625 /* CCEmptyPinnedChannels.xib in Resources */,
 				B631D2F3248D528F0030BC28 /* 8682-loading.json in Resources */,
 				B6BEBF62247BE16A00461C12 /* output-onlinepngtools (7).png in Resources */,
 				B6D04E69245493AE005F4E61 /* bottom.jpeg in Resources */,
+				043DDE602686341300322A97 /* Webp.net-resizeimage (8).png in Resources */,
 				B6ACD08124410AE700405838 /* Walk.png in Resources */,
 				B6D04E7A2455DF92005F4E61 /* me3.png in Resources */,
 				B631D2EF248D45400030BC28 /* spinner A.json in Resources */,
@@ -1349,6 +1371,7 @@
 				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
 				0409BC4F2685453200A02517 /* Webp.net-resizeimage (4).png in Resources */,
 				B668245C2472EAEF00651166 /* logo.png in Resources */,
+				043DDE5926862A5D00322A97 /* Webp.net-resizeimage (6).png in Resources */,
 				B6BEBF5C247BDEA600461C12 /* blue.png in Resources */,
 				B6BEBF6B247C362A00461C12 /* undraw_Tree_swing_646s.png in Resources */,
 				B6BEBF6F247C362A00461C12 /* undraw_reading_0re1 (2).png in Resources */,
@@ -1371,6 +1394,7 @@
 				B6D04E5824546186005F4E61 /* CCTextCell.xib in Resources */,
 				B668245A2471DCD900651166 /* CCDetailsSectionHeader.xib in Resources */,
 				B631D2F1248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json in Resources */,
+				043DDE5F2686341300322A97 /* Webp.net-resizeimage (7).png in Resources */,
 				B6E3675F24352A5F00B511A0 /* Others.storyboard in Resources */,
 				B693E2FA2430F11D002B26BC /* Sitting.png in Resources */,
 				B6244DDA244F813F00E52669 /* CCSwitchTVC.xib in Resources */,

@@ -18,37 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NN1-YG-ggz" customClass="AnimationView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CROWD CAST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm4-BS-sMl">
                                 <rect key="frame" x="124.5" y="431" width="165.5" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                <color key="textColor" name="Inverted"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Usman Nazir 💙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-sJ-lEb">
                                 <rect key="frame" x="139" y="840" width="136" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_gradient2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bzU-KN-FYd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Hg-9N-65f"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="bzU-KN-FYd" firstAttribute="trailing" secondItem="7Hg-9N-65f" secondAttribute="trailing" id="1gA-9Z-ZPz"/>
+                            <constraint firstItem="NN1-YG-ggz" firstAttribute="top" secondItem="XS8-lz-cFI" secondAttribute="top" id="3tt-UI-jpl"/>
+                            <constraint firstAttribute="bottom" secondItem="NN1-YG-ggz" secondAttribute="bottom" id="CEr-YC-s4T"/>
                             <constraint firstItem="Pm4-BS-sMl" firstAttribute="centerX" secondItem="XS8-lz-cFI" secondAttribute="centerX" id="ECM-WG-cgn"/>
                             <constraint firstItem="gwH-sJ-lEb" firstAttribute="bottom" secondItem="7Hg-9N-65f" secondAttribute="bottom" id="KYt-EW-Rd4"/>
-                            <constraint firstItem="bzU-KN-FYd" firstAttribute="top" secondItem="7Hg-9N-65f" secondAttribute="top" id="MF1-Wb-lsf"/>
                             <constraint firstItem="Pm4-BS-sMl" firstAttribute="centerY" secondItem="XS8-lz-cFI" secondAttribute="centerY" id="MdO-49-IKB"/>
-                            <constraint firstItem="bzU-KN-FYd" firstAttribute="leading" secondItem="7Hg-9N-65f" secondAttribute="leading" id="f2w-SN-BaL"/>
-                            <constraint firstAttribute="bottom" secondItem="bzU-KN-FYd" secondAttribute="bottom" id="jjL-jn-YzP"/>
                             <constraint firstItem="gwH-sJ-lEb" firstAttribute="centerX" secondItem="XS8-lz-cFI" secondAttribute="centerX" id="l70-zN-uQa"/>
+                            <constraint firstItem="NN1-YG-ggz" firstAttribute="leading" secondItem="7Hg-9N-65f" secondAttribute="leading" id="n8E-Mn-3tL"/>
+                            <constraint firstItem="7Hg-9N-65f" firstAttribute="trailing" secondItem="NN1-YG-ggz" secondAttribute="trailing" id="qOC-bW-Nug"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundGradient" destination="bzU-KN-FYd" id="Wqm-XB-Ox4"/>
+                        <outlet property="backgroundGradient" destination="NN1-YG-ggz" id="rjx-Ku-X1x"/>
                         <outlet property="crowdCast" destination="Pm4-BS-sMl" id="Ffz-Xz-zhP"/>
                     </connections>
                 </viewController>
@@ -630,16 +631,12 @@
         <image name="Email" width="50" height="50"/>
         <image name="Google" width="72" height="72"/>
         <image name="Password" width="64" height="64"/>
-        <image name="blue_gradient2.png" width="2000" height="1774"/>
         <image name="holi_blue.png" width="2049" height="1215"/>
         <image name="profile2.png" width="698" height="698"/>
         <image name="undraw_friendship_mni7 (3).png" width="1142" height="781"/>
         <image name="undraw_reading_0re1 (2).png" width="1020" height="734"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Inverted">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
             <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
