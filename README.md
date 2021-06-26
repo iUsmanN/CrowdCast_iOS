@@ -1,8 +1,9 @@
 <p align="center">
-  <img width="460" src="https://user-images.githubusercontent.com/15052850/87014242-49ea8800-c1e5-11ea-8463-5d15a9996f44.png">
+  <img width="460" src="https://user-images.githubusercontent.com/15052850/87014242-49ea8800-c1e5-11ea-8463-5d15a9996f44.png">  
 </p>
-
-
+<p align="center">
+  <img width="260" src="https://user-images.githubusercontent.com/15052850/123526495-35dab780-d6d0-11eb-9b3d-7918529b0405.gif">
+</p>
 ----------------------
 
 In the current state of affairs, we often have to attend Video Calls with colleagues, friends and families. As the medium of video calls becomoes increasingly popular, we often find ourselves sharing links to video calls which everyone can join in. But sharing links again and again to everyone can be tedious and inefficient. Crowd Cast is a project aimed at adding a layer to this need. 
