@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NN1-YG-ggz" customClass="AnimationView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="906"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CROWD CAST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm4-BS-sMl">
@@ -28,9 +28,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Usman Nazir 💙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-sJ-lEb">
-                                <rect key="frame" x="139" y="840" width="136" height="22"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USMAN NAZIR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-sJ-lEb">
+                                <rect key="frame" x="160" y="842.5" width="94.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -39,7 +39,7 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="NN1-YG-ggz" firstAttribute="top" secondItem="XS8-lz-cFI" secondAttribute="top" id="3tt-UI-jpl"/>
-                            <constraint firstAttribute="bottom" secondItem="NN1-YG-ggz" secondAttribute="bottom" id="CEr-YC-s4T"/>
+                            <constraint firstAttribute="bottom" secondItem="NN1-YG-ggz" secondAttribute="bottom" constant="-10" id="CEr-YC-s4T"/>
                             <constraint firstItem="Pm4-BS-sMl" firstAttribute="centerX" secondItem="XS8-lz-cFI" secondAttribute="centerX" id="ECM-WG-cgn"/>
                             <constraint firstItem="gwH-sJ-lEb" firstAttribute="bottom" secondItem="7Hg-9N-65f" secondAttribute="bottom" id="KYt-EW-Rd4"/>
                             <constraint firstItem="Pm4-BS-sMl" firstAttribute="centerY" secondItem="XS8-lz-cFI" secondAttribute="centerY" id="MdO-49-IKB"/>
@@ -50,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundGradient" destination="NN1-YG-ggz" id="rjx-Ku-X1x"/>
+                        <outlet property="bottomText" destination="gwH-sJ-lEb" id="aNc-SH-b11"/>
                         <outlet property="crowdCast" destination="Pm4-BS-sMl" id="Ffz-Xz-zhP"/>
                     </connections>
                 </viewController>

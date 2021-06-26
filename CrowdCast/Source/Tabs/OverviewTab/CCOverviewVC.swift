@@ -18,6 +18,7 @@ class CCOverviewVC: CCUIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.view.addSubview(curtainView)
         setupView()
     }
     

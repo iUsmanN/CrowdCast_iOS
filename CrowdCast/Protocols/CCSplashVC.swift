@@ -15,11 +15,14 @@ class CCSplashVC: UIViewController, CCSyncUserData {
     @IBOutlet weak var crowdCast: UILabel!
     @IBOutlet weak var backgroundGradient: AnimationView!
     let anim : AnimationView = .init(name: "10989-gradient-1")
+    @IBOutlet weak var bottomText: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         anim.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         anim.loopMode = .playOnce
-        anim.animationSpeed = 2
+        anim.animationSpeed = 5
         anim.contentMode = .scaleAspectFill
         self.backgroundGradient.addSubview(anim)
         decideScreen()
@@ -39,6 +42,7 @@ extension CCSplashVC {
                             UIView.transition(with: self.crowdCast, duration: 1, options: .transitionCrossDissolve) { [weak self] in
                                 self?.crowdCast.textColor = UIColor(named: "Main Accent")
                                 self?.crowdCast.alpha = 0
+                                self?.bottomText.alpha = 0
                                 self?.backgroundGradient.alpha = 0
                             } completion: { [weak self] (_) in
                                 self?.moveToHome()
@@ -54,6 +58,7 @@ extension CCSplashVC {
                 UIView.animate(withDuration: 1) { [weak self] in
                     self?.crowdCast.textColor = UIColor(named: "Main Accent")
                     self?.crowdCast.alpha = 0
+                    self?.bottomText.alpha = 0
                     self?.backgroundGradient.alpha = 0
                 } completion: { (_) in self.moveToLogin()}
             }
