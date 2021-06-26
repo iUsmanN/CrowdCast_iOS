@@ -65,7 +65,7 @@ extension CCChannelsVM : CCChannelsService, CCDispatchQueue, CCGetIndexPaths {
         self.joinedChannels.clearData()
         
         //Not moving forward at the moment (Need to do some work)
-        guard false else { return }
+//        guard false else { return }
         
         let dg = DispatchGroup()
         
