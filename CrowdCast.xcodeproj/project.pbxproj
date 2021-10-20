@@ -23,6 +23,10 @@
 		19BD2E55803CD5FC8922B86D /* Pods_CrowdCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49E639FFFF7D8D38BDF03A6 /* Pods_CrowdCastTests.framework */; };
 		3092C3DD839D852D430FD2F8 /* Pods_CrowdCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF905F62DCF1B6A72C8CDAAE /* Pods_CrowdCast.framework */; };
 		6707B85EA492079AD4852897 /* Pods_CrowdCast_CrowdCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3105D5E9A0BD025B5F9B98B1 /* Pods_CrowdCast_CrowdCastUITests.framework */; };
+		B6057A5A270E4D8F00DB21A1 /* grad2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6057A59270E4D8F00DB21A1 /* grad2.png */; };
+		B6057A5C270E4DB300DB21A1 /* 9395-background-gradient.json in Resources */ = {isa = PBXBuildFile; fileRef = B6057A5B270E4DB300DB21A1 /* 9395-background-gradient.json */; };
+		B6057A5E270F2DFD00DB21A1 /* GradBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = B6057A5D270F2DFD00DB21A1 /* GradBlack.png */; };
+		B6057A62270F2E8C00DB21A1 /* call-grad.png in Resources */ = {isa = PBXBuildFile; fileRef = B6057A61270F2E8C00DB21A1 /* call-grad.png */; };
 		B60A29D62434828400B7F76F /* CCSetsNavbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A29D52434828400B7F76F /* CCSetsNavbarProtocol.swift */; };
 		B60DE3E324545432003E491C /* CCContainsCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DE3E224545432003E491C /* CCContainsCellData.swift */; };
 		B61A849C2451F5FB00150188 /* CCDetailsSegueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A849A2451F5FB00150188 /* CCDetailsSegueTVC.swift */; };
@@ -243,6 +247,10 @@
 		9358F1E9AA70777512033489 /* Pods-CrowdCast-CrowdCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast-CrowdCastUITests/Pods-CrowdCast-CrowdCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99B716AB8F4B132E23E78760 /* Pods-CrowdCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCastTests.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCastTests/Pods-CrowdCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED097A4257B79B19ABF3F69 /* Pods-CrowdCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdCast.debug.xcconfig"; path = "Target Support Files/Pods-CrowdCast/Pods-CrowdCast.debug.xcconfig"; sourceTree = "<group>"; };
+		B6057A59270E4D8F00DB21A1 /* grad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grad2.png; sourceTree = "<group>"; };
+		B6057A5B270E4DB300DB21A1 /* 9395-background-gradient.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9395-background-gradient.json"; sourceTree = "<group>"; };
+		B6057A5D270F2DFD00DB21A1 /* GradBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradBlack.png; sourceTree = "<group>"; };
+		B6057A61270F2E8C00DB21A1 /* call-grad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "call-grad.png"; sourceTree = "<group>"; };
 		B60A29D52434828400B7F76F /* CCSetsNavbarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetsNavbarProtocol.swift; sourceTree = "<group>"; };
 		B60DE3E224545432003E491C /* CCContainsCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCContainsCellData.swift; sourceTree = "<group>"; };
 		B61A849A2451F5FB00150188 /* CCDetailsSegueTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDetailsSegueTVC.swift; sourceTree = "<group>"; };
@@ -714,7 +722,9 @@
 			isa = PBXGroup;
 			children = (
 				0471741D26878F400061F3DF /* grad.png */,
+				B6057A59270E4D8F00DB21A1 /* grad2.png */,
 				0471741826878EB80061F3DF /* 10989-gradient-1.json */,
+				B6057A5B270E4DB300DB21A1 /* 9395-background-gradient.json */,
 				B631D2F4248D5F4A0030BC28 /* lf30_editor_wz3lcT.json */,
 				B631D2F2248D528F0030BC28 /* 8682-loading.json */,
 				B631D2F0248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json */,
@@ -1106,6 +1116,8 @@
 		B6D7F58324277A52001BEBBC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B6057A61270F2E8C00DB21A1 /* call-grad.png */,
+				B6057A5D270F2DFD00DB21A1 /* GradBlack.png */,
 				0409BC5D2685469700A02517 /* blue_gradient2.png */,
 				0409BC472685452300A02517 /* Logos */,
 				B6D7F55A24277A1B001BEBBC /* Assets.xcassets */,
@@ -1380,6 +1392,7 @@
 				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
 				B6D04E68245493AE005F4E61 /* back transparent.jpeg in Resources */,
 				B6D04E722455AAA7005F4E61 /* profile2.png in Resources */,
+				B6057A5C270E4DB300DB21A1 /* 9395-background-gradient.json in Resources */,
 				0409BC4D2685453200A02517 /* Webp.net-resizeimage (2).png in Resources */,
 				B61F3E4A245872FB000FF940 /* 3 lines.png in Resources */,
 				B6BEBF6C247C362A00461C12 /* undraw_friendship_mni7 (3).png in Resources */,
@@ -1394,7 +1407,9 @@
 				B6BEBF6B247C362A00461C12 /* undraw_Tree_swing_646s.png in Resources */,
 				B6BEBF6F247C362A00461C12 /* undraw_reading_0re1 (2).png in Resources */,
 				B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */,
+				B6057A62270F2E8C00DB21A1 /* call-grad.png in Resources */,
 				B6FEAA13246C7C6800D194C3 /* CCCrowdCell.xib in Resources */,
+				B6057A5A270E4D8F00DB21A1 /* grad2.png in Resources */,
 				B693E2FC2430F832002B26BC /* profile.png in Resources */,
 				B67962032432476100C2A13C /* Avatar.png in Resources */,
 				B6BEBF60247BE0E500461C12 /* undraw_friendship_mni7.png in Resources */,
@@ -1404,6 +1419,7 @@
 				B6E3675D2434F25000B511A0 /* CCCardTVCTableViewCell.xib in Resources */,
 				B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */,
 				B6ACD08324410D7200405838 /* undraw_abstract_x68e.png in Resources */,
+				B6057A5E270F2DFD00DB21A1 /* GradBlack.png in Resources */,
 				B6888A5D24747CD5002E3EB5 /* CCCollectionSectionHeader.xib in Resources */,
 				B6516A5E24955A23003B90D0 /* CCEmptyTableView.xib in Resources */,
 				0409BC54268545BD00A02517 /* blue_gradient.png in Resources */,

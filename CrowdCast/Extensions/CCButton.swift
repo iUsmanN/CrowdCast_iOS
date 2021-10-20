@@ -52,11 +52,11 @@ class CCButton : UIButton {
     }
     
     func redBorder() {
-        layer.borderColor   = UIColor(named: "red")?.cgColor
+        layer.borderColor   = UIColor.gray.cgColor
     }
     
     func greenBorder() {
-        layer.borderColor   = UIColor(named: "green")?.cgColor
+        layer.borderColor   = UIColor(named: "blue")?.cgColor
     }
     
     func addView() {
