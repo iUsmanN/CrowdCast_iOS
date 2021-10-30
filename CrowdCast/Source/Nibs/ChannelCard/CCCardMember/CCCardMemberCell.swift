@@ -34,6 +34,7 @@ class CCCardMemberCell: UICollectionViewCell {
 extension CCCardMemberCell : CCImageStorage {
     
     func setImage(){
+        imageView.kf.cancelDownloadTask()
         getImage(memberID: memberID) { [weak self] (result) in
             switch result {
             case .success(let imageResource):
