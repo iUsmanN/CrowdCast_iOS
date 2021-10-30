@@ -8,8 +8,10 @@
 #import <Foundation/Foundation.h>
 
 #import "TVIAudioCodec.h"
+#import "TVILocalNetworkPrivacyPolicy.h"
 #import "TVIVideoCodec.h"
 
+@class TVIBandwidthProfileOptions;
 @class TVIEncodingParameters;
 @class TVILocalAudioTrack;
 @class TVILocalDataTrack;
@@ -82,6 +84,15 @@ NS_SWIFT_NAME(ConnectOptionsBuilder)
 @property (nonatomic, assign, getter = areInsightsEnabled) BOOL insightsEnabled;
 
 /**
+ *  @brief This policy restricts which communication routes can be used to send and receive media with other Participants.
+ *
+ *  @discussion The default value is `allowAll` on iOS 11-13 and `blockLocal` on iOS 14 and above.
+ *
+ *  @see TVILocalNetworkPrivacyPolicy
+ */
+@property (nonatomic, assign) TVILocalNetworkPrivacyPolicy networkPrivacyPolicy;
+
+/**
  *  @brief Enables or disables the Network Quality API.
  *
  *  @discussion Set this to `YES` to enable the Network Quality API when using Group Rooms. This option has no effect
@@ -96,7 +107,7 @@ NS_SWIFT_NAME(ConnectOptionsBuilder)
  *  `TVINetworkQualityVerbosityMinimal` for the Local Participant and `TVINetworkQualityVerbosityNone` for the Remote
  *  Participants.
  *
- *  @see [TVINetworkQualityConfiguration](TVINetworkQualityConfiguration.h)
+ *  @see [TVINetworkQualityConfiguration](TVINetworkQualityConfiguration.html)
  */
 @property (nonatomic, strong, nullable) TVINetworkQualityConfiguration *networkQualityConfiguration;
 
@@ -144,6 +155,12 @@ NS_SWIFT_NAME(ConnectOptionsBuilder)
  *  @brief A collection of local video tracks which will be shared in the Room.
  */
 @property (nonatomic, copy, nonnull) NSArray<TVILocalVideoTrack *> *videoTracks;
+
+/**
+ *  @brief Configure how the available downlink bandwidth is shared among the `TVIRemoteVideoTrack`s you have
+ *  subscribed to in a Group or Small-Group Room. This property has no effect in Peer-to-Peer Rooms.
+ */
+@property (nonatomic, strong, nullable) TVIBandwidthProfileOptions *bandwidthProfileOptions;
 
 /**
  *  @brief You should not initialize `TVIConnectOptionsBuilder` directly, use a TVIConnectOptionsBuilderBlock instead.
@@ -256,13 +273,22 @@ NS_SWIFT_NAME(ConnectOptions)
 @property (nonatomic, assign, readonly, getter = isNetworkQualityEnabled) BOOL networkQualityEnabled;
 
 /**
+ *  @brief This policy restricts which communication routes can be used to send and receive media with other Participants.
+ *
+ *  @discussion The default value is `allowAll` on iOS 11-13 and `blockLocal` on iOS 14 and above.
+ *
+ *  @see TVILocalNetworkPrivacyPolicy
+ */
+@property (nonatomic, assign, readonly) TVILocalNetworkPrivacyPolicy networkPrivacyPolicy;
+
+/**
  *  @brief Sets the verbosity level for network quality information returned by the Network Quality API.
  *
  *  @discussion If a `TVINetworkQualityConfiguration` is not provided, the default configuration is used:
  *  `TVINetworkQualityVerbosityMinimal` for the Local Participant and `TVINetworkQualityVerbosityNone` for the Remote
  *  Participants.
  *
- *  @see [TVINetworkQualityConfiguration](TVINetworkQualityConfiguration.h)
+ *  @see [TVINetworkQualityConfiguration](TVINetworkQualityConfiguration.html)
  */
 @property (nonatomic, strong, readonly, nullable) TVINetworkQualityConfiguration *networkQualityConfiguration;
 
@@ -310,6 +336,12 @@ NS_SWIFT_NAME(ConnectOptions)
  *  @brief A collection of local video tracks which will be shared in the Room.
  */
 @property (nonatomic, copy, readonly, nonnull) NSArray<TVILocalVideoTrack *> *videoTracks;
+
+/**
+ *  @brief Configure how the available downlink bandwidth is shared among the `TVIRemoteVideoTrack`s you have
+ *  subscribed to in a Group or Small-Group Room. This property has no effect in Peer-to-Peer Rooms.
+ */
+@property (nonatomic, strong, readonly, nullable) TVIBandwidthProfileOptions *bandwidthProfileOptions;
 
 /**
  *  @brief Developers shouldn't initialize this class directly.

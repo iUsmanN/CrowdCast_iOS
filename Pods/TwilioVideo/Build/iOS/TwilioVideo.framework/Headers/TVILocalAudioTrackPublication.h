@@ -6,6 +6,7 @@
 //
 
 #import "TVIAudioTrackPublication.h"
+#import "TVITrackPriority.h"
 
 @class TVILocalAudioTrack;
 
@@ -19,6 +20,14 @@ NS_SWIFT_NAME(LocalAudioTrackPublication)
  *  @brief The local audio track associated with track publication.
  */
 @property (nonatomic, strong, readonly, nullable) TVILocalAudioTrack *localTrack;
+
+/**
+ *  @brief The track priority of the `TVILocalAudioTrackPublication`
+ *
+ *  @discussion The publisher's `TVITrackPriority` for the corresponding `TVILocalAudioTrack` can be updated after
+ *  it has been published.
+ */
+@property (nonatomic, copy, nonnull) TVITrackPriority priority;
 
 /**
  *  @brief Developers shouldn't initialize this class directly.

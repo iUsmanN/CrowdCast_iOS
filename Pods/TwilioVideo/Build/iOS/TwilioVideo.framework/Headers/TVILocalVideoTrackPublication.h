@@ -5,6 +5,7 @@
 //  Copyright © 2017 Twilio, Inc. All rights reserved.
 //
 
+#import "TVITrack.h"
 #import "TVIVideoTrackPublication.h"
 
 @class TVILocalVideoTrack;
@@ -19,6 +20,14 @@ NS_SWIFT_NAME(LocalVideoTrackPublication)
  *  @brief The local video track associated with track publication.
  */
 @property (nonatomic, strong, readonly, nullable) TVILocalVideoTrack *localTrack;
+
+/**
+ *  @brief The track priority of the `TVILocalVideoTrackPublication`
+ *
+ *  @discussion The publisher's `TVITrackPriority` for the corresponding `TVILocalVideoTrack` can be updated after
+ *  it has been published.
+ */
+@property (nonatomic, copy, nonnull) TVITrackPriority priority;
 
 /**
  *  @brief Developers shouldn't initialize this class directly.

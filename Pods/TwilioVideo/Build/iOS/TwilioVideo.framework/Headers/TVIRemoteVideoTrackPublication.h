@@ -28,6 +28,13 @@ NS_SWIFT_NAME(RemoteVideoTrackPublication)
 @property (nonatomic, strong, readonly, nullable) TVIRemoteVideoTrack *remoteTrack;
 
 /**
+ *  @brief Get the `TVITrackPriority` set by the publisher for the corresponding `TVIRemoteVideoTrack`.
+ *
+ *  @discussion This property will return `TVITrackPriorityStandard` if no priority was specified by the publisher.
+ */
+@property (nonatomic, copy, readonly, nonnull) TVITrackPriority publishPriority;
+
+/**
  *  @brief Developers shouldn't initialize this class directly.
  *
  *  @discussion Track publications cannot be created explicitly

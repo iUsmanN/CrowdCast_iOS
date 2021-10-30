@@ -71,6 +71,7 @@ open class TweePlaceholderTextField: UITextField {
 	}
 
 	/// The custom insets for `placeholderLabel` relative to the text field.
+    /// `top` doesn't have any effect.
 	public var placeholderInsets: UIEdgeInsets = .zero
 
 	/// Custom placeholder label. You can use it to style placeholder text.
@@ -119,6 +120,8 @@ open class TweePlaceholderTextField: UITextField {
 	private let placeholderLayoutGuide = UILayoutGuide()
 	private var leadingPlaceholderConstraint: NSLayoutConstraint?
 	private var trailingPlaceholderConstraint: NSLayoutConstraint?
+    private var bottomPlaceholderConstraint: NSLayoutConstraint?
+    private var centerYPlaceholderConstraint: NSLayoutConstraint?
 	private var placeholderGuideHeightConstraint: NSLayoutConstraint?
 
 	// MARK: Methods
@@ -296,32 +299,33 @@ open class TweePlaceholderTextField: UITextField {
 			return
 		}
 
+        addLayoutGuide(placeholderLayoutGuide)
+        disablePlaceholderHeightConstraint()
+        
 		addSubview(placeholderLabel)
 		placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		leadingPlaceholderConstraint = placeholderLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
-		leadingPlaceholderConstraint?.isActive = true
-
+        leadingPlaceholderConstraint?.identifier = "twee.placeholder.leading"
 		trailingPlaceholderConstraint = placeholderLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-		trailingPlaceholderConstraint?.isActive = true
+        trailingPlaceholderConstraint?.identifier = "twee.placeholder.trailing"
+        bottomPlaceholderConstraint = placeholderLabel.bottomAnchor.constraint(equalTo: placeholderLayoutGuide.topAnchor)
+        bottomPlaceholderConstraint?.identifier = "twee.placeholder.bottom"
 
-		addLayoutGuide(placeholderLayoutGuide)
-
-		NSLayoutConstraint.activate([
-			placeholderLayoutGuide.leadingAnchor.constraint(equalTo: leadingAnchor),
-			placeholderLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor),
-			placeholderLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor)
-		])
-
-		disablePlaceholderHeightConstraint()
-
-		let centerYConstraint = placeholderLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
-		centerYConstraint.priority = .defaultHigh
-
-		NSLayoutConstraint.activate([
-			placeholderLabel.bottomAnchor.constraint(equalTo: placeholderLayoutGuide.topAnchor),
-			centerYConstraint
-		])
+		centerYPlaceholderConstraint = placeholderLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+		centerYPlaceholderConstraint?.priority = .defaultHigh
+        centerYPlaceholderConstraint?.identifier = "twee.placeholder.centerY"
+        
+        NSLayoutConstraint.activate([
+            leadingPlaceholderConstraint,
+            trailingPlaceholderConstraint,
+            placeholderLayoutGuide.leadingAnchor.constraint(equalTo: leadingAnchor),
+            placeholderLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor),
+            placeholderLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor),
+            bottomPlaceholderConstraint,
+            centerYPlaceholderConstraint
+            ].compactMap { $0 }
+        )
 
 		configurePlaceholderInsets()
 	}
@@ -329,10 +333,14 @@ open class TweePlaceholderTextField: UITextField {
 	private func configurePlaceholderInsets() {
 		let placeholderRect = self.placeholderRect(forBounds: bounds)
 
+        // leading
 		leadingPlaceholderConstraint?.constant = placeholderRect.origin.x + placeholderInsets.left
-
+        // trailing
 		let trailing = bounds.width - placeholderRect.maxX
 		trailingPlaceholderConstraint?.constant = -trailing - placeholderInsets.right
+        // bottom
+        bottomPlaceholderConstraint?.constant = -placeholderInsets.bottom
+        centerYPlaceholderConstraint?.constant = -placeholderInsets.bottom
 	}
 
 	private func enablePlaceholderHeightConstraint() {

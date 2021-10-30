@@ -33,7 +33,7 @@ extension CCDynamicLinkEngine {
     
     private func linkProperties() -> BranchLinkProperties {
         let lp = BranchLinkProperties()
-        lp.addControlParam("$ios_url", withValue: "http://apple.com")
+        lp.addControlParam("$ios_url", withValue: "https://apps.apple.com/gb/app/bumble-dating-friends-bizz/id930441707")
         return lp
     }
 }

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TVIParticipant.h"
+#import "TVITrackPriority.h"
 
 @protocol TVIRemoteParticipantDelegate;
 @class TVIRemoteAudioTrackPublication;
@@ -15,7 +16,6 @@
 @class TVIRemoteAudioTrack;
 @class TVIRemoteDataTrack;
 @class TVIRemoteVideoTrack;
-
 
 /**
  *  `TVIRemoteParticipant` represents a remote Participant in a Room which you are connected to.
@@ -273,5 +273,65 @@ NS_SWIFT_NAME(didUnsubscribeFromDataTrack(dataTrack:publication:participant:));
  */
 - (void)remoteParticipant:(nonnull TVIRemoteParticipant *)participant networkQualityLevelDidChange:(TVINetworkQualityLevel)networkQualityLevel
 NS_SWIFT_NAME(remoteParticipantNetworkQualityLevelDidChange(participant:networkQualityLevel:));
+
+/**
+ * @brief Delegate method called when a subscribed `TVIRemoteVideoTrack` is switched off based on the
+ * bandwidth allocation algorithm. Video will not be received for the `TVIRemoteVideoTrack` until it is switched
+ * back on.
+ *
+ * @param participant The `TVIRemoteParticipant` connected to the `TVIRoom`.
+ * @param track The subscribed `TVIRemoteVideoTrack`.
+ */
+- (void)remoteParticipant:(nonnull TVIRemoteParticipant *)participant
+    switchedOffVideoTrack:(nonnull TVIRemoteVideoTrack *)track
+NS_SWIFT_NAME(remoteParticipantSwitchedOffVideoTrack(participant:track:));
+
+/**
+ * @brief Emitted when a subscribed `TVIRemoteVideoTrack` that was switched off is now switched back on based
+ * on the bandwidth allocation algorithm. Video will be received for the `TVIRemoteVideoTrack` until it is
+ * switched off.
+ *
+ * @param participant The `TVIRemoteParticipant` connected to the `TVIRoom`.
+ * @param track The remote video track.
+ */
+- (void)remoteParticipant:(nonnull TVIRemoteParticipant *)participant
+     switchedOnVideoTrack:(nonnull TVIRemoteVideoTrack *)track
+NS_SWIFT_NAME(remoteParticipantSwitchedOnVideoTrack(participant:track:));
+
+/**
+ * @brief Emitted when the `TVIRemoteParticipant` changes the published priority of one of their `TVIRemoteAudioTrack`s.
+ *
+ * @param participant The remote participant.
+ * @param priority The publish priority.
+ * @param publication The remote audio track publication
+ */
+- (void)remoteParticipant:(nonnull TVIRemoteParticipant *)participant
+ didChangePublishPriority:(nonnull TVITrackPriority)priority
+            forAudioTrack:(nonnull TVIRemoteAudioTrackPublication *)publication
+NS_SWIFT_NAME(remoteParticipantDidChangeAudioTrackPublishPriority(participant:priority:publication:));
+
+/**
+ * @brief Emitted when the `TVIRemoteParticipant` changes the published priority of one of their `TVIRemoteVideoTrack`s.
+ *
+ * @param participant The remote participant.
+ * @param priority The publish priority.
+ * @param publication The remote video track publication.
+ */
+- (void)remoteParticipant:(nonnull TVIRemoteParticipant *)participant
+ didChangePublishPriority:(nonnull TVITrackPriority)priority
+            forVideoTrack:(nonnull TVIRemoteVideoTrackPublication *)publication
+NS_SWIFT_NAME(remoteParticipantDidChangeVideoTrackPublishPriority(participant:priority:publication:));
+
+/**
+ * @brief Emitted when the `TVIRemoteParticipant` changes the published priority of one of their `TVIRemoteDataTrack`s.
+ *
+ * @param participant The remote participant.
+ * @param priority The publish priority
+ * @param publication The remote data track publication.
+ */
+- (void)remoteParticipant:(nonnull TVIRemoteParticipant *)participant
+ didChangePublishPriority:(nonnull TVITrackPriority)priority
+             forDataTrack:(nonnull TVIRemoteDataTrackPublication *)publication
+NS_SWIFT_NAME(remoteParticipantDidChangeDataTrackPublishPriority(participant:priority:publication:));
 
 @end

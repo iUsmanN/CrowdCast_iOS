@@ -58,7 +58,7 @@ NS_SWIFT_NAME(VideoSource)
  * @discussion This property is automatically set when a `TVILocalVideoTrack` is created with your source.
  * This property is unset when the `TVILocalVideoTrack` is destroyed.
  *
- * @see [TVILocalVideoTrack](TVILocalVideoTrack.h)
+ * @see TVILocalVideoTrack
  */
 @property (nonatomic, weak, nullable) id<TVIVideoSink> sink;
 

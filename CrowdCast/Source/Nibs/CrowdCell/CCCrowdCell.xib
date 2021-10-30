@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,18 +19,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-9y-hMm">
-                        <rect key="frame" x="5" y="-17.5" width="155" height="200"/>
+                        <rect key="frame" x="5" y="-32.5" width="155" height="230"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-oW-bBh">
-                                <rect key="frame" x="0.0" y="21" width="155" height="154"/>
+                                <rect key="frame" x="0.0" y="21" width="155" height="184"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abs3.png" translatesAutoresizingMaskIntoConstraints="NO" id="NYB-8q-E8X">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="154"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="184"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-2K-3MR">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="154"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="184"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.65000000000000002" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P7n-za-3RH">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="184"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="regular"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Developers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-sM-AU9">
-                                        <rect key="frame" x="10" y="0.0" width="135" height="154"/>
+                                        <rect key="frame" x="10" y="0.0" width="135" height="184"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                             <constraint firstAttribute="bottom" secondItem="Wfk-oW-bBh" secondAttribute="bottom" constant="25" id="31H-Ek-Xoc"/>
                             <constraint firstAttribute="trailing" secondItem="Wfk-oW-bBh" secondAttribute="trailing" id="40J-Yh-y4t"/>
                             <constraint firstAttribute="width" constant="155" id="4er-rA-Sk2"/>
-                            <constraint firstAttribute="height" constant="200" id="58Z-vr-s0Q"/>
+                            <constraint firstAttribute="height" constant="230" id="58Z-vr-s0Q"/>
                             <constraint firstItem="Wfk-oW-bBh" firstAttribute="leading" secondItem="Of3-9y-hMm" secondAttribute="leading" id="XDw-Ye-0mG"/>
                             <constraint firstItem="Wfk-oW-bBh" firstAttribute="top" secondItem="Of3-9y-hMm" secondAttribute="top" constant="21" id="abB-cJ-mcC"/>
                         </constraints>

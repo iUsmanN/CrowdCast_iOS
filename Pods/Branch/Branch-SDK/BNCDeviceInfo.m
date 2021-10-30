@@ -70,7 +70,7 @@
 
     // The random id is regenerated per app launch.  This maintains existing behavior.
     self.randomId = [[NSUUID UUID] UUIDString];
-    self.vendorId = [BNCSystemObserver getVendorId];
+    self.vendorId = [[UIDevice currentDevice].identifierForVendor UUIDString];
     [self checkAdvertisingIdentifier];
 
     self.brandName = [BNCSystemObserver getBrand];
@@ -95,7 +95,7 @@
     self.locale = [NSLocale currentLocale].localeIdentifier;
     self.country = [locale country];
     self.language = [locale language];
-    self.extensionType = [self extensionType];
+    self.environment = [self environment];
     self.branchSDKVersion = [NSString stringWithFormat:@"ios%@", BNC_SDK_VERSION];
     self.applicationVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
     if (!self.applicationVersion.length) {
@@ -103,12 +103,27 @@
     }
 }
 
-- (NSString *)extensionType {
+// App Clips have a zero'd out IDFV
+- (BOOL)isAppClip {
+    if ([@"00000000-0000-0000-0000-000000000000" isEqualToString:[[UIDevice currentDevice].identifierForVendor UUIDString]]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSString *)environment {
     NSString *result = @"FULL_APP";
+    
+    if ([self isAppClip]) {
+        result = @"APP_CLIP";
+    }
+    
+    // iMessage has an extension id set in the Bundle
     NSString *extensionType = [NSBundle mainBundle].infoDictionary[@"NSExtension"][@"NSExtensionPointIdentifier"];
     if ([extensionType isEqualToString:@"com.apple.identitylookup.message-filter"]) {
         result = @"IMESSAGE_APP";
     }
+    
     return result;
 }
 
@@ -131,9 +146,18 @@
 
 // IDFA should never be cached
 - (void)checkAdvertisingIdentifier {
+    self.optedInStatus = [BNCSystemObserver attOptedInStatus];
+    
+    // indicate if this is first time we've seen the user opt in, this reduces work on the server
+    if ([self.optedInStatus isEqualToString:@"authorized"] && ![BNCPreferenceHelper sharedInstance].hasOptedInBefore) {
+        self.isFirstOptIn = YES;
+    } else {
+        self.isFirstOptIn = NO;
+    }
+    
     self.isAdTrackingEnabled = [BNCSystemObserver adTrackingSafe];
     self.advertiserId = [BNCSystemObserver getAdId];
-    BOOL ignoreIdfa = [BNCPreferenceHelper preferenceHelper].isDebug;
+    BOOL ignoreIdfa = [BNCPreferenceHelper sharedInstance].isDebug;
 
     if (self.advertiserId && !ignoreIdfa) {
         self.hardwareId = self.advertiserId;
@@ -157,12 +181,12 @@
     @synchronized (self) {
         [self checkAdvertisingIdentifier];
 
-        BOOL disableAdNetworkCallouts = [BNCPreferenceHelper preferenceHelper].disableAdNetworkCallouts;
+        BOOL disableAdNetworkCallouts = [BNCPreferenceHelper sharedInstance].disableAdNetworkCallouts;
         if (disableAdNetworkCallouts) {
             dictionary[@"disable_ad_network_callouts"] = [NSNumber numberWithBool:disableAdNetworkCallouts];
         }
 
-        if ([BNCPreferenceHelper preferenceHelper].isDebug) {
+        if ([BNCPreferenceHelper sharedInstance].isDebug) {
             dictionary[@"unidentified_device"] = @(YES);
         } else {
             [dictionary bnc_safeSetObject:self.vendorId forKey:@"idfv"];
@@ -170,11 +194,12 @@
         }
         [dictionary bnc_safeSetObject:[self localIPAddress] forKey:@"local_ip"];
 
+        [dictionary bnc_safeSetObject:[self optedInStatus] forKey:@"opted_in_status"];
         if (!self.isAdTrackingEnabled) {
             dictionary[@"limit_ad_tracking"] = @(YES);
         }
 
-        if ([BNCPreferenceHelper preferenceHelper].limitFacebookTracking) {
+        if ([BNCPreferenceHelper sharedInstance].limitFacebookTracking) {
             dictionary[@"limit_facebook_tracking"] = @(YES);
         }
         [dictionary bnc_safeSetObject:self.brandName forKey:@"brand"];
@@ -182,7 +207,7 @@
         [dictionary bnc_safeSetObject:self.osName forKey:@"os"];
         [dictionary bnc_safeSetObject:self.osVersion forKey:@"os_version"];
         [dictionary bnc_safeSetObject:self.osBuildVersion forKey:@"build"];
-        [dictionary bnc_safeSetObject:self.extensionType forKey:@"environment"];
+        [dictionary bnc_safeSetObject:self.environment forKey:@"environment"];
         [dictionary bnc_safeSetObject:self.cpuType forKey:@"cpu_type"];
         [dictionary bnc_safeSetObject:self.screenScale forKey:@"screen_dpi"];
         [dictionary bnc_safeSetObject:self.screenHeight forKey:@"screen_height"];
@@ -194,8 +219,9 @@
         [dictionary bnc_safeSetObject:[self connectionType] forKey:@"connection_type"];
         [dictionary bnc_safeSetObject:[self userAgentString] forKey:@"user_agent"];
 
-        [dictionary bnc_safeSetObject:[BNCPreferenceHelper preferenceHelper].userIdentity forKey:@"developer_identity"];
-        [dictionary bnc_safeSetObject:[BNCPreferenceHelper preferenceHelper].deviceFingerprintID forKey:@"device_fingerprint_id"];
+        [dictionary bnc_safeSetObject:[BNCPreferenceHelper sharedInstance].userIdentity forKey:@"developer_identity"];
+        
+        [dictionary bnc_safeSetObject:[BNCPreferenceHelper sharedInstance].randomizedDeviceToken forKey:@"randomized_device_token"];
 
         [dictionary bnc_safeSetObject:self.applicationVersion forKey:@"app_version"];
 

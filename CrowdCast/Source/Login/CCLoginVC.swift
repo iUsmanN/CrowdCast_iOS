@@ -97,12 +97,12 @@ extension CCLoginVC {
     func signIn_Email(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
             guard error == nil else { self?.signInFailed(error: error); return }
-            self?.signInSuccessFul(result: result)
+//            self?.signInSuccessFul(result: result)
         }
     }
 }
 
-extension CCLoginVC : CCSyncUserData {
+extension CCLoginVC : CCSyncUserData, CCUserService {
     
     func signInFailed(error: Error?){
         activeButton?.hideSpinner()
@@ -110,17 +110,43 @@ extension CCLoginVC : CCSyncUserData {
         print("Can't sign in.")
     }
     
-    func signInSuccessFul(result: AuthDataResult?){
+    func signInSuccessFul(result: AuthDataResult?, email: String, firstName: String, lastName: String){
         guard let uid = result?.user.uid else { return }
         print("Signed in.")
         generateHapticFeedback(.light)
         syncUserData(uid: uid) { [weak self](result) in
             switch result {
-            case .success(_)            :
+            case .success(_) :
                 UIView.animate(withDuration: 0.75) { [weak self] in
                     self?.curtainView.alpha = 1
-                } completion: { (_) in self?.moveToHome() }
-            case .failure(let error)    : self?.signInFailed(error: error)
+                } completion: { (_) in
+                    self?.moveToHome()
+                }
+            case .failure(let error):
+                self?.createUser(uid: uid, email: email, firstName: firstName, lastName: lastName)
+            }
+        }
+    }
+    
+    func createUser(uid: String?, email: String, firstName: String, lastName: String){
+        guard let uid = uid else { return }
+        addNewUser(uid: uid, email: email, firstName: firstName, lastName: lastName) { [weak self](result) in
+            switch result {
+            case .success(_):
+                self?.syncUserData(uid: uid) { [weak self](result) in
+                    switch result {
+                    case .success(_) :
+                        UIView.animate(withDuration: 0.75) { [weak self] in
+                            self?.curtainView.alpha = 1
+                        } completion: { (_) in
+                            self?.moveToHome()
+                        }
+                    case .failure(let error):
+                        self?.signInFailed(error: error)
+                    }
+                }
+            case .failure(let error):
+                self?.signInFailed(error: error)
             }
         }
     }
@@ -135,24 +161,17 @@ extension CCLoginVC : ASAuthorizationControllerDelegate, ASAuthorizationControll
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            
             guard let appleIDToken = appleIDCredential.identityToken, let idTokenString = String(data: appleIDToken, encoding: .utf8) else { return }
-            
             let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: randomNonceString())
             
-            let fullName = appleIDCredential.fullName
+            let fullName = appleIDCredential.fullName!
             let email = appleIDCredential.email
             
             Auth.auth().signIn(with: credential) { [weak self] (result, error) in
                 guard error == nil else { self?.signInFailed(error: error); return }
-                self?.signInSuccessFul(result: result)
+                self?.signInSuccessFul(result: result, email: email ?? (self!.readUserEmailInKeychain()), firstName: PersonNameComponentsFormatter().string(from: fullName) ?? "CC", lastName: "CC")
             }
-            
-            print("Sign In")
             saveUserEmailInKeychain(email ?? "crowd@cast.com")
-            
-            
-            
         default:
             break
         }

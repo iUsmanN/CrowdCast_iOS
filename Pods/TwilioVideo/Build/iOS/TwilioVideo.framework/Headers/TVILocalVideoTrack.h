@@ -51,7 +51,7 @@ NS_SWIFT_NAME(LocalVideoTrack)
  *  @brief Creates a `TVILocalVideoTrack` with a `TVIVideoSource`.
  *
  *  @discussion The Track will be enabled, and use a randomly generated name.
- *  @see [TVIVideoSource](TVIVideoSource.h)
+ *  @see [TVIVideoSource](TVIVideoSource.html)
  *
  *  @param source A `TVIVideoSource` which will provide the content for this Track.
  *  @param enabled Determines if the Track is enabled at creation time.
