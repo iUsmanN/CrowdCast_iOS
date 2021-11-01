@@ -19,12 +19,12 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string></string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>crowdcastr</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -72,12 +72,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>branch_key</key>
-	<string>key_live_jaI3kq5bJu7p8lFqTVWFVodoEvgXjnFU</string>
-	<key>branch_universal_link_domains</key>
-	<array>
-		<string>crowdcastr.app.link</string>
 	</array>
 </dict>
 </plist>
