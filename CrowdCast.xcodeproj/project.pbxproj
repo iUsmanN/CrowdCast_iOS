@@ -123,6 +123,7 @@
 		B693E30724311A37002B26BC /* CCSetupProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E30624311A37002B26BC /* CCSetupProfileVC.swift */; };
 		B693E30B24311DF1002B26BC /* adil.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E30A24311DF1002B26BC /* adil.png */; };
 		B693E30D24312C7B002B26BC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693E30C24312C7B002B26BC /* Home.storyboard */; };
+		B695D515272DF31B00D12863 /* CCDynamicLinkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B695D514272DF31B00D12863 /* CCDynamicLinkBuilder.swift */; };
 		B6974880243B96E800AE95C0 /* CCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697487F243B96E800AE95C0 /* CCUser.swift */; };
 		B6974882243B977400AE95C0 /* CCUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974881243B977400AE95C0 /* CCUserService.swift */; };
 		B6974884243B987600AE95C0 /* CCProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6974883243B987600AE95C0 /* CCProfileManager.swift */; };
@@ -357,6 +358,7 @@
 		B693E30624311A37002B26BC /* CCSetupProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSetupProfileVC.swift; sourceTree = "<group>"; };
 		B693E30A24311DF1002B26BC /* adil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adil.png; sourceTree = "<group>"; };
 		B693E30C24312C7B002B26BC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B695D514272DF31B00D12863 /* CCDynamicLinkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDynamicLinkBuilder.swift; sourceTree = "<group>"; };
 		B697487F243B96E800AE95C0 /* CCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUser.swift; sourceTree = "<group>"; };
 		B6974881243B977400AE95C0 /* CCUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserService.swift; sourceTree = "<group>"; };
 		B6974883243B987600AE95C0 /* CCProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCProfileManager.swift; path = CrowdCast/Services/CCProfileManager.swift; sourceTree = SOURCE_ROOT; };
@@ -865,6 +867,7 @@
 				B64E4D1A243A2E920011715A /* CCError.swift */,
 				B6333910272D84AE007846C8 /* KeychainItem.swift */,
 				B6333912272D875E007846C8 /* CCNonceGenerator.swift */,
+				B695D514272DF31B00D12863 /* CCDynamicLinkBuilder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1644,6 +1647,7 @@
 				B6BD90D52437137E00F50848 /* CCOverviewVM.swift in Sources */,
 				B64436EF24964AC700C37625 /* CCSharable.swift in Sources */,
 				B6B664662448B29F00F6C1DF /* CCCallMemberCell.swift in Sources */,
+				B695D515272DF31B00D12863 /* CCDynamicLinkBuilder.swift in Sources */,
 				B6888A5624730914002E3EB5 /* CCTwilioService.swift in Sources */,
 				B67E8C5B2460AA53002FAD55 /* CCUserDefaults.swift in Sources */,
 				B6F869012473052800B33655 /* CCEndpoint.swift in Sources */,
