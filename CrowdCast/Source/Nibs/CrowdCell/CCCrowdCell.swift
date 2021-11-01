@@ -49,6 +49,7 @@ class CCCrowdCell: UICollectionViewCell, CCImageStorage {
     }
     
     func setGroupImage(id: String?) {
+        cardImage.kf.cancelDownloadTask()
         getImage(memberID: id ?? "", directory: .groups, result: { [weak self](result) in
             switch result {
             case .success(let imageResource):

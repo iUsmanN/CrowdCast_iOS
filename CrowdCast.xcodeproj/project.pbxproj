@@ -54,6 +54,15 @@
 		B631D2F1248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = B631D2F0248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json */; };
 		B631D2F3248D528F0030BC28 /* 8682-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B631D2F2248D528F0030BC28 /* 8682-loading.json */; };
 		B631D2F5248D5F4A0030BC28 /* lf30_editor_wz3lcT.json in Resources */ = {isa = PBXBuildFile; fileRef = B631D2F4248D5F4A0030BC28 /* lf30_editor_wz3lcT.json */; };
+		B6333902272D7228007846C8 /* colorful_lines.png in Resources */ = {isa = PBXBuildFile; fileRef = B6333901272D7228007846C8 /* colorful_lines.png */; };
+		B6333905272D759E007846C8 /* lf30_editor_ddh52yvg.json in Resources */ = {isa = PBXBuildFile; fileRef = B6333904272D759E007846C8 /* lf30_editor_ddh52yvg.json */; };
+		B6333907272D7C55007846C8 /* lf30_editor_krrw8afo.json in Resources */ = {isa = PBXBuildFile; fileRef = B6333906272D7C55007846C8 /* lf30_editor_krrw8afo.json */; };
+		B6333909272D7C9D007846C8 /* 64204-vbracja-wave.json in Resources */ = {isa = PBXBuildFile; fileRef = B6333908272D7C9D007846C8 /* 64204-vbracja-wave.json */; };
+		B633390B272D7D32007846C8 /* 79770-waves-in-gradient-1.json in Resources */ = {isa = PBXBuildFile; fileRef = B633390A272D7D32007846C8 /* 79770-waves-in-gradient-1.json */; };
+		B633390D272D7E85007846C8 /* lf30_editor_rt8wokul.json in Resources */ = {isa = PBXBuildFile; fileRef = B633390C272D7E85007846C8 /* lf30_editor_rt8wokul.json */; };
+		B633390F272D7FD4007846C8 /* lf30_editor_rbm28ub1.json in Resources */ = {isa = PBXBuildFile; fileRef = B633390E272D7FD4007846C8 /* lf30_editor_rbm28ub1.json */; };
+		B6333911272D84AE007846C8 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333910272D84AE007846C8 /* KeychainItem.swift */; };
+		B6333913272D875E007846C8 /* CCNonceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333912272D875E007846C8 /* CCNonceGenerator.swift */; };
 		B6400681248CC5A40097E7C0 /* CCEditChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6400680248CC5A40097E7C0 /* CCEditChannelVC.swift */; };
 		B6400683248CC5B50097E7C0 /* CCEditChannelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6400682248CC5B50097E7C0 /* CCEditChannelVM.swift */; };
 		B64436E72496225F00C37625 /* CCEmptyPinnedChannels.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64436E62496225F00C37625 /* CCEmptyPinnedChannels.xib */; };
@@ -278,6 +287,16 @@
 		B631D2F0248D4E6C0030BC28 /* 9904-bouncy-cartoon-ball-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9904-bouncy-cartoon-ball-loader.json"; sourceTree = "<group>"; };
 		B631D2F2248D528F0030BC28 /* 8682-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8682-loading.json"; sourceTree = "<group>"; };
 		B631D2F4248D5F4A0030BC28 /* lf30_editor_wz3lcT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_wz3lcT.json; sourceTree = "<group>"; };
+		B6333900272D6BDF007846C8 /* CrowdCast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrowdCast.entitlements; sourceTree = "<group>"; };
+		B6333901272D7228007846C8 /* colorful_lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorful_lines.png; sourceTree = "<group>"; };
+		B6333904272D759E007846C8 /* lf30_editor_ddh52yvg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_ddh52yvg.json; sourceTree = "<group>"; };
+		B6333906272D7C55007846C8 /* lf30_editor_krrw8afo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_krrw8afo.json; sourceTree = "<group>"; };
+		B6333908272D7C9D007846C8 /* 64204-vbracja-wave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "64204-vbracja-wave.json"; sourceTree = "<group>"; };
+		B633390A272D7D32007846C8 /* 79770-waves-in-gradient-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "79770-waves-in-gradient-1.json"; sourceTree = "<group>"; };
+		B633390C272D7E85007846C8 /* lf30_editor_rt8wokul.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_rt8wokul.json; sourceTree = "<group>"; };
+		B633390E272D7FD4007846C8 /* lf30_editor_rbm28ub1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_rbm28ub1.json; sourceTree = "<group>"; };
+		B6333910272D84AE007846C8 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
+		B6333912272D875E007846C8 /* CCNonceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCNonceGenerator.swift; sourceTree = "<group>"; };
 		B6400680248CC5A40097E7C0 /* CCEditChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEditChannelVC.swift; sourceTree = "<group>"; };
 		B6400682248CC5B50097E7C0 /* CCEditChannelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEditChannelVM.swift; sourceTree = "<group>"; };
 		B64436E62496225F00C37625 /* CCEmptyPinnedChannels.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCEmptyPinnedChannels.xib; sourceTree = "<group>"; };
@@ -578,6 +597,7 @@
 		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
 			isa = PBXGroup;
 			children = (
+				B6333901272D7228007846C8 /* colorful_lines.png */,
 				B6BEBF67247C362900461C12 /* undraw_celebration_0jvk (2).png */,
 				B6BEBF66247C362800461C12 /* undraw_friendship_mni7 (3).png */,
 				B6BEBF69247C362900461C12 /* undraw_reading_0re1 (2).png */,
@@ -721,6 +741,7 @@
 		B631D2ED248D451D0030BC28 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				B6333903272D7591007846C8 /* Login */,
 				0471741D26878F400061F3DF /* grad.png */,
 				B6057A59270E4D8F00DB21A1 /* grad2.png */,
 				0471741826878EB80061F3DF /* 10989-gradient-1.json */,
@@ -731,6 +752,19 @@
 				B631D2EE248D45400030BC28 /* spinner A.json */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		B6333903272D7591007846C8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B633390A272D7D32007846C8 /* 79770-waves-in-gradient-1.json */,
+				B6333908272D7C9D007846C8 /* 64204-vbracja-wave.json */,
+				B6333906272D7C55007846C8 /* lf30_editor_krrw8afo.json */,
+				B6333904272D759E007846C8 /* lf30_editor_ddh52yvg.json */,
+				B633390C272D7E85007846C8 /* lf30_editor_rt8wokul.json */,
+				B633390E272D7FD4007846C8 /* lf30_editor_rbm28ub1.json */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B640067F248CC5900097E7C0 /* Edit Channel */ = {
@@ -829,6 +863,8 @@
 			isa = PBXGroup;
 			children = (
 				B64E4D1A243A2E920011715A /* CCError.swift */,
+				B6333910272D84AE007846C8 /* KeychainItem.swift */,
+				B6333912272D875E007846C8 /* CCNonceGenerator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1055,6 +1091,7 @@
 		B6D7F55024277A1A001BEBBC /* CrowdCast */ = {
 			isa = PBXGroup;
 			children = (
+				B6333900272D6BDF007846C8 /* CrowdCast.entitlements */,
 				B64436EA24964A3C00C37625 /* Firebase */,
 				B631D2ED248D451D0030BC28 /* Animations */,
 				B6F868FD247304F600B33655 /* Networking */,
@@ -1365,6 +1402,7 @@
 				B67E8C57245DF237002FAD55 /* CCCardMemberCell.xib in Resources */,
 				B6BEBF64247C31DE00461C12 /* holi_blue.png in Resources */,
 				0409BC5E2685469700A02517 /* blue_gradient2.png in Resources */,
+				B633390F272D7FD4007846C8 /* lf30_editor_rbm28ub1.json in Resources */,
 				B693E304243113B4002B26BC /* Reading.png in Resources */,
 				043DDE5826862A5D00322A97 /* Webp.net-resizeimage (5).png in Resources */,
 				B6BEBF58247BDC1300461C12 /* abs3.png in Resources */,
@@ -1381,13 +1419,16 @@
 				B6D04E742455AFD3005F4E61 /* me.png in Resources */,
 				B6BEBF5E247BDF8D00461C12 /* blu4.png in Resources */,
 				B64436E72496225F00C37625 /* CCEmptyPinnedChannels.xib in Resources */,
+				B633390B272D7D32007846C8 /* 79770-waves-in-gradient-1.json in Resources */,
 				B631D2F3248D528F0030BC28 /* 8682-loading.json in Resources */,
+				B6333907272D7C55007846C8 /* lf30_editor_krrw8afo.json in Resources */,
 				B6BEBF62247BE16A00461C12 /* output-onlinepngtools (7).png in Resources */,
 				B6D04E69245493AE005F4E61 /* bottom.jpeg in Resources */,
 				043DDE602686341300322A97 /* Webp.net-resizeimage (8).png in Resources */,
 				B6ACD08124410AE700405838 /* Walk.png in Resources */,
 				B6D04E7A2455DF92005F4E61 /* me3.png in Resources */,
 				B631D2EF248D45400030BC28 /* spinner A.json in Resources */,
+				B6333909272D7C9D007846C8 /* 64204-vbracja-wave.json in Resources */,
 				B6BEBF5A247BDE3500461C12 /* image.png in Resources */,
 				B61ADC1B2430B53C00ECD1D2 /* Celebration.png in Resources */,
 				B6D04E68245493AE005F4E61 /* back transparent.jpeg in Resources */,
@@ -1400,6 +1441,7 @@
 				B679620624324E6000C2A13C /* Onboarding.storyboard in Resources */,
 				B6D04E6A245493AE005F4E61 /* back.jpeg in Resources */,
 				B61ADC122430B03100ECD1D2 /* Cinzel-Regular.otf in Resources */,
+				B633390D272D7E85007846C8 /* lf30_editor_rt8wokul.json in Resources */,
 				0409BC4F2685453200A02517 /* Webp.net-resizeimage (4).png in Resources */,
 				B668245C2472EAEF00651166 /* logo.png in Resources */,
 				043DDE5926862A5D00322A97 /* Webp.net-resizeimage (6).png in Resources */,
@@ -1407,6 +1449,7 @@
 				B6BEBF6B247C362A00461C12 /* undraw_Tree_swing_646s.png in Resources */,
 				B6BEBF6F247C362A00461C12 /* undraw_reading_0re1 (2).png in Resources */,
 				B6AA24F6244C6C01006EEF29 /* undraw_celebration_0jvk (1).png in Resources */,
+				B6333905272D759E007846C8 /* lf30_editor_ddh52yvg.json in Resources */,
 				B6057A62270F2E8C00DB21A1 /* call-grad.png in Resources */,
 				B6FEAA13246C7C6800D194C3 /* CCCrowdCell.xib in Resources */,
 				B6057A5A270E4D8F00DB21A1 /* grad2.png in Resources */,
@@ -1440,6 +1483,7 @@
 				B64E4CF624389E420011715A /* CCCardTimeLabel.xib in Resources */,
 				B61F3E49245872FB000FF940 /* lines only.png in Resources */,
 				047078DB2685399A00B1476B /* GoogleService-Info.plist in Resources */,
+				B6333902272D7228007846C8 /* colorful_lines.png in Resources */,
 				B6D04E802455EC67005F4E61 /* undraw_imagination_ok71.png in Resources */,
 				B6BEBF57247BDC1300461C12 /* abs2.png in Resources */,
 				0409BC4C2685453200A02517 /* Webp.net-resizeimage (3).png in Resources */,
@@ -1629,6 +1673,7 @@
 				B6516A5C24955A15003B90D0 /* CCEmptyTableView.swift in Sources */,
 				B64E4D032439E70E0011715A /* CCChannel.swift in Sources */,
 				B65A70E1244F109E004BB001 /* CCDelegateManager.swift in Sources */,
+				B6333911272D84AE007846C8 /* KeychainItem.swift in Sources */,
 				B64E4D002439DD170011715A /* CCNetworkEngine.swift in Sources */,
 				B6BEBF52247AC93C00461C12 /* CCCrowdChannelsVM.swift in Sources */,
 				B67962142432567A00C2A13C /* CCCrowdsVC.swift in Sources */,
@@ -1676,6 +1721,7 @@
 				B6E722702468089E00526E4C /* CCCameraView.swift in Sources */,
 				B6D04E5724546186005F4E61 /* CCTextCell.swift in Sources */,
 				B679620B2432509300C2A13C /* CCConstantsManager.swift in Sources */,
+				B6333913272D875E007846C8 /* CCNonceGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1849,16 +1895,17 @@
 			baseConfigurationReference = 9ED097A4257B79B19ABF3F69 /* Pods-CrowdCast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CrowdCast/CrowdCast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 524G574595;
+				DEVELOPMENT_TEAM = 2TXYU6AZ6K;
 				INFOPLIST_FILE = CrowdCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.01;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowdcast.crowd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmannazir.crowdcast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1870,16 +1917,17 @@
 			baseConfigurationReference = 8F817045FDFF90F3895A6FB8 /* Pods-CrowdCast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CrowdCast/CrowdCast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 524G574595;
+				DEVELOPMENT_TEAM = 2TXYU6AZ6K;
 				INFOPLIST_FILE = CrowdCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.01;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowdcast.crowd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmannazir.crowdcast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
