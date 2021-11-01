@@ -21,6 +21,7 @@ extension CCDynamicLinkEngine {
             guard error == nil else { completion(.failure(.branchLinkError)); return }
             completion(.success(string))
         }
+        print("bla")
     }
 }
 
