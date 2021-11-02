@@ -26,6 +26,7 @@ class CCChannelsVC: CCUIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshData()
+        checkDynamicChannelJoin()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -58,6 +59,14 @@ extension CCChannelsVC {
         tableView.dataSource    = self
         tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
         tableView.register(Nib.get.CCEmptyTableView, forHeaderFooterViewReuseIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
+    }
+    
+    private func checkDynamicChannelJoin(){
+        guard let id = CCDynamicLinkManager.id, let isGroup = CCDynamicLinkManager.isGroup, !isGroup else { return }
+        CCDynamicLinkManager.id = nil; CCDynamicLinkManager.isGroup = nil
+        viewModel?.joinUserChannel(channelID: id, completion: { [weak self] _ in
+            self?.refreshData()
+        })
     }
 }
 

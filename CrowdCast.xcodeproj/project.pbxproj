@@ -211,6 +211,7 @@
 		B6F91A052731DF7F00F2ECBB /* splash-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F91A042731DF7F00F2ECBB /* splash-2.png */; };
 		B6F91A072731E0E000F2ECBB /* splash-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F91A062731E0E000F2ECBB /* splash-3.png */; };
 		B6F91A092731E34100F2ECBB /* lf30_editor_6uekislk.json in Resources */ = {isa = PBXBuildFile; fileRef = B6F91A082731E34100F2ECBB /* lf30_editor_6uekislk.json */; };
+		B6F91A0B2731FDEF00F2ECBB /* CCDynamicLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F91A0A2731FDEF00F2ECBB /* CCDynamicLinkManager.swift */; };
 		B6FE5922244BA2F800121FDD /* CCCallScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE5921244BA2F800121FDD /* CCCallScreenLayout.swift */; };
 		B6FEAA0E246C538500D194C3 /* CCCrowdsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAA0D246C538500D194C3 /* CCCrowdsVM.swift */; };
 		B6FEAA12246C7C6800D194C3 /* CCCrowdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAA10246C7C6800D194C3 /* CCCrowdCell.swift */; };
@@ -455,6 +456,7 @@
 		B6F91A042731DF7F00F2ECBB /* splash-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-2.png"; sourceTree = "<group>"; };
 		B6F91A062731E0E000F2ECBB /* splash-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-3.png"; sourceTree = "<group>"; };
 		B6F91A082731E34100F2ECBB /* lf30_editor_6uekislk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_6uekislk.json; sourceTree = "<group>"; };
+		B6F91A0A2731FDEF00F2ECBB /* CCDynamicLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDynamicLinkManager.swift; sourceTree = "<group>"; };
 		B6FE5921244BA2F800121FDD /* CCCallScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCallScreenLayout.swift; sourceTree = "<group>"; };
 		B6FEAA0D246C538500D194C3 /* CCCrowdsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdsVM.swift; sourceTree = "<group>"; };
 		B6FEAA10246C7C6800D194C3 /* CCCrowdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCrowdCell.swift; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 			isa = PBXGroup;
 			children = (
 				B64436EC24964A5700C37625 /* CCDynamicLinkEngine.swift */,
+				B6F91A0A2731FDEF00F2ECBB /* CCDynamicLinkManager.swift */,
 			);
 			path = "Dynamic Links";
 			sourceTree = "<group>";
@@ -1740,6 +1743,7 @@
 				B61A849C2451F5FB00150188 /* CCDetailsSegueTVC.swift in Sources */,
 				B66824592471DCD900651166 /* CCDetailsSectionHeader.swift in Sources */,
 				B61C90F02441CFE000F6B8A9 /* CCGetsViewController.swift in Sources */,
+				B6F91A0B2731FDEF00F2ECBB /* CCDynamicLinkManager.swift in Sources */,
 				B64E4D162439F4E70011715A /* CCChannelOwner.swift in Sources */,
 				B61F3E4D24587C04000FF940 /* CCBulletinManager.swift in Sources */,
 				B6E722702468089E00526E4C /* CCCameraView.swift in Sources */,

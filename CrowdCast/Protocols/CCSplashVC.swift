@@ -22,7 +22,7 @@ class CCSplashVC: UIViewController, CCSyncUserData {
         super.viewDidLoad()
         anim.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         anim.loopMode = .playOnce
-        anim.animationSpeed = 1
+        anim.animationSpeed = 2
         anim.contentMode = .scaleAspectFill
         self.backgroundGradient.addSubview(anim)
         decideScreen()

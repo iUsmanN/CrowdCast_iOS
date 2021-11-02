@@ -19,7 +19,7 @@ extension CCChannelsService {
     ///   - type: Type of channels to get
     ///   - completion: completion handler
     /// - Returns: nil
-    func getUserChannels(type: CCChannelRelation,completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
+    func getUserChannels(type: CCChannelRelation, completion: @escaping (Result<paginatedData<CCChannel>, Error>) -> ()) {
         let query = userChannels()
         fetchData(query: query) { (result: Result<[CCUserChannel], Error>) in
             switch result {
@@ -67,13 +67,35 @@ extension CCChannelsService {
         do {
             try query.setData(from: channel, encoder: .init(), completion: { (error) in
                 guard error == nil else { completion(.failure(CCError.channelDataWriteFailure)); return }
-                self.addEntries(channelID: channel.id) { (result) in
+                self.addEntries(channelID: channel.id, type: .owned) { (result) in
                     switch result {
                     case .success(_)            : completion(.success(channel))
                     case .failure(let error)    : completion(.failure(error))
                     }
                 }
             })
+        } catch {
+            completion(.failure(CCError.channelDataWriteFailure))
+        }
+    }
+    
+    func joinUserChannel(channelID: String, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
+        do {
+            self.addEntries(channelID: channelID, type: .member) { result in
+                switch result {
+                case .success(_) :
+                    getChannelData(type: .joined, ids: [channelID]) { dataResult in
+                        switch dataResult {
+                        case .success(let paginatedData):
+                            completion(.success(paginatedData.data.first ?? CCChannel()))
+                        case .failure(let error):
+                            completion(.failure(.firebaseFailure))
+                        }
+                    }
+                case .failure(let error) :
+                    completion(.failure(error))
+                }
+            }
         } catch {
             completion(.failure(CCError.channelDataWriteFailure))
         }
@@ -133,10 +155,10 @@ extension CCChannelsService {
             guard error == nil else { completion(.failure(.channelDataWriteFailure)); return }
             completion(.success(channelInput))
         })
-//
-//        //Remove Channel from all Owners and Members
-//        let query2 = make(.userChannels, in: "member", contains: channelInput.id ?? "")
-//        query2.
+        //
+        //        //Remove Channel from all Owners and Members
+        //        let query2 = make(.userChannels, in: "member", contains: channelInput.id ?? "")
+        //        query2.
     }
     
     func removeChannelFromAllUsers(channelInput: CCChannel, completion: @escaping (Result<CCChannel, CCError>) -> ()) {
@@ -152,15 +174,14 @@ extension CCChannelsService {
     ///   - channelID: channel ID to be added
     ///   - completion: completion handler
     /// - Returns: nil
-    func addEntries(channelID: String?, completion: @escaping (Result<Any?, CCError>)->()) {
+    func addEntries(channelID: String?, type: CCCrowdRelation, completion: @escaping (Result<Any?, CCError>)->()) {
         let dg = DispatchGroup()
         dg.enter()
-        addUserChannelsEntry(dg: dg, channelID: channelID, type: .owned, completion: completion)
-        
+        addUserChannelsEntry(dg: dg, channelID: channelID, type: type, completion: completion)
         dg.notify(queue: .global()) { completion(.success(nil)) }
     }
     
-    /// Adds created group to user-groups table
+    /// Adds created channel to user-channels table
     /// - Parameters:
     ///   - dg: dispatch Group
     ///   - groupID: group ID
