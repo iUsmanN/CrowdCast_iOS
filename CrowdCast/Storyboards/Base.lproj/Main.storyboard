@@ -66,10 +66,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UT-Gd-VYd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" name="Background"/>
-                            </view>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="undraw_friendship_mni7 (3).png" translatesAutoresizingMaskIntoConstraints="NO" id="umP-du-28C">
                                 <rect key="frame" x="40" y="85" width="334" height="235"/>
                                 <constraints>
@@ -322,6 +318,10 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UT-Gd-VYd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="Background"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -710,6 +710,9 @@
             <point key="canvasLocation" x="1510" y="-935"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="zNU-kO-ihg"/>
+    </designables>
     <resources>
         <image name="3 lines.png" width="540" height="1169.280029296875"/>
         <image name="Email" width="50" height="50"/>
