@@ -34,7 +34,7 @@ extension CCDynamicLinkEngine {
         linkBuilder?.socialMetaTagParameters = DynamicLinkSocialMetaTagParameters()
         linkBuilder?.socialMetaTagParameters?.title = "Crowd Cast Link"
         linkBuilder?.socialMetaTagParameters?.descriptionText = "Open the link in app to join!"
-        linkBuilder?.socialMetaTagParameters?.imageURL = URL(string: "https://i.ibb.co/s3Vs5Zq/Logo-Makr-1.png")
+        linkBuilder?.socialMetaTagParameters?.imageURL = URL(string: "https://i.ibb.co/8sHv6ks/Logo-Makr-729-Gct.png")
         guard let _ = (linkBuilder?.url) else { return }
         linkBuilder?.shorten(completion: { url, warnings, error in
             if let url = url {

@@ -108,6 +108,7 @@ extension CCJoinChannelVC : CCImageStorage {
             joinBottomConstraint.constant = 70
         } else {
             joinBottomConstraint.constant = 0
+            foreignJoinButton.isHidden = true
         }
     }
     

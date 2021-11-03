@@ -22,7 +22,7 @@ class CCSplashVC: UIViewController, CCSyncUserData {
         super.viewDidLoad()
         anim.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         anim.loopMode = .playOnce
-        anim.animationSpeed = 2
+        anim.animationSpeed = 1
         anim.contentMode = .scaleAspectFill
         self.backgroundGradient.addSubview(anim)
         decideScreen()
@@ -38,7 +38,7 @@ extension CCSplashVC {
                 switch result {
                 case .success(_)        :
                     DispatchQueue.main.async {
-                        self.anim.play(fromFrame: 0, toFrame: 120, loopMode: .playOnce) { (_) in
+                        self.anim.play(fromFrame: 0, toFrame: 45, loopMode: .playOnce) { (_) in
                             UIView.transition(with: self.crowdCast, duration: 1, options: .transitionCrossDissolve) { [weak self] in
                                 self?.crowdCast.textColor = UIColor(named: "Main Accent")
                                 self?.crowdCast.alpha = 0

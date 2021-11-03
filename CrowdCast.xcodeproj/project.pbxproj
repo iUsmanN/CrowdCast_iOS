@@ -204,6 +204,7 @@
 		B6E367702436450400B511A0 /* CCSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3676E2436450400B511A0 /* CCSectionHeader.swift */; };
 		B6E367712436450400B511A0 /* CCSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E3676F2436450400B511A0 /* CCSectionHeader.xib */; };
 		B6E367732436634700B511A0 /* CCScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E367722436634700B511A0 /* CCScreenProtocols.swift */; };
+		B6E6FFAA273307C1001EFC97 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E6FFA9273307C1001EFC97 /* logo2.png */; };
 		B6E722702468089E00526E4C /* CCCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7226F2468089E00526E4C /* CCCameraView.swift */; };
 		B6F869012473052800B33655 /* CCEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F869002473052800B33655 /* CCEndpoint.swift */; };
 		B6F869042473054C00B33655 /* CCTwilioTokenEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F869032473054C00B33655 /* CCTwilioTokenEP.swift */; };
@@ -449,6 +450,7 @@
 		B6E3676E2436450400B511A0 /* CCSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSectionHeader.swift; sourceTree = "<group>"; };
 		B6E3676F2436450400B511A0 /* CCSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCSectionHeader.xib; sourceTree = "<group>"; };
 		B6E367722436634700B511A0 /* CCScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCScreenProtocols.swift; sourceTree = "<group>"; };
+		B6E6FFA9273307C1001EFC97 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo2.png; path = ../../../../../Downloads/logo2.png; sourceTree = "<group>"; };
 		B6E7226F2468089E00526E4C /* CCCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCameraView.swift; sourceTree = "<group>"; };
 		B6F869002473052800B33655 /* CCEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEndpoint.swift; sourceTree = "<group>"; };
 		B6F869032473054C00B33655 /* CCTwilioTokenEP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTwilioTokenEP.swift; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 		B61ADC142430B2D200ECD1D2 /* Illustrations */ = {
 			isa = PBXGroup;
 			children = (
+				B6E6FFA9273307C1001EFC97 /* logo2.png */,
 				B6333901272D7228007846C8 /* colorful_lines.png */,
 				B6BEBF67247C362900461C12 /* undraw_celebration_0jvk (2).png */,
 				B6BEBF66247C362800461C12 /* undraw_friendship_mni7 (3).png */,
@@ -1419,6 +1422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E6FFAA273307C1001EFC97 /* logo2.png in Resources */,
 				B693E302243112FF002B26BC /* Fireworks.png in Resources */,
 				B6D04E6C24558851005F4E61 /* trans.png in Resources */,
 				0471741E26878F400061F3DF /* grad.png in Resources */,
