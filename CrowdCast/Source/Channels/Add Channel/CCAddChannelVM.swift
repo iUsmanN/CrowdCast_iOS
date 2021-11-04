@@ -13,7 +13,7 @@ struct CCAddChannelVM {
     var selectedColor = 0
     var owner = CCProfileManager.sharedInstance.getUID()
     let colors : [String] = [
-        "Main Accent",
+        "blue",
         "red",
         "green",
         "yellow"

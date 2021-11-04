@@ -41,7 +41,7 @@ extension CCSetsNavbar {
         leftButton.isEnabled = false
         leftButton.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont(name: "Avenir", size: 12) as Any,
-            NSAttributedString.Key.foregroundColor : UIColor(named: "Main Accent") as Any
+            NSAttributedString.Key.foregroundColor : UIColor.label as Any//UIColor(named: "Main Accent") as Any
         ], for: .disabled)
         return leftButton
     }

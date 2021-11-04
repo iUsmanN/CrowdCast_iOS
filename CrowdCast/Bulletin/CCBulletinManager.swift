@@ -8,6 +8,7 @@
 
 import Foundation
 import BLTNBoard
+import UIKit
 
 //protocol CCBulletinManager {}
 
@@ -17,7 +18,7 @@ class CCBulletinManager {
     
     func setItem(item: BLTNItem) {
         manager = BLTNItemManager(rootItem: item)
-        manager?.backgroundViewStyle = .dimmed
+        manager?.backgroundViewStyle = .blurred(style: .systemThinMaterial, isDark: false)
     }
     
     static func joinChannel() -> BLTNPageItem {

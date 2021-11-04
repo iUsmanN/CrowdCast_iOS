@@ -88,9 +88,9 @@ extension CCChannelsVC {
         guard indexPaths.count > 0 else { return }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPaths, with: .automatic)
+            self?.tableView.insertRows(at: indexPaths, with: .none)
             self?.tableView.endUpdates()
-            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .automatic)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .none)
         }
     }
     
@@ -98,7 +98,7 @@ extension CCChannelsVC {
         guard indexPath.count > 0 else { return }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.deleteRows(at: indexPath, with: .automatic)
+            self?.tableView.deleteRows(at: indexPath, with: .none)
             self?.tableView.endUpdates()
         }
     }
@@ -135,7 +135,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return tableView.dequeueReusableHeaderFooterView(withIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
+        return (viewModel?.numberOfRows(section: section) ?? 0) == 0 ? tableView.dequeueReusableHeaderFooterView(withIdentifier: Nib.reuseIdentifier.CCEmptyTableView) : UIView()
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -151,7 +151,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
         case 0:
             return (viewModel?.myChannels.data.count ?? 0) > 0 ? 0 : 100
         case 1:
-            return (viewModel?.joinedChannels.data.count ?? 0) > 0 ? 0 : 100
+            return (viewModel?.joinedChannels.data.count ?? 0) > 0 ? 25 : 100
         default:
             return 0
         }
