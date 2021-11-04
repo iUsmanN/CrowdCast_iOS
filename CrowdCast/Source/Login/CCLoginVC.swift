@@ -28,10 +28,18 @@ class CCLoginVC: CCUIViewController {
     @IBOutlet weak var curtainView: UIView!
     
     @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var waveView: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        waveView.play(fromFrame: 0, toFrame: 121, loopMode: .playOnce) { _ in
+            //self.waveView.play(fromFrame: 57, toFrame: 72, loopMode: .autoReverse, completion: nil)
+        }
     }
     
     func setupView(){

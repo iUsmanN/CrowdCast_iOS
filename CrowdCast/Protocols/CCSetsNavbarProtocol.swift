@@ -40,7 +40,7 @@ extension CCSetsNavbar {
         let leftButton = UIBarButtonItem(title: "CROWD CAST", style: .plain, target: self, action: nil)
         leftButton.isEnabled = false
         leftButton.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "Avenir", size: 12) as Any,
+            NSAttributedString.Key.font : UIFont(name: "Avenir", size: 13) as Any,
             NSAttributedString.Key.foregroundColor : UIColor.label as Any//UIColor(named: "Main Accent") as Any
         ], for: .disabled)
         return leftButton

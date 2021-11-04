@@ -151,7 +151,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
         case 0:
             return (viewModel?.myChannels.data.count ?? 0) > 0 ? 0 : 100
         case 1:
-            return (viewModel?.joinedChannels.data.count ?? 0) > 0 ? 25 : 100
+            return (viewModel?.joinedChannels.data.count ?? 0) > 0 ? 0 : 100
         default:
             return 0
         }

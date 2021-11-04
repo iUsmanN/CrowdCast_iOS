@@ -27,7 +27,8 @@ class CCSettingsVC: CCImagePickingVC, CCImageStorage {
         setupProfileInfo()
         tableView.dataSource = self
         tableView.delegate   = self
-        profileImage.layer.cornerRadius = 15
+        profileImage.layer.cornerRadius = profileImage.frame.size.height/4
+        profileImage.layer.masksToBounds = true
         tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
         tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
         getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
@@ -45,8 +46,8 @@ class CCSettingsVC: CCImagePickingVC, CCImageStorage {
     }
     
     func setupProfileInfo(){
-        profileImage.layer.borderColor = UIColor(named: "Main Accent")?.cgColor
-        profileImage.layer.borderWidth = 0.25
+        profileImage.layer.borderColor = UIColor.label.cgColor
+        profileImage.layer.borderWidth = 0.5
         nameLabel.text = CCProfileManager.sharedInstance.getProfile()?.fullName()
         emailLabel.text = CCProfileManager.sharedInstance.getProfile()?.email
     }

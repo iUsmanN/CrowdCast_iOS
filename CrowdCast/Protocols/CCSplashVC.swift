@@ -55,12 +55,14 @@ extension CCSplashVC {
             }
         } else {
             DispatchQueue.main.async {
-                UIView.animate(withDuration: 1) { [weak self] in
-                    self?.crowdCast.textColor = UIColor(named: "Main Accent")
-                    self?.crowdCast.alpha = 0
-                    self?.bottomText.alpha = 0
-                    self?.backgroundGradient.alpha = 0
-                } completion: { (_) in self.moveToLogin()}
+                self.anim.play(fromFrame: 0, toFrame: 45, loopMode: .playOnce) { (_) in
+                    UIView.animate(withDuration: 1) { [weak self] in
+                        self?.crowdCast.textColor = .white//UIColor(named: "Main Accent")
+                        self?.crowdCast.alpha = 0
+                        self?.bottomText.alpha = 0
+                        self?.backgroundGradient.alpha = 0
+                    } completion: { (_) in self.moveToLogin()}
+                }
             }
         }
     }

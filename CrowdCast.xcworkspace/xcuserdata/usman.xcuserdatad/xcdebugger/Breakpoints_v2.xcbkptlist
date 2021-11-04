@@ -382,8 +382,8 @@
             filePath = "CrowdCast/Source/Login/CCLoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "CCLoginVC"
             landmarkType = "21">
          </BreakpointContent>
@@ -398,8 +398,8 @@
             filePath = "CrowdCast/Source/Login/CCLoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "joinPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
