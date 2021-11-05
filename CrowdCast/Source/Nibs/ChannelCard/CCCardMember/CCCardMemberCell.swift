@@ -35,11 +35,12 @@ extension CCCardMemberCell : CCImageStorage {
     
     func setImage(){
         imageView.kf.cancelDownloadTask()
-        getImage(memberID: memberID) { [weak self] (result) in
+        getImage2(memberID: memberID) { [weak self] (result) in
             switch result {
             case .success(let imageResource):
                 if(self?.memberID == CCProfileManager.sharedInstance.getUID()) {
-                    self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.never)])
+                    print(imageResource)
+                    self?.imageView.kf.setImage(with: imageResource)
                 } else {
                     self?.imageView.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "avatarMale"), options: [.diskCacheExpiration(.seconds(172800))])
                 }

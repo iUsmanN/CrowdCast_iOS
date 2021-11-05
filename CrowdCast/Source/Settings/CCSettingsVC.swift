@@ -31,14 +31,22 @@ class CCSettingsVC: CCImagePickingVC, CCImageStorage {
         profileImage.layer.masksToBounds = true
         tableView.register(Nib.get.CCTextCell, forCellReuseIdentifier: Nib.reuseIdentifier.CCTextCell)
         tableView.register(Nib.get.CCDetailsSegueTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCDetailsSegueTVC)
-        getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
+        getImage2(memberID: CCProfileManager.sharedInstance.getUID()) { result in
             switch result {
             case .success(let imageResource):
-                self?.profileImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "lines only.png"))
+                self.profileImage.kf.setImage(with: imageResource)
             case .failure(let error):
                 prints(error)
             }
         }
+//        getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
+//            switch result {
+//            case .success(let imageResource):
+//                self?.profileImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "lines only.png"))
+//            case .failure(let error):
+//                prints(error)
+//            }
+//        }
     }
     
     func setupNavBar(){

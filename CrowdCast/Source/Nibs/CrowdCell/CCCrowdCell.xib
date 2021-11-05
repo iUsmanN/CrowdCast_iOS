@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Developers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-sM-AU9">
-                                        <rect key="frame" x="10" y="0.0" width="212" height="155"/>
+                                        <rect key="frame" x="10" y="0.0" width="212" height="140"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                     <constraint firstItem="J3Q-sM-AU9" firstAttribute="top" secondItem="Wfk-oW-bBh" secondAttribute="top" id="McZ-m7-Uev"/>
                                     <constraint firstItem="u2G-2K-3MR" firstAttribute="top" secondItem="Wfk-oW-bBh" secondAttribute="top" id="Q0w-fA-7bG"/>
                                     <constraint firstAttribute="trailing" secondItem="u2G-2K-3MR" secondAttribute="trailing" id="Th2-9T-qII"/>
-                                    <constraint firstAttribute="bottom" secondItem="J3Q-sM-AU9" secondAttribute="bottom" id="WPL-9d-tGU"/>
+                                    <constraint firstAttribute="bottom" secondItem="J3Q-sM-AU9" secondAttribute="bottom" constant="15" id="WPL-9d-tGU"/>
                                     <constraint firstItem="Hnx-Rq-g4W" firstAttribute="top" secondItem="Wfk-oW-bBh" secondAttribute="top" constant="20" id="eSW-7B-J54"/>
                                     <constraint firstItem="J3Q-sM-AU9" firstAttribute="leading" secondItem="Wfk-oW-bBh" secondAttribute="leading" constant="10" id="mpZ-La-tP2"/>
                                     <constraint firstItem="NYB-8q-E8X" firstAttribute="top" secondItem="Wfk-oW-bBh" secondAttribute="top" id="tMv-27-BMx"/>

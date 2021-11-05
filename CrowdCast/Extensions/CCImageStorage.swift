@@ -109,4 +109,24 @@ extension CCImageStorage {
             }
         }
     }
+    
+    /// Gets Image Resuource to set image using KingFisher
+    /// - Parameters:
+    ///   - memberID: member ID
+    ///   - result: completion Handler
+    /// - Returns: nil
+    func getImage2(memberID: String?, directory: ImageCacheDirectory = .displays, result: @escaping (Result<URL, Error>)->()) {
+        if let url = imageCacheURL(id: memberID, directory: directory), ImageCache.default.isCached(forKey: url.getQueryLessURL()?.absoluteString ?? "") {
+            result(.success(url))
+        }
+        getImageUrl(cacheDirectory: directory, id: memberID) { (response) in
+            switch response {
+            case .success(let url):
+                guard let url = url, let key = url.getQueryLessURL()?.absoluteString else { return }
+                result(.success(url))
+            case .failure(let error):
+                result(.failure(error))
+            }
+        }
+    }
 }

@@ -39,6 +39,7 @@ class CCUIViewController: UIViewController {
     }
     
     @objc func updateProfilePicture(){
+        print("DP Changed")
         guard let profileIcon = navigationItem.rightBarButtonItem?.customView as? CCRoundButton else { return }
         if let url = URL(string: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID())){
             profileIcon.kf.setImage(with: ImageResource(downloadURL: url,

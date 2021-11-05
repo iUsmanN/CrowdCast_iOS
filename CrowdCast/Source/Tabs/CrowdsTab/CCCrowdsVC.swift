@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import Kingfisher
 
 class CCCrowdsVC: CCUIViewController {
     
@@ -81,13 +82,14 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, CCG
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCrowdCell, for: indexPath) as? CCCrowdCell else { return UICollectionViewCell() }
+        cell.cardImage.kf.cancelDownloadTask()
         cell.data = viewModel?.dataForItem(indexPath: indexPath)
         cell.layer.cornerRadius = 10
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 15), height: 125)
+        return CGSize(width: (collectionView.frame.size.width), height: 125)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
