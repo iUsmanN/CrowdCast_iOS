@@ -43,7 +43,7 @@ class CCCallScreenVC: CCUIViewController {
     }
 }
 
-extension CCCallScreenVC : CCImageStorage {
+extension CCCallScreenVC {
     
     func setupView(){
         collectionView.dataSource   = self

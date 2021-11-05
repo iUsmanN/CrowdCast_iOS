@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCSettingsVC: CCImagePickingVC, CCImageStorage {
+class CCSettingsVC: CCImagePickingVC {
 
     @IBOutlet weak var profileImage : UIImageView!
     @IBOutlet weak var nameLabel    : UILabel!
@@ -39,14 +39,6 @@ class CCSettingsVC: CCImagePickingVC, CCImageStorage {
                 prints(error)
             }
         }
-//        getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
-//            switch result {
-//            case .success(let imageResource):
-//                self?.profileImage.kf.setImage(with: imageResource, placeholder: #imageLiteral(resourceName: "lines only.png"))
-//            case .failure(let error):
-//                prints(error)
-//            }
-//        }
     }
     
     func setupNavBar(){
