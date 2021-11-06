@@ -64,6 +64,15 @@ extension CCSetsNavbar {
                                     cacheKey: url.getQueryLessURL()?.absoluteString),
                                     for: .normal,
                                     placeholder: #imageLiteral(resourceName: "avatarMale"))
+            
+            KingfisherManager.shared.retrieveImage(with: url) { result in
+                switch result {
+                case .success(let imageResult):
+                    profileView.setImage(imageResult.image, for: .normal)
+                case .failure(let _):
+                    print("Cannot fetch profile image")
+                }
+            }
         }
         guard let action = action else { return UIBarButtonItem() }
         profileView.addTarget(self, action: action, for: .primaryActionTriggered)

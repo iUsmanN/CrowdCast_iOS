@@ -84,12 +84,15 @@ extension CCChannelsService {
             self.addEntries(channelID: channelID, type: .member) { result in
                 switch result {
                 case .success(_) :
-                    getChannelData(type: .joined, ids: [channelID]) { dataResult in
-                        switch dataResult {
-                        case .success(let paginatedData):
-                            completion(.success(paginatedData.data.first ?? CCChannel()))
-                        case .failure(let error):
-                            completion(.failure(.firebaseFailure))
+                    addUserToChannelData(channelID: channelID) { _ in
+                        getChannelData(type: .joined, ids: [channelID]) { dataResult in
+                            switch dataResult {
+                            case .success(let paginatedData):
+                                completion(.success(paginatedData.data.first ?? CCChannel()))
+                                
+                            case .failure(let error):
+                                completion(.failure(.firebaseFailure))
+                            }
                         }
                     }
                 case .failure(let error) :
@@ -178,6 +181,8 @@ extension CCChannelsService {
         let dg = DispatchGroup()
         dg.enter()
         addUserChannelsEntry(dg: dg, channelID: channelID, type: type, completion: completion)
+        //        dg.enter()
+        //        addChannelUserEntry(dg: dg, channelID: channelID, type: type) { _ in }
         dg.notify(queue: .global()) { completion(.success(nil)) }
     }
     
@@ -197,11 +202,21 @@ extension CCChannelsService {
     }
     
     //Unused atm
-    func addChannelUserEntry(dg: DispatchGroup, channelID: String?, type: CCCrowdRelation, completion: @escaping (Result<Any?, CCError>)->()) {
-        guard let channelID = channelID else { dg.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
-        channelUsersDocReferrence(id: channelID).updateData(["\(type.rawValue)": FieldValue.arrayUnion(["\(channelID)"])]) { (error) in
-            guard error == nil else { dg.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
-            dg.leave()
+    //    func addChannelUserEntry(dg: DispatchGroup?, channelID: String?, type: CCCrowdRelation, completion: @escaping (Result<Any?, CCError>)->()) {
+    //        guard let channelID = channelID else { dg?.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
+    //        channelUsersDocReferrence(id: channelID).updateData(["\(type.rawValue)": FieldValue.arrayUnion(["\(channelID)"])]) { (error) in
+    //            guard error == nil else { dg?.suspend(); completion(.failure(.addUserChannelEntryFailure)); return }
+    //            dg?.leave()
+    //        }
+    //    }
+    
+    func addUserToChannelData(channelID: String?, type: CCCrowdRelation = .member, completion: ((Result<Any?, CCError>)->())?) {
+        guard let channelID = channelID else { completion?(.failure(.addUserChannelEntryFailure)); return }
+        let channelDoc = documentRef(.channelsData, id: channelID)
+        channelDoc.updateData([
+            "\(type.rawValue)s":FieldValue.arrayUnion([CCProfileManager.sharedInstance.getUID()])
+        ]) { _ in
+            completion?(.success(nil))
         }
     }
 }

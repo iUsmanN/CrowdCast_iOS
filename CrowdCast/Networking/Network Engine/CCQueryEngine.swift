@@ -26,6 +26,12 @@ extension CCQueryEngine {
         return db.collection("\(env)\(type.rawValue)").document()
     }
     
+    func documentRef(_ type : CCQueryPath, id: String) -> DocumentReference {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.collection("\(env)\(type.rawValue)").document("\(id)")
+    }
+    
     func make(_ type : CCQueryPath, in which : String?, contains: String) -> Query {
         let db = Firestore.firestore()
         let env = Constants.environment
