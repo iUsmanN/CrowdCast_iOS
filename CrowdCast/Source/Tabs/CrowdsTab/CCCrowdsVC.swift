@@ -21,6 +21,20 @@ class CCCrowdsVC: CCUIViewController {
         setupVM()
         bindVM()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkDynamicChannelJoin()
+    }
+    
+    private func checkDynamicChannelJoin(){
+        guard let id = CCDynamicLinkManager.id, let isGroup = CCDynamicLinkManager.isGroup, isGroup else { return }
+        CCDynamicLinkManager.id = nil; CCDynamicLinkManager.isGroup = nil
+        viewModel?.joinGroup(groupID: id, type: .member, completion: { [weak self] _ in
+            self?.viewModel?.joinedCrowds.clearData()
+            self?.viewModel?.fetchFreshData()
+        })
+    }
 }
 
 extension CCCrowdsVC {

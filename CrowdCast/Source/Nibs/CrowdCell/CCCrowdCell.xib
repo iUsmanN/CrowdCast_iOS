@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,18 +20,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-9y-hMm">
-                        <rect key="frame" x="-43.5" y="-17.5" width="252" height="200"/>
+                        <rect key="frame" x="-43.5" y="36" width="252" height="93"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-oW-bBh">
-                                <rect key="frame" x="10" y="30" width="232" height="155"/>
+                                <rect key="frame" x="10" y="30" width="232" height="48"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NYB-8q-E8X">
-                                        <rect key="frame" x="0.0" y="0.0" width="232" height="155"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="48"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-2K-3MR">
-                                        <rect key="frame" x="0.0" y="0.0" width="232" height="155"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="48"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.65000000000000002" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P7n-za-3RH">
-                                            <rect key="frame" x="0.0" y="0.0" width="232" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="232" height="48"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="regular"/>
@@ -43,7 +44,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Developers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-sM-AU9">
-                                        <rect key="frame" x="10" y="0.0" width="212" height="140"/>
+                                        <rect key="frame" x="10" y="0.0" width="212" height="33"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -69,11 +70,10 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Wfk-oW-bBh" secondAttribute="bottom" constant="15" id="31H-Ek-Xoc"/>
                             <constraint firstAttribute="trailing" secondItem="Wfk-oW-bBh" secondAttribute="trailing" constant="10" id="40J-Yh-y4t"/>
-                            <constraint firstAttribute="height" constant="200" id="58Z-vr-s0Q"/>
                             <constraint firstItem="Wfk-oW-bBh" firstAttribute="leading" secondItem="Of3-9y-hMm" secondAttribute="leading" constant="10" id="XDw-Ye-0mG"/>
                             <constraint firstItem="Wfk-oW-bBh" firstAttribute="top" secondItem="Of3-9y-hMm" secondAttribute="top" constant="30" id="abB-cJ-mcC"/>
                         </constraints>
@@ -100,5 +100,8 @@
         <namedColor name="Foreground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

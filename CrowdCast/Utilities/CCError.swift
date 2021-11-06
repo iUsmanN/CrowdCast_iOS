@@ -33,6 +33,7 @@ enum CCError : Error {
     
     //MARK: FIRESTORE
     case groupCreationFailure
+    case groupJoiningFailue
     case addUserGroupEntryFailure
     case addUserChannelEntryFailure
     case addGroupChannelsItemFailure

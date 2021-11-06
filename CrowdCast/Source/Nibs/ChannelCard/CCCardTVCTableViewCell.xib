@@ -82,7 +82,7 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUy-du-l4l">
-                        <rect key="frame" x="260" y="12" width="25" height="25"/>
+                        <rect key="frame" x="260" y="15" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="GFr-sL-hbi"/>
                             <constraint firstAttribute="width" constant="25" id="SYb-Wc-oAY"/>
@@ -101,7 +101,7 @@
                     <constraint firstItem="yOU-O8-gfa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="Gk7-qb-ITQ"/>
                     <constraint firstItem="yOU-O8-gfa" firstAttribute="trailing" secondItem="hUy-du-l4l" secondAttribute="trailing" constant="10" id="HKQ-3G-Nv9"/>
                     <constraint firstItem="VRZ-E8-CST" firstAttribute="bottom" secondItem="yOU-O8-gfa" secondAttribute="bottom" constant="-5" id="KUg-sQ-Ep0"/>
-                    <constraint firstItem="hUy-du-l4l" firstAttribute="top" secondItem="yOU-O8-gfa" secondAttribute="top" constant="10" id="OVy-Fk-A4B"/>
+                    <constraint firstItem="hUy-du-l4l" firstAttribute="top" secondItem="yOU-O8-gfa" secondAttribute="top" constant="13" id="OVy-Fk-A4B"/>
                     <constraint firstItem="yOU-O8-gfa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="PwV-P0-uSf"/>
                     <constraint firstItem="VRZ-E8-CST" firstAttribute="leading" secondItem="yOU-O8-gfa" secondAttribute="leading" constant="10" id="mUr-Hh-7c4"/>
                     <constraint firstAttribute="trailing" secondItem="yOU-O8-gfa" secondAttribute="trailing" constant="25" id="xY2-Nw-cqw"/>
@@ -126,7 +126,7 @@
         <image name="Attention" width="24" height="24"/>
         <image name="Bell" width="50" height="50"/>
         <namedColor name="Background">
-            <color red="0.97231394974226804" green="0.97231394974226804" blue="0.97231394974226804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.97200000286102295" green="0.97200000286102295" blue="0.97200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="CellGreen">
             <color red="0.082999996840953827" green="0.55900001525878906" blue="0.19699999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
