@@ -33,6 +33,7 @@ extension CCSplashVC {
     
     /// Decides what screen to present. Depends Upon whether the user is signed In
     func decideScreen(){
+//        do {try Auth.auth().signOut()} catch { }
         if(Auth.auth().currentUser != nil){
             syncUserData(uid: Auth.auth().currentUser?.uid ?? "") { (result) in
                 switch result {

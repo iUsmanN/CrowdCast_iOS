@@ -55,15 +55,17 @@ extension CCSetsNavbar {
     }
     
     private func getProfileButton(action: Selector?) -> UIBarButtonItem {
-        let profileView = CCRoundButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        profileView.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        profileView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        let profileView = CCRoundButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        profileView.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        profileView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         profileView.contentMode = .scaleAspectFill
+        profileView.layer.borderColor = UIColor(named: "Inverted")?.cgColor
+        profileView.layer.borderWidth = 1
         if let url = URL(string: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID())){
             profileView.kf.setImage(with: ImageResource(downloadURL: url,
                                     cacheKey: url.getQueryLessURL()?.absoluteString),
                                     for: .normal,
-                                    placeholder: #imageLiteral(resourceName: "avatarMale"))
+                                    placeholder: #imageLiteral(resourceName: "smily"))
             
             KingfisherManager.shared.retrieveImage(with: url) { result in
                 switch result {

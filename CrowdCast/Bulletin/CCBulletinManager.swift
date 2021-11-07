@@ -18,7 +18,7 @@ class CCBulletinManager {
     
     func setItem(item: BLTNItem) {
         manager = BLTNItemManager(rootItem: item)
-        manager?.backgroundViewStyle = .blurred(style: .systemThinMaterial, isDark: false)
+        manager?.backgroundViewStyle = .dimmed
     }
     
     static func joinChannel() -> BLTNPageItem {
