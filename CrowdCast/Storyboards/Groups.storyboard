@@ -18,21 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-BQ-whk">
-                                <rect key="frame" x="124" y="80" width="166" height="163"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-BQ-whk">
+                                <rect key="frame" x="124" y="79" width="166" height="165.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fnx-BQ-whk" secondAttribute="height" id="u1B-rQ-wmn"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G92-bZ-bXf">
-                                <rect key="frame" x="124" y="224.5" width="166" height="20"/>
-                                <color key="backgroundColor" name="Foreground"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="13M-TB-IDH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="xh7-Uc-C4S"/>
-                                </constraints>
+                                <rect key="frame" x="124" y="79" width="166" height="165.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
-                                <state key="normal" title="CHANGE">
+                                <state key="normal" title=" ">
                                     <color key="titleColor" name="Inverted"/>
                                 </state>
                                 <connections>
@@ -71,8 +67,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABY-yf-FHb" customClass="TweeActiveTextField" customModule="TweeTextField">
-                                <rect key="frame" x="25" y="363.5" width="364" height="29"/>
+                            <textField hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABY-yf-FHb" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="313.5" width="364" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="Mdh-db-eu6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -107,7 +106,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Usman Nazir" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-wp-oBh" customClass="TweeBorderedTextField" customModule="TweeTextField">
-                                <rect key="frame" x="25" y="442.5" width="364" height="29"/>
+                                <rect key="frame" x="25" y="363.5" width="364" height="29"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -165,8 +164,9 @@
                             <constraint firstItem="G92-bZ-bXf" firstAttribute="bottom" secondItem="Fnx-BQ-whk" secondAttribute="bottom" id="ar9-0N-Xed"/>
                             <constraint firstItem="l2g-UN-Rb4" firstAttribute="centerX" secondItem="cu1-Xk-Gx3" secondAttribute="centerX" id="bTl-XY-Ljr"/>
                             <constraint firstItem="ABY-yf-FHb" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="doN-2r-lUM"/>
+                            <constraint firstItem="G92-bZ-bXf" firstAttribute="top" secondItem="Fnx-BQ-whk" secondAttribute="top" id="gJu-ue-b0W"/>
                             <constraint firstItem="b5b-wp-oBh" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="k3J-Ji-Hu1"/>
-                            <constraint firstItem="ABY-yf-FHb" firstAttribute="top" secondItem="nsK-ei-mAq" secondAttribute="bottom" constant="50" id="kew-vg-aEa"/>
+                            <constraint firstItem="ABY-yf-FHb" firstAttribute="top" secondItem="nsK-ei-mAq" secondAttribute="bottom" id="kew-vg-aEa"/>
                             <constraint firstItem="nsK-ei-mAq" firstAttribute="top" secondItem="Fnx-BQ-whk" secondAttribute="bottom" constant="40" id="qee-zz-Jrc"/>
                             <constraint firstItem="2c7-EW-Z5A" firstAttribute="trailing" secondItem="nsK-ei-mAq" secondAttribute="trailing" constant="25" id="s8S-QA-Tcv"/>
                             <constraint firstItem="G92-bZ-bXf" firstAttribute="leading" secondItem="Fnx-BQ-whk" secondAttribute="leading" id="y21-lb-oYb"/>
@@ -227,20 +227,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ico" width="90" height="90"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="link" catalog="system" width="128" height="122"/>
-        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <namedColor name="Background">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Foreground">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97200000286102295" green="0.97200000286102295" blue="0.97200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Inverted">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.31400001049041748" green="0.62699997425079346" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

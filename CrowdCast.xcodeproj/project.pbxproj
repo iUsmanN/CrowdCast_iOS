@@ -116,6 +116,7 @@
 		B6888A58247309D5002E3EB5 /* CCTwilioTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */; };
 		B6888A5C24747CD5002E3EB5 /* CCCollectionSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6888A5A24747CD4002E3EB5 /* CCCollectionSectionHeader.swift */; };
 		B6888A5D24747CD5002E3EB5 /* CCCollectionSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6888A5B24747CD4002E3EB5 /* CCCollectionSectionHeader.xib */; };
+		B69256602739CDDA00D73A78 /* CCUserChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692565F2739CDDA00D73A78 /* CCUserChannel.swift */; };
 		B693E2FA2430F11D002B26BC /* Sitting.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2F92430F11D002B26BC /* Sitting.png */; };
 		B693E2FC2430F832002B26BC /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B693E2FB2430F832002B26BC /* profile.png */; };
 		B693E2FE24310D4F002B26BC /* CCLoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693E2FD24310D4F002B26BC /* CCLoginVM.swift */; };
@@ -358,6 +359,7 @@
 		B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTwilioTokenModel.swift; sourceTree = "<group>"; };
 		B6888A5A24747CD4002E3EB5 /* CCCollectionSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCollectionSectionHeader.swift; sourceTree = "<group>"; };
 		B6888A5B24747CD4002E3EB5 /* CCCollectionSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCollectionSectionHeader.xib; sourceTree = "<group>"; };
+		B692565F2739CDDA00D73A78 /* CCUserChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCUserChannel.swift; sourceTree = "<group>"; };
 		B693E2F92430F11D002B26BC /* Sitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sitting.png; sourceTree = "<group>"; };
 		B693E2FB2430F832002B26BC /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		B693E2FD24310D4F002B26BC /* CCLoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginVM.swift; sourceTree = "<group>"; };
@@ -874,6 +876,7 @@
 				B697487F243B96E800AE95C0 /* CCUser.swift */,
 				B6888A57247309D5002E3EB5 /* CCTwilioTokenModel.swift */,
 				B6BEBF4A247A653A00461C12 /* CCUserCrowd.swift */,
+				B692565F2739CDDA00D73A78 /* CCUserChannel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1736,6 +1739,7 @@
 				B6BD90D0243703F600F50848 /* CCPrint.swift in Sources */,
 				B6ACD06B243F50F700405838 /* CCDispatchQueue.swift in Sources */,
 				B61ADC1E2430B67600ECD1D2 /* CCButton.swift in Sources */,
+				B69256602739CDDA00D73A78 /* CCUserChannel.swift in Sources */,
 				B6ACD06D243FA57E00405838 /* CCRelations.swift in Sources */,
 				B67E8C56245DF237002FAD55 /* CCCardMemberCell.swift in Sources */,
 				B64E4D142439F4850011715A /* CCContainsOwners.swift in Sources */,

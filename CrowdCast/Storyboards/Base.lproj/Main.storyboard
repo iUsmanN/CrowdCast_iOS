@@ -263,8 +263,8 @@
                                     <constraint firstItem="JWf-Rv-aD0" firstAttribute="centerY" secondItem="8D2-IQ-hbi" secondAttribute="centerY" id="Zl7-9a-8py"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CROWD CAST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-Ch-YEz">
-                                <rect key="frame" x="25" y="59" width="165.5" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CROWD CAST (beta)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-Ch-YEz">
+                                <rect key="frame" x="25" y="59" width="236" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ect-YM-opw"/>
                                 </constraints>
@@ -294,7 +294,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55E-v8-j0K">
                                                 <rect key="frame" x="40" y="37.5" width="334" height="60"/>
-                                                <color key="backgroundColor" name="Background"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="sOn-SI-913"/>
                                                 </constraints>
@@ -757,7 +757,7 @@
             <color red="0.97200000286102295" green="0.97200000286102295" blue="0.97200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.31200000643730164" green="0.62699997425079346" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.31400001049041748" green="0.62699997425079346" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blue">
             <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

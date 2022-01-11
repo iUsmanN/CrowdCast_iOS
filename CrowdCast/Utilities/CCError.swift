@@ -17,6 +17,7 @@ enum CCError : Error {
     case emptyFields
     case CodableError
     case internetError
+    case userChannelRemovalFailure
     
     //MARK: TWILIO
     case twilioVideoError

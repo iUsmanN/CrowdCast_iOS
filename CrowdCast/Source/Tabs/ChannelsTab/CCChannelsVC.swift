@@ -60,6 +60,9 @@ extension CCChannelsVC {
         tableView.dataSource    = self
         tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
         tableView.register(Nib.get.CCEmptyTableView, forHeaderFooterViewReuseIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = .leastNormalMagnitude
+        }
     }
     
     private func checkDynamicChannelJoin(){

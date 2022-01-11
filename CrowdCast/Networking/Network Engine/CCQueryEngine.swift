@@ -121,11 +121,23 @@ extension CCQueryEngine {
         return db.document("\(env)\(CCQueryPath.channelUsers.rawValue)/\(id ?? "")")
     }
     
-    func userChannel(id: String?) -> DocumentReference {
+    func channelData(id: String?) -> DocumentReference {
         let db = Firestore.firestore()
         let env = Constants.environment
         return db.document("\(env)\(CCQueryPath.channelsData.rawValue)/\(id ?? "")")
     }
+    
+    func usersWithChannel(channelId: String, type: CCCrowdRelation) -> Query {
+        let db = Firestore.firestore()
+        let env = Constants.environment
+        return db.collection("\(env)\(CCQueryPath.userChannels.rawValue)").whereField("\(type.rawValue)", arrayContains: channelId)
+    }
+    
+//    func userChannelData(userID: String, type: CCCrowdRelation) -> DocumentReference {
+//        let db = Firestore.firestore()
+//        let env = Constants.environment
+//        return db.document("\(env)\(CCQueryPath.userChannels.rawValue)").parent.whereField("id", isEqualTo: userID)
+//    }
     
 //    func channelUsers(id: String?) -> CollectionReference {
 //        let db = Firestore.firestore()

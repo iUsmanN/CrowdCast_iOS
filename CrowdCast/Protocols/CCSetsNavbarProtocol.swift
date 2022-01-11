@@ -37,7 +37,7 @@ extension CCSetsNavbar {
 extension CCSetsNavbar {
     
     private func getLogoButton() -> UIBarButtonItem {
-        let leftButton = UIBarButtonItem(title: "CROWD CAST", style: .plain, target: self, action: nil)
+        let leftButton = UIBarButtonItem(title: "CROWD CAST (beta)", style: .plain, target: self, action: nil)
         leftButton.isEnabled = false
         leftButton.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont(name: "Avenir", size: 13) as Any,
@@ -61,12 +61,8 @@ extension CCSetsNavbar {
         profileView.contentMode = .scaleAspectFill
         profileView.layer.borderColor = UIColor(named: "Inverted")?.cgColor
         profileView.layer.borderWidth = 1
+        profileView.setImage(UIImage(named: "smily"), for: .normal)
         if let url = URL(string: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID())){
-            profileView.kf.setImage(with: ImageResource(downloadURL: url,
-                                    cacheKey: url.getQueryLessURL()?.absoluteString),
-                                    for: .normal,
-                                    placeholder: #imageLiteral(resourceName: "smily"))
-            
             KingfisherManager.shared.retrieveImage(with: url) { result in
                 switch result {
                 case .success(let imageResult):
