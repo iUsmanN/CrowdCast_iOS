@@ -11,7 +11,7 @@ import Kingfisher
 import FirebaseStorage
 import UIKit
 
-protocol CCSetsNavbar : CCOpensSettings {}
+protocol CCSetsNavbar : CCOpensSettings, CCImageStorage {}
 
 extension CCSetsNavbar {
     
@@ -61,15 +61,21 @@ extension CCSetsNavbar {
         profileView.contentMode = .scaleAspectFill
         profileView.layer.borderColor = UIColor(named: "Inverted")?.cgColor
         profileView.layer.borderWidth = 1
-        profileView.setImage(UIImage(named: "smily"), for: .normal)
-        if let url = URL(string: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID())){
-            KingfisherManager.shared.retrieveImage(with: url) { result in
-                switch result {
-                case .success(let imageResult):
-                    profileView.setImage(imageResult.image, for: .normal)
-                case .failure(let _):
-                    print("Cannot fetch profile image")
+        
+        getImage2(memberID: CCProfileManager.sharedInstance.getUID(), directory: .displays) { [weak self] response in
+            switch response {
+            case .success(let url):
+                KingfisherManager.shared.retrieveImage(with: url) { result in
+                    switch result {
+                    case .success(let imageResult):
+                        profileView.setImage(imageResult.image, for: .normal)
+                    case .failure(let _):
+                        print("Cannot fetch profile image")
+                    }
                 }
+            case .failure(let _):
+                print("Cannot fetch profile image")
+                profileView.setImage(UIImage(named: "smily"), for: .normal)
             }
         }
         guard let action = action else { return UIBarButtonItem() }

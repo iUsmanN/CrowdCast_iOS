@@ -28,7 +28,7 @@ extension CCImageStorage {
         guard let id = id, let url = URL(string: Constants.imageCacheString(id: id, directory: directory)) else {
             return nil
         }
-        return url
+        return nil
     }
     
     /// Gets Logged In User Profile URL

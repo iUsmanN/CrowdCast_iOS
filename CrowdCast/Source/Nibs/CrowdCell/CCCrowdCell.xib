@@ -19,18 +19,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-9y-hMm">
-                        <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
+                        <rect key="frame" x="0.0" y="0.0" width="165" height="163"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-oW-bBh">
-                                <rect key="frame" x="0.0" y="0.0" width="165" height="170"/>
+                                <rect key="frame" x="0.0" y="0.0" width="165" height="168"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NYB-8q-E8X">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="168"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-2K-3MR">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="168"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.65000000000000002" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P7n-za-3RH">
-                                            <rect key="frame" x="0.0" y="0.0" width="165" height="170"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="168"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="regular"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Developers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-sM-AU9">
-                                        <rect key="frame" x="10" y="5" width="145" height="150"/>
+                                        <rect key="frame" x="10" y="5" width="145" height="148"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
             <constraints>
                 <constraint firstItem="Of3-9y-hMm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P2F-DU-Gnd"/>
                 <constraint firstAttribute="trailing" secondItem="Of3-9y-hMm" secondAttribute="trailing" id="UoM-or-xaF"/>
-                <constraint firstAttribute="bottom" secondItem="Of3-9y-hMm" secondAttribute="bottom" id="aty-Ac-4ag"/>
+                <constraint firstAttribute="bottom" secondItem="Of3-9y-hMm" secondAttribute="bottom" constant="2" id="aty-Ac-4ag"/>
                 <constraint firstItem="Of3-9y-hMm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pxx-ge-dFp"/>
             </constraints>
             <size key="customSize" width="303" height="201"/>
