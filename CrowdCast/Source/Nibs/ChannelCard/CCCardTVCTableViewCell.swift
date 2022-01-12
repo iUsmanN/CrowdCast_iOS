@@ -19,6 +19,7 @@ class CCCardTVCTableViewCell: UITableViewCell {
     @IBOutlet weak var membersViewHeight        : NSLayoutConstraint!
     @IBOutlet weak var ownerViewHeight          : NSLayoutConstraint!
     @IBOutlet weak var timeViewHeight           : NSLayoutConstraint!
+    @IBOutlet weak var accentView               : UIView!
     
     var data : CCChannel? {
         didSet{
@@ -99,6 +100,7 @@ extension CCCardTVCTableViewCell {
         timeLabel.setView(inputColor: c)
         pingButton.setImage(#imageLiteral(resourceName: "Bell").withRenderingMode(.alwaysTemplate), for: .normal)
         pingButton.tintColor = c
+        accentView.backgroundColor = c
     }
 }
 

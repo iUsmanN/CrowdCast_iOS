@@ -22,6 +22,10 @@
                         <rect key="frame" x="25" y="5" width="270" height="123"/>
                         <color key="backgroundColor" name="Foreground"/>
                     </view>
+                    <view alpha="0.01" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmg-0M-r25">
+                        <rect key="frame" x="25" y="5" width="270" height="123"/>
+                        <color key="backgroundColor" name="red"/>
+                    </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="VRZ-E8-CST">
                         <rect key="frame" x="35" y="15" width="250" height="108"/>
                         <subviews>
@@ -103,12 +107,17 @@
                     <constraint firstItem="VRZ-E8-CST" firstAttribute="bottom" secondItem="yOU-O8-gfa" secondAttribute="bottom" constant="-5" id="KUg-sQ-Ep0"/>
                     <constraint firstItem="hUy-du-l4l" firstAttribute="top" secondItem="yOU-O8-gfa" secondAttribute="top" constant="13" id="OVy-Fk-A4B"/>
                     <constraint firstItem="yOU-O8-gfa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="PwV-P0-uSf"/>
+                    <constraint firstItem="Lmg-0M-r25" firstAttribute="trailing" secondItem="yOU-O8-gfa" secondAttribute="trailing" id="Qzx-Ah-c2L"/>
+                    <constraint firstItem="Lmg-0M-r25" firstAttribute="bottom" secondItem="yOU-O8-gfa" secondAttribute="bottom" id="iM5-tg-SAl"/>
                     <constraint firstItem="VRZ-E8-CST" firstAttribute="leading" secondItem="yOU-O8-gfa" secondAttribute="leading" constant="10" id="mUr-Hh-7c4"/>
+                    <constraint firstItem="Lmg-0M-r25" firstAttribute="top" secondItem="yOU-O8-gfa" secondAttribute="top" id="sKk-X4-x7C"/>
                     <constraint firstAttribute="trailing" secondItem="yOU-O8-gfa" secondAttribute="trailing" constant="25" id="xY2-Nw-cqw"/>
+                    <constraint firstItem="Lmg-0M-r25" firstAttribute="leading" secondItem="yOU-O8-gfa" secondAttribute="leading" id="y30-dT-aN2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="accentView" destination="Lmg-0M-r25" id="JDt-iC-uVn"/>
                 <outlet property="cardBackgroundView" destination="yOU-O8-gfa" id="NAf-Ay-jHt"/>
                 <outlet property="membersCollectionView" destination="0lm-wU-OMG" id="huh-i9-uVb"/>
                 <outlet property="membersViewHeight" destination="4Na-0v-tmE" id="Kd0-eP-Rra"/>
@@ -133,6 +142,9 @@
         </namedColor>
         <namedColor name="Foreground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="red">
+            <color red="0.80706346649484539" green="0.19725308732060173" blue="0.25707245621223063" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
