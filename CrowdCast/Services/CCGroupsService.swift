@@ -55,6 +55,18 @@ extension CCGroupsService {
             }
         }
     }
+    
+    func joinGroup(groupID: String, type: CCCrowdRelation, completion: @escaping (Result<Any?, CCError>) -> ()){
+        userGroupsDocReferrence().updateData([
+            "\(type.rawValue)": FieldValue.arrayUnion([groupID])
+        ]) { error in
+            guard let error = error else {
+                completion(.success(nil))
+                return
+            }
+            completion(.failure(.groupJoiningFailue))
+        }
+    }
 }
 
 extension CCGroupsService {

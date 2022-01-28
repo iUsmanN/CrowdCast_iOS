@@ -28,10 +28,18 @@ class CCLoginVC: CCUIViewController {
     @IBOutlet weak var curtainView: UIView!
     
     @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var waveView: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        waveView.play(fromFrame: 0, toFrame: 121, loopMode: .playOnce) { _ in
+            //self.waveView.play(fromFrame: 57, toFrame: 72, loopMode: .autoReverse, completion: nil)
+        }
     }
     
     func setupView(){
@@ -97,12 +105,12 @@ extension CCLoginVC {
     func signIn_Email(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
             guard error == nil else { self?.signInFailed(error: error); return }
-            self?.signInSuccessFul(result: result)
+            self?.signInSuccessFul(result: result, emailInput: email, nameInput: nil)
         }
     }
 }
 
-extension CCLoginVC : CCSyncUserData {
+extension CCLoginVC : CCSyncUserData, CCUserService {
     
     func signInFailed(error: Error?){
         activeButton?.hideSpinner()
@@ -110,7 +118,7 @@ extension CCLoginVC : CCSyncUserData {
         print("Can't sign in.")
     }
     
-    func signInSuccessFul(result: AuthDataResult?){
+    func signInSuccessFul(result: AuthDataResult?, emailInput: String?, nameInput: String?){
         guard let uid = result?.user.uid else { return }
         print("Signed in.")
         generateHapticFeedback(.light)
@@ -120,7 +128,33 @@ extension CCLoginVC : CCSyncUserData {
                 UIView.animate(withDuration: 0.75) { [weak self] in
                     self?.curtainView.alpha = 1
                 } completion: { (_) in self?.moveToHome() }
-            case .failure(let error)    : self?.signInFailed(error: error)
+            case .failure(let error)    :
+                self?.createUser(uid: uid, emailInput: emailInput ?? "NO EMAIL - 2", nameInput: nameInput ?? "NO NAME - 2")
+            }
+        }
+    }
+    
+    func createUser(uid: String?, emailInput: String, nameInput: String){
+        guard let uid = uid else { return }
+        addNewUser(uid: uid, email: emailInput, firstName: nameInput, lastName: "") { [weak self](result) in
+            switch result {
+            case .success(_):
+                self?.createdUser(uid: uid)
+            case .failure(let error):
+                self?.signInFailed(error: error)
+            }
+        }
+    }
+    
+    func createdUser(uid: String) {
+        syncUserData(uid: uid) { [weak self](result) in
+            switch result {
+            case .success(_)            :
+                UIView.animate(withDuration: 0.75) { [weak self] in
+                    self?.curtainView.alpha = 1
+                } completion: { (_) in self?.moveToHome() }
+            case .failure(let error)    :
+                self?.signInFailed(error: error)
             }
         }
     }
@@ -145,7 +179,7 @@ extension CCLoginVC : ASAuthorizationControllerDelegate, ASAuthorizationControll
             
             Auth.auth().signIn(with: credential) { [weak self] (result, error) in
                 guard error == nil else { self?.signInFailed(error: error); return }
-                self?.signInSuccessFul(result: result)
+                self?.signInSuccessFul(result: result, emailInput: email ?? "No EMAIL - 1", nameInput: fullName?.givenName ?? "NO NAME - 1")
             }
             
             print("Sign In")

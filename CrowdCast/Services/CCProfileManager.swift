@@ -43,7 +43,7 @@ extension CCProfileManager : CCUserService {
     private func fetchProfile(uid: String, result: @escaping (Result<CCUser, CCError>) -> ()){
         fetchUserProfile(uid: uid) { [weak self] (callbackResult) in
             switch callbackResult {
-            case .failure(let error)        : prints("\(error)")
+            case .failure(let error)        : result(.failure(.fetchUserProfileFailure))
             case .success(let fetchedUser)  : result(.success(fetchedUser))
             }
         }

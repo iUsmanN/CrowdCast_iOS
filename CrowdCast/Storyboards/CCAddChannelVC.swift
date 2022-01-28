@@ -74,10 +74,17 @@ extension CCAddChannelVC : UICollectionViewDataSource, UICollectionViewDelegate 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CCColorCell", for: indexPath) as? CCColorCell else { return UICollectionViewCell() }
         cell.color = viewModel.colorForItemAt(indexPath: indexPath)
+        cell.select(toggle: false)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        for cell in collectionView.visibleCells {
+            guard let colorCell = cell as? CCColorCell else { return }
+            colorCell.select(toggle: false)
+        }
+        guard let colorCell = collectionView.visibleCells[indexPath.row] as? CCColorCell else { return }
+        colorCell.select(toggle: true)
         viewModel.selectedColor = indexPath.row
     }
 }

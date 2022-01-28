@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class CCCameraView          : UIView {
+class CCCameraView                      : UIView {
     
     var captureSession                  = AVCaptureSession()
     var videoPreviewLayer               : AVCaptureVideoPreviewLayer?

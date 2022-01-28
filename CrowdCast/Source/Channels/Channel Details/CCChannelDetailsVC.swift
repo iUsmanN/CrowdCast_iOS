@@ -21,7 +21,7 @@ class CCChannelDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.tintColor = UIColor(named: "Main Accent")
+        navigationController?.navigationBar.tintColor = .label
     }
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import Kingfisher
 
 class CCCrowdsVC: CCUIViewController {
     
@@ -19,6 +20,20 @@ class CCCrowdsVC: CCUIViewController {
         setupView()
         setupVM()
         bindVM()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkDynamicChannelJoin()
+    }
+    
+    private func checkDynamicChannelJoin(){
+        guard let id = CCDynamicLinkManager.id, let isGroup = CCDynamicLinkManager.isGroup, isGroup else { return }
+        CCDynamicLinkManager.id = nil; CCDynamicLinkManager.isGroup = nil
+        viewModel?.joinGroup(groupID: id, type: .member, completion: { [weak self] _ in
+            self?.viewModel?.joinedCrowds.clearData()
+            self?.viewModel?.fetchFreshData()
+        })
     }
 }
 
@@ -38,13 +53,13 @@ extension CCCrowdsVC {
     
     func insertRows(at indexPaths: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadSections(IndexSet(arrayLiteral: 0))
+            self?.collectionView.reloadData()
         }
     }
     
     func removeRows(at indexPath: [IndexPath]) {
         DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadSections(IndexSet(arrayLiteral: 1))
+            self?.collectionView.reloadData()
         }
     }
 }
@@ -65,6 +80,7 @@ extension CCCrowdsVC : CCSetsNavbar {
         collectionView.delegate     = self
         let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.sectionHeadersPinToVisibleBounds = true
+        layout?.minimumLineSpacing = layout?.minimumInteritemSpacing ?? 0
         collectionView.register(Nib.nibFor(Nib.reuseIdentifier.CCCrowdCell), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCrowdCell)
     }
     
@@ -81,12 +97,14 @@ extension CCCrowdsVC : UICollectionViewDataSource, UICollectionViewDelegate, CCG
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Nib.reuseIdentifier.CCCrowdCell, for: indexPath) as? CCCrowdCell else { return UICollectionViewCell() }
+        cell.cardImage.kf.cancelDownloadTask()
         cell.data = viewModel?.dataForItem(indexPath: indexPath)
+        cell.layer.cornerRadius = 10
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 15) / 2, height: (collectionView.frame.size.width - 15) / 2)
+        return CGSize(width: (collectionView.frame.size.width-10)/2, height: 165)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -13,14 +13,14 @@
         <!--ChannelsVC-->
         <scene sceneID="nSw-OB-QDZ">
             <objects>
-                <viewController id="8Lg-c6-fwt" customClass="CCChannelsVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8Lg-c6-fwt" customClass="CCChannelsVC" customModule="CrowdCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S04-io-sqW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83a-pw-sTL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83a-pw-sTL">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Background"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IXg-Qa-1gI"/>
@@ -49,10 +49,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fLc-qR-PmM">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fLc-qR-PmM">
                                 <rect key="frame" x="17" y="88" width="380" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xnP-vy-HEU">
+                                <color key="backgroundColor" name="Background"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xnP-vy-HEU">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="50" height="100"/>
@@ -64,16 +64,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pd-9h-cD7">
-                                            <rect key="frame" x="3" y="10" width="374" height="40"/>
+                                            <rect key="frame" x="3" y="10" width="374" height="35"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZz-gh-Sbd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="35"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLc-WT-qZR">
-                                                    <rect key="frame" x="258" y="0.0" width="116" height="40"/>
+                                                    <rect key="frame" x="258" y="0.0" width="116" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" name="Main Accent"/>
@@ -93,7 +93,7 @@
                                         <constraint firstItem="3pd-9h-cD7" firstAttribute="top" secondItem="AEm-xI-Yuj" secondAttribute="top" constant="10" id="7Ru-pK-Sdt"/>
                                         <constraint firstAttribute="trailing" secondItem="3pd-9h-cD7" secondAttribute="trailing" constant="3" id="8YG-9K-aKf"/>
                                         <constraint firstItem="3pd-9h-cD7" firstAttribute="leading" secondItem="AEm-xI-Yuj" secondAttribute="leading" constant="3" id="cs4-Vn-nmX"/>
-                                        <constraint firstAttribute="bottom" secondItem="3pd-9h-cD7" secondAttribute="bottom" id="pbR-Sn-1OK"/>
+                                        <constraint firstAttribute="bottom" secondItem="3pd-9h-cD7" secondAttribute="bottom" constant="5" id="pbR-Sn-1OK"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="rightButton" destination="DLc-WT-qZR" id="oYN-cg-hWf"/>
@@ -286,10 +286,10 @@
         <image name="Groups" width="33.333332061767578" height="33.333332061767578"/>
         <image name="arrow" width="246" height="214"/>
         <namedColor name="Background">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97200000286102295" green="0.97200000286102295" blue="0.97200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.31400001049041748" green="0.62699997425079346" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

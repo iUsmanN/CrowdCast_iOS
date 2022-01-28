@@ -14,8 +14,12 @@ class CCColorCell: UICollectionViewCell {
         didSet {
             backgroundColor = color
             layer.cornerRadius = bounds.size.width/2
-//            layer.borderColor = UIColor.white.cgColor
-//            layer.borderWidth = 2
+            layer.borderColor = UIColor(named: "Background")!.cgColor
+            layer.borderWidth = 10
         }
+    }
+    
+    func select(toggle: Bool) {
+        layer.borderWidth = toggle ? 0 : 10
     }
 }

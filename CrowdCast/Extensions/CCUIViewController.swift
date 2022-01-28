@@ -12,7 +12,7 @@ import Reachability
 import Kingfisher
 import NotificationBannerSwift
 
-class CCUIViewController: UIViewController {
+class CCUIViewController: UIViewController, CCImageStorage {
     
     var activeButton        : CCButton?
     var combineCancellable  = Set<AnyCancellable>()
@@ -27,7 +27,7 @@ class CCUIViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.tintColor = UIColor(named: "Main Accent")
+        navigationController?.navigationBar.tintColor = .label
     }
     
     func setupLargeTitles(){
@@ -39,12 +39,23 @@ class CCUIViewController: UIViewController {
     }
     
     @objc func updateProfilePicture(){
+        print("DP Changed")
         guard let profileIcon = navigationItem.rightBarButtonItem?.customView as? CCRoundButton else { return }
-        if let url = URL(string: Constants.imageCacheString(id: CCProfileManager.sharedInstance.getUID())){
-            profileIcon.kf.setImage(with: ImageResource(downloadURL: url,
-                                    cacheKey: url.getQueryLessURL()?.absoluteString),
-                                    for: .normal,
-                                    placeholder: #imageLiteral(resourceName: "avatarMale"))
+        
+        getImage2(memberID: CCProfileManager.sharedInstance.getUID()) { result in
+            switch result {
+            case .success(let url):
+                KingfisherManager.shared.retrieveImage(with: url) { result in
+                    switch result {
+                    case .success(let imageResult):
+                        profileIcon.setImage(imageResult.image, for: .normal)
+                    case .failure(let _):
+                        print("Cannot fetch profile image")
+                    }
+                }
+            case .failure(let _):
+                print("Cannot fetch profile image")
+            }
         }
     }
 }

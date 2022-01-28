@@ -19,26 +19,32 @@ class CCButton : UIButton {
             titleLabel?.font = UIFont(name: "Avenir", size: 15)
             switch type {
             case 0: //main
-                backgroundColor     = UIColor(named: "Main Accent")
+                backgroundColor     = UIColor(named: "PrimaryButton")
                 layer.cornerRadius  = 10
-                setTitleColor(UIColor(named: "Background"), for: .normal)
+                setTitleColor(.label, for: .normal)
+                backgroundColor     = UIColor(red: backgroundColor?.redValue ?? 0,
+                                              green: backgroundColor?.greenValue ?? 0,
+                                              blue: backgroundColor?.blueValue ?? 0,
+                                              alpha: 0.4)
+                layer.borderColor   = UIColor.label.cgColor
+                layer.borderWidth   = 0.5
                 layer.masksToBounds = true
                 addView()
                 
             case 1: //secondary
-                backgroundColor     = UIColor(named: "Background")
+                backgroundColor     = UIColor(named: "PrimaryButton")
                 backgroundColor     = UIColor(red: backgroundColor?.redValue ?? 0,
                                               green: backgroundColor?.greenValue ?? 0,
                                               blue: backgroundColor?.blueValue ?? 0,
-                                              alpha: 0.3)
+                                              alpha: 0.15)
                 layer.cornerRadius  = 10
-                layer.borderColor   = UIColor(named: "Main Accent")?.cgColor
+                layer.borderColor   = UIColor.label.cgColor//UIColor(named: "Main Accent")?.cgColor
                 layer.borderWidth   = 0.5
-                setTitleColor(UIColor(named: "Main Accent"), for: .normal)
+                setTitleColor(.label, for: .normal)
                 
             case 2:
-                backgroundColor     = UIColor(named: "Inverted")
-                layer.borderColor   = UIColor(named: "green")?.cgColor
+                backgroundColor     = UIColor(named: "Background")
+                layer.borderColor   = UIColor.label.cgColor//UIColor(named: "green")?.cgColor
                 layer.cornerRadius  = 10
                 layer.borderWidth   = 1
                 backgroundColor     = UIColor(red: backgroundColor?.redValue ?? 0,
@@ -56,7 +62,7 @@ class CCButton : UIButton {
     }
     
     func greenBorder() {
-        layer.borderColor   = UIColor(named: "blue")?.cgColor
+        layer.borderColor   = UIColor.label.cgColor
     }
     
     func addView() {

@@ -31,13 +31,13 @@
       "size" : "40x40"
     },
     {
-      "filename" : "Webp.net-resizeimage (12).png",
+      "filename" : "Webp.net-resizeimage (22).png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "Webp.net-resizeimage (13).png",
+      "filename" : "Webp.net-resizeimage (21).png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -78,16 +78,19 @@
       "size" : "76x76"
     },
     {
+      "filename" : "Webp.net-resizeimage (14).png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
+      "filename" : "Webp.net-resizeimage (13)-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "Webp.net-resizeimage (16).png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

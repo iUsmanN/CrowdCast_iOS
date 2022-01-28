@@ -75,7 +75,7 @@ extension CCCrowdChannelsVC {
     
     func insertRows(indexPaths: [IndexPath]){
         DispatchQueue.main.async { [weak self] in
-            self?.tableView.insertRows(at: indexPaths, with: .right)
+            self?.tableView.insertRows(at: indexPaths, with: .automatic)
         }
     }
     

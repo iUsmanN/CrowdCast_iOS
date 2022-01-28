@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,21 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-BQ-whk">
-                                <rect key="frame" x="124" y="80.5" width="166" height="162.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-BQ-whk">
+                                <rect key="frame" x="124" y="79" width="166" height="165.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fnx-BQ-whk" secondAttribute="height" id="u1B-rQ-wmn"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G92-bZ-bXf">
-                                <rect key="frame" x="124" y="224.5" width="166" height="20"/>
-                                <color key="backgroundColor" name="Foreground"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="13M-TB-IDH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="xh7-Uc-C4S"/>
-                                </constraints>
+                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G92-bZ-bXf">
+                                <rect key="frame" x="124" y="79" width="166" height="165.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
-                                <state key="normal" title="CHANGE">
+                                <state key="normal" title=" ">
                                     <color key="titleColor" name="Inverted"/>
                                 </state>
                                 <connections>
@@ -62,15 +60,18 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
                                         <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABY-yf-FHb" customClass="TweeActiveTextField" customModule="TweeTextField">
-                                <rect key="frame" x="25" y="363.5" width="364" height="29"/>
+                            <textField hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABY-yf-FHb" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="25" y="313.5" width="364" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="Mdh-db-eu6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -88,7 +89,7 @@
                                         <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
                                         <color key="value" name="Main Accent"/>
@@ -105,13 +106,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Usman Nazir" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-wp-oBh" customClass="TweeBorderedTextField" customModule="TweeTextField">
-                                <rect key="frame" x="25" y="442.5" width="364" height="29"/>
+                                <rect key="frame" x="25" y="363.5" width="364" height="29"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="separatorColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="1"/>
@@ -131,7 +132,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Owner"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2g-UN-Rb4" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2g-UN-Rb4" customClass="CCButton" customModule="CrowdCast" customModuleProvider="target">
                                 <rect key="frame" x="97" y="767" width="220" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="gqO-02-SZU"/>
@@ -148,6 +149,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2c7-EW-Z5A"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="Fnx-BQ-whk" firstAttribute="centerX" secondItem="cu1-Xk-Gx3" secondAttribute="centerX" id="DXV-Rj-YWX"/>
@@ -162,14 +164,14 @@
                             <constraint firstItem="G92-bZ-bXf" firstAttribute="bottom" secondItem="Fnx-BQ-whk" secondAttribute="bottom" id="ar9-0N-Xed"/>
                             <constraint firstItem="l2g-UN-Rb4" firstAttribute="centerX" secondItem="cu1-Xk-Gx3" secondAttribute="centerX" id="bTl-XY-Ljr"/>
                             <constraint firstItem="ABY-yf-FHb" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="doN-2r-lUM"/>
+                            <constraint firstItem="G92-bZ-bXf" firstAttribute="top" secondItem="Fnx-BQ-whk" secondAttribute="top" id="gJu-ue-b0W"/>
                             <constraint firstItem="b5b-wp-oBh" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="k3J-Ji-Hu1"/>
-                            <constraint firstItem="ABY-yf-FHb" firstAttribute="top" secondItem="nsK-ei-mAq" secondAttribute="bottom" constant="50" id="kew-vg-aEa"/>
+                            <constraint firstItem="ABY-yf-FHb" firstAttribute="top" secondItem="nsK-ei-mAq" secondAttribute="bottom" id="kew-vg-aEa"/>
                             <constraint firstItem="nsK-ei-mAq" firstAttribute="top" secondItem="Fnx-BQ-whk" secondAttribute="bottom" constant="40" id="qee-zz-Jrc"/>
                             <constraint firstItem="2c7-EW-Z5A" firstAttribute="trailing" secondItem="nsK-ei-mAq" secondAttribute="trailing" constant="25" id="s8S-QA-Tcv"/>
                             <constraint firstItem="G92-bZ-bXf" firstAttribute="leading" secondItem="Fnx-BQ-whk" secondAttribute="leading" id="y21-lb-oYb"/>
                             <constraint firstItem="nsK-ei-mAq" firstAttribute="leading" secondItem="2c7-EW-Z5A" secondAttribute="leading" constant="25" id="zPb-UV-rzr"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2c7-EW-Z5A"/>
                     </view>
                     <connections>
                         <outlet property="descriptionTextField" destination="ABY-yf-FHb" id="cSp-nS-tTN"/>
@@ -192,17 +194,17 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3It-6z-nUx">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="Background"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rSA-4s-Zwm"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="rSA-4s-Zwm" firstAttribute="trailing" secondItem="3It-6z-nUx" secondAttribute="trailing" id="7tC-Ny-acS"/>
                             <constraint firstAttribute="bottom" secondItem="3It-6z-nUx" secondAttribute="bottom" id="dVw-1i-q7z"/>
                             <constraint firstItem="3It-6z-nUx" firstAttribute="top" secondItem="rSA-4s-Zwm" secondAttribute="top" id="ev7-bu-D03"/>
                             <constraint firstItem="3It-6z-nUx" firstAttribute="leading" secondItem="rSA-4s-Zwm" secondAttribute="leading" id="fvL-Jk-x9d"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rSA-4s-Zwm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="1LD-b2-yZg">
                         <rightBarButtonItems>
@@ -225,20 +227,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ico" width="90" height="90"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="link" catalog="system" width="128" height="116"/>
-        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="link" catalog="system" width="128" height="122"/>
         <namedColor name="Background">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Foreground">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97200000286102295" green="0.97200000286102295" blue="0.97200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Inverted">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Accent">
-            <color red="0.043000001460313797" green="0.49799999594688416" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.31400001049041748" green="0.62699997425079346" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

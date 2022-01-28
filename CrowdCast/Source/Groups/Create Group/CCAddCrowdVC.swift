@@ -53,7 +53,7 @@ extension CCAddCrowdVC {
 }
 
 //Profile Image Change Action
-extension CCAddCrowdVC : CCImagePickedDelegate, CCImageStorage {
+extension CCAddCrowdVC : CCImagePickedDelegate {
     
     @IBAction func changeGroupPicture(_ sender: Any) {
         imagePickerDelegate = self

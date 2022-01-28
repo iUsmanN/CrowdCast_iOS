@@ -16,7 +16,7 @@ class CCNavigationController: UINavigationController {
     }
     
     func setupNavigationBar() {
-        navigationBar.tintColor = UIColor(named: "Main Accent")
+        navigationBar.tintColor = .label
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor  : UIColor(named: "Inverted") as Any,
