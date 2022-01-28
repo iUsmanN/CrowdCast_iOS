@@ -87,19 +87,27 @@ extension CCJoinChannelVC : CCGetsViewController, CCHapticEngine, CCDynamicLinkE
 extension CCJoinChannelVC : CCImageStorage {
     
     func setupView(){
-        guard let url = imageCacheURL(id: CCProfileManager.sharedInstance.getUID()) else { return }
-        profileView.kf.setImage(with: ImageResource(downloadURL: url))
+        getImage2(memberID: CCProfileManager.sharedInstance.getUID()) { result in
+            switch result {
+            case .success(let imageResource):
+                self.profileView.kf.setImage(with: imageResource)
+            case .failure(let error):
+                prints(error)
+            }
+        }
         setupLayers()
         toggleVideoButton(enable: getCallToggles().0)
         toggleAudioButton(enable: getCallToggles().1)
+        cameraView.backgroundColor = .blue
         cameraView.setupCameraView()
         setupNavigationBar()
     }
     
     func refreshNavBar(){
         navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
+        navigationController?.navigationBar.backgroundColor = .clear
         navigationItem.title = viewModel?.channelName() ?? ""
-//        if viewModel?.data?.isGroupChannel ?? false { navigationItem.rightBarButtonItems?.remove(at: 1) }
+        if viewModel?.data?.isGroupChannel ?? false { navigationItem.rightBarButtonItems?.remove(at: 1) }
     }
     
     func toggleForeignJoinView(enable: Bool){
