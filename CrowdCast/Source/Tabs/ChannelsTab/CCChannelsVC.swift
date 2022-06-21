@@ -58,6 +58,7 @@ extension CCChannelsVC {
     private func setupTableView(){
         tableView.delegate      = self
         tableView.dataSource    = self
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
         tableView.register(Nib.get.CCEmptyTableView, forHeaderFooterViewReuseIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
         if #available(iOS 15.0, *) {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +23,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="210-VD-Axb">
                                 <rect key="frame" x="18.5" y="65.5" width="80" height="80"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="GSk-Sn-Waw">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="59.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GSk-Sn-Waw">
+                                        <rect key="frame" x="6.5" y="0.5" width="67" height="65.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="GSk-Sn-Waw" secondAttribute="height" id="loA-PL-jux"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg0-NC-IYY">
-                                        <rect key="frame" x="19" y="59.5" width="42" height="20.5"/>
+                                        <rect key="frame" x="19.5" y="66.5" width="41.5" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -34,6 +38,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="55r-Un-Lop"/>
+                                    <constraint firstItem="Bg0-NC-IYY" firstAttribute="height" secondItem="GSk-Sn-Waw" secondAttribute="height" multiplier="0.2" id="mfV-xZ-BiZ"/>
                                     <constraint firstAttribute="width" secondItem="210-VD-Axb" secondAttribute="height" id="sqm-lL-QSo"/>
                                 </constraints>
                             </stackView>
@@ -46,13 +51,13 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="fpC-89-TCm" secondAttribute="trailing" id="SAQ-Ie-wyb"/>
                 <constraint firstItem="fpC-89-TCm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TIO-XX-tw6"/>
                 <constraint firstAttribute="bottom" secondItem="fpC-89-TCm" secondAttribute="bottom" id="TsI-Ts-sXe"/>
                 <constraint firstItem="fpC-89-TCm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ezq-xi-1nu"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="117" height="211"/>
             <connections>
                 <outlet property="avatarImageView" destination="GSk-Sn-Waw" id="zSJ-0Q-Tbd"/>
@@ -63,6 +68,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Avatar.png" width="676" height="676"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

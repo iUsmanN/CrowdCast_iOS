@@ -84,7 +84,7 @@ extension CCCardTVCTableViewCell : CCHapticEngine {
         }
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (_) in
             UIView.animate(withDuration: 0.5) {
-                self.cardBackgroundView.backgroundColor = UIColor(named: "Foreground")
+                self.cardBackgroundView.backgroundColor = UIColor(named: self.data?.color ?? "red")?.withAlphaComponent(0.25)
             }
         }
     }
@@ -94,13 +94,15 @@ extension CCCardTVCTableViewCell {
     
     func setColors(color: String) {
         let c = UIColor(named: color)
-        cardBackgroundView.layer.borderColor = c?.cgColor
-        cardBackgroundView.layer.shadowColor = UIColor.black.cgColor//c?.cgColor
-        titleLabel.textColor = c
-        timeLabel.setView(inputColor: c)
-        pingButton.setImage(#imageLiteral(resourceName: "Bell").withRenderingMode(.alwaysTemplate), for: .normal)
-        pingButton.tintColor = c
-        accentView.backgroundColor = c
+        DispatchQueue.main.async {
+            self.cardBackgroundView.layer.borderColor = c?.cgColor
+            self.cardBackgroundView.layer.shadowColor = UIColor.black.cgColor//c?.cgColor
+            self.titleLabel.textColor = c
+            self.timeLabel.setView(inputColor: c)
+            self.pingButton.setImage(#imageLiteral(resourceName: "Bell").withRenderingMode(.alwaysTemplate), for: .normal)
+            self.pingButton.tintColor = c
+            self.cardBackgroundView.backgroundColor = c?.withAlphaComponent(0.25)
+        }
     }
 }
 
