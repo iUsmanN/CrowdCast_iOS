@@ -79,9 +79,9 @@ extension CCChannelsVC {
         guard indexPaths.count > 0 else { return }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPaths, with: .left)
+            self?.tableView.insertRows(at: indexPaths, with: .automatic)
             self?.tableView.endUpdates()
-            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .left)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .automatic)
         }
     }
     

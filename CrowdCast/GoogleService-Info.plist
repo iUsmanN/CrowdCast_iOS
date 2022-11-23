@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>228520965935-p04e4komjhogv0d3sui1sqhjrmmr3cct.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.228520965935-p04e4komjhogv0d3sui1sqhjrmmr3cct</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>228520965935-83n2iivv76l5v7rne91sb9ss3igfj0q6.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCq-rIvwJ-7a9NAmvy1shdS4mG3GLGHUEQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>228520965935</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.usmannazir.crowdcast</string>
+	<key>PROJECT_ID</key>
+	<string>crowdcast-31303</string>
+	<key>STORAGE_BUCKET</key>
+	<string>crowdcast-31303.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:228520965935:ios:b61e49a331bbd5519fd3da</string>
+	<key>DATABASE_URL</key>
+	<string>https://crowdcast-31303.firebaseio.com</string>
+</dict>
+</plist>

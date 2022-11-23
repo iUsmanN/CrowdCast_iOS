@@ -99,7 +99,7 @@ extension CCJoinChannelVC : CCImageStorage {
     func refreshNavBar(){
         navigationController?.navigationBar.tintColor = UIColor(named: "Inverted")
         navigationItem.title = viewModel?.channelName() ?? ""
-        if viewModel?.data?.isGroupChannel ?? false { navigationItem.rightBarButtonItems?.remove(at: 1) }
+//        if viewModel?.data?.isGroupChannel ?? false { navigationItem.rightBarButtonItems?.remove(at: 1) }
     }
     
     func toggleForeignJoinView(enable: Bool){

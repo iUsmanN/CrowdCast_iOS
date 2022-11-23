@@ -6,6 +6,7 @@
 //
 
 #import "TVIDataTrackPublication.h"
+#import "TVITrackPriority.h"
 
 @class TVILocalDataTrack;
 
@@ -19,6 +20,14 @@ NS_SWIFT_NAME(LocalDataTrackPublication)
  *  @brief The local data track associated with track publication.
  */
 @property (nonatomic, strong, readonly, nullable) TVILocalDataTrack *localTrack;
+
+/**
+ *  @brief The track priority of the `TVILocalDataTrackPublication`
+ *
+ *  @discussion The publisher's `TVITrackPriority` for the corresponding `TVILocalDataTrack` can be updated after
+ *  it has been published.
+ */
+@property (nonatomic, copy, nonnull) TVITrackPriority priority;
 
 /**
  *  @brief Developers shouldn't initialize this class directly.

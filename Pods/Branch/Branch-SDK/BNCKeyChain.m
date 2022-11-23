@@ -40,7 +40,7 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
 
 @implementation BNCKeyChain
 
-+ (NSError*) errorWithKey:(NSString*)key OSStatus:(OSStatus)status {
++ (NSError *) errorWithKey:(NSString *)key OSStatus:(OSStatus)status {
     // Security errors are defined in Security/SecBase.h
     if (status == errSecSuccess) return nil;
     NSString *reason = nil;
@@ -64,49 +64,7 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
     return error;
 }
 
-+ (NSArray*) retieveAllValuesWithError:(NSError**)error {
-    if (error) *error = nil;
-    NSDictionary* dictionary = @{
-        (__bridge id)kSecClass:                 (__bridge id)kSecClassGenericPassword,
-        (__bridge id)kSecReturnData:            (__bridge id)kCFBooleanTrue,
-        (__bridge id)kSecAttrSynchronizable:    (__bridge id)kSecAttrSynchronizableAny,
-        (__bridge id)kSecMatchLimit:            (__bridge id)kSecMatchLimitAll
-    };
-    CFTypeRef valueData = NULL;
-    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)dictionary, &valueData);
-    if (status == errSecItemNotFound) status = 0;
-    if (status) {
-        NSError *localError = [self errorWithKey:@"<all>" OSStatus:status];
-        BNCLogDebugSDK(@"Can't retrieve key: %@.", localError);
-        if (error) *error = localError;
-        if (valueData) CFRelease(valueData);
-        return nil;
-    }
-    NSMutableArray *array = nil;
-    if ([((__bridge NSArray*)valueData) isKindOfClass:[NSArray class]]) {
-        NSArray *dataArray = (__bridge NSArray*) valueData;
-        array = [NSMutableArray new];
-        for (NSData* data in dataArray) {
-            id value = nil;
-            @try {
-                value = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-            }
-            @catch (id) {
-                value = nil;
-            }
-            if (value)
-                [array addObject:value];
-            else
-            if (data)
-                [array addObject:data];
-        }
-    }
-    if (valueData)
-        CFRelease(valueData);
-    return array;
-}
-
-+ (id) retrieveValueForService:(NSString*)service key:(NSString*)key error:(NSError**)error {
++ (NSDate *) retrieveDateForService:(NSString *)service key:(NSString *)key error:(NSError **)error {
     if (error) *error = nil;
     if (service == nil || key == nil) {
         NSError *localError = [self errorWithKey:key OSStatus:errSecParam];
@@ -126,7 +84,7 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
     OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)dictionary, (CFTypeRef *)&valueData);
     if (status != errSecSuccess) {
         NSError *localError = [self errorWithKey:key OSStatus:status];
-        BNCLogDebugSDK(@"Can't retrieve key: %@.", localError);
+        BNCLogDebugSDK([NSString stringWithFormat:@"Can't retrieve key: %@.", localError]);
         if (error) *error = localError;
         if (valueData) CFRelease(valueData);
         return nil;
@@ -134,7 +92,13 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
     id value = nil;
     if (valueData) {
         @try {
-            value = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge NSData*)valueData];
+            if (@available(iOS 11.0, tvOS 11.0, *)) {
+                value = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSDate class] fromData:(__bridge NSData*)valueData error:NULL];
+            } else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 12000
+                value = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge NSDate*)valueData];
+#endif
+            }
         }
         @catch (id) {
             value = nil;
@@ -146,17 +110,23 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
     return value;
 }
 
-+ (NSError*) storeValue:(id)value
-             forService:(NSString*)service
-                    key:(NSString*)key
-       cloudAccessGroup:(NSString*)accessGroup {
++ (NSError *) storeDate:(NSDate *)date
+             forService:(NSString *)service
+                    key:(NSString *)key
+       cloudAccessGroup:(NSString *)accessGroup {
 
-    if (value == nil || service == nil || key == nil)
+    if (date == nil || service == nil || key == nil)
         return [self errorWithKey:key OSStatus:errSecParam];
 
     NSData* valueData = nil;
     @try {
-        valueData = [NSKeyedArchiver archivedDataWithRootObject:value];
+        if (@available(iOS 11.0, tvOS 11.0, *)) {
+            valueData = [NSKeyedArchiver archivedDataWithRootObject:date requiringSecureCoding:YES error:NULL];
+        } else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 12000
+            valueData = [NSKeyedArchiver archivedDataWithRootObject:value];
+#endif
+        }
     }
     @catch(id) {
         valueData = nil;
@@ -175,7 +145,7 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
     OSStatus status = SecItemDelete((__bridge CFDictionaryRef)dictionary);
     if (status != errSecSuccess && status != errSecItemNotFound) {
         NSError *error = [self errorWithKey:key OSStatus:status];
-        BNCLogDebugSDK(@"Can't clear to store key: %@.", error);
+        BNCLogDebugSDK([NSString stringWithFormat:@"Can't clear to store key: %@.", error]);
     }
 
     dictionary[(__bridge id)kSecValueData] = valueData;
@@ -191,14 +161,14 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
     status = SecItemAdd((__bridge CFDictionaryRef)dictionary, NULL);
     if (status) {
         NSError *error = [self errorWithKey:key OSStatus:status];
-        BNCLogDebugSDK(@"Can't store key: %@.", error);
+        BNCLogDebugSDK([NSString stringWithFormat:@"Can't store key: %@.", error]);
         return error;
     }
     return nil;
 }
 
-+ (NSError*) removeValuesForService:(NSString*)service key:(NSString*)key {
-    NSMutableDictionary* dictionary = [NSMutableDictionary dictionaryWithDictionary:@{
++ (NSError*) removeValuesForService:(NSString *)service key:(NSString *)key {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithDictionary:@{
         (__bridge id)kSecClass:                 (__bridge id)kSecClassGenericPassword,
         (__bridge id)kSecAttrSynchronizable:    (__bridge id)kSecAttrSynchronizableAny
     }];
@@ -209,21 +179,21 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
     if (status == errSecItemNotFound) status = errSecSuccess;
     if (status) {
         NSError *error = [self errorWithKey:key OSStatus:status];
-        BNCLogDebugSDK(@"Can't remove key: %@.", error);
+        BNCLogDebugSDK([NSString stringWithFormat:@"Can't remove key: %@.", error]);
         return error;
     }
     return nil;
 }
 
-+ (NSString*_Nullable) securityAccessGroup {
++ (NSString * _Nullable) securityAccessGroup {
     // https://stackoverflow.com/questions/11726672/access-app-identifier-prefix-programmatically
     @synchronized(self) {
         static NSString*_securityAccessGroup = nil;
         if (_securityAccessGroup) return _securityAccessGroup;
 
         // First store a value:
-        NSError*error = [self storeValue:@"Value" forService:@"BranchKeychainService" key:@"Temp" cloudAccessGroup:nil];
-        if (error) BNCLogDebugSDK(@"Error storing temp value: %@.", error);
+        NSError *error = [self storeDate:[NSDate date] forService:@"BranchKeychainService" key:@"Temp" cloudAccessGroup:nil];
+        if (error) BNCLogDebugSDK([NSString stringWithFormat:@"Error storing temp value: %@.", error]);
         
         NSDictionary* dictionary = @{
             (__bridge id)kSecClass:                 (__bridge id)kSecClassGenericPassword,
@@ -236,8 +206,8 @@ CFStringRef SecCopyErrorMessageString(OSStatus status, void *reserved) {
         OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)dictionary, (CFTypeRef*)&resultDictionary);
         if (status == errSecItemNotFound) return nil;
         if (status != errSecSuccess) {
-            BNCLogDebugSDK(@"Get securityAccessGroup returned(%ld): %@.",
-                (long) status, [self errorWithKey:nil OSStatus:status]);
+            BNCLogDebugSDK([NSString stringWithFormat:@"Get securityAccessGroup returned(%ld): %@.",
+                (long) status, [self errorWithKey:nil OSStatus:status]]);
             return nil;
         }
         NSString*group =

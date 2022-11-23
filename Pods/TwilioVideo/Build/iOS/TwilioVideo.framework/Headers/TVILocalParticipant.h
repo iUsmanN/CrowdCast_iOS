@@ -19,6 +19,8 @@
 @class TVILocalDataTrack;
 @class TVILocalVideoTrack;
 
+@class TVILocalTrackPublicationOptions;
+
 /**
  *  `TVILocalParticipant` represents your Participant in a Room which you are connected to.
  */
@@ -54,7 +56,7 @@ NS_SWIFT_NAME(LocalParticipant)
 @property (nonatomic, copy, readonly, nonnull) NSString *signalingRegion;
 
 /**
- *  @brief Publishes the audio track to the Room.
+ *  @brief Publishes the audio track to the Room with the default `TVILocalTrackPublicationOptions`.
  *
  *  @param track The `TVILocalAudioTrack` to publish.
  *
@@ -63,7 +65,18 @@ NS_SWIFT_NAME(LocalParticipant)
 - (BOOL)publishAudioTrack:(nonnull TVILocalAudioTrack *)track;
 
 /**
- *  @brief Publishes the data track to the Room.
+ *  @brief Publishes the audio track to the Room.
+ *
+ *  @param track The `TVILocalAudioTrack` to publish.
+ *  @param options The `TVILocalTrackPublicationOptions` used to publish the track.
+ *
+ *  @return `YES` if the track was published successfully, `NO` otherwise.
+ */
+- (BOOL)publishAudioTrack:(nonnull TVILocalAudioTrack *)track
+       publicationOptions:(nonnull TVILocalTrackPublicationOptions *)options;
+
+/**
+ *  @brief Publishes the data track to the Room with the default `TVILocalTrackPublicationOptions`.
  *
  *  @param track The `TVILocalDataTrack` to publish.
  *
@@ -72,13 +85,35 @@ NS_SWIFT_NAME(LocalParticipant)
 - (BOOL)publishDataTrack:(nonnull TVILocalDataTrack *)track;
 
 /**
- *  @brief Publishes the video track to the Room.
+ *  @brief Publishes the data track to the Room.
+ *
+ *  @param track The `TVILocalDataTrack` to publish.
+ *  @param options The `TVILocalTrackPublicationOptions` used to publish the track.
+ *
+ *  @return `YES` if the track was published successfully, `NO` otherwise.
+ */
+- (BOOL)publishDataTrack:(nonnull TVILocalDataTrack *)track
+      publicationOptions:(nonnull TVILocalTrackPublicationOptions *)options;
+
+/**
+ *  @brief Publishes the video track to the Room with the default `TVILocalTrackPublicationOptions`.
  *
  *  @param track The `TVILocalVideoTrack` to publish.
  *
  *  @return `YES` if the track was published successfully, `NO` otherwise.
  */
 - (BOOL)publishVideoTrack:(nonnull TVILocalVideoTrack *)track;
+
+/**
+ *  @brief Publishes the video track to the Room.
+ *
+ *  @param track The `TVILocalVideoTrack` to publish.
+ *  @param options The `TVILocalTrackPublicationOptions` used to publish the track.
+ *
+ *  @return `YES` if the track was published successfully, `NO` otherwise.
+ */
+- (BOOL)publishVideoTrack:(nonnull TVILocalVideoTrack *)track
+       publicationOptions:(nonnull TVILocalTrackPublicationOptions *)options;
 
 /**
  *  @brief Unpublishes the audio track from the Room.

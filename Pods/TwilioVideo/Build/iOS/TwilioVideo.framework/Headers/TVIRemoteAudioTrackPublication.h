@@ -28,6 +28,13 @@ NS_SWIFT_NAME(RemoteAudioTrackPublication)
 @property (nonatomic, strong, readonly, nullable) TVIRemoteAudioTrack *remoteTrack;
 
 /**
+ *  @brief Get the `TVITrackPriority` set by the publisher for the corresponding `TVIRemoteAudioTrack`.
+ *
+ *  @discussion This property will return `TVITrackPriorityStandard` if no priority was specified by the publisher.
+ */
+@property (nonatomic, copy, readonly, nonnull) TVITrackPriority publishPriority;
+
+/**
  *  @brief Developers shouldn't initialize this class directly.
  *
  *  @discussion Track publications cannot be created explicitly

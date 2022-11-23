@@ -11,6 +11,8 @@ import FirebaseAuth
 import FirebaseFirestore
 import Device
 import IQKeyboardManagerSwift
+import Lottie
+import AuthenticationServices
 
 class CCLoginVC: CCUIViewController {
     
@@ -20,8 +22,12 @@ class CCLoginVC: CCUIViewController {
     @IBOutlet weak var emailIcon: UIImageView!
     @IBOutlet weak var passwordIcon: UIImageView!
     
-    @IBOutlet weak var IllustrationTopGap: NSLayoutConstraint!
-    @IBOutlet weak var IllustrationBottomGap: NSLayoutConstraint!
+    //    @IBOutlet weak var IllustrationTopGap: NSLayoutConstraint!
+    //    @IBOutlet weak var IllustrationBottomGap: NSLayoutConstraint!
+    
+    @IBOutlet weak var curtainView: UIView!
+    
+    @IBOutlet weak var animationView: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +40,31 @@ class CCLoginVC: CCUIViewController {
         emailIcon.alpha         = 0.7
         passwordIcon.alpha      = 0.7
         
-        emailTextField.text     = "aleemt6@gmail.com"
-        passwordTextField.text  = "aleemt6"
+        emailTextField.text     = "usmant4@gmail.com"
+        passwordTextField.text  = "usmant4"
         
-        IllustrationBottomGap.constant  = Device.size() > Size.screen4_7Inch ? 75 : 10
-        IllustrationTopGap.constant     = Device.size() > Size.screen4_7Inch ? 60 : 20
+        //        IllustrationBottomGap.constant  = Device.size() > Size.screen4_7Inch ? 75 : 10
+        //        IllustrationTopGap.constant     = Device.size() > Size.screen4_7Inch ? 60 : 20
+        
+        UIView.animate(withDuration: 0.75) { [weak self] in
+            self?.curtainView.alpha = 0
+        } completion: { (_) in }
+        
+        animationView.loopMode = .autoReverse
+        animationView.contentMode = .center
+        animationView.animationSpeed = 0.6
+        animationView.play(completion: nil)
+    }
+    
+    @IBAction func signInWithAppleTapped() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
 }
 
@@ -71,12 +97,12 @@ extension CCLoginVC {
     func signIn_Email(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
             guard error == nil else { self?.signInFailed(error: error); return }
-            self?.signInSuccessFul(result: result)
+//            self?.signInSuccessFul(result: result)
         }
     }
 }
 
-extension CCLoginVC : CCSyncUserData {
+extension CCLoginVC : CCSyncUserData, CCUserService {
     
     func signInFailed(error: Error?){
         activeButton?.hideSpinner()
@@ -84,15 +110,92 @@ extension CCLoginVC : CCSyncUserData {
         print("Can't sign in.")
     }
     
-    func signInSuccessFul(result: AuthDataResult?){
+    func signInSuccessFul(result: AuthDataResult?, email: String, firstName: String, lastName: String){
         guard let uid = result?.user.uid else { return }
         print("Signed in.")
         generateHapticFeedback(.light)
         syncUserData(uid: uid) { [weak self](result) in
             switch result {
-            case .success(_)            : self?.moveToHome()
-            case .failure(let error)    : self?.signInFailed(error: error)
+            case .success(_) :
+                UIView.animate(withDuration: 0.75) { [weak self] in
+                    self?.curtainView.alpha = 1
+                } completion: { (_) in
+                    self?.moveToHome()
+                }
+            case .failure(let error):
+                self?.createUser(uid: uid, email: email, firstName: firstName, lastName: lastName)
             }
         }
+    }
+    
+    func createUser(uid: String?, email: String, firstName: String, lastName: String){
+        guard let uid = uid else { return }
+        addNewUser(uid: uid, email: email, firstName: firstName, lastName: lastName) { [weak self](result) in
+            switch result {
+            case .success(_):
+                self?.syncUserData(uid: uid) { [weak self](result) in
+                    switch result {
+                    case .success(_) :
+                        UIView.animate(withDuration: 0.75) { [weak self] in
+                            self?.curtainView.alpha = 1
+                        } completion: { (_) in
+                            self?.moveToHome()
+                        }
+                    case .failure(let error):
+                        self?.signInFailed(error: error)
+                    }
+                }
+            case .failure(let error):
+                self?.signInFailed(error: error)
+            }
+        }
+    }
+}
+
+extension CCLoginVC : ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding, CCNonceGenerator {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            guard let appleIDToken = appleIDCredential.identityToken, let idTokenString = String(data: appleIDToken, encoding: .utf8) else { return }
+            let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: randomNonceString())
+            
+            let fullName = appleIDCredential.fullName!
+            let email = appleIDCredential.email
+            
+            Auth.auth().signIn(with: credential) { [weak self] (result, error) in
+                guard error == nil else { self?.signInFailed(error: error); return }
+                self?.signInSuccessFul(result: result, email: email ?? (self!.readUserEmailInKeychain()), firstName: PersonNameComponentsFormatter().string(from: fullName) ?? "CC", lastName: "CC")
+            }
+            saveUserEmailInKeychain(email ?? "crowd@cast.com")
+        default:
+            break
+        }
+    }
+    
+    private func saveUserEmailInKeychain(_ email: String) {
+        do {
+            try KeychainItem(service: "com.iusmann.cyty", account: "email").saveItem(email)
+        } catch {
+            print("Unable to save userIdentifier to keychain.")
+        }
+    }
+    
+    private func readUserEmailInKeychain() -> String {
+        do {
+            let email = try KeychainItem(service: "com.iusmann.cyty", account: "email").readItem()
+            return email
+        } catch {
+            print("Unable to save userIdentifier to keychain.")
+        }
+        return "?"
+    }
+    
+    func progressToHome(){
+        print("Got to home")
     }
 }

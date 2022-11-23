@@ -109,6 +109,12 @@ NS_SWIFT_NAME(CameraSource)
  *  @param device The `AVCaptureDevice` which the source should use. Must be non-null.
  *
  *  @discussion This method will automatically choose a format that works well with your capture device.
+ *
+ *  @note When you are done capturing video using the `TVICameraSource` you must call either `[TVICameraSource stopCapture]`
+ *  or `[TVICameraSource stopCaptureWithCompletion:]`.
+ *
+ *  @see stopCapture
+ *  @see stopCaptureWithCompletion:
  */
 - (void)startCaptureWithDevice:(nonnull AVCaptureDevice *)device
 NS_SWIFT_NAME(startCapture(device:));
@@ -120,6 +126,12 @@ NS_SWIFT_NAME(startCapture(device:));
  *  @param completion A handler block to be called on the main thread once capture has started, or failed to start.
  *
  *  @discussion This method will automatically choose a format that works well with your capture device.
+ *
+ *  @note When you are done capturing video using the `TVICameraSource` you must call either `[TVICameraSource stopCapture]`
+ *  or `[TVICameraSource stopCaptureWithCompletion:]`.
+ *
+ *  @see stopCapture
+ *  @see stopCaptureWithCompletion:
  */
 - (void)startCaptureWithDevice:(nonnull AVCaptureDevice *)device
                     completion:(nullable TVICameraSourceStartedBlock)completion
@@ -133,6 +145,12 @@ NS_SWIFT_NAME(startCapture(device:completion:));
  *  @param completion A handler block to be called on the main thread once capture has started, or failed to start.
  *
  *  @discussion Use this method if you have a specific capture device and format in mind for your use case.
+ *
+ *  @note When you are done capturing video using the `TVICameraSource` you must call either `[TVICameraSource stopCapture]`
+ *  or `[TVICameraSource stopCaptureWithCompletion:]`.
+ *
+ *  @see stopCapture
+ *  @see stopCaptureWithCompletion:
  */
 - (void)startCaptureWithDevice:(nonnull AVCaptureDevice *)device
                         format:(nonnull TVIVideoFormat *)format

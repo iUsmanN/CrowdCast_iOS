@@ -8,9 +8,9 @@
 
 #import "BranchConstants.h"
 
-NSString * const BRANCH_REQUEST_KEY_BRANCH_IDENTITY = @"identity_id";
+NSString * const BRANCH_REQUEST_KEY_RANDOMIZED_BUNDLE_TOKEN = @"randomized_bundle_token";
 NSString * const BRANCH_REQUEST_KEY_DEVELOPER_IDENTITY = @"identity";
-NSString * const BRANCH_REQUEST_KEY_DEVICE_FINGERPRINT_ID = @"device_fingerprint_id";
+NSString * const BRANCH_REQUEST_KEY_RANDOMIZED_DEVICE_TOKEN = @"randomized_device_token";
 NSString * const BRANCH_REQUEST_KEY_SESSION_ID = @"session_id";
 NSString * const BRANCH_REQUEST_KEY_ACTION = @"event";
 NSString * const BRANCH_REQUEST_KEY_STATE = @"metadata";
@@ -41,6 +41,8 @@ NSString * const BRANCH_REQUEST_KEY_HARDWARE_ID_TYPE = @"hardware_id_type";
 NSString * const BRANCH_REQUEST_KEY_IS_HARDWARE_ID_REAL = @"is_hardware_id_real";
 NSString * const BRANCH_REQUEST_KEY_IOS_VENDOR_ID = @"ios_vendor_id";
 NSString * const BRANCH_REQUEST_KEY_AD_TRACKING_ENABLED = @"ad_tracking_enabled";
+NSString * const BRANCH_REQUEST_KEY_OPTED_IN_STATUS = @"opted_in_status";
+NSString * const BRANCH_REQUEST_KEY_FIRST_OPT_IN = @"first_opt_in";
 NSString * const BRANCH_REQUEST_KEY_DEBUG = @"debug";
 NSString * const BRANCH_REQUEST_KEY_BUNDLE_ID = @"ios_bundle_id";
 NSString * const BRANCH_REQUEST_KEY_TEAM_ID = @"ios_team_id";
@@ -53,6 +55,8 @@ NSString * const BRANCH_REQUEST_KEY_CHECKED_FACEBOOK_APPLINKS = @"facebook_app_l
 NSString * const BRANCH_REQUEST_KEY_CHECKED_APPLE_AD_ATTRIBUTION = @"apple_ad_attribution_checked";
 NSString * const BRANCH_REQUEST_KEY_SPOTLIGHT_IDENTIFIER = @"spotlight_identifier";
 NSString * const BRANCH_REQUEST_KEY_UNIVERSAL_LINK_URL = @"universal_link_url";
+NSString * const BRANCH_REQUEST_KEY_LOCAL_URL = @"local_url";
+NSString * const BRANCH_REQUEST_KEY_INITIAL_REFERRER = @"initial_referrer";
 NSString * const BRANCH_REQUEST_KEY_BRAND = @"brand";
 NSString * const BRANCH_REQUEST_KEY_MODEL = @"model";
 NSString * const BRANCH_REQUEST_KEY_SCREEN_WIDTH = @"screen_width";
@@ -63,13 +67,17 @@ NSString * const BRANCH_REQUEST_KEY_INSTRUMENTATION = @"instrumentation";
 NSString * const BRANCH_REQUEST_KEY_APPLE_RECEIPT = @"apple_receipt";
 NSString * const BRANCH_REQUEST_KEY_APPLE_TESTFLIGHT = @"apple_testflight";
 
+NSString * const BRANCH_REQUEST_KEY_APP_CLIP_BUNDLE_ID = @"app_clip_bundle_id";
+NSString * const BRANCH_REQUEST_KEY_LATEST_APP_CLIP_INSTALL_TIME = @"latest_app_clip_time";
+NSString * const BRANCH_REQUEST_KEY_APP_CLIP_RANDOMIZED_DEVICE_TOKEN = @"app_clip_randomized_device_token";
+NSString * const BRANCH_REQUEST_KEY_APP_CLIP_RANDOMIZED_BUNDLE_TOKEN = @"app_clip_randomized_bundle_token";
+
+NSString * const BRANCH_REQUEST_KEY_PARTNER_PARAMETERS = @"partner_data";
+
 NSString * const BRANCH_REQUEST_ENDPOINT_SET_IDENTITY = @"profile";
 NSString * const BRANCH_REQUEST_ENDPOINT_APP_LINK_SETTINGS = @"app-link-settings";
 NSString * const BRANCH_REQUEST_ENDPOINT_LOGOUT = @"logout";
 NSString * const BRANCH_REQUEST_ENDPOINT_USER_COMPLETED_ACTION = @"event";
-NSString * const BRANCH_REQUEST_ENDPOINT_LOAD_REWARDS = @"credits";
-NSString * const BRANCH_REQUEST_ENDPOINT_REDEEM_REWARDS = @"redeem";
-NSString * const BRANCH_REQUEST_ENDPOINT_CREDIT_HISTORY = @"credithistory";
 NSString * const BRANCH_REQUEST_ENDPOINT_GET_SHORT_URL = @"url";
 NSString * const BRANCH_REQUEST_ENDPOINT_CLOSE = @"close";
 NSString * const BRANCH_REQUEST_ENDPOINT_OPEN = @"open";
@@ -78,7 +86,7 @@ NSString * const BRANCH_REQUEST_ENDPOINT_REGISTER_VIEW = @"register-view";
 NSString * const BRANCH_REQUEST_ENDPOINT_CPID = @"cpid";
 NSString * const BRANCH_REQUEST_ENDPOINT_LATD = @"cpid/latd";
 
-NSString * const BRANCH_RESPONSE_KEY_BRANCH_IDENTITY = @"identity_id";
+NSString * const BRANCH_RESPONSE_KEY_RANDOMIZED_BUNDLE_TOKEN = @"randomized_bundle_token";
 NSString * const BRANCH_RESPONSE_KEY_SESSION_ID = @"session_id";
 NSString * const BRANCH_RESPONSE_KEY_USER_URL = @"link";
 NSString * const BRANCH_RESPONSE_KEY_INSTALL_PARAMS = @"referring_data";
@@ -87,11 +95,13 @@ NSString * const BRANCH_RESPONSE_KEY_REFERREE = @"referree";
 NSString * const BRANCH_RESPONSE_KEY_URL = @"url";
 NSString * const BRANCH_RESPONSE_KEY_SPOTLIGHT_IDENTIFIER = @"spotlight_identifier";
 NSString * const BRANCH_RESPONSE_KEY_DEVELOPER_IDENTITY = @"identity";
-NSString * const BRANCH_RESPONSE_KEY_DEVICE_FINGERPRINT_ID = @"device_fingerprint_id";
+NSString * const BRANCH_RESPONSE_KEY_RANDOMIZED_DEVICE_TOKEN = @"randomized_device_token";
 NSString * const BRANCH_RESPONSE_KEY_SESSION_DATA = @"data";
 NSString * const BRANCH_RESPONSE_KEY_CLICKED_BRANCH_LINK = @"+clicked_branch_link";
 NSString * const BRANCH_RESPONSE_KEY_BRANCH_VIEW_DATA = @"branch_view_data";
 NSString * const BRANCH_RESPONSE_KEY_BRANCH_REFERRING_LINK = @"~referring_link";
+NSString * const BRANCH_RESPONSE_KEY_INVOKE_REGISTER_APP = @"invoke_register_app";
+NSString * const BRANCH_RESPONSE_KEY_UPDATE_CONVERSION_VALUE = @"update_conversion_value";
 
 NSString * const BRANCH_LINK_DATA_KEY_OG_TITLE = @"$og_title";
 NSString * const BRANCH_LINK_DATA_KEY_OG_DESCRIPTION = @"$og_description";
@@ -138,9 +148,9 @@ NSString * const BRANCH_PACKAGE_NAME_KEY = @"p";
 NSString * const BRANCH_ENTITIES_KEY = @"e";
 
 NSString * const BRANCH_REQUEST_KEY_SEARCH_AD = @"search_ad_encoded";
+NSString * const BRANCH_REQUEST_KEY_APPLE_ATTRIBUTION_TOKEN = @"apple_attribution_token";
 
 NSString * const BRANCH_CRASHLYTICS_SDK_VERSION_KEY = @"io.branch.sdk.version";
-NSString * const BRANCH_CRASHLYTICS_FINGERPRINT_ID_KEY = @"io.branch.device.fingerprintid";
 NSString * const BRANCH_CRASHLYTICS_LOW_MEMORY_KEY = @"io.branch.device.lowmemory";
 
 NSString * const BRANCH_REQUEST_KEY_EXTERNAL_INTENT_URI = @"external_intent_uri";

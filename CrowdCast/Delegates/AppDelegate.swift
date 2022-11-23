@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CCUniversalCallToggle {
         Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
             print(params as? [String: AnyObject] ?? {})
         }
-        
+        Branch.getInstance().validateSDKIntegration()
         return true
     }
 

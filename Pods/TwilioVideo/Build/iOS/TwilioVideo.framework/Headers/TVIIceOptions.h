@@ -105,12 +105,14 @@ NS_SWIFT_NAME(IceOptionsBuilder)
  *  Setting this property to true will instead abort with error 53500, "Unable to acquire configuration".
  *  Defaults to 'NO'.
  */
-@property (nonatomic, assign) BOOL abortOnIceServersTimeout;
+@property (nonatomic, assign) BOOL abortOnIceServersTimeout
+DEPRECATED_MSG_ATTRIBUTE("As of 3.5.0 this property is deprecated and setting it has no effect.");
 
 /**
  *  @brief The timeout to wait (before aborting) when acquiring ICE servers. Defaults to 3 seconds.
  */
-@property (nonatomic, assign) NSTimeInterval iceServersTimeout;
+@property (nonatomic, assign) NSTimeInterval iceServersTimeout
+DEPRECATED_MSG_ATTRIBUTE("As of 3.5.0 this property is deprecated and setting it has no effect.");
 
 - (null_unspecified instancetype)init __attribute__((unavailable("Use a TVIIceOptionsBuilderBlock instead.")));
 
@@ -153,12 +155,14 @@ NS_SWIFT_NAME(IceOptions)
  *  Setting this property to true will instead abort with error 53500, "Unable to acquire configuration".
  *  Defaults to 'NO'.
  */
-@property (nonatomic, assign, readonly) BOOL abortOnIceServersTimeout;
+@property (nonatomic, assign, readonly) BOOL abortOnIceServersTimeout
+DEPRECATED_MSG_ATTRIBUTE("As of 3.5.0 this property is deprecated and setting it has no effect.");
 
 /**
  *  @brief The timeout to wait (before aborting) when acquiring ICE servers. Defaults to 3 seconds.
  */
-@property (nonatomic, assign, readonly) NSTimeInterval iceServersTimeout;
+@property (nonatomic, assign, readonly) NSTimeInterval iceServersTimeout
+DEPRECATED_MSG_ATTRIBUTE("As of 3.5.0 this property is deprecated and setting it has no effect.");
 
 /**
  *  @brief Creates a default `TVIIceOptions` instance.
