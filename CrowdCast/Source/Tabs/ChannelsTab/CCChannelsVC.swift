@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 import Combine
 
 class CCChannelsVC: CCUIViewController {
@@ -26,6 +27,7 @@ class CCChannelsVC: CCUIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshData()
+        checkDynamicChannelJoin()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,8 +58,20 @@ extension CCChannelsVC {
     private func setupTableView(){
         tableView.delegate      = self
         tableView.dataSource    = self
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         tableView.register(Nib.get.CCCardTVC, forCellReuseIdentifier: Nib.reuseIdentifier.CCCardTVC)
         tableView.register(Nib.get.CCEmptyTableView, forHeaderFooterViewReuseIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = .leastNormalMagnitude
+        }
+    }
+    
+    private func checkDynamicChannelJoin(){
+        guard let id = CCDynamicLinkManager.id, let isGroup = CCDynamicLinkManager.isGroup, !isGroup else { return }
+        CCDynamicLinkManager.id = nil; CCDynamicLinkManager.isGroup = nil
+        viewModel?.joinUserChannel(channelID: id, completion: { [weak self] _ in
+            self?.refreshData()
+        })
     }
 }
 
@@ -79,9 +93,9 @@ extension CCChannelsVC {
         guard indexPaths.count > 0 else { return }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.insertRows(at: indexPaths, with: .left)
+            self?.tableView.insertRows(at: indexPaths, with: .none)
             self?.tableView.endUpdates()
-            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .left)
+            self?.tableView.reloadSections(IndexSet(arrayLiteral: 0), with: .none)
         }
     }
     
@@ -89,7 +103,7 @@ extension CCChannelsVC {
         guard indexPath.count > 0 else { return }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.beginUpdates()
-            self?.tableView.deleteRows(at: indexPath, with: .right)
+            self?.tableView.deleteRows(at: indexPath, with: .none)
             self?.tableView.endUpdates()
         }
     }
@@ -113,6 +127,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Nib.reuseIdentifier.CCCardTVC, for: indexPath) as? CCCardTVCTableViewCell else { return UITableViewCell()}
+        cell.imageView?.kf.cancelDownloadTask()
         cell.data = viewModel?.dataForCellAt(indexPath: indexPath)
         return cell
     }
@@ -126,7 +141,7 @@ extension CCChannelsVC : UITableViewDataSource, UITableViewDelegate, ShowsCardHe
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return tableView.dequeueReusableHeaderFooterView(withIdentifier: Nib.reuseIdentifier.CCEmptyTableView)
+        return (viewModel?.numberOfRows(section: section) ?? 0) == 0 ? tableView.dequeueReusableHeaderFooterView(withIdentifier: Nib.reuseIdentifier.CCEmptyTableView) : UIView()
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

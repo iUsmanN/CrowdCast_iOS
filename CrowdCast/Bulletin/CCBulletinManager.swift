@@ -8,6 +8,7 @@
 
 import Foundation
 import BLTNBoard
+import UIKit
 
 //protocol CCBulletinManager {}
 

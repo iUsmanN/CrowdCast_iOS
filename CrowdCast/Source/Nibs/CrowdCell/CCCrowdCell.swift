@@ -38,15 +38,16 @@ class CCCrowdCell: UICollectionViewCell, CCImageStorage {
         cardBackgroundView.layer.cornerRadius   = 10
         bgImage.layer.cornerRadius              = 10
         bgBlur.layer.cornerRadius               = 10
-        cardBackgroundView.layer.borderWidth    = 0.5
-        cardBackgroundView.layer.borderColor    = UIColor.white.cgColor
         cardBackgroundView.layer.shadowOpacity  = 0.3
         cardBackgroundView.layer.shadowOffset   = CGSize(width: 0, height: 2)
         cardImage.layer.cornerRadius            = 10
         bgImage.clipsToBounds                   = true
+        contentView.layer.masksToBounds = true
+        cardBackgroundView.layer.masksToBounds = true
     }
     
     func setGroupImage(id: String?) {
+        cardImage.kf.cancelDownloadTask()
         getImage(memberID: id ?? "", directory: .groups, result: { [weak self](result) in
             switch result {
             case .success(let imageResource):

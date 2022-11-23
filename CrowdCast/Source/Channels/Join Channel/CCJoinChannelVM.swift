@@ -55,18 +55,3 @@ extension CCJoinChannelVM {
         }
     }
 }
-
-extension CCJoinChannelVM : CCDynamicLinkEngine {
-    
-    func generateDeeplink(){
-        generateShareLink(input: data) { (result) in
-            switch result {
-            case .success(let string):
-                prints(string)
-                
-            case .failure(let error):
-                prints(error)
-            }
-        }
-    }
-}

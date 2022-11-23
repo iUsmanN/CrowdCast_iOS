@@ -12,6 +12,10 @@ import UIKit
 
 struct CCSettingsVM {
     let data = [
+        CCCellData(title: "Share Application", titleColor: .label),
+        CCCellData(title: "Give Feedback", titleColor: .label),
+        CCCellData(title: "Privacy Policy", titleColor: .label),
+        CCCellData(title: "Terms & Conditions", titleColor: .label),
         CCCellData(title: "Logout", titleColor: .red)
     ]
 }
@@ -28,7 +32,7 @@ extension CCSettingsVM {
     
     func rowSelected(indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:
+        case 4:
             signOut()
         default:
             prints("Unhandled Row Selection")

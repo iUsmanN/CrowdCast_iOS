@@ -1,13 +1,9 @@
 <p align="center">
-  <img width="460" src="https://user-images.githubusercontent.com/15052850/87014242-49ea8800-c1e5-11ea-8463-5d15a9996f44.png">
+  <img width="260" src="https://user-images.githubusercontent.com/15052850/123526495-35dab780-d6d0-11eb-9b3d-7918529b0405.gif">
 </p>
-
-
 ----------------------
 
-In the current state of affairs, we often have to attend Video Calls with colleagues, friends and families. As the medium of video calls becomoes increasingly popular, we often find ourselves sharing links to video calls which everyone can join in. But sharing links again and again to everyone can be tedious and inefficient. Crowd Cast is a project aimed at adding a layer to this need. 
-
-With Crowd Cast, there is no need to individually share video call links with people anymore. Providing an independant video calling platform, Crowd Cast allows you to create and join video call channels seamlessly. Crowds are groups of people that can be created where each member can access each video call channel within the Crowd. The individual channels you create can be shared and join using generated short deeplinks that provide a swift experience to quickly get started.
+Crowd Cast is designed to be a modern video calling and management platform. With Crowdcast, there is no need to individually share video call links with people anymore. Providing an independant video calling platform, Crowd Cast allows you to create and join video call channels seamlessly. Crowds are groups of people that can be created where each member can access each video call channel within the Crowd. The individual channels you create can be shared and join using generated short deeplinks that provide a swift experience to quickly get started.
 
 ----------------------
 
@@ -306,14 +302,6 @@ extension CCCallScreenVM : CCTwilioService {
         }
     }
 }
-```
-
-- Branch.io Analytics
-
-<img src="https://user-images.githubusercontent.com/15052850/86951607-2e429b80-c16b-11ea-86b2-4af5927762c5.png" width="150">
-
-```swift
-
 ```
 
 - Firebase Deeplinking

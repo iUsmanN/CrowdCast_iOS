@@ -17,6 +17,7 @@ enum CCError : Error {
     case emptyFields
     case CodableError
     case internetError
+    case userChannelRemovalFailure
     
     //MARK: TWILIO
     case twilioVideoError
@@ -33,6 +34,7 @@ enum CCError : Error {
     
     //MARK: FIRESTORE
     case groupCreationFailure
+    case groupJoiningFailue
     case addUserGroupEntryFailure
     case addUserChannelEntryFailure
     case addGroupChannelsItemFailure

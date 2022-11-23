@@ -17,7 +17,6 @@ class CCCallScreenVC: CCUIViewController {
     @IBOutlet weak var ripple           : AnimationView!
     @IBOutlet weak var profileView      : UIImageView!
     @IBOutlet weak var collectionView   : UICollectionView!
-    @IBOutlet weak var actionBar        : UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +43,12 @@ class CCCallScreenVC: CCUIViewController {
     }
 }
 
-extension CCCallScreenVC : CCImageStorage {
+extension CCCallScreenVC {
     
     func setupView(){
         collectionView.dataSource   = self
         collectionView.delegate     = self
         collectionView.register(UINib(nibName: Nib.reuseIdentifier.CCCallMemberCell, bundle: nil), forCellWithReuseIdentifier: Nib.reuseIdentifier.CCCallMemberCell)
-        actionBar.layer.cornerRadius = 10
-        actionBar.layer.masksToBounds = true
 //        ripple.play()
 //        ripple.loopMode = .loop
         getImage(memberID: CCProfileManager.sharedInstance.getUID()) { [weak self](result) in
